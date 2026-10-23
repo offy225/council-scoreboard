@@ -1203,6 +1203,21 @@
           </section>
         </div>
 
+        <!-- ======= TRACK 3 : GRADUATED MOMENTUM — POST-GRADUATION ======= -->
+        <div class="lane-head" style="margin-top:18px;">
+          <span class="lane-tag">TRACK 3</span>
+          <h2 style="font-size:16px;">GRADUATED MOMENTUM — POST-GRADUATION</h2>
+          <span class="sub">GRADUATED COINS SCREENED FOR CONTINUATION · SHADOW ONLY</span>
+          <span class="status" id="fgt-status"><span class="dot off"></span>NO DATA YET</span>
+        </div>
+        <div id="fgt-body">
+          <section class="panel" style="margin-top:12px;" aria-label="Graduated momentum track status">
+            <div class="panel-b">
+              <p class="xlate-note" style="margin:0;" id="fgt-placeholder">GRADUATED MOMENTUM: NO DATA YET — the post-graduation watcher is being wired into this lane. This section fills the moment its first graduated coin lands.</p>
+            </div>
+          </section>
+        </div>
+
         <p class="foot-note">Paper only — this lane never places a real order, holds a key, or touches an account. Shadow fills are booked at the first price seen after detection, worsened by the slippage haircut for the token's market cap; the leader's own price is recorded for comparison, never used.</p>
       </div><!-- /tab-memecoin -->
 
@@ -2566,7 +2581,7 @@ table.bd tbody tr, table.tape tbody tr, .feed li, .hit { cursor: pointer; }
       var tr = document.createElement('tr');
       var un = pickNum(p, ['unrealized_usdt', 'unrealized']);
       tr.appendChild(cell(String(p.symbol || shortWallet(p.mint) || '—')));
-      tr.appendChild(cell(shortWallet(p.leader)));
+      tr.appendChild(cell(shortWallet(p.leader || p.creator)));
       tr.appendChild(cell(fmtPrice(pickNum(p, ['entry_shadow_price_usd', 'entry_price_usd', 'entry_detect_price_usd']))));
       tr.appendChild(cell(fmtPrice(pickNum(p, ['mark_price_usd', 'current_price_usd', 'mark']))));
       tr.appendChild(cell(fmtMC(p.mc_at_entry_usd)));
@@ -2589,7 +2604,7 @@ table.bd tbody tr, table.tape tbody tr, .feed li, .hit { cursor: pointer; }
       var stake = pickNum(t, ['stake_usdt', 'stake']);
       var proceeds = pickNum(t, ['proceeds_usdt', 'proceeds']);
       tr.appendChild(cell(String(t.symbol || shortWallet(t.mint) || '—')));
-      tr.appendChild(cell(shortWallet(t.leader)));
+      tr.appendChild(cell(shortWallet(t.leader || t.creator)));
       tr.appendChild(cell(fmtMC(t.mc_at_entry_usd)));
       tr.appendChild(cell((stake === null ? '—' : fmtMoney(stake)) + ' → ' + (proceeds === null ? '—' : fmtMoney(proceeds))));
       tr.appendChild(cell(pnl === null ? '—' : fmtSigned(pnl), pnl === null ? 'num-dim' : (pnl >= 0 ? 'num-green' : 'num-red')));
@@ -2731,6 +2746,136 @@ table.bd tbody tr, table.tape tbody tr, .feed li, .hit { cursor: pointer; }
     return { realized: realized, unrealized: unrealized, open: openCount, closed: closedCount, net: net };
   }
 
+  // ---- Track 3 (graduated momentum) — same record shapes as the launch
+  // track, its own $250 shadow account. Its numbers are NEVER folded into
+  // the combined header above: the accounts stay separate. ----
+  function graduatedPresent(gt) {
+    if (!gt || typeof gt !== 'object') return false;
+    if (typeof gt.station === 'string' && gt.station) return true;
+    if (Array.isArray(gt.positions_detail) || Array.isArray(gt.trades_detail)) return true;
+    return pickNum(gt, ['balance_usdt', 'realized_usdt', 'closed_trades', 'open_positions']) !== null;
+  }
+
+  function renderGraduated(gt, stale) {
+    var statusEl = $('fgt-status');
+    var body = $('fgt-body');
+    if (!body) return;
+    if (!graduatedPresent(gt)) {
+      setStatus(statusEl, 'off', 'NO DATA YET');
+      body.innerHTML = '';
+      var sec0 = document.createElement('section');
+      sec0.className = 'panel';
+      sec0.style.marginTop = '12px';
+      var pb0 = document.createElement('div');
+      pb0.className = 'panel-b';
+      var p0 = document.createElement('p');
+      p0.className = 'xlate-note';
+      p0.style.margin = '0';
+      p0.textContent = 'GRADUATED MOMENTUM: NO DATA YET — the post-graduation watcher is being wired into this lane. This section fills the moment its first graduated coin lands.';
+      pb0.appendChild(p0);
+      sec0.appendChild(pb0);
+      body.appendChild(sec0);
+      return;
+    }
+
+    var gMode, gText;
+    if (gt.station === 'screening') { gMode = 'on'; gText = 'SCREENING GRADUATES'; }
+    else if (gt.station === 'awaiting_first_graduation') { gMode = 'off'; gText = 'AWAITING FIRST GRADUATION'; }
+    else {
+      var glab = stationLabel(gt.station);
+      gMode = glab.mode; gText = glab.text;
+    }
+    setStatus(statusEl, stale ? 'bad' : gMode, gText + (stale ? ' — STALE' : ''));
+
+    var feed = (gt.feed && typeof gt.feed === 'object') ? gt.feed : {};
+    var screening = (gt.screening && typeof gt.screening === 'object') ? gt.screening : {};
+    var seen = pickNum(feed, ['coins_seen_total', 'coins_seen', 'seen_total']);
+    var activated = pickNum(feed, ['activations_total', 'activations']);
+    var screened = pickNum(screening, ['screened_total', 'screened', 'total']);
+    var passedScreen = pickNum(screening, ['passed_total', 'passed']);
+    var positions = Array.isArray(gt.positions_detail) ? gt.positions_detail
+      : (Array.isArray(gt.positions) ? gt.positions : []);
+    var openCount = pickNum(gt, ['open_positions']);
+    if (openCount === null) openCount = positions.length;
+    var closedRows = Array.isArray(gt.trades_detail) ? gt.trades_detail
+      : (Array.isArray(gt.closed_trades) ? gt.closed_trades : []);
+    var closedCount = pickNum(gt, ['closed_trades', 'closed']);
+    if (closedCount === null) closedCount = closedRows.length;
+    var balance = pickNum(gt, ['balance_usdt', 'balance']);
+
+    body.innerHTML = '';
+
+    var grid = document.createElement('div');
+    grid.className = 'grid grid-3';
+    grid.style.cssText = 'gap:8px; margin-top:12px;';
+    function gtile(k, v, n, cls) {
+      var d = document.createElement('div');
+      d.className = 'stat';
+      var kk = document.createElement('div'); kk.className = 'k'; kk.textContent = k;
+      var vv = document.createElement('div'); vv.className = 'v' + (cls ? ' ' + cls : ''); vv.textContent = v;
+      var nn = document.createElement('div'); nn.className = 'n'; nn.textContent = n;
+      d.appendChild(kk); d.appendChild(vv); d.appendChild(nn);
+      grid.appendChild(d);
+    }
+    gtile('GRADUATES SEEN', seen === null ? '—' : fmtInt(seen), 'PUMP.FUN COINS PAST GRADUATION · WATCHED');
+    gtile('ACTIVATED', activated === null ? '—' : fmtInt(activated), 'ENTERED POST-GRADUATION OBSERVATION');
+    gtile('SCREENED', screened === null ? '—' : fmtInt(screened), 'CONTINUATION CHECKS COMPLETED');
+    gtile('PASSED THE SCREEN', passedScreen === null ? '—' : fmtInt(passedScreen), 'CONTINUATION CONFIRMED · SHADOW-BOOKED');
+    gtile('OPEN POSITIONS', fmtInt(openCount), 'SHADOW GRADUATED POSITIONS');
+    gtile('ACCOUNT BALANCE', balance === null ? '—' : fmtMoney(balance), 'SEPARATE $250 SHADOW ACCOUNT · $25 STAKES');
+    body.appendChild(grid);
+
+    var fg = (gt.failed_ghost && typeof gt.failed_ghost === 'object') ? gt.failed_ghost : null;
+    if (fg) {
+      var gTrades = pickNum(fg, ['trades', 'closed', 'ghost_closed']);
+      var gWon = pickNum(fg, ['won']);
+      var gLost = pickNum(fg, ['lost']);
+      var gNet = pickNum(fg, ['net_usdt', 'net']);
+      if (gNet !== null || gTrades !== null) {
+        var gnote = document.createElement('p');
+        gnote.className = 'xlate-note';
+        gnote.textContent = 'Ghost record (graduates the continuation screen rejected, tracked only — no shadow cash booked): ' +
+          (gTrades === null ? '—' : fmtInt(gTrades)) + ' trades · ' +
+          (gWon === null ? '—' : fmtInt(gWon)) + ' won – ' + (gLost === null ? '—' : fmtInt(gLost)) + ' lost · net ' +
+          (gNet === null ? '—' : fmtSigned(gNet)) + '.';
+        body.appendChild(gnote);
+      }
+    }
+
+    function gTablePanel(title, right, headers, tbodyId) {
+      var sec = document.createElement('section');
+      sec.className = 'panel';
+      sec.style.marginTop = '12px';
+      var h = document.createElement('div');
+      h.className = 'panel-h';
+      var s1 = document.createElement('span'); s1.textContent = title;
+      var s2 = document.createElement('span'); s2.className = 'right'; s2.textContent = right;
+      h.appendChild(s1); h.appendChild(s2);
+      sec.appendChild(h);
+      var sb = document.createElement('div');
+      sb.className = 'scroll-box';
+      var tb = document.createElement('table');
+      tb.className = 'bd';
+      var thead = document.createElement('thead');
+      var htr = document.createElement('tr');
+      headers.forEach(function (x) { var th = document.createElement('th'); th.textContent = x; htr.appendChild(th); });
+      thead.appendChild(htr);
+      tb.appendChild(thead);
+      var tbody = document.createElement('tbody');
+      tbody.id = tbodyId;
+      tb.appendChild(tbody);
+      sb.appendChild(tb);
+      sec.appendChild(sb);
+      body.appendChild(sec);
+      return tbody;
+    }
+    var noCatches = openCount === 0 && closedCount === 0;
+    var posBody = gTablePanel('OPEN POSITIONS — GRADUATED TRACK', 'MARKED EVERY POLL', ['TOKEN', 'CREATOR', 'ENTRY', 'MARK', 'ENTRY MC', 'UNREALIZED'], 'fgt-positions');
+    buildPositions(posBody, positions, noCatches ? 'WATCHING — NO CATCHES YET' : 'NO OPEN GRADUATED POSITIONS');
+    var ledBody = gTablePanel('CLOSED TRADES — GRADUATED TRACK', 'NEWEST FIRST · GREEN = PROFIT · RED = LOSS', ['TOKEN', 'CREATOR', 'ENTRY MC', 'IN → OUT', 'P&L'], 'fgt-ledger');
+    buildLedger(ledBody, closedRows, noCatches ? 'WATCHING — NO CATCHES YET' : 'NO CLOSED GRADUATED TRADES YET');
+  }
+
   function render(d) {
     var updatedMs = Date.parse(d.updated_at);
     var hasUpdated = isFinite(updatedMs);
@@ -2759,6 +2904,10 @@ table.bd tbody tr, table.tape tbody tr, .feed li, .hit { cursor: pointer; }
 
     // Track 2 first — the combined header needs its numbers.
     var lt = renderLaunch(d.launch_track, stale);
+    // Track 3 renders from this same load — one wire, no new fetch. Its
+    // account stays separate: nothing from it is folded into the combined
+    // header or big number below.
+    renderGraduated(d.graduated_track, stale);
     var ltNet = lt ? lt.net : null;
     var ltRealized = lt ? lt.realized : null;
     var ltUnrealized = lt ? lt.unrealized : null;
