@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23T02:18:40Z",
+  "updated_at": "2026-10-23T02:31:37Z",
   "scored": 27,
   "won": 18,
   "lost": 9,
@@ -34,7 +34,8 @@
       "prob": 0.6987,
       "final": "ORL 136 \u00b7 MIA 115",
       "result": "LOST",
-      "margin_state": "REF-PRICED \u2014 SEE FIRST 26 BLOCK"
+      "price": 0.415,
+      "price_source": "reference"
     },
     {
       "date": "2026-10-16",
@@ -44,7 +45,8 @@
       "prob": 0.7003,
       "final": "PHI 120 \u00b7 BOS 125",
       "result": "LOST",
-      "margin_state": "REF-PRICED \u2014 SEE FIRST 26 BLOCK"
+      "price": 0.645,
+      "price_source": "reference"
     },
     {
       "date": "2026-10-16",
@@ -54,7 +56,8 @@
       "prob": 0.5551,
       "final": "DET 129 \u00b7 TOR 125",
       "result": "WON",
-      "margin_state": "REF-PRICED \u2014 SEE FIRST 26 BLOCK"
+      "price": 0.795,
+      "price_source": "reference"
     },
     {
       "date": "2026-10-16",
@@ -64,7 +67,8 @@
       "prob": 0.7353,
       "final": "IND 127 \u00b7 MIL 128",
       "result": "LOST",
-      "margin_state": "REF-PRICED \u2014 SEE FIRST 26 BLOCK"
+      "price": 0.745,
+      "price_source": "reference"
     },
     {
       "date": "2026-10-16",
@@ -74,7 +78,8 @@
       "prob": 0.5562,
       "final": "DAL 111 \u00b7 ATL 135",
       "result": "LOST",
-      "margin_state": "REF-PRICED \u2014 SEE FIRST 26 BLOCK"
+      "price": 0.515,
+      "price_source": "reference"
     },
     {
       "date": "2026-10-16",
@@ -84,7 +89,8 @@
       "prob": 0.8184,
       "final": "SA 126 \u00b7 SAC 97",
       "result": "WON",
-      "margin_state": "REF-PRICED \u2014 SEE FIRST 26 BLOCK"
+      "price": 0.895,
+      "price_source": "reference"
     },
     {
       "date": "2026-10-16",
@@ -94,7 +100,8 @@
       "prob": 0.6524,
       "final": "MEM 116 \u00b7 CHA 98",
       "result": "LOST",
-      "margin_state": "REF-PRICED \u2014 SEE FIRST 26 BLOCK"
+      "price": 0.545,
+      "price_source": "reference"
     },
     {
       "date": "2026-10-16",
@@ -104,7 +111,8 @@
       "prob": 0.6401,
       "final": "NO 107 \u00b7 WSH 106",
       "result": "WON",
-      "margin_state": "REF-PRICED \u2014 SEE FIRST 26 BLOCK"
+      "price": 0.455,
+      "price_source": "reference"
     },
     {
       "date": "2026-10-16",
@@ -114,7 +122,8 @@
       "prob": 0.8059,
       "final": "CHI 133 \u00b7 MIN 116",
       "result": "LOST",
-      "margin_state": "REF-PRICED \u2014 SEE FIRST 26 BLOCK"
+      "price": 0.525,
+      "price_source": "reference"
     },
     {
       "date": "2026-10-16",
@@ -124,7 +133,8 @@
       "prob": 0.5225,
       "final": "GS 128 \u00b7 POR 118",
       "result": "WON",
-      "margin_state": "REF-PRICED \u2014 SEE FIRST 26 BLOCK"
+      "price": 0.39,
+      "price_source": "reference"
     },
     {
       "date": "2026-10-16",
@@ -134,7 +144,8 @@
       "prob": 0.7846,
       "final": "PHX 116 \u00b7 UTAH 119",
       "result": "WON",
-      "margin_state": "REF-PRICED \u2014 SEE FIRST 26 BLOCK"
+      "price": 0.385,
+      "price_source": "reference"
     },
     {
       "date": "2026-10-16",
@@ -144,7 +155,8 @@
       "prob": 0.6062,
       "final": "LAL 106 \u00b7 DEN 121",
       "result": "WON",
-      "margin_state": "REF-PRICED \u2014 SEE FIRST 26 BLOCK"
+      "price": 0.335,
+      "price_source": "reference"
     },
     {
       "date": "2026-10-20",
@@ -154,7 +166,8 @@
       "prob": 0.5279,
       "final": "DET 121 \u00b7 BOS 113",
       "result": "WON",
-      "margin_state": "REF-PRICED \u2014 SEE FIRST 26 BLOCK"
+      "price": 0.475,
+      "price_source": "reference"
     },
     {
       "date": "2026-10-20",
@@ -164,7 +177,8 @@
       "prob": 0.579,
       "final": "NY 100 \u00b7 PHI 106",
       "result": "WON",
-      "margin_state": "REF-PRICED \u2014 SEE FIRST 26 BLOCK"
+      "price": 0.385,
+      "price_source": "reference"
     },
     {
       "date": "2026-10-20",
@@ -174,7 +188,8 @@
       "prob": 0.541,
       "final": "SA 104 \u00b7 OKC 116",
       "result": "WON",
-      "margin_state": "REF-PRICED \u2014 SEE FIRST 26 BLOCK"
+      "price": 0.495,
+      "price_source": "reference"
     },
     {
       "date": "2026-10-21",
@@ -184,7 +199,8 @@
       "prob": 0.533,
       "final": "ORL 125 \u00b7 ATL 132",
       "result": "WON",
-      "margin_state": "REF-PRICED \u2014 SEE FIRST 26 BLOCK"
+      "price": 0.465,
+      "price_source": "reference"
     },
     {
       "date": "2026-10-21",
@@ -194,7 +210,8 @@
       "prob": 0.5516,
       "final": "WSH 128 \u00b7 MIL 116",
       "result": "WON",
-      "margin_state": "REF-PRICED \u2014 SEE FIRST 26 BLOCK"
+      "price": 0.625,
+      "price_source": "reference"
     },
     {
       "date": "2026-10-21",
@@ -204,7 +221,8 @@
       "prob": 0.581,
       "final": "MIA 106 \u00b7 MIN 131",
       "result": "LOST",
-      "margin_state": "REF-PRICED \u2014 SEE FIRST 26 BLOCK"
+      "price": 0.515,
+      "price_source": "reference"
     },
     {
       "date": "2026-10-21",
@@ -214,7 +232,8 @@
       "prob": 0.605,
       "final": "BKN 103 \u00b7 CHA 110",
       "result": "WON",
-      "margin_state": "REF-PRICED \u2014 SEE FIRST 26 BLOCK"
+      "price": 0.515,
+      "price_source": "reference"
     },
     {
       "date": "2026-10-21",
@@ -224,7 +243,8 @@
       "prob": 0.8732,
       "final": "TOR 135 \u00b7 CHI 92",
       "result": "WON",
-      "margin_state": "REF-PRICED \u2014 SEE FIRST 26 BLOCK"
+      "price": 0.785,
+      "price_source": "reference"
     },
     {
       "date": "2026-10-21",
@@ -234,7 +254,8 @@
       "prob": 0.5743,
       "final": "MEM 123 \u00b7 UTAH 103",
       "result": "LOST",
-      "margin_state": "REF-PRICED \u2014 SEE FIRST 26 BLOCK"
+      "price": 0.475,
+      "price_source": "reference"
     },
     {
       "date": "2026-10-21",
@@ -244,7 +265,8 @@
       "prob": 0.5377,
       "final": "NO 120 \u00b7 IND 123",
       "result": "LOST",
-      "margin_state": "REF-PRICED \u2014 SEE FIRST 26 BLOCK"
+      "price": 0.415,
+      "price_source": "reference"
     },
     {
       "date": "2026-10-21",
@@ -254,7 +276,8 @@
       "prob": 0.8481,
       "final": "HOU 128 \u00b7 DAL 110",
       "result": "WON",
-      "margin_state": "REF-PRICED \u2014 SEE FIRST 26 BLOCK"
+      "price": 0.775,
+      "price_source": "reference"
     },
     {
       "date": "2026-10-21",
@@ -264,7 +287,8 @@
       "prob": 0.5801,
       "final": "LAL 127 \u00b7 GS 105",
       "result": "WON",
-      "margin_state": "REF-PRICED \u2014 SEE FIRST 26 BLOCK"
+      "price": 0.665,
+      "price_source": "reference"
     },
     {
       "date": "2026-10-21",
@@ -274,7 +298,8 @@
       "prob": 0.8897,
       "final": "POR 124 \u00b7 PHX 83",
       "result": "WON",
-      "margin_state": "REF-PRICED \u2014 SEE FIRST 26 BLOCK"
+      "price": 0.565,
+      "price_source": "reference"
     },
     {
       "date": "2026-10-21",
@@ -284,7 +309,8 @@
       "prob": 0.821,
       "final": "LAC 121 \u00b7 SAC 96",
       "result": "WON",
-      "margin_state": "REF-PRICED \u2014 SEE FIRST 26 BLOCK"
+      "price": 0.645,
+      "price_source": "reference"
     },
     {
       "date": "2026-10-22",
@@ -294,7 +320,8 @@
       "prob": 0.6909,
       "final": "PHI 114 \u00b7 CLE 106",
       "result": "WON",
-      "margin_state": "NO PRICE STAMPED"
+      "price": 0.585,
+      "price_source": "reference"
     }
   ],
   "open_bets": [
@@ -303,7 +330,9 @@
       "pick": "OKC",
       "prob": 0.6655,
       "stake": 50.0,
-      "status": "OPEN"
+      "status": "OPEN",
+      "price": 0.735,
+      "price_source": "reference"
     }
   ],
   "settled_bets": [
@@ -313,7 +342,10 @@
       "pick": "MIA",
       "prob": 0.6987,
       "stake": 50.0,
-      "result": "LOST"
+      "result": "LOST",
+      "price": 0.415,
+      "price_source": "reference",
+      "profit": -50.0
     },
     {
       "date": "2026-10-16",
@@ -321,7 +353,10 @@
       "pick": "PHI",
       "prob": 0.7003,
       "stake": 50.0,
-      "result": "LOST"
+      "result": "LOST",
+      "price": 0.645,
+      "price_source": "reference",
+      "profit": -50.0
     },
     {
       "date": "2026-10-16",
@@ -329,7 +364,10 @@
       "pick": "DET",
       "prob": 0.5551,
       "stake": 50.0,
-      "result": "WON"
+      "result": "WON",
+      "price": 0.795,
+      "price_source": "reference",
+      "profit": 12.89
     },
     {
       "date": "2026-10-16",
@@ -337,7 +375,10 @@
       "pick": "IND",
       "prob": 0.7353,
       "stake": 50.0,
-      "result": "LOST"
+      "result": "LOST",
+      "price": 0.745,
+      "price_source": "reference",
+      "profit": -50.0
     },
     {
       "date": "2026-10-16",
@@ -345,7 +386,10 @@
       "pick": "DAL",
       "prob": 0.5562,
       "stake": 50.0,
-      "result": "LOST"
+      "result": "LOST",
+      "price": 0.515,
+      "price_source": "reference",
+      "profit": -50.0
     },
     {
       "date": "2026-10-16",
@@ -353,7 +397,10 @@
       "pick": "SA",
       "prob": 0.8184,
       "stake": 50.0,
-      "result": "WON"
+      "result": "WON",
+      "price": 0.895,
+      "price_source": "reference",
+      "profit": 5.87
     },
     {
       "date": "2026-10-16",
@@ -361,7 +408,10 @@
       "pick": "CHA",
       "prob": 0.6524,
       "stake": 50.0,
-      "result": "LOST"
+      "result": "LOST",
+      "price": 0.545,
+      "price_source": "reference",
+      "profit": -50.0
     },
     {
       "date": "2026-10-16",
@@ -369,7 +419,10 @@
       "pick": "NO",
       "prob": 0.6401,
       "stake": 50.0,
-      "result": "WON"
+      "result": "WON",
+      "price": 0.455,
+      "price_source": "reference",
+      "profit": 59.89
     },
     {
       "date": "2026-10-16",
@@ -377,7 +430,10 @@
       "pick": "MIN",
       "prob": 0.8059,
       "stake": 50.0,
-      "result": "LOST"
+      "result": "LOST",
+      "price": 0.525,
+      "price_source": "reference",
+      "profit": -50.0
     },
     {
       "date": "2026-10-16",
@@ -385,7 +441,10 @@
       "pick": "GS",
       "prob": 0.5225,
       "stake": 50.0,
-      "result": "WON"
+      "result": "WON",
+      "price": 0.39,
+      "price_source": "reference",
+      "profit": 78.21
     },
     {
       "date": "2026-10-16",
@@ -393,7 +452,10 @@
       "pick": "UTAH",
       "prob": 0.7846,
       "stake": 50.0,
-      "result": "WON"
+      "result": "WON",
+      "price": 0.385,
+      "price_source": "reference",
+      "profit": 79.87
     },
     {
       "date": "2026-10-16",
@@ -401,7 +463,10 @@
       "pick": "DEN",
       "prob": 0.6062,
       "stake": 50.0,
-      "result": "WON"
+      "result": "WON",
+      "price": 0.335,
+      "price_source": "reference",
+      "profit": 99.25
     },
     {
       "date": "2026-10-20",
@@ -409,7 +474,10 @@
       "pick": "DET",
       "prob": 0.5279,
       "stake": 50.0,
-      "result": "WON"
+      "result": "WON",
+      "price": 0.475,
+      "price_source": "reference",
+      "profit": 55.26
     },
     {
       "date": "2026-10-20",
@@ -417,7 +485,10 @@
       "pick": "PHI",
       "prob": 0.579,
       "stake": 50.0,
-      "result": "WON"
+      "result": "WON",
+      "price": 0.385,
+      "price_source": "reference",
+      "profit": 79.87
     },
     {
       "date": "2026-10-20",
@@ -425,7 +496,10 @@
       "pick": "OKC",
       "prob": 0.541,
       "stake": 50.0,
-      "result": "WON"
+      "result": "WON",
+      "price": 0.495,
+      "price_source": "reference",
+      "profit": 51.01
     },
     {
       "date": "2026-10-21",
@@ -433,7 +507,10 @@
       "pick": "ATL",
       "prob": 0.533,
       "stake": 50.0,
-      "result": "WON"
+      "result": "WON",
+      "price": 0.465,
+      "price_source": "reference",
+      "profit": 57.53
     },
     {
       "date": "2026-10-21",
@@ -441,7 +518,10 @@
       "pick": "WSH",
       "prob": 0.5516,
       "stake": 50.0,
-      "result": "WON"
+      "result": "WON",
+      "price": 0.625,
+      "price_source": "reference",
+      "profit": 30.0
     },
     {
       "date": "2026-10-21",
@@ -449,7 +529,10 @@
       "pick": "MIA",
       "prob": 0.581,
       "stake": 50.0,
-      "result": "LOST"
+      "result": "LOST",
+      "price": 0.515,
+      "price_source": "reference",
+      "profit": -50.0
     },
     {
       "date": "2026-10-21",
@@ -457,7 +540,10 @@
       "pick": "CHA",
       "prob": 0.605,
       "stake": 50.0,
-      "result": "WON"
+      "result": "WON",
+      "price": 0.515,
+      "price_source": "reference",
+      "profit": 47.09
     },
     {
       "date": "2026-10-21",
@@ -465,7 +551,10 @@
       "pick": "TOR",
       "prob": 0.8732,
       "stake": 50.0,
-      "result": "WON"
+      "result": "WON",
+      "price": 0.785,
+      "price_source": "reference",
+      "profit": 13.69
     },
     {
       "date": "2026-10-21",
@@ -473,7 +562,10 @@
       "pick": "UTAH",
       "prob": 0.5743,
       "stake": 50.0,
-      "result": "LOST"
+      "result": "LOST",
+      "price": 0.475,
+      "price_source": "reference",
+      "profit": -50.0
     },
     {
       "date": "2026-10-21",
@@ -481,7 +573,10 @@
       "pick": "NO",
       "prob": 0.5377,
       "stake": 50.0,
-      "result": "LOST"
+      "result": "LOST",
+      "price": 0.415,
+      "price_source": "reference",
+      "profit": -50.0
     },
     {
       "date": "2026-10-21",
@@ -489,7 +584,10 @@
       "pick": "HOU",
       "prob": 0.8481,
       "stake": 50.0,
-      "result": "WON"
+      "result": "WON",
+      "price": 0.775,
+      "price_source": "reference",
+      "profit": 14.52
     },
     {
       "date": "2026-10-21",
@@ -497,7 +595,10 @@
       "pick": "LAL",
       "prob": 0.5801,
       "stake": 50.0,
-      "result": "WON"
+      "result": "WON",
+      "price": 0.665,
+      "price_source": "reference",
+      "profit": 25.19
     },
     {
       "date": "2026-10-21",
@@ -505,7 +606,10 @@
       "pick": "POR",
       "prob": 0.8897,
       "stake": 50.0,
-      "result": "WON"
+      "result": "WON",
+      "price": 0.565,
+      "price_source": "reference",
+      "profit": 38.5
     },
     {
       "date": "2026-10-21",
@@ -513,7 +617,10 @@
       "pick": "LAC",
       "prob": 0.821,
       "stake": 50.0,
-      "result": "WON"
+      "result": "WON",
+      "price": 0.645,
+      "price_source": "reference",
+      "profit": 27.52
     },
     {
       "date": "2026-10-22",
@@ -521,14 +628,18 @@
       "pick": "PHI",
       "prob": 0.6909,
       "stake": 50.0,
-      "result": "WON"
+      "result": "WON",
+      "price": 0.585,
+      "price_source": "reference",
+      "profit": 35.47
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 50.0,
-    "total_won": 0.0,
-    "total_lost": 0.0,
-    "settled_count": 0
+    "balance": 411.62,
+    "total_won": 811.62,
+    "total_lost": 450.0,
+    "settled_count": 27,
+    "ref_priced_count": 27
   }
 }
