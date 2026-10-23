@@ -1,7 +1,7 @@
 {
  "lane": "fomo_shadow_copy",
  "paper_only": true,
- "updated_at": "2026-10-23T07:46:39+00:00",
+ "updated_at": "2026-10-23T08:02:03+00:00",
  "station": "awaiting_watchlist",
  "note": "Watchlist is empty \u2014 waiting on Will's ~5 leader wallet addresses.",
  "leaders_followed": 0,
@@ -113,10 +113,10 @@
    }
   },
   "screening": {
-   "candidates_active": 6,
-   "screened_total": 53,
+   "candidates_active": 10,
+   "screened_total": 55,
    "passed_total": 0,
-   "failed_total": 53
+   "failed_total": 55
   },
   "passed": {
    "trades": 0,
@@ -149,10 +149,10 @@
    }
   },
   "feed": {
-   "last_poll_at": "2026-10-23T07:44:34+00:00",
+   "last_poll_at": "2026-10-23T07:59:31+00:00",
    "last_error": null,
-   "coins_seen_total": 1153,
-   "activations_total": 59
+   "coins_seen_total": 1238,
+   "activations_total": 65
   }
  },
  "combined": {
