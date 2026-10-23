@@ -1,0 +1,71 @@
+{
+ "lane": "fomo_shadow_copy",
+ "paper_only": true,
+ "updated_at": "2026-10-23T04:11:47+00:00",
+ "station": "awaiting_watchlist",
+ "note": "Watchlist is empty \u2014 waiting on Will's ~5 leader wallet addresses.",
+ "leaders_followed": 0,
+ "start_balance_usdt": 250.0,
+ "cash_usdt": 250.0,
+ "balance_usdt": 250.0,
+ "realized_usdt": 0,
+ "unrealized_usdt": 0.0,
+ "open_positions": 0,
+ "positions_detail": [],
+ "closed_trades": 0,
+ "won": 0,
+ "lost": 0,
+ "total_won_usdt": 0,
+ "total_lost_usdt": 0,
+ "trades_detail": [],
+ "copied": {
+  "trades": 0,
+  "won": 0,
+  "lost": 0,
+  "net_usdt": 0
+ },
+ "skipped": {
+  "signals": 0,
+  "ghost_closed": 0,
+  "won": 0,
+  "lost": 0,
+  "net_usdt": 0,
+  "note": "Ghost P&L = what the shadow WOULD have made copying the buys the safety filter rejected, same friction model."
+ },
+ "safety_filter": {
+  "enabled": true,
+  "skips_total": 0
+ },
+ "mc_bands": {
+  "lt_100k": {
+   "trades": 0,
+   "won": 0,
+   "lost": 0,
+   "net_usdt": 0
+  },
+  "100k_1m": {
+   "trades": 0,
+   "won": 0,
+   "lost": 0,
+   "net_usdt": 0
+  },
+  "gt_1m": {
+   "trades": 0,
+   "won": 0,
+   "lost": 0,
+   "net_usdt": 0
+  },
+  "unknown": {
+   "trades": 0,
+   "won": 0,
+   "lost": 0,
+   "net_usdt": 0
+  }
+ },
+ "verdict": {
+  "first_read_at_closed_trades": 50,
+  "closed_so_far": 0,
+  "equity_return_pct": 0.0,
+  "kill_if_return_pct_below": -60
+ }
+}
