@@ -8,7 +8,7 @@
     <title>Council Scoreboard</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Press+Start+2P&display=swap" rel="stylesheet" />
     <style>
       :root {
         --bg: #000000;
@@ -272,23 +272,95 @@
         display: inline-flex; align-items: center; gap: 9px;
         transition: color 0.18s ease, background-color 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease, transform 0.12s ease;
       }
-      /* ---------- bot icons (pixel renders) ---------- */
-      .bot-icon-tab {
-        width: 26px; height: 26px; flex: 0 0 auto; display: block;
-        object-fit: cover; background: #000; border: 1px solid var(--line);
+      /* ---------- bot icons — approved pixel renders, layered motion ---------- */
+      .bic {
+        position: relative; display: inline-block; flex: 0 0 auto;
+        background: #000; border: 1px solid var(--line); overflow: hidden;
+      }
+      .bic img {
+        width: 100%; height: 100%; display: block; object-fit: cover;
         image-rendering: pixelated;
       }
-      .tab-btn.active .bot-icon-tab { border-color: rgba(0, 0, 0, 0.45); }
-      .bot-icon-lane {
-        width: 48px; height: 48px; flex: 0 0 auto; align-self: center; display: block;
-        object-fit: cover; background: #000; border: 1px solid var(--line);
-        image-rendering: pixelated;
-      }
-      .bot-icon-lane.sm { width: 38px; height: 38px; }
+      .bic-tab { width: 28px; height: 28px; }
+      .bic-lane { width: 48px; height: 48px; align-self: center; }
+      .bic-lane.sm { width: 40px; height: 40px; }
+      .tab-btn.active .bic { border-color: rgba(0, 0, 0, 0.45); }
       @media (max-width: 560px) {
-        .bot-icon-tab { width: 22px; height: 22px; }
-        .bot-icon-lane { width: 40px; height: 40px; }
+        .bic-tab { width: 24px; height: 24px; }
+        .bic-lane { width: 42px; height: 42px; }
+        .bic-lane.sm { width: 36px; height: 36px; }
         .tab-btn { padding: 6px 12px 6px 7px; gap: 7px; }
+      }
+
+      /* PLUGG — a money-green glow orbits the plug */
+      .a-plugg .orbit { position: absolute; inset: 0; pointer-events: none; animation: bic-spin 4s linear infinite; }
+      .a-plugg .orbit b {
+        position: absolute; top: 1px; left: 50%; width: 4px; height: 4px; margin-left: -2px;
+        background: var(--green); box-shadow: 0 0 7px 2px rgba(0, 221, 148, 0.75);
+      }
+      .bic-lane.a-plugg .orbit b { width: 6px; height: 6px; margin-left: -3px; }
+      .a-plugg img { animation: plugg-glow 4s ease-in-out infinite; }
+      @keyframes bic-spin { to { transform: rotate(360deg); } }
+      @keyframes plugg-glow {
+        0%, 100% { filter: brightness(1); }
+        50% { filter: brightness(1.16) drop-shadow(0 0 5px rgba(0, 221, 148, 0.5)); }
+      }
+
+      /* COBRA — slow sway, blinking eyes, tongue flicks */
+      .a-cobra img { transform-origin: 50% 92%; animation: cobra-sway 5.6s ease-in-out infinite; }
+      @keyframes cobra-sway { 0%, 100% { transform: rotate(-1.8deg); } 50% { transform: rotate(1.8deg); } }
+      .a-cobra .eye {
+        position: absolute; top: 25.5%; width: 8.5%; height: 5.5%;
+        background: #03130a; opacity: 0; pointer-events: none;
+        animation: cobra-blink 4.8s linear infinite;
+      }
+      .a-cobra .eye.el { left: 40.8%; }
+      .a-cobra .eye.er { left: 54.8%; }
+      @keyframes cobra-blink { 0%, 45%, 49.5%, 100% { opacity: 0; } 47% { opacity: 1; } }
+      .a-cobra .tongue {
+        position: absolute; left: 49.2%; top: 40.5%; width: 3.4%; height: 9%;
+        background: var(--red); transform-origin: 50% 0; transform: scaleY(0);
+        pointer-events: none; animation: cobra-tongue 4.8s linear infinite;
+      }
+      @keyframes cobra-tongue {
+        0%, 61%, 74%, 100% { transform: scaleY(0); }
+        64%, 70% { transform: scaleY(1); }
+        67% { transform: scaleY(0.55); }
+      }
+
+      /* WHIPLASH — rain streaks fall, lightning flashes */
+      .a-whiplash::after {
+        content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0.55;
+        background-image: repeating-linear-gradient(100deg, transparent 0 7px, rgba(170, 220, 255, 0.55) 7px 8px, transparent 8px 15px);
+        background-size: 30px 30px; background-repeat: repeat;
+        animation: wh-rain 0.6s linear infinite;
+      }
+      @keyframes wh-rain { from { background-position: 0 -30px; } to { background-position: 0 0; } }
+      .a-whiplash img { animation: wh-flash 6.5s linear infinite; }
+      @keyframes wh-flash {
+        0%, 100% { filter: brightness(1); }
+        2.5% { filter: brightness(1.65); }
+        4% { filter: brightness(1); }
+        5.5% { filter: brightness(1.4); }
+        7%, 55% { filter: brightness(1); }
+        57% { filter: brightness(1.5); }
+        58.5% { filter: brightness(1); }
+      }
+
+      /* HUMMINGBOT — hover bob with a rapid flutter */
+      .a-hb { animation: hb-bob 2.8s ease-in-out infinite; }
+      .a-hb img { animation: hb-flutter 0.3s steps(2, end) infinite; }
+      @keyframes hb-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-2px); } }
+      @keyframes hb-flutter {
+        0% { transform: translateX(0) rotate(0deg); }
+        50% { transform: translateX(0.7px) rotate(0.7deg); }
+        100% { transform: translateX(-0.5px) rotate(-0.5deg); }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .a-plugg .orbit, .a-plugg img, .a-cobra img, .a-cobra .eye, .a-cobra .tongue,
+        .a-whiplash img, .a-hb, .a-hb img { animation: none !important; }
+        .a-whiplash::after { animation: none !important; }
       }
       .tab-btn:hover { color: var(--text); border-color: #3d3d3d; }
       .tab-btn:active { transform: translateY(1px); }
@@ -395,6 +467,82 @@
       .money.wh-awaiting { border-style: dashed; }
       .wh-gate-bar { height: 14px; border: 1px dashed var(--sky); margin: 14px 0 10px; position: relative; background: #000; opacity: 0.7; }
       .wh-gate-bar .fill { position: absolute; inset: 0; width: 0; background: var(--sky); }
+
+      /* ================= PIXEL SKIN =================
+         Same board, same layout, same palette and color semantics —
+         rendered pixel: one notch, one grid, pixel display type where
+         it stays legible, dense tables left in mono on purpose. */
+      :root {
+        --pix: "Press Start 2P", "JetBrains Mono", ui-monospace, monospace;
+        --notch: 6px;
+      }
+      body {
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.022) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.022) 1px, transparent 1px);
+        background-size: 24px 24px;
+      }
+      /* pixel display type — nameplates, headers, headline numbers */
+      .lane-head h2 { font-family: var(--pix); font-size: 16px; letter-spacing: 0; line-height: 1.5; }
+      .tab-btn { font-family: var(--pix); font-size: 9px; letter-spacing: 0.02em; }
+      .panel-h { font-family: var(--pix); font-size: 9px; letter-spacing: 0.05em; line-height: 1.8; }
+      .panel-h .right { font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; }
+      .gate-big { font-family: var(--pix); font-size: clamp(30px, 5.6vw, 46px); letter-spacing: 0; }
+      .money .m-big { font-family: var(--pix); font-size: clamp(19px, 3.4vw, 27px); letter-spacing: 0; line-height: 1.55; }
+      #hb4-net { font-family: var(--mono); } /* long status sentence — mono stays legible */
+      .pot .amt { font-family: var(--pix); font-size: 21px; }
+      .stat .v { font-family: var(--pix); font-size: 15px; line-height: 1.6; }
+      .stat .v.small, .stat .v.pending { font-family: var(--mono); line-height: 1.45; }
+      .hit-conf { font-family: var(--pix); font-size: 13px; }
+      .sport-name { font-family: var(--pix); font-size: 12px; line-height: 1.7; }
+      .lane-tag, .gate-verdict, .ob-open { font-family: var(--pix); font-size: 8px; letter-spacing: 0.03em; line-height: 1.9; }
+      .stale-badge { font-family: var(--pix); font-size: 8px; letter-spacing: 0.03em; line-height: 1.9; }
+      /* blocky panel headers — one green pixel square, gold on the gate */
+      .panel-h > span:first-child::before {
+        content: ""; display: inline-block; width: 7px; height: 7px;
+        background: var(--green); margin-right: 9px; vertical-align: 1px;
+      }
+      .gate-panel .panel-h > span:first-child::before { background: var(--gold); }
+      /* chunky stepped corners — the same notch on every surface */
+      .panel, .money, .pots, .stat, .tab-btn, .gate-verdict, .team-row,
+      .offline-banner, .wh-exam-banner, .wh-dash-box, .stale-badge, .lane-tag,
+      .sound-toggle, .bic {
+        clip-path: polygon(var(--notch) 0, 100% 0, 100% calc(100% - var(--notch)), calc(100% - var(--notch)) 100%, 0 100%, 0 var(--notch));
+      }
+      .panel, .money, .stat, .tab-btn, .team-row, .sound-toggle { border-width: 2px; }
+      /* hover glow moves inset so the notch never clips it */
+      @media (hover: hover) {
+        .panel:hover, .money:hover { box-shadow: inset 0 0 0 1px rgba(0, 221, 148, 0.22), inset 0 0 22px rgba(0, 221, 148, 0.05); }
+      }
+      /* segmented gate bars — blocky fill, same gold/sky semantics */
+      .gate-bar { border-width: 2px; }
+      .gate-bar .fill { background: repeating-linear-gradient(90deg, var(--gold) 0 12px, rgba(0, 0, 0, 0.55) 12px 14px); }
+      .wh-gate-bar .fill { background: repeating-linear-gradient(90deg, var(--sky) 0 12px, rgba(0, 0, 0, 0.55) 12px 14px); }
+      /* square scrollbars in the tape boxes */
+      .scroll-box { scrollbar-width: thin; scrollbar-color: #2c2c2c #000; }
+      .scroll-box::-webkit-scrollbar { width: 10px; height: 10px; }
+      .scroll-box::-webkit-scrollbar-track { background: #000; }
+      .scroll-box::-webkit-scrollbar-thumb { background: #2c2c2c; border: 2px solid #000; }
+      .scroll-box::-webkit-scrollbar-thumb:hover { background: var(--green); }
+      ::selection { background: var(--green); color: #000; }
+      .tab-btn:focus-visible, .team-row:focus-visible, .sound-toggle:focus-visible {
+        outline: 2px solid var(--green); outline-offset: 2px;
+      }
+      /* sound toggle — sits at the end of the tab row */
+      .sound-toggle {
+        margin-left: auto; font-family: var(--pix); font-size: 8px; letter-spacing: 0.03em;
+        background: var(--panel); color: var(--dim); border: 2px solid var(--line);
+        padding: 10px 12px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px;
+        transition: color 0.18s ease, border-color 0.18s ease;
+      }
+      .sound-toggle:hover { color: var(--text); border-color: #3d3d3d; }
+      .sound-toggle:active { transform: translateY(1px); }
+      .sound-toggle .sq { width: 7px; height: 7px; background: var(--green); flex: 0 0 auto; }
+      .sound-toggle[aria-pressed="false"] { color: var(--faint); }
+      .sound-toggle[aria-pressed="false"] .sq { background: var(--faint); }
+      @media (prefers-reduced-motion: reduce) {
+        .sound-toggle:active { transform: none; }
+      }
     </style>
   </head>
   <body>
@@ -417,12 +565,13 @@
 
       <!-- ======= TABS ======= -->
       <div class="tabs" role="tablist" aria-label="Dashboard views">
-        <button class="tab-btn active" id="btn-terminal" role="tab" aria-selected="true" aria-controls="tab-terminal" data-tab="terminal"><img class="bot-icon-tab" src="assets/icon-plugg.webp" alt="" width="26" height="26" /><span>PLUGG</span></button>
-        <button class="tab-btn" id="btn-profit" role="tab" aria-selected="false" aria-controls="tab-profit" data-tab="profit"><img class="bot-icon-tab" src="assets/icon-plugg.webp" alt="" width="26" height="26" /><span>PAPER PROFIT</span></button>
-        <button class="tab-btn" id="btn-hummingbot" role="tab" aria-selected="false" aria-controls="tab-hummingbot" data-tab="hummingbot"><img class="bot-icon-tab" src="assets/icon-hummingbot.webp" alt="" width="26" height="26" /><span>HUMMINGBOT</span></button>
-        <button class="tab-btn" id="btn-hbprofit" role="tab" aria-selected="false" aria-controls="tab-hbprofit" data-tab="hbprofit"><img class="bot-icon-tab" src="assets/icon-hummingbot.webp" alt="" width="26" height="26" /><span>HB PROFIT</span></button>
-        <button class="tab-btn" id="btn-memecoin" role="tab" aria-selected="false" aria-controls="tab-memecoin" data-tab="memecoin"><img class="bot-icon-tab" src="assets/icon-cobra.webp" alt="" width="26" height="26" /><span>COBRA</span></button>
-        <button class="tab-btn" id="btn-whiplash" role="tab" aria-selected="false" aria-controls="tab-whiplash" data-tab="whiplash"><img class="bot-icon-tab" src="assets/icon-whiplash.webp" alt="" width="26" height="26" /><span>WHIPLASH</span></button>
+        <button class="tab-btn active" id="btn-terminal" role="tab" aria-selected="true" aria-controls="tab-terminal" data-tab="terminal"><span class="bic bic-tab a-plugg"><img src="assets/icon-plugg.webp" alt="" /><i class="orbit" aria-hidden="true"><b></b></i></span><span>PLUGG</span></button>
+        <button class="tab-btn" id="btn-profit" role="tab" aria-selected="false" aria-controls="tab-profit" data-tab="profit"><span class="bic bic-tab a-plugg"><img src="assets/icon-plugg.webp" alt="" /><i class="orbit" aria-hidden="true"><b></b></i></span><span>PAPER PROFIT</span></button>
+        <button class="tab-btn" id="btn-hummingbot" role="tab" aria-selected="false" aria-controls="tab-hummingbot" data-tab="hummingbot"><span class="bic bic-tab a-hb"><img src="assets/icon-hummingbot.webp" alt="" /></span><span>HUMMINGBOT</span></button>
+        <button class="tab-btn" id="btn-hbprofit" role="tab" aria-selected="false" aria-controls="tab-hbprofit" data-tab="hbprofit"><span class="bic bic-tab a-hb"><img src="assets/icon-hummingbot.webp" alt="" /></span><span>HB PROFIT</span></button>
+        <button class="tab-btn" id="btn-memecoin" role="tab" aria-selected="false" aria-controls="tab-memecoin" data-tab="memecoin"><span class="bic bic-tab a-cobra"><img src="assets/icon-cobra.webp" alt="" /><i class="eye el" aria-hidden="true"></i><i class="eye er" aria-hidden="true"></i><i class="tongue" aria-hidden="true"></i></span><span>COBRA</span></button>
+        <button class="tab-btn" id="btn-whiplash" role="tab" aria-selected="false" aria-controls="tab-whiplash" data-tab="whiplash"><span class="bic bic-tab a-whiplash"><img src="assets/icon-whiplash.webp" alt="" /></span><span>WHIPLASH</span></button>
+        <button class="sound-toggle" id="sound-toggle" type="button" aria-pressed="true" aria-label="Toggle interface sounds"><span class="sq" aria-hidden="true"></span><span id="sound-toggle-label">SOUND ON</span></button>
       </div>
 
       <div id="tab-terminal" class="tab-panel">
@@ -453,7 +602,7 @@
       <!-- ======= LANE 1 : PLUGG — KALSHI ======= -->
       <div class="lane-head">
         <span class="lane-tag">LANE 01</span>
-        <img class="bot-icon-lane" src="assets/icon-plugg.webp" alt="PLUGG — pixel power plug wrapped in money-green" width="48" height="48" />
+        <span class="bic bic-lane a-plugg"><img src="assets/icon-plugg.webp" alt="PLUGG — pixel power plug wrapped in money-green" /><i class="orbit" aria-hidden="true"><b></b></i></span>
         <h2>PLUGG</h2>
         <span class="sub" id="k-lane-sub">SCOREBOARD B · PROSPECTIVE PAPER LEDGER · AWAITING LANE SYNC</span>
         <span class="status" id="k-lane-status"><span class="dot off"></span>AWAITING LANE SYNC</span>
@@ -671,7 +820,7 @@
       <!-- ======= LANE 2 : HUMMINGBOT CRYPTO ======= -->
       <div class="lane-head">
         <span class="lane-tag">LANE 02</span>
-        <img class="bot-icon-lane" src="assets/icon-hummingbot.webp" alt="Hummingbot — pixel hummingbird with circuit-board wings" width="48" height="48" />
+        <span class="bic bic-lane a-hb"><img src="assets/icon-hummingbot.webp" alt="Hummingbot — pixel hummingbird with circuit-board wings" /></span>
         <h2>HUMMINGBOT · CRYPTO</h2>
         <span class="sub">CRYPTO PAPER TRADING · SEPARATE GATE · SEPARATE SCOREBOARD</span>
         <span class="sub" id="hb-updated"></span>
@@ -717,7 +866,7 @@
       <div id="tab-profit" class="tab-panel" hidden>
         <div class="lane-head">
           <span class="lane-tag">LEDGER</span>
-          <img class="bot-icon-lane sm" src="assets/icon-plugg.webp" alt="PLUGG — pixel power plug wrapped in money-green" width="38" height="38" />
+          <span class="bic bic-lane sm a-plugg"><img src="assets/icon-plugg.webp" alt="PLUGG — pixel power plug wrapped in money-green" /><i class="orbit" aria-hidden="true"><b></b></i></span>
           <h2>PAPER PROFIT</h2>
           <span class="sub">DOLLAR VIEW · $50 FLAT PAPER STAKE PER PRICE-STAMPED BET · LANES NEVER BLENDED</span>
         </div>
@@ -821,7 +970,7 @@
       <div id="tab-hummingbot" class="tab-panel" hidden>
         <div class="lane-head">
           <span class="lane-tag">LANE 02</span>
-          <img class="bot-icon-lane" src="assets/icon-hummingbot.webp" alt="Hummingbot — pixel hummingbird with circuit-board wings" width="48" height="48" />
+          <span class="bic bic-lane a-hb"><img src="assets/icon-hummingbot.webp" alt="Hummingbot — pixel hummingbird with circuit-board wings" /></span>
           <h2>HUMMINGBOT · STATION</h2>
           <span class="sub">CRYPTO PAPER TRADING · STATION STATISTICS</span>
           <span class="sub" id="hb3-updated"></span>
@@ -860,7 +1009,7 @@
       <div id="tab-hbprofit" class="tab-panel" hidden>
         <div class="lane-head">
           <span class="lane-tag">LEDGER</span>
-          <img class="bot-icon-lane sm" src="assets/icon-hummingbot.webp" alt="Hummingbot — pixel hummingbird with circuit-board wings" width="38" height="38" />
+          <span class="bic bic-lane sm a-hb"><img src="assets/icon-hummingbot.webp" alt="Hummingbot — pixel hummingbird with circuit-board wings" /></span>
           <h2>HB PROFIT</h2>
           <span class="sub">HUMMINGBOT PAPER P&amp;L · FROM THE BOT'S OWN HISTORY EXPORT · NEVER BLENDED WITH LANE 01</span>
           <span class="status" id="hb4-status"><span class="dot off"></span>AWAITING FIRST SYNC</span>
@@ -902,7 +1051,7 @@
       <div id="tab-memecoin" class="tab-panel" hidden>
         <div class="lane-head">
           <span class="lane-tag">LANE 03</span>
-          <img class="bot-icon-lane" src="assets/icon-cobra.webp" alt="COBRA — pixel coiled cobra, fangs out" width="48" height="48" />
+          <span class="bic bic-lane a-cobra"><img src="assets/icon-cobra.webp" alt="COBRA — pixel coiled cobra, fangs out" /><i class="eye el" aria-hidden="true"></i><i class="eye er" aria-hidden="true"></i><i class="tongue" aria-hidden="true"></i></span>
           <h2>COBRA</h2>
           <span class="sub">SHADOW-COPY + LAUNCH WATCHING · PAPER ONLY — SHADOW RECORD, NO REAL ORDERS</span>
           <span class="sub" id="fm-updated"></span>
@@ -1058,7 +1207,7 @@
       <div id="tab-whiplash" class="tab-panel" hidden>
         <div class="lane-head">
           <span class="lane-tag wh-tag">LANE 04</span>
-          <img class="bot-icon-lane" src="assets/icon-whiplash.webp" alt="WHIPLASH — pixel storm cloud with a lightning bolt through it" width="48" height="48" />
+          <span class="bic bic-lane a-whiplash"><img src="assets/icon-whiplash.webp" alt="WHIPLASH — pixel storm cloud with a lightning bolt through it" /></span>
           <h2>WHIPLASH</h2>
           <span class="sub">WEATHER MODEL · KALSHI DAILY HIGH-TEMPERATURE MARKETS</span>
           <span class="sub" id="wh-updated"></span>
@@ -3012,5 +3161,102 @@ table.bd tbody tr, table.tape tbody tr, .feed li, .hit { cursor: pointer; }
   setInterval(load, 60000);
 })();
 </script>
+
+    <script>
+      // UI SOUNDS — PS5-menu tactility, synthesized with WebAudio (no audio
+      // files, no chimes, no bleeps). A short dry noise burst reads as a
+      // sandpaper tick on hover/focus; a lower, softer burst plus a faint
+      // low thump reads as the deeper click on selection. Volume stays very
+      // low. The AudioContext is created only after the first user gesture
+      // (autoplay policy). Hover ticks are debounced and fire once per
+      // target. The toggle state is kept in memory for this session.
+      (function () {
+        var enabled = true;
+        var ctx = null, noiseBuf = null, lastTick = 0, lastTarget = null;
+
+        function ensureCtx() {
+          if (ctx) { if (ctx.state === 'suspended') ctx.resume(); return true; }
+          var AC = window.AudioContext || window.webkitAudioContext;
+          if (!AC) return false;
+          try { ctx = new AC(); } catch (e) { return false; }
+          var len = Math.floor(ctx.sampleRate * 0.5);
+          noiseBuf = ctx.createBuffer(1, len, ctx.sampleRate);
+          var d = noiseBuf.getChannelData(0);
+          for (var i = 0; i < len; i++) d[i] = Math.random() * 2 - 1;
+          return true;
+        }
+        function burst(dur, freq, q, peak, type) {
+          var t = ctx.currentTime;
+          var src = ctx.createBufferSource();
+          src.buffer = noiseBuf;
+          src.playbackRate.value = 0.92 + Math.random() * 0.16;
+          var f = ctx.createBiquadFilter();
+          f.type = type; f.frequency.value = freq; f.Q.value = q;
+          var g = ctx.createGain();
+          g.gain.setValueAtTime(0.0001, t);
+          g.gain.exponentialRampToValueAtTime(peak, t + 0.005);
+          g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+          src.connect(f); f.connect(g); g.connect(ctx.destination);
+          src.start(t); src.stop(t + dur + 0.05);
+        }
+        function tick() {
+          if (!enabled) return;
+          var now = performance.now();
+          if (now - lastTick < 80) return;
+          lastTick = now;
+          if (!ensureCtx()) return;
+          burst(0.045, 3400, 0.9, 0.045, 'bandpass'); // dry sandpaper tick
+        }
+        function click() {
+          if (!enabled || !ensureCtx()) return;
+          burst(0.07, 850, 0.7, 0.06, 'lowpass'); // deeper body
+          var t = ctx.currentTime;
+          var o = ctx.createOscillator();
+          o.type = 'sine';
+          o.frequency.setValueAtTime(165, t);
+          o.frequency.exponentialRampToValueAtTime(88, t + 0.08);
+          var g = ctx.createGain();
+          g.gain.setValueAtTime(0.045, t);
+          g.gain.exponentialRampToValueAtTime(0.0001, t + 0.09);
+          o.connect(g); g.connect(ctx.destination);
+          o.start(t); o.stop(t + 0.1);
+        }
+
+        var SEL = '.tab-btn, .team-row, .sound-toggle';
+        document.addEventListener('pointerover', function (e) {
+          if (e.pointerType && e.pointerType !== 'mouse' && e.pointerType !== 'pen') return;
+          var el = e.target && e.target.closest ? e.target.closest(SEL) : null;
+          if (!el || el === lastTarget) return;
+          lastTarget = el;
+          tick();
+        });
+        document.addEventListener('pointerout', function (e) {
+          if (lastTarget && e.relatedTarget && !lastTarget.contains(e.relatedTarget)) lastTarget = null;
+        });
+        document.addEventListener('focusin', function (e) {
+          var el = e.target && e.target.closest ? e.target.closest(SEL) : null;
+          if (el) tick();
+        });
+        document.addEventListener('click', function (e) {
+          var el = e.target && e.target.closest ? e.target.closest('.tab-btn') : null;
+          if (el) { click(); return; }
+          var row = e.target && e.target.closest ? e.target.closest('.team-row') : null;
+          if (row) tick();
+        });
+        // Warm the context on the first gesture so the first real sound is instant.
+        document.addEventListener('pointerdown', function () { if (enabled) ensureCtx(); });
+
+        var btn = document.getElementById('sound-toggle');
+        var label = document.getElementById('sound-toggle-label');
+        if (btn) {
+          btn.addEventListener('click', function () {
+            enabled = !enabled;
+            btn.setAttribute('aria-pressed', enabled ? 'true' : 'false');
+            if (label) label.textContent = enabled ? 'SOUND ON' : 'SOUND OFF';
+            if (enabled) click(); // confirmation tick — also the gesture that unlocks audio
+          });
+        }
+      })();
+    </script>
 </body>
 </html>
