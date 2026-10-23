@@ -400,6 +400,7 @@
         <button class="tab-btn" id="btn-profit" role="tab" aria-selected="false" aria-controls="tab-profit" data-tab="profit">PAPER PROFIT</button>
         <button class="tab-btn" id="btn-hummingbot" role="tab" aria-selected="false" aria-controls="tab-hummingbot" data-tab="hummingbot">HUMMINGBOT</button>
         <button class="tab-btn" id="btn-hbprofit" role="tab" aria-selected="false" aria-controls="tab-hbprofit" data-tab="hbprofit">HB PROFIT</button>
+        <button class="tab-btn" id="btn-memecoin" role="tab" aria-selected="false" aria-controls="tab-memecoin" data-tab="memecoin">MEMECOIN</button>
       </div>
 
       <div id="tab-terminal" class="tab-panel">
@@ -982,6 +983,161 @@
 
         <p class="foot-note">Hummingbot keeps no bankroll and no $50-stake scale — its numbers are net paper P&amp;L, volume, fees, and trade count, straight from the bot's own record. Crypto results prove nothing about sports markets, and sports results prove nothing about crypto.</p>
       </div><!-- /tab-hbprofit -->
+
+      <!-- ======= TAB 5 : MEMECOIN — FOMO SHADOW-COPY + PUMP.FUN LAUNCH TRACK ======= -->
+      <div id="tab-memecoin" class="tab-panel" hidden>
+        <div class="lane-head">
+          <span class="lane-tag">LANE 03</span>
+          <h2>MEMECOIN</h2>
+          <span class="sub">SHADOW-COPY + LAUNCH WATCHING · PAPER ONLY — SHADOW RECORD, NO REAL ORDERS</span>
+          <span class="sub" id="fm-updated"></span>
+          <span class="status" id="fm-lane-status"><span class="dot off"></span>AWAITING LEADERS</span>
+          <span class="stale-badge" id="fm-stale" hidden></span>
+        </div>
+        <p class="hb-note" id="fm-status-note" style="display:none;"></p>
+
+        <section class="money off" id="fm-money" aria-label="Memecoin shadow balance — both tracks combined">
+          <div class="m-label">
+            <span>SHADOW BALANCE — BOTH TRACKS COMBINED</span>
+            <span class="m-status" id="fm-mstatus"><span class="dot off"></span>AWAITING LEADERS</span>
+          </div>
+          <span class="stale-badge" id="fm-stale-money" hidden></span>
+          <div class="m-big dim" id="fm-big">$250.00</div>
+          <div class="m-usd" id="fm-usd"><b>START $250.00 · NOTHING BOOKED YET</b></div>
+          <div class="m-sub" id="fm-sub">Two paper tracks share this readout: copying the FOMO leaders, and watching pump.fun launches. Every fill is a shadow fill at the price a real follower could have gotten after detection lag and slippage — never the leader's price, never a real order.</div>
+          <div class="grid grid-3" style="gap:8px; margin-top:12px;">
+            <div class="stat off fm-stat"><div class="k">REALIZED P&amp;L</div><div class="v" id="fm-t-realized">—</div><div class="n">CLOSED ROUND TRIPS · BOTH TRACKS</div></div>
+            <div class="stat off fm-stat"><div class="k">UNREALIZED P&amp;L</div><div class="v" id="fm-t-unrealized">—</div><div class="n">OPEN POSITIONS · AFTER EXIT HAIRCUT</div></div>
+            <div class="stat off fm-stat"><div class="k">OPEN POSITIONS</div><div class="v" id="fm-t-open">—</div><div class="n">SHADOW POSITIONS ON THE BOOK</div></div>
+            <div class="stat off fm-stat"><div class="k">CLOSED ROUND TRIPS</div><div class="v" id="fm-t-closed">—</div><div class="n" id="fm-n-verdict">FIRST VERDICT READ AT 50 CLOSED</div></div>
+            <div class="stat off fm-stat"><div class="k">CASH</div><div class="v" id="fm-t-cash">—</div><div class="n">UNDEPLOYED SHADOW CASH · COPY TRACK</div></div>
+            <div class="stat off fm-stat"><div class="k">UPDATED</div><div class="v" id="fm-t-updated">—</div><div class="n">LAST LANE SYNC</div></div>
+          </div>
+        </section>
+
+        <!-- ======= TRACK 1 : COPY TRACK — FOMO LEADERS ======= -->
+        <div class="lane-head" style="margin-top:18px;">
+          <span class="lane-tag">TRACK 1</span>
+          <h2 style="font-size:16px;">COPY TRACK — FOMO LEADERS</h2>
+          <span class="sub">SHADOW-COPIES THE LEADERS' BUYS · $50 FLAT · EXITS MIRROR THE LEADER</span>
+          <span class="status" id="fm-copy-status"><span class="dot off"></span>AWAITING LEADERS</span>
+        </div>
+
+        <div class="pots" style="margin-top:12px;">
+          <div class="pot win">
+            <div class="k">WINNERS POT</div>
+            <div class="amt" id="fm-pot-won-amt">$0.00</div>
+            <div class="st">TOTAL WON · CLOSED COPY TRADES</div>
+            <div class="rec" id="fm-pot-won">0 WON <small>/ 0 CLOSED</small></div>
+          </div>
+          <div class="pot lose">
+            <div class="k">LOSERS POT</div>
+            <div class="amt" id="fm-pot-lost-amt">$0.00</div>
+            <div class="st">TOTAL LOST · CLOSED COPY TRADES</div>
+            <div class="rec" id="fm-pot-lost">0 LOST <small>/ 0 CLOSED</small></div>
+          </div>
+        </div>
+
+        <section class="panel" style="margin-top:12px;" aria-label="Entries in the 60k zone — copy track">
+          <div class="panel-h"><span>60K ZONE — HIS GREEN-LIGHT LEVEL</span><span class="right">CLOSED COPY TRADES ENTERED AT $40K–$90K MARKET CAP</span></div>
+          <div class="panel-b">
+            <div class="grid grid-3" style="gap:8px;">
+              <div class="stat fm-stat"><div class="k">ENTRIES IN THE ZONE</div><div class="v" id="fm-z-count">0</div><div class="n">CLOSED TRADES</div></div>
+              <div class="stat fm-stat"><div class="k">RECORD</div><div class="v" id="fm-z-record">—</div><div class="n">WON – LOST IN THE ZONE</div></div>
+              <div class="stat fm-stat"><div class="k">NET P&amp;L</div><div class="v" id="fm-z-net">$0.00</div><div class="n">AFTER FRICTION · THE ZONE PAYS OR IT DOESN'T</div></div>
+            </div>
+            <p class="xlate-note">~60K market cap is the level Will watches as his own entry signal. This block keeps score on it — a readout only, never a gate: the copy track enters at whatever market cap the leaders buy.</p>
+          </div>
+        </section>
+
+        <section class="panel" style="margin-top:12px;" aria-label="Open shadow positions — copy track">
+          <div class="panel-h"><span>OPEN POSITIONS</span><span class="right">MARKED EVERY POLL · UNREALIZED AFTER EXIT HAIRCUT</span></div>
+          <div class="scroll-box">
+            <table class="bd" aria-label="Open shadow positions — copy track">
+              <thead>
+                <tr><th>TOKEN</th><th>LEADER</th><th>ENTRY</th><th>MARK</th><th>ENTRY MC</th><th>UNREALIZED</th></tr>
+              </thead>
+              <tbody id="fm-positions">
+                <tr><td colspan="6" style="text-align:left; color:var(--faint); letter-spacing:0.08em;">NO OPEN POSITIONS — NOTHING COPIED YET</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="panel-b" style="padding-top:8px; padding-bottom:8px;">
+            <div class="xlate-row"><span class="k">TOTAL UNREALIZED — COPY TRACK</span><span class="v" id="fm-pos-total">—</span></div>
+          </div>
+        </section>
+
+        <section class="panel" style="margin-top:12px;" aria-label="Closed copy trades">
+          <div class="panel-h"><span>CLOSED TRADES</span><span class="right">NEWEST FIRST · GREEN = PROFIT · RED = LOSS</span></div>
+          <div class="scroll-box">
+            <table class="bd" aria-label="Closed copy trades ledger">
+              <thead>
+                <tr><th>TOKEN</th><th>LEADER</th><th>ENTRY MC</th><th>IN → OUT</th><th>P&amp;L</th></tr>
+              </thead>
+              <tbody id="fm-ledger">
+                <tr><td colspan="5" style="text-align:left; color:var(--faint); letter-spacing:0.08em;">NO CLOSED TRADES YET — THE LEDGER FILLS AS LEADERS EXIT</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <div class="grid grid-2" style="margin-top:12px;">
+          <section class="panel" aria-label="Market-cap breakdown — copy track">
+            <div class="panel-h"><span>BY MARKET CAP AT ENTRY</span><span class="right">CLOSED COPY TRADES</span></div>
+            <table class="bd" aria-label="Market cap band breakdown — copy track">
+              <thead>
+                <tr><th>BAND</th><th>TRADES</th><th>RECORD</th><th>NET</th></tr>
+              </thead>
+              <tbody id="fm-bands">
+                <tr><td>UNDER $100K</td><td>0</td><td>—</td><td class="num-dim">$0.00</td></tr>
+                <tr><td>$100K – $1M</td><td>0</td><td>—</td><td class="num-dim">$0.00</td></tr>
+                <tr><td>OVER $1M</td><td>0</td><td>—</td><td class="num-dim">$0.00</td></tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section class="panel" aria-label="Safety filter report — copy track">
+            <div class="panel-h"><span>SAFETY FILTER</span><span class="right">CONTRACT SCREEN BEFORE EVERY COPY</span></div>
+            <div class="panel-b">
+              <div class="xlate-row"><span class="k">Filter</span><span class="v" id="fm-sf-state">—</span></div>
+              <div class="xlate-row"><span class="k">Signals copied</span><span class="v" id="fm-sf-copied">—</span></div>
+              <div class="xlate-row"><span class="k">Signals skipped by the filter</span><span class="v" id="fm-sf-skipped">—</span></div>
+              <div class="xlate-row"><span class="k">Skipped trades, closed as ghosts</span><span class="v" id="fm-sf-ghost">—</span></div>
+              <div class="xlate-row"><span class="k">Ghost net (tracked only)</span><span class="v" id="fm-sf-ghostnet">—</span></div>
+              <p class="xlate-note"><b>Skipped means NOT booked.</b> When the contract screen rejects a leader's buy, no shadow cash moves — the trade is only ghost-tracked so the filter itself gets graded. Copied and skipped records are never blended.</p>
+            </div>
+          </section>
+        </div>
+
+        <section class="panel" style="margin-top:12px;" aria-label="Per-leader record — copy track">
+          <div class="panel-h"><span>PER-LEADER RECORD</span><span class="right" id="fm-leaders-right">0 LEADERS FOLLOWED</span></div>
+          <table class="bd" aria-label="Per-leader record">
+            <thead>
+              <tr><th>LEADER WALLET</th><th>COPIED</th><th>RECORD</th><th>OPEN</th><th>NET</th></tr>
+            </thead>
+            <tbody id="fm-leaders">
+              <tr><td colspan="5" style="text-align:left; color:var(--faint); letter-spacing:0.08em;">NO LEADERS YET — THE WATCHLIST IS EMPTY</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- ======= TRACK 2 : LAUNCH TRACK — PUMP.FUN ======= -->
+        <div class="lane-head" style="margin-top:18px;">
+          <span class="lane-tag">TRACK 2</span>
+          <h2 style="font-size:16px;">LAUNCH TRACK — PUMP.FUN</h2>
+          <span class="sub">NEW LAUNCHES SCREENED FOR BACKING · SHADOW ONLY</span>
+          <span class="status" id="flt-status"><span class="dot off"></span>BUILDING</span>
+        </div>
+        <div id="flt-body">
+          <section class="panel" style="margin-top:12px;" aria-label="Launch track status">
+            <div class="panel-b">
+              <p class="xlate-note" style="margin:0;" id="flt-placeholder">LAUNCH TRACK: BUILDING / NO DATA YET — the pump.fun launch watcher is being wired into this lane. This section fills the moment its first screened launch lands.</p>
+            </div>
+          </section>
+        </div>
+
+        <p class="foot-note">Paper only — this lane never places a real order, holds a key, or touches an account. Shadow fills are booked at the first price seen after detection, worsened by the slippage haircut for the token's market cap; the leader's own price is recorded for comparison, never used.</p>
+      </div><!-- /tab-memecoin -->
     </div>
 
     <!-- ======= HONESTY STRIP ======= -->
@@ -2165,6 +2321,458 @@ table.bd tbody tr, table.tape tbody tr, .feed li, .hit { cursor: pointer; }
     for (var i = 0; i < prev.length; i++) prev[i].classList.remove('v7-selected');
     row.classList.add('v7-selected');
   });
+})();
+</script>
+<script>
+// ===== FOMO LANE (appended) =====
+// MEMECOIN tab: fomo_lane.json is published next to this page, same as the
+// Kalshi and Hummingbot lanes. One file, TWO tracks:
+//   Track 1 (top level of the file) — shadow-copy of the FOMO leaders.
+//   Track 2 (d.launch_track, may be absent) — pump.fun launch watching.
+// The header/big number combines both tracks; each track keeps its own
+// section and its own record. A failed fetch is "no data yet", never an
+// error screen: the tab keeps its honest AWAITING/BUILDING fallbacks, or —
+// after a successful load — keeps the last good data and lets STALE age it.
+(function () {
+  var FOMO_LANE_URL = 'fomo_lane.json';
+  var STALE_MS = 15 * 60 * 1000;
+  var lastGood = null;
+
+  function $(id) { return document.getElementById(id); }
+  function isNum(n) { return typeof n === 'number' && isFinite(n); }
+  function fmtMoney(n) {
+    return (n < 0 ? '-$' : '$') + Math.abs(n).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  }
+  function fmtSigned(n) { return (n > 0 ? '+' : '') + fmtMoney(n); }
+  function fmtInt(n) { return Math.round(n).toLocaleString('en-US'); }
+  function fmtTime(iso) {
+    var d = new Date(iso);
+    if (isNaN(d.getTime())) return '—';
+    return d.toLocaleString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' });
+  }
+  function fmtPrice(n) {
+    if (!isNum(n)) return '—';
+    if (n === 0) return '$0';
+    var a = Math.abs(n);
+    if (a >= 1) return fmtMoney(n);
+    if (a >= 0.01) return '$' + n.toFixed(4);
+    return '$' + parseFloat(n.toPrecision(3)).toString();
+  }
+  function fmtMC(n) {
+    if (!isNum(n)) return '—';
+    if (n >= 1000000) return '$' + (n / 1000000).toFixed(2) + 'M';
+    if (n >= 1000) return '$' + (n / 1000).toFixed(1) + 'K';
+    return '$' + n.toFixed(0);
+  }
+  function shortWallet(w) {
+    if (!w) return '—';
+    var s = String(w);
+    return s.length > 12 ? (s.slice(0, 4) + '…' + s.slice(-4)) : s;
+  }
+  function setStatus(el, mode, text) {
+    if (!el) return;
+    el.innerHTML = '';
+    var dot = document.createElement('span');
+    dot.className = 'dot ' + mode; // 'on' green · 'bad' red · 'off' dim
+    el.appendChild(dot);
+    el.appendChild(document.createTextNode(text));
+  }
+  // First finite number among candidate keys — the launch track's exact
+  // sub-fields are still settling, so probe tolerantly and never invent.
+  function pickNum(obj, keys) {
+    if (!obj) return null;
+    for (var i = 0; i < keys.length; i++) {
+      if (isNum(obj[keys[i]])) return obj[keys[i]];
+    }
+    return null;
+  }
+  function stationLabel(st) {
+    if (st === 'awaiting_watchlist') return { mode: 'off', text: 'AWAITING LEADERS' };
+    if (st === 'watching' || st === 'online' || st === 'live') return { mode: 'on', text: 'WATCHING LEADERS' };
+    if (!st) return { mode: 'off', text: 'AWAITING LEADERS' };
+    return { mode: 'off', text: String(st).replace(/_/g, ' ').toUpperCase() };
+  }
+  function pnlOf(t) {
+    return pickNum(t, ['realized_pnl_usdt', 'pnl_usdt', 'net_usdt', 'pnl']);
+  }
+  function emptyRow(tbody, colspan, text) {
+    var tr = document.createElement('tr');
+    var td = document.createElement('td');
+    td.colSpan = colspan;
+    td.style.cssText = 'text-align:left; color:var(--faint); letter-spacing:0.08em;';
+    td.textContent = text;
+    tr.appendChild(td);
+    tbody.appendChild(tr);
+  }
+  function cell(text, cls) {
+    var td = document.createElement('td');
+    if (cls) td.className = cls;
+    td.textContent = text;
+    return td;
+  }
+
+  // ---- shared table builders (both tracks carry the same record shapes) ----
+  function buildPositions(tbody, rows, emptyText) {
+    tbody.innerHTML = '';
+    if (!rows || !rows.length) { emptyRow(tbody, 6, emptyText); return; }
+    rows.forEach(function (p) {
+      var tr = document.createElement('tr');
+      var un = pickNum(p, ['unrealized_usdt', 'unrealized']);
+      tr.appendChild(cell(String(p.symbol || shortWallet(p.mint) || '—')));
+      tr.appendChild(cell(shortWallet(p.leader)));
+      tr.appendChild(cell(fmtPrice(pickNum(p, ['entry_shadow_price_usd', 'entry_price_usd', 'entry_detect_price_usd']))));
+      tr.appendChild(cell(fmtPrice(pickNum(p, ['mark_price_usd', 'current_price_usd', 'mark']))));
+      tr.appendChild(cell(fmtMC(p.mc_at_entry_usd)));
+      tr.appendChild(cell(un === null ? '—' : fmtSigned(un), un === null ? 'num-dim' : (un >= 0 ? 'num-green' : 'num-red')));
+      tbody.appendChild(tr);
+    });
+  }
+  function buildLedger(tbody, rows, emptyText) {
+    tbody.innerHTML = '';
+    if (!rows || !rows.length) { emptyRow(tbody, 5, emptyText); return; }
+    var sorted = rows.slice();
+    sorted.sort(function (a, b) {
+      var ta = Date.parse(a.closed_at || a.opened_at || '');
+      var tb = Date.parse(b.closed_at || b.opened_at || '');
+      return (isFinite(tb) ? tb : 0) - (isFinite(ta) ? ta : 0);
+    });
+    sorted.forEach(function (t) {
+      var tr = document.createElement('tr');
+      var pnl = pnlOf(t);
+      var stake = pickNum(t, ['stake_usdt', 'stake']);
+      var proceeds = pickNum(t, ['proceeds_usdt', 'proceeds']);
+      tr.appendChild(cell(String(t.symbol || shortWallet(t.mint) || '—')));
+      tr.appendChild(cell(shortWallet(t.leader)));
+      tr.appendChild(cell(fmtMC(t.mc_at_entry_usd)));
+      tr.appendChild(cell((stake === null ? '—' : fmtMoney(stake)) + ' → ' + (proceeds === null ? '—' : fmtMoney(proceeds))));
+      tr.appendChild(cell(pnl === null ? '—' : fmtSigned(pnl), pnl === null ? 'num-dim' : (pnl >= 0 ? 'num-green' : 'num-red')));
+      tbody.appendChild(tr);
+    });
+  }
+
+  // ---- Track 2 (launch) totals, tolerant of the still-settling contract ----
+  function launchNet(lt) {
+    var n = pickNum(lt, ['net_usdt', 'net_pnl_usdt', 'realized_usdt', 'realized_pnl_usdt', 'pnl_usdt']);
+    if (n !== null) return n;
+    if (isNum(lt.balance_usdt) && isNum(lt.start_balance_usdt)) return lt.balance_usdt - lt.start_balance_usdt;
+    return null;
+  }
+  function launchPresent(lt) {
+    if (!lt || typeof lt !== 'object') return false;
+    if (typeof lt.station === 'string' && lt.station) return true;
+    if (Array.isArray(lt.positions_detail) || Array.isArray(lt.trades_detail)) return true;
+    return pickNum(lt, ['screened', 'launches_screened', 'passed', 'passed_screen', 'net_usdt', 'net_pnl_usdt', 'realized_usdt', 'closed_trades', 'open_positions']) !== null;
+  }
+
+  function renderLaunch(lt, stale) {
+    var statusEl = $('flt-status');
+    var body = $('flt-body');
+    if (!launchPresent(lt)) {
+      setStatus(statusEl, 'off', 'BUILDING');
+      body.innerHTML = '';
+      var sec = document.createElement('section');
+      sec.className = 'panel';
+      sec.style.marginTop = '12px';
+      var pb = document.createElement('div');
+      pb.className = 'panel-b';
+      var p = document.createElement('p');
+      p.className = 'xlate-note';
+      p.style.margin = '0';
+      p.textContent = 'LAUNCH TRACK: BUILDING / NO DATA YET — the pump.fun launch watcher is being wired into this lane. This section fills the moment its first screened launch lands.';
+      pb.appendChild(p);
+      sec.appendChild(pb);
+      body.appendChild(sec);
+      return null;
+    }
+
+    var lab = stationLabel(lt.station);
+    var ltext = lt.station === 'watching' || lt.station === 'online' || lt.station === 'live' ? 'WATCHING LAUNCHES' : lab.text;
+    setStatus(statusEl, stale ? 'bad' : lab.mode, ltext + (stale ? ' — STALE' : ''));
+
+    var screened = pickNum(lt, ['screened', 'launches_screened', 'signals_screened', 'seen']);
+    var passed = pickNum(lt, ['passed', 'passed_screen', 'bought', 'copied']);
+    var skippedSignals = null, ghostClosed = null, ghostNet = null;
+    if (isNum(lt.skipped)) skippedSignals = lt.skipped;
+    if (lt.skipped && typeof lt.skipped === 'object') {
+      skippedSignals = pickNum(lt.skipped, ['signals', 'count', 'total']);
+      ghostClosed = pickNum(lt.skipped, ['ghost_closed', 'closed']);
+      ghostNet = pickNum(lt.skipped, ['net_usdt', 'net']);
+    }
+    if (ghostClosed === null) ghostClosed = pickNum(lt, ['ghost_closed']);
+    if (ghostNet === null) ghostNet = pickNum(lt, ['ghost_net_usdt']);
+    var positions = Array.isArray(lt.positions_detail) ? lt.positions_detail
+      : (Array.isArray(lt.positions) ? lt.positions : []);
+    var openCount = pickNum(lt, ['open_positions']);
+    if (openCount === null) openCount = positions.length;
+    var closedRows = Array.isArray(lt.trades_detail) ? lt.trades_detail
+      : (Array.isArray(lt.closed_trades) ? lt.closed_trades : []);
+    var closedCount = pickNum(lt, ['closed_trades', 'closed']);
+    if (closedCount === null) closedCount = closedRows.length;
+    var won = pickNum(lt, ['won']);
+    var lost = pickNum(lt, ['lost']);
+    if (won === null || lost === null) {
+      var w = 0, l = 0, seen = false;
+      closedRows.forEach(function (t) { var pn = pnlOf(t); if (pn !== null) { seen = true; if (pn > 0) w++; else if (pn < 0) l++; } });
+      if (seen) { won = w; lost = l; }
+    }
+    var net = launchNet(lt);
+    var realized = pickNum(lt, ['realized_usdt', 'realized_pnl_usdt']);
+    if (realized === null) realized = net;
+    var unrealized = pickNum(lt, ['unrealized_usdt', 'unrealized']);
+
+    body.innerHTML = '';
+
+    var grid = document.createElement('div');
+    grid.className = 'grid grid-3';
+    grid.style.cssText = 'gap:8px; margin-top:12px;';
+    function tile(k, v, n, cls) {
+      var d = document.createElement('div');
+      d.className = 'stat';
+      var kk = document.createElement('div'); kk.className = 'k'; kk.textContent = k;
+      var vv = document.createElement('div'); vv.className = 'v' + (cls ? ' ' + cls : ''); vv.textContent = v;
+      var nn = document.createElement('div'); nn.className = 'n'; nn.textContent = n;
+      d.appendChild(kk); d.appendChild(vv); d.appendChild(nn);
+      grid.appendChild(d);
+    }
+    tile('LAUNCHES SCREENED', screened === null ? '—' : fmtInt(screened), 'NEW PUMP.FUN LAUNCHES CHECKED');
+    tile('PASSED THE SCREEN', passed === null ? '—' : fmtInt(passed), 'BACKING CHECKS PASSED · SHADOW-BOOKED');
+    tile('SKIPPED / GHOST', skippedSignals === null ? '—' : fmtInt(skippedSignals), ghostClosed === null ? 'REJECTED BY THE SCREEN · TRACKED ONLY, NO SHADOW CASH' : ('GHOST-CLOSED ' + fmtInt(ghostClosed) + ' · TRACKED ONLY, NO SHADOW CASH'));
+    tile('OPEN POSITIONS', fmtInt(openCount), 'SHADOW LAUNCH POSITIONS');
+    tile('CLOSED TRADES', fmtInt(closedCount), (won !== null && lost !== null) ? ('RECORD ' + fmtInt(won) + ' WON – ' + fmtInt(lost) + ' LOST') : 'RECORD NOT REPORTED YET');
+    tile('NET P&L', net === null ? '—' : fmtSigned(net), 'LAUNCH TRACK ONLY · PAPER', net === null ? '' : (net >= 0 ? 'green' : 'red'));
+    body.appendChild(grid);
+
+    if (ghostNet !== null) {
+      var gnote = document.createElement('p');
+      gnote.className = 'xlate-note';
+      gnote.textContent = 'Ghost net (launches the screen rejected, tracked only — no shadow cash booked): ' + fmtSigned(ghostNet) + '.';
+      body.appendChild(gnote);
+    }
+
+    function tablePanel(title, right, headers, tbodyId, colspan, emptyText) {
+      var sec = document.createElement('section');
+      sec.className = 'panel';
+      sec.style.marginTop = '12px';
+      var h = document.createElement('div');
+      h.className = 'panel-h';
+      var s1 = document.createElement('span'); s1.textContent = title;
+      var s2 = document.createElement('span'); s2.className = 'right'; s2.textContent = right;
+      h.appendChild(s1); h.appendChild(s2);
+      sec.appendChild(h);
+      var sb = document.createElement('div');
+      sb.className = 'scroll-box';
+      var tb = document.createElement('table');
+      tb.className = 'bd';
+      var thead = document.createElement('thead');
+      var htr = document.createElement('tr');
+      headers.forEach(function (x) { var th = document.createElement('th'); th.textContent = x; htr.appendChild(th); });
+      thead.appendChild(htr);
+      tb.appendChild(thead);
+      var tbody = document.createElement('tbody');
+      tbody.id = tbodyId;
+      tb.appendChild(tbody);
+      sb.appendChild(tb);
+      sec.appendChild(sb);
+      body.appendChild(sec);
+      return tbody;
+    }
+    var posBody = tablePanel('OPEN POSITIONS — LAUNCH TRACK', 'MARKED EVERY POLL', ['TOKEN', 'LEADER', 'ENTRY', 'MARK', 'ENTRY MC', 'UNREALIZED'], 'flt-positions', 6, 'NO OPEN LAUNCH POSITIONS');
+    buildPositions(posBody, positions, 'NO OPEN LAUNCH POSITIONS');
+    var ledBody = tablePanel('CLOSED TRADES — LAUNCH TRACK', 'NEWEST FIRST · GREEN = PROFIT · RED = LOSS', ['TOKEN', 'LEADER', 'ENTRY MC', 'IN → OUT', 'P&L'], 'flt-ledger', 5, 'NO CLOSED LAUNCH TRADES YET');
+    buildLedger(ledBody, closedRows, 'NO CLOSED LAUNCH TRADES YET');
+
+    return { realized: realized, unrealized: unrealized, open: openCount, closed: closedCount, net: net };
+  }
+
+  function render(d) {
+    var updatedMs = Date.parse(d.updated_at);
+    var hasUpdated = isFinite(updatedMs);
+    var stale = hasUpdated && (Date.now() - updatedMs > STALE_MS);
+    var lab = stationLabel(d.station);
+    var statusText = lab.text + (stale ? ' — STALE' : '');
+    var updText = hasUpdated ? ('UPDATED ' + fmtTime(d.updated_at)) : '';
+
+    // Lane header
+    setStatus($('fm-lane-status'), stale ? 'bad' : lab.mode, statusText);
+    setStatus($('fm-mstatus'), stale ? 'bad' : lab.mode, statusText);
+    setStatus($('fm-copy-status'), stale ? 'bad' : lab.mode, statusText);
+    $('fm-updated').textContent = updText;
+    var note = $('fm-status-note');
+    if (d.note) { note.textContent = d.note; note.style.display = 'block'; }
+    else { note.style.display = 'none'; }
+    var badgeText = 'STALE — ' + updText;
+    var b1 = $('fm-stale'), b2 = $('fm-stale-money');
+    b1.hidden = !stale; b2.hidden = !stale;
+    if (stale) { b1.textContent = badgeText; b2.textContent = badgeText; }
+
+    // Money section on
+    $('fm-money').classList.remove('off');
+    var tiles = document.querySelectorAll('.fm-stat');
+    for (var i = 0; i < tiles.length; i++) tiles[i].classList.remove('off');
+
+    // Track 2 first — the combined header needs its numbers.
+    var lt = renderLaunch(d.launch_track, stale);
+    var ltNet = lt ? lt.net : null;
+    var ltRealized = lt ? lt.realized : null;
+    var ltUnrealized = lt ? lt.unrealized : null;
+    var ltOpen = lt ? lt.open : 0;
+    var ltClosed = lt ? lt.closed : 0;
+
+    // Combined big number: copy balance + launch net (when reported)
+    var start = isNum(d.start_balance_usdt) ? d.start_balance_usdt : 250;
+    var copyBalance = isNum(d.balance_usdt) ? d.balance_usdt : start;
+    var combined = copyBalance + (ltNet === null ? 0 : ltNet);
+    var combinedNet = combined - start;
+    var big = $('fm-big');
+    big.className = 'm-big ' + (combinedNet > 0 ? 'green' : (combinedNet < 0 ? 'red' : 'dim'));
+    big.textContent = fmtMoney(combined);
+    $('fm-usd').innerHTML = '';
+    var bold = document.createElement('b');
+    bold.textContent = 'NET ' + fmtSigned(combinedNet) + ' · START ' + fmtMoney(start) +
+      (lt ? '' : ' · LAUNCH TRACK NOT REPORTING YET — COMBINED SHOWS THE COPY TRACK');
+    $('fm-usd').appendChild(bold);
+
+    // Combined tiles
+    var realized = (isNum(d.realized_usdt) ? d.realized_usdt : 0) + (ltRealized === null ? 0 : ltRealized);
+    var unrealized = (isNum(d.unrealized_usdt) ? d.unrealized_usdt : 0) + (ltUnrealized === null ? 0 : ltUnrealized);
+    var openTotal = (isNum(d.open_positions) ? d.open_positions : (d.positions_detail || []).length) + ltOpen;
+    var closedTotal = (isNum(d.closed_trades) ? d.closed_trades : 0) + ltClosed;
+    var rEl = $('fm-t-realized');
+    rEl.className = 'v ' + (realized > 0 ? 'green' : (realized < 0 ? 'red' : ''));
+    rEl.textContent = fmtSigned(realized);
+    var uEl = $('fm-t-unrealized');
+    uEl.className = 'v ' + (unrealized > 0 ? 'green' : (unrealized < 0 ? 'red' : ''));
+    uEl.textContent = fmtSigned(unrealized);
+    $('fm-t-open').textContent = fmtInt(openTotal);
+    $('fm-t-closed').textContent = fmtInt(closedTotal);
+    if (d.verdict && isNum(d.verdict.first_read_at_closed_trades)) {
+      $('fm-n-verdict').textContent = 'FIRST VERDICT READ AT ' + fmtInt(d.verdict.first_read_at_closed_trades) +
+        ' CLOSED · ' + fmtInt(isNum(d.verdict.closed_so_far) ? d.verdict.closed_so_far : closedTotal) + ' SO FAR';
+    }
+    $('fm-t-cash').textContent = isNum(d.cash_usdt) ? fmtMoney(d.cash_usdt) : '—';
+    var updTile = $('fm-t-updated');
+    if (hasUpdated) { updTile.className = 'v small'; updTile.textContent = fmtTime(d.updated_at); }
+    else { updTile.className = 'v'; updTile.textContent = '—'; }
+
+    // ---- Track 1: pots ----
+    $('fm-pot-won-amt').textContent = fmtMoney(isNum(d.total_won_usdt) ? d.total_won_usdt : 0);
+    $('fm-pot-lost-amt').textContent = fmtMoney(isNum(d.total_lost_usdt) ? d.total_lost_usdt : 0);
+    var won = isNum(d.won) ? d.won : 0, lost = isNum(d.lost) ? d.lost : 0;
+    var closed = isNum(d.closed_trades) ? d.closed_trades : 0;
+    $('fm-pot-won').innerHTML = '';
+    $('fm-pot-won').appendChild(document.createTextNode(fmtInt(won) + ' WON '));
+    var sm1 = document.createElement('small'); sm1.textContent = '/ ' + fmtInt(closed) + ' CLOSED'; $('fm-pot-won').appendChild(sm1);
+    $('fm-pot-lost').innerHTML = '';
+    $('fm-pot-lost').appendChild(document.createTextNode(fmtInt(lost) + ' LOST '));
+    var sm2 = document.createElement('small'); sm2.textContent = '/ ' + fmtInt(closed) + ' CLOSED'; $('fm-pot-lost').appendChild(sm2);
+
+    // ---- Track 1: the 60k zone (readout from exact entry MCs) ----
+    var trades = Array.isArray(d.trades_detail) ? d.trades_detail : [];
+    var zCount = 0, zWon = 0, zLost = 0, zNet = 0;
+    trades.forEach(function (t) {
+      if (isNum(t.mc_at_entry_usd) && t.mc_at_entry_usd >= 40000 && t.mc_at_entry_usd <= 90000) {
+        var pn = pnlOf(t);
+        zCount++;
+        if (pn !== null) { zNet += pn; if (pn > 0) zWon++; else if (pn < 0) zLost++; }
+      }
+    });
+    $('fm-z-count').textContent = fmtInt(zCount);
+    $('fm-z-record').textContent = zCount ? (fmtInt(zWon) + ' – ' + fmtInt(zLost)) : '—';
+    var zNetEl = $('fm-z-net');
+    zNetEl.className = 'v ' + (zCount ? (zNet > 0 ? 'green' : (zNet < 0 ? 'red' : '')) : '');
+    zNetEl.textContent = fmtSigned(zNet);
+
+    // ---- Track 1: positions + ledger ----
+    buildPositions($('fm-positions'), d.positions_detail || [], 'NO OPEN POSITIONS — NOTHING COPIED YET');
+    var posTotal = $('fm-pos-total');
+    if (isNum(d.unrealized_usdt)) {
+      posTotal.textContent = fmtSigned(d.unrealized_usdt);
+      posTotal.style.color = d.unrealized_usdt > 0 ? 'var(--green)' : (d.unrealized_usdt < 0 ? 'var(--red)' : '');
+    } else { posTotal.textContent = '—'; posTotal.style.color = ''; }
+    buildLedger($('fm-ledger'), trades, 'NO CLOSED TRADES YET — THE LEDGER FILLS AS LEADERS EXIT');
+
+    // ---- Track 1: market-cap bands ----
+    var bands = d.mc_bands || {};
+    var bandRows = [
+      ['UNDER $100K', bands.lt_100k],
+      ['$100K – $1M', bands['100k_1m']],
+      ['OVER $1M', bands.gt_1m],
+      ['MC UNKNOWN', bands.unknown]
+    ];
+    var bandsBody = $('fm-bands');
+    bandsBody.innerHTML = '';
+    bandRows.forEach(function (row) {
+      var b = row[1];
+      if (!b && row[0] === 'MC UNKNOWN') return;
+      b = b || { trades: 0, won: 0, lost: 0, net_usdt: 0 };
+      var tr = document.createElement('tr');
+      tr.appendChild(cell(row[0]));
+      tr.appendChild(cell(fmtInt(b.trades || 0)));
+      tr.appendChild(cell(b.trades ? (fmtInt(b.won || 0) + ' – ' + fmtInt(b.lost || 0)) : '—'));
+      var net = isNum(b.net_usdt) ? b.net_usdt : 0;
+      tr.appendChild(cell(fmtSigned(net), b.trades ? (net > 0 ? 'num-green' : (net < 0 ? 'num-red' : 'num-dim')) : 'num-dim'));
+      bandsBody.appendChild(tr);
+    });
+
+    // ---- Track 1: safety filter ----
+    var sf = d.safety_filter || {};
+    $('fm-sf-state').textContent = sf.enabled === false ? 'OFF' : 'ON';
+    var copied = d.copied || {};
+    $('fm-sf-copied').textContent = fmtInt(isNum(copied.trades) ? copied.trades : closed) + ' closed' +
+      (isNum(copied.net_usdt) ? ' · net ' + fmtSigned(copied.net_usdt) : '');
+    var skipped = d.skipped || {};
+    var skipsTotal = isNum(sf.skips_total) ? sf.skips_total : (isNum(skipped.signals) ? skipped.signals : 0);
+    $('fm-sf-skipped').textContent = fmtInt(skipsTotal);
+    $('fm-sf-ghost').textContent = isNum(skipped.ghost_closed)
+      ? (fmtInt(skipped.ghost_closed) + ' closed' + (isNum(skipped.won) || isNum(skipped.lost) ? ' · ' + fmtInt(skipped.won || 0) + ' won – ' + fmtInt(skipped.lost || 0) + ' lost' : ''))
+      : '—';
+    $('fm-sf-ghostnet').textContent = isNum(skipped.net_usdt) ? fmtSigned(skipped.net_usdt) : '—';
+
+    // ---- Track 1: per-leader record (from real activity only) ----
+    $('fm-leaders-right').textContent = fmtInt(isNum(d.leaders_followed) ? d.leaders_followed : 0) + ' LEADERS FOLLOWED';
+    var byLeader = {};
+    function leaderRow(w) {
+      if (!byLeader[w]) byLeader[w] = { copied: 0, won: 0, lost: 0, open: 0, net: 0 };
+      return byLeader[w];
+    }
+    trades.forEach(function (t) {
+      if (!t.leader) return;
+      var r = leaderRow(t.leader);
+      var pn = pnlOf(t);
+      r.copied++;
+      if (pn !== null) { r.net += pn; if (pn > 0) r.won++; else if (pn < 0) r.lost++; }
+    });
+    (d.positions_detail || []).forEach(function (p) { if (p.leader) leaderRow(p.leader).open++; });
+    var leadersBody = $('fm-leaders');
+    leadersBody.innerHTML = '';
+    var wallets = Object.keys(byLeader);
+    if (!wallets.length) {
+      emptyRow(leadersBody, 5, (isNum(d.leaders_followed) && d.leaders_followed > 0)
+        ? 'NO LEADER ACTIVITY YET — LEADERS FOLLOWED, NO TRADES COPIED SO FAR'
+        : 'NO LEADERS YET — THE WATCHLIST IS EMPTY');
+    } else {
+      wallets.sort(function (a, b) { return byLeader[b].net - byLeader[a].net; });
+      wallets.forEach(function (w) {
+        var r = byLeader[w];
+        var tr = document.createElement('tr');
+        tr.appendChild(cell(shortWallet(w)));
+        tr.appendChild(cell(fmtInt(r.copied)));
+        tr.appendChild(cell(r.copied ? (fmtInt(r.won) + ' – ' + fmtInt(r.lost)) : '—'));
+        tr.appendChild(cell(fmtInt(r.open)));
+        tr.appendChild(cell(fmtSigned(r.net), r.net > 0 ? 'num-green' : (r.net < 0 ? 'num-red' : 'num-dim')));
+        leadersBody.appendChild(tr);
+      });
+    }
+  }
+
+  function load() {
+    fetch(FOMO_LANE_URL + '?t=' + Date.now(), { cache: 'no-store' })
+      .then(function (r) { if (!r.ok) throw new Error('not published'); return r.json(); })
+      .then(function (d) { lastGood = d; render(d); })
+      .catch(function () { if (lastGood) render(lastGood); });
+  }
+  load();
+  setInterval(load, 60000);
 })();
 </script>
 </body>
