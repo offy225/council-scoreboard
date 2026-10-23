@@ -1,7 +1,7 @@
 {
  "lane": "fomo_shadow_copy",
  "paper_only": true,
- "updated_at": "2026-10-23T20:03:36+00:00",
+ "updated_at": "2026-10-23T20:19:16+00:00",
  "station": "awaiting_watchlist",
  "note": "Watchlist is empty \u2014 waiting on Will's ~5 leader wallet addresses.",
  "leaders_followed": 0,
@@ -129,7 +129,7 @@
    }
   },
   "screening": {
-   "candidates_active": 6,
+   "candidates_active": 12,
    "screened_total": 240,
    "passed_total": 1,
    "failed_total": 239
@@ -167,10 +167,10 @@
    }
   },
   "feed": {
-   "last_poll_at": "2026-10-23T19:59:34+00:00",
+   "last_poll_at": "2026-10-23T20:14:38+00:00",
    "last_error": null,
-   "coins_seen_total": 5187,
-   "activations_total": 246
+   "coins_seen_total": 5270,
+   "activations_total": 252
   }
  },
  "combined": {
@@ -187,7 +187,7 @@
   "lane": "cobra_graduated_momentum",
   "track": "graduated",
   "paper_only": true,
-  "updated_at": "2026-10-23T20:04:00+00:00",
+  "updated_at": "2026-10-23T20:20:29+00:00",
   "station": "screening",
   "note": "Graduated momentum track \u2014 separate $250 shadow account, $25 stakes. Watches pump.fun coins AFTER graduation (bonding curve complete, trading on a DEX) and shadow-enters only confirmed continuation: above the ~$69K graduation mark, +20% over the graduation price across at least two polls, buyers still coming in, creator not dumping. Screen failures are ghost-tracked so the screen itself is graded. Graduation time/price are stated proxies (first-observed-complete; $69K curve-complete mark) \u2014 see SPEC_GRADUATED.md.",
   "start_balance_usdt": 250.0,
@@ -230,7 +230,7 @@
    }
   },
   "screening": {
-   "candidates_active": 4,
+   "candidates_active": 8,
    "screened_total": 36,
    "passed_total": 0,
    "failed_total": 36
@@ -242,10 +242,10 @@
    "net_usdt": 0
   },
   "failed_ghost": {
-   "trades": 2,
+   "trades": 4,
    "won": 0,
-   "lost": 2,
-   "net_usdt": -36.11,
+   "lost": 4,
+   "net_usdt": -82.5892,
    "note": "Ghost P&L = what entering the graduated coins the continuation screen REJECTED would have made, same friction + exit rules, no shadow cash."
   },
   "screen_config": {
@@ -271,10 +271,10 @@
    }
   },
   "feed": {
-   "last_poll_at": "2026-10-23T20:03:41+00:00",
+   "last_poll_at": "2026-10-23T20:19:20+00:00",
    "last_error": null,
-   "coins_seen_total": 40,
-   "activations_total": 40
+   "coins_seen_total": 44,
+   "activations_total": 44
   }
  }
 }
