@@ -382,12 +382,12 @@
         <span class="tick-item">LOG-LOSS <b>0.6558</b></span>
         <span class="tick-item">RELIABILITY <span class="r"><b>FAIL</b></span></span>
         <span class="tick-item">RECORD <span class="g"><b>17 W</b></span> / <span class="r"><b>9 L</b></span></span>
-        <span class="tick-item">NBA v3.1 + PLATT <span class="g"><b>11 W / 3 L</b></span> · <span class="g"><b>78.6%</b></span> · BRIER <b>0.1716</b> · NET <span class="g"><b>+$290.18 REF-PRICED</b></span></span>
+        <span class="tick-item">PLUGG <span class="g"><b>11 W / 3 L</b></span> · <span class="g"><b>78.6%</b></span> · BRIER <b>0.1716</b> · NET <span class="g"><b>+$290.18 REF-PRICED</b></span></span>
         <span class="tick-item">NBA v2 ELO <span class="g"><b>6 W / 6 L</b></span> · <span class="g"><b>50.0%</b></span> · BRIER <b>0.3078</b> · NET <span class="g"><b>+$35.98 REF-PRICED</b></span></span>
         <span class="tick-item">HUMMINGBOT MARGIN <span class="g"><b class="hb-tick">PENDING · AWAITING FIRST SYNC</b></span></span>
-        <span class="tick-item">KALSHI PAPER $ <b>+$326.16 NET · FIRST 26 REF-PRICED</b></span>
+        <span class="tick-item">PLUGG PAPER $ <b>+$326.16 NET · FIRST 26 REF-PRICED</b></span>
         <span class="tick-item">HUMMINGBOT PAPER $ <b class="hb-tick">PENDING · AWAITING FIRST SYNC</b></span>
-        <span class="tick-item">ENGINE <b>v3 + PLATT</b></span>
+        <span class="tick-item">ENGINE <b>PLUGG</b></span>
         <span class="tick-item"><span class="p"><b>PAPER ONLY</b></span></span>
       </div>
     </div>
@@ -400,16 +400,16 @@
         <button class="tab-btn" id="btn-profit" role="tab" aria-selected="false" aria-controls="tab-profit" data-tab="profit">PAPER PROFIT</button>
         <button class="tab-btn" id="btn-hummingbot" role="tab" aria-selected="false" aria-controls="tab-hummingbot" data-tab="hummingbot">HUMMINGBOT</button>
         <button class="tab-btn" id="btn-hbprofit" role="tab" aria-selected="false" aria-controls="tab-hbprofit" data-tab="hbprofit">HB PROFIT</button>
-        <button class="tab-btn" id="btn-memecoin" role="tab" aria-selected="false" aria-controls="tab-memecoin" data-tab="memecoin">MEMECOIN</button>
+        <button class="tab-btn" id="btn-memecoin" role="tab" aria-selected="false" aria-controls="tab-memecoin" data-tab="memecoin">COBRA</button>
       </div>
 
       <div id="tab-terminal" class="tab-panel">
 
       <!-- ======= MONEY BAR ======= -->
       <div class="moneybar">
-        <section class="money" aria-label="Paper profit — Kalshi">
+        <section class="money" aria-label="Paper profit — PLUGG">
           <div class="m-label">
-            <span>PAPER PROFIT — KALSHI</span>
+            <span>PAPER PROFIT — PLUGG</span>
             <span class="m-status" id="k-mstatus"><span class="dot on"></span>LEDGER ACTIVE</span>
           </div>
           <div class="m-big green"><span data-count="17" id="k-m-won">17</span><span class="m-unit"> WON</span><span class="m-slash"> / </span><span class="lost"><span data-count="9" id="k-m-lost">9</span><span class="m-unit"> LOST</span></span></div>
@@ -428,10 +428,10 @@
         </section>
       </div>
 
-      <!-- ======= LANE 1 : KALSHI / COUNCIL ======= -->
+      <!-- ======= LANE 1 : PLUGG — KALSHI ======= -->
       <div class="lane-head">
         <span class="lane-tag">LANE 01</span>
-        <h2>KALSHI / COUNCIL</h2>
+        <h2>PLUGG</h2>
         <span class="sub" id="k-lane-sub">SCOREBOARD B · PROSPECTIVE PAPER LEDGER · SNAPSHOT OCT 22, 2026</span>
         <span class="status" id="k-lane-status"><span class="dot off"></span>SNAPSHOT READOUT</span>
         <span class="stale-badge" id="k-stale" hidden></span>
@@ -484,7 +484,7 @@
       <div class="grid grid-2" style="margin-top:12px;">
         <!-- CONSISTENCY -->
         <section class="panel" aria-label="Consistency">
-          <div class="panel-h"><span>CONSISTENCY</span><span class="right">ENGINE: CALIBRATED NBA MODEL v3 + PLATT</span></div>
+          <div class="panel-h"><span>CONSISTENCY</span><span class="right">ENGINE: PLUGG</span></div>
           <div class="panel-b" style="padding-top:12px;">
             <div class="grid grid-3" style="gap:8px;">
               <div class="stat"><div class="k">WIN RATE</div><div class="v green" id="k-c-winrate">65.4%</div><div class="n" id="k-c-winrate-n">17 OF 26 SCORED</div></div>
@@ -566,7 +566,7 @@
           </thead>
           <tbody>
             <tr class="bd-model">
-              <td><b class="bd-name">NBA v3.1 + PLATT</b><span class="mid bd-mid">nba_v3_offdef_platt</span><span class="mid brier-m bd-brier-m">BRIER 0.1716</span></td>
+              <td><b class="bd-name">PLUGG</b><span class="mid bd-mid">nba_v3_offdef_platt</span><span class="mid brier-m bd-brier-m">BRIER 0.1716</span></td>
               <td><span class="bd-scored" data-count="14">14</span></td>
               <td class="bd-rec"><span style="color:var(--green)"><b>11 W</b></span> / <span style="color:var(--red)"><b>3 L</b></span></td>
               <td class="num-green"><span class="bd-win" data-count="78.6" data-dec="1">78.6</span>%</td>
@@ -616,20 +616,20 @@
             <tr><td>OCT 16</td><td>POR at GS</td><td class="hide-m">v2-Elo</td><td>HOME 52%</td><td>118-128</td><td class="res-w">WON</td><td class="tape-margin"><span class="ref-price">39.0¢ REF</span> · <span class="num-green">+$78.21</span></td></tr>
             <tr><td>OCT 16</td><td>UTAH at PHX</td><td class="hide-m">v2-Elo</td><td>AWAY 78%</td><td>119-116</td><td class="res-w">WON</td><td class="tape-margin"><span class="ref-price">38.5¢ REF</span> · <span class="num-green">+$79.87</span></td></tr>
             <tr><td>OCT 16</td><td>DEN at LAL</td><td class="hide-m">v2-Elo</td><td>AWAY 61%</td><td>121-106</td><td class="res-w">WON</td><td class="tape-margin"><span class="ref-price">33.5¢ REF</span> · <span class="num-green">+$99.25</span></td></tr>
-            <tr><td>OCT 20</td><td>BOS at DET</td><td class="hide-m">v3.1-Platt</td><td>HOME 53%</td><td>113-121</td><td class="res-w">WON</td><td class="tape-margin"><span class="ref-price">47.5¢ REF</span> · <span class="num-green">+$55.26</span></td></tr>
-            <tr><td>OCT 20</td><td>PHI at NY</td><td class="hide-m">v3.1-Platt</td><td>AWAY 58%</td><td>106-100</td><td class="res-w">WON</td><td class="tape-margin"><span class="ref-price">38.5¢ REF</span> · <span class="num-green">+$79.87</span></td></tr>
-            <tr><td>OCT 20</td><td>OKC at SA</td><td class="hide-m">v3.1-Platt</td><td>AWAY 54%</td><td>116-104</td><td class="res-w">WON</td><td class="tape-margin"><span class="ref-price">49.5¢ REF</span> · <span class="num-green">+$51.01</span></td></tr>
-            <tr><td>OCT 21</td><td>ATL at ORL</td><td class="hide-m">v3.1-Platt</td><td>AWAY 53%</td><td>132-125</td><td class="res-w">WON</td><td class="tape-margin"><span class="ref-price">46.5¢ REF</span> · <span class="num-green">+$57.53</span></td></tr>
-            <tr><td>OCT 21</td><td>MIL at WSH</td><td class="hide-m">v3.1-Platt</td><td>HOME 55%</td><td>116-128</td><td class="res-w">WON</td><td class="tape-margin"><span class="ref-price">62.5¢ REF</span> · <span class="num-green">+$30.00</span></td></tr>
-            <tr><td>OCT 21</td><td>MIN at MIA</td><td class="hide-m">v3.1-Platt</td><td>HOME 58%</td><td>131-106</td><td class="res-l">LOST</td><td class="tape-margin"><span class="ref-price">51.5¢ REF</span> · <span class="num-red">-$50.00</span></td></tr>
-            <tr><td>OCT 21</td><td>CHA at BKN</td><td class="hide-m">v3.1-Platt</td><td>AWAY 60%</td><td>110-103</td><td class="res-w">WON</td><td class="tape-margin"><span class="ref-price">51.5¢ REF</span> · <span class="num-green">+$47.09</span></td></tr>
-            <tr><td>OCT 21</td><td>CHI at TOR</td><td class="hide-m">v3.1-Platt</td><td>HOME 87%</td><td>92-135</td><td class="res-w">WON</td><td class="tape-margin"><span class="ref-price">78.5¢ REF</span> · <span class="num-green">+$13.69</span></td></tr>
-            <tr><td>OCT 21</td><td>UTAH at MEM</td><td class="hide-m">v3.1-Platt</td><td>AWAY 57%</td><td>103-123</td><td class="res-l">LOST</td><td class="tape-margin"><span class="ref-price">47.5¢ REF</span> · <span class="num-red">-$50.00</span></td></tr>
-            <tr><td>OCT 21</td><td>IND at NO</td><td class="hide-m">v3.1-Platt</td><td>HOME 54%</td><td>123-120</td><td class="res-l">LOST</td><td class="tape-margin"><span class="ref-price">41.5¢ REF</span> · <span class="num-red">-$50.00</span></td></tr>
-            <tr><td>OCT 21</td><td>DAL at HOU</td><td class="hide-m">v3.1-Platt</td><td>HOME 85%</td><td>110-128</td><td class="res-w">WON</td><td class="tape-margin"><span class="ref-price">77.5¢ REF</span> · <span class="num-green">+$14.52</span></td></tr>
-            <tr><td>OCT 21</td><td>GS at LAL</td><td class="hide-m">v3.1-Platt</td><td>HOME 58%</td><td>105-127</td><td class="res-w">WON</td><td class="tape-margin"><span class="ref-price">66.5¢ REF</span> · <span class="num-green">+$25.19</span></td></tr>
-            <tr><td>OCT 21</td><td>PHX at POR</td><td class="hide-m">v3.1-Platt</td><td>HOME 89%</td><td>83-124</td><td class="res-w">WON</td><td class="tape-margin"><span class="ref-price">56.5¢ REF</span> · <span class="num-green">+$38.50</span></td></tr>
-            <tr><td>OCT 21</td><td>SAC at LAC</td><td class="hide-m">v3.1-Platt</td><td>HOME 82%</td><td>96-121</td><td class="res-w">WON</td><td class="tape-margin"><span class="ref-price">64.5¢ REF</span> · <span class="num-green">+$27.52</span></td></tr>
+            <tr><td>OCT 20</td><td>BOS at DET</td><td class="hide-m">PLUGG</td><td>HOME 53%</td><td>113-121</td><td class="res-w">WON</td><td class="tape-margin"><span class="ref-price">47.5¢ REF</span> · <span class="num-green">+$55.26</span></td></tr>
+            <tr><td>OCT 20</td><td>PHI at NY</td><td class="hide-m">PLUGG</td><td>AWAY 58%</td><td>106-100</td><td class="res-w">WON</td><td class="tape-margin"><span class="ref-price">38.5¢ REF</span> · <span class="num-green">+$79.87</span></td></tr>
+            <tr><td>OCT 20</td><td>OKC at SA</td><td class="hide-m">PLUGG</td><td>AWAY 54%</td><td>116-104</td><td class="res-w">WON</td><td class="tape-margin"><span class="ref-price">49.5¢ REF</span> · <span class="num-green">+$51.01</span></td></tr>
+            <tr><td>OCT 21</td><td>ATL at ORL</td><td class="hide-m">PLUGG</td><td>AWAY 53%</td><td>132-125</td><td class="res-w">WON</td><td class="tape-margin"><span class="ref-price">46.5¢ REF</span> · <span class="num-green">+$57.53</span></td></tr>
+            <tr><td>OCT 21</td><td>MIL at WSH</td><td class="hide-m">PLUGG</td><td>HOME 55%</td><td>116-128</td><td class="res-w">WON</td><td class="tape-margin"><span class="ref-price">62.5¢ REF</span> · <span class="num-green">+$30.00</span></td></tr>
+            <tr><td>OCT 21</td><td>MIN at MIA</td><td class="hide-m">PLUGG</td><td>HOME 58%</td><td>131-106</td><td class="res-l">LOST</td><td class="tape-margin"><span class="ref-price">51.5¢ REF</span> · <span class="num-red">-$50.00</span></td></tr>
+            <tr><td>OCT 21</td><td>CHA at BKN</td><td class="hide-m">PLUGG</td><td>AWAY 60%</td><td>110-103</td><td class="res-w">WON</td><td class="tape-margin"><span class="ref-price">51.5¢ REF</span> · <span class="num-green">+$47.09</span></td></tr>
+            <tr><td>OCT 21</td><td>CHI at TOR</td><td class="hide-m">PLUGG</td><td>HOME 87%</td><td>92-135</td><td class="res-w">WON</td><td class="tape-margin"><span class="ref-price">78.5¢ REF</span> · <span class="num-green">+$13.69</span></td></tr>
+            <tr><td>OCT 21</td><td>UTAH at MEM</td><td class="hide-m">PLUGG</td><td>AWAY 57%</td><td>103-123</td><td class="res-l">LOST</td><td class="tape-margin"><span class="ref-price">47.5¢ REF</span> · <span class="num-red">-$50.00</span></td></tr>
+            <tr><td>OCT 21</td><td>IND at NO</td><td class="hide-m">PLUGG</td><td>HOME 54%</td><td>123-120</td><td class="res-l">LOST</td><td class="tape-margin"><span class="ref-price">41.5¢ REF</span> · <span class="num-red">-$50.00</span></td></tr>
+            <tr><td>OCT 21</td><td>DAL at HOU</td><td class="hide-m">PLUGG</td><td>HOME 85%</td><td>110-128</td><td class="res-w">WON</td><td class="tape-margin"><span class="ref-price">77.5¢ REF</span> · <span class="num-green">+$14.52</span></td></tr>
+            <tr><td>OCT 21</td><td>GS at LAL</td><td class="hide-m">PLUGG</td><td>HOME 58%</td><td>105-127</td><td class="res-w">WON</td><td class="tape-margin"><span class="ref-price">66.5¢ REF</span> · <span class="num-green">+$25.19</span></td></tr>
+            <tr><td>OCT 21</td><td>PHX at POR</td><td class="hide-m">PLUGG</td><td>HOME 89%</td><td>83-124</td><td class="res-w">WON</td><td class="tape-margin"><span class="ref-price">56.5¢ REF</span> · <span class="num-green">+$38.50</span></td></tr>
+            <tr><td>OCT 21</td><td>SAC at LAC</td><td class="hide-m">PLUGG</td><td>HOME 82%</td><td>96-121</td><td class="res-w">WON</td><td class="tape-margin"><span class="ref-price">64.5¢ REF</span> · <span class="num-green">+$27.52</span></td></tr>
           </tbody>
         </table>
         <div class="panel-b" style="padding-top:10px;">
@@ -655,7 +655,7 @@
       </div>
       <div class="grid grid-2">
         <section class="panel" aria-label="NBA coverage">
-          <div class="panel-h"><span>NBA</span><span class="right" style="color:var(--green)">● LIVE — v3.1 + PLATT / v2 ELO</span></div>
+          <div class="panel-h"><span>NBA</span><span class="right" style="color:var(--green)">● LIVE — PLUGG / v2 ELO</span></div>
           <div class="panel-b">
             <button class="team-row" aria-expanded="false" aria-controls="team-phi">
               <span><b>PHILADELPHIA 76ERS</b><span class="team-sub">PHI · TONIGHT OCT 22</span></span>
@@ -665,10 +665,10 @@
             <div class="team-detail" id="team-phi">
               <div class="team-detail-in">
                 <div class="xlate-row"><span class="k">Next matchup</span><span class="v">vs CLEVELAND — TONIGHT, OCT 22</span></div>
-                <div class="xlate-row"><span class="k">Locked lean</span><span class="v" style="color:var(--green)">PHI 69% · MODEL v3.1-PLATT</span></div>
+                <div class="xlate-row"><span class="k">Locked lean</span><span class="v" style="color:var(--green)">PHI 69% · PLUGG</span></div>
                 <div class="team-tape-h">SETTLED TAPE — THIS TEAM</div>
                 <div class="team-tape-row"><span>OCT 16 · BOS at PHI</span><span>v2-ELO · HOME 70%</span><span>125-120</span><span class="res-l">LOST</span></div>
-                <div class="team-tape-row"><span>OCT 20 · PHI at NY</span><span>v3.1-PLATT · AWAY 58%</span><span>106-100</span><span class="res-w">WON</span></div>
+                <div class="team-tape-row"><span>OCT 20 · PHI at NY</span><span>PLUGG · AWAY 58%</span><span>106-100</span><span class="res-w">WON</span></div>
               </div>
             </div>
             <button class="team-row" aria-expanded="false" aria-controls="team-okc">
@@ -679,9 +679,9 @@
             <div class="team-detail" id="team-okc">
               <div class="team-detail-in">
                 <div class="xlate-row"><span class="k">Next matchup</span><span class="v">vs DENVER — TONIGHT, OCT 22</span></div>
-                <div class="xlate-row"><span class="k">Locked lean</span><span class="v" style="color:var(--green)">OKC 67% · MODEL v3.1-PLATT</span></div>
+                <div class="xlate-row"><span class="k">Locked lean</span><span class="v" style="color:var(--green)">OKC 67% · PLUGG</span></div>
                 <div class="team-tape-h">SETTLED TAPE — THIS TEAM</div>
-                <div class="team-tape-row"><span>OCT 20 · OKC at SA</span><span>v3.1-PLATT · AWAY 54%</span><span>116-104</span><span class="res-w">WON</span></div>
+                <div class="team-tape-row"><span>OCT 20 · OKC at SA</span><span>PLUGG · AWAY 54%</span><span>116-104</span><span class="res-w">WON</span></div>
               </div>
             </div>
             <p class="xlate-note">Tap a team for its next matchup, the model's locked lean, and its settled tape rows. Leans are model probabilities; tonight's two locked leans ride as open paper bets on the PAPER PROFIT tab.</p>
@@ -764,7 +764,7 @@
           <span class="sub">DOLLAR VIEW · $50 FLAT PAPER STAKE PER PRICE-STAMPED BET · LANES NEVER BLENDED</span>
         </div>
 
-        <section class="panel" aria-label="Open paper bets — Kalshi">
+        <section class="panel" aria-label="Open paper bets — PLUGG">
           <div class="panel-h"><span>OPEN PAPER BETS</span><span class="right">LIVE POSITIONS · FLAT $50 PAPER STAKE</span></div>
           <div class="scroll-box">
             <table class="bd" aria-label="Open paper bets">
@@ -792,7 +792,7 @@
           </div>
         </section>
 
-        <section class="panel" style="margin-top:12px;" aria-label="Settled paper bets — Kalshi">
+        <section class="panel" style="margin-top:12px;" aria-label="Settled paper bets — PLUGG">
           <div class="panel-h"><span>SETTLED PAPER BETS</span><span class="right">NEWEST FIRST · GREEN = IT HIT · RED = IT DIDN'T</span></div>
           <div class="scroll-box">
             <table class="bd" aria-label="Settled paper bets">
@@ -822,7 +822,7 @@
               <div class="stat"><div class="k">RECORD</div><div class="v">17–9</div><div class="n">17 WON · 9 LOST</div></div>
             </div>
             <div class="ref26-model">
-              <div class="rm-name">NBA v3.1 + PLATT</div>
+              <div class="rm-name">PLUGG</div>
               <div class="rm-meta">14 BETS · RECORD 11–3</div>
               <div class="xlate-row"><span class="k">Won</span><span class="v" style="color:var(--green)">$440.18</span></div>
               <div class="xlate-row"><span class="k">Lost</span><span class="v" style="color:var(--red)">$150.00</span></div>
@@ -841,9 +841,9 @@
           </div>
         </section>
 
-        <section class="money" style="margin-top:12px;" aria-label="Paper wallet — Kalshi council">
+        <section class="money" style="margin-top:12px;" aria-label="Paper wallet — PLUGG">
           <div class="m-label">
-            <span>PAPER WALLET — KALSHI / COUNCIL</span>
+            <span>PAPER WALLET — PLUGG</span>
             <span class="m-status" id="pp-k-status">FLAT $50 PAPER STAKE PER BET</span>
           </div>
           <div class="m-big green" id="pp-k-balance-big">$<span id="pp-k-bankroll" data-count="50" data-dec="2">50.00</span></div>
@@ -857,7 +857,7 @@
           <div class="m-sub">Bets from before price-stamping carry their pre-lock reference price — the last Kalshi quoted mid before each lock, reconstructed by a fixed rule and tagged REF on every row. Bets since carry live stamps. Both count in this one wallet; the forecast ledger itself was never backfilled.</div>
         </section>
 
-        <section class="panel" style="margin-top:12px;" aria-label="Paper bet ledger — Kalshi">
+        <section class="panel" style="margin-top:12px;" aria-label="Paper bet ledger — PLUGG">
           <div class="panel-h"><span>PAPER BET LEDGER</span><span class="right">FLAT $50 PAPER STAKE · BINARY PAYOUT VS STAMPED PRICE</span></div>
           <div class="scroll-box">
           <table class="bd" aria-label="Paper dollar ledger">
@@ -984,11 +984,11 @@
         <p class="foot-note">Hummingbot keeps no bankroll and no $50-stake scale — its numbers are net paper P&amp;L, volume, fees, and trade count, straight from the bot's own record. Crypto results prove nothing about sports markets, and sports results prove nothing about crypto.</p>
       </div><!-- /tab-hbprofit -->
 
-      <!-- ======= TAB 5 : MEMECOIN — FOMO SHADOW-COPY + PUMP.FUN LAUNCH TRACK ======= -->
+      <!-- ======= TAB 5 : COBRA — FOMO SHADOW-COPY + PUMP.FUN LAUNCH TRACK ======= -->
       <div id="tab-memecoin" class="tab-panel" hidden>
         <div class="lane-head">
           <span class="lane-tag">LANE 03</span>
-          <h2>MEMECOIN</h2>
+          <h2>COBRA</h2>
           <span class="sub">SHADOW-COPY + LAUNCH WATCHING · PAPER ONLY — SHADOW RECORD, NO REAL ORDERS</span>
           <span class="sub" id="fm-updated"></span>
           <span class="status" id="fm-lane-status"><span class="dot off"></span>AWAITING LEADERS</span>
@@ -996,7 +996,7 @@
         </div>
         <p class="hb-note" id="fm-status-note" style="display:none;"></p>
 
-        <section class="money off" id="fm-money" aria-label="Memecoin shadow balance — both tracks combined">
+        <section class="money off" id="fm-money" aria-label="COBRA shadow balance — both tracks combined">
           <div class="m-label">
             <span>SHADOW BALANCE — BOTH TRACKS COMBINED</span>
             <span class="m-status" id="fm-mstatus"><span class="dot off"></span>AWAITING LEADERS</span>
@@ -1608,7 +1608,7 @@
             var rows = document.querySelectorAll('.bd-model');
             for (var i = 0; i < rows.length && i < d.models.length; i++) {
               var m = d.models[i], r = rows[i];
-              if (m.name) { var nm = r.querySelector('.bd-name'); if (nm) nm.textContent = m.name; }
+              if (m.name) { var nm = r.querySelector('.bd-name'); if (nm) nm.textContent = (/v3|PLATT/i.test(m.name) ? 'PLUGG' : m.name); }
               if (isNum(m.scored)) { var sc = r.querySelector('.bd-scored'); if (sc) sc.textContent = m.scored; }
               if (isNum(m.won) && isNum(m.lost)) {
                 var rec = r.querySelector('.bd-rec');
@@ -1633,7 +1633,7 @@
                 var row = d.tape[t];
                 var res = String(row.result || '').toUpperCase();
                 var prob = pct(row.prob);
-                var cells = [fmtDate(row.date), String(row.game || '—'), String(row.model || '—'), String(row.pick || '') + (prob !== null ? ' ' + Math.round(prob) + '%' : ''), String(row.final || '—')];
+                var cells = [fmtDate(row.date), String(row.game || '—'), (/v3|PLATT/i.test(String(row.model || '')) ? 'PLUGG' : String(row.model || '—')), String(row.pick || '') + (prob !== null ? ' ' + Math.round(prob) + '%' : ''), String(row.final || '—')];
                 var tr = document.createElement('tr');
                 for (var c = 0; c < cells.length; c++) {
                   var td = document.createElement('td');
@@ -1961,7 +1961,7 @@
       if (tb.textContent.indexOf('PAPER MARGIN') < 0) return;
       $$('tr', tb).forEach(function (tr) {
         var cells = $$('td', tr); if (cells.length < 6) return;
-        var mdl = (d.models || []).filter(function (m) { return tr.textContent.indexOf(m.label) >= 0; })[0];
+        var mdl = (d.models || []).filter(function (m) { return tr.textContent.indexOf(m.label) >= 0 || tr.textContent.indexOf(/v3|PLATT/i.test(m.label || '') ? 'PLUGG' : m.label) >= 0 || (m.key && tr.textContent.indexOf(m.key) >= 0); })[0];
         if (!mdl) return;
         var agg = pm[mdl.key] || { net: 0 };
         txt(cells[1], mdl.scored);
@@ -1997,6 +1997,7 @@
       (d.models || []).forEach(function (mdl, i) {
         var box = models[i]; if (!box) return;
         var agg = pm[mdl.key] || { won: 0, lost: 0, net: 0 };
+        var rmn = $('.rm-name', box); if (rmn) rmn.textContent = (/v3|PLATT/i.test(mdl.label || mdl.name || '') ? 'PLUGG' : (mdl.label || mdl.name || rmn.textContent));
         txt($('.rm-meta', box), mdl.scored + ' BETS · RECORD ' + mdl.won + '–' + mdl.lost);
         var rows = $$('.xlate-row .v', box);
         if (rows[0]) rows[0].textContent = money(agg.won);
@@ -2038,15 +2039,15 @@
       t.push('<span class="tick-item">RECORD <span class="g"><b>' + won + ' W</b></span> / <span class="r"><b>' + lost + ' L</b></span></span>');
       (d.models || []).forEach(function (mdl) {
         var agg = pm[mdl.key] || { net: 0 };
-        t.push('<span class="tick-item">' + esc(mdl.label) + ' <span class="g"><b>' + mdl.won + ' W</b></span> / <span class="r"><b>' + mdl.lost + ' L</b></span> · <span class="g"><b>' + pct1(mdl.win_rate || 0) + '</b></span> · BRIER <b>' + (typeof mdl.brier === 'number' ? mdl.brier.toFixed(4) : '—') + '</b> · NET <span class="' + (agg.net >= 0 ? 'g' : 'r') + '"><b>' + smoney(agg.net) + '</b></span></span>');
+        t.push('<span class="tick-item">' + esc(/v3|PLATT/i.test(mdl.label || '') ? 'PLUGG' : mdl.label) + ' <span class="g"><b>' + mdl.won + ' W</b></span> / <span class="r"><b>' + mdl.lost + ' L</b></span> · <span class="g"><b>' + pct1(mdl.win_rate || 0) + '</b></span> · BRIER <b>' + (typeof mdl.brier === 'number' ? mdl.brier.toFixed(4) : '—') + '</b> · NET <span class="' + (agg.net >= 0 ? 'g' : 'r') + '"><b>' + smoney(agg.net) + '</b></span></span>');
       });
-      t.push('<span class="tick-item">KALSHI PAPER $ <span class="' + (net >= 0 ? 'g' : 'r') + '"><b>' + smoney(net) + ' NET</b></span> · WALLET <b>' + money(w.balance) + '</b></span>');
+      t.push('<span class="tick-item">PLUGG PAPER $ <span class="' + (net >= 0 ? 'g' : 'r') + '"><b>' + smoney(net) + ' NET</b></span> · WALLET <b>' + money(w.balance) + '</b></span>');
       if (H && typeof H.trades === 'number') {
         var hbNet = (typeof H.won_usdt === 'number') ? (H.won_usdt - (H.lost_usdt || 0)) + (H.unrealized_usdt || 0) : null;
         t.push('<span class="tick-item">HUMMINGBOT <b>' + H.trades + (H.trades === 1 ? ' TRADE' : ' TRADES') + '</b> · VOL <b>' + money(H.volume_usdt || 0) + '</b></span>');
         t.push('<span class="tick-item">HUMMINGBOT PAPER $ ' + (hbNet === null ? '<b>—</b>' : '<span class="' + (hbNet >= 0 ? 'g' : 'r') + '"><b>' + smoney(hbNet) + ' NET</b></span>') + '</span>');
       }
-      t.push('<span class="tick-item">ENGINE <b>v3 + PLATT</b></span>');
+      t.push('<span class="tick-item">ENGINE <b>PLUGG</b></span>');
       t.push('<span class="tick-item"><span class="p"><b>PAPER ONLY</b></span></span>');
       tick.innerHTML = t.join('');
     }
@@ -2325,7 +2326,7 @@ table.bd tbody tr, table.tape tbody tr, .feed li, .hit { cursor: pointer; }
 </script>
 <script>
 // ===== FOMO LANE (appended) =====
-// MEMECOIN tab: fomo_lane.json is published next to this page, same as the
+// COBRA tab: fomo_lane.json is published next to this page, same as the
 // Kalshi and Hummingbot lanes. One file, TWO tracks:
 //   Track 1 (top level of the file) — shadow-copy of the FOMO leaders.
 //   Track 2 (d.launch_track, may be absent) — pump.fun launch watching.
