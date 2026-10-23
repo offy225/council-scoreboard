@@ -1,7 +1,7 @@
 {
  "lane": "fomo_shadow_copy",
  "paper_only": true,
- "updated_at": "2026-10-23T04:11:47+00:00",
+ "updated_at": "2026-10-23T04:44:00+00:00",
  "station": "awaiting_watchlist",
  "note": "Watchlist is empty \u2014 waiting on Will's ~5 leader wallet addresses.",
  "leaders_followed": 0,
@@ -67,5 +67,102 @@
   "closed_so_far": 0,
   "equity_return_pct": 0.0,
   "kill_if_return_pct_below": -60
+ },
+ "launch_track": {
+  "track": "pumpfun",
+  "paper_only": true,
+  "station": "screening",
+  "note": "Launch track \u2014 separate $250 shadow account. Watches pump.fun launches, shadow-enters the ones whose early backing passes the declared screen; screen failures are ghost-tracked so the screen itself is graded. Graduation (bonding-curve complete) is the on-chain proxy for 'hit FOMO'.",
+  "start_balance_usdt": 250.0,
+  "cash_usdt": 250.0,
+  "balance_usdt": 250.0,
+  "realized_usdt": 0,
+  "unrealized_usdt": 0.0,
+  "open_positions": 0,
+  "positions_detail": [],
+  "closed_trades": 0,
+  "won": 0,
+  "lost": 0,
+  "total_won_usdt": 0,
+  "total_lost_usdt": 0,
+  "trades_detail": [],
+  "mc_bands": {
+   "lt_100k": {
+    "trades": 0,
+    "won": 0,
+    "lost": 0,
+    "net_usdt": 0
+   },
+   "100k_1m": {
+    "trades": 0,
+    "won": 0,
+    "lost": 0,
+    "net_usdt": 0
+   },
+   "gt_1m": {
+    "trades": 0,
+    "won": 0,
+    "lost": 0,
+    "net_usdt": 0
+   },
+   "unknown": {
+    "trades": 0,
+    "won": 0,
+    "lost": 0,
+    "net_usdt": 0
+   }
+  },
+  "screening": {
+   "candidates_active": 11,
+   "screened_total": 3,
+   "passed_total": 0,
+   "failed_total": 3
+  },
+  "passed": {
+   "trades": 0,
+   "won": 0,
+   "lost": 0,
+   "net_usdt": 0
+  },
+  "failed_ghost": {
+   "trades": 0,
+   "won": 0,
+   "lost": 0,
+   "net_usdt": 0,
+   "note": "Ghost P&L = what entering the launches the backing screen REJECTED would have made, same friction + exit rules, no shadow cash."
+  },
+  "screen_config": {
+   "window_seconds": 600,
+   "min_curve_gain_pct_points": 10.0,
+   "min_unique_buyers": 15,
+   "min_buy_sell_ratio": 1.5,
+   "max_creator_share": 0.1,
+   "exits": {
+    "graduation_stall_min_gain_pct": 50.0,
+    "graduation_stall_minutes": 30,
+    "stop_loss_pct": -50.0,
+    "take_profit_1_pct": 100.0,
+    "take_profit_1_sell_fraction": 0.5,
+    "take_profit_2_pct": 300.0,
+    "take_profit_2_sell_fraction": 0.75,
+    "timeout_hours": 24
+   }
+  },
+  "feed": {
+   "last_poll_at": "2026-10-23T04:42:03+00:00",
+   "last_error": null,
+   "coins_seen_total": 172,
+   "activations_total": 14
+  }
+ },
+ "combined": {
+  "note": "Display sum of the two independent shadow accounts (copy $250 + launch $250). The accounts never share cash.",
+  "start_balance_usdt": 500.0,
+  "balance_usdt": 500.0,
+  "realized_usdt": 0,
+  "unrealized_usdt": 0.0,
+  "closed_trades": 0,
+  "won": 0,
+  "lost": 0
  }
 }
