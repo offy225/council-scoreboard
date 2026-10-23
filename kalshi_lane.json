@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-10-23T14:41:02Z",
-  "scored": 28,
-  "won": 19,
+  "updated_at": "2026-10-23T22:58:05Z",
+  "scored": 29,
+  "won": 20,
   "lost": 9,
-  "win_rate": 0.6785714285714286,
-  "brier": 0.2251,
-  "log_loss": 0.6367,
+  "win_rate": 0.6896551724137931,
+  "brier": 0.2257,
+  "log_loss": 0.6381,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 0,
-      "won": 0,
+      "scored": 1,
+      "won": 1,
       "lost": 0,
-      "win_rate": null,
-      "brier": null
+      "win_rate": 1.0,
+      "brier": 0.2417
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -341,18 +341,20 @@
       "result": "WON",
       "price": 0.735,
       "price_source": "reference"
+    },
+    {
+      "date": "2026-10-23",
+      "game": "CHI at MIL",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "CHI",
+      "prob": 0.5084,
+      "final": "MIL 125 \u00b7 CHI 132",
+      "result": "WON",
+      "price": 0.485,
+      "price_source": "reference"
     }
   ],
   "open_bets": [
-    {
-      "game": "CHI at MIL",
-      "pick": "CHI",
-      "prob": 0.5084,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.485,
-      "price_source": "reference"
-    },
     {
       "game": "NY at BOS",
       "pick": "BOS",
@@ -761,14 +763,25 @@
       "price": 0.735,
       "price_source": "reference",
       "profit": 18.03
+    },
+    {
+      "date": "2026-10-23",
+      "game": "CHI at MIL",
+      "pick": "CHI",
+      "prob": 0.5084,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.485,
+      "price_source": "reference",
+      "profit": 53.09
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 429.65,
-    "total_won": 829.65,
+    "balance": 482.74,
+    "total_won": 882.74,
     "total_lost": 450.0,
-    "settled_count": 28,
-    "ref_priced_count": 28
+    "settled_count": 29,
+    "ref_priced_count": 29
   }
 }
