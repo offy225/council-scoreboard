@@ -1,7 +1,7 @@
 {
  "lane": "fomo_shadow_copy",
  "paper_only": true,
- "updated_at": "2026-10-23T19:33:21+00:00",
+ "updated_at": "2026-10-23T19:51:18+00:00",
  "station": "awaiting_watchlist",
  "note": "Watchlist is empty \u2014 waiting on Will's ~5 leader wallet addresses.",
  "leaders_followed": 0,
@@ -129,10 +129,10 @@
    }
   },
   "screening": {
-   "candidates_active": 8,
-   "screened_total": 231,
+   "candidates_active": 9,
+   "screened_total": 234,
    "passed_total": 1,
-   "failed_total": 230
+   "failed_total": 233
   },
   "passed": {
    "trades": 1,
@@ -167,10 +167,10 @@
    }
   },
   "feed": {
-   "last_poll_at": "2026-10-23T19:29:35+00:00",
+   "last_poll_at": "2026-10-23T19:44:34+00:00",
    "last_error": null,
-   "coins_seen_total": 5014,
-   "activations_total": 239
+   "coins_seen_total": 5099,
+   "activations_total": 243
   }
  },
  "combined": {
@@ -187,7 +187,7 @@
   "lane": "cobra_graduated_momentum",
   "track": "graduated",
   "paper_only": true,
-  "updated_at": "2026-10-23T19:33:42+00:00",
+  "updated_at": "2026-10-23T19:52:35+00:00",
   "station": "screening",
   "note": "Graduated momentum track \u2014 separate $250 shadow account, $25 stakes. Watches pump.fun coins AFTER graduation (bonding curve complete, trading on a DEX) and shadow-enters only confirmed continuation: above the ~$69K graduation mark, +20% over the graduation price across at least two polls, buyers still coming in, creator not dumping. Screen failures are ghost-tracked so the screen itself is graded. Graduation time/price are stated proxies (first-observed-complete; $69K curve-complete mark) \u2014 see SPEC_GRADUATED.md.",
   "start_balance_usdt": 250.0,
@@ -230,7 +230,7 @@
    }
   },
   "screening": {
-   "candidates_active": 4,
+   "candidates_active": 8,
    "screened_total": 32,
    "passed_total": 0,
    "failed_total": 32
@@ -271,10 +271,10 @@
    }
   },
   "feed": {
-   "last_poll_at": "2026-10-23T19:33:24+00:00",
+   "last_poll_at": "2026-10-23T19:51:22+00:00",
    "last_error": null,
-   "coins_seen_total": 36,
-   "activations_total": 36
+   "coins_seen_total": 40,
+   "activations_total": 40
   }
  }
 }
