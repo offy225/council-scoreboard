@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23T02:38:15Z",
+  "updated_at": "2026-10-23T02:44:10Z",
   "station": "online",
   "trades": 1,
   "buys": 0,
@@ -11,5 +11,22 @@
   "last_trade_at": "2026-10-22T21:16:33Z",
   "source": "sqlite:/Users/willscott/hummingbot/data/conf_pure_mm_1.ymlstart.sqlite",
   "bot_alive": true,
-  "status_note": null
+  "status_note": null,
+  "trades_detail": [
+    {
+      "time": "2026-10-22T21:16:33Z",
+      "side": "sell",
+      "pair": "ETH-USDT",
+      "price": 2401.749,
+      "amount": 0.01,
+      "fee_usdt": 0.024017,
+      "pnl_usdt": null
+    }
+  ],
+  "won_usdt": 0.0,
+  "lost_usdt": 0.0,
+  "round_trips": 0,
+  "open_inventory": {
+    "ETH-USDT": -0.01
+  }
 }
