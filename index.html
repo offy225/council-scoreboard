@@ -566,7 +566,7 @@
       <!-- ======= TABS ======= -->
       <div class="tabs" role="tablist" aria-label="Dashboard views">
         <button class="tab-btn active" id="btn-terminal" role="tab" aria-selected="true" aria-controls="tab-terminal" data-tab="terminal"><span class="bic bic-tab a-plugg"><img src="assets/icon-plugg.webp" alt="" /><i class="orbit" aria-hidden="true"><b></b></i></span><span>PLUGG</span></button>
-        <button class="tab-btn" id="btn-profit" role="tab" aria-selected="false" aria-controls="tab-profit" data-tab="profit"><span class="bic bic-tab a-plugg"><img src="assets/icon-plugg.webp" alt="" /><i class="orbit" aria-hidden="true"><b></b></i></span><span>PAPER PROFIT</span></button>
+        <button class="tab-btn" id="btn-profit" role="tab" aria-selected="false" aria-controls="tab-profit" data-tab="profit"><span class="bic bic-tab a-plugg"><img src="assets/icon-plugg.webp" alt="" /><i class="orbit" aria-hidden="true"><b></b></i></span><span>PLUGG PROFIT</span></button>
         <button class="tab-btn" id="btn-hummingbot" role="tab" aria-selected="false" aria-controls="tab-hummingbot" data-tab="hummingbot"><span class="bic bic-tab a-hb"><img src="assets/icon-hummingbot.webp" alt="" /></span><span>HUMMINGBOT</span></button>
         <button class="tab-btn" id="btn-hbprofit" role="tab" aria-selected="false" aria-controls="tab-hbprofit" data-tab="hbprofit"><span class="bic bic-tab a-hb"><img src="assets/icon-hummingbot.webp" alt="" /></span><span>HB PROFIT</span></button>
         <button class="tab-btn" id="btn-memecoin" role="tab" aria-selected="false" aria-controls="tab-memecoin" data-tab="memecoin"><span class="bic bic-tab a-cobra"><img src="assets/icon-cobra.webp" alt="" /><i class="eye el" aria-hidden="true"></i><i class="eye er" aria-hidden="true"></i><i class="tongue" aria-hidden="true"></i></span><span>COBRA</span></button>
@@ -791,7 +791,7 @@
             <div id="cov-teams">
               <p class="xlate-note" style="margin:0;">AWAITING LANE SYNC — OPEN LEANS POST HERE FROM THE LANE FILE.</p>
             </div>
-            <p class="xlate-note">Tap a team for its next matchup, the model's locked lean, and its settled tape rows. Leans are model probabilities; open leans ride as open paper bets on the PAPER PROFIT tab.</p>
+            <p class="xlate-note">Tap a team for its next matchup, the model's locked lean, and its settled tape rows. Leans are model probabilities; open leans ride as open paper bets on the PLUGG PROFIT tab.</p>
           </div>
         </section>
         <div class="grid" style="gap:12px; align-content:start;">
@@ -864,12 +864,12 @@
       </p>
       </div><!-- /tab-terminal -->
 
-      <!-- ======= TAB 2 : PAPER PROFIT ======= -->
+      <!-- ======= TAB 2 : PLUGG PROFIT ======= -->
       <div id="tab-profit" class="tab-panel" hidden>
         <div class="lane-head">
           <span class="lane-tag">LEDGER</span>
           <span class="bic bic-lane sm a-plugg"><img src="assets/icon-plugg.webp" alt="PLUGG — pixel power plug wrapped in money-green" /><i class="orbit" aria-hidden="true"><b></b></i></span>
-          <h2>PAPER PROFIT</h2>
+          <h2>PLUGG PROFIT</h2>
           <span class="sub">DOLLAR VIEW · $50 FLAT PAPER STAKE PER PRICE-STAMPED BET · LANES NEVER BLENDED</span>
         </div>
 
@@ -2214,7 +2214,7 @@
               (m.brier !== null ? ' · BRIER <b>' + m.brier.toFixed(4) + '</b>' : '') +
               (net !== null ? ' · NET <span class="' + (net >= 0 ? 'g' : 'r') + '"><b>' + smoney(net) + '</b></span>' : '') + '</span>');
           });
-          if (n.net !== null) t.push('<span class="tick-item">PLUGG PAPER $ <span class="' + (n.net >= 0 ? 'g' : 'r') + '"><b>' + smoney(n.net) + ' NET</b></span>' + (n.balance !== null ? ' · WALLET <b>' + money(n.balance) + '</b>' : '') + '</span>');
+          if (n.net !== null) t.push('<span class="tick-item">PLUGG PAPER $ <span class="' + (n.net >= 0 ? 'g' : 'r') + '"><b>' + smoney(n.net) + ' NET</b></span>' + (n.balance !== null ? ' · WALLET <span class="' + (n.balance >= 0 ? 'g' : 'r') + '"><b>' + money(n.balance) + '</b></span>' : '') + '</span>');
           if (lastHB && typeof lastHB.trades === 'number') {
             var hbNet = (typeof lastHB.won_usdt === 'number') ? (lastHB.won_usdt - (lastHB.lost_usdt || 0)) + (lastHB.unrealized_usdt || 0) : null;
             t.push('<span class="tick-item">HUMMINGBOT <b>' + lastHB.trades + (lastHB.trades === 1 ? ' TRADE' : ' TRADES') + '</b> · VOL <b>' + money(lastHB.volume_usdt || 0) + '</b></span>');
@@ -3508,6 +3508,187 @@ table.bd tbody tr, table.tape tbody tr, .feed li, .hit { cursor: pointer; }
     var bs = document.querySelectorAll('.v8-fresh');
     for (var i = 0; i < bs.length; i++) bs[i].textContent = agoText(laneTs[bs[i].getAttribute('data-lane')]);
   }, 1000);
+})();
+</script>
+
+<style>
+/* ===== v9 DEEP SPACE (appended) =====
+   The board now sits in the same space the ticker band has always
+   flown through: a clean true-black page, with the ticker's drifting
+   pixel-star family extended — quieter, slower, lower — across the
+   whole backdrop. The ticker band keeps its own richer drift exactly
+   as-is (the v8 layer above is untouched); this layer lives behind
+   every panel, so contrast and the professional read never move. */
+
+/* true black — no gray wash anywhere behind the panels. The black
+   lives on html (the canvas); body's own fill goes transparent so
+   the star layers below can sit on that black, behind every panel,
+   instead of being buried under an opaque body background. */
+html { background: #000000; }
+body { background-color: transparent; }
+
+/* ticker truth colors reach the numbers themselves — a bold value
+   inside a colored span takes the span's color, not plain white */
+.tick-item .g b, .tick-item .r b, .tick-item .gold b, .tick-item .p b { color: inherit; }
+
+/* galaxy depth — soft nebula glows, fixed to the viewport */
+body::after {
+  content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background-image:
+    radial-gradient(680px 440px at 12% 4%, rgba(0, 221, 148, 0.055), transparent 70%),
+    radial-gradient(760px 520px at 88% 20%, rgba(139, 92, 246, 0.05), transparent 70%),
+    radial-gradient(900px 620px at 50% 96%, rgba(110, 193, 232, 0.035), transparent 70%);
+  background-repeat: no-repeat;
+}
+
+/* pixel starfield — the ticker band's rendering family, page-wide:
+   same 1px radial-gradient stars (white, money-green, a sparse sky
+   tint), tiled and drifting sideways, dialed down for backdrop duty */
+body::before {
+  content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  opacity: 0.45; /* THE WHISPER — backdrop dosing; the ticker band keeps full strength */
+  background-image:
+    radial-gradient(circle, rgba(255, 255, 255, 0.75) 1px, transparent 1.7px),
+    radial-gradient(circle, rgba(0, 221, 148, 0.80) 1px, transparent 1.7px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.38) 1px, transparent 1.5px),
+    radial-gradient(circle, rgba(110, 193, 232, 0.50) 1px, transparent 1.7px);
+  background-size: 140px 96px, 210px 150px, 84px 60px, 260px 190px;
+  background-position: 0 0, 60px 40px, 22px 18px, 120px 90px;
+  background-repeat: repeat;
+  animation: v9-drift 90s linear infinite;
+}
+@keyframes v9-drift {
+  from { background-position: 0 0, 60px 40px, 22px 18px, 120px 90px; }
+  to { background-position: 140px 0, 270px 40px, 106px 18px, 380px 90px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::before { animation: none; }
+}
+</style>
+
+<style>
+/* ===== v10 THE WHISPER TOUCHES (appended) =====
+   Three restrained additions in the same hand as the rest of the
+   board: a game-menu cursor that steps to the selected tab, and a
+   soft breathing glow on the masthead emblems. No layout, data, or
+   sound changes. */
+
+/* ---------- game-menu cursor under the active tab ---------- */
+.tabs { position: relative; }
+#tab-cursor {
+  position: absolute; left: 0; top: 0; width: 0; height: 4px;
+  background: var(--green); box-shadow: 0 0 9px rgba(0, 221, 148, 0.65);
+  pointer-events: none; z-index: 2; opacity: 0;
+}
+#tab-cursor::before {
+  content: ""; position: absolute; left: 0; top: -5px;
+  width: 5px; height: 5px; background: var(--green);
+}
+#tab-cursor.on { opacity: 1; }
+#tab-cursor.move {
+  transition: left 0.3s steps(7, end), top 0.3s steps(7, end), width 0.3s steps(7, end);
+}
+
+/* ---------- masthead emblems — a very soft idle breathing glow ---------- */
+.bic-hero { animation: hero-breathe 5.2s ease-in-out infinite; }
+.bic-hero.a-hb { animation: hb-bob 3.4s ease-in-out infinite, hero-breathe 5.2s ease-in-out infinite; }
+@keyframes hero-breathe {
+  0%, 100% { box-shadow: inset 0 0 10px rgba(0, 221, 148, 0.04); }
+  50% { box-shadow: inset 0 0 24px rgba(0, 221, 148, 0.20); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bic-hero { animation: none; }
+  #tab-cursor.move { transition: none; }
+}
+</style>
+
+<script>
+// ===== v10 THE WHISPER TOUCHES (appended) =====
+// (1) Game-menu cursor: a money-green pixel bar that steps to the
+//     selected tab and follows it across wrapped rows and resizes.
+// (2) Money-counter tick: when a live figure's text changes under the
+//     one-wire sync, the number counts to its new value in a fast
+//     stepped tick — once, ~380ms — instead of snapping. Purely a
+//     display transition: the wire's value is the value, the tick
+//     only walks the digits there. Reduced motion: neither runs.
+(function () {
+  'use strict';
+  var RM = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+
+  /* ---------- game-menu cursor ---------- */
+  var tabs = document.querySelector('.tabs');
+  if (tabs) {
+    var cur = document.createElement('div');
+    cur.id = 'tab-cursor';
+    cur.setAttribute('aria-hidden', 'true');
+    tabs.appendChild(cur);
+    var placed = false;
+    function place() {
+      var b = tabs.querySelector('.tab-btn.active');
+      if (!b) { cur.classList.remove('on'); return; }
+      cur.style.left = b.offsetLeft + 'px';
+      cur.style.width = b.offsetWidth + 'px';
+      cur.style.top = (b.offsetTop + b.offsetHeight + 2) + 'px';
+      cur.classList.add('on');
+      if (placed && !RM) cur.classList.add('move');
+      placed = true;
+    }
+    place();
+    var btns = tabs.querySelectorAll('.tab-btn');
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].addEventListener('click', function () { setTimeout(place, 0); });
+    }
+    window.addEventListener('resize', place);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(place);
+    setTimeout(place, 600); /* re-place once the pixel font has swapped in */
+  }
+
+  /* ---------- money-counter tick ---------- */
+  if (RM || typeof MutationObserver !== 'function') return;
+  function parseNum(s) {
+    var m = /^([^\d-]*)(-?)([\d,]+\.?\d*)([\s\S]*)$/.exec(String(s).trim());
+    if (!m) return null;
+    return {
+      raw: String(s), pre: m[1], val: (m[2] ? -1 : 1) * parseFloat(m[3].replace(/,/g, '')),
+      suf: m[4], dec: (m[3].split('.')[1] || '').length, comma: m[3].indexOf(',') >= 0
+    };
+  }
+  function fmtNum(t, v) {
+    var s = Math.abs(v).toFixed(t.dec);
+    if (t.comma) s = s.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    return t.pre + (v < 0 ? '-' : '') + s + t.suf;
+  }
+  function tick(el, from, to) {
+    var start = null, dur = 380, steps = 8;
+    el._ticking = true;
+    function frame(ts) {
+      if (!start) start = ts;
+      var p = Math.min((ts - start) / dur, 1);
+      var q = p === 1 ? 1 : Math.floor(p * steps) / steps;
+      var e = 1 - Math.pow(1 - q, 2);
+      el.textContent = fmtNum(to, from.val + (to.val - from.val) * e);
+      if (p < 1) requestAnimationFrame(frame);
+      else { el.textContent = to.raw; el._ticking = false; }
+    }
+    requestAnimationFrame(frame);
+  }
+  ['k-m-won', 'k-m-lost', 'k-gate-scored', 'k-pot-won-amt', 'k-pot-lost-amt',
+   'pp-k-bankroll', 'pp-k-won', 'pp-k-lost', 'fm-big'].forEach(function (id) {
+    var el = document.getElementById(id);
+    if (!el) return;
+    var last = el.textContent;
+    new MutationObserver(function () {
+      if (el._ticking) { last = el.textContent; return; }
+      var now = el.textContent;
+      if (now === last) return;
+      var a = parseNum(last), b = parseNum(now);
+      last = now;
+      if (a && b && isFinite(a.val) && isFinite(b.val) && a.val !== b.val &&
+          a.pre === b.pre && a.suf === b.suf) tick(el, a, b);
+    }).observe(el, { characterData: true, childList: true, subtree: true });
+  });
 })();
 </script>
 </body>
