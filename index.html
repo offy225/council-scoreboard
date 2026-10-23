@@ -144,8 +144,8 @@
       .gate-big { font-size: clamp(52px, 9vw, 84px); font-weight: 800; line-height: 1; letter-spacing: -0.01em; }
       .gate-big .of { color: var(--faint); font-size: 0.55em; font-weight: 700; }
       .gate-bar { height: 14px; border: 1px solid var(--gold); margin: 14px 0 10px; position: relative; background: #000; }
-      .gate-bar .fill { position: absolute; inset: 0; width: 13%; background: var(--gold); animation: gatefill 1.6s cubic-bezier(0.22, 0.8, 0.3, 1) both; }
-      @keyframes gatefill { from { width: 0; } to { width: 13%; } }
+      .gate-bar .fill { position: absolute; inset: 0; width: 0; background: var(--gold); animation: gatefill 1.6s cubic-bezier(0.22, 0.8, 0.3, 1) both; }
+      @keyframes gatefill { from { width: 0; } to { width: 0; } }
       @media (prefers-reduced-motion: reduce) {
         .gate-bar .fill { animation: none; }
       }
@@ -294,19 +294,6 @@
         table.tape th, table.tape td { padding: 5px 6px; font-size: 11px; }
       }
 
-      /* ---------- first 26 · reference-priced ---------- */
-      .ref26-panel { border-color: var(--gold); }
-      .ref26-panel .panel-h { border-bottom-color: var(--gold); color: var(--gold); }
-      .ref-tag {
-        display: inline-block; background: var(--gold); color: #000;
-        font-weight: 800; font-size: 11px; letter-spacing: 0.1em; padding: 4px 8px; line-height: 1.5;
-      }
-      .ref-price { color: var(--gold); font-weight: 700; white-space: nowrap; }
-      .ref26-arrow { color: var(--faint); font-size: 0.6em; font-weight: 400; }
-      .ref26-model { border: 1px solid var(--line-soft); background: var(--panel-2); padding: 10px 12px; margin-top: 8px; }
-      .ref26-model .rm-name { font-weight: 800; font-size: 14px; }
-      .ref26-model .rm-meta { color: var(--dim); font-size: 11px; letter-spacing: 0.08em; margin-top: 2px; }
-
       /* ---------- top hits ---------- */
       .hit { display: grid; grid-template-columns: 34px 1fr auto auto auto; gap: 12px; align-items: baseline; padding: 9px 12px; border-bottom: 1px solid var(--line-soft); font-size: 13px; transition: background-color 0.18s ease; }
       .hit:last-child { border-bottom: none; }
@@ -376,17 +363,12 @@
     <!-- ======= TICKER ======= -->
     <div class="ticker" aria-label="Scoreboard ticker">
       <div class="ticker-inner" id="ticker">
-        <span class="tick-item">SCORED <b>26/200</b></span>
-        <span class="tick-item">GATE <span class="gold"><b>GATE LOCKED</b></span></span>
-        <span class="tick-item">BRIER <b>0.2345</b></span>
-        <span class="tick-item">LOG-LOSS <b>0.6558</b></span>
-        <span class="tick-item">RELIABILITY <span class="r"><b>FAIL</b></span></span>
-        <span class="tick-item">RECORD <span class="g"><b>17 W</b></span> / <span class="r"><b>9 L</b></span></span>
-        <span class="tick-item">PLUGG <span class="g"><b>11 W / 3 L</b></span> · <span class="g"><b>78.6%</b></span> · BRIER <b>0.1716</b> · NET <span class="g"><b>+$290.18 REF-PRICED</b></span></span>
-        <span class="tick-item">NBA v2 ELO <span class="g"><b>6 W / 6 L</b></span> · <span class="g"><b>50.0%</b></span> · BRIER <b>0.3078</b> · NET <span class="g"><b>+$35.98 REF-PRICED</b></span></span>
+        <span class="tick-item">SCORED <b>—</b></span>
+        <span class="tick-item">GATE <span class="gold"><b>—</b></span></span>
+        <span class="tick-item">RECORD <b>—</b></span>
+        <span class="tick-item">AWAITING LANE SYNC</span>
         <span class="tick-item">HUMMINGBOT MARGIN <span class="g"><b class="hb-tick">PENDING · AWAITING FIRST SYNC</b></span></span>
-        <span class="tick-item">PLUGG PAPER $ <b>+$326.16 NET · FIRST 26 REF-PRICED</b></span>
-        <span class="tick-item">HUMMINGBOT PAPER $ <b class="hb-tick">PENDING · AWAITING FIRST SYNC</b></span>
+        <span class="tick-item">HUMMINGBOT PAPER $ <b class="hb-tick">PENDING · AWAITING FIRST SYNC</b></span></span>
         <span class="tick-item">ENGINE <b>PLUGG</b></span>
         <span class="tick-item"><span class="p"><b>PAPER ONLY</b></span></span>
       </div>
@@ -410,11 +392,11 @@
         <section class="money" aria-label="Paper profit — PLUGG">
           <div class="m-label">
             <span>PAPER PROFIT — PLUGG</span>
-            <span class="m-status" id="k-mstatus"><span class="dot on"></span>LEDGER ACTIVE</span>
+            <span class="m-status" id="k-mstatus"><span class="dot off"></span>AWAITING LANE SYNC</span>
           </div>
-          <div class="m-big green"><span data-count="17" id="k-m-won">17</span><span class="m-unit"> WON</span><span class="m-slash"> / </span><span class="lost"><span data-count="9" id="k-m-lost">9</span><span class="m-unit"> LOST</span></span></div>
-          <div class="m-usd">PAPER $ PROFIT — <b>+$326.16 NET · FIRST 26 REF-PRICED</b></div>
-          <div class="m-sub"><span data-count="26" id="k-m-scored">26</span> SCORED FORECASTS · <span data-count="65.4" data-dec="1" id="k-m-winrate">65.4</span>% WIN RATE · BRIER <span id="k-m-brier">0.2345</span>. First-26 dollars are reconstructed at the pre-lock reference price — labeled REF-PRICED everywhere they appear (full block on the PAPER PROFIT tab). The prospective stamped record starts with the next priced slate.</div>
+          <div class="m-big green"><span id="k-m-won">—</span><span class="m-unit"> WON</span><span class="m-slash"> / </span><span class="lost"><span id="k-m-lost">—</span><span class="m-unit"> LOST</span></span></div>
+          <div class="m-usd" id="k-m-usd">PAPER $ PROFIT — <b>AWAITING LANE SYNC</b></div>
+          <div class="m-sub"><span id="k-m-scored">—</span> SCORED FORECASTS · <span id="k-m-winrate">—</span>% WIN RATE · BRIER <span id="k-m-brier">—</span>. Every figure on this bar reads from the lane file — one wallet, updated with every settlement.</div>
         </section>
         <section class="money off" id="hb-money" aria-label="Paper profit — Hummingbot">
           <div class="m-label">
@@ -432,8 +414,8 @@
       <div class="lane-head">
         <span class="lane-tag">LANE 01</span>
         <h2>PLUGG</h2>
-        <span class="sub" id="k-lane-sub">SCOREBOARD B · PROSPECTIVE PAPER LEDGER · SNAPSHOT OCT 22, 2026</span>
-        <span class="status" id="k-lane-status"><span class="dot off"></span>SNAPSHOT READOUT</span>
+        <span class="sub" id="k-lane-sub">SCOREBOARD B · PROSPECTIVE PAPER LEDGER · AWAITING LANE SYNC</span>
+        <span class="status" id="k-lane-status"><span class="dot off"></span>AWAITING LANE SYNC</span>
         <span class="stale-badge" id="k-stale" hidden></span>
       </div>
 
@@ -442,10 +424,10 @@
         <section class="panel gate-panel" aria-label="The gate">
           <div class="panel-h"><span>THE GATE</span><span class="right">MILESTONE · 200 SCORED</span></div>
           <div class="panel-b">
-            <div class="gate-big"><span data-count="26" id="k-gate-scored">26</span><span class="of"> / <span id="k-gate-target">200</span></span></div>
-            <div class="gate-bar" id="k-gate-bar" role="img" aria-label="Progress to gate: 26 of 200 scored forecasts, 13 percent"><div class="fill" id="k-gate-fill"></div></div>
+            <div class="gate-big"><span id="k-gate-scored">—</span><span class="of"> / <span id="k-gate-target">200</span></span></div>
+            <div class="gate-bar" id="k-gate-bar" role="img" aria-label="Progress to gate"><div class="fill" id="k-gate-fill"></div></div>
             <div style="display:flex; justify-content:space-between; font-size:11px; color:var(--dim); letter-spacing:0.08em;">
-              <span id="k-gate-pct">13.0% OF GATE</span><span id="k-gate-togo">174 TO GO</span>
+              <span id="k-gate-pct">—</span><span id="k-gate-togo">—</span>
             </div>
             <div class="gate-verdict">VERDICT LOCKED — NOT ENOUGH EVIDENCE</div>
             <p class="gate-note">The verdict unlocks only at <b>200 scored forecasts with positive ROI after fees</b>. Nothing below that count is a green light — not 15 good plays, not 50. The count is the discipline.</p>
@@ -457,25 +439,25 @@
           <div class="pots">
             <div class="pot win">
               <div class="k">WINNERS POT</div>
-              <div class="amt" style="color:var(--green)">$776.16</div>
-              <div class="st">TOTAL WON · FIRST 26 · REF-PRICED</div>
-              <div class="rec" id="k-pot-won">17 WON <small>/ 26 SCORED</small></div>
+              <div class="amt" id="k-pot-won-amt" style="color:var(--green)">—</div>
+              <div class="st">TOTAL WON · ALL SETTLED BETS</div>
+              <div class="rec" id="k-pot-won">—</div>
             </div>
             <div class="pot lose">
               <div class="k">LOSERS POT</div>
-              <div class="amt" style="color:var(--red)">$450.00</div>
-              <div class="st">TOTAL LOST · FIRST 26 · REF-PRICED</div>
-              <div class="rec" id="k-pot-lost">9 LOST <small>/ 26 SCORED</small></div>
+              <div class="amt" id="k-pot-lost-amt" style="color:var(--red)">—</div>
+              <div class="st">TOTAL LOST · ALL SETTLED BETS</div>
+              <div class="rec" id="k-pot-lost">—</div>
             </div>
           </div>
           <div class="panel" style="margin-top:12px;">
             <div class="panel-h"><span>$50 TRANSLATOR</span><span class="right">PAPER MATH ONLY</span></div>
             <div class="panel-b">
               <div class="xlate-row"><span class="k">Real bankroll this record would be read against</span><span class="v">$50 MAX</span></div>
-              <div class="xlate-row"><span class="k">Record being translated</span><span class="v" id="k-xlate-rec"><span style="color:var(--green)">17 W</span> / <span style="color:var(--red)">9 L</span> · 65.4% HIT RATE</span></div>
-              <div class="xlate-row"><span class="k">Edge over always-home baseline (57.7%)</span><span class="v" id="k-xlate-edge" style="color:var(--green)">+7.7 PTS</span></div>
-              <div class="xlate-row"><span class="k">Dollar P&amp;L at $50 flat stake — first 26, reference-priced</span><span class="v" style="color:var(--green)">+$326.16 NET · WALLET $50.00 → $376.16</span></div>
-              <p class="xlate-note"><b>What this record means at $50 — paper math only, no real money.</b> The first-26 dollars are reconstructed at the last Kalshi quoted mid before each forecast locked (14:00 UTC candle) — real pre-lock quotes, not prices recorded in the moment, and labeled REF-PRICED everywhere. They never blend into the live stamped wallet on the PAPER PROFIT tab, which starts with the next priced slate. Rule stands: $50 is the maximum first stake, and it unlocks only at 200 scored in profit.</p>
+              <div class="xlate-row"><span class="k">Record being translated</span><span class="v" id="k-xlate-rec">—</span></div>
+              <div class="xlate-row"><span class="k">Edge over always-home baseline (57.7%)</span><span class="v" id="k-xlate-edge">—</span></div>
+              <div class="xlate-row"><span class="k">Dollar P&amp;L at $50 flat stake — all settled bets, one wallet</span><span class="v" id="k-xlate-usd">—</span></div>
+              <p class="xlate-note"><b>What this record means at $50 — paper math only, no real money.</b> Every settled bet counts in one wallet: pre-stamp bets at their pre-lock reference price (real Kalshi quotes, tagged REF), new bets at live stamps. Rule stands: $50 is the maximum first stake, and it unlocks only at 200 scored in profit.</p>
             </div>
           </div>
         </section>
@@ -487,13 +469,13 @@
           <div class="panel-h"><span>CONSISTENCY</span><span class="right">ENGINE: PLUGG</span></div>
           <div class="panel-b" style="padding-top:12px;">
             <div class="grid grid-3" style="gap:8px;">
-              <div class="stat"><div class="k">WIN RATE</div><div class="v green" id="k-c-winrate">65.4%</div><div class="n" id="k-c-winrate-n">17 OF 26 SCORED</div></div>
-              <div class="stat"><div class="k">BRIER SCORE</div><div class="v" id="k-c-brier">0.2345</div><div class="n">LOWER IS BETTER</div></div>
-              <div class="stat"><div class="k">LOG-LOSS</div><div class="v" id="k-c-logloss">0.6558</div><div class="n">LOWER IS BETTER</div></div>
+              <div class="stat"><div class="k">WIN RATE</div><div class="v green" id="k-c-winrate">—</div><div class="n" id="k-c-winrate-n">—</div></div>
+              <div class="stat"><div class="k">BRIER SCORE</div><div class="v" id="k-c-brier">—</div><div class="n">LOWER IS BETTER</div></div>
+              <div class="stat"><div class="k">LOG-LOSS</div><div class="v" id="k-c-logloss">—</div><div class="n">LOWER IS BETTER</div></div>
             </div>
             <div class="stat" style="margin-top:8px;">
               <div class="k">VS ALWAYS-HOME BASELINE</div>
-              <div class="v" id="k-c-vs" style="font-size:20px;">65.4% <span style="color:var(--faint); font-size:14px;">vs</span> 57.7%</div>
+              <div class="v" id="k-c-vs" style="font-size:20px;">— <span style="color:var(--faint); font-size:14px;">vs</span> 57.7%</div>
               <div class="n">THE MODEL MUST BEAT THE DUMB BASELINE, NOT JUST WIN</div>
             </div>
             <table style="margin-top:12px;" aria-label="Scoreboard by market type">
@@ -504,9 +486,9 @@
                 <tr>
                   <td><b>NBA</b></td>
                   <td><span class="tag-live">● LIVE</span></td>
-                  <td id="k-t-scored">26</td>
-                  <td class="num-green" id="k-t-win">65.4%</td>
-                  <td id="k-t-brier">0.2345</td>
+                  <td id="k-t-scored">—</td>
+                  <td class="num-green" id="k-t-win">—</td>
+                  <td id="k-t-brier">—</td>
                 </tr>
                 <tr>
                   <td>KALSHI EVENTS</td>
@@ -532,26 +514,10 @@
         <!-- COUNCIL FEED -->
         <section class="panel" aria-label="Council feed">
           <div class="panel-h"><span>COUNCIL FEED</span><span class="right">LATEST ACTIVITY</span></div>
-          <ul class="feed">
+          <ul class="feed" id="k-feed">
             <li>
-              <span class="d">OCT 22</span><span class="t lean">LEAN</span>
-              <span class="m"><b>PHI 69%</b> — model probability, Oct 22 loop. Riding as an OPEN paper bet — $50 paper stake, NO PRICE STAMPED; tracked on the PAPER PROFIT tab.</span>
-            </li>
-            <li>
-              <span class="d">OCT 22</span><span class="t lean">LEAN</span>
-              <span class="m"><b>OKC 67%</b> — model probability, Oct 22 loop. Riding as an OPEN paper bet — $50 paper stake, NO PRICE STAMPED; tracked on the PAPER PROFIT tab.</span>
-            </li>
-            <li>
-              <span class="d">OCT 22</span><span class="t signal">SIGNALS</span>
-              <span class="m"><b>0 new signals at ≥8% edge today.</b> No fresh edge plays — the two locked leans above ride as open paper bets until their games settle.</span>
-            </li>
-            <li>
-              <span class="d">OCT 22</span><span class="t gate">GATE</span>
-              <span class="m"><b>Reliability gate: <span style="color:var(--red)">FAIL</span>.</b> Calibration has not passed the reliability check. Shown as-is — a failing gate blocks the verdict, not the work.</span>
-            </li>
-            <li>
-              <span class="d">PENDING</span><span class="t pending">SETUP</span>
-              <span class="m"><b>First full council run pending StarNet station setup.</b> Watcher → stat model → thinkers → chair → risk guard → paper executor, once the stations are seated.</span>
+              <span class="d">—</span><span class="t pending">SYNC</span>
+              <span class="m"><b>Awaiting lane sync.</b> Open bets, the latest settled results, and the gate count post here from the lane file.</span>
             </li>
           </ul>
         </section>
@@ -566,20 +532,20 @@
           </thead>
           <tbody>
             <tr class="bd-model">
-              <td><b class="bd-name">PLUGG</b><span class="mid bd-mid">nba_v3_offdef_platt</span><span class="mid brier-m bd-brier-m">BRIER 0.1716</span></td>
-              <td><span class="bd-scored" data-count="14">14</span></td>
-              <td class="bd-rec"><span style="color:var(--green)"><b>11 W</b></span> / <span style="color:var(--red)"><b>3 L</b></span></td>
-              <td class="num-green"><span class="bd-win" data-count="78.6" data-dec="1">78.6</span>%</td>
-              <td class="hide-m bd-brier">0.1716</td>
-              <td class="margin bd-margin">NET +$290.18 · ROI +41.5% · REF-PRICED</td>
+              <td><b class="bd-name">PLUGG</b><span class="mid bd-mid">nba_v3_offdef_platt</span><span class="mid brier-m bd-brier-m">BRIER —</span></td>
+              <td><span class="bd-scored">—</span></td>
+              <td class="bd-rec">—</td>
+              <td class="num-green"><span class="bd-win">—</span></td>
+              <td class="hide-m bd-brier">—</td>
+              <td class="margin bd-margin">—</td>
             </tr>
             <tr class="bd-model">
-              <td><b class="bd-name">NBA v2 ELO</b><span class="mid bd-mid">nba_v2_elo</span><span class="mid brier-m bd-brier-m">BRIER 0.3078</span></td>
-              <td><span class="bd-scored" data-count="12">12</span></td>
-              <td class="bd-rec"><span style="color:var(--green)"><b>6 W</b></span> / <span style="color:var(--red)"><b>6 L</b></span></td>
-              <td><span class="bd-win" data-count="50.0" data-dec="1">50.0</span>%</td>
-              <td class="hide-m bd-brier">0.3078</td>
-              <td class="margin bd-margin">NET +$35.98 · ROI +6.0% · REF-PRICED</td>
+              <td><b class="bd-name">NBA v2 ELO</b><span class="mid bd-mid">nba_v2_elo</span><span class="mid brier-m bd-brier-m">BRIER —</span></td>
+              <td><span class="bd-scored">—</span></td>
+              <td class="bd-rec">—</td>
+              <td><span class="bd-win">—</span></td>
+              <td class="hide-m bd-brier">—</td>
+              <td class="margin bd-margin">—</td>
             </tr>
             <tr>
               <td><b>HUMMINGBOT · PURE_MM</b><span class="mid">ETH-USDT · KUCOIN PAPER · LANE 02</span></td>
@@ -592,59 +558,32 @@
           </tbody>
         </table>
         <div class="panel-b" style="padding-top:10px;">
-          <p class="xlate-note" style="margin:0;">Two council models, one combined ledger: 14 + 12 = the 26 scored behind the gate. No stamped prices were recorded in the moment for these forecasts — the margins above are reconstructed at pre-lock reference prices (last quoted mid before each lock, 14:00 UTC candle) and labeled REF-PRICED. They are a separate reconstruction, never blended into the live stamped wallet. Hummingbot keeps its own margin on its own lane.</p>
+          <p class="xlate-note" style="margin:0;" id="k-bd-note">Two council models, one combined ledger — every scored forecast counts toward the one gate, and every margin above posts from the lane file. Hummingbot keeps its own margin on its own lane.</p>
         </div>
       </section>
 
       <!-- THE TAPE -->
       <section class="panel" style="margin-top:12px;" aria-label="The tape — every scored forecast">
-        <div class="panel-h"><span>THE TAPE</span><span class="right" id="tape-count">26 SCORED FORECASTS · EVERY ONE ON THE RECORD · REF-PRICED</span></div>
+        <div class="panel-h"><span>THE TAPE</span><span class="right" id="tape-count">EVERY SCORED FORECAST · FROM THE LANE FILE</span></div>
         <table class="bd tape" aria-label="Scored forecast tape">
           <thead>
-            <tr><th>DATE</th><th>GAME</th><th class="hide-m">MODEL</th><th>PICK</th><th>FINAL</th><th>RESULT</th><th>REF PRICE · P/L</th></tr>
+            <tr><th>DATE</th><th>GAME</th><th class="hide-m">MODEL</th><th>PICK</th><th>FINAL</th><th>RESULT</th><th>PRICE · P/L</th></tr>
           </thead>
           <tbody id="tape-body">
-            <tr><td>OCT 16</td><td>MIA at ORL</td><td class="hide-m">v2-Elo</td><td>AWAY 70%</td><td>115-136</td><td class="res-l">LOST</td><td class="tape-margin"><span class="ref-price">41.5¢ REF</span> · <span class="num-red">-$50.00</span></td></tr>
-            <tr><td>OCT 16</td><td>BOS at PHI</td><td class="hide-m">v2-Elo</td><td>HOME 70%</td><td>125-120</td><td class="res-l">LOST</td><td class="tape-margin"><span class="ref-price">64.5¢ REF</span> · <span class="num-red">-$50.00</span></td></tr>
-            <tr><td>OCT 16</td><td>TOR at DET</td><td class="hide-m">v2-Elo</td><td>HOME 56%</td><td>125-129</td><td class="res-w">WON</td><td class="tape-margin"><span class="ref-price">79.5¢ REF</span> · <span class="num-green">+$12.89</span></td></tr>
-            <tr><td>OCT 16</td><td>MIL at IND</td><td class="hide-m">v2-Elo</td><td>HOME 74%</td><td>128-127</td><td class="res-l">LOST</td><td class="tape-margin"><span class="ref-price">74.5¢ REF</span> · <span class="num-red">-$50.00</span></td></tr>
-            <tr><td>OCT 16</td><td>ATL at DAL</td><td class="hide-m">v2-Elo</td><td>HOME 56%</td><td>135-111</td><td class="res-l">LOST</td><td class="tape-margin"><span class="ref-price">51.5¢ REF</span> · <span class="num-red">-$50.00</span></td></tr>
-            <tr><td>OCT 16</td><td>SAC at SA</td><td class="hide-m">v2-Elo</td><td>HOME 82%</td><td>97-126</td><td class="res-w">WON</td><td class="tape-margin"><span class="ref-price">89.5¢ REF</span> · <span class="num-green">+$5.87</span></td></tr>
-            <tr><td>OCT 16</td><td>CHA at MEM</td><td class="hide-m">v2-Elo</td><td>AWAY 65%</td><td>98-116</td><td class="res-l">LOST</td><td class="tape-margin"><span class="ref-price">54.5¢ REF</span> · <span class="num-red">-$50.00</span></td></tr>
-            <tr><td>OCT 16</td><td>WSH at NO</td><td class="hide-m">v2-Elo</td><td>HOME 64%</td><td>106-107</td><td class="res-w">WON</td><td class="tape-margin"><span class="ref-price">45.5¢ REF</span> · <span class="num-green">+$59.89</span></td></tr>
-            <tr><td>OCT 16</td><td>MIN at CHI</td><td class="hide-m">v2-Elo</td><td>AWAY 81%</td><td>116-133</td><td class="res-l">LOST</td><td class="tape-margin"><span class="ref-price">52.5¢ REF</span> · <span class="num-red">-$50.00</span></td></tr>
-            <tr><td>OCT 16</td><td>POR at GS</td><td class="hide-m">v2-Elo</td><td>HOME 52%</td><td>118-128</td><td class="res-w">WON</td><td class="tape-margin"><span class="ref-price">39.0¢ REF</span> · <span class="num-green">+$78.21</span></td></tr>
-            <tr><td>OCT 16</td><td>UTAH at PHX</td><td class="hide-m">v2-Elo</td><td>AWAY 78%</td><td>119-116</td><td class="res-w">WON</td><td class="tape-margin"><span class="ref-price">38.5¢ REF</span> · <span class="num-green">+$79.87</span></td></tr>
-            <tr><td>OCT 16</td><td>DEN at LAL</td><td class="hide-m">v2-Elo</td><td>AWAY 61%</td><td>121-106</td><td class="res-w">WON</td><td class="tape-margin"><span class="ref-price">33.5¢ REF</span> · <span class="num-green">+$99.25</span></td></tr>
-            <tr><td>OCT 20</td><td>BOS at DET</td><td class="hide-m">PLUGG</td><td>HOME 53%</td><td>113-121</td><td class="res-w">WON</td><td class="tape-margin"><span class="ref-price">47.5¢ REF</span> · <span class="num-green">+$55.26</span></td></tr>
-            <tr><td>OCT 20</td><td>PHI at NY</td><td class="hide-m">PLUGG</td><td>AWAY 58%</td><td>106-100</td><td class="res-w">WON</td><td class="tape-margin"><span class="ref-price">38.5¢ REF</span> · <span class="num-green">+$79.87</span></td></tr>
-            <tr><td>OCT 20</td><td>OKC at SA</td><td class="hide-m">PLUGG</td><td>AWAY 54%</td><td>116-104</td><td class="res-w">WON</td><td class="tape-margin"><span class="ref-price">49.5¢ REF</span> · <span class="num-green">+$51.01</span></td></tr>
-            <tr><td>OCT 21</td><td>ATL at ORL</td><td class="hide-m">PLUGG</td><td>AWAY 53%</td><td>132-125</td><td class="res-w">WON</td><td class="tape-margin"><span class="ref-price">46.5¢ REF</span> · <span class="num-green">+$57.53</span></td></tr>
-            <tr><td>OCT 21</td><td>MIL at WSH</td><td class="hide-m">PLUGG</td><td>HOME 55%</td><td>116-128</td><td class="res-w">WON</td><td class="tape-margin"><span class="ref-price">62.5¢ REF</span> · <span class="num-green">+$30.00</span></td></tr>
-            <tr><td>OCT 21</td><td>MIN at MIA</td><td class="hide-m">PLUGG</td><td>HOME 58%</td><td>131-106</td><td class="res-l">LOST</td><td class="tape-margin"><span class="ref-price">51.5¢ REF</span> · <span class="num-red">-$50.00</span></td></tr>
-            <tr><td>OCT 21</td><td>CHA at BKN</td><td class="hide-m">PLUGG</td><td>AWAY 60%</td><td>110-103</td><td class="res-w">WON</td><td class="tape-margin"><span class="ref-price">51.5¢ REF</span> · <span class="num-green">+$47.09</span></td></tr>
-            <tr><td>OCT 21</td><td>CHI at TOR</td><td class="hide-m">PLUGG</td><td>HOME 87%</td><td>92-135</td><td class="res-w">WON</td><td class="tape-margin"><span class="ref-price">78.5¢ REF</span> · <span class="num-green">+$13.69</span></td></tr>
-            <tr><td>OCT 21</td><td>UTAH at MEM</td><td class="hide-m">PLUGG</td><td>AWAY 57%</td><td>103-123</td><td class="res-l">LOST</td><td class="tape-margin"><span class="ref-price">47.5¢ REF</span> · <span class="num-red">-$50.00</span></td></tr>
-            <tr><td>OCT 21</td><td>IND at NO</td><td class="hide-m">PLUGG</td><td>HOME 54%</td><td>123-120</td><td class="res-l">LOST</td><td class="tape-margin"><span class="ref-price">41.5¢ REF</span> · <span class="num-red">-$50.00</span></td></tr>
-            <tr><td>OCT 21</td><td>DAL at HOU</td><td class="hide-m">PLUGG</td><td>HOME 85%</td><td>110-128</td><td class="res-w">WON</td><td class="tape-margin"><span class="ref-price">77.5¢ REF</span> · <span class="num-green">+$14.52</span></td></tr>
-            <tr><td>OCT 21</td><td>GS at LAL</td><td class="hide-m">PLUGG</td><td>HOME 58%</td><td>105-127</td><td class="res-w">WON</td><td class="tape-margin"><span class="ref-price">66.5¢ REF</span> · <span class="num-green">+$25.19</span></td></tr>
-            <tr><td>OCT 21</td><td>PHX at POR</td><td class="hide-m">PLUGG</td><td>HOME 89%</td><td>83-124</td><td class="res-w">WON</td><td class="tape-margin"><span class="ref-price">56.5¢ REF</span> · <span class="num-green">+$38.50</span></td></tr>
-            <tr><td>OCT 21</td><td>SAC at LAC</td><td class="hide-m">PLUGG</td><td>HOME 82%</td><td>96-121</td><td class="res-w">WON</td><td class="tape-margin"><span class="ref-price">64.5¢ REF</span> · <span class="num-green">+$27.52</span></td></tr>
+            <tr><td colspan="7" style="text-align:left; color:var(--faint); letter-spacing:0.08em;">AWAITING LANE SYNC — EVERY SCORED FORECAST POSTS HERE FROM THE LANE FILE</td></tr>
           </tbody>
         </table>
         <div class="panel-b" style="padding-top:10px;">
-          <p class="xlate-note" style="margin:0;" id="tape-compound">FIRST 26 AT REFERENCE PRICES — $50 FLAT × 26 = $1,300 STAKED · WON $776.16 · LOST $450.00 · NET +$326.16 · WALLET $50.00 → $376.16. Each price is the last Kalshi quoted mid before the forecast locked (14:00 UTC candle), tagged REF — a labeled reconstruction, not the prospective stamped record. Stamped compounding starts with the live wallet on the PAPER PROFIT tab.</p>
+          <p class="xlate-note" style="margin:0;" id="tape-compound">PAPER WALLET — POSTS FROM THE LANE FILE WITH EVERY SETTLEMENT.</p>
         </div>
       </section>
 
       <!-- TOP HITS -->
       <section class="panel" style="margin-top:12px;" aria-label="Top hits — biggest scored wins">
-        <div class="panel-h"><span>TOP HITS — RANKED BY CONFIDENCE · DOLLAR RANKING STARTS WITH PRICE-STAMPED BETS</span></div>
-        <div class="hit"><span class="hit-rank">1</span><span><b>PHX at POR</b></span><span class="hit-conf">89%</span><span class="hit-res">WON</span><span class="hit-final">83-124</span></div>
-        <div class="hit"><span class="hit-rank">2</span><span><b>CHI at TOR</b></span><span class="hit-conf">87%</span><span class="hit-res">WON</span><span class="hit-final">92-135</span></div>
-        <div class="hit"><span class="hit-rank">3</span><span><b>DAL at HOU</b></span><span class="hit-conf">85%</span><span class="hit-res">WON</span><span class="hit-final">110-128</span></div>
-        <div class="hit"><span class="hit-rank">4</span><span><b>SAC at LAC</b></span><span class="hit-conf">82%</span><span class="hit-res">WON</span><span class="hit-final">96-121</span></div>
-        <div class="hit"><span class="hit-rank">5</span><span><b>SAC at SA</b></span><span class="hit-conf">82%</span><span class="hit-res">WON</span><span class="hit-final">97-126</span></div>
+        <div class="panel-h"><span>TOP HITS — BIGGEST SCORED WINS · RANKED BY CONFIDENCE</span></div>
+        <div id="top-hits">
+          <p class="xlate-note" style="margin:0;">AWAITING LANE SYNC — THE TOP WINS POST HERE FROM THE TAPE.</p>
+        </div>
       </section>
 
       <!-- SPORTS COVERAGE -->
@@ -657,34 +596,10 @@
         <section class="panel" aria-label="NBA coverage">
           <div class="panel-h"><span>NBA</span><span class="right" style="color:var(--green)">● LIVE — PLUGG / v2 ELO</span></div>
           <div class="panel-b">
-            <button class="team-row" aria-expanded="false" aria-controls="team-phi">
-              <span><b>PHILADELPHIA 76ERS</b><span class="team-sub">PHI · TONIGHT OCT 22</span></span>
-              <span class="team-lean">LEAN <b>PHI 69%</b></span>
-              <span class="team-chev">▸</span>
-            </button>
-            <div class="team-detail" id="team-phi">
-              <div class="team-detail-in">
-                <div class="xlate-row"><span class="k">Next matchup</span><span class="v">vs CLEVELAND — TONIGHT, OCT 22</span></div>
-                <div class="xlate-row"><span class="k">Locked lean</span><span class="v" style="color:var(--green)">PHI 69% · PLUGG</span></div>
-                <div class="team-tape-h">SETTLED TAPE — THIS TEAM</div>
-                <div class="team-tape-row"><span>OCT 16 · BOS at PHI</span><span>v2-ELO · HOME 70%</span><span>125-120</span><span class="res-l">LOST</span></div>
-                <div class="team-tape-row"><span>OCT 20 · PHI at NY</span><span>PLUGG · AWAY 58%</span><span>106-100</span><span class="res-w">WON</span></div>
-              </div>
+            <div id="cov-teams">
+              <p class="xlate-note" style="margin:0;">AWAITING LANE SYNC — OPEN LEANS POST HERE FROM THE LANE FILE.</p>
             </div>
-            <button class="team-row" aria-expanded="false" aria-controls="team-okc">
-              <span><b>OKLAHOMA CITY THUNDER</b><span class="team-sub">OKC · TONIGHT OCT 22</span></span>
-              <span class="team-lean">LEAN <b>OKC 67%</b></span>
-              <span class="team-chev">▸</span>
-            </button>
-            <div class="team-detail" id="team-okc">
-              <div class="team-detail-in">
-                <div class="xlate-row"><span class="k">Next matchup</span><span class="v">vs DENVER — TONIGHT, OCT 22</span></div>
-                <div class="xlate-row"><span class="k">Locked lean</span><span class="v" style="color:var(--green)">OKC 67% · PLUGG</span></div>
-                <div class="team-tape-h">SETTLED TAPE — THIS TEAM</div>
-                <div class="team-tape-row"><span>OCT 20 · OKC at SA</span><span>PLUGG · AWAY 54%</span><span>116-104</span><span class="res-w">WON</span></div>
-              </div>
-            </div>
-            <p class="xlate-note">Tap a team for its next matchup, the model's locked lean, and its settled tape rows. Leans are model probabilities; tonight's two locked leans ride as open paper bets on the PAPER PROFIT tab.</p>
+            <p class="xlate-note">Tap a team for its next matchup, the model's locked lean, and its settled tape rows. Leans are model probabilities; open leans ride as open paper bets on the PAPER PROFIT tab.</p>
           </div>
         </section>
         <div class="grid" style="gap:12px; align-content:start;">
@@ -751,7 +666,7 @@
       </div>
 
       <p class="foot-note">
-        <b>SNAPSHOT:</b> Oct 22, 2026 — Scoreboard B (prospective paper ledger). This page is a fixed readout of that snapshot; the count moves when the ledger is re-exported.
+        <b>LIVE READOUT:</b> every number on this board reads from the lane files and refreshes on sync — nothing here is a frozen snapshot.
         <b>HOW THE COUNCIL WORKS:</b> forecasts are created only by registered stat models. The AI seats research, challenge, and veto — they never originate a forecast number, and the risk guard can kill any play before it reaches the paper executor.
       </p>
       </div><!-- /tab-terminal -->
@@ -772,23 +687,12 @@
                 <tr><th>GAME</th><th>PICK</th><th>MODEL %</th><th class="hide-m">PRICE</th><th>STAKE</th><th class="hide-m">POTENTIAL PAYOUT</th><th>POTENTIAL PROFIT</th><th>STATUS</th></tr>
               </thead>
               <tbody id="ob-body">
-                <tr>
-                  <td><b>CLE at PHI</b></td><td>PHI</td><td>69.1%</td>
-                  <td class="hide-m ob-noprice">NO PRICE STAMPED</td><td>$50.00</td>
-                  <td class="hide-m ob-noprice">NO PRICE STAMPED</td><td class="ob-noprice">NO PRICE STAMPED</td>
-                  <td><span class="ob-open"><span class="dot"></span>OPEN</span></td>
-                </tr>
-                <tr>
-                  <td><b>DEN at OKC</b></td><td>OKC</td><td>66.5%</td>
-                  <td class="hide-m ob-noprice">NO PRICE STAMPED</td><td>$50.00</td>
-                  <td class="hide-m ob-noprice">NO PRICE STAMPED</td><td class="ob-noprice">NO PRICE STAMPED</td>
-                  <td><span class="ob-open"><span class="dot"></span>OPEN</span></td>
-                </tr>
+                <tr><td colspan="8" style="text-align:left; color:var(--faint); letter-spacing:0.08em;">AWAITING LANE SYNC — OPEN PAPER BETS POST HERE FROM THE LANE FILE</td></tr>
               </tbody>
             </table>
           </div>
           <div class="panel-b" style="padding-top:10px;">
-            <p class="xlate-note" style="margin:0;">Open positions the Kalshi way: what was picked, what went in, and — once a real price is stamped at lock time — the potential payout and potential profit. Tonight's two locked before price-stamping existed, so no payoff can be computed for them; the cells say NO PRICE STAMPED instead of guessing. When a game ends, its row moves to SETTLED PAPER BETS below: <b style="color:var(--green)">green if it hit</b>, <b style="color:var(--red)">red if it didn't</b>.</p>
+            <p class="xlate-note" style="margin:0;">Open positions the Kalshi way: what was picked, what went in, and — once a real price is stamped at lock time — the potential payout and potential profit. A bet with no stamped price says NO PRICE STAMPED instead of guessing a payoff. When a game ends, its row moves to SETTLED PAPER BETS below: <b style="color:var(--green)">green if it hit</b>, <b style="color:var(--red)">red if it didn't</b>.</p>
           </div>
         </section>
 
@@ -800,44 +704,9 @@
                 <tr><th>DATE</th><th>GAME</th><th>PICK</th><th class="hide-m">PRICE</th><th>STAKE</th><th>RESULT</th><th>PAPER P/L</th></tr>
               </thead>
               <tbody id="sb-body">
-                <tr><td colspan="7" style="text-align:left; color:var(--faint); letter-spacing:0.08em;">NOTHING SETTLED YET — TONIGHT'S TWO OPEN BETS LAND HERE WHEN THEIR GAMES END</td></tr>
+                <tr><td colspan="7" style="text-align:left; color:var(--faint); letter-spacing:0.08em;">NOTHING SETTLED YET — SETTLED BETS LAND HERE WHEN THEIR GAMES END</td></tr>
               </tbody>
             </table>
-          </div>
-        </section>
-
-        <section class="panel ref26-panel" style="margin-top:12px;" aria-label="The first 26 — reference-priced">
-          <div class="panel-h"><span>THE FIRST 26 — REFERENCE-PRICED</span><span class="right">FLAT $50 STAKE · 26 BETS · RECORD 17–9</span></div>
-          <div class="panel-b">
-            <span class="ref-tag">RECONSTRUCTED AT PRE-LOCK REFERENCE PRICE — NOT THE PROSPECTIVE STAMPED RECORD</span>
-            <p class="xlate-note" style="margin-top:10px;">Each bet priced at the last Kalshi quoted mid before the forecast locked (14:00 UTC candle). Flat $50 stake. Rule fixed before outcomes were priced; wins and losses priced identically.</p>
-            <div style="font-size:11px; letter-spacing:0.16em; color:var(--dim); font-weight:700; margin-top:14px;">FIRST 26 — THE WALLET'S OPENING CHAPTER · REFERENCE-PRICED</div>
-            <div class="m-big green" style="font-size:clamp(38px, 6vw, 54px); font-weight:800; line-height:1.05; margin-top:6px; color:var(--green); text-shadow:0 0 24px rgba(0, 221, 148, 0.35);">$50.00 <span class="ref26-arrow">→</span> $376.16</div>
-            <div class="grid grid-3" style="gap:8px; margin-top:12px;">
-              <div class="stat"><div class="k">TOTAL WON</div><div class="v green">$776.16</div><div class="n">GROSS PAPER PROFIT · REF-PRICED</div></div>
-              <div class="stat"><div class="k">TOTAL LOST</div><div class="v red">$450.00</div><div class="n">GROSS PAPER LOSSES · REF-PRICED</div></div>
-              <div class="stat"><div class="k">NET</div><div class="v green">+$326.16</div><div class="n">WON − LOST · REF-PRICED</div></div>
-              <div class="stat"><div class="k">STAKED</div><div class="v">$1,300</div><div class="n">$50 FLAT × 26 BETS</div></div>
-              <div class="stat"><div class="k">ROI</div><div class="v green">+25.1%</div><div class="n">NET ÷ STAKED</div></div>
-              <div class="stat"><div class="k">RECORD</div><div class="v">17–9</div><div class="n">17 WON · 9 LOST</div></div>
-            </div>
-            <div class="ref26-model">
-              <div class="rm-name">PLUGG</div>
-              <div class="rm-meta">14 BETS · RECORD 11–3</div>
-              <div class="xlate-row"><span class="k">Won</span><span class="v" style="color:var(--green)">$440.18</span></div>
-              <div class="xlate-row"><span class="k">Lost</span><span class="v" style="color:var(--red)">$150.00</span></div>
-              <div class="xlate-row"><span class="k">Net</span><span class="v" style="color:var(--green)">+$290.18</span></div>
-              <div class="xlate-row"><span class="k">ROI</span><span class="v" style="color:var(--green)">+41.5%</span></div>
-            </div>
-            <div class="ref26-model">
-              <div class="rm-name">NBA v2 ELO</div>
-              <div class="rm-meta">12 BETS · RECORD 6–6</div>
-              <div class="xlate-row"><span class="k">Won</span><span class="v" style="color:var(--green)">$335.98</span></div>
-              <div class="xlate-row"><span class="k">Lost</span><span class="v" style="color:var(--red)">$300.00</span></div>
-              <div class="xlate-row"><span class="k">Net</span><span class="v" style="color:var(--green)">+$35.98</span></div>
-              <div class="xlate-row"><span class="k">ROI</span><span class="v" style="color:var(--green)">+6.0%</span></div>
-            </div>
-            <p class="xlate-note" style="margin-top:12px;"><b style="color:var(--gold)">BIGGEST WIN — DEN at LAL · +$99.25</b> · pick priced 33.5¢ at the pre-lock reference. These reference-priced dollars are the foundation of the live PAPER WALLET below — it starts here and keeps counting with every new settlement.</p>
           </div>
         </section>
 
@@ -846,14 +715,14 @@
             <span>PAPER WALLET — PLUGG</span>
             <span class="m-status" id="pp-k-status">FLAT $50 PAPER STAKE PER BET</span>
           </div>
-          <div class="m-big green" id="pp-k-balance-big">$<span id="pp-k-bankroll" data-count="50" data-dec="2">50.00</span></div>
-          <div class="m-usd">PAPER WALLET — <b>STARTING BALANCE $50.00</b></div>
+          <div class="m-big green" id="pp-k-balance-big">$<span id="pp-k-bankroll">—</span></div>
+          <div class="m-usd" id="pp-k-usd">PAPER WALLET — <b>AWAITING LANE SYNC</b></div>
           <div class="grid grid-3" style="gap:8px; margin-top:12px;">
-            <div class="stat"><div class="k">TOTAL PAPER WON</div><div class="v green">$<span id="pp-k-won" data-count="0" data-dec="2">0.00</span></div><div class="n">GROSS PAPER PROFIT · PRICE-STAMPED BETS</div></div>
-            <div class="stat"><div class="k">TOTAL PAPER LOST</div><div class="v red">$<span id="pp-k-lost" data-count="0" data-dec="2">0.00</span></div><div class="n">GROSS PAPER LOSSES · PRICE-STAMPED BETS</div></div>
-            <div class="stat"><div class="k">WALLET BETS SETTLED</div><div class="v" id="pp-k-settled">0</div><div class="n">PRICE-STAMPED BETS ONLY</div></div>
+            <div class="stat"><div class="k">TOTAL PAPER WON</div><div class="v green">$<span id="pp-k-won">—</span></div><div class="n">GROSS PAPER PROFIT · ALL SETTLED BETS</div></div>
+            <div class="stat"><div class="k">TOTAL PAPER LOST</div><div class="v red">$<span id="pp-k-lost">—</span></div><div class="n">GROSS PAPER LOSSES · ALL SETTLED BETS</div></div>
+            <div class="stat"><div class="k">WALLET BETS SETTLED</div><div class="v" id="pp-k-settled">—</div><div class="n">SETTLED BETS IN THE WALLET</div></div>
           </div>
-          <div class="m-sub" id="pp-k-state">WALLET LIVE — FIRST PRICE-STAMPED BETS SETTLE FROM THE NEXT SLATE. Every settled price-stamped bet stakes a flat $50 paper: a win adds its profit, a loss takes $50. The wallet updates with every settlement — it does not wait for the 200 gate; the gate is the verdict, and it lives on its own panel.</div>
+          <div class="m-sub" id="pp-k-state">WALLET — AWAITING LANE SYNC. Every settled bet stakes a flat $50 paper: a win adds its profit, a loss takes $50. The wallet updates with every settlement — it does not wait for the 200 gate; the gate is the verdict, and it lives on its own panel.</div>
           <div class="m-sub">Bets from before price-stamping carry their pre-lock reference price — the last Kalshi quoted mid before each lock, reconstructed by a fixed rule and tagged REF on every row. Bets since carry live stamps. Both count in this one wallet; the forecast ledger itself was never backfilled.</div>
         </section>
 
@@ -870,7 +739,7 @@
           </table>
           </div>
           <div class="panel-b" style="padding-top:10px;">
-            <p class="xlate-note" style="margin:0;" id="pp-k-compound">COMPOUNDING — STARTS WITH FIRST PRICE-STAMPED BET. The stake stays $50 flat; the bankroll line moves only when a bet with a real stamped price settles.</p>
+            <p class="xlate-note" style="margin:0;" id="pp-k-compound">COMPOUNDING — POSTS FROM THE LANE FILE. The stake stays $50 flat; the bankroll line moves with every settlement.</p>
           </div>
         </section>
 
@@ -1478,36 +1347,57 @@
         }
       })();
 
-      // Team drill-down expand/collapse (sports coverage).
-      (function () {
-        var rows = document.querySelectorAll('.team-row');
-        for (var i = 0; i < rows.length; i++) {
-          rows[i].addEventListener('click', function () {
-            var panel = document.getElementById(this.getAttribute('aria-controls'));
-            var open = this.classList.toggle('open');
-            this.setAttribute('aria-expanded', open ? 'true' : 'false');
-            if (panel) panel.classList.toggle('open', open);
-          });
-        }
-      })();
+      // Team drill-down expand/collapse (sports coverage). Delegated:
+      // the coverage rows are rebuilt by the Kalshi wire on every sync.
+      document.addEventListener('click', function (e) {
+        var btn = e.target && e.target.closest ? e.target.closest('.team-row') : null;
+        if (!btn) return;
+        var panel = document.getElementById(btn.getAttribute('aria-controls'));
+        var open = btn.classList.toggle('open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        if (panel) panel.classList.toggle('open', open);
+      });
 
-      // KALSHI LANE DATA SOURCE — kalshi_lane.json is published next to this
-      // page by the same Mac publisher as the Hummingbot lane. Fetch fails
-      // (preview, or file not yet published) → the baked Oct 22 snapshot
-      // stays on screen, labeled SNAPSHOT. Kalshi settles daily, so the
-      // STALE badge only fires when the file is older than 26 hours.
-      const KALSHI_LANE_URL = 'kalshi_lane.json';
+      // KALSHI LANE — ONE WIRE, EVERY NUMBER.
+      // kalshi_lane.json is published next to this page by the same Mac
+      // publisher as the other lanes. This is the ONLY script that writes
+      // Lane 01 numbers: the ticker, money bar, gate, pots, translator,
+      // consistency, model breakdown, the tape, top hits, council feed,
+      // sports coverage, and every PAPER PROFIT figure all render here,
+      // from one normalized read of the lane file — so no surface can
+      // drift from another. Both publisher schemas are accepted (tape
+      // rows or settled_bets rows; profit / profit_usdt / margin_usd;
+      // win_rate as fraction or percent) and normalized exactly once.
+      // A failed fetch keeps the last good render — or, before the first
+      // sync, the AWAITING LANE SYNC placeholders baked into the markup.
       (function () {
         var STALE_MS = 26 * 60 * 60 * 1000;
-        var lastGood = null;
+        var lastNorm = null, lastHB = null;
         var MONTHS = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+        var TEAM_NAMES = {
+          ATL: 'ATLANTA HAWKS', BOS: 'BOSTON CELTICS', BKN: 'BROOKLYN NETS', CHA: 'CHARLOTTE HORNETS',
+          CHI: 'CHICAGO BULLS', CLE: 'CLEVELAND CAVALIERS', DAL: 'DALLAS MAVERICKS', DEN: 'DENVER NUGGETS',
+          DET: 'DETROIT PISTONS', GS: 'GOLDEN STATE WARRIORS', GSW: 'GOLDEN STATE WARRIORS',
+          HOU: 'HOUSTON ROCKETS', IND: 'INDIANA PACERS', LAC: 'LA CLIPPERS', LAL: 'LOS ANGELES LAKERS',
+          MEM: 'MEMPHIS GRIZZLIES', MIA: 'MIAMI HEAT', MIL: 'MILWAUKEE BUCKS', MIN: 'MINNESOTA TIMBERWOLVES',
+          NO: 'NEW ORLEANS PELICANS', NOP: 'NEW ORLEANS PELICANS', NY: 'NEW YORK KNICKS', NYK: 'NEW YORK KNICKS',
+          OKC: 'OKLAHOMA CITY THUNDER', ORL: 'ORLANDO MAGIC', PHI: 'PHILADELPHIA 76ERS', PHX: 'PHOENIX SUNS',
+          POR: 'PORTLAND TRAIL BLAZERS', SAC: 'SACRAMENTO KINGS', SA: 'SAN ANTONIO SPURS', SAS: 'SAN ANTONIO SPURS',
+          TOR: 'TORONTO RAPTORS', UTA: 'UTAH JAZZ', UTAH: 'UTAH JAZZ', WAS: 'WASHINGTON WIZARDS', WSH: 'WASHINGTON WIZARDS'
+        };
         function $(id) { return document.getElementById(id); }
         function isNum(n) { return typeof n === 'number' && isFinite(n); }
-        function fmtMoney(n) { return (n < 0 ? '-$' : '$') + Math.abs(n).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
-        function pct(n) { if (!isNum(n)) return null; return n <= 1.5 ? n * 100 : n; }
+        function esc(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;'); }
+        function money(n) { return (n < 0 ? '-$' : '$') + Math.abs(n).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
+        function smoney(n) { return (n < 0 ? '-$' : '+$') + Math.abs(n).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
+        function pctFrac(n) { if (!isNum(n)) return null; return n > 1.5 ? n / 100 : n; }
         function fmtDate(iso) {
-          var d = new Date(iso);
-          if (isNaN(d.getTime())) return String(iso || '—').toUpperCase();
+          if (!iso) return '—';
+          var s = String(iso);
+          var m = s.match(/^(\d{4})-(\d{2})-(\d{2})/);
+          if (m) return MONTHS[parseInt(m[2], 10) - 1] + ' ' + parseInt(m[3], 10);
+          var d = new Date(s);
+          if (isNaN(d.getTime())) return s.toUpperCase();
           return MONTHS[d.getMonth()] + ' ' + d.getDate();
         }
         function fmtTime(iso) {
@@ -1515,582 +1405,529 @@
           if (isNaN(d.getTime())) return '';
           return d.toLocaleString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' });
         }
-        function setText(id, txt) { var el = $(id); if (el) el.textContent = txt; }
-        // Paper P/L of one tape row at the $50 flat stake. Only computable
-        // when the row carries a real stamped price (or a publisher-supplied
-        // margin); otherwise null — the row never enters the dollar ledger.
-        function plOf(row) {
-          if (isNum(row.margin_usd)) return row.margin_usd;
-          if (isNum(row.price) && row.price > 0 && row.price < 1) {
-            return String(row.result).toUpperCase() === 'WON' ? 50 * (1 - row.price) / row.price : -50;
-          }
-          return null;
+        function setText(id, t) { var el = $(id); if (el) el.textContent = t; }
+        function setStatus(el, mode, text) {
+          if (!el) return;
+          el.innerHTML = '';
+          var dot = document.createElement('span');
+          dot.className = 'dot ' + mode;
+          el.appendChild(dot);
+          el.appendChild(document.createTextNode(text));
+        }
+        function modelDisplay(raw) {
+          var s = String(raw || '');
+          if (/v3|platt/i.test(s)) return 'PLUGG';
+          if (/v2|elo/i.test(s)) return 'NBA v2 ELO';
+          return s || '—';
+        }
+        function modelKey(raw) { return modelDisplay(raw).toLowerCase(); }
+        function teamsOf(game) {
+          var m = String(game || '').match(/^\s*([A-Za-z]+)\s+at\s+([A-Za-z]+)/);
+          return m ? [m[1].toUpperCase(), m[2].toUpperCase()] : [];
+        }
+        function emptyRow(tbody, colspan, text) {
+          var tr = document.createElement('tr');
+          var td = document.createElement('td');
+          td.colSpan = colspan;
+          td.style.cssText = 'text-align:left; color:var(--faint); letter-spacing:0.08em;';
+          td.textContent = text;
+          tr.appendChild(td);
+          tbody.appendChild(tr);
+        }
+        function cell(text, cls) {
+          var td = document.createElement('td');
+          if (cls) td.className = cls;
+          td.textContent = text;
+          return td;
         }
 
-        function render(d) {
-          var scored = isNum(d.scored) ? d.scored : null;
-          var target = isNum(d.gate_target) ? d.gate_target : 200;
+        // ---- normalize one settled row from either publisher schema ----
+        function normRow(r) {
+          var res = String(r.result || '').toUpperCase();
+          var won = res === 'WON' || res === 'WIN' || r.won === true;
+          var stake = isNum(r.stake) ? r.stake : 50;
+          var price = isNum(r.price) ? r.price : null;
+          var profit = null;
+          if (isNum(r.profit_usdt)) profit = r.profit_usdt;
+          else if (isNum(r.profit)) profit = r.profit;
+          else if (isNum(r.margin_usd)) profit = r.margin_usd;
+          else if (price !== null && price > 0 && price < 1 && res) profit = won ? stake * (1 - price) / price : -stake;
+          return {
+            date: r.date || r.game_date || '',
+            game: String(r.game || '—'),
+            model: String(r.model || r.model_key || r.key || ''),
+            pick: String(r.pick != null ? r.pick : (r.pick_team != null ? r.pick_team : '')),
+            prob: pctFrac(isNum(r.prob) ? r.prob : (isNum(r.pick_prob) ? r.pick_prob : null)),
+            final: r.final ? String(r.final) : '',
+            result: res ? (won ? 'WON' : 'LOST') : '',
+            price: price,
+            priceSource: String(r.price_source || ''),
+            stake: stake,
+            profit: profit
+          };
+        }
+        function normOpen(b) {
+          var stake = isNum(b.stake) ? b.stake : 50;
+          var price = isNum(b.price) ? b.price : null;
+          var payout = isNum(b.potential_payout) ? b.potential_payout
+            : (price !== null && price > 0 && price < 1 ? stake / price : null);
+          var profit = isNum(b.potential_profit) ? b.potential_profit
+            : (payout !== null ? payout - stake : null);
+          return {
+            date: b.game_date || b.date || '',
+            game: String(b.game || '—'),
+            model: String(b.model || b.model_key || ''),
+            pick: String(b.pick != null ? b.pick : (b.pick_team != null ? b.pick_team : '')),
+            prob: pctFrac(isNum(b.prob) ? b.prob : (isNum(b.pick_prob) ? b.pick_prob : null)),
+            price: price, priceSource: String(b.price_source || ''),
+            stake: stake, payout: payout, profit: profit,
+            status: String(b.status || 'OPEN').toUpperCase()
+          };
+        }
+
+        // ---- normalize the whole lane file, once ----
+        function normK(d) {
+          var tape = (d.tape && d.tape.length) ? d.tape.map(normRow) : null;
+          var settled = (d.settled_bets && d.settled_bets.length) ? d.settled_bets.map(normRow) : null;
+          var tapeRows = tape || settled || [];
+          var settledRows = settled || tape || [];
           var won = isNum(d.won) ? d.won : null;
           var lost = isNum(d.lost) ? d.lost : null;
-          var wr = pct(d.win_rate);
-          var updatedMs = Date.parse(d.updated_at);
-          var hasUpdated = isFinite(updatedMs);
-          var stale = hasUpdated && (Date.now() - updatedMs > STALE_MS);
-          var updText = hasUpdated ? ('UPDATED ' + fmtTime(d.updated_at)) : '';
+          if (won === null && tapeRows.length) won = tapeRows.filter(function (r) { return r.result === 'WON'; }).length;
+          if (lost === null && tapeRows.length) lost = tapeRows.filter(function (r) { return r.result === 'LOST'; }).length;
+          var scored = isNum(d.scored) ? d.scored : (tapeRows.length ? tapeRows.length : null);
+          if (scored === null && won !== null && lost !== null) scored = won + lost;
+          var winRate = pctFrac(d.win_rate);
+          if (winRate === null && scored && won !== null) winRate = won / scored;
 
-          // Lane header + money-bar status
-          var st = $('k-lane-status');
-          if (st) {
-            st.innerHTML = '';
-            var dot = document.createElement('span');
-            dot.className = 'dot ' + (stale ? 'bad' : 'on');
-            st.appendChild(dot);
-            st.appendChild(document.createTextNode(stale ? 'LIVE FILE · STALE' : 'LIVE FILE'));
+          // per-model money, from the settled rows themselves
+          var byModel = {};
+          settledRows.forEach(function (r) {
+            var k = modelKey(r.model);
+            if (!byModel[k]) byModel[k] = { wonAmt: 0, lostAmt: 0, net: 0, priced: 0 };
+            if (r.profit !== null) {
+              byModel[k].priced++;
+              byModel[k].net += r.profit;
+              if (r.profit > 0) byModel[k].wonAmt += r.profit; else byModel[k].lostAmt += -r.profit;
+            }
+          });
+          var models = [];
+          if (d.models && d.models.length) {
+            d.models.forEach(function (m) {
+              var label = m.label || m.name || m.key || '';
+              var agg = byModel[modelKey(m.key || label)] || byModel[modelKey(label)] || { wonAmt: 0, lostAmt: 0, net: 0, priced: 0 };
+              models.push({
+                display: modelDisplay(m.key || label),
+                mid: m.key || m.model_id || label,
+                scored: isNum(m.scored) ? m.scored : null,
+                won: isNum(m.won) ? m.won : null,
+                lost: isNum(m.lost) ? m.lost : null,
+                winRate: pctFrac(m.win_rate),
+                brier: isNum(m.brier) ? m.brier : null,
+                marginState: m.margin_state || null,
+                agg: agg
+              });
+            });
+          } else if (tapeRows.length) {
+            var seen = {};
+            tapeRows.forEach(function (r) {
+              var k = modelKey(r.model);
+              if (!seen[k]) {
+                seen[k] = { display: modelDisplay(r.model), mid: r.model, scored: 0, won: 0, lost: 0, winRate: null, brier: null, marginState: null, agg: byModel[k] || { wonAmt: 0, lostAmt: 0, net: 0, priced: 0 } };
+                models.push(seen[k]);
+              }
+              seen[k].scored++;
+              if (r.result === 'WON') seen[k].won++; else if (r.result === 'LOST') seen[k].lost++;
+            });
+            models.forEach(function (m) { if (m.scored) m.winRate = m.won / m.scored; });
           }
-          setText('k-lane-sub', 'SCOREBOARD B · PROSPECTIVE PAPER LEDGER · LIVE FILE' + (updText ? ' · ' + updText.toUpperCase() : ''));
+
+          // wallet: publisher totals win; otherwise derive from settled rows
+          var w = d.wallet || {};
+          var start = isNum(w.start) ? w.start : 50;
+          var priced = settledRows.filter(function (r) { return r.profit !== null; });
+          var dWon = 0, dLost = 0;
+          priced.forEach(function (r) { if (r.profit > 0) dWon += r.profit; else dLost += -r.profit; });
+          var totalWon = isNum(w.total_won) ? Math.abs(w.total_won) : (priced.length ? dWon : null);
+          var totalLost = isNum(w.total_lost) ? Math.abs(w.total_lost) : (priced.length ? dLost : null);
+          var settledCount = isNum(w.settled_count) ? w.settled_count : (settledRows.length ? settledRows.length : null);
+          var balance = isNum(w.balance) ? w.balance
+            : (totalWon !== null && totalLost !== null ? start + totalWon - totalLost : null);
+          var net = (totalWon !== null && totalLost !== null) ? totalWon - totalLost : null;
+
+          var updatedMs = Date.parse(d.updated_at);
+          return {
+            scored: scored, won: won, lost: lost, winRate: winRate,
+            brier: isNum(d.brier) ? d.brier : null,
+            logLoss: isNum(d.log_loss) ? d.log_loss : null,
+            reliability: d.reliability ? String(d.reliability).toUpperCase() : null,
+            target: isNum(d.gate_target) ? d.gate_target : 200,
+            models: models, tapeRows: tapeRows, settledRows: settledRows,
+            openBets: (d.open_bets || []).map(normOpen),
+            start: start, totalWon: totalWon, totalLost: totalLost,
+            settledCount: settledCount, balance: balance, net: net,
+            updatedMs: isFinite(updatedMs) ? updatedMs : null,
+            updatedText: isFinite(updatedMs) ? ('UPDATED ' + fmtTime(d.updated_at)) : '',
+            stale: isFinite(updatedMs) && (Date.now() - updatedMs > STALE_MS)
+          };
+        }
+
+        function priceCell(r) {
+          if (r.price === null) return 'NO PRICE';
+          return r.price.toFixed(2) + (r.priceSource === 'reference' ? ' REF' : '');
+        }
+
+        function render(n) {
+          // Lane header + statuses
+          setStatus($('k-lane-status'), n.stale ? 'bad' : 'on', n.stale ? 'LIVE FILE · STALE' : 'LIVE FILE');
+          setText('k-lane-sub', 'SCOREBOARD B · PROSPECTIVE PAPER LEDGER · LIVE FILE' + (n.updatedText ? ' · ' + n.updatedText.toUpperCase() : ''));
           var kb = $('k-stale');
-          if (kb) { kb.hidden = !stale; if (stale) kb.textContent = 'STALE — ' + updText; }
-          var ms = $('k-mstatus');
-          if (ms) {
-            ms.innerHTML = '';
-            var mdot = document.createElement('span');
-            mdot.className = 'dot ' + (stale ? 'bad' : 'on');
-            ms.appendChild(mdot);
-            ms.appendChild(document.createTextNode(stale ? 'LIVE FILE · STALE' : 'LIVE FILE'));
-          }
+          if (kb) { kb.hidden = !n.stale; if (n.stale) kb.textContent = 'STALE — ' + n.updatedText; }
+          setStatus($('k-mstatus'), n.stale ? 'bad' : 'on', n.stale ? 'LIVE FILE · STALE' : 'LEDGER ACTIVE');
 
           // Money bar
-          if (won !== null) setText('k-m-won', String(won));
-          if (lost !== null) setText('k-m-lost', String(lost));
-          if (scored !== null) setText('k-m-scored', String(scored));
-          if (wr !== null) setText('k-m-winrate', wr.toFixed(1));
-          if (isNum(d.brier)) setText('k-m-brier', d.brier.toFixed(4));
+          if (n.won !== null) setText('k-m-won', String(n.won));
+          if (n.lost !== null) setText('k-m-lost', String(n.lost));
+          if (n.scored !== null) setText('k-m-scored', String(n.scored));
+          if (n.winRate !== null) setText('k-m-winrate', (n.winRate * 100).toFixed(1));
+          if (n.brier !== null) setText('k-m-brier', n.brier.toFixed(4));
+          var usd = $('k-m-usd');
+          if (usd && n.net !== null) {
+            usd.innerHTML = 'PAPER $ PROFIT — <b style="color:' + (n.net >= 0 ? 'var(--green)' : 'var(--red)') + '">' + smoney(n.net) + ' NET</b>' + (n.balance !== null ? ' · WALLET ' + money(n.balance) : '') + ' · LIVE';
+          }
 
           // Gate
-          if (scored !== null) {
-            setText('k-gate-scored', String(scored));
-            setText('k-gate-target', String(target));
-            var gp = target > 0 ? (scored / target * 100) : 0;
+          if (n.scored !== null) {
+            setText('k-gate-scored', String(n.scored));
+            setText('k-gate-target', String(n.target));
+            var gp = n.target > 0 ? (n.scored / n.target * 100) : 0;
             setText('k-gate-pct', gp.toFixed(1) + '% OF GATE');
-            setText('k-gate-togo', Math.max(target - scored, 0) + ' TO GO');
+            setText('k-gate-togo', Math.max(n.target - n.scored, 0) + ' TO GO');
             var fill = $('k-gate-fill');
             if (fill) { fill.style.animation = 'none'; fill.style.width = gp + '%'; }
             var bar = $('k-gate-bar');
-            if (bar) bar.setAttribute('aria-label', 'Progress to gate: ' + scored + ' of ' + target + ' scored forecasts, ' + Math.round(gp) + ' percent');
+            if (bar) bar.setAttribute('aria-label', 'Progress to gate: ' + n.scored + ' of ' + n.target + ' scored forecasts, ' + Math.round(gp) + ' percent');
+            var verdict = document.querySelector('.gate-verdict');
+            if (verdict) {
+              if (n.scored >= n.target) {
+                verdict.textContent = (n.net !== null && n.net > 0) ? 'GATE REACHED — IN PROFIT · VERDICT UNLOCKED' : 'GATE REACHED — NOT IN PROFIT · NO GREEN LIGHT';
+              } else {
+                verdict.textContent = 'VERDICT LOCKED — NOT ENOUGH EVIDENCE';
+              }
+            }
           }
 
           // Pots + translator
-          if (won !== null && lost !== null && scored !== null) {
-            var pw = $('k-pot-won'); if (pw) pw.innerHTML = won + ' WON <small>/ ' + scored + ' SCORED</small>';
-            var pl = $('k-pot-lost'); if (pl) pl.innerHTML = lost + ' LOST <small>/ ' + scored + ' SCORED</small>';
+          if (n.totalWon !== null) setText('k-pot-won-amt', money(n.totalWon));
+          if (n.totalLost !== null) setText('k-pot-lost-amt', money(n.totalLost));
+          if (n.won !== null && n.scored !== null) {
+            var pw = $('k-pot-won'); if (pw) pw.innerHTML = n.won + ' WON <small>/ ' + n.scored + ' SCORED</small>';
+            var pl = $('k-pot-lost'); if (pl && n.lost !== null) pl.innerHTML = n.lost + ' LOST <small>/ ' + n.scored + ' SCORED</small>';
           }
-          if (won !== null && lost !== null && wr !== null) {
+          if (n.won !== null && n.lost !== null && n.winRate !== null) {
             var xr = $('k-xlate-rec');
-            if (xr) xr.innerHTML = '<span style="color:var(--green)">' + won + ' W</span> / <span style="color:var(--red)">' + lost + ' L</span> · ' + wr.toFixed(1) + '% HIT RATE';
+            if (xr) xr.innerHTML = '<span style="color:var(--green)">' + n.won + ' W</span> / <span style="color:var(--red)">' + n.lost + ' L</span> · ' + (n.winRate * 100).toFixed(1) + '% HIT RATE';
             var xe = $('k-xlate-edge');
-            if (xe) { var e = wr - 57.7; xe.textContent = (e >= 0 ? '+' : '') + e.toFixed(1) + ' PTS'; xe.style.color = e >= 0 ? 'var(--green)' : 'var(--red)'; }
+            if (xe) { var e = n.winRate * 100 - 57.7; xe.textContent = (e >= 0 ? '+' : '') + e.toFixed(1) + ' PTS'; xe.style.color = e >= 0 ? 'var(--green)' : 'var(--red)'; }
+          }
+          var xu = $('k-xlate-usd');
+          if (xu && n.net !== null) {
+            xu.innerHTML = smoney(n.net) + ' NET' + (n.balance !== null ? ' · WALLET ' + money(n.start) + ' → ' + money(n.balance) : '');
+            xu.style.color = n.net >= 0 ? 'var(--green)' : 'var(--red)';
           }
 
           // Consistency + market table
-          if (wr !== null) {
-            setText('k-c-winrate', wr.toFixed(1) + '%');
-            setText('k-t-win', wr.toFixed(1) + '%');
+          if (n.winRate !== null) {
+            setText('k-c-winrate', (n.winRate * 100).toFixed(1) + '%');
+            setText('k-t-win', (n.winRate * 100).toFixed(1) + '%');
             var vs = $('k-c-vs');
-            if (vs) vs.innerHTML = wr.toFixed(1) + '% <span style="color:var(--faint); font-size:14px;">vs</span> 57.7%';
+            if (vs) vs.innerHTML = (n.winRate * 100).toFixed(1) + '% <span style="color:var(--faint); font-size:14px;">vs</span> 57.7%';
           }
-          if (won !== null && scored !== null) setText('k-c-winrate-n', won + ' OF ' + scored + ' SCORED');
-          if (isNum(d.brier)) { setText('k-c-brier', d.brier.toFixed(4)); setText('k-t-brier', d.brier.toFixed(4)); }
-          if (isNum(d.log_loss)) setText('k-c-logloss', d.log_loss.toFixed(4));
-          if (scored !== null) setText('k-t-scored', String(scored));
+          if (n.won !== null && n.scored !== null) setText('k-c-winrate-n', n.won + ' OF ' + n.scored + ' SCORED');
+          if (n.brier !== null) { setText('k-c-brier', n.brier.toFixed(4)); setText('k-t-brier', n.brier.toFixed(4)); }
+          if (n.logLoss !== null) setText('k-c-logloss', n.logLoss.toFixed(4));
+          if (n.scored !== null) setText('k-t-scored', String(n.scored));
 
-          // Per-model breakdown rows
-          if (d.models && d.models.length) {
-            var rows = document.querySelectorAll('.bd-model');
-            for (var i = 0; i < rows.length && i < d.models.length; i++) {
-              var m = d.models[i], r = rows[i];
-              if (m.name) { var nm = r.querySelector('.bd-name'); if (nm) nm.textContent = (/v3|PLATT/i.test(m.name) ? 'PLUGG' : m.name); }
-              if (isNum(m.scored)) { var sc = r.querySelector('.bd-scored'); if (sc) sc.textContent = m.scored; }
-              if (isNum(m.won) && isNum(m.lost)) {
-                var rec = r.querySelector('.bd-rec');
-                if (rec) rec.innerHTML = '<span style="color:var(--green)"><b>' + m.won + ' W</b></span> / <span style="color:var(--red)"><b>' + m.lost + ' L</b></span>';
-              }
-              var mw = pct(m.win_rate);
-              if (mw !== null) { var w = r.querySelector('.bd-win'); if (w) w.textContent = mw.toFixed(1); }
-              if (isNum(m.brier)) {
-                var b = r.querySelector('.bd-brier'); if (b) b.textContent = m.brier.toFixed(4);
-                var bm = r.querySelector('.bd-brier-m'); if (bm) bm.textContent = 'BRIER ' + m.brier.toFixed(4);
-              }
-              if (m.margin_state) { var mg = r.querySelector('.bd-margin'); if (mg) mg.textContent = m.margin_state; }
-            }
-          }
-
-          // The tape + the paper-profit dollar ledger (price-stamped rows only)
-          if (d.tape && d.tape.length) {
-            var tb = $('tape-body');
-            if (tb) {
-              tb.innerHTML = '';
-              for (var t = 0; t < d.tape.length; t++) {
-                var row = d.tape[t];
-                var res = String(row.result || '').toUpperCase();
-                var prob = pct(row.prob);
-                var cells = [fmtDate(row.date), String(row.game || '—'), (/v3|PLATT/i.test(String(row.model || '')) ? 'PLUGG' : String(row.model || '—')), String(row.pick || '') + (prob !== null ? ' ' + Math.round(prob) + '%' : ''), String(row.final || '—')];
-                var tr = document.createElement('tr');
-                for (var c = 0; c < cells.length; c++) {
-                  var td = document.createElement('td');
-                  if (c === 2) td.className = 'hide-m';
-                  td.textContent = cells[c];
-                  tr.appendChild(td);
-                }
-                var rd = document.createElement('td');
-                rd.className = res === 'WON' ? 'res-w' : 'res-l';
-                rd.textContent = res || '—';
-                tr.appendChild(rd);
-                var mtd = document.createElement('td');
-                var rpl = plOf(row);
-                if (rpl !== null) { mtd.className = 'tape-margin priced'; mtd.textContent = fmtMoney(rpl); }
-                else { mtd.className = 'tape-margin'; mtd.textContent = row.margin_state || 'NO PRICE STAMPED'; }
-                tr.appendChild(mtd);
-                tb.appendChild(tr);
-              }
-            }
-            if (scored !== null) setText('tape-count', scored + ' SCORED FORECASTS · EVERY ONE ON THE RECORD');
-
-            var stamped = [];
-            for (var s = 0; s < d.tape.length; s++) {
-              var spl = plOf(d.tape[s]);
-              if (spl !== null) stamped.push({ row: d.tape[s], pl: spl });
-            }
-            if (stamped.length) {
-              var wonSum = 0, lostSum = 0;
-              var ledger = $('pp-k-ledger');
-              if (ledger) ledger.innerHTML = '';
-              var sorted = stamped.slice().sort(function (a, b2) { return b2.pl - a.pl; });
-              var biggest = $('pp-k-biggest');
-              if (biggest) biggest.innerHTML = '';
-              for (var k = 0; k < stamped.length; k++) {
-                var sr = stamped[k].row, spl2 = stamped[k].pl;
-                if (spl2 >= 0) wonSum += spl2; else lostSum += -spl2;
-                if (ledger) {
-                  var lprob = pct(sr.prob);
-                  var lcells = [fmtDate(sr.date), String(sr.game || '—'), String(sr.pick || '') + (lprob !== null ? ' ' + Math.round(lprob) + '%' : ''), isNum(sr.price) ? sr.price.toFixed(2) : '—', '$50.00', String(sr.result || '').toUpperCase()];
-                  var ltr = document.createElement('tr');
-                  for (var lc = 0; lc < lcells.length; lc++) {
-                    var ltd = document.createElement('td');
-                    if (lc === 3) ltd.className = 'hide-m';
-                    ltd.textContent = lcells[lc];
-                    ltr.appendChild(ltd);
-                  }
-                  var ptd = document.createElement('td');
-                  ptd.className = spl2 >= 0 ? 'num-green' : 'num-red';
-                  ptd.textContent = fmtMoney(spl2);
-                  ltr.appendChild(ptd);
-                  ledger.appendChild(ltr);
-                }
-              }
-              var winsOnly = sorted.filter(function (x) { return x.pl > 0; }).slice(0, 5);
-              if (biggest && winsOnly.length) {
-                for (var g = 0; g < winsOnly.length; g++) {
-                  var br = winsOnly[g].row, bpl = winsOnly[g].pl;
-                  var gprob = pct(br.prob);
-                  var gcells = [fmtDate(br.date), String(br.game || '—'), String(br.pick || '') + (gprob !== null ? ' ' + Math.round(gprob) + '%' : ''), isNum(br.price) ? br.price.toFixed(2) : '—', '$50.00'];
-                  var gtr = document.createElement('tr');
-                  for (var gc = 0; gc < gcells.length; gc++) {
-                    var gtd = document.createElement('td');
-                    if (gc === 3) gtd.className = 'hide-m';
-                    gtd.textContent = gcells[gc];
-                    gtr.appendChild(gtd);
-                  }
-                  var gpl = document.createElement('td');
-                  gpl.className = 'num-green';
-                  gpl.textContent = fmtMoney(bpl);
-                  gtr.appendChild(gpl);
-                  biggest.appendChild(gtr);
-                }
-              }
-              var bankroll = 50 + wonSum - lostSum;
-              setText('pp-k-bankroll', (bankroll < 0 ? '-' : '') + Math.abs(bankroll).toFixed(2));
-              var bbig = $('pp-k-balance-big');
-              if (bbig) bbig.className = 'm-big ' + (bankroll >= 50 ? 'green' : 'red');
-              setText('pp-k-won', wonSum.toFixed(2));
-              setText('pp-k-lost', lostSum.toFixed(2));
-              setText('pp-k-settled', String(stamped.length));
-              setText('pp-k-state', 'WALLET LIVE — ' + stamped.length + ' PRICE-STAMPED BET' + (stamped.length === 1 ? '' : 'S') + ' SETTLED. Flat $50 paper stake each; the wallet updates with every settlement — it does not wait for the 200 gate.');
-              var comp = 'PAPER WALLET COMPOUNDED OVER ' + stamped.length + ' PRICE-STAMPED BETS: ' + fmtMoney(bankroll) + ' · STAKE STAYS $50 FLAT.';
-              setText('pp-k-compound', comp);
-              setText('tape-compound', comp);
-            }
-          }
-
-          // Paper wallet — publisher-supplied totals (wallet: {start,
-          // balance, total_won, total_lost, settled_count}) win over the
-          // tape math when the feed carries them. The balance is shown
-          // true — negative stays negative, never clamped or floored.
-          if (d.wallet) {
-            var w = d.wallet;
-            var wstart = isNum(w.start) ? w.start : 50;
-            if (isNum(w.total_won)) setText('pp-k-won', Math.abs(w.total_won).toFixed(2));
-            if (isNum(w.total_lost)) setText('pp-k-lost', Math.abs(w.total_lost).toFixed(2));
-            if (isNum(w.settled_count)) setText('pp-k-settled', String(w.settled_count));
-            var wbal = isNum(w.balance) ? w.balance
-              : (isNum(w.total_won) && isNum(w.total_lost) ? wstart + w.total_won - Math.abs(w.total_lost) : null);
-            if (wbal !== null) {
-              setText('pp-k-bankroll', (wbal < 0 ? '-' : '') + Math.abs(wbal).toFixed(2));
-              var wbig = $('pp-k-balance-big');
-              if (wbig) wbig.className = 'm-big ' + (wbal >= wstart ? 'green' : 'red');
-            }
-            if (isNum(w.settled_count) && w.settled_count > 0) {
-              setText('pp-k-state', 'WALLET LIVE — ' + w.settled_count + ' PRICE-STAMPED BET' + (w.settled_count === 1 ? '' : 'S') + ' SETTLED. Flat $50 paper stake each; the wallet updates with every settlement — it does not wait for the 200 gate.');
-            }
-          }
-
-          // Open paper bets — Kalshi-positions style. Payoff math runs only
-          // when the bet carries a real stamped price (or publisher-supplied
-          // payoff figures); otherwise the cells read NO PRICE STAMPED.
-          if (d.open_bets) {
-            var ob = $('ob-body');
-            if (ob) {
-              ob.innerHTML = '';
-              if (!d.open_bets.length) {
-                var etr = document.createElement('tr');
-                var etd = document.createElement('td');
-                etd.colSpan = 8;
-                etd.style.cssText = 'text-align:left; color:var(--faint); letter-spacing:0.08em;';
-                etd.textContent = 'NO OPEN PAPER BETS RIGHT NOW';
-                etr.appendChild(etd);
-                ob.appendChild(etr);
-              }
-              for (var oi = 0; oi < d.open_bets.length; oi++) {
-                var bet = d.open_bets[oi];
-                var stake = isNum(bet.stake) ? bet.stake : 50;
-                var bprice = isNum(bet.price) ? bet.price : null;
-                var payout = isNum(bet.potential_payout) ? bet.potential_payout
-                  : (bprice !== null && bprice > 0 && bprice < 1 ? stake / bprice : null);
-                var profit = isNum(bet.potential_profit) ? bet.potential_profit
-                  : (payout !== null ? payout - stake : null);
-                var bprob = pct(bet.prob);
-                var otr = document.createElement('tr');
-                function ocell(txt, cls) {
-                  var td = document.createElement('td');
-                  if (cls) td.className = cls;
-                  td.textContent = txt;
-                  otr.appendChild(td);
-                }
-                var gtd = document.createElement('td');
-                var gb = document.createElement('b');
-                gb.textContent = String(bet.game || '—');
-                gtd.appendChild(gb);
-                otr.appendChild(gtd);
-                ocell(String(bet.pick || '—'));
-                ocell(bprob !== null ? (Math.round(bprob * 10) / 10) + '%' : '—');
-                ocell(bprice !== null ? bprice.toFixed(2) : 'NO PRICE STAMPED', bprice !== null ? 'hide-m' : 'hide-m ob-noprice');
-                ocell(fmtMoney(stake));
-                ocell(payout !== null ? fmtMoney(payout) : 'NO PRICE STAMPED', payout !== null ? 'hide-m' : 'hide-m ob-noprice');
-                ocell(profit !== null ? fmtMoney(profit) : 'NO PRICE STAMPED', profit !== null ? 'num-green' : 'ob-noprice');
-                var std = document.createElement('td');
-                var sspan = document.createElement('span');
-                sspan.className = 'ob-open';
-                var sdot = document.createElement('span');
-                sdot.className = 'dot';
-                sspan.appendChild(sdot);
-                sspan.appendChild(document.createTextNode(String(bet.status || 'OPEN').toUpperCase()));
-                std.appendChild(sspan);
-                otr.appendChild(std);
-                ob.appendChild(otr);
+          // Model breakdown
+          var bdRows = document.querySelectorAll('.bd-model');
+          for (var i = 0; i < bdRows.length && i < n.models.length; i++) {
+            var m = n.models[i], r = bdRows[i];
+            var nm = r.querySelector('.bd-name'); if (nm) nm.textContent = m.display;
+            var mid = r.querySelector('.bd-mid'); if (mid && m.mid) mid.textContent = m.mid;
+            var sc = r.querySelector('.bd-scored'); if (sc && m.scored !== null) sc.textContent = m.scored;
+            var rec = r.querySelector('.bd-rec');
+            if (rec && m.won !== null && m.lost !== null) rec.innerHTML = '<span style="color:var(--green)"><b>' + m.won + ' W</b></span> / <span style="color:var(--red)"><b>' + m.lost + ' L</b></span>';
+            var wn = r.querySelector('.bd-win'); if (wn && m.winRate !== null) wn.textContent = (m.winRate * 100).toFixed(1) + '%';
+            var br = r.querySelector('.bd-brier'); if (br && m.brier !== null) br.textContent = m.brier.toFixed(4);
+            var bm = r.querySelector('.bd-brier-m'); if (bm && m.brier !== null) bm.textContent = 'BRIER ' + m.brier.toFixed(4);
+            var mg = r.querySelector('.bd-margin');
+            if (mg) {
+              if (m.marginState) mg.textContent = m.marginState;
+              else if (m.agg && m.agg.priced) {
+                var roi = m.scored ? (m.agg.net / (m.scored * 50)) * 100 : null;
+                mg.textContent = 'NET ' + smoney(m.agg.net) + (roi !== null ? ' · ROI ' + (roi >= 0 ? '+' : '') + roi.toFixed(1) + '%' : '');
               }
             }
           }
+          var bdNote = $('k-bd-note');
+          if (bdNote && n.models.length && n.scored !== null) {
+            var parts = n.models.map(function (mm) { return mm.scored; }).join(' + ');
+            bdNote.textContent = 'Two council models, one combined ledger: ' + parts + ' = ' + n.scored + ' scored behind the gate. Pre-stamp margins sit at pre-lock reference prices (tagged REF); stamped bets carry live prices. All of it counts in the one paper wallet. Hummingbot keeps its own margin on its own lane.';
+          }
 
-          // Settled paper bets — the other half of the lifecycle. Green when
-          // it hit, red when it didn't; dollars only when a price was stamped.
-          if (d.settled_bets) {
-            var sbb = $('sb-body');
-            if (sbb) {
-              sbb.innerHTML = '';
-              if (!d.settled_bets.length) {
-                var ntr = document.createElement('tr');
-                var ntd = document.createElement('td');
-                ntd.colSpan = 7;
-                ntd.style.cssText = 'text-align:left; color:var(--faint); letter-spacing:0.08em;';
-                ntd.textContent = 'NOTHING SETTLED YET — OPEN BETS LAND HERE WHEN THEIR GAMES END';
-                ntr.appendChild(ntd);
-                sbb.appendChild(ntr);
+          // The tape
+          var tb = $('tape-body');
+          if (tb) {
+            tb.innerHTML = '';
+            if (!n.tapeRows.length) emptyRow(tb, 7, 'NO SCORED FORECASTS IN THE LANE FILE YET');
+            n.tapeRows.forEach(function (row) {
+              var tr = document.createElement('tr');
+              tr.appendChild(cell(fmtDate(row.date)));
+              tr.appendChild(cell(row.game));
+              tr.appendChild(cell(modelDisplay(row.model), 'hide-m'));
+              tr.appendChild(cell(row.pick + (row.prob !== null ? ' ' + Math.round(row.prob * 100) + '%' : '')));
+              tr.appendChild(cell(row.final || '—'));
+              tr.appendChild(cell(row.result || '—', row.result === 'WON' ? 'res-w' : 'res-l'));
+              var mtd = cell('', 'tape-margin');
+              if (row.profit !== null) {
+                mtd.innerHTML = esc(priceCell(row)) + ' · <span class="' + (row.profit >= 0 ? 'num-green' : 'num-red') + '">' + smoney(row.profit) + '</span>';
+              } else {
+                mtd.textContent = 'NO PRICE STAMPED';
               }
-              var sbs = d.settled_bets.slice();
-              sbs.sort(function (a, b2) {
-                var da = Date.parse(a.date || '');
-                var db = Date.parse(b2.date || '');
-                return (isFinite(db) ? db : 0) - (isFinite(da) ? da : 0);
+              tr.appendChild(mtd);
+              tb.appendChild(tr);
+            });
+          }
+          if (n.scored !== null) setText('tape-count', n.scored + ' SCORED FORECASTS · EVERY ONE ON THE RECORD');
+
+          // Top hits — scored wins ranked by confidence, from the tape
+          var hits = $('top-hits');
+          if (hits) {
+            var wins = n.tapeRows.filter(function (r) { return r.result === 'WON' && r.prob !== null; })
+              .sort(function (a, b) { return b.prob - a.prob; }).slice(0, 5);
+            hits.innerHTML = '';
+            if (!wins.length) {
+              hits.innerHTML = '<p class="xlate-note" style="margin:0;">NO SCORED WINS IN THE LANE FILE YET.</p>';
+            }
+            wins.forEach(function (r, idx) {
+              var div = document.createElement('div');
+              div.className = 'hit';
+              div.innerHTML = '<span class="hit-rank">' + (idx + 1) + '</span><span><b>' + esc(r.game) + '</b></span><span class="hit-conf">' + Math.round(r.prob * 100) + '%</span><span class="hit-res">WON</span><span class="hit-final">' + esc(r.final || '') + '</span>';
+              hits.appendChild(div);
+            });
+          }
+
+          // Compounding line under the tape + the wallet panel note
+          if (n.settledCount !== null && n.balance !== null) {
+            var comp = 'PAPER WALLET OVER ' + n.settledCount + ' SETTLED BETS: ' + money(n.balance) +
+              ' · STAKED ' + money(n.settledCount * 50) +
+              (n.net !== null ? ' · NET ' + smoney(n.net) : '') + ' · STAKE STAYS $50 FLAT.';
+            setText('tape-compound', comp);
+            setText('pp-k-compound', comp);
+          }
+
+          // Council feed — open bets, latest results, gate count
+          var feed = $('k-feed');
+          if (feed) {
+            var items = [];
+            n.openBets.forEach(function (b) {
+              items.push('<li><span class="d">' + esc(fmtDate(b.date)) + '</span><span class="t lean">OPEN</span><span class="m"><b>' + esc(b.pick) + (b.prob !== null ? ' ' + Math.round(b.prob * 100) + '%' : '') + '</b> — ' + esc(b.game) + ', open paper bet' + (b.price !== null ? ' · priced ' + b.price.toFixed(2) + (b.priceSource === 'reference' ? ' (REF)' : ' (live stamp)') : ' · NO PRICE STAMPED') + (b.payout !== null ? ' · potential payout ' + money(b.payout) : '') + '.</span></li>');
+            });
+            n.settledRows.slice(0, 2).forEach(function (r) {
+              items.push('<li><span class="d">' + esc(fmtDate(r.date)) + '</span><span class="t signal">RESULT</span><span class="m"><b>' + esc(r.game) + '</b> — pick ' + esc(r.pick) + ' <b style="color:' + (r.result === 'WON' ? 'var(--green)' : 'var(--red)') + '">' + (r.result || '—') + '</b>' + (r.final ? ' ' + esc(r.final) : '') + (r.profit !== null ? ' · ' + smoney(r.profit) + ' at ' + priceCell(r) : '') + '.</span></li>');
+            });
+            if (n.reliability) {
+              items.push('<li><span class="d">GATE</span><span class="t gate">GATE</span><span class="m"><b>Reliability gate: <span style="color:' + (n.reliability === 'PASS' ? 'var(--green)' : 'var(--red)') + '">' + esc(n.reliability) + '</span>.</b> Calibration status from the lane file — a failing gate blocks the verdict, not the work.</span></li>');
+            }
+            if (n.scored !== null) {
+              items.push('<li><span class="d">GATE</span><span class="t gate">GATE</span><span class="m"><b>' + n.scored + ' / ' + n.target + ' scored.</b> The verdict unlocks only at ' + n.target + ' scored forecasts in profit — the count is the discipline.</span></li>');
+            }
+            if (items.length) feed.innerHTML = items.join('');
+          }
+
+          // Sports coverage — one expandable row per open bet
+          var cov = $('cov-teams');
+          if (cov) {
+            cov.innerHTML = '';
+            if (!n.openBets.length) {
+              cov.innerHTML = '<p class="xlate-note" style="margin:0;">NO OPEN LEANS RIGHT NOW — THE NEXT LOCKED LEANS POST HERE FROM THE LANE FILE.</p>';
+            }
+            n.openBets.forEach(function (b, idx) {
+              var codes = teamsOf(b.game);
+              var pickCode = (b.pick || '').toUpperCase();
+              var btn = document.createElement('button');
+              btn.className = 'team-row';
+              btn.setAttribute('aria-expanded', 'false');
+              var pid = 'cov-panel-' + idx;
+              btn.setAttribute('aria-controls', pid);
+              btn.innerHTML = '<span><b>' + esc(TEAM_NAMES[pickCode] || pickCode || b.game) + '</b><span class="team-sub">' + esc(pickCode) + (b.date ? ' · ' + esc(fmtDate(b.date)) : '') + '</span></span>' +
+                '<span class="team-lean">LEAN <b>' + esc(pickCode) + (b.prob !== null ? ' ' + Math.round(b.prob * 100) + '%' : '') + '</b></span><span class="team-chev">▸</span>';
+              cov.appendChild(btn);
+              var det = document.createElement('div');
+              det.className = 'team-detail';
+              det.id = pid;
+              var html = '<div class="team-detail-in">';
+              html += '<div class="xlate-row"><span class="k">Next matchup</span><span class="v">' + esc(b.game) + (b.date ? ' — ' + esc(fmtDate(b.date)) : '') + '</span></div>';
+              html += '<div class="xlate-row"><span class="k">Locked lean</span><span class="v" style="color:var(--green)">' + esc(pickCode) + (b.prob !== null ? ' ' + (Math.round(b.prob * 1000) / 10) + '%' : '') + ' · ' + esc(modelDisplay(b.model)) + '</span></div>';
+              var teamRows = n.tapeRows.filter(function (r) {
+                var rc = teamsOf(r.game);
+                return codes.length && rc.length && (rc[0] === codes[0] || rc[1] === codes[1] || rc[0] === codes[1] || rc[1] === codes[0]);
               });
-              for (var si = 0; si < sbs.length; si++) {
-                var sb = sbs[si];
-                var sres = String(sb.result || '').toUpperCase();
-                var sprofit = isNum(sb.profit) ? sb.profit
-                  : (isNum(sb.price) && sb.price > 0 && sb.price < 1
-                    ? (sres === 'WON' ? (isNum(sb.stake) ? sb.stake : 50) * (1 - sb.price) / sb.price : -(isNum(sb.stake) ? sb.stake : 50))
-                    : null);
-                var str2 = document.createElement('tr');
-                function scell(txt, cls) {
-                  var td = document.createElement('td');
-                  if (cls) td.className = cls;
-                  td.textContent = txt;
-                  str2.appendChild(td);
-                }
-                scell(sb.date ? fmtDate(sb.date) : '—');
-                var sgtd = document.createElement('td');
-                var sgb = document.createElement('b');
-                sgb.textContent = String(sb.game || '—');
-                sgtd.appendChild(sgb);
-                str2.appendChild(sgtd);
-                var sprob = pct(sb.prob);
-                scell(String(sb.pick || '') + (sprob !== null ? ' ' + (Math.round(sprob * 10) / 10) + '%' : ''));
-                scell(isNum(sb.price) ? sb.price.toFixed(2) : 'NO PRICE STAMPED', isNum(sb.price) ? 'hide-m' : 'hide-m ob-noprice');
-                scell(fmtMoney(isNum(sb.stake) ? sb.stake : 50));
-                scell(sres || '—', sres === 'WON' ? 'res-w' : 'res-l');
-                scell(sprofit !== null ? fmtMoney(sprofit) : 'NO PRICE STAMPED', sprofit !== null ? (sprofit >= 0 ? 'num-green' : 'num-red') : 'ob-noprice');
-                sbb.appendChild(str2);
+              if (teamRows.length) {
+                html += '<div class="team-tape-h">SETTLED TAPE — THIS MATCHUP</div>';
+                teamRows.forEach(function (r) {
+                  html += '<div class="team-tape-row"><span>' + esc(fmtDate(r.date)) + ' · ' + esc(r.game) + '</span><span>' + esc(modelDisplay(r.model)) + ' · ' + esc(r.pick) + (r.prob !== null ? ' ' + Math.round(r.prob * 100) + '%' : '') + '</span><span>' + esc(r.final || '') + '</span><span class="' + (r.result === 'WON' ? 'res-w' : 'res-l') + '">' + esc(r.result || '') + '</span></div>';
+                });
               }
-            }
+              html += '</div>';
+              det.innerHTML = html;
+              cov.appendChild(det);
+            });
           }
+
+          // PAPER PROFIT — open bets
+          var ob = $('ob-body');
+          if (ob) {
+            ob.innerHTML = '';
+            if (!n.openBets.length) emptyRow(ob, 8, 'NO OPEN PAPER BETS RIGHT NOW');
+            n.openBets.forEach(function (b) {
+              var tr = document.createElement('tr');
+              var g = cell(''); var gb = document.createElement('b'); gb.textContent = b.game; g.appendChild(gb); tr.appendChild(g);
+              tr.appendChild(cell(b.pick || '—'));
+              tr.appendChild(cell(b.prob !== null ? (Math.round(b.prob * 1000) / 10) + '%' : '—'));
+              tr.appendChild(cell(b.price !== null ? b.price.toFixed(2) : 'NO PRICE STAMPED', b.price !== null ? 'hide-m' : 'hide-m ob-noprice'));
+              tr.appendChild(cell(money(b.stake)));
+              tr.appendChild(cell(b.payout !== null ? money(b.payout) : 'NO PRICE STAMPED', b.payout !== null ? 'hide-m' : 'hide-m ob-noprice'));
+              tr.appendChild(cell(b.profit !== null ? money(b.profit) : 'NO PRICE STAMPED', b.profit !== null ? 'num-green' : 'ob-noprice'));
+              var st = cell('');
+              st.innerHTML = '<span class="ob-open"><span class="dot"></span>' + esc(b.status) + '</span>';
+              tr.appendChild(st);
+              ob.appendChild(tr);
+            });
+          }
+
+          // PAPER PROFIT — settled bets, newest first
+          var sbb = $('sb-body');
+          if (sbb) {
+            sbb.innerHTML = '';
+            if (!n.settledRows.length) emptyRow(sbb, 7, 'NOTHING SETTLED YET — SETTLED BETS LAND HERE WHEN THEIR GAMES END');
+            var sbs = n.settledRows.slice().sort(function (a, b2) {
+              var da = Date.parse(a.date || ''), db = Date.parse(b2.date || '');
+              return (isFinite(db) ? db : 0) - (isFinite(da) ? da : 0);
+            });
+            sbs.forEach(function (r) {
+              var tr = document.createElement('tr');
+              tr.appendChild(cell(fmtDate(r.date)));
+              var g = cell(''); var gb = document.createElement('b'); gb.textContent = r.game; g.appendChild(gb); tr.appendChild(g);
+              tr.appendChild(cell(r.pick + (r.prob !== null ? ' ' + (Math.round(r.prob * 1000) / 10) + '%' : '')));
+              tr.appendChild(cell(r.price !== null ? r.price.toFixed(2) : 'NO PRICE STAMPED', r.price !== null ? 'hide-m' : 'hide-m ob-noprice'));
+              tr.appendChild(cell(money(r.stake)));
+              tr.appendChild(cell(r.result || '—', r.result === 'WON' ? 'res-w' : 'res-l'));
+              tr.appendChild(cell(r.profit !== null ? smoney(r.profit) : 'NO PRICE STAMPED', r.profit !== null ? (r.profit >= 0 ? 'num-green' : 'num-red') : 'ob-noprice'));
+              sbb.appendChild(tr);
+            });
+          }
+
+          // PAPER PROFIT — wallet + ledger + biggest wins
+          if (n.balance !== null) {
+            setText('pp-k-bankroll', (n.balance < 0 ? '-' : '') + Math.abs(n.balance).toFixed(2));
+            var bbig = $('pp-k-balance-big');
+            if (bbig) bbig.className = 'm-big ' + (n.balance >= n.start ? 'green' : 'red');
+          }
+          var pusd = $('pp-k-usd');
+          if (pusd && n.net !== null) {
+            pusd.innerHTML = 'PAPER WALLET — <b>' + smoney(n.net) + ' NET' + (n.settledCount !== null ? ' · ' + n.settledCount + ' SETTLED' : '') + '</b>';
+          }
+          if (n.totalWon !== null) setText('pp-k-won', n.totalWon.toFixed(2));
+          if (n.totalLost !== null) setText('pp-k-lost', n.totalLost.toFixed(2));
+          if (n.settledCount !== null) setText('pp-k-settled', String(n.settledCount));
+          if (n.settledCount !== null) {
+            setText('pp-k-state', 'WALLET LIVE — ' + n.settledCount + ' SETTLED BET' + (n.settledCount === 1 ? '' : 'S') + ' IN THE WALLET. Flat $50 paper stake each; the wallet updates with every settlement — it does not wait for the 200 gate.');
+          }
+          var ledger = $('pp-k-ledger');
+          if (ledger) {
+            ledger.innerHTML = '';
+            if (!n.settledRows.length) emptyRow(ledger, 7, 'NO SETTLED BETS IN THE LANE FILE YET');
+            n.settledRows.forEach(function (r) {
+              var tr = document.createElement('tr');
+              tr.appendChild(cell(fmtDate(r.date)));
+              tr.appendChild(cell(r.game));
+              tr.appendChild(cell(r.pick + (r.prob !== null ? ' ' + (Math.round(r.prob * 1000) / 10) + '%' : '')));
+              tr.appendChild(cell(r.price !== null ? r.price.toFixed(2) : '—', 'hide-m'));
+              tr.appendChild(cell(money(r.stake)));
+              tr.appendChild(cell(r.result || '—', r.result === 'WON' ? 'res-w' : 'res-l'));
+              tr.appendChild(cell(r.profit !== null ? smoney(r.profit) : 'NO PRICE', r.profit !== null ? (r.profit >= 0 ? 'num-green' : 'num-red') : 'ob-noprice'));
+              ledger.appendChild(tr);
+            });
+          }
+          var biggest = $('pp-k-biggest');
+          if (biggest) {
+            biggest.innerHTML = '';
+            var winsOnly = n.settledRows.filter(function (r) { return r.profit !== null && r.profit > 0; })
+              .sort(function (a, b2) { return b2.profit - a.profit; }).slice(0, 5);
+            if (!winsOnly.length) emptyRow(biggest, 6, 'NO SETTLED WINS YET — THE LIST FILLS FROM THE WALLET LEDGER');
+            winsOnly.forEach(function (r) {
+              var tr = document.createElement('tr');
+              tr.appendChild(cell(fmtDate(r.date)));
+              tr.appendChild(cell(r.game));
+              tr.appendChild(cell(r.pick + (r.prob !== null ? ' ' + (Math.round(r.prob * 1000) / 10) + '%' : '')));
+              tr.appendChild(cell(r.price !== null ? r.price.toFixed(2) : '—', 'hide-m'));
+              tr.appendChild(cell(money(r.stake)));
+              tr.appendChild(cell(smoney(r.profit), 'num-green'));
+              biggest.appendChild(tr);
+            });
+          }
+        }
+
+        // Ticker — rebuilt whole from the same normalized read (plus the
+        // Hummingbot lane's headline figures), then doubled for the loop.
+        function buildTicker() {
+          var tick = $('ticker');
+          if (!tick || !lastNorm) return;
+          var n = lastNorm, t = [];
+          if (n.scored !== null) t.push('<span class="tick-item">SCORED <b>' + n.scored + '/' + n.target + '</b></span>');
+          t.push('<span class="tick-item">GATE <span class="' + (n.scored !== null && n.scored >= n.target ? 'g' : 'gold') + '"><b>' + (n.scored !== null && n.scored >= n.target ? 'GATE OPEN' : 'GATE LOCKED') + '</b></span></span>');
+          if (n.brier !== null) t.push('<span class="tick-item">BRIER <b>' + n.brier.toFixed(4) + '</b></span>');
+          if (n.logLoss !== null) t.push('<span class="tick-item">LOG-LOSS <b>' + n.logLoss.toFixed(4) + '</b></span>');
+          if (n.reliability) t.push('<span class="tick-item">RELIABILITY <span class="' + (n.reliability === 'PASS' ? 'g' : 'r') + '"><b>' + esc(n.reliability) + '</b></span></span>');
+          if (n.won !== null && n.lost !== null) t.push('<span class="tick-item">RECORD <span class="g"><b>' + n.won + ' W</b></span> / <span class="r"><b>' + n.lost + ' L</b></span></span>');
+          n.models.forEach(function (m) {
+            var net = m.agg && m.agg.priced ? m.agg.net : null;
+            t.push('<span class="tick-item">' + esc(m.display) +
+              (m.won !== null && m.lost !== null ? ' <span class="g"><b>' + m.won + ' W</b></span> / <span class="r"><b>' + m.lost + ' L</b></span>' : '') +
+              (m.winRate !== null ? ' · <span class="g"><b>' + (m.winRate * 100).toFixed(1) + '%</b></span>' : '') +
+              (m.brier !== null ? ' · BRIER <b>' + m.brier.toFixed(4) + '</b>' : '') +
+              (net !== null ? ' · NET <span class="' + (net >= 0 ? 'g' : 'r') + '"><b>' + smoney(net) + '</b></span>' : '') + '</span>');
+          });
+          if (n.net !== null) t.push('<span class="tick-item">PLUGG PAPER $ <span class="' + (n.net >= 0 ? 'g' : 'r') + '"><b>' + smoney(n.net) + ' NET</b></span>' + (n.balance !== null ? ' · WALLET <b>' + money(n.balance) + '</b>' : '') + '</span>');
+          if (lastHB && typeof lastHB.trades === 'number') {
+            var hbNet = (typeof lastHB.won_usdt === 'number') ? (lastHB.won_usdt - (lastHB.lost_usdt || 0)) + (lastHB.unrealized_usdt || 0) : null;
+            t.push('<span class="tick-item">HUMMINGBOT <b>' + lastHB.trades + (lastHB.trades === 1 ? ' TRADE' : ' TRADES') + '</b> · VOL <b>' + money(lastHB.volume_usdt || 0) + '</b></span>');
+            t.push('<span class="tick-item">HUMMINGBOT PAPER $ ' + (hbNet === null ? '<b>—</b>' : '<span class="' + (hbNet >= 0 ? 'g' : 'r') + '"><b>' + smoney(hbNet) + ' NET</b></span>') + '</span>');
+          }
+          t.push('<span class="tick-item">ENGINE <b>PLUGG</b></span>');
+          t.push('<span class="tick-item"><span class="p"><b>PAPER ONLY</b></span></span>');
+          var html = t.join('');
+          tick.innerHTML = html + html;
         }
 
         function load() {
-          fetch(KALSHI_LANE_URL + '?t=' + Date.now(), { cache: 'no-store' })
+          fetch('kalshi_lane.json?t=' + Date.now(), { cache: 'no-store' })
             .then(function (r) { if (!r.ok) throw new Error('not published'); return r.json(); })
-            .then(function (d) { lastGood = d; render(d); })
-            .catch(function () { if (lastGood) render(lastGood); });
+            .then(function (d) { lastNorm = normK(d); render(lastNorm); buildTicker(); })
+            .catch(function () {});
+          fetch('hummingbot_lane.json?t=' + Date.now(), { cache: 'no-store' })
+            .then(function (r) { if (!r.ok) throw new Error('not published'); return r.json(); })
+            .then(function (d) { lastHB = d; buildTicker(); })
+            .catch(function () {});
         }
         load();
-        setInterval(load, 60000);
+        setInterval(load, 30000);
       })();
     </script>
   
 
-<script>
-// ===== v7 LIVE WIRE (appended) =====
-// Every number on this board is fed by the lane files. This block re-applies
-// the live values over any baked snapshot text — including the [data-count]
-// spans, whose load-time count-up animation otherwise re-prints the baked
-// values after the lane scripts write the real ones. It also keeps the
-// data-count attributes in sync so the animator agrees instead of fighting.
-(function () {
-  var K = null, H = null;
-  function $(s, r) { return (r || document).querySelector(s); }
-  function $$(s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); }
-  function txt(el, v) { if (el) el.textContent = v; }
-  function cnt(el, v, dec) { if (!el) return; el.setAttribute('data-count', String(v)); el.textContent = dec ? Number(v).toFixed(dec) : String(v); }
-  function money(v) { return (v < 0 ? '-$' : '$') + Math.abs(v).toFixed(2); }
-  function smoney(v) { return (v < 0 ? '-$' : '+$') + Math.abs(v).toFixed(2); }
-  function pct1(f) { return (f * 100).toFixed(1) + '%'; }
-  function esc(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;'); }
-  var MON = ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
-  function dlabel(iso) { if (!iso) return ''; var p = String(iso).slice(0, 10).split('-'); return MON[parseInt(p[1], 10) - 1] + ' ' + parseInt(p[2], 10); }
-  function perModel(rows) {
-    var m = {};
-    (rows || []).forEach(function (r) {
-      var k = r.model || '?';
-      if (!m[k]) m[k] = { won: 0, lost: 0, net: 0, n: 0, w: 0, l: 0 };
-      var p = (typeof r.profit_usdt === 'number') ? r.profit_usdt : 0;
-      m[k].net += p; m[k].n++;
-      if (r.result === 'won') { m[k].w++; m[k].won += p; } else { m[k].l++; m[k].lost += -p; }
-    });
-    return m;
-  }
 
-  function applyK(d) {
-    if (!d || !d.wallet) return;
-    var w = d.wallet, scored = d.scored || 0, won = d.won || 0, lost = d.lost || 0;
-    var net = w.total_won - w.total_lost, staked = scored * 50;
-    var pm = perModel(d.settled_bets);
-    var refTag = (w.ref_priced_count > 0 && w.ref_priced_count >= scored) ? ' · REF-PRICED' : (w.ref_priced_count > 0 ? ' · REF + LIVE STAMPS' : ' · LIVE STAMPS');
-
-    // --- money header card ---
-    cnt($('#k-m-won'), won); cnt($('#k-m-lost'), lost); cnt($('#k-m-scored'), scored);
-    cnt($('#k-m-winrate'), (d.win_rate * 100).toFixed(1), 1);
-    txt($('#k-m-brier'), (typeof d.brier === 'number') ? d.brier.toFixed(4) : '—');
-    var ksec = $('.moneybar .money:not(#hb-money)');
-    if (ksec) {
-      var usd = $('.m-usd', ksec);
-      if (usd) usd.innerHTML = 'PAPER $ PROFIT — <b style="color:' + (net >= 0 ? 'var(--green)' : 'var(--red)') + '">' + smoney(net) + ' NET</b> · WALLET ' + money(w.balance) + ' · LIVE';
-      var sub = $('.m-sub', ksec);
-      if (sub) {
-        Array.prototype.slice.call(sub.childNodes).forEach(function (n) {
-          if (n.nodeType === 3 && n.textContent.indexOf('First-26 dollars') >= 0) {
-            n.textContent = '. Every settled bet is priced — pre-stamp bets at the pre-lock reference (tagged REF), new bets at live stamps. One wallet, updated with every settlement.';
-          }
-        });
-      }
-    }
-    txt($('#k-lane-sub'), 'SCOREBOARD B · PROSPECTIVE PAPER LEDGER · LIVE FILE · UPDATED ' + String(d.updated_at || '').slice(0, 10));
-
-    // --- gate ---
-    cnt($('#k-gate-scored'), scored);
-    txt($('#k-gate-pct'), (scored / 2).toFixed(1) + '% OF GATE');
-    txt($('#k-gate-togo'), (200 - scored) + ' TO GO');
-    var fill = $('#k-gate-fill'); if (fill) fill.style.width = (scored / 2) + '%';
-
-    // --- pots ---
-    var pots = $$('.pots .pot');
-    if (pots[0]) { txt($('.amt', pots[0]), money(w.total_won)); txt($('.st', pots[0]), 'TOTAL WON · ALL SETTLED BETS'); }
-    if (pots[1]) { txt($('.amt', pots[1]), money(w.total_lost)); txt($('.st', pots[1]), 'TOTAL LOST · ALL SETTLED BETS'); }
-
-    // --- translator ---
-    var xr = $('#k-xlate-rec');
-    if (xr) xr.innerHTML = '<span style="color:var(--green)">' + won + ' W</span> / <span style="color:var(--red)">' + lost + ' L</span> · ' + pct1(d.win_rate || 0) + ' HIT RATE';
-    var xe = $('#k-xlate-edge');
-    if (xe) { var e = ((d.win_rate || 0) - 0.577) * 100; xe.textContent = (e >= 0 ? '+' : '') + e.toFixed(1) + ' PTS'; xe.style.color = e >= 0 ? 'var(--green)' : 'var(--red)'; }
-    $$('.xlate-row').forEach(function (row) {
-      var k = $('.k', row);
-      if (k && k.textContent.indexOf('Dollar P&L') === 0) {
-        k.textContent = 'Dollar P&L at $50 flat stake — all settled bets, one wallet';
-        var v = $('.v', row);
-        if (v) { v.innerHTML = smoney(net) + ' NET · WALLET $50.00 → ' + money(w.balance); v.style.color = net >= 0 ? 'var(--green)' : 'var(--red)'; }
-      }
-    });
-    $$('.xlate-note').forEach(function (n) {
-      if (n.textContent.indexOf('They never blend') >= 0) {
-        n.innerHTML = '<b>What this record means at $50 — paper math only, no real money.</b> Every settled bet counts in one wallet: pre-stamp bets at their pre-lock reference price (real Kalshi quotes, tagged REF), new bets at live stamps. Rule stands: $50 is the maximum first stake, and it unlocks only at 200 scored in profit.';
-      }
-      if (n.textContent.indexOf('Two council models, one combined ledger') === 0) {
-        var parts = (d.models || []).map(function (m) { return m.scored; }).join(' + ');
-        n.textContent = 'Two council models, one combined ledger: ' + parts + ' = ' + scored + ' scored behind the gate. Pre-stamp margins are reconstructed at pre-lock reference prices (tagged REF); stamped bets carry live prices. All of it counts in the one paper wallet. Hummingbot keeps its own margin on its own lane.';
-      }
-    });
-
-    // --- model breakdown table (header MODEL|SCORED|RECORD|WIN %|BRIER|PAPER MARGIN) ---
-    $$('table').forEach(function (tb) {
-      if (tb.textContent.indexOf('PAPER MARGIN') < 0) return;
-      $$('tr', tb).forEach(function (tr) {
-        var cells = $$('td', tr); if (cells.length < 6) return;
-        var mdl = (d.models || []).filter(function (m) { return tr.textContent.indexOf(m.label) >= 0 || tr.textContent.indexOf(/v3|PLATT/i.test(m.label || '') ? 'PLUGG' : m.label) >= 0 || (m.key && tr.textContent.indexOf(m.key) >= 0); })[0];
-        if (!mdl) return;
-        var agg = pm[mdl.key] || { net: 0 };
-        txt(cells[1], mdl.scored);
-        cells[2].innerHTML = '<b>' + mdl.won + ' W</b> / <b>' + mdl.lost + ' L</b>';
-        txt(cells[3], pct1(mdl.win_rate || 0));
-        txt(cells[4], (typeof mdl.brier === 'number') ? mdl.brier.toFixed(4) : '—');
-        cells[5].innerHTML = 'NET <b style="color:' + (agg.net >= 0 ? 'var(--green)' : 'var(--red)') + '">' + smoney(agg.net) + '</b> · ROI ' + (mdl.scored ? ((agg.net / (mdl.scored * 50)) * 100).toFixed(1) + '%' : '—') + refTag;
-      });
-    });
-
-    // --- the old FIRST 26 panel becomes the live wallet panel ---
-    var panel = $('section[aria-label="The first 26 — reference-priced"]');
-    if (panel) {
-      var ph = $('.panel-h span', panel); if (ph) ph.textContent = 'PAPER WALLET — LIVE';
-      var pr = $('.panel-h .right', panel); if (pr) pr.textContent = 'FLAT $50 STAKE · ' + scored + ' BETS · RECORD ' + won + '–' + lost;
-      var rt = $('.ref-tag', panel); if (rt) rt.textContent = 'ONE WALLET — EVERY SETTLED BET COUNTS · PRE-STAMP BETS AT PRE-LOCK REFERENCE (TAGGED REF) · NEW BETS AT LIVE STAMPS';
-      var big = $('.m-big', panel); if (big) big.innerHTML = '$50.00 <span class="ref26-arrow">→</span> ' + money(w.balance);
-      var stats = $$('.stat', panel);
-      var sv = [
-        [money(w.total_won), 'GROSS PAPER PROFIT · ALL BETS'],
-        [money(w.total_lost), 'GROSS PAPER LOSSES · ALL BETS'],
-        [smoney(net), 'WON − LOST · ALL BETS'],
-        ['$' + staked.toLocaleString('en-US'), '$50 FLAT × ' + scored + ' BETS'],
-        [(staked ? (net / staked) * 100 : 0).toFixed(1) + '%', 'NET ÷ STAKED'],
-        [won + '–' + lost, won + ' WON · ' + lost + ' LOST']
-      ];
-      stats.forEach(function (s, i) {
-        if (!sv[i]) return;
-        var v = $('.v', s); if (v) { v.textContent = (i === 4 && net >= 0 ? '+' : '') + sv[i][0]; if (i === 2 || i === 4) v.style.color = net >= 0 ? 'var(--green)' : 'var(--red)'; }
-        txt($('.n', s), sv[i][1]);
-      });
-      var models = $$('.ref26-model', panel);
-      (d.models || []).forEach(function (mdl, i) {
-        var box = models[i]; if (!box) return;
-        var agg = pm[mdl.key] || { won: 0, lost: 0, net: 0 };
-        var rmn = $('.rm-name', box); if (rmn) rmn.textContent = (/v3|PLATT/i.test(mdl.label || mdl.name || '') ? 'PLUGG' : (mdl.label || mdl.name || rmn.textContent));
-        txt($('.rm-meta', box), mdl.scored + ' BETS · RECORD ' + mdl.won + '–' + mdl.lost);
-        var rows = $$('.xlate-row .v', box);
-        if (rows[0]) rows[0].textContent = money(agg.won);
-        if (rows[1]) rows[1].textContent = money(agg.lost);
-        if (rows[2]) { rows[2].textContent = smoney(agg.net); rows[2].style.color = agg.net >= 0 ? 'var(--green)' : 'var(--red)'; }
-        if (rows[3]) { var r = mdl.scored ? (agg.net / (mdl.scored * 50)) * 100 : 0; rows[3].textContent = (r >= 0 ? '+' : '') + r.toFixed(1) + '%'; rows[3].style.color = r >= 0 ? 'var(--green)' : 'var(--red)'; }
-      });
-      $$('.xlate-note', panel).forEach(function (n) {
-        if (n.textContent.indexOf('BIGGEST WIN') >= 0) {
-          var best = null;
-          (d.settled_bets || []).forEach(function (r) { if (typeof r.profit_usdt === 'number' && (!best || r.profit_usdt > best.profit_usdt)) best = r; });
-          if (best) n.innerHTML = '<b style="color:var(--gold)">BIGGEST WIN — ' + esc(best.game) + ' · ' + smoney(best.profit_usdt) + '</b> · pick priced ' + (typeof best.price === 'number' ? best.price.toFixed(2) : '—') + (best.price_source === 'reference' ? ' at the pre-lock reference' : ' at the live stamp') + '. This wallet starts at $50.00 and counts every settled bet — it updates with every settlement.';
-        }
-      });
-    }
-
-    // --- council feed, rebuilt from the lane ---
-    var feed = $('ul.feed');
-    if (feed) {
-      var items = [];
-      (d.open_bets || []).forEach(function (b) {
-        items.push('<li><span class="d">' + dlabel(b.game_date) + '</span><span class="t lean">OPEN</span><span class="m"><b>' + esc(b.pick_team) + ' ' + Math.round((b.pick_prob || 0) * 100) + '%</b> — ' + esc(b.game) + ', open paper bet · priced ' + (typeof b.price === 'number' ? b.price.toFixed(2) : '—') + (b.price_source === 'reference' ? ' (REF)' : ' (live stamp)') + ' · potential payout ' + (typeof b.potential_payout === 'number' ? money(b.potential_payout) : '—') + '.</span></li>');
-      });
-      (d.settled_bets || []).slice(0, 2).forEach(function (r) {
-        items.push('<li><span class="d">' + dlabel(r.game_date) + '</span><span class="t signal">RESULT</span><span class="m"><b>' + esc(r.game) + '</b> — pick ' + esc(r.pick_team) + ' <b style="color:' + (r.result === 'won' ? 'var(--green)' : 'var(--red)') + '">' + (r.result === 'won' ? 'WON' : 'LOST') + '</b>' + (r.final ? ' ' + esc(r.final) : '') + ' · ' + smoney(r.profit_usdt || 0) + ' at ' + (typeof r.price === 'number' ? r.price.toFixed(2) : '—') + (r.price_source === 'reference' ? ' REF' : ' live stamp') + '.</span></li>');
-      });
-      items.push('<li><span class="d">GATE</span><span class="t gate">GATE</span><span class="m"><b>' + scored + ' / 200 scored.</b> The verdict unlocks only at 200 scored forecasts in profit — the count is the discipline.</span></li>');
-      feed.innerHTML = items.join('');
-    }
-
-    // --- ticker, rebuilt from the lane (white labels, green wins/positives, red losses) ---
-    var tick = $('#ticker');
-    if (tick) {
-      var t = [];
-      t.push('<span class="tick-item">SCORED <b>' + scored + '/200</b></span>');
-      t.push('<span class="tick-item">GATE <span class="' + (scored >= 200 ? 'g' : 'gold') + '"><b>' + (scored >= 200 ? 'GATE OPEN' : 'GATE LOCKED') + '</b></span></span>');
-      t.push('<span class="tick-item">BRIER <b>' + (typeof d.brier === 'number' ? d.brier.toFixed(4) : '—') + '</b></span>');
-      t.push('<span class="tick-item">LOG-LOSS <b>' + (typeof d.log_loss === 'number' ? d.log_loss.toFixed(4) : '—') + '</b></span>');
-      t.push('<span class="tick-item">RECORD <span class="g"><b>' + won + ' W</b></span> / <span class="r"><b>' + lost + ' L</b></span></span>');
-      (d.models || []).forEach(function (mdl) {
-        var agg = pm[mdl.key] || { net: 0 };
-        t.push('<span class="tick-item">' + esc(/v3|PLATT/i.test(mdl.label || '') ? 'PLUGG' : mdl.label) + ' <span class="g"><b>' + mdl.won + ' W</b></span> / <span class="r"><b>' + mdl.lost + ' L</b></span> · <span class="g"><b>' + pct1(mdl.win_rate || 0) + '</b></span> · BRIER <b>' + (typeof mdl.brier === 'number' ? mdl.brier.toFixed(4) : '—') + '</b> · NET <span class="' + (agg.net >= 0 ? 'g' : 'r') + '"><b>' + smoney(agg.net) + '</b></span></span>');
-      });
-      t.push('<span class="tick-item">PLUGG PAPER $ <span class="' + (net >= 0 ? 'g' : 'r') + '"><b>' + smoney(net) + ' NET</b></span> · WALLET <b>' + money(w.balance) + '</b></span>');
-      if (H && typeof H.trades === 'number') {
-        var hbNet = (typeof H.won_usdt === 'number') ? (H.won_usdt - (H.lost_usdt || 0)) + (H.unrealized_usdt || 0) : null;
-        t.push('<span class="tick-item">HUMMINGBOT <b>' + H.trades + (H.trades === 1 ? ' TRADE' : ' TRADES') + '</b> · VOL <b>' + money(H.volume_usdt || 0) + '</b></span>');
-        t.push('<span class="tick-item">HUMMINGBOT PAPER $ ' + (hbNet === null ? '<b>—</b>' : '<span class="' + (hbNet >= 0 ? 'g' : 'r') + '"><b>' + smoney(hbNet) + ' NET</b></span>') + '</span>');
-      }
-      t.push('<span class="tick-item">ENGINE <b>PLUGG</b></span>');
-      t.push('<span class="tick-item"><span class="p"><b>PAPER ONLY</b></span></span>');
-      tick.innerHTML = t.join('');
-    }
-  }
-
-  function applyH(h) {
-    if (!h || typeof h.trades !== 'number') return;
-    var realized = (typeof h.won_usdt === 'number') ? h.won_usdt - (h.lost_usdt || 0) : null;
-    var un = h.unrealized_usdt || 0;
-    var big = $('#hb-big'), usd = $('#hb-usd'), sub = $('#hb-sub'), ms = $('#hb-mstatus');
-    if (h.trades === 0) {
-      if (big) { big.textContent = '$0.00'; big.classList.remove('dim'); big.style.color = 'var(--green)'; }
-      if (usd) usd.innerHTML = '<b>NO FILLS YET — THE BOT IS QUOTING</b>';
-      if (sub) sub.textContent = 'Station live on KuCoin paper. The first fill starts this lane\u2019s record.';
-      if (ms) ms.innerHTML = '<span class="dot on"></span>STATION LIVE';
-      return;
-    }
-    if (realized === null) return;
-    var net = realized + un;
-    if (big) { big.textContent = smoney(net); big.classList.remove('dim'); big.style.color = net >= 0 ? 'var(--green)' : 'var(--red)'; }
-    if (usd) usd.innerHTML = '<b>REALIZED ' + smoney(realized) + ' · UNREALIZED ' + smoney(un) + '</b> · ' + h.trades + (h.trades === 1 ? ' TRADE' : ' TRADES');
-    if (sub) {
-      var inv = h.open_inventory ? Object.keys(h.open_inventory).map(function (k) { return h.open_inventory[k] + ' ' + k.split('-')[0]; }).join(', ') : '';
-      sub.textContent = 'ETH-USDT · KuCoin paper' + (inv ? ' · OPEN ' + inv : '') + (typeof h.mark_price === 'number' ? ' · MARK $' + h.mark_price.toFixed(2) : '') + ' · VOL ' + money(h.volume_usdt || 0) + ' · FEES ' + money(h.fees_usdt || 0);
-    }
-    if (ms) ms.innerHTML = '<span class="dot on"></span>STATION LIVE';
-  }
-
-  function cycle() {
-    var t = Date.now();
-    fetch('kalshi_lane.json?t=' + t, { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (d) {
-      K = d; applyK(d); if (H) applyH(H);
-      setTimeout(function () { applyK(d); }, 1700);
-    }).catch(function () {});
-    fetch('hummingbot_lane.json?t=' + t, { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (d) {
-      H = d; applyH(d); if (K) applyK(K);
-    }).catch(function () {});
-  }
-  cycle();
-  setInterval(cycle, 30000);
-})();
-
-</script>
 
 <style>
 /* ===== v7 POLISH (appended) =====
@@ -2116,7 +1953,7 @@ button, .tab-btn { -webkit-tap-highlight-color: transparent; }
   background: var(--green); box-shadow: 0 0 7px rgba(0, 221, 148, 0.85);
   animation: v7breathe 2.8s ease-in-out infinite;
 }
-.ref26-panel .panel-h::before, .gate-panel .panel-h::before {
+.gate-panel .panel-h::before {
   background: var(--gold); box-shadow: 0 0 7px rgba(212, 175, 55, 0.8);
 }
 @keyframes v7breathe { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
@@ -2127,8 +1964,6 @@ button, .tab-btn { -webkit-tap-highlight-color: transparent; }
   .panel:hover, .money:hover, .stat:hover { transform: translateY(-1px); }
   .pot { transition: background-color 0.18s ease, box-shadow 0.18s ease; }
   .pot:hover { background: #101010; box-shadow: inset 0 0 0 1px #3d3d3d; }
-  .ref26-model { transition: border-color 0.18s ease, background-color 0.18s ease; }
-  .ref26-model:hover { border-color: #3d3d3d; background: #161616; }
 }
 .pot:active { background: #0d0d0d; }
 
@@ -2272,7 +2107,9 @@ table.bd tbody tr, table.tape tbody tr, .feed li, .hit { cursor: pointer; }
   watchId('pp-k-won', 1);
   watchId('pp-k-lost', -1);
   watchId('pp-k-settled', 1);
-  watchSel('section.ref26-panel .m-big', 1);
+  watchId('k-pot-won-amt', 1);
+  watchId('k-pot-lost-amt', -1);
+  watchId('k-xlate-usd', 1);
   // Hummingbot lane — terminal money card + station tiles + HB PROFIT
   watchId('hb-big', 1);
   watchId('hb-usd', 1);
