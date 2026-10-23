@@ -1707,5 +1707,232 @@
         setInterval(load, 60000);
       })();
     </script>
-  </body>
+  
+
+<script>
+// ===== v7 LIVE WIRE (appended) =====
+// Every number on this board is fed by the lane files. This block re-applies
+// the live values over any baked snapshot text — including the [data-count]
+// spans, whose load-time count-up animation otherwise re-prints the baked
+// values after the lane scripts write the real ones. It also keeps the
+// data-count attributes in sync so the animator agrees instead of fighting.
+(function () {
+  var K = null, H = null;
+  function $(s, r) { return (r || document).querySelector(s); }
+  function $$(s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); }
+  function txt(el, v) { if (el) el.textContent = v; }
+  function cnt(el, v, dec) { if (!el) return; el.setAttribute('data-count', String(v)); el.textContent = dec ? Number(v).toFixed(dec) : String(v); }
+  function money(v) { return (v < 0 ? '-$' : '$') + Math.abs(v).toFixed(2); }
+  function smoney(v) { return (v < 0 ? '-$' : '+$') + Math.abs(v).toFixed(2); }
+  function pct1(f) { return (f * 100).toFixed(1) + '%'; }
+  function esc(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;'); }
+  var MON = ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
+  function dlabel(iso) { if (!iso) return ''; var p = String(iso).slice(0, 10).split('-'); return MON[parseInt(p[1], 10) - 1] + ' ' + parseInt(p[2], 10); }
+  function perModel(rows) {
+    var m = {};
+    (rows || []).forEach(function (r) {
+      var k = r.model || '?';
+      if (!m[k]) m[k] = { won: 0, lost: 0, net: 0, n: 0, w: 0, l: 0 };
+      var p = (typeof r.profit_usdt === 'number') ? r.profit_usdt : 0;
+      m[k].net += p; m[k].n++;
+      if (r.result === 'won') { m[k].w++; m[k].won += p; } else { m[k].l++; m[k].lost += -p; }
+    });
+    return m;
+  }
+
+  function applyK(d) {
+    if (!d || !d.wallet) return;
+    var w = d.wallet, scored = d.scored || 0, won = d.won || 0, lost = d.lost || 0;
+    var net = w.total_won - w.total_lost, staked = scored * 50;
+    var pm = perModel(d.settled_bets);
+    var refTag = (w.ref_priced_count > 0 && w.ref_priced_count >= scored) ? ' · REF-PRICED' : (w.ref_priced_count > 0 ? ' · REF + LIVE STAMPS' : ' · LIVE STAMPS');
+
+    // --- money header card ---
+    cnt($('#k-m-won'), won); cnt($('#k-m-lost'), lost); cnt($('#k-m-scored'), scored);
+    cnt($('#k-m-winrate'), (d.win_rate * 100).toFixed(1), 1);
+    txt($('#k-m-brier'), (typeof d.brier === 'number') ? d.brier.toFixed(4) : '—');
+    var ksec = $('.moneybar .money:not(#hb-money)');
+    if (ksec) {
+      var usd = $('.m-usd', ksec);
+      if (usd) usd.innerHTML = 'PAPER $ PROFIT — <b style="color:' + (net >= 0 ? 'var(--green)' : 'var(--red)') + '">' + smoney(net) + ' NET</b> · WALLET ' + money(w.balance) + ' · LIVE';
+      var sub = $('.m-sub', ksec);
+      if (sub) {
+        Array.prototype.slice.call(sub.childNodes).forEach(function (n) {
+          if (n.nodeType === 3 && n.textContent.indexOf('First-26 dollars') >= 0) {
+            n.textContent = '. Every settled bet is priced — pre-stamp bets at the pre-lock reference (tagged REF), new bets at live stamps. One wallet, updated with every settlement.';
+          }
+        });
+      }
+    }
+    txt($('#k-lane-sub'), 'SCOREBOARD B · PROSPECTIVE PAPER LEDGER · LIVE FILE · UPDATED ' + String(d.updated_at || '').slice(0, 10));
+
+    // --- gate ---
+    cnt($('#k-gate-scored'), scored);
+    txt($('#k-gate-pct'), (scored / 2).toFixed(1) + '% OF GATE');
+    txt($('#k-gate-togo'), (200 - scored) + ' TO GO');
+    var fill = $('#k-gate-fill'); if (fill) fill.style.width = (scored / 2) + '%';
+
+    // --- pots ---
+    var pots = $$('.pots .pot');
+    if (pots[0]) { txt($('.amt', pots[0]), money(w.total_won)); txt($('.st', pots[0]), 'TOTAL WON · ALL SETTLED BETS'); }
+    if (pots[1]) { txt($('.amt', pots[1]), money(w.total_lost)); txt($('.st', pots[1]), 'TOTAL LOST · ALL SETTLED BETS'); }
+
+    // --- translator ---
+    var xr = $('#k-xlate-rec');
+    if (xr) xr.innerHTML = '<span style="color:var(--green)">' + won + ' W</span> / <span style="color:var(--red)">' + lost + ' L</span> · ' + pct1(d.win_rate || 0) + ' HIT RATE';
+    var xe = $('#k-xlate-edge');
+    if (xe) { var e = ((d.win_rate || 0) - 0.577) * 100; xe.textContent = (e >= 0 ? '+' : '') + e.toFixed(1) + ' PTS'; xe.style.color = e >= 0 ? 'var(--green)' : 'var(--red)'; }
+    $$('.xlate-row').forEach(function (row) {
+      var k = $('.k', row);
+      if (k && k.textContent.indexOf('Dollar P&L') === 0) {
+        k.textContent = 'Dollar P&L at $50 flat stake — all settled bets, one wallet';
+        var v = $('.v', row);
+        if (v) { v.innerHTML = smoney(net) + ' NET · WALLET $50.00 → ' + money(w.balance); v.style.color = net >= 0 ? 'var(--green)' : 'var(--red)'; }
+      }
+    });
+    $$('.xlate-note').forEach(function (n) {
+      if (n.textContent.indexOf('They never blend') >= 0) {
+        n.innerHTML = '<b>What this record means at $50 — paper math only, no real money.</b> Every settled bet counts in one wallet: pre-stamp bets at their pre-lock reference price (real Kalshi quotes, tagged REF), new bets at live stamps. Rule stands: $50 is the maximum first stake, and it unlocks only at 200 scored in profit.';
+      }
+      if (n.textContent.indexOf('Two council models, one combined ledger') === 0) {
+        var parts = (d.models || []).map(function (m) { return m.scored; }).join(' + ');
+        n.textContent = 'Two council models, one combined ledger: ' + parts + ' = ' + scored + ' scored behind the gate. Pre-stamp margins are reconstructed at pre-lock reference prices (tagged REF); stamped bets carry live prices. All of it counts in the one paper wallet. Hummingbot keeps its own margin on its own lane.';
+      }
+    });
+
+    // --- model breakdown table (header MODEL|SCORED|RECORD|WIN %|BRIER|PAPER MARGIN) ---
+    $$('table').forEach(function (tb) {
+      if (tb.textContent.indexOf('PAPER MARGIN') < 0) return;
+      $$('tr', tb).forEach(function (tr) {
+        var cells = $$('td', tr); if (cells.length < 6) return;
+        var mdl = (d.models || []).filter(function (m) { return tr.textContent.indexOf(m.label) >= 0; })[0];
+        if (!mdl) return;
+        var agg = pm[mdl.key] || { net: 0 };
+        txt(cells[1], mdl.scored);
+        cells[2].innerHTML = '<b>' + mdl.won + ' W</b> / <b>' + mdl.lost + ' L</b>';
+        txt(cells[3], pct1(mdl.win_rate || 0));
+        txt(cells[4], (typeof mdl.brier === 'number') ? mdl.brier.toFixed(4) : '—');
+        cells[5].innerHTML = 'NET <b style="color:' + (agg.net >= 0 ? 'var(--green)' : 'var(--red)') + '">' + smoney(agg.net) + '</b> · ROI ' + (mdl.scored ? ((agg.net / (mdl.scored * 50)) * 100).toFixed(1) + '%' : '—') + refTag;
+      });
+    });
+
+    // --- the old FIRST 26 panel becomes the live wallet panel ---
+    var panel = $('section[aria-label="The first 26 — reference-priced"]');
+    if (panel) {
+      var ph = $('.panel-h span', panel); if (ph) ph.textContent = 'PAPER WALLET — LIVE';
+      var pr = $('.panel-h .right', panel); if (pr) pr.textContent = 'FLAT $50 STAKE · ' + scored + ' BETS · RECORD ' + won + '–' + lost;
+      var rt = $('.ref-tag', panel); if (rt) rt.textContent = 'ONE WALLET — EVERY SETTLED BET COUNTS · PRE-STAMP BETS AT PRE-LOCK REFERENCE (TAGGED REF) · NEW BETS AT LIVE STAMPS';
+      var big = $('.m-big', panel); if (big) big.innerHTML = '$50.00 <span class="ref26-arrow">→</span> ' + money(w.balance);
+      var stats = $$('.stat', panel);
+      var sv = [
+        [money(w.total_won), 'GROSS PAPER PROFIT · ALL BETS'],
+        [money(w.total_lost), 'GROSS PAPER LOSSES · ALL BETS'],
+        [smoney(net), 'WON − LOST · ALL BETS'],
+        ['$' + staked.toLocaleString('en-US'), '$50 FLAT × ' + scored + ' BETS'],
+        [(staked ? (net / staked) * 100 : 0).toFixed(1) + '%', 'NET ÷ STAKED'],
+        [won + '–' + lost, won + ' WON · ' + lost + ' LOST']
+      ];
+      stats.forEach(function (s, i) {
+        if (!sv[i]) return;
+        var v = $('.v', s); if (v) { v.textContent = (i === 4 && net >= 0 ? '+' : '') + sv[i][0]; if (i === 2 || i === 4) v.style.color = net >= 0 ? 'var(--green)' : 'var(--red)'; }
+        txt($('.n', s), sv[i][1]);
+      });
+      var models = $$('.ref26-model', panel);
+      (d.models || []).forEach(function (mdl, i) {
+        var box = models[i]; if (!box) return;
+        var agg = pm[mdl.key] || { won: 0, lost: 0, net: 0 };
+        txt($('.rm-meta', box), mdl.scored + ' BETS · RECORD ' + mdl.won + '–' + mdl.lost);
+        var rows = $$('.xlate-row .v', box);
+        if (rows[0]) rows[0].textContent = money(agg.won);
+        if (rows[1]) rows[1].textContent = money(agg.lost);
+        if (rows[2]) { rows[2].textContent = smoney(agg.net); rows[2].style.color = agg.net >= 0 ? 'var(--green)' : 'var(--red)'; }
+        if (rows[3]) { var r = mdl.scored ? (agg.net / (mdl.scored * 50)) * 100 : 0; rows[3].textContent = (r >= 0 ? '+' : '') + r.toFixed(1) + '%'; rows[3].style.color = r >= 0 ? 'var(--green)' : 'var(--red)'; }
+      });
+      $$('.xlate-note', panel).forEach(function (n) {
+        if (n.textContent.indexOf('BIGGEST WIN') >= 0) {
+          var best = null;
+          (d.settled_bets || []).forEach(function (r) { if (typeof r.profit_usdt === 'number' && (!best || r.profit_usdt > best.profit_usdt)) best = r; });
+          if (best) n.innerHTML = '<b style="color:var(--gold)">BIGGEST WIN — ' + esc(best.game) + ' · ' + smoney(best.profit_usdt) + '</b> · pick priced ' + (typeof best.price === 'number' ? best.price.toFixed(2) : '—') + (best.price_source === 'reference' ? ' at the pre-lock reference' : ' at the live stamp') + '. This wallet starts at $50.00 and counts every settled bet — it updates with every settlement.';
+        }
+      });
+    }
+
+    // --- council feed, rebuilt from the lane ---
+    var feed = $('ul.feed');
+    if (feed) {
+      var items = [];
+      (d.open_bets || []).forEach(function (b) {
+        items.push('<li><span class="d">' + dlabel(b.game_date) + '</span><span class="t lean">OPEN</span><span class="m"><b>' + esc(b.pick_team) + ' ' + Math.round((b.pick_prob || 0) * 100) + '%</b> — ' + esc(b.game) + ', open paper bet · priced ' + (typeof b.price === 'number' ? b.price.toFixed(2) : '—') + (b.price_source === 'reference' ? ' (REF)' : ' (live stamp)') + ' · potential payout ' + (typeof b.potential_payout === 'number' ? money(b.potential_payout) : '—') + '.</span></li>');
+      });
+      (d.settled_bets || []).slice(0, 2).forEach(function (r) {
+        items.push('<li><span class="d">' + dlabel(r.game_date) + '</span><span class="t signal">RESULT</span><span class="m"><b>' + esc(r.game) + '</b> — pick ' + esc(r.pick_team) + ' <b style="color:' + (r.result === 'won' ? 'var(--green)' : 'var(--red)') + '">' + (r.result === 'won' ? 'WON' : 'LOST') + '</b>' + (r.final ? ' ' + esc(r.final) : '') + ' · ' + smoney(r.profit_usdt || 0) + ' at ' + (typeof r.price === 'number' ? r.price.toFixed(2) : '—') + (r.price_source === 'reference' ? ' REF' : ' live stamp') + '.</span></li>');
+      });
+      items.push('<li><span class="d">GATE</span><span class="t gate">GATE</span><span class="m"><b>' + scored + ' / 200 scored.</b> The verdict unlocks only at 200 scored forecasts in profit — the count is the discipline.</span></li>');
+      feed.innerHTML = items.join('');
+    }
+
+    // --- ticker, rebuilt from the lane (white labels, green wins/positives, red losses) ---
+    var tick = $('#ticker');
+    if (tick) {
+      var t = [];
+      t.push('<span class="tick-item">SCORED <b>' + scored + '/200</b></span>');
+      t.push('<span class="tick-item">GATE <span class="' + (scored >= 200 ? 'g' : 'gold') + '"><b>' + (scored >= 200 ? 'GATE OPEN' : 'GATE LOCKED') + '</b></span></span>');
+      t.push('<span class="tick-item">BRIER <b>' + (typeof d.brier === 'number' ? d.brier.toFixed(4) : '—') + '</b></span>');
+      t.push('<span class="tick-item">LOG-LOSS <b>' + (typeof d.log_loss === 'number' ? d.log_loss.toFixed(4) : '—') + '</b></span>');
+      t.push('<span class="tick-item">RECORD <span class="g"><b>' + won + ' W</b></span> / <span class="r"><b>' + lost + ' L</b></span></span>');
+      (d.models || []).forEach(function (mdl) {
+        var agg = pm[mdl.key] || { net: 0 };
+        t.push('<span class="tick-item">' + esc(mdl.label) + ' <span class="g"><b>' + mdl.won + ' W</b></span> / <span class="r"><b>' + mdl.lost + ' L</b></span> · <span class="g"><b>' + pct1(mdl.win_rate || 0) + '</b></span> · BRIER <b>' + (typeof mdl.brier === 'number' ? mdl.brier.toFixed(4) : '—') + '</b> · NET <span class="' + (agg.net >= 0 ? 'g' : 'r') + '"><b>' + smoney(agg.net) + '</b></span></span>');
+      });
+      t.push('<span class="tick-item">KALSHI PAPER $ <span class="' + (net >= 0 ? 'g' : 'r') + '"><b>' + smoney(net) + ' NET</b></span> · WALLET <b>' + money(w.balance) + '</b></span>');
+      if (H && typeof H.trades === 'number') {
+        var hbNet = (typeof H.won_usdt === 'number') ? (H.won_usdt - (H.lost_usdt || 0)) + (H.unrealized_usdt || 0) : null;
+        t.push('<span class="tick-item">HUMMINGBOT <b>' + H.trades + (H.trades === 1 ? ' TRADE' : ' TRADES') + '</b> · VOL <b>' + money(H.volume_usdt || 0) + '</b></span>');
+        t.push('<span class="tick-item">HUMMINGBOT PAPER $ ' + (hbNet === null ? '<b>—</b>' : '<span class="' + (hbNet >= 0 ? 'g' : 'r') + '"><b>' + smoney(hbNet) + ' NET</b></span>') + '</span>');
+      }
+      t.push('<span class="tick-item">ENGINE <b>v3 + PLATT</b></span>');
+      t.push('<span class="tick-item"><span class="p"><b>PAPER ONLY</b></span></span>');
+      tick.innerHTML = t.join('');
+    }
+  }
+
+  function applyH(h) {
+    if (!h || typeof h.trades !== 'number') return;
+    var realized = (typeof h.won_usdt === 'number') ? h.won_usdt - (h.lost_usdt || 0) : null;
+    var un = h.unrealized_usdt || 0;
+    var big = $('#hb-big'), usd = $('#hb-usd'), sub = $('#hb-sub'), ms = $('#hb-mstatus');
+    if (h.trades === 0) {
+      if (big) { big.textContent = '$0.00'; big.classList.remove('dim'); big.style.color = 'var(--green)'; }
+      if (usd) usd.innerHTML = '<b>NO FILLS YET — THE BOT IS QUOTING</b>';
+      if (sub) sub.textContent = 'Station live on KuCoin paper. The first fill starts this lane\u2019s record.';
+      if (ms) ms.innerHTML = '<span class="dot on"></span>STATION LIVE';
+      return;
+    }
+    if (realized === null) return;
+    var net = realized + un;
+    if (big) { big.textContent = smoney(net); big.classList.remove('dim'); big.style.color = net >= 0 ? 'var(--green)' : 'var(--red)'; }
+    if (usd) usd.innerHTML = '<b>REALIZED ' + smoney(realized) + ' · UNREALIZED ' + smoney(un) + '</b> · ' + h.trades + (h.trades === 1 ? ' TRADE' : ' TRADES');
+    if (sub) {
+      var inv = h.open_inventory ? Object.keys(h.open_inventory).map(function (k) { return h.open_inventory[k] + ' ' + k.split('-')[0]; }).join(', ') : '';
+      sub.textContent = 'ETH-USDT · KuCoin paper' + (inv ? ' · OPEN ' + inv : '') + (typeof h.mark_price === 'number' ? ' · MARK $' + h.mark_price.toFixed(2) : '') + ' · VOL ' + money(h.volume_usdt || 0) + ' · FEES ' + money(h.fees_usdt || 0);
+    }
+    if (ms) ms.innerHTML = '<span class="dot on"></span>STATION LIVE';
+  }
+
+  function cycle() {
+    var t = Date.now();
+    fetch('kalshi_lane.json?t=' + t, { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (d) {
+      K = d; applyK(d); if (H) applyH(H);
+      setTimeout(function () { applyK(d); }, 1700);
+    }).catch(function () {});
+    fetch('hummingbot_lane.json?t=' + t, { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (d) {
+      H = d; applyH(d); if (K) applyK(K);
+    }).catch(function () {});
+  }
+  cycle();
+  setInterval(cycle, 30000);
+})();
+
+</script>
+</body>
 </html>
