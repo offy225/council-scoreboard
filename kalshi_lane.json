@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-10-23T02:31:37Z",
-  "scored": 27,
-  "won": 18,
+  "updated_at": "2026-10-23T05:59:35Z",
+  "scored": 28,
+  "won": 19,
   "lost": 9,
-  "win_rate": 0.6666666666666666,
-  "brier": 0.2293,
-  "log_loss": 0.6452,
+  "win_rate": 0.6785714285714286,
+  "brier": 0.2251,
+  "log_loss": 0.6367,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.1 + PLATT",
-      "scored": 15,
-      "won": 12,
+      "scored": 16,
+      "won": 13,
       "lost": 3,
-      "win_rate": 0.8,
-      "brier": 0.1665
+      "win_rate": 0.8125,
+      "brier": 0.1631
     },
     {
       "name": "NBA v2 ELO",
@@ -322,19 +322,20 @@
       "result": "WON",
       "price": 0.585,
       "price_source": "reference"
-    }
-  ],
-  "open_bets": [
+    },
     {
+      "date": "2026-10-22",
       "game": "DEN at OKC",
+      "model": "NBA v3.1 + PLATT",
       "pick": "OKC",
       "prob": 0.6655,
-      "stake": 50.0,
-      "status": "OPEN",
+      "final": "OKC 96 \u00b7 DEN 84",
+      "result": "WON",
       "price": 0.735,
       "price_source": "reference"
     }
   ],
+  "open_bets": [],
   "settled_bets": [
     {
       "date": "2026-10-16",
@@ -632,14 +633,25 @@
       "price": 0.585,
       "price_source": "reference",
       "profit": 35.47
+    },
+    {
+      "date": "2026-10-22",
+      "game": "DEN at OKC",
+      "pick": "OKC",
+      "prob": 0.6655,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.735,
+      "price_source": "reference",
+      "profit": 18.03
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 411.62,
-    "total_won": 811.62,
+    "balance": 429.65,
+    "total_won": 829.65,
     "total_lost": 450.0,
-    "settled_count": 27,
-    "ref_priced_count": 27
+    "settled_count": 28,
+    "ref_priced_count": 28
   }
 }
