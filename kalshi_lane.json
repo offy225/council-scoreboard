@@ -1,0 +1,534 @@
+{
+  "updated_at": "2026-10-23T02:18:40Z",
+  "scored": 27,
+  "won": 18,
+  "lost": 9,
+  "win_rate": 0.6666666666666666,
+  "brier": 0.2293,
+  "log_loss": 0.6452,
+  "gate_target": 200,
+  "models": [
+    {
+      "name": "NBA v3.1 + PLATT",
+      "scored": 15,
+      "won": 12,
+      "lost": 3,
+      "win_rate": 0.8,
+      "brier": 0.1665
+    },
+    {
+      "name": "NBA v2 ELO",
+      "scored": 12,
+      "won": 6,
+      "lost": 6,
+      "win_rate": 0.5,
+      "brier": 0.3078
+    }
+  ],
+  "tape": [
+    {
+      "date": "2026-10-16",
+      "game": "MIA at ORL",
+      "model": "NBA v2 ELO",
+      "pick": "MIA",
+      "prob": 0.6987,
+      "final": "ORL 136 \u00b7 MIA 115",
+      "result": "LOST",
+      "margin_state": "REF-PRICED \u2014 SEE FIRST 26 BLOCK"
+    },
+    {
+      "date": "2026-10-16",
+      "game": "BOS at PHI",
+      "model": "NBA v2 ELO",
+      "pick": "PHI",
+      "prob": 0.7003,
+      "final": "PHI 120 \u00b7 BOS 125",
+      "result": "LOST",
+      "margin_state": "REF-PRICED \u2014 SEE FIRST 26 BLOCK"
+    },
+    {
+      "date": "2026-10-16",
+      "game": "TOR at DET",
+      "model": "NBA v2 ELO",
+      "pick": "DET",
+      "prob": 0.5551,
+      "final": "DET 129 \u00b7 TOR 125",
+      "result": "WON",
+      "margin_state": "REF-PRICED \u2014 SEE FIRST 26 BLOCK"
+    },
+    {
+      "date": "2026-10-16",
+      "game": "MIL at IND",
+      "model": "NBA v2 ELO",
+      "pick": "IND",
+      "prob": 0.7353,
+      "final": "IND 127 \u00b7 MIL 128",
+      "result": "LOST",
+      "margin_state": "REF-PRICED \u2014 SEE FIRST 26 BLOCK"
+    },
+    {
+      "date": "2026-10-16",
+      "game": "ATL at DAL",
+      "model": "NBA v2 ELO",
+      "pick": "DAL",
+      "prob": 0.5562,
+      "final": "DAL 111 \u00b7 ATL 135",
+      "result": "LOST",
+      "margin_state": "REF-PRICED \u2014 SEE FIRST 26 BLOCK"
+    },
+    {
+      "date": "2026-10-16",
+      "game": "SAC at SA",
+      "model": "NBA v2 ELO",
+      "pick": "SA",
+      "prob": 0.8184,
+      "final": "SA 126 \u00b7 SAC 97",
+      "result": "WON",
+      "margin_state": "REF-PRICED \u2014 SEE FIRST 26 BLOCK"
+    },
+    {
+      "date": "2026-10-16",
+      "game": "CHA at MEM",
+      "model": "NBA v2 ELO",
+      "pick": "CHA",
+      "prob": 0.6524,
+      "final": "MEM 116 \u00b7 CHA 98",
+      "result": "LOST",
+      "margin_state": "REF-PRICED \u2014 SEE FIRST 26 BLOCK"
+    },
+    {
+      "date": "2026-10-16",
+      "game": "WSH at NO",
+      "model": "NBA v2 ELO",
+      "pick": "NO",
+      "prob": 0.6401,
+      "final": "NO 107 \u00b7 WSH 106",
+      "result": "WON",
+      "margin_state": "REF-PRICED \u2014 SEE FIRST 26 BLOCK"
+    },
+    {
+      "date": "2026-10-16",
+      "game": "MIN at CHI",
+      "model": "NBA v2 ELO",
+      "pick": "MIN",
+      "prob": 0.8059,
+      "final": "CHI 133 \u00b7 MIN 116",
+      "result": "LOST",
+      "margin_state": "REF-PRICED \u2014 SEE FIRST 26 BLOCK"
+    },
+    {
+      "date": "2026-10-16",
+      "game": "POR at GS",
+      "model": "NBA v2 ELO",
+      "pick": "GS",
+      "prob": 0.5225,
+      "final": "GS 128 \u00b7 POR 118",
+      "result": "WON",
+      "margin_state": "REF-PRICED \u2014 SEE FIRST 26 BLOCK"
+    },
+    {
+      "date": "2026-10-16",
+      "game": "UTAH at PHX",
+      "model": "NBA v2 ELO",
+      "pick": "UTAH",
+      "prob": 0.7846,
+      "final": "PHX 116 \u00b7 UTAH 119",
+      "result": "WON",
+      "margin_state": "REF-PRICED \u2014 SEE FIRST 26 BLOCK"
+    },
+    {
+      "date": "2026-10-16",
+      "game": "DEN at LAL",
+      "model": "NBA v2 ELO",
+      "pick": "DEN",
+      "prob": 0.6062,
+      "final": "LAL 106 \u00b7 DEN 121",
+      "result": "WON",
+      "margin_state": "REF-PRICED \u2014 SEE FIRST 26 BLOCK"
+    },
+    {
+      "date": "2026-10-20",
+      "game": "BOS at DET",
+      "model": "NBA v3.1 + PLATT",
+      "pick": "DET",
+      "prob": 0.5279,
+      "final": "DET 121 \u00b7 BOS 113",
+      "result": "WON",
+      "margin_state": "REF-PRICED \u2014 SEE FIRST 26 BLOCK"
+    },
+    {
+      "date": "2026-10-20",
+      "game": "PHI at NY",
+      "model": "NBA v3.1 + PLATT",
+      "pick": "PHI",
+      "prob": 0.579,
+      "final": "NY 100 \u00b7 PHI 106",
+      "result": "WON",
+      "margin_state": "REF-PRICED \u2014 SEE FIRST 26 BLOCK"
+    },
+    {
+      "date": "2026-10-20",
+      "game": "OKC at SA",
+      "model": "NBA v3.1 + PLATT",
+      "pick": "OKC",
+      "prob": 0.541,
+      "final": "SA 104 \u00b7 OKC 116",
+      "result": "WON",
+      "margin_state": "REF-PRICED \u2014 SEE FIRST 26 BLOCK"
+    },
+    {
+      "date": "2026-10-21",
+      "game": "ATL at ORL",
+      "model": "NBA v3.1 + PLATT",
+      "pick": "ATL",
+      "prob": 0.533,
+      "final": "ORL 125 \u00b7 ATL 132",
+      "result": "WON",
+      "margin_state": "REF-PRICED \u2014 SEE FIRST 26 BLOCK"
+    },
+    {
+      "date": "2026-10-21",
+      "game": "MIL at WSH",
+      "model": "NBA v3.1 + PLATT",
+      "pick": "WSH",
+      "prob": 0.5516,
+      "final": "WSH 128 \u00b7 MIL 116",
+      "result": "WON",
+      "margin_state": "REF-PRICED \u2014 SEE FIRST 26 BLOCK"
+    },
+    {
+      "date": "2026-10-21",
+      "game": "MIN at MIA",
+      "model": "NBA v3.1 + PLATT",
+      "pick": "MIA",
+      "prob": 0.581,
+      "final": "MIA 106 \u00b7 MIN 131",
+      "result": "LOST",
+      "margin_state": "REF-PRICED \u2014 SEE FIRST 26 BLOCK"
+    },
+    {
+      "date": "2026-10-21",
+      "game": "CHA at BKN",
+      "model": "NBA v3.1 + PLATT",
+      "pick": "CHA",
+      "prob": 0.605,
+      "final": "BKN 103 \u00b7 CHA 110",
+      "result": "WON",
+      "margin_state": "REF-PRICED \u2014 SEE FIRST 26 BLOCK"
+    },
+    {
+      "date": "2026-10-21",
+      "game": "CHI at TOR",
+      "model": "NBA v3.1 + PLATT",
+      "pick": "TOR",
+      "prob": 0.8732,
+      "final": "TOR 135 \u00b7 CHI 92",
+      "result": "WON",
+      "margin_state": "REF-PRICED \u2014 SEE FIRST 26 BLOCK"
+    },
+    {
+      "date": "2026-10-21",
+      "game": "UTAH at MEM",
+      "model": "NBA v3.1 + PLATT",
+      "pick": "UTAH",
+      "prob": 0.5743,
+      "final": "MEM 123 \u00b7 UTAH 103",
+      "result": "LOST",
+      "margin_state": "REF-PRICED \u2014 SEE FIRST 26 BLOCK"
+    },
+    {
+      "date": "2026-10-21",
+      "game": "IND at NO",
+      "model": "NBA v3.1 + PLATT",
+      "pick": "NO",
+      "prob": 0.5377,
+      "final": "NO 120 \u00b7 IND 123",
+      "result": "LOST",
+      "margin_state": "REF-PRICED \u2014 SEE FIRST 26 BLOCK"
+    },
+    {
+      "date": "2026-10-21",
+      "game": "DAL at HOU",
+      "model": "NBA v3.1 + PLATT",
+      "pick": "HOU",
+      "prob": 0.8481,
+      "final": "HOU 128 \u00b7 DAL 110",
+      "result": "WON",
+      "margin_state": "REF-PRICED \u2014 SEE FIRST 26 BLOCK"
+    },
+    {
+      "date": "2026-10-21",
+      "game": "GS at LAL",
+      "model": "NBA v3.1 + PLATT",
+      "pick": "LAL",
+      "prob": 0.5801,
+      "final": "LAL 127 \u00b7 GS 105",
+      "result": "WON",
+      "margin_state": "REF-PRICED \u2014 SEE FIRST 26 BLOCK"
+    },
+    {
+      "date": "2026-10-21",
+      "game": "PHX at POR",
+      "model": "NBA v3.1 + PLATT",
+      "pick": "POR",
+      "prob": 0.8897,
+      "final": "POR 124 \u00b7 PHX 83",
+      "result": "WON",
+      "margin_state": "REF-PRICED \u2014 SEE FIRST 26 BLOCK"
+    },
+    {
+      "date": "2026-10-21",
+      "game": "SAC at LAC",
+      "model": "NBA v3.1 + PLATT",
+      "pick": "LAC",
+      "prob": 0.821,
+      "final": "LAC 121 \u00b7 SAC 96",
+      "result": "WON",
+      "margin_state": "REF-PRICED \u2014 SEE FIRST 26 BLOCK"
+    },
+    {
+      "date": "2026-10-22",
+      "game": "CLE at PHI",
+      "model": "NBA v3.1 + PLATT",
+      "pick": "PHI",
+      "prob": 0.6909,
+      "final": "PHI 114 \u00b7 CLE 106",
+      "result": "WON",
+      "margin_state": "NO PRICE STAMPED"
+    }
+  ],
+  "open_bets": [
+    {
+      "game": "DEN at OKC",
+      "pick": "OKC",
+      "prob": 0.6655,
+      "stake": 50.0,
+      "status": "OPEN"
+    }
+  ],
+  "settled_bets": [
+    {
+      "date": "2026-10-16",
+      "game": "MIA at ORL",
+      "pick": "MIA",
+      "prob": 0.6987,
+      "stake": 50.0,
+      "result": "LOST"
+    },
+    {
+      "date": "2026-10-16",
+      "game": "BOS at PHI",
+      "pick": "PHI",
+      "prob": 0.7003,
+      "stake": 50.0,
+      "result": "LOST"
+    },
+    {
+      "date": "2026-10-16",
+      "game": "TOR at DET",
+      "pick": "DET",
+      "prob": 0.5551,
+      "stake": 50.0,
+      "result": "WON"
+    },
+    {
+      "date": "2026-10-16",
+      "game": "MIL at IND",
+      "pick": "IND",
+      "prob": 0.7353,
+      "stake": 50.0,
+      "result": "LOST"
+    },
+    {
+      "date": "2026-10-16",
+      "game": "ATL at DAL",
+      "pick": "DAL",
+      "prob": 0.5562,
+      "stake": 50.0,
+      "result": "LOST"
+    },
+    {
+      "date": "2026-10-16",
+      "game": "SAC at SA",
+      "pick": "SA",
+      "prob": 0.8184,
+      "stake": 50.0,
+      "result": "WON"
+    },
+    {
+      "date": "2026-10-16",
+      "game": "CHA at MEM",
+      "pick": "CHA",
+      "prob": 0.6524,
+      "stake": 50.0,
+      "result": "LOST"
+    },
+    {
+      "date": "2026-10-16",
+      "game": "WSH at NO",
+      "pick": "NO",
+      "prob": 0.6401,
+      "stake": 50.0,
+      "result": "WON"
+    },
+    {
+      "date": "2026-10-16",
+      "game": "MIN at CHI",
+      "pick": "MIN",
+      "prob": 0.8059,
+      "stake": 50.0,
+      "result": "LOST"
+    },
+    {
+      "date": "2026-10-16",
+      "game": "POR at GS",
+      "pick": "GS",
+      "prob": 0.5225,
+      "stake": 50.0,
+      "result": "WON"
+    },
+    {
+      "date": "2026-10-16",
+      "game": "UTAH at PHX",
+      "pick": "UTAH",
+      "prob": 0.7846,
+      "stake": 50.0,
+      "result": "WON"
+    },
+    {
+      "date": "2026-10-16",
+      "game": "DEN at LAL",
+      "pick": "DEN",
+      "prob": 0.6062,
+      "stake": 50.0,
+      "result": "WON"
+    },
+    {
+      "date": "2026-10-20",
+      "game": "BOS at DET",
+      "pick": "DET",
+      "prob": 0.5279,
+      "stake": 50.0,
+      "result": "WON"
+    },
+    {
+      "date": "2026-10-20",
+      "game": "PHI at NY",
+      "pick": "PHI",
+      "prob": 0.579,
+      "stake": 50.0,
+      "result": "WON"
+    },
+    {
+      "date": "2026-10-20",
+      "game": "OKC at SA",
+      "pick": "OKC",
+      "prob": 0.541,
+      "stake": 50.0,
+      "result": "WON"
+    },
+    {
+      "date": "2026-10-21",
+      "game": "ATL at ORL",
+      "pick": "ATL",
+      "prob": 0.533,
+      "stake": 50.0,
+      "result": "WON"
+    },
+    {
+      "date": "2026-10-21",
+      "game": "MIL at WSH",
+      "pick": "WSH",
+      "prob": 0.5516,
+      "stake": 50.0,
+      "result": "WON"
+    },
+    {
+      "date": "2026-10-21",
+      "game": "MIN at MIA",
+      "pick": "MIA",
+      "prob": 0.581,
+      "stake": 50.0,
+      "result": "LOST"
+    },
+    {
+      "date": "2026-10-21",
+      "game": "CHA at BKN",
+      "pick": "CHA",
+      "prob": 0.605,
+      "stake": 50.0,
+      "result": "WON"
+    },
+    {
+      "date": "2026-10-21",
+      "game": "CHI at TOR",
+      "pick": "TOR",
+      "prob": 0.8732,
+      "stake": 50.0,
+      "result": "WON"
+    },
+    {
+      "date": "2026-10-21",
+      "game": "UTAH at MEM",
+      "pick": "UTAH",
+      "prob": 0.5743,
+      "stake": 50.0,
+      "result": "LOST"
+    },
+    {
+      "date": "2026-10-21",
+      "game": "IND at NO",
+      "pick": "NO",
+      "prob": 0.5377,
+      "stake": 50.0,
+      "result": "LOST"
+    },
+    {
+      "date": "2026-10-21",
+      "game": "DAL at HOU",
+      "pick": "HOU",
+      "prob": 0.8481,
+      "stake": 50.0,
+      "result": "WON"
+    },
+    {
+      "date": "2026-10-21",
+      "game": "GS at LAL",
+      "pick": "LAL",
+      "prob": 0.5801,
+      "stake": 50.0,
+      "result": "WON"
+    },
+    {
+      "date": "2026-10-21",
+      "game": "PHX at POR",
+      "pick": "POR",
+      "prob": 0.8897,
+      "stake": 50.0,
+      "result": "WON"
+    },
+    {
+      "date": "2026-10-21",
+      "game": "SAC at LAC",
+      "pick": "LAC",
+      "prob": 0.821,
+      "stake": 50.0,
+      "result": "WON"
+    },
+    {
+      "date": "2026-10-22",
+      "game": "CLE at PHI",
+      "pick": "PHI",
+      "prob": 0.6909,
+      "stake": 50.0,
+      "result": "WON"
+    }
+  ],
+  "wallet": {
+    "start": 50.0,
+    "balance": 50.0,
+    "total_won": 0.0,
+    "total_lost": 0.0,
+    "settled_count": 0
+  }
+}
