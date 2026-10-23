@@ -1,7 +1,7 @@
 {
  "lane": "fomo_shadow_copy",
  "paper_only": true,
- "updated_at": "2026-10-23T14:32:44+00:00",
+ "updated_at": "2026-10-23T14:53:27+00:00",
  "station": "awaiting_watchlist",
  "note": "Watchlist is empty \u2014 waiting on Will's ~5 leader wallet addresses.",
  "leaders_followed": 0,
@@ -129,10 +129,10 @@
    }
   },
   "screening": {
-   "candidates_active": 10,
-   "screened_total": 158,
+   "candidates_active": 6,
+   "screened_total": 164,
    "passed_total": 1,
-   "failed_total": 157
+   "failed_total": 163
   },
   "passed": {
    "trades": 1,
@@ -141,10 +141,10 @@
    "net_usdt": 27.1692
   },
   "failed_ghost": {
-   "trades": 19,
+   "trades": 20,
    "won": 1,
-   "lost": 18,
-   "net_usdt": -641.981,
+   "lost": 19,
+   "net_usdt": -680.2395,
    "note": "Ghost P&L = what entering the launches the backing screen REJECTED would have made, same friction + exit rules, no shadow cash."
   },
   "screen_config": {
@@ -165,10 +165,10 @@
    }
   },
   "feed": {
-   "last_poll_at": "2026-10-23T14:29:34+00:00",
+   "last_poll_at": "2026-10-23T14:50:31+00:00",
    "last_error": null,
-   "coins_seen_total": 3386,
-   "activations_total": 168
+   "coins_seen_total": 3477,
+   "activations_total": 170
   }
  },
  "combined": {
