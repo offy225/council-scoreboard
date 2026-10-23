@@ -1934,5 +1934,238 @@
 })();
 
 </script>
+
+<style>
+/* ===== v7 POLISH (appended) =====
+   Console-feel layer: status LEDs, tactile hover/press, click-to-select
+   rows, flash-on-change, sync freshness badges. Overrides only — layout,
+   structure, copy, and the locked color system are untouched. */
+::selection { background: var(--green); color: #000; }
+html { scrollbar-width: thin; scrollbar-color: #2e2e2e #000000; }
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: #000000; }
+::-webkit-scrollbar-thumb { background: #2e2e2e; border: 2px solid #000000; border-radius: 6px; }
+::-webkit-scrollbar-thumb:hover { background: var(--green); }
+.scroll-box { scrollbar-width: thin; scrollbar-color: #2e2e2e transparent; }
+.scroll-box::-webkit-scrollbar { width: 8px; height: 8px; }
+.scroll-box::-webkit-scrollbar-thumb { background: #2e2e2e; border: none; border-radius: 4px; }
+:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; }
+button, .tab-btn { -webkit-tap-highlight-color: transparent; }
+
+/* panel headers read as equipment: a small breathing status LED */
+.panel-h::before {
+  content: ""; flex: 0 0 auto; align-self: center;
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--green); box-shadow: 0 0 7px rgba(0, 221, 148, 0.85);
+  animation: v7breathe 2.8s ease-in-out infinite;
+}
+.ref26-panel .panel-h::before, .gate-panel .panel-h::before {
+  background: var(--gold); box-shadow: 0 0 7px rgba(212, 175, 55, 0.8);
+}
+@keyframes v7breathe { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
+.status .dot.on, .m-status .dot.on { box-shadow: 0 0 8px rgba(0, 221, 148, 0.9); }
+
+/* tactile hover / press depth */
+@media (hover: hover) {
+  .panel:hover, .money:hover, .stat:hover { transform: translateY(-1px); }
+  .pot { transition: background-color 0.18s ease, box-shadow 0.18s ease; }
+  .pot:hover { background: #101010; box-shadow: inset 0 0 0 1px #3d3d3d; }
+  .ref26-model { transition: border-color 0.18s ease, background-color 0.18s ease; }
+  .ref26-model:hover { border-color: #3d3d3d; background: #161616; }
+}
+.pot:active { background: #0d0d0d; }
+
+/* click-to-select rows (selection is cosmetic; re-renders may clear it) */
+table.bd tbody tr, table.tape tbody tr, .feed li, .hit { cursor: pointer; }
+.v7-selected { background: rgba(0, 221, 148, 0.08) !important; box-shadow: inset 3px 0 0 var(--green); }
+
+/* flash on change — single from-keyframe, so values melt back to their own color */
+.v7-fu { animation: v7fu 0.95s ease-out; }
+.v7-fd { animation: v7fd 0.95s ease-out; }
+@keyframes v7fu { from { color: var(--green); text-shadow: 0 0 18px rgba(0, 221, 148, 0.8); } }
+@keyframes v7fd { from { color: var(--red); text-shadow: 0 0 18px rgba(255, 59, 48, 0.7); } }
+.ticker.v7-live-pulse { animation: v7tick 0.95s ease-out; }
+@keyframes v7tick { from { border-bottom-color: rgba(0, 221, 148, 0.9); } }
+
+/* per-lane sync freshness badges */
+.v7-fresh {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-size: 10px; letter-spacing: 0.1em; color: var(--faint);
+  margin-left: 10px; white-space: nowrap; vertical-align: 1px;
+}
+.v7-fresh::before {
+  content: ""; width: 5px; height: 5px; border-radius: 50%;
+  background: var(--purple); box-shadow: 0 0 6px rgba(139, 92, 246, 0.8);
+  animation: v7breathe 2.8s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .panel-h::before, .v7-fresh::before { animation: none; }
+  .v7-fu, .v7-fd, .ticker.v7-live-pulse { animation: none; }
+  .panel:hover, .money:hover, .stat:hover { transform: none; }
+}
+</style>
+
+<script>
+// ===== v7 POLISH (appended) =====
+// Console-feel enhancer: flash-on-change for live numbers, per-lane sync
+// freshness badges, click-to-select rows. Read-only against the lane files —
+// it never writes a number itself; it only reacts to what the lane scripts
+// and the live wire render.
+(function () {
+  'use strict';
+  var RM = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  var FLASH_MS = 950;
+
+  /* ---------- per-lane sync freshness badges ---------- */
+  var laneTs = { k: null, h: null };
+  function agoText(ts) {
+    if (!ts) return 'SYNC —';
+    var s = Math.max(0, Math.floor((Date.now() - ts) / 1000));
+    if (s < 5) return 'SYNC JUST NOW';
+    if (s < 60) return 'SYNC ' + s + 's AGO';
+    if (s < 3600) return 'SYNC ' + Math.floor(s / 60) + 'm AGO';
+    if (s < 86400) return 'SYNC ' + Math.floor(s / 3600) + 'h ' + Math.floor((s % 3600) / 60) + 'm AGO';
+    return 'SYNC ' + Math.floor(s / 86400) + 'd AGO';
+  }
+  function addBadge(anchorId, lane) {
+    var a = document.getElementById(anchorId);
+    if (!a || !a.parentNode) return;
+    if (a.parentNode.querySelector('.v7-fresh[data-lane="' + lane + '"]')) return;
+    var b = document.createElement('span');
+    b.className = 'v7-fresh';
+    b.setAttribute('data-lane', lane);
+    b.textContent = 'SYNC —';
+    a.parentNode.insertBefore(b, a.nextSibling);
+  }
+  addBadge('k-lane-status', 'k');
+  addBadge('hb-lane-status', 'h');
+  addBadge('hb3-lane-status', 'h');
+  addBadge('hb4-status', 'h');
+  function tickFresh() {
+    var bs = document.querySelectorAll('.v7-fresh');
+    for (var i = 0; i < bs.length; i++) bs[i].textContent = agoText(laneTs[bs[i].getAttribute('data-lane')]);
+  }
+  function pullLane(url, key) {
+    fetch(url + '?t=' + Date.now(), { cache: 'no-store' })
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        var t = d && d.updated_at ? Date.parse(d.updated_at) : NaN;
+        if (isFinite(t)) laneTs[key] = t;
+        tickFresh();
+      })
+      .catch(function () {});
+  }
+  function pullBoth() { pullLane('kalshi_lane.json', 'k'); pullLane('hummingbot_lane.json', 'h'); }
+  pullBoth();
+  setInterval(pullBoth, 30000);
+  setInterval(tickFresh, 1000);
+
+  /* ---------- flash on change ---------- */
+  function parseNum(t) {
+    if (!t) return null;
+    var m = String(t).replace(/,/g, '').match(/-?\d+(\.\d+)?/);
+    return m ? parseFloat(m[0]) : null;
+  }
+  var armed = false;
+  setTimeout(function () { armed = true; }, 2600); // let load-time count-ups settle first
+  function watch(el, pol) {
+    if (!el) return;
+    var prevText = el.textContent, prevNum = parseNum(prevText), lastFlash = 0;
+    new MutationObserver(function () {
+      var t = el.textContent;
+      if (t === prevText) return;
+      prevText = t;
+      var n = parseNum(t), was = prevNum;
+      prevNum = n;
+      if (RM || !armed || was === null || n === null || n === was) return;
+      var now = Date.now();
+      if (now - lastFlash < FLASH_MS) return;
+      lastFlash = now;
+      var good = (n > was) === (pol > 0);
+      var cls = good ? 'v7-fu' : 'v7-fd';
+      el.classList.remove('v7-fu', 'v7-fd');
+      void el.offsetWidth;
+      el.classList.add(cls);
+      setTimeout(function () { el.classList.remove(cls); }, FLASH_MS);
+    }).observe(el, { childList: true, characterData: true, subtree: true });
+  }
+  function watchId(id, pol) { watch(document.getElementById(id), pol); }
+  function watchSel(sel, pol) {
+    var els = document.querySelectorAll(sel);
+    for (var i = 0; i < els.length; i++) watch(els[i], pol);
+  }
+  // Kalshi lane — money header, pots, gate, live wallet panel, PAPER PROFIT wallet
+  watchId('k-m-won', 1);
+  watchId('k-m-lost', -1);
+  watchId('k-m-scored', 1);
+  watchId('k-m-winrate', 1);
+  watchId('k-m-brier', -1); // lower Brier is better
+  watchSel('.moneybar .money:not(#hb-money) .m-usd', 1);
+  (function () {
+    var amts = document.querySelectorAll('.pots .pot .amt');
+    if (amts[0]) watch(amts[0], 1);  // winners pot
+    if (amts[1]) watch(amts[1], -1); // losers pot
+  })();
+  watchId('k-pot-won', 1);
+  watchId('k-pot-lost', -1);
+  watchId('k-gate-scored', 1);
+  watchId('k-gate-pct', 1);
+  watchId('pp-k-bankroll', 1);
+  watchId('pp-k-won', 1);
+  watchId('pp-k-lost', -1);
+  watchId('pp-k-settled', 1);
+  watchSel('section.ref26-panel .m-big', 1);
+  // Hummingbot lane — terminal money card + station tiles + HB PROFIT
+  watchId('hb-big', 1);
+  watchId('hb-usd', 1);
+  watchId('hb-t-trades', 1);
+  watchId('hb-t-buys', 1);
+  watchId('hb-t-sells', 1);
+  watchId('hb-t-volume', 1);
+  watchId('hb-t-pnl', 1);
+  watchId('hb3-t-trades', 1);
+  watchId('hb3-t-buys', 1);
+  watchId('hb3-t-sells', 1);
+  watchId('hb3-t-volume', 1);
+  watchId('hb3-t-fees', -1);
+  watchId('hb4-net', 1);
+  watchId('hb4-volume', 1);
+  watchId('hb4-fees', -1);
+  watchId('hb4-trades', 1);
+
+  // Ticker: pulse the wire bar itself when its content is rebuilt
+  var tick = document.getElementById('ticker');
+  if (tick && !RM) {
+    var tickLast = 0;
+    new MutationObserver(function () {
+      var now = Date.now();
+      if (!armed || now - tickLast < FLASH_MS) return;
+      tickLast = now;
+      var bar = tick.closest ? tick.closest('.ticker') : null;
+      if (!bar) return;
+      bar.classList.remove('v7-live-pulse');
+      void bar.offsetWidth;
+      bar.classList.add('v7-live-pulse');
+      setTimeout(function () { bar.classList.remove('v7-live-pulse'); }, FLASH_MS);
+    }).observe(tick, { childList: true });
+  }
+
+  /* ---------- click-to-select rows ---------- */
+  // Purely cosmetic selection: one highlighted row per table/list. The lane
+  // scripts own those DOM subtrees and re-render them, which clears the
+  // highlight — acceptable, and why this is selection-only, not expansion.
+  document.addEventListener('click', function (e) {
+    var t = e.target;
+    if (!t.closest || t.closest('button, a, .team-row')) return;
+    var row = t.closest('table.bd tbody tr, table.tape tbody tr, .feed li, .hit');
+    if (!row) return;
+    var scope = row.closest('table, ul, .panel') || document;
+    var prev = scope.querySelectorAll('.v7-selected');
+    for (var i = 0; i < prev.length; i++) prev[i].classList.remove('v7-selected');
+    row.classList.add('v7-selected');
+  });
+})();
+</script>
 </body>
 </html>
