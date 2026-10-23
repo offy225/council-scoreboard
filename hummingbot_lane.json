@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23T02:44:10Z",
+  "updated_at": "2026-10-23T02:47:57Z",
   "station": "online",
   "trades": 1,
   "buys": 0,
@@ -28,5 +28,8 @@
   "round_trips": 0,
   "open_inventory": {
     "ETH-USDT": -0.01
-  }
+  },
+  "mark_price": 2412.665,
+  "mark_at": "2026-10-23T02:37:56Z",
+  "unrealized_usdt": -0.10916
 }
