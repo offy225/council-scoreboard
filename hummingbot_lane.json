@@ -1,14 +1,14 @@
 {
-  "updated_at": "2026-10-23T02:47:57Z",
+  "updated_at": "2026-10-23T14:46:22Z",
   "station": "online",
-  "trades": 1,
-  "buys": 0,
-  "sells": 1,
-  "volume_usdt": 24.01749,
-  "fees_usdt": 0.024017,
+  "trades": 6,
+  "buys": 2,
+  "sells": 4,
+  "volume_usdt": 144.05774,
+  "fees_usdt": 0.144054,
   "net_pnl_usdt": null,
   "pnl_note": "Net PnL is not derivable from the trades DB alone: Hummingbot computes PnL from portfolio values (current vs hold) in `hbot history`, not from fills. Use the CSV fallback with an explicit PnL column, or wire a balance snapshot, before showing a PnL number.",
-  "last_trade_at": "2026-10-22T21:16:33Z",
+  "last_trade_at": "2026-10-23T14:32:21Z",
   "source": "sqlite:/Users/willscott/hummingbot/data/conf_pure_mm_1.ymlstart.sqlite",
   "bot_alive": true,
   "status_note": null,
@@ -21,15 +21,60 @@
       "amount": 0.01,
       "fee_usdt": 0.024017,
       "pnl_usdt": null
+    },
+    {
+      "time": "2026-10-23T13:29:02Z",
+      "side": "sell",
+      "pair": "ETH-USDT",
+      "price": 2410.655,
+      "amount": 0.01,
+      "fee_usdt": 0.024106,
+      "pnl_usdt": null
+    },
+    {
+      "time": "2026-10-23T14:00:55Z",
+      "side": "buy",
+      "pair": "ETH-USDT",
+      "price": 2407.351,
+      "amount": 0.01,
+      "fee_usdt": 0.024073,
+      "pnl_usdt": -0.10411
+    },
+    {
+      "time": "2026-10-23T14:19:22Z",
+      "side": "buy",
+      "pair": "ETH-USDT",
+      "price": 2381.639,
+      "amount": 0.01,
+      "fee_usdt": 0.023816,
+      "pnl_usdt": 0.242238
+    },
+    {
+      "time": "2026-10-23T14:28:21Z",
+      "side": "sell",
+      "pair": "ETH-USDT",
+      "price": 2397.697,
+      "amount": 0.01,
+      "fee_usdt": 0.023976,
+      "pnl_usdt": null
+    },
+    {
+      "time": "2026-10-23T14:32:21Z",
+      "side": "sell",
+      "pair": "ETH-USDT",
+      "price": 2406.683,
+      "amount": 0.01,
+      "fee_usdt": 0.024066,
+      "pnl_usdt": null
     }
   ],
-  "won_usdt": 0.0,
-  "lost_usdt": 0.0,
-  "round_trips": 0,
+  "won_usdt": 0.242238,
+  "lost_usdt": 0.10411,
+  "round_trips": 2,
   "open_inventory": {
-    "ETH-USDT": -0.01
+    "ETH-USDT": -0.02
   },
-  "mark_price": 2412.665,
-  "mark_at": "2026-10-23T02:37:56Z",
-  "unrealized_usdt": -0.10916
+  "mark_price": 2407.895,
+  "mark_at": "2026-10-23T14:45:36Z",
+  "unrealized_usdt": -0.1141
 }
