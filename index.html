@@ -600,11 +600,13 @@
       </div>
 
       <!-- ======= LANE 1 : PLUGG — KALSHI ======= -->
-      <div class="lane-head">
-        <span class="lane-tag">LANE 01</span>
-        <span class="bic bic-lane a-plugg"><img src="assets/icon-plugg.webp" alt="PLUGG — pixel power plug wrapped in money-green" /><i class="orbit" aria-hidden="true"><b></b></i></span>
-        <h2>PLUGG</h2>
-        <span class="sub" id="k-lane-sub">SCOREBOARD B · PROSPECTIVE PAPER LEDGER · AWAITING LANE SYNC</span>
+      <div class="lane-head masthead">
+        <span class="bic bic-hero a-plugg"><img src="assets/icon-plugg.webp" alt="PLUGG — pixel power plug wrapped in money-green" /><i class="orbit" aria-hidden="true"><b></b></i></span>
+        <div class="mast-id">
+          <span class="lane-tag">LANE 01</span>
+          <h2>PLUGG</h2>
+          <span class="sub" id="k-lane-sub">SCOREBOARD B · PROSPECTIVE PAPER LEDGER · AWAITING LANE SYNC</span>
+        </div>
         <span class="status" id="k-lane-status"><span class="dot off"></span>AWAITING LANE SYNC</span>
         <span class="stale-badge" id="k-stale" hidden></span>
       </div>
@@ -968,12 +970,14 @@
 
       <!-- ======= TAB 3 : HUMMINGBOT STATION ======= -->
       <div id="tab-hummingbot" class="tab-panel" hidden>
-        <div class="lane-head">
-          <span class="lane-tag">LANE 02</span>
-          <span class="bic bic-lane a-hb"><img src="assets/icon-hummingbot.webp" alt="Hummingbot — pixel hummingbird with circuit-board wings" /></span>
-          <h2>HUMMINGBOT · STATION</h2>
-          <span class="sub">CRYPTO PAPER TRADING · STATION STATISTICS</span>
-          <span class="sub" id="hb3-updated"></span>
+        <div class="lane-head masthead">
+          <span class="bic bic-hero a-hb"><img src="assets/icon-hummingbot.webp" alt="Hummingbot — pixel hummingbird with circuit-board wings" /></span>
+          <div class="mast-id">
+            <span class="lane-tag">LANE 02</span>
+            <h2>HUMMINGBOT</h2>
+            <span class="sub">STATION · CRYPTO PAPER TRADING · STATION STATISTICS</span>
+            <span class="sub" id="hb3-updated"></span>
+          </div>
           <span class="status" id="hb3-lane-status"><span class="dot off"></span>AWAITING FIRST SYNC</span>
           <span class="stale-badge" id="hb3-stale" hidden></span>
         </div>
@@ -1049,12 +1053,14 @@
 
       <!-- ======= TAB 5 : COBRA — FOMO SHADOW-COPY + PUMP.FUN LAUNCH TRACK ======= -->
       <div id="tab-memecoin" class="tab-panel" hidden>
-        <div class="lane-head">
-          <span class="lane-tag">LANE 03</span>
-          <span class="bic bic-lane a-cobra"><img src="assets/icon-cobra.webp" alt="COBRA — pixel coiled cobra, fangs out" /><i class="eye el" aria-hidden="true"></i><i class="eye er" aria-hidden="true"></i><i class="tongue" aria-hidden="true"></i></span>
-          <h2>COBRA</h2>
-          <span class="sub">SHADOW-COPY + LAUNCH WATCHING · PAPER ONLY — SHADOW RECORD, NO REAL ORDERS</span>
-          <span class="sub" id="fm-updated"></span>
+        <div class="lane-head masthead">
+          <span class="bic bic-hero a-cobra"><img src="assets/icon-cobra.webp" alt="COBRA — pixel coiled cobra, fangs out" /><i class="eye el" aria-hidden="true"></i><i class="eye er" aria-hidden="true"></i><i class="tongue" aria-hidden="true"></i></span>
+          <div class="mast-id">
+            <span class="lane-tag">LANE 03</span>
+            <h2>COBRA</h2>
+            <span class="sub">SHADOW-COPY + LAUNCH WATCHING · PAPER ONLY — SHADOW RECORD, NO REAL ORDERS</span>
+            <span class="sub" id="fm-updated"></span>
+          </div>
           <span class="status" id="fm-lane-status"><span class="dot off"></span>AWAITING LEADERS</span>
           <span class="stale-badge" id="fm-stale" hidden></span>
         </div>
@@ -1205,12 +1211,14 @@
 
       <!-- ======= TAB 6 : WHIPLASH — WEATHER MODEL ======= -->
       <div id="tab-whiplash" class="tab-panel" hidden>
-        <div class="lane-head">
-          <span class="lane-tag wh-tag">LANE 04</span>
-          <span class="bic bic-lane a-whiplash"><img src="assets/icon-whiplash.webp" alt="WHIPLASH — pixel storm cloud with a lightning bolt through it" /></span>
-          <h2>WHIPLASH</h2>
-          <span class="sub">WEATHER MODEL · KALSHI DAILY HIGH-TEMPERATURE MARKETS</span>
-          <span class="sub" id="wh-updated"></span>
+        <div class="lane-head masthead">
+          <span class="bic bic-hero a-whiplash"><img src="assets/icon-whiplash.webp" alt="WHIPLASH — pixel storm cloud with a lightning bolt through it" /></span>
+          <div class="mast-id">
+            <span class="lane-tag wh-tag">LANE 04</span>
+            <h2>WHIPLASH</h2>
+            <span class="sub">WEATHER MODEL · KALSHI DAILY HIGH-TEMPERATURE MARKETS</span>
+            <span class="sub" id="wh-updated"></span>
+          </div>
           <span class="status" id="wh-lane-status"><span class="dot off"></span>EXAM IN PROGRESS</span>
           <span class="stale-badge" id="wh-stale" hidden></span>
         </div>
@@ -3222,7 +3230,7 @@ table.bd tbody tr, table.tape tbody tr, .feed li, .hit { cursor: pointer; }
           o.start(t); o.stop(t + 0.1);
         }
 
-        var SEL = '.tab-btn, .team-row, .sound-toggle';
+        var SEL = '.tab-btn, .team-row, .sound-toggle, button, a, table.bd tbody tr, table.tape tbody tr, .feed li, .hit';
         document.addEventListener('pointerover', function (e) {
           if (e.pointerType && e.pointerType !== 'mouse' && e.pointerType !== 'pen') return;
           var el = e.target && e.target.closest ? e.target.closest(SEL) : null;
@@ -3238,10 +3246,14 @@ table.bd tbody tr, table.tape tbody tr, .feed li, .hit { cursor: pointer; }
           if (el) tick();
         });
         document.addEventListener('click', function (e) {
-          var el = e.target && e.target.closest ? e.target.closest('.tab-btn') : null;
-          if (el) { click(); return; }
-          var row = e.target && e.target.closest ? e.target.closest('.team-row') : null;
-          if (row) tick();
+          if (!e.target || !e.target.closest) return;
+          // The sound toggle speaks for itself (its own handler confirms
+          // the ON state) — never double-fire on it.
+          if (e.target.closest('.sound-toggle')) return;
+          // Every clickable thing on the board gets the deeper click:
+          // tabs, buttons, links, team rows, selectable table rows,
+          // feed items, and top-hit rows. Nothing clickable stays silent.
+          if (e.target.closest('.tab-btn, .team-row, button, a, table.bd tbody tr, table.tape tbody tr, .feed li, .hit')) click();
         });
         // Warm the context on the first gesture so the first real sound is instant.
         document.addEventListener('pointerdown', function () { if (enabled) ensureCtx(); });
@@ -3258,5 +3270,251 @@ table.bd tbody tr, table.tape tbody tr, .feed li, .hit { cursor: pointer; }
         }
       })();
     </script>
+
+<style>
+/* ===== v8 OOMPH (appended) =====
+   Refinement layer only: a real wing flap for Hummingbot, character-
+   select mastheads on each bot's own page, a stepped game-menu tab
+   snap, a one-time settle celebration, a sync pulse, and a drifting
+   pixel field confined to the top ticker band. Palette, layout, and
+   data law untouched. */
+:root { --notch: 6px; }
+
+/* ---------- HUMMINGBOT — the wings flap, the body hovers ----------
+   Two full-frame duplicates of the render ride above the base image,
+   each clipped to a single wing and pivoting at the shoulder. They
+   beat fast with a stepped two-frame swap and a whisper of blur at
+   peak speed, while the base render (body, head, tail) stays
+   near-still — only a 1px hover bob on the whole emblem. */
+.a-hb { animation: hb-bob 3.4s ease-in-out infinite; }
+.a-hb img { animation: none; }
+@keyframes hb-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-1px); } }
+.a-hb::before, .a-hb::after {
+  content: ""; position: absolute; inset: 0; z-index: 2; pointer-events: none;
+  background-image: url(assets/icon-hummingbot.webp);
+  background-size: cover; background-position: center;
+  image-rendering: pixelated;
+  will-change: transform, filter;
+}
+.a-hb::before {
+  clip-path: polygon(1% 22%, 45% 33%, 45% 61%, 19% 61%, 2% 47%);
+  transform-origin: 45% 45%;
+  animation: hb-wing-l 0.17s steps(2, end) infinite alternate;
+}
+.a-hb::after {
+  clip-path: polygon(59% 33%, 99% 22%, 98% 47%, 82% 61%, 59% 61%);
+  transform-origin: 59% 45%;
+  animation: hb-wing-r 0.17s steps(2, end) infinite alternate;
+}
+@keyframes hb-wing-l {
+  from { transform: rotate(14deg) scaleY(0.8); filter: blur(0.5px) brightness(1.14); }
+  to { transform: rotate(-10deg) scaleY(1.05); filter: blur(0); }
+}
+@keyframes hb-wing-r {
+  from { transform: rotate(-14deg) scaleY(0.8); filter: blur(0.5px) brightness(1.14); }
+  to { transform: rotate(10deg) scaleY(1.05); filter: blur(0); }
+}
+
+/* ---------- lane mastheads — arcade character-select banner ---------- */
+.bic-hero {
+  width: clamp(84px, 13vw, 112px); height: clamp(84px, 13vw, 112px);
+  align-self: center; border-width: 2px;
+}
+.bic-hero.a-plugg .orbit b { width: 8px; height: 8px; margin-left: -4px; }
+.masthead {
+  align-items: center; gap: 18px;
+  background: var(--panel); border: 2px solid var(--line);
+  padding: 16px; margin: 24px 0 14px;
+  clip-path: polygon(var(--notch) 0, 100% 0, 100% calc(100% - var(--notch)), calc(100% - var(--notch)) 100%, 0 100%, 0 var(--notch));
+}
+.mast-id { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; min-width: 0; }
+.masthead h2 { font-size: clamp(20px, 4.4vw, 34px); line-height: 1.45; }
+.masthead .sub { line-height: 1.6; }
+.masthead .status { align-self: center; }
+@media (max-width: 560px) {
+  .masthead { gap: 12px; padding: 12px; }
+  .bic-hero { width: 76px; height: 76px; }
+  .masthead .status { margin-left: 0; }
+}
+
+/* ---------- stepped tab snap — game menu, not a corporate fade ---------- */
+.tab-panel { animation: tabin 0.22s steps(5, end) both; }
+@keyframes tabin {
+  0% { opacity: 0; transform: translateX(10px); }
+  60% { opacity: 0.75; transform: translateX(3px); }
+  100% { opacity: 1; transform: none; }
+}
+
+/* ---------- pixel drift — top ticker band only ---------- */
+.ticker { position: relative; }
+.ticker::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0.5;
+  background-image:
+    radial-gradient(circle, rgba(0, 221, 148, 0.75) 1px, transparent 1.7px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.45) 1px, transparent 1.7px);
+  background-size: 110px 26px, 170px 30px;
+  background-position: 0 6px, 40px 14px;
+  animation: v8-drift 16s linear infinite;
+}
+.ticker-inner { position: relative; z-index: 1; }
+@keyframes v8-drift {
+  from { background-position: 0 6px, 40px 14px; }
+  to { background-position: 110px 6px, 210px 14px; }
+}
+
+/* ---------- settle celebration — once per newly landed row ---------- */
+.v8-pop-w { animation: v8popw 1s steps(6) 1; }
+.v8-pop-l { animation: v8popl 0.6s steps(9) 1; }
+@keyframes v8popw {
+  0% { background: rgba(0, 221, 148, 0.30); box-shadow: inset 4px 0 0 var(--green); }
+  100% { background: transparent; box-shadow: inset 4px 0 0 transparent; }
+}
+/* Losses hit as hard as wins pay: a hard red flash with a one-time
+   glitch shudder — a hit taken, not a dim. Once only, never looping. */
+@keyframes v8popl {
+  0% { background: rgba(255, 59, 48, 0.48); box-shadow: inset 4px 0 0 var(--red), 0 0 18px rgba(255, 59, 48, 0.35); transform: translateX(0); }
+  15% { background: rgba(255, 59, 48, 0.42); transform: translateX(-3px); }
+  30% { background: rgba(255, 59, 48, 0.34); transform: translateX(3px); }
+  45% { background: rgba(255, 59, 48, 0.26); transform: translateX(-2px); }
+  60% { background: rgba(255, 59, 48, 0.17); transform: translateX(1px); }
+  100% { background: transparent; box-shadow: inset 4px 0 0 transparent; transform: translateX(0); }
+}
+
+/* ---------- sync pulse + freshness badges for the newer lanes ---------- */
+.v8-fresh {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-size: 10px; letter-spacing: 0.1em; color: var(--faint);
+  margin-left: 10px; white-space: nowrap; vertical-align: 1px;
+}
+.v8-fresh::before {
+  content: ""; width: 5px; height: 5px; border-radius: 50%;
+  background: var(--purple); box-shadow: 0 0 6px rgba(139, 92, 246, 0.8);
+}
+.v7-fresh.v8-pulse, .v8-fresh.v8-pulse {
+  animation: v8sync 0.95s steps(5) 1;
+}
+@keyframes v8sync {
+  0%, 55% { color: #000; background: var(--green); box-shadow: 0 0 14px rgba(0, 221, 148, 0.65); }
+  100% { color: var(--faint); background: transparent; box-shadow: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .a-hb, .a-hb::before, .a-hb::after { animation: none !important; }
+  .ticker::before { animation: none; }
+  .tab-panel { animation: none; }
+  .v8-pop-w, .v8-pop-l, .v7-fresh.v8-pulse, .v8-fresh.v8-pulse { animation: none; }
+}
+</style>
+
+<script>
+// ===== v8 OOMPH (appended) =====
+// (1) One-time settle celebration: watches the settled-row tables the
+//     lane wires rebuild; a row whose content has never been seen —
+//     and that lands after the load-in grace window — pops once in
+//     money green (WON) or dims once in muted red (LOST). Seen rows
+//     never re-pop on re-renders.
+// (2) Sync pulse: polls each lane file's updated_at; when a lane's
+//     stamp advances, its freshness badge pulses once in money green.
+//     COBRA and WHIPLASH get their own freshness badges here (same
+//     styling family as the v7 badges, separate class so the v7
+//     ticker loop never fights over their text).
+(function () {
+  'use strict';
+  var RM = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+
+  /* ---------- settle celebration ---------- */
+  var seen = {};
+  var armAt = Date.now() + 3500; // load-in grace: first renders never pop
+  function keyOf(tr) { return (tr.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 160); }
+  function scan(tb, id) {
+    var rows = tb.querySelectorAll('tr');
+    for (var i = 0; i < rows.length; i++) {
+      var tr = rows[i];
+      var k = id + '|' + keyOf(tr);
+      if (!k || seen[k]) continue;
+      seen[k] = 1;
+      if (RM || Date.now() < armAt) continue;
+      var won = tr.querySelector('.res-w');
+      var lost = tr.querySelector('.res-l');
+      if (!won && !lost) {
+        // Ledger-style rows carry the verdict in the P/L cell's color.
+        var cells = tr.querySelectorAll('td');
+        var last = cells[cells.length - 1];
+        if (last && last.classList.contains('num-green')) won = last;
+        else if (last && last.classList.contains('num-red')) lost = last;
+      }
+      if (won) tr.classList.add('v8-pop-w');
+      else if (lost) tr.classList.add('v8-pop-l');
+    }
+  }
+  function watchTbody(id) {
+    var tb = document.getElementById(id);
+    if (!tb) return;
+    scan(tb, id);
+    new MutationObserver(function () { scan(tb, id); }).observe(tb, { childList: true });
+  }
+  ['tape-body', 'sb-body', 'pp-k-ledger', 'hb4-ledger', 'wh-tape-body', 'fm-ledger'].forEach(watchTbody);
+
+  /* ---------- sync pulse + extra freshness badges ---------- */
+  function agoText(ts) {
+    if (!ts) return 'SYNC —';
+    var s = Math.max(0, Math.floor((Date.now() - ts) / 1000));
+    if (s < 5) return 'SYNC JUST NOW';
+    if (s < 60) return 'SYNC ' + s + 's AGO';
+    if (s < 3600) return 'SYNC ' + Math.floor(s / 60) + 'm AGO';
+    if (s < 86400) return 'SYNC ' + Math.floor(s / 3600) + 'h ' + Math.floor((s % 3600) / 60) + 'm AGO';
+    return 'SYNC ' + Math.floor(s / 86400) + 'd AGO';
+  }
+  function addBadge(anchorId, lane) {
+    var a = document.getElementById(anchorId);
+    if (!a || !a.parentNode) return;
+    if (a.parentNode.querySelector('.v8-fresh[data-lane="' + lane + '"]')) return;
+    var b = document.createElement('span');
+    b.className = 'v8-fresh';
+    b.setAttribute('data-lane', lane);
+    b.textContent = 'SYNC —';
+    a.parentNode.insertBefore(b, a.nextSibling);
+  }
+  addBadge('fm-lane-status', 'fm');
+  addBadge('wh-lane-status', 'wh');
+
+  var laneTs = {};
+  function pulse(lane) {
+    if (RM) return;
+    var bs = document.querySelectorAll('.v7-fresh[data-lane="' + lane + '"], .v8-fresh[data-lane="' + lane + '"]');
+    for (var i = 0; i < bs.length; i++) {
+      var b = bs[i];
+      b.classList.remove('v8-pulse');
+      void b.offsetWidth;
+      b.classList.add('v8-pulse');
+      (function (el) { setTimeout(function () { el.classList.remove('v8-pulse'); }, 980); })(b);
+    }
+  }
+  function pull(name, lane) {
+    if (typeof window.laneFetch !== 'function') return;
+    window.laneFetch(name)
+      .then(function (d) {
+        var t = d && d.updated_at ? Date.parse(d.updated_at) : NaN;
+        if (!isFinite(t)) return;
+        var prev = laneTs[lane];
+        laneTs[lane] = t;
+        if (prev && t > prev) pulse(lane);
+      })
+      .catch(function () {});
+  }
+  function pullAll() {
+    pull('kalshi_lane.json', 'k');
+    pull('hummingbot_lane.json', 'h');
+    pull('fomo_lane.json', 'fm');
+    pull('weather_lane.json', 'wh');
+  }
+  pullAll();
+  setInterval(pullAll, 30000);
+  setInterval(function () {
+    var bs = document.querySelectorAll('.v8-fresh');
+    for (var i = 0; i < bs.length; i++) bs[i].textContent = agoText(laneTs[bs[i].getAttribute('data-lane')]);
+  }, 1000);
+})();
+</script>
 </body>
 </html>
