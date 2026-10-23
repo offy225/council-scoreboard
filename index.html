@@ -477,10 +477,7 @@
         --notch: 6px;
       }
       body {
-        background-image:
-          linear-gradient(rgba(255, 255, 255, 0.022) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(255, 255, 255, 0.022) 1px, transparent 1px);
-        background-size: 24px 24px;
+        background-color: #000000; /* solid true black — no grid backdrop (ruling: starfield/grid live in the ticker band only) */
       }
       /* pixel display type — nameplates, headers, headline numbers */
       .lane-head h2 { font-family: var(--pix); font-size: 16px; letter-spacing: 0; line-height: 1.5; }
@@ -601,7 +598,7 @@
 
       <!-- ======= LANE 1 : PLUGG — KALSHI ======= -->
       <div class="lane-head masthead">
-        <span class="bic bic-hero a-plugg"><img src="assets/icon-plugg.webp" alt="PLUGG — pixel power plug wrapped in money-green" /><i class="orbit" aria-hidden="true"><b></b></i></span>
+        <span class="bic bic-hero a-plugg"><img src="assets/icon-plugg.webp" alt="PLUGG — pixelated stacks of banded cash" /><i class="orbit" aria-hidden="true"><b></b></i></span>
         <div class="mast-id">
           <span class="lane-tag">LANE 01</span>
           <h2>PLUGG</h2>
@@ -868,7 +865,7 @@
       <div id="tab-profit" class="tab-panel" hidden>
         <div class="lane-head">
           <span class="lane-tag">LEDGER</span>
-          <span class="bic bic-lane sm a-plugg"><img src="assets/icon-plugg.webp" alt="PLUGG — pixel power plug wrapped in money-green" /><i class="orbit" aria-hidden="true"><b></b></i></span>
+          <span class="bic bic-lane sm a-plugg"><img src="assets/icon-plugg.webp" alt="PLUGG — pixelated stacks of banded cash" /><i class="orbit" aria-hidden="true"><b></b></i></span>
           <h2>PLUGG PROFIT</h2>
           <span class="sub">DOLLAR VIEW · $50 FLAT PAPER STAKE PER PRICE-STAMPED BET · LANES NEVER BLENDED</span>
         </div>
@@ -3513,58 +3510,23 @@ table.bd tbody tr, table.tape tbody tr, .feed li, .hit { cursor: pointer; }
 
 <style>
 /* ===== v9 DEEP SPACE (appended) =====
-   The board now sits in the same space the ticker band has always
-   flown through: a clean true-black page, with the ticker's drifting
-   pixel-star family extended — quieter, slower, lower — across the
-   whole backdrop. The ticker band keeps its own richer drift exactly
-   as-is (the v8 layer above is untouched); this layer lives behind
-   every panel, so contrast and the professional read never move. */
+   RULING (folded in after the Whisper build): the site-wide starfield
+   comes OFF. The page background behind and between the panels is
+   pure solid true black — no stars, no nebula, no pixel-grid backdrop
+   outside the ticker. The ticker band keeps its own richer animated
+   galaxy/starfield exactly as it was (the v8 .ticker::before layer
+   above is untouched); that look belongs to the ticker only. Panels
+   keep their existing styling on the black void. */
 
 /* true black — no gray wash anywhere behind the panels. The black
-   lives on html (the canvas); body's own fill goes transparent so
-   the star layers below can sit on that black, behind every panel,
-   instead of being buried under an opaque body background. */
+   lives on html (the canvas) and on body itself; nothing is painted
+   behind the panels anymore. */
 html { background: #000000; }
-body { background-color: transparent; }
+body { background-color: #000000; }
 
 /* ticker truth colors reach the numbers themselves — a bold value
    inside a colored span takes the span's color, not plain white */
 .tick-item .g b, .tick-item .r b, .tick-item .gold b, .tick-item .p b { color: inherit; }
-
-/* galaxy depth — soft nebula glows, fixed to the viewport */
-body::after {
-  content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
-  background-image:
-    radial-gradient(680px 440px at 12% 4%, rgba(0, 221, 148, 0.055), transparent 70%),
-    radial-gradient(760px 520px at 88% 20%, rgba(139, 92, 246, 0.05), transparent 70%),
-    radial-gradient(900px 620px at 50% 96%, rgba(110, 193, 232, 0.035), transparent 70%);
-  background-repeat: no-repeat;
-}
-
-/* pixel starfield — the ticker band's rendering family, page-wide:
-   same 1px radial-gradient stars (white, money-green, a sparse sky
-   tint), tiled and drifting sideways, dialed down for backdrop duty */
-body::before {
-  content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
-  opacity: 0.45; /* THE WHISPER — backdrop dosing; the ticker band keeps full strength */
-  background-image:
-    radial-gradient(circle, rgba(255, 255, 255, 0.75) 1px, transparent 1.7px),
-    radial-gradient(circle, rgba(0, 221, 148, 0.80) 1px, transparent 1.7px),
-    radial-gradient(circle, rgba(255, 255, 255, 0.38) 1px, transparent 1.5px),
-    radial-gradient(circle, rgba(110, 193, 232, 0.50) 1px, transparent 1.7px);
-  background-size: 140px 96px, 210px 150px, 84px 60px, 260px 190px;
-  background-position: 0 0, 60px 40px, 22px 18px, 120px 90px;
-  background-repeat: repeat;
-  animation: v9-drift 90s linear infinite;
-}
-@keyframes v9-drift {
-  from { background-position: 0 0, 60px 40px, 22px 18px, 120px 90px; }
-  to { background-position: 140px 0, 270px 40px, 106px 18px, 380px 90px; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  body::before { animation: none; }
-}
 </style>
 
 <style>
