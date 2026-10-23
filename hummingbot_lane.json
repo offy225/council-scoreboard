@@ -1,0 +1,15 @@
+{
+  "updated_at": "2026-10-23T02:01:55Z",
+  "station": "online",
+  "trades": 1,
+  "buys": 0,
+  "sells": 1,
+  "volume_usdt": 24.01749,
+  "fees_usdt": 0.024017,
+  "net_pnl_usdt": null,
+  "pnl_note": "Net PnL is not derivable from the trades DB alone: Hummingbot computes PnL from portfolio values (current vs hold) in `hbot history`, not from fills. Use the CSV fallback with an explicit PnL column, or wire a balance snapshot, before showing a PnL number.",
+  "last_trade_at": "2026-10-22T21:16:33Z",
+  "source": "sqlite:/Users/willscott/hummingbot/data/conf_pure_mm_1.ymlstart.sqlite",
+  "bot_alive": true,
+  "status_note": null
+}
