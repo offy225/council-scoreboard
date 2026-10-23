@@ -3173,9 +3173,10 @@ table.bd tbody tr, table.tape tbody tr, .feed li, .hit { cursor: pointer; }
     <script>
       // UI SOUNDS — PS5-menu tactility, synthesized with WebAudio (no audio
       // files, no chimes, no bleeps). A short dry noise burst reads as a
-      // sandpaper tick on hover/focus; a lower, softer burst plus a faint
-      // low thump reads as the deeper click on selection. Volume stays very
-      // low. The AudioContext is created only after the first user gesture
+      // sandpaper tick on hover/focus; a soft, airy fingertip tap — a brief
+      // highpassed noise breath with a fast, gentle decay and no low body —
+      // reads as the light click on selection. Volume stays very low.
+      // The AudioContext is created only after the first user gesture
       // (autoplay policy). Hover ticks are debounced and fire once per
       // target. The toggle state is kept in memory for this session.
       (function () {
@@ -3217,17 +3218,10 @@ table.bd tbody tr, table.tape tbody tr, .feed li, .hit { cursor: pointer; }
         }
         function click() {
           if (!enabled || !ensureCtx()) return;
-          burst(0.07, 850, 0.7, 0.06, 'lowpass'); // deeper body
-          var t = ctx.currentTime;
-          var o = ctx.createOscillator();
-          o.type = 'sine';
-          o.frequency.setValueAtTime(165, t);
-          o.frequency.exponentialRampToValueAtTime(88, t + 0.08);
-          var g = ctx.createGain();
-          g.gain.setValueAtTime(0.045, t);
-          g.gain.exponentialRampToValueAtTime(0.0001, t + 0.09);
-          o.connect(g); g.connect(ctx.destination);
-          o.start(t); o.stop(t + 0.1);
+          // Light fingertip tap: a short, airy noise breath through a
+          // highpass — bright and weightless, no low thump, no tone.
+          // Shorter and softer than the tick, different in character.
+          burst(0.05, 1500, 0.6, 0.032, 'highpass');
         }
 
         var SEL = '.tab-btn, .team-row, .sound-toggle, button, a, table.bd tbody tr, table.tape tbody tr, .feed li, .hit';
@@ -3250,7 +3244,7 @@ table.bd tbody tr, table.tape tbody tr, .feed li, .hit { cursor: pointer; }
           // The sound toggle speaks for itself (its own handler confirms
           // the ON state) — never double-fire on it.
           if (e.target.closest('.sound-toggle')) return;
-          // Every clickable thing on the board gets the deeper click:
+          // Every clickable thing on the board gets the light tap:
           // tabs, buttons, links, team rows, selectable table rows,
           // feed items, and top-hit rows. Nothing clickable stays silent.
           if (e.target.closest('.tab-btn, .team-row, button, a, table.bd tbody tr, table.tape tbody tr, .feed li, .hit')) click();
@@ -3265,7 +3259,7 @@ table.bd tbody tr, table.tape tbody tr, .feed li, .hit { cursor: pointer; }
             enabled = !enabled;
             btn.setAttribute('aria-pressed', enabled ? 'true' : 'false');
             if (label) label.textContent = enabled ? 'SOUND ON' : 'SOUND OFF';
-            if (enabled) click(); // confirmation tick — also the gesture that unlocks audio
+            if (enabled) click(); // confirmation tap — also the gesture that unlocks audio
           });
         }
       })();
