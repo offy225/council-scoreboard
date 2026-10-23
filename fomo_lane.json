@@ -1,7 +1,7 @@
 {
  "lane": "fomo_shadow_copy",
  "paper_only": true,
- "updated_at": "2026-10-23T13:47:54+00:00",
+ "updated_at": "2026-10-23T14:02:56+00:00",
  "station": "awaiting_watchlist",
  "note": "Watchlist is empty \u2014 waiting on Will's ~5 leader wallet addresses.",
  "leaders_followed": 0,
@@ -74,12 +74,18 @@
   "station": "screening",
   "note": "Launch track \u2014 separate $250 shadow account. Watches pump.fun launches, shadow-enters the ones whose early backing passes the declared screen; screen failures are ghost-tracked so the screen itself is graded. Graduation (bonding-curve complete) is the on-chain proxy for 'hit FOMO'.",
   "start_balance_usdt": 250.0,
-  "cash_usdt": 276.1047,
-  "balance_usdt": 352.2093,
-  "realized_usdt": 0,
-  "unrealized_usdt": 102.2093,
-  "open_positions": 1,
-  "positions_detail": [
+  "cash_usdt": 277.1692,
+  "balance_usdt": 277.1692,
+  "realized_usdt": 27.1692,
+  "unrealized_usdt": 0.0,
+  "open_positions": 0,
+  "positions_detail": [],
+  "closed_trades": 1,
+  "won": 1,
+  "lost": 0,
+  "total_won_usdt": 27.1692,
+  "total_lost_usdt": 0,
+  "trades_detail": [
    {
     "id": "lpos-00142",
     "track": "pumpfun",
@@ -87,54 +93,21 @@
     "mint": "3JpttAJ2SZzvgLd8GdjYRVmVg1dWD6iEKqy5XUpLpump",
     "symbol": "psyopcat",
     "opened_at": "2026-10-23T13:44:48+00:00",
+    "closed_at": "2026-10-23T14:01:55+00:00",
     "stake_usdt": 50.0,
-    "tokens_remaining": 538192.1368923858,
-    "entry_detect_price_usd": 4.3010937101031515e-05,
-    "entry_shadow_price_usd": 4.645181206911404e-05,
-    "mark_price_usd": 0.0001473,
-    "current_value_usdt": 158.5514,
-    "unrealized_usdt": 102.2093,
+    "proceeds_usdt": 77.169218,
+    "realized_pnl_usdt": 27.169218,
     "mc_at_entry_usd": 43010.937101031515,
     "band": "lt_100k",
-    "curve_pct_at_entry": 100.0,
-    "graduated": true,
-    "entry_trigger": "graduation",
-    "screen": {
-     "passed": true,
-     "reasons": [],
-     "metrics": {
-      "curve_pct": 100.0,
-      "curve_gain_pct_points": 79.52,
-      "curve_velocity_pts_per_min": 1.755,
-      "window_minutes": 45.31,
-      "unique_buyers": 25,
-      "buy_count": 25,
-      "sell_count": 5,
-      "buy_sell_ratio": 5.0,
-      "trades_sampled": 30,
-      "creator_share": 0.0,
-      "creator_sold": false,
-      "top10_noncurve_share": null,
-      "mint_authority": null,
-      "freeze_authority": null,
-      "reply_count": 0
-     },
-     "trigger": "graduation"
-    }
+    "exit_reason": "stop_loss"
    }
   ],
-  "closed_trades": 0,
-  "won": 0,
-  "lost": 0,
-  "total_won_usdt": 0,
-  "total_lost_usdt": 0,
-  "trades_detail": [],
   "mc_bands": {
    "lt_100k": {
-    "trades": 0,
-    "won": 0,
+    "trades": 1,
+    "won": 1,
     "lost": 0,
-    "net_usdt": 0
+    "net_usdt": 27.1692
    },
    "100k_1m": {
     "trades": 0,
@@ -156,22 +129,22 @@
    }
   },
   "screening": {
-   "candidates_active": 6,
-   "screened_total": 147,
+   "candidates_active": 8,
+   "screened_total": 150,
    "passed_total": 1,
-   "failed_total": 146
+   "failed_total": 149
   },
   "passed": {
-   "trades": 0,
-   "won": 0,
+   "trades": 1,
+   "won": 1,
    "lost": 0,
-   "net_usdt": 0
+   "net_usdt": 27.1692
   },
   "failed_ghost": {
-   "trades": 18,
+   "trades": 19,
    "won": 1,
-   "lost": 17,
-   "net_usdt": -606.8983,
+   "lost": 18,
+   "net_usdt": -641.981,
    "note": "Ghost P&L = what entering the launches the backing screen REJECTED would have made, same friction + exit rules, no shadow cash."
   },
   "screen_config": {
@@ -192,20 +165,20 @@
    }
   },
   "feed": {
-   "last_poll_at": "2026-10-23T13:44:35+00:00",
+   "last_poll_at": "2026-10-23T13:59:42+00:00",
    "last_error": null,
-   "coins_seen_total": 3138,
-   "activations_total": 153
+   "coins_seen_total": 3224,
+   "activations_total": 158
   }
  },
  "combined": {
   "note": "Display sum of the two independent shadow accounts (copy $250 + launch $250). The accounts never share cash.",
   "start_balance_usdt": 500.0,
-  "balance_usdt": 602.2093,
-  "realized_usdt": 0,
-  "unrealized_usdt": 102.2093,
-  "closed_trades": 0,
-  "won": 0,
+  "balance_usdt": 527.1692,
+  "realized_usdt": 27.1692,
+  "unrealized_usdt": 0.0,
+  "closed_trades": 1,
+  "won": 1,
   "lost": 0
  }
 }
