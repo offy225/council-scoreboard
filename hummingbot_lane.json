@@ -1,14 +1,14 @@
 {
-  "updated_at": "2026-10-23T14:46:22Z",
+  "updated_at": "2026-10-23T22:46:07Z",
   "station": "online",
-  "trades": 6,
-  "buys": 2,
+  "trades": 7,
+  "buys": 3,
   "sells": 4,
-  "volume_usdt": 144.05774,
-  "fees_usdt": 0.144054,
+  "volume_usdt": 167.92896,
+  "fees_usdt": 0.167925,
   "net_pnl_usdt": null,
   "pnl_note": "Net PnL is not derivable from the trades DB alone: Hummingbot computes PnL from portfolio values (current vs hold) in `hbot history`, not from fills. Use the CSV fallback with an explicit PnL column, or wire a balance snapshot, before showing a PnL number.",
-  "last_trade_at": "2026-10-23T14:32:21Z",
+  "last_trade_at": "2026-10-23T22:31:02Z",
   "source": "sqlite:/Users/willscott/hummingbot/data/conf_pure_mm_1.ymlstart.sqlite",
   "bot_alive": true,
   "status_note": null,
@@ -66,15 +66,24 @@
       "amount": 0.01,
       "fee_usdt": 0.024066,
       "pnl_usdt": null
+    },
+    {
+      "time": "2026-10-23T22:31:02Z",
+      "side": "buy",
+      "pair": "ETH-USDT",
+      "price": 2387.122,
+      "amount": 0.01,
+      "fee_usdt": 0.023871,
+      "pnl_usdt": 0.057903
     }
   ],
-  "won_usdt": 0.242238,
+  "won_usdt": 0.300141,
   "lost_usdt": 0.10411,
-  "round_trips": 2,
+  "round_trips": 3,
   "open_inventory": {
-    "ETH-USDT": -0.02
+    "ETH-USDT": -0.01
   },
-  "mark_price": 2407.895,
-  "mark_at": "2026-10-23T14:45:36Z",
-  "unrealized_usdt": -0.1141
+  "mark_price": 2382.365,
+  "mark_at": "2026-10-23T22:45:16Z",
+  "unrealized_usdt": 0.24318
 }
