@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23T12:37:37Z",
+  "updated_at": "2026-10-23T14:41:02Z",
   "scored": 28,
   "won": 19,
   "lost": 9,
@@ -8,6 +8,14 @@
   "log_loss": 0.6367,
   "gate_target": 200,
   "models": [
+    {
+      "name": "NBA v3.2 + PLATT",
+      "scored": 0,
+      "won": 0,
+      "lost": 0,
+      "win_rate": null,
+      "brier": null
+    },
     {
       "name": "NBA v3.1 + PLATT",
       "scored": 16,
@@ -335,7 +343,116 @@
       "price_source": "reference"
     }
   ],
-  "open_bets": [],
+  "open_bets": [
+    {
+      "game": "CHI at MIL",
+      "pick": "CHI",
+      "prob": 0.5084,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.485,
+      "price_source": "reference"
+    },
+    {
+      "game": "NY at BOS",
+      "pick": "BOS",
+      "prob": 0.7673,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.555,
+      "price_source": "reference"
+    },
+    {
+      "game": "ATL at CHA",
+      "pick": "CHA",
+      "prob": 0.6139,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.435,
+      "price_source": "reference"
+    },
+    {
+      "game": "DAL at IND",
+      "pick": "IND",
+      "prob": 0.5367,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.705,
+      "price_source": "reference"
+    },
+    {
+      "game": "MIN at ORL",
+      "pick": "MIN",
+      "prob": 0.5305,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.505,
+      "price_source": "reference"
+    },
+    {
+      "game": "TOR at WSH",
+      "pick": "TOR",
+      "prob": 0.5476,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.745,
+      "price_source": "reference"
+    },
+    {
+      "game": "DET at MIA",
+      "pick": "DET",
+      "prob": 0.5468,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.515,
+      "price_source": "reference"
+    },
+    {
+      "game": "HOU at SA",
+      "pick": "HOU",
+      "prob": 0.5634,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.355,
+      "price_source": "reference"
+    },
+    {
+      "game": "NO at UTAH",
+      "pick": "UTAH",
+      "prob": 0.5733,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.505,
+      "price_source": "reference"
+    },
+    {
+      "game": "MEM at GS",
+      "pick": "GS",
+      "prob": 0.6734,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.605,
+      "price_source": "reference"
+    },
+    {
+      "game": "LAC at LAL",
+      "pick": "LAL",
+      "prob": 0.5401,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.765,
+      "price_source": "reference"
+    },
+    {
+      "game": "POR at SAC",
+      "pick": "POR",
+      "prob": 0.6739,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.785,
+      "price_source": "reference"
+    }
+  ],
   "settled_bets": [
     {
       "date": "2026-10-16",
