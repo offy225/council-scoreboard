@@ -1,0 +1,95 @@
+{
+ "updated_at": "2026-10-24T02:15:26Z",
+ "station": "CADILLAC",
+ "status": "EXAM COMPLETE \u2014 PROSPECTIVE LANE NOT STARTED",
+ "model": {
+  "id": "cadillac_v1_ridge_ratings",
+  "lambda": 4.0,
+  "sigma": 12.0,
+  "prior_coefs": [
+   -5.4001384881430085e-05,
+   0.5550757484111505,
+   2.4175120154252907,
+   1.9648747257220172
+  ]
+ },
+ "exam": {
+  "seasons": "2018-2025",
+  "n": 6024,
+  "pick_rate": 0.7201,
+  "brier_model": 0.1831,
+  "log_loss": 0.5407,
+  "trusted_market_2023_2025": {
+   "n": 2369,
+   "brier_model": 0.1829,
+   "brier_market": 0.1764,
+   "roi": 0.0214
+  },
+  "verdict": "It's not bank",
+  "era_verdict_line": "PRE pick 0.7361 / COVID 0.7285 / TRANS 0.705 / PORTAL 0.718 (market-tested)",
+  "extension_2026": {
+   "n": 388,
+   "pick_rate": 0.7345,
+   "brier_model": 0.1758,
+   "log_loss": 0.53,
+   "market_n": 388,
+   "brier_market": 0.156,
+   "roi": -0.0127,
+   "roi_net": -246.5,
+   "roi_edge05": -0.0527,
+   "roi_edge05_n": 105,
+   "calibration": [
+    {
+     "bucket": "0.50-0.60",
+     "n": 84,
+     "claimed": 0.5468,
+     "delivered": 0.5595,
+     "honest": true
+    },
+    {
+     "bucket": "0.60-0.70",
+     "n": 69,
+     "claimed": 0.6462,
+     "delivered": 0.5797,
+     "honest": false
+    },
+    {
+     "bucket": "0.70-0.80",
+     "n": 96,
+     "claimed": 0.7496,
+     "delivered": 0.7604,
+     "honest": true
+    },
+    {
+     "bucket": "0.80-0.90",
+     "n": 80,
+     "claimed": 0.8471,
+     "delivered": 0.875,
+     "honest": true
+    },
+    {
+     "bucket": "0.90-1.00",
+     "n": 59,
+     "claimed": 0.9508,
+     "delivered": 0.9322,
+     "honest": true
+    }
+   ]
+  }
+ },
+ "prospective": {
+  "scored": 0,
+  "won": 0,
+  "lost": 0,
+  "gate_target": 100,
+  "gate": "0/100",
+  "wallet": {
+   "start": 50.0,
+   "balance": 50.0,
+   "won": 0.0,
+   "lost": 0.0
+  },
+  "seeded_from": "Walk-forward continuation through 2026 week 7 (last completed game 2026-10-18); ratings are the state after that week's refit."
+ },
+ "open_forecasts": []
+}
