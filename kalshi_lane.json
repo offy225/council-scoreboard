@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-24T04:58:32Z",
+  "updated_at": "2026-10-24T14:42:39Z",
   "scored": 40,
   "won": 28,
   "lost": 12,
@@ -475,7 +475,80 @@
       "price_source": "reference"
     }
   ],
-  "open_bets": [],
+  "open_bets": [
+    {
+      "game": "MIA at CHA",
+      "pick": "CHA",
+      "prob": 0.5192,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.425,
+      "price_source": "reference"
+    },
+    {
+      "game": "BKN at CLE",
+      "pick": "CLE",
+      "prob": 0.8558,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.815,
+      "price_source": "reference"
+    },
+    {
+      "game": "MIL at PHI",
+      "pick": "PHI",
+      "prob": 0.7032,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.845,
+      "price_source": "reference"
+    },
+    {
+      "game": "WSH at CHI",
+      "pick": "WSH",
+      "prob": 0.6146,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.485,
+      "price_source": "reference"
+    },
+    {
+      "game": "SA at DAL",
+      "pick": "SA",
+      "prob": 0.5575,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.835,
+      "price_source": "reference"
+    },
+    {
+      "game": "HOU at ATL",
+      "pick": "ATL",
+      "prob": 0.5034,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.515,
+      "price_source": "reference"
+    },
+    {
+      "game": "NO at DEN",
+      "pick": "DEN",
+      "prob": 0.7491,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.815,
+      "price_source": "reference"
+    },
+    {
+      "game": "GS at PHX",
+      "pick": "PHX",
+      "prob": 0.5835,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.765,
+      "price_source": "reference"
+    }
+  ],
   "settled_bets": [
     {
       "date": "2026-10-16",
