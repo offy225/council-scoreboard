@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-10-24T04:27:43Z",
-  "scored": 37,
-  "won": 26,
-  "lost": 11,
-  "win_rate": 0.7027027027027027,
-  "brier": 0.2234,
-  "log_loss": 0.634,
+  "updated_at": "2026-10-24T04:58:32Z",
+  "scored": 40,
+  "won": 28,
+  "lost": 12,
+  "win_rate": 0.7,
+  "brier": 0.226,
+  "log_loss": 0.6397,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 9,
-      "won": 7,
-      "lost": 2,
-      "win_rate": 0.7777777777777778,
-      "brier": 0.2182
+      "scored": 12,
+      "won": 9,
+      "lost": 3,
+      "win_rate": 0.75,
+      "brier": 0.2279
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -440,37 +440,42 @@
       "result": "WON",
       "price": 0.505,
       "price_source": "reference"
-    }
-  ],
-  "open_bets": [
+    },
     {
+      "date": "2026-10-23",
       "game": "MEM at GS",
+      "model": "NBA v3.2 + PLATT",
       "pick": "GS",
       "prob": 0.6734,
-      "stake": 50.0,
-      "status": "OPEN",
+      "final": "GS 108 \u00b7 MEM 111",
+      "result": "LOST",
       "price": 0.605,
       "price_source": "reference"
     },
     {
+      "date": "2026-10-23",
       "game": "LAC at LAL",
+      "model": "NBA v3.2 + PLATT",
       "pick": "LAL",
       "prob": 0.5401,
-      "stake": 50.0,
-      "status": "OPEN",
+      "final": "LAL 125 \u00b7 LAC 117",
+      "result": "WON",
       "price": 0.765,
       "price_source": "reference"
     },
     {
+      "date": "2026-10-23",
       "game": "POR at SAC",
+      "model": "NBA v3.2 + PLATT",
       "pick": "POR",
       "prob": 0.6739,
-      "stake": 50.0,
-      "status": "OPEN",
+      "final": "SAC 120 \u00b7 POR 128",
+      "result": "WON",
       "price": 0.785,
       "price_source": "reference"
     }
   ],
+  "open_bets": [],
   "settled_bets": [
     {
       "date": "2026-10-16",
@@ -878,14 +883,47 @@
       "price": 0.505,
       "price_source": "reference",
       "profit": 49.01
+    },
+    {
+      "date": "2026-10-23",
+      "game": "MEM at GS",
+      "pick": "GS",
+      "prob": 0.6734,
+      "stake": 50.0,
+      "result": "LOST",
+      "price": 0.605,
+      "price_source": "reference",
+      "profit": -50.0
+    },
+    {
+      "date": "2026-10-23",
+      "game": "LAC at LAL",
+      "pick": "LAL",
+      "prob": 0.5401,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.765,
+      "price_source": "reference",
+      "profit": 15.36
+    },
+    {
+      "date": "2026-10-23",
+      "game": "POR at SAC",
+      "pick": "POR",
+      "prob": 0.6739,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.785,
+      "price_source": "reference",
+      "profit": 13.69
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 675.9,
-    "total_won": 1175.9,
-    "total_lost": 550.0,
-    "settled_count": 37,
-    "ref_priced_count": 37
+    "balance": 654.95,
+    "total_won": 1204.95,
+    "total_lost": 600.0,
+    "settled_count": 40,
+    "ref_priced_count": 40
   }
 }
