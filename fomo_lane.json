@@ -1,7 +1,7 @@
 {
  "lane": "fomo_shadow_copy",
  "paper_only": true,
- "updated_at": "2026-10-24T04:20:29+00:00",
+ "updated_at": "2026-10-24T04:35:10+00:00",
  "station": "awaiting_watchlist",
  "note": "Watchlist is empty \u2014 waiting on Will's ~5 leader wallet addresses.",
  "leaders_followed": 0,
@@ -74,12 +74,55 @@
   "station": "screening",
   "note": "Launch track \u2014 separate $250 shadow account. Watches pump.fun launches, shadow-enters the ones whose early backing passes the declared screen; screen failures are ghost-tracked so the screen itself is graded. Graduation (bonding-curve complete) is the on-chain proxy for 'hit FOMO'.",
   "start_balance_usdt": 250.0,
-  "cash_usdt": 277.1692,
-  "balance_usdt": 277.1692,
+  "cash_usdt": 252.1692,
+  "balance_usdt": 273.4655,
   "realized_usdt": 27.1692,
-  "unrealized_usdt": 0.0,
-  "open_positions": 0,
-  "positions_detail": [],
+  "unrealized_usdt": -3.7037,
+  "open_positions": 1,
+  "positions_detail": [
+   {
+    "id": "lpos-00384",
+    "track": "pumpfun",
+    "creator": "NAWUyNdNvRz6EMF3EgRS6EVg9f9QXFJvXewGeiaWR8W",
+    "mint": "42PKkkR7euaj792h7myCbv2d8D2e7nYGpmNH8chSpump",
+    "symbol": "SHARKCASH",
+    "opened_at": "2026-10-24T04:31:24+00:00",
+    "stake_usdt": 25.0,
+    "tokens_remaining": 2221397.613777681,
+    "entry_detect_price_usd": 1.042053345361378e-05,
+    "entry_shadow_price_usd": 1.1254176129902883e-05,
+    "mark_price_usd": 1.042053345361378e-05,
+    "current_value_usdt": 23.1481,
+    "unrealized_usdt": -3.7037,
+    "mc_at_entry_usd": 10420.53345361378,
+    "band": "lt_100k",
+    "curve_pct_at_entry": 32.00407826235294,
+    "graduated": false,
+    "entry_trigger": "window_end",
+    "screen": {
+     "passed": true,
+     "reasons": [],
+     "metrics": {
+      "curve_pct": 32.0,
+      "curve_gain_pct_points": 18.36,
+      "curve_velocity_pts_per_min": 1.088,
+      "window_minutes": 16.88,
+      "unique_buyers": 23,
+      "buy_count": 23,
+      "sell_count": 1,
+      "buy_sell_ratio": 23.0,
+      "trades_sampled": 24,
+      "creator_share": 0.0975,
+      "creator_sold": false,
+      "top10_noncurve_share": null,
+      "mint_authority": null,
+      "freeze_authority": null,
+      "reply_count": 0
+     },
+     "trigger": "window_end"
+    }
+   }
+  ],
   "closed_trades": 1,
   "won": 1,
   "lost": 0,
@@ -129,10 +172,10 @@
    }
   },
   "screening": {
-   "candidates_active": 8,
-   "screened_total": 379,
-   "passed_total": 1,
-   "failed_total": 378
+   "candidates_active": 6,
+   "screened_total": 385,
+   "passed_total": 2,
+   "failed_total": 383
   },
   "passed": {
    "trades": 1,
@@ -141,10 +184,10 @@
    "net_usdt": 27.1692
   },
   "failed_ghost": {
-   "trades": 51,
-   "won": 10,
+   "trades": 52,
+   "won": 11,
    "lost": 41,
-   "net_usdt": -637.6468,
+   "net_usdt": -623.2974,
    "note": "Ghost P&L = what entering the launches the backing screen REJECTED would have made, same friction + exit rules, no shadow cash."
   },
   "screen_config": {
@@ -167,18 +210,18 @@
    }
   },
   "feed": {
-   "last_poll_at": "2026-10-24T04:14:36+00:00",
+   "last_poll_at": "2026-10-24T04:29:35+00:00",
    "last_error": null,
-   "coins_seen_total": 7930,
-   "activations_total": 387
+   "coins_seen_total": 8009,
+   "activations_total": 391
   }
  },
  "combined": {
   "note": "Display sum of the two independent shadow accounts (copy $250 + launch $250). The accounts never share cash.",
   "start_balance_usdt": 500.0,
-  "balance_usdt": 527.1692,
+  "balance_usdt": 523.4655,
   "realized_usdt": 27.1692,
-  "unrealized_usdt": 0.0,
+  "unrealized_usdt": -3.7037,
   "closed_trades": 1,
   "won": 1,
   "lost": 0
@@ -187,7 +230,7 @@
   "lane": "cobra_graduated_momentum",
   "track": "graduated",
   "paper_only": true,
-  "updated_at": "2026-10-24T04:21:18+00:00",
+  "updated_at": "2026-10-24T04:36:51+00:00",
   "station": "screening",
   "note": "Graduated momentum track \u2014 separate $250 shadow account, $25 stakes. Watches pump.fun coins AFTER graduation (bonding curve complete, trading on a DEX) and shadow-enters only confirmed continuation: above the ~$69K graduation mark, +20% over the graduation price across at least two polls, buyers still coming in, creator not dumping. Screen failures are ghost-tracked so the screen itself is graded. Graduation time/price are stated proxies (first-observed-complete; $69K curve-complete mark) \u2014 see SPEC_GRADUATED.md.",
   "start_balance_usdt": 250.0,
@@ -230,7 +273,7 @@
    }
   },
   "screening": {
-   "candidates_active": 4,
+   "candidates_active": 8,
    "screened_total": 100,
    "passed_total": 0,
    "failed_total": 100
@@ -242,10 +285,10 @@
    "net_usdt": 0
   },
   "failed_ghost": {
-   "trades": 26,
+   "trades": 28,
    "won": 2,
-   "lost": 24,
-   "net_usdt": -416.2128,
+   "lost": 26,
+   "net_usdt": -455.2879,
    "note": "Ghost P&L = what entering the graduated coins the continuation screen REJECTED would have made, same friction + exit rules, no shadow cash."
   },
   "screen_config": {
@@ -271,10 +314,10 @@
    }
   },
   "feed": {
-   "last_poll_at": "2026-10-24T04:20:33+00:00",
+   "last_poll_at": "2026-10-24T04:35:14+00:00",
    "last_error": null,
-   "coins_seen_total": 104,
-   "activations_total": 104
+   "coins_seen_total": 108,
+   "activations_total": 108
   }
  }
 }
