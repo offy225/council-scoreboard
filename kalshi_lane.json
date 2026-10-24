@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-10-24T01:42:49Z",
-  "scored": 32,
-  "won": 22,
-  "lost": 10,
-  "win_rate": 0.6875,
-  "brier": 0.2296,
-  "log_loss": 0.6466,
+  "updated_at": "2026-10-24T01:57:57Z",
+  "scored": 34,
+  "won": 23,
+  "lost": 11,
+  "win_rate": 0.6764705882352942,
+  "brier": 0.2261,
+  "log_loss": 0.639,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 4,
-      "won": 3,
-      "lost": 1,
-      "win_rate": 0.75,
-      "brier": 0.2609
+      "scored": 6,
+      "won": 4,
+      "lost": 2,
+      "win_rate": 0.6666666666666666,
+      "brier": 0.231
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -355,6 +355,17 @@
     },
     {
       "date": "2026-10-23",
+      "game": "NY at BOS",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "BOS",
+      "prob": 0.7673,
+      "final": "BOS 107 \u00b7 NY 103",
+      "result": "WON",
+      "price": 0.555,
+      "price_source": "reference"
+    },
+    {
+      "date": "2026-10-23",
       "game": "ATL at CHA",
       "model": "NBA v3.2 + PLATT",
       "pick": "CHA",
@@ -362,6 +373,17 @@
       "final": "CHA 81 \u00b7 ATL 128",
       "result": "LOST",
       "price": 0.435,
+      "price_source": "reference"
+    },
+    {
+      "date": "2026-10-23",
+      "game": "DAL at IND",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "IND",
+      "prob": 0.5367,
+      "final": "IND 105 \u00b7 DAL 121",
+      "result": "LOST",
+      "price": 0.705,
       "price_source": "reference"
     },
     {
@@ -388,24 +410,6 @@
     }
   ],
   "open_bets": [
-    {
-      "game": "NY at BOS",
-      "pick": "BOS",
-      "prob": 0.7673,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.555,
-      "price_source": "reference"
-    },
-    {
-      "game": "DAL at IND",
-      "pick": "IND",
-      "prob": 0.5367,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.705,
-      "price_source": "reference"
-    },
     {
       "game": "DET at MIA",
       "pick": "DET",
@@ -783,12 +787,34 @@
     },
     {
       "date": "2026-10-23",
+      "game": "NY at BOS",
+      "pick": "BOS",
+      "prob": 0.7673,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.555,
+      "price_source": "reference",
+      "profit": 40.09
+    },
+    {
+      "date": "2026-10-23",
       "game": "ATL at CHA",
       "pick": "CHA",
       "prob": 0.6139,
       "stake": 50.0,
       "result": "LOST",
       "price": 0.435,
+      "price_source": "reference",
+      "profit": -50.0
+    },
+    {
+      "date": "2026-10-23",
+      "game": "DAL at IND",
+      "pick": "IND",
+      "prob": 0.5367,
+      "stake": 50.0,
+      "result": "LOST",
+      "price": 0.705,
       "price_source": "reference",
       "profit": -50.0
     },
@@ -817,10 +843,10 @@
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 498.86,
-    "total_won": 948.86,
-    "total_lost": 500.0,
-    "settled_count": 32,
-    "ref_priced_count": 32
+    "balance": 488.95,
+    "total_won": 988.95,
+    "total_lost": 550.0,
+    "settled_count": 34,
+    "ref_priced_count": 34
   }
 }
