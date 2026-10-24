@@ -1,7 +1,7 @@
 {
  "lane": "fomo_shadow_copy",
  "paper_only": true,
- "updated_at": "2026-10-24T07:07:26+00:00",
+ "updated_at": "2026-10-24T07:26:49+00:00",
  "station": "awaiting_watchlist",
  "note": "Watchlist is empty \u2014 waiting on Will's ~5 leader wallet addresses.",
  "leaders_followed": 0,
@@ -75,9 +75,9 @@
   "note": "Launch track \u2014 separate $250 shadow account. Watches pump.fun launches, shadow-enters the ones whose early backing passes the declared screen; screen failures are ghost-tracked so the screen itself is graded. Graduation (bonding-curve complete) is the on-chain proxy for 'hit FOMO'.",
   "start_balance_usdt": 250.0,
   "cash_usdt": 252.1692,
-  "balance_usdt": 275.9654,
+  "balance_usdt": 275.9864,
   "realized_usdt": 27.1692,
-  "unrealized_usdt": -1.2038,
+  "unrealized_usdt": -1.1828,
   "open_positions": 1,
   "positions_detail": [
    {
@@ -91,9 +91,9 @@
     "tokens_remaining": 2221397.613777681,
     "entry_detect_price_usd": 1.042053345361378e-05,
     "entry_shadow_price_usd": 1.1254176129902883e-05,
-    "mark_price_usd": 1.1643767531943013e-05,
-    "current_value_usdt": 25.8654,
-    "unrealized_usdt": -1.2038,
+    "mark_price_usd": 1.1654030376697443e-05,
+    "current_value_usdt": 25.8882,
+    "unrealized_usdt": -1.1828,
     "mc_at_entry_usd": 10420.53345361378,
     "band": "lt_100k",
     "curve_pct_at_entry": 32.00407826235294,
@@ -172,10 +172,10 @@
    }
   },
   "screening": {
-   "candidates_active": 6,
-   "screened_total": 427,
+   "candidates_active": 10,
+   "screened_total": 429,
    "passed_total": 2,
-   "failed_total": 425
+   "failed_total": 427
   },
   "passed": {
    "trades": 1,
@@ -184,10 +184,10 @@
    "net_usdt": 27.1692
   },
   "failed_ghost": {
-   "trades": 91,
+   "trades": 95,
    "won": 14,
-   "lost": 77,
-   "net_usdt": -935.4322,
+   "lost": 81,
+   "net_usdt": -963.2982,
    "note": "Ghost P&L = what entering the launches the backing screen REJECTED would have made, same friction + exit rules, no shadow cash."
   },
   "screen_config": {
@@ -210,18 +210,18 @@
    }
   },
   "feed": {
-   "last_poll_at": "2026-10-24T07:02:36+00:00",
+   "last_poll_at": "2026-10-24T07:16:45+00:00",
    "last_error": null,
-   "coins_seen_total": 8839,
-   "activations_total": 433
+   "coins_seen_total": 8926,
+   "activations_total": 439
   }
  },
  "combined": {
   "note": "Display sum of the two independent shadow accounts (copy $250 + launch $250). The accounts never share cash.",
   "start_balance_usdt": 500.0,
-  "balance_usdt": 525.9654,
+  "balance_usdt": 525.9864,
   "realized_usdt": 27.1692,
-  "unrealized_usdt": -1.2038,
+  "unrealized_usdt": -1.1828,
   "closed_trades": 1,
   "won": 1,
   "lost": 0
@@ -230,7 +230,7 @@
   "lane": "cobra_graduated_momentum",
   "track": "graduated",
   "paper_only": true,
-  "updated_at": "2026-10-24T07:09:06+00:00",
+  "updated_at": "2026-10-24T07:27:56+00:00",
   "station": "screening",
   "note": "Graduated momentum track \u2014 separate $250 shadow account, $25 stakes. Watches pump.fun coins AFTER graduation (bonding curve complete, trading on a DEX) and shadow-enters only confirmed continuation: above the ~$69K graduation mark, +20% over the graduation price across at least two polls, buyers still coming in, creator not dumping. Screen failures are ghost-tracked so the screen itself is graded. Graduation time/price are stated proxies (first-observed-complete; $69K curve-complete mark) \u2014 see SPEC_GRADUATED.md.",
   "start_balance_usdt": 250.0,
@@ -273,10 +273,10 @@
    }
   },
   "screening": {
-   "candidates_active": 8,
-   "screened_total": 120,
+   "candidates_active": 4,
+   "screened_total": 124,
    "passed_total": 0,
-   "failed_total": 120
+   "failed_total": 124
   },
   "passed": {
    "trades": 0,
@@ -285,10 +285,10 @@
    "net_usdt": 0
   },
   "failed_ghost": {
-   "trades": 31,
-   "won": 2,
+   "trades": 32,
+   "won": 3,
    "lost": 29,
-   "net_usdt": -518.8414,
+   "net_usdt": -517.5595,
    "note": "Ghost P&L = what entering the graduated coins the continuation screen REJECTED would have made, same friction + exit rules, no shadow cash."
   },
   "screen_config": {
@@ -314,7 +314,7 @@
    }
   },
   "feed": {
-   "last_poll_at": "2026-10-24T07:07:30+00:00",
+   "last_poll_at": "2026-10-24T07:26:53+00:00",
    "last_error": null,
    "coins_seen_total": 128,
    "activations_total": 128
