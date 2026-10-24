@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-10-23T22:58:05Z",
-  "scored": 29,
+  "updated_at": "2026-10-24T01:27:54Z",
+  "scored": 30,
   "won": 20,
-  "lost": 9,
-  "win_rate": 0.6896551724137931,
-  "brier": 0.2257,
-  "log_loss": 0.6381,
+  "lost": 10,
+  "win_rate": 0.6666666666666666,
+  "brier": 0.2307,
+  "log_loss": 0.6485,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 1,
+      "scored": 2,
       "won": 1,
-      "lost": 0,
-      "win_rate": 1.0,
-      "brier": 0.2417
+      "lost": 1,
+      "win_rate": 0.5,
+      "brier": 0.3093
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -352,6 +352,17 @@
       "result": "WON",
       "price": 0.485,
       "price_source": "reference"
+    },
+    {
+      "date": "2026-10-23",
+      "game": "ATL at CHA",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "CHA",
+      "prob": 0.6139,
+      "final": "CHA 81 \u00b7 ATL 128",
+      "result": "LOST",
+      "price": 0.435,
+      "price_source": "reference"
     }
   ],
   "open_bets": [
@@ -362,15 +373,6 @@
       "stake": 50.0,
       "status": "OPEN",
       "price": 0.555,
-      "price_source": "reference"
-    },
-    {
-      "game": "ATL at CHA",
-      "pick": "CHA",
-      "prob": 0.6139,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.435,
       "price_source": "reference"
     },
     {
@@ -774,14 +776,25 @@
       "price": 0.485,
       "price_source": "reference",
       "profit": 53.09
+    },
+    {
+      "date": "2026-10-23",
+      "game": "ATL at CHA",
+      "pick": "CHA",
+      "prob": 0.6139,
+      "stake": 50.0,
+      "result": "LOST",
+      "price": 0.435,
+      "price_source": "reference",
+      "profit": -50.0
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 482.74,
+    "balance": 432.74,
     "total_won": 882.74,
-    "total_lost": 450.0,
-    "settled_count": 29,
-    "ref_priced_count": 29
+    "total_lost": 500.0,
+    "settled_count": 30,
+    "ref_priced_count": 30
   }
 }
