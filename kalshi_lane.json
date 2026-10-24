@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-10-24T01:57:57Z",
-  "scored": 34,
-  "won": 23,
+  "updated_at": "2026-10-24T02:42:47Z",
+  "scored": 35,
+  "won": 24,
   "lost": 11,
-  "win_rate": 0.6764705882352942,
-  "brier": 0.2261,
-  "log_loss": 0.639,
+  "win_rate": 0.6857142857142857,
+  "brier": 0.2256,
+  "log_loss": 0.638,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 6,
-      "won": 4,
+      "scored": 7,
+      "won": 5,
       "lost": 2,
-      "win_rate": 0.6666666666666666,
-      "brier": 0.231
+      "win_rate": 0.7142857142857143,
+      "brier": 0.2273
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -407,18 +407,20 @@
       "result": "WON",
       "price": 0.745,
       "price_source": "reference"
+    },
+    {
+      "date": "2026-10-23",
+      "game": "DET at MIA",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "DET",
+      "prob": 0.5468,
+      "final": "MIA 111 \u00b7 DET 128",
+      "result": "WON",
+      "price": 0.515,
+      "price_source": "reference"
     }
   ],
   "open_bets": [
-    {
-      "game": "DET at MIA",
-      "pick": "DET",
-      "prob": 0.5468,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.515,
-      "price_source": "reference"
-    },
     {
       "game": "HOU at SA",
       "pick": "HOU",
@@ -839,14 +841,25 @@
       "price": 0.745,
       "price_source": "reference",
       "profit": 17.11
+    },
+    {
+      "date": "2026-10-23",
+      "game": "DET at MIA",
+      "pick": "DET",
+      "prob": 0.5468,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.515,
+      "price_source": "reference",
+      "profit": 47.09
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 488.95,
-    "total_won": 988.95,
+    "balance": 536.04,
+    "total_won": 1036.04,
     "total_lost": 550.0,
-    "settled_count": 34,
-    "ref_priced_count": 34
+    "settled_count": 35,
+    "ref_priced_count": 35
   }
 }
