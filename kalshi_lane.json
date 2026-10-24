@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-10-24T04:12:59Z",
-  "scored": 36,
-  "won": 25,
+  "updated_at": "2026-10-24T04:27:43Z",
+  "scored": 37,
+  "won": 26,
   "lost": 11,
-  "win_rate": 0.6944444444444444,
-  "brier": 0.2243,
-  "log_loss": 0.6357,
+  "win_rate": 0.7027027027027027,
+  "brier": 0.2234,
+  "log_loss": 0.634,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 8,
-      "won": 6,
+      "scored": 9,
+      "won": 7,
       "lost": 2,
-      "win_rate": 0.75,
-      "brier": 0.2217
+      "win_rate": 0.7777777777777778,
+      "brier": 0.2182
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -421,6 +421,17 @@
     },
     {
       "date": "2026-10-23",
+      "game": "HOU at SA",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "HOU",
+      "prob": 0.5634,
+      "final": "SA 110 \u00b7 HOU 114",
+      "result": "WON",
+      "price": 0.355,
+      "price_source": "reference"
+    },
+    {
+      "date": "2026-10-23",
       "game": "NO at UTAH",
       "model": "NBA v3.2 + PLATT",
       "pick": "UTAH",
@@ -432,15 +443,6 @@
     }
   ],
   "open_bets": [
-    {
-      "game": "HOU at SA",
-      "pick": "HOU",
-      "prob": 0.5634,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.355,
-      "price_source": "reference"
-    },
     {
       "game": "MEM at GS",
       "pick": "GS",
@@ -857,6 +859,17 @@
     },
     {
       "date": "2026-10-23",
+      "game": "HOU at SA",
+      "pick": "HOU",
+      "prob": 0.5634,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.355,
+      "price_source": "reference",
+      "profit": 90.85
+    },
+    {
+      "date": "2026-10-23",
       "game": "NO at UTAH",
       "pick": "UTAH",
       "prob": 0.5733,
@@ -869,10 +882,10 @@
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 585.05,
-    "total_won": 1085.05,
+    "balance": 675.9,
+    "total_won": 1175.9,
     "total_lost": 550.0,
-    "settled_count": 36,
-    "ref_priced_count": 36
+    "settled_count": 37,
+    "ref_priced_count": 37
   }
 }
