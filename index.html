@@ -451,6 +451,7 @@
 
       /* ---------- whiplash / weather lane ---------- */
       .lane-tag.wh-tag { background: var(--sky); }
+      .lane-tag.cd-tag { background: var(--gold); }
       .wh-exam-banner {
         border: 1px dashed #3a4a55; background: var(--panel-2);
         padding: 12px 14px; font-weight: 800; letter-spacing: 0.14em; font-size: 14px; color: var(--sky);
@@ -562,12 +563,14 @@
 
       <!-- ======= TABS ======= -->
       <div class="tabs" role="tablist" aria-label="Dashboard views">
+        <button class="tab-btn" id="btn-overview" role="tab" aria-selected="false" aria-controls="tab-overview" data-tab="overview"><span class="bic bic-tab" aria-hidden="true"><svg width="100%" height="100%" viewBox="0 0 16 16" shape-rendering="crispEdges" style="display:block;"><rect x="2" y="2" width="5" height="5" fill="#00dd94"/><rect x="9" y="2" width="5" height="5" fill="#8b5cf6"/><rect x="2" y="9" width="5" height="5" fill="#d4af37"/><rect x="9" y="9" width="5" height="5" fill="#6ec1e8"/></svg></span><span>OVERVIEW</span></button>
         <button class="tab-btn active" id="btn-terminal" role="tab" aria-selected="true" aria-controls="tab-terminal" data-tab="terminal"><span class="bic bic-tab a-plugg"><img src="assets/icon-plugg.webp" alt="" /><i class="orbit" aria-hidden="true"><b></b></i></span><span>PLUGG</span></button>
         <button class="tab-btn" id="btn-profit" role="tab" aria-selected="false" aria-controls="tab-profit" data-tab="profit"><span class="bic bic-tab a-plugg"><img src="assets/icon-plugg.webp" alt="" /><i class="orbit" aria-hidden="true"><b></b></i></span><span>PLUGG PROFIT</span></button>
         <button class="tab-btn" id="btn-hummingbot" role="tab" aria-selected="false" aria-controls="tab-hummingbot" data-tab="hummingbot"><span class="bic bic-tab a-hb"><img src="assets/icon-hummingbot.webp" alt="" /></span><span>HUMMINGBOT</span></button>
         <button class="tab-btn" id="btn-hbprofit" role="tab" aria-selected="false" aria-controls="tab-hbprofit" data-tab="hbprofit"><span class="bic bic-tab a-hb"><img src="assets/icon-hummingbot.webp" alt="" /></span><span>HB PROFIT</span></button>
         <button class="tab-btn" id="btn-memecoin" role="tab" aria-selected="false" aria-controls="tab-memecoin" data-tab="memecoin"><span class="bic bic-tab a-cobra"><img src="assets/icon-cobra.webp" alt="" /><i class="eye el" aria-hidden="true"></i><i class="eye er" aria-hidden="true"></i><i class="tongue" aria-hidden="true"></i></span><span>COBRA</span></button>
         <button class="tab-btn" id="btn-whiplash" role="tab" aria-selected="false" aria-controls="tab-whiplash" data-tab="whiplash"><span class="bic bic-tab a-whiplash"><img src="assets/icon-whiplash.webp" alt="" /></span><span>WHIPLASH</span></button>
+        <button class="tab-btn" id="btn-caddy" role="tab" aria-selected="false" aria-controls="tab-caddy" data-tab="caddy"><span class="bic bic-tab" aria-hidden="true"><svg width="100%" height="100%" viewBox="0 0 16 16" shape-rendering="crispEdges" style="display:block;"><rect x="5" y="2" width="6" height="2" fill="#c97b2e"/><rect x="3" y="4" width="10" height="8" fill="#c97b2e"/><rect x="5" y="12" width="6" height="2" fill="#c97b2e"/><rect x="7" y="5" width="2" height="6" fill="#f2f2f2"/><rect x="6" y="7" width="4" height="2" fill="#f2f2f2"/></svg></span><span>CADDY</span></button>
         <button class="sound-toggle" id="sound-toggle" type="button" aria-pressed="true" aria-label="Toggle interface sounds"><span class="sq" aria-hidden="true"></span><span id="sound-toggle-label">SOUND ON</span></button>
       </div>
 
@@ -1082,6 +1085,51 @@
           </div>
         </section>
 
+        <!-- ======= COBRA PROFIT — BY TRACK ======= -->
+        <div class="lane-head" style="margin-top:18px;">
+          <span class="lane-tag">PROFIT</span>
+          <h2 style="font-size:16px;">COBRA PROFIT — BY TRACK</h2>
+          <span class="sub">EVERY TRACK SHOWS ITS OWN MONEY, LIKE EVERY OTHER LANE · BALANCE · TOTAL WON / LOST · NET P&amp;L</span>
+        </div>
+
+        <div class="grid grid-3" style="gap:12px; margin-top:12px;">
+          <section class="panel" aria-label="Copy track profit">
+            <div class="panel-h"><span>COPY TRACK</span><span class="right">FOMO LEADERS · $250 START</span></div>
+            <div class="panel-b">
+              <div class="grid grid-2" style="gap:8px;">
+                <div class="stat fm-stat"><div class="k">BALANCE</div><div class="v" id="cp-copy-balance">—</div><div class="n">SHADOW ACCOUNT</div></div>
+                <div class="stat fm-stat"><div class="k">NET P&amp;L</div><div class="v" id="cp-copy-net">—</div><div class="n">VS $250 START</div></div>
+                <div class="stat fm-stat"><div class="k">TOTAL WON</div><div class="v green" id="cp-copy-won">—</div><div class="n">CLOSED COPY TRADES</div></div>
+                <div class="stat fm-stat"><div class="k">TOTAL LOST</div><div class="v red" id="cp-copy-lost">—</div><div class="n">CLOSED COPY TRADES</div></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel" aria-label="Launch track profit">
+            <div class="panel-h"><span>LAUNCH TRACK</span><span class="right">PUMP.FUN · $250 START</span></div>
+            <div class="panel-b">
+              <div class="grid grid-2" style="gap:8px;">
+                <div class="stat fm-stat"><div class="k">BALANCE</div><div class="v" id="cp-launch-balance">—</div><div class="n">SHADOW ACCOUNT</div></div>
+                <div class="stat fm-stat"><div class="k">NET P&amp;L</div><div class="v" id="cp-launch-net">—</div><div class="n">VS $250 START</div></div>
+                <div class="stat fm-stat"><div class="k">TOTAL WON</div><div class="v green" id="cp-launch-won">—</div><div class="n">CLOSED LAUNCH TRADES</div></div>
+                <div class="stat fm-stat"><div class="k">TOTAL LOST</div><div class="v red" id="cp-launch-lost">—</div><div class="n">CLOSED LAUNCH TRADES</div></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel" aria-label="Graduated track profit">
+            <div class="panel-h"><span>GRADUATED TRACK</span><span class="right">POST-GRADUATION · $250 START</span></div>
+            <div class="panel-b">
+              <div class="grid grid-2" style="gap:8px;">
+                <div class="stat fm-stat"><div class="k">BALANCE</div><div class="v" id="cp-grad-balance">—</div><div class="n">SHADOW ACCOUNT</div></div>
+                <div class="stat fm-stat"><div class="k">NET P&amp;L</div><div class="v" id="cp-grad-net">—</div><div class="n">VS $250 START</div></div>
+                <div class="stat fm-stat"><div class="k">TOTAL WON</div><div class="v green" id="cp-grad-won">—</div><div class="n">CLOSED GRADUATED TRADES</div></div>
+                <div class="stat fm-stat"><div class="k">TOTAL LOST</div><div class="v red" id="cp-grad-lost">—</div><div class="n">CLOSED GRADUATED TRADES</div></div>
+              </div>
+            </div>
+          </section>
+        </div>
+
         <!-- ======= TRACK 1 : COPY TRACK — FOMO LEADERS ======= -->
         <div class="lane-head" style="margin-top:18px;">
           <span class="lane-tag">TRACK 1</span>
@@ -1319,6 +1367,161 @@
 
         <p class="foot-note"><b>ONE WIRE, LIKE EVERY LANE:</b> when the weather publisher starts, it drops <b>weather_lane.json</b> next to this page (with the bundled copy under assets/ as fallback) and this tab re-renders every figure from that single file on sync. Until then the honest state is the one above: exam in progress, no record, no numbers.</p>
       </div><!-- /tab-whiplash -->
+
+      <!-- ======= TAB 8 : CADDY — CFB BRAIN ======= -->
+      <div id="tab-caddy" class="tab-panel" hidden>
+        <div class="lane-head masthead">
+          <span class="bic bic-hero"><svg width="100%" height="100%" viewBox="0 0 16 16" shape-rendering="crispEdges" style="display:block;" role="img" aria-label="CADDY — pixel football"><rect x="5" y="2" width="6" height="2" fill="#c97b2e"/><rect x="3" y="4" width="10" height="8" fill="#c97b2e"/><rect x="5" y="12" width="6" height="2" fill="#c97b2e"/><rect x="7" y="5" width="2" height="6" fill="#f2f2f2"/><rect x="6" y="7" width="4" height="2" fill="#f2f2f2"/></svg></span>
+          <div class="mast-id">
+            <span class="lane-tag cd-tag">LANE 05</span>
+            <h2>CADDY</h2>
+            <span class="sub">COLLEGE FOOTBALL BRAIN · GRADED BY EXAM BEFORE A SINGLE PAPER FORECAST COUNTS</span>
+            <span class="sub" id="cd-updated"></span>
+          </div>
+          <span class="status" id="cd-lane-status"><span class="dot off"></span>AWAITING LANE SYNC</span>
+        </div>
+        <p class="hb-note" id="cd-status-note" style="display:none;"></p>
+
+        <section class="money off" id="cd-money" aria-label="Paper wallet — CADDY">
+          <div class="m-label">
+            <span>PAPER WALLET — CADDY · CFB</span>
+            <span class="m-status" id="cd-mstatus"><span class="dot off"></span>AWAITING LANE SYNC</span>
+          </div>
+          <div class="m-big dim" id="cd-big">—</div>
+          <div class="m-usd" id="cd-usd"><b>AWAITING LANE SYNC</b></div>
+          <div class="m-sub" id="cd-sub">The wallet renders from cfb_lane.json — start, balance, won and lost all post from the lane file, and the balance moves only when a prospective forecast settles.</div>
+          <div class="grid grid-3" style="gap:8px; margin-top:12px;">
+            <div class="stat off cd-stat"><div class="k">TOTAL PAPER WON</div><div class="v green" id="cd-t-won">—</div><div class="n">PROSPECTIVE SETTLEMENTS ONLY</div></div>
+            <div class="stat off cd-stat"><div class="k">TOTAL PAPER LOST</div><div class="v red" id="cd-t-lost">—</div><div class="n">PROSPECTIVE SETTLEMENTS ONLY</div></div>
+            <div class="stat off cd-stat"><div class="k">WALLET START</div><div class="v" id="cd-t-start">—</div><div class="n">FROM THE LANE FILE</div></div>
+          </div>
+        </section>
+
+        <div class="grid grid-2" style="margin-top:12px;">
+          <section class="panel gate-panel" aria-label="CADDY prospective gate">
+            <div class="panel-h"><span>THE GATE — PROSPECTIVE</span><span class="right" id="cd-gate-right">FROM cfb_lane.json</span></div>
+            <div class="panel-b">
+              <div class="gate-big"><span id="cd-gate-scored">—</span><span class="of"> / <span id="cd-gate-target">—</span></span></div>
+              <div class="gate-bar" role="img" aria-label="Progress to the prospective gate"><div class="fill" id="cd-gate-fill"></div></div>
+              <div style="display:flex; justify-content:space-between; font-size:11px; color:var(--dim); letter-spacing:0.08em;">
+                <span id="cd-gate-pct">—</span><span id="cd-gate-togo">—</span>
+              </div>
+              <div class="gate-verdict" style="border-color:var(--red); color:var(--red);" id="cd-gate-verdict">VERDICT — AWAITING LANE SYNC</div>
+              <p class="gate-note">The prospective count starts only when the lane turns on — and the lane turns on only after a re-exam beats the market. Exam games never count toward this gate.</p>
+            </div>
+          </section>
+
+          <section class="panel" aria-label="CADDY model card">
+            <div class="panel-h"><span>THE MODEL</span><span class="right">FROM cfb_lane.json</span></div>
+            <div class="panel-b">
+              <div class="xlate-row"><span class="k">Model</span><span class="v" id="cd-m-id">—</span></div>
+              <div class="xlate-row"><span class="k">Ridge lambda</span><span class="v" id="cd-m-lambda">—</span></div>
+              <div class="xlate-row"><span class="k">Sigma</span><span class="v" id="cd-m-sigma">—</span></div>
+              <div class="xlate-row"><span class="k">Exam verdict</span><span class="v" id="cd-m-verdict" style="color:var(--red)">—</span></div>
+              <div class="xlate-row"><span class="k">Lane status</span><span class="v" id="cd-m-status">—</span></div>
+              <p class="xlate-note" id="cd-seeded">The ratings state posts from the lane file.</p>
+            </div>
+          </section>
+        </div>
+
+        <section class="panel" style="margin-top:12px;" aria-label="CADDY exam results">
+          <div class="panel-h"><span>THE EXAM</span><span class="right" id="cd-exam-right">BACKTEST · FROM cfb_lane.json</span></div>
+          <div class="panel-b" style="padding-top:12px;">
+            <div class="grid grid-3" style="gap:8px;">
+              <div class="stat"><div class="k">PICK RATE</div><div class="v green" id="cd-e-pick">—</div><div class="n" id="cd-e-pick-n">—</div></div>
+              <div class="stat"><div class="k">MODEL BRIER</div><div class="v" id="cd-e-brier">—</div><div class="n" id="cd-e-brier-n">LOWER IS BETTER</div></div>
+              <div class="stat"><div class="k">MARKET BRIER</div><div class="v" id="cd-e-market">—</div><div class="n" id="cd-e-market-n">THE BAR — BEAT IT OR NO SEAT</div></div>
+            </div>
+            <table class="bd" style="margin-top:12px;" aria-label="CADDY exam — slice breakdown">
+              <thead>
+                <tr><th>EXAM SLICE</th><th>GAMES</th><th class="hide-m">PICK RATE</th><th>MODEL BRIER</th><th class="hide-m">MARKET BRIER</th><th>BET-EVERY-PICK ROI</th><th>EDGE-FILTERED ROI</th></tr>
+              </thead>
+              <tbody id="cd-exam-body">
+                <tr><td colspan="7" style="text-align:left; color:var(--faint); letter-spacing:0.08em;">AWAITING LANE SYNC — THE EXAM POSTS HERE FROM cfb_lane.json</td></tr>
+              </tbody>
+            </table>
+            <p class="xlate-note" id="cd-era" style="margin-top:10px;">Era splits post from the lane file.</p>
+            <p class="xlate-note">Picking winners is not the bar — the market already prices most of them. The exam passes only when the model's Brier beats the market's on the same games. That gap is what sent this brain back to the books.</p>
+          </div>
+        </section>
+
+        <section class="panel" style="margin-top:12px;" aria-label="CADDY calibration — 2026 extension">
+          <div class="panel-h"><span>CALIBRATION</span><span class="right" id="cd-cal-right">CLAIMED vs DELIVERED · FROM THE EXAM</span></div>
+          <table class="bd" aria-label="CADDY calibration buckets">
+            <thead>
+              <tr><th>CONFIDENCE BUCKET</th><th>GAMES</th><th>CLAIMED</th><th>DELIVERED</th><th>READ</th></tr>
+            </thead>
+            <tbody id="cd-cal-body">
+              <tr><td colspan="5" style="text-align:left; color:var(--faint); letter-spacing:0.08em;">AWAITING LANE SYNC — CALIBRATION POSTS HERE FROM cfb_lane.json</td></tr>
+            </tbody>
+          </table>
+          <div class="panel-b" style="padding-top:10px;">
+            <p class="xlate-note" style="margin:0;" id="cd-cal-note">A bucket reads honest when what the model claimed matches what it delivered. The buckets post from the exam in the lane file — never smoothed over here.</p>
+          </div>
+        </section>
+
+        <section class="panel" style="margin-top:12px;" aria-label="CADDY open forecasts">
+          <div class="panel-h"><span>OPEN FORECASTS</span><span class="right">PROSPECTIVE ONLY · FROM cfb_lane.json</span></div>
+          <div class="scroll-box">
+            <table class="bd" aria-label="CADDY open forecasts">
+              <thead>
+                <tr><th>DATE</th><th>GAME</th><th>PICK</th><th>MODEL %</th><th class="hide-m">PRICE</th><th>STATUS</th></tr>
+              </thead>
+              <tbody id="cd-open-body">
+                <tr><td colspan="6" style="text-align:left; color:var(--faint); letter-spacing:0.08em;">AWAITING LANE SYNC — OPEN FORECASTS POST HERE FROM cfb_lane.json</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <p class="foot-note"><b>ONE WIRE, LIKE EVERY LANE:</b> this tab reads <b>cfb_lane.json</b> — published next to this page, with the bundled copy under assets/ as fallback — and re-renders every figure from that single file on sync. The name on this tab is CADDY: CADILLAC is earned only when a re-exam beats the market and the prospective gate fills.</p>
+      </div><!-- /tab-caddy -->
+
+      <!-- ======= TAB 7 : OVERVIEW — COUNCIL TOTAL ======= -->
+      <div id="tab-overview" class="tab-panel" hidden>
+        <div class="lane-head">
+          <span class="lane-tag">ALL LANES</span>
+          <h2>COUNCIL OVERVIEW</h2>
+          <span class="sub">EVERY LANE'S PAPER MONEY IN ONE PLACE · EACH LANE KEEPS ITS OWN ACCOUNT AND ITS OWN GATE</span>
+          <span class="status" id="ov-status"><span class="dot off"></span>AWAITING LANE SYNC</span>
+        </div>
+
+        <div class="moneybar" style="margin-top:0;">
+          <section class="money" aria-label="Council total — all paper wallets">
+            <div class="m-label">
+              <span>COUNCIL TOTAL — ALL PAPER WALLETS</span>
+            </div>
+            <div class="m-big green" id="ov-total-balance">—</div>
+            <div class="m-usd" id="ov-total-usd">TOTAL PAPER BALANCE — <b>AWAITING LANE SYNC</b></div>
+            <div class="m-sub">PLUGG's wallet plus COBRA's three shadow accounts, added together for display only — the accounts never share cash, and every lane's gate is still judged on its own record alone.</div>
+          </section>
+          <section class="money" aria-label="Council total — net paper P&amp;L">
+            <div class="m-label">
+              <span>COUNCIL TOTAL — NET PAPER P&amp;L</span>
+            </div>
+            <div class="m-big dim" id="ov-total-net">—</div>
+            <div class="m-usd" id="ov-net-usd">NET PAPER PROFIT — <b>AWAITING LANE SYNC</b></div>
+            <div class="m-sub">Every account started flat: PLUGG $50, each COBRA track $250. Hummingbot's P&amp;L joins this total only when its history export posts a real number — until then it counts as nothing, never a guess. WHIPLASH has no wallet until the exam passes.</div>
+          </section>
+        </div>
+
+        <section class="panel" style="margin-top:12px;" aria-label="Paper revenue by lane">
+          <div class="panel-h"><span>PAPER REVENUE BY LANE</span><span class="right">ONE ROW PER ACCOUNT · EVERY FIGURE FROM ITS OWN LANE FILE</span></div>
+          <table class="bd" aria-label="Paper balance and profit by lane">
+            <thead>
+              <tr><th>LANE</th><th>STATUS</th><th>BALANCE</th><th class="hide-m">TOTAL WON</th><th class="hide-m">TOTAL LOST</th><th>NET P&amp;L</th><th class="hide-m">RECORD</th></tr>
+            </thead>
+            <tbody id="ov-body">
+              <tr><td colspan="7" style="text-align:left; color:var(--faint); letter-spacing:0.08em;">AWAITING LANE SYNC — EVERY LANE'S PAPER MONEY POSTS HERE FROM ITS OWN LANE FILE</td></tr>
+            </tbody>
+          </table>
+          <div class="panel-b" style="padding-top:10px;">
+            <p class="xlate-note" style="margin:0;" id="ov-note">The total adds up only the accounts that report a balance. A lane with no wallet yet — or a P&amp;L still pending its export — shows its real state in its row and stays out of the sum.</p>
+          </div>
+        </section>
+
+        <p class="foot-note"><b>ONE WIRE, EVERY LANE:</b> this tab reads the same four lane files as every other tab — kalshi_lane.json, hummingbot_lane.json, fomo_lane.json, weather_lane.json — and refreshes on the same sync. Nothing here is typed in, frozen, or borrowed from another lane.</p>
+      </div><!-- /tab-overview -->
     </div>
 
     <!-- ======= HONESTY STRIP ======= -->
@@ -2582,8 +2785,8 @@ table.bd tbody tr, table.tape tbody tr, .feed li, .hit { cursor: pointer; }
       var un = pickNum(p, ['unrealized_usdt', 'unrealized']);
       tr.appendChild(cell(String(p.symbol || shortWallet(p.mint) || '—')));
       tr.appendChild(cell(shortWallet(p.leader || p.creator)));
-      tr.appendChild(cell(fmtPrice(pickNum(p, ['entry_shadow_price_usd', 'entry_price_usd', 'entry_detect_price_usd']))));
-      tr.appendChild(cell(fmtPrice(pickNum(p, ['mark_price_usd', 'current_price_usd', 'mark']))));
+      tr.appendChild(cell(fmtPrice(pickNum(p, ['entry_shadow_price_usd', 'entry_price_usd', 'entry_detect_price_usd', 'entry_price']))));
+      tr.appendChild(cell(fmtPrice(pickNum(p, ['mark_price_usd', 'current_price_usd', 'current_value_usd', 'value_usd', 'mark']))));
       tr.appendChild(cell(fmtMC(p.mc_at_entry_usd)));
       tr.appendChild(cell(un === null ? '—' : fmtSigned(un), un === null ? 'num-dim' : (un >= 0 ? 'num-green' : 'num-red')));
       tbody.appendChild(tr);
@@ -2950,6 +3153,30 @@ table.bd tbody tr, table.tape tbody tr, .feed li, .hit { cursor: pointer; }
     if (hasUpdated) { updTile.className = 'v small'; updTile.textContent = fmtTime(d.updated_at); }
     else { updTile.className = 'v'; updTile.textContent = '—'; }
 
+    // ---- COBRA PROFIT tiles: each track shows its own money, from the
+    // same lane file — balance, total won / lost, net P&L vs its own
+    // start. A track that hasn't reported a field leaves its tile at —.
+    function trackTiles(prefix, t) {
+      if (!t || typeof t !== 'object') return;
+      var start = isNum(t.start_balance_usdt) ? t.start_balance_usdt : 250;
+      var bal = isNum(t.balance_usdt) ? t.balance_usdt : null;
+      var net = bal !== null ? bal - start : (isNum(t.realized_usdt) ? t.realized_usdt : null);
+      var balEl = $(prefix + '-balance');
+      if (balEl && bal !== null) balEl.textContent = fmtMoney(bal);
+      var netEl = $(prefix + '-net');
+      if (netEl && net !== null) {
+        netEl.className = 'v ' + (net > 0 ? 'green' : (net < 0 ? 'red' : ''));
+        netEl.textContent = fmtSigned(net);
+      }
+      var wonEl = $(prefix + '-won');
+      if (wonEl && isNum(t.total_won_usdt)) wonEl.textContent = fmtMoney(t.total_won_usdt);
+      var lostEl = $(prefix + '-lost');
+      if (lostEl && isNum(t.total_lost_usdt)) lostEl.textContent = fmtMoney(t.total_lost_usdt);
+    }
+    trackTiles('cp-copy', d);
+    trackTiles('cp-launch', d.launch_track);
+    trackTiles('cp-grad', d.graduated_track);
+
     // ---- Track 1: pots ----
     $('fm-pot-won-amt').textContent = fmtMoney(isNum(d.total_won_usdt) ? d.total_won_usdt : 0);
     $('fm-pot-lost-amt').textContent = fmtMoney(isNum(d.total_lost_usdt) ? d.total_lost_usdt : 0);
@@ -2979,13 +3206,26 @@ table.bd tbody tr, table.tape tbody tr, .feed li, .hit { cursor: pointer; }
     zNetEl.textContent = fmtSigned(zNet);
 
     // ---- Track 1: positions + ledger ----
-    buildPositions($('fm-positions'), d.positions_detail || [], 'NO OPEN POSITIONS — NOTHING COPIED YET');
+    // The copy lane's own block: when fomo_lane.json carries a
+    // copy_track object, the open-positions display and the closed
+    // tape beneath it read position fields from that block. Until the
+    // block appears, the file's top level IS the copy track (the
+    // current schema) and the display reads there — and the empty
+    // state says so honestly: no block yet means the copy lane is not
+    // active. Either way, nothing renders that the file didn't send.
+    var ct = (d.copy_track && typeof d.copy_track === 'object') ? d.copy_track : null;
+    var ctPos = ct ? (Array.isArray(ct.positions_detail) ? ct.positions_detail : (Array.isArray(ct.positions) ? ct.positions : []))
+                   : (Array.isArray(d.positions_detail) ? d.positions_detail : []);
+    var ctTrades = ct ? (Array.isArray(ct.trades_detail) ? ct.trades_detail : (Array.isArray(ct.closed_trades) ? ct.closed_trades : []))
+                      : trades;
+    buildPositions($('fm-positions'), ctPos, ct ? 'NO OPEN POSITIONS — NOTHING COPIED YET' : 'NO OPEN POSITIONS — COPY LANE NOT YET ACTIVE');
     var posTotal = $('fm-pos-total');
-    if (isNum(d.unrealized_usdt)) {
-      posTotal.textContent = fmtSigned(d.unrealized_usdt);
-      posTotal.style.color = d.unrealized_usdt > 0 ? 'var(--green)' : (d.unrealized_usdt < 0 ? 'var(--red)' : '');
+    var ctUnreal = ct ? pickNum(ct, ['unrealized_usdt', 'unrealized']) : (isNum(d.unrealized_usdt) ? d.unrealized_usdt : null);
+    if (ctUnreal !== null) {
+      posTotal.textContent = fmtSigned(ctUnreal);
+      posTotal.style.color = ctUnreal > 0 ? 'var(--green)' : (ctUnreal < 0 ? 'var(--red)' : '');
     } else { posTotal.textContent = '—'; posTotal.style.color = ''; }
-    buildLedger($('fm-ledger'), trades, 'NO CLOSED TRADES YET — THE LEDGER FILLS AS LEADERS EXIT');
+    buildLedger($('fm-ledger'), ctTrades, 'NO CLOSED TRADES YET — THE LEDGER FILLS AS LEADERS EXIT');
 
     // ---- Track 1: market-cap bands ----
     var bands = d.mc_bands || {};
@@ -3308,6 +3548,246 @@ table.bd tbody tr, table.tape tbody tr, .feed li, .hit { cursor: pointer; }
 
   function load() {
     laneFetch(WEATHER_LANE_URL)
+      .then(function (d) { lastGood = d; render(d); })
+      .catch(function () { if (lastGood) render(lastGood); });
+  }
+  load();
+  setInterval(load, 60000);
+})();
+</script>
+
+<script>
+// ===== CFB LANE — CADDY (appended) =====
+// cfb_lane.json is published next to this page, same resolver as every
+// other lane: laneFetch tries the page-relative live file first, then
+// the bundled snapshot under assets/. ONE WIRE LAW: every CADDY number
+// on this tab renders from that single file — the exam, the prospective
+// gate, the paper wallet, the open forecasts. The exam verdict in the
+// file is NOT BANK, so the prospective loop has never turned on: the
+// gate reads from prospective in the file and the forecasts list stays
+// an honest empty state until a re-exam earns the lane a start. This
+// script never invents a number the file doesn't carry.
+(function () {
+  var CFB_LANE_URL = 'cfb_lane.json';
+  var lastGood = null;
+
+  function $(id) { return document.getElementById(id); }
+  function isNum(n) { return typeof n === 'number' && isFinite(n); }
+  function fmtMoney(n) {
+    return (n < 0 ? '-$' : '$') + Math.abs(n).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  }
+  function fmtSigned(n) { return (n > 0 ? '+' : '') + fmtMoney(n); }
+  function fmtInt(n) { return Math.round(n).toLocaleString('en-US'); }
+  function fmtPct(x, dec) { return (x * 100).toFixed(dec === undefined ? 1 : dec) + '%'; }
+  function fmtSignedPct(x) { return (x > 0 ? '+' : '') + (x * 100).toFixed(2) + '%'; }
+  function fmtTime(iso) {
+    var d = new Date(iso);
+    if (isNaN(d.getTime())) return '—';
+    return d.toLocaleString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' });
+  }
+  function setStatus(el, mode, text) {
+    if (!el) return;
+    el.innerHTML = '';
+    var dot = document.createElement('span');
+    dot.className = 'dot ' + mode; // 'on' green · 'bad' red · 'off' dim
+    el.appendChild(dot);
+    el.appendChild(document.createTextNode(text));
+  }
+  function cell(text, cls) {
+    var td = document.createElement('td');
+    if (cls) td.className = cls;
+    td.textContent = text;
+    return td;
+  }
+  function cellHtml(html, cls) {
+    var td = document.createElement('td');
+    if (cls) td.className = cls;
+    td.innerHTML = html;
+    return td;
+  }
+  function emptyRow(tbody, colspan, text) {
+    var tr = document.createElement('tr');
+    var td = document.createElement('td');
+    td.colSpan = colspan;
+    td.style.cssText = 'text-align:left; color:var(--faint); letter-spacing:0.08em;';
+    td.textContent = text;
+    tr.appendChild(td);
+    tbody.appendChild(tr);
+  }
+  function roiCell(v) {
+    if (!isNum(v)) return cell('—', 'num-dim');
+    return cell(fmtSignedPct(v), v > 0 ? 'num-green' : (v < 0 ? 'num-red' : 'num-dim'));
+  }
+  function esc(s) {
+    return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+
+  function render(d) {
+    var ex = (d.exam && typeof d.exam === 'object') ? d.exam : {};
+    var tm = (ex.trusted_market_2023_2025 && typeof ex.trusted_market_2023_2025 === 'object') ? ex.trusted_market_2023_2025 : {};
+    var ext = (ex.extension_2026 && typeof ex.extension_2026 === 'object') ? ex.extension_2026 : {};
+    var pr = (d.prospective && typeof d.prospective === 'object') ? d.prospective : {};
+    var wal = (pr.wallet && typeof pr.wallet === 'object') ? pr.wallet : {};
+    var model = (d.model && typeof d.model === 'object') ? d.model : {};
+    var open = Array.isArray(d.open_forecasts) ? d.open_forecasts : [];
+    var statusText = d.status ? String(d.status) : 'LANE STATE NOT REPORTED';
+    var started = (isNum(pr.scored) && pr.scored > 0) || open.length > 0 || !/NOT STARTED/i.test(statusText);
+
+    // Lane header
+    setStatus($('cd-lane-status'), started ? 'on' : 'off', statusText);
+    setStatus($('cd-mstatus'), started ? 'on' : 'off', statusText);
+    $('cd-updated').textContent = d.updated_at ? ('UPDATED ' + fmtTime(d.updated_at)) : '';
+    var note = $('cd-status-note');
+    if (d.note) { note.textContent = d.note; note.style.display = 'block'; }
+    else { note.style.display = 'none'; }
+    $('cd-money').classList.remove('off');
+    var stats = document.querySelectorAll('.cd-stat');
+    for (var i = 0; i < stats.length; i++) stats[i].classList.remove('off');
+
+    // Paper wallet — from prospective.wallet in the lane file
+    var start = isNum(wal.start) ? wal.start : null;
+    var balance = isNum(wal.balance) ? wal.balance : null;
+    var net = (balance !== null && start !== null) ? balance - start : null;
+    var big = $('cd-big');
+    if (balance !== null) {
+      big.className = 'm-big ' + (net > 0 ? 'green' : (net < 0 ? 'red' : ''));
+      big.textContent = fmtMoney(balance);
+    }
+    var usd = $('cd-usd');
+    usd.innerHTML = '';
+    usd.appendChild(document.createTextNode('PAPER WALLET — '));
+    var bold = document.createElement('b');
+    bold.textContent = net === null ? 'BALANCE NOT REPORTED IN THE LANE FILE'
+      : ('NET ' + fmtSigned(net) + (start !== null ? ' · START ' + fmtMoney(start) : ''));
+    usd.appendChild(bold);
+    $('cd-t-won').textContent = isNum(wal.won) ? fmtMoney(wal.won) : '—';
+    $('cd-t-lost').textContent = isNum(wal.lost) ? fmtMoney(wal.lost) : '—';
+    $('cd-t-start').textContent = start !== null ? fmtMoney(start) : '—';
+    if (started) $('cd-sub').textContent = 'The wallet renders from cfb_lane.json and moves only when a prospective forecast settles.';
+
+    // The prospective gate — from prospective in the lane file
+    var scored = isNum(pr.scored) ? pr.scored : null;
+    var target = isNum(pr.gate_target) ? pr.gate_target : null;
+    if (isNum(pr.won) && isNum(pr.lost)) $('cd-gate-right').textContent = 'PROSPECTIVE RECORD ' + fmtInt(pr.won) + ' WON – ' + fmtInt(pr.lost) + ' LOST · FROM cfb_lane.json';
+    $('cd-gate-scored').textContent = scored === null ? '—' : fmtInt(scored);
+    $('cd-gate-target').textContent = target === null ? '—' : fmtInt(target);
+    var gp = (scored !== null && target) ? Math.max(0, Math.min(100, scored / target * 100)) : 0;
+    var fill = $('cd-gate-fill');
+    if (fill) { fill.style.animation = 'none'; fill.style.width = gp + '%'; }
+    $('cd-gate-pct').textContent = (scored !== null && target !== null) ? (gp.toFixed(1) + '% OF THE GATE') : '—';
+    $('cd-gate-togo').textContent = (scored !== null && target !== null) ? (fmtInt(Math.max(0, target - scored)) + ' TO GO') : '—';
+    $('cd-gate-verdict').textContent = started ? 'PROSPECTIVE LANE LIVE — GATE COUNTING' : 'NOT BANK — BACK TO THE BOOKS';
+
+    // The model card — from model / exam / status in the lane file
+    $('cd-m-id').textContent = model.id ? String(model.id) : '—';
+    $('cd-m-lambda').textContent = isNum(model.lambda) ? String(model.lambda) : '—';
+    $('cd-m-sigma').textContent = isNum(model.sigma) ? String(model.sigma) : '—';
+    $('cd-m-verdict').textContent = ex.verdict ? String(ex.verdict).toUpperCase() : '—';
+    $('cd-m-status').textContent = statusText;
+    if (pr.seeded_from) $('cd-seeded').textContent = 'SEEDED — ' + String(pr.seeded_from);
+
+    // The exam — headline stats from the market-tested slice + full run
+    if (isNum(ex.pick_rate)) $('cd-e-pick').textContent = fmtPct(ex.pick_rate, 2);
+    $('cd-e-pick-n').textContent = (isNum(ex.n) ? fmtInt(ex.n) + ' GAMES' : 'GAMES') + (ex.seasons ? ' · SEASONS ' + ex.seasons : '');
+    var mBrier = isNum(tm.brier_model) ? tm.brier_model : (isNum(ex.brier_model) ? ex.brier_model : null);
+    var kBrier = isNum(tm.brier_market) ? tm.brier_market : null;
+    var brierEl = $('cd-e-brier');
+    if (mBrier !== null) {
+      brierEl.textContent = mBrier.toFixed(4);
+      if (kBrier !== null) brierEl.className = 'v ' + (mBrier < kBrier ? 'green' : (mBrier > kBrier ? 'red' : ''));
+    }
+    $('cd-e-brier-n').textContent = isNum(tm.n) ? ('MARKET-TESTED 2023–25 · ' + fmtInt(tm.n) + ' GAMES WITH REAL LINES') : 'LOWER IS BETTER';
+    if (kBrier !== null) $('cd-e-market').textContent = kBrier.toFixed(4);
+    $('cd-exam-right').textContent = 'BACKTEST' + (ex.seasons ? ' · SEASONS ' + ex.seasons : '') + ' · FROM cfb_lane.json';
+
+    // The exam — slice table
+    var eb = $('cd-exam-body');
+    eb.innerHTML = '';
+    function sliceRow(label, n, pick, mb, kb, roi, edge, edgeN, logLoss) {
+      var tr = document.createElement('tr');
+      tr.appendChild(cell(label));
+      tr.appendChild(cell(isNum(n) ? fmtInt(n) : '—'));
+      var pc = cell(isNum(pick) ? fmtPct(pick, 2) : '—', 'hide-m');
+      tr.appendChild(pc);
+      var mbHtml = isNum(mb) ? mb.toFixed(4) : '—';
+      if (isNum(logLoss)) mbHtml += '<span class="mid">LOG-LOSS ' + logLoss.toFixed(4) + '</span>';
+      tr.appendChild(cellHtml(mbHtml));
+      tr.appendChild(cell(isNum(kb) ? kb.toFixed(4) : '—', 'hide-m'));
+      tr.appendChild(roiCell(roi));
+      if (isNum(edge)) {
+        var ec = roiCell(edge);
+        if (isNum(edgeN)) {
+          var mid = document.createElement('span');
+          mid.className = 'mid';
+          mid.textContent = 'n ' + fmtInt(edgeN);
+          ec.appendChild(mid);
+        }
+        tr.appendChild(ec);
+      } else {
+        tr.appendChild(cell('—', 'num-dim'));
+      }
+      eb.appendChild(tr);
+    }
+    sliceRow('MARKET-TESTED 2023–25', tm.n, null, tm.brier_model, tm.brier_market, tm.roi, null, null, null);
+    sliceRow('2026 EXTENSION', ext.n, ext.pick_rate, ext.brier_model, ext.brier_market, ext.roi, ext.roi_edge05, ext.roi_edge05_n, ext.log_loss);
+    sliceRow('FULL RUN ' + (ex.seasons || ''), ex.n, ex.pick_rate, ex.brier_model, null, null, null, null, ex.log_loss);
+    if (ex.era_verdict_line) $('cd-era').textContent = 'ERA SPLITS — ' + String(ex.era_verdict_line);
+
+    // Calibration — the 2026 extension buckets, claimed vs delivered
+    var cal = Array.isArray(ext.calibration) ? ext.calibration : [];
+    var cb = $('cd-cal-body');
+    cb.innerHTML = '';
+    if (!cal.length) {
+      emptyRow(cb, 5, 'NO CALIBRATION IN THE LANE FILE');
+    } else {
+      var honestCount = 0, hotNotes = [];
+      cal.forEach(function (bk) {
+        var tr = document.createElement('tr');
+        tr.appendChild(cell(String(bk.bucket || '—')));
+        tr.appendChild(cell(isNum(bk.n) ? fmtInt(bk.n) : '—'));
+        tr.appendChild(cell(isNum(bk.claimed) ? fmtPct(bk.claimed, 1) : '—'));
+        tr.appendChild(cell(isNum(bk.delivered) ? fmtPct(bk.delivered, 1) : '—'));
+        if (bk.honest) {
+          honestCount++;
+          tr.appendChild(cell('HONEST', 'num-green'));
+        } else {
+          tr.appendChild(cell('RAN HOT', 'num-red'));
+          hotNotes.push('THE ' + String(bk.bucket || '?') + ' BUCKET RAN HOT — CLAIMED ' +
+            (isNum(bk.claimed) ? fmtPct(bk.claimed, 1) : '—') + ', DELIVERED ' + (isNum(bk.delivered) ? fmtPct(bk.delivered, 1) : '—'));
+        }
+        cb.appendChild(tr);
+      });
+      $('cd-cal-note').textContent = honestCount + ' OF ' + cal.length + ' BUCKETS HONEST' +
+        (hotNotes.length ? ' · ' + hotNotes.join(' · ') + '.' : ' — EVERY BUCKET DELIVERED WHAT IT CLAIMED.') +
+        ' Calibration posts from the exam in the lane file — never smoothed over here.';
+      $('cd-cal-right').textContent = 'CLAIMED vs DELIVERED · 2026 EXTENSION' + (isNum(ext.n) ? ' · ' + fmtInt(ext.n) + ' GAMES' : '');
+    }
+
+    // Open forecasts — prospective only; empty until the loop turns on
+    var ob = $('cd-open-body');
+    ob.innerHTML = '';
+    if (!open.length) {
+      emptyRow(ob, 6, started ? 'NO OPEN FORECASTS RIGHT NOW' : 'NO OPEN FORECASTS — THE PROSPECTIVE LOOP HAS NOT TURNED ON');
+    } else {
+      open.forEach(function (f) {
+        var tr = document.createElement('tr');
+        var when = f.date || f.game_date || f.kickoff || '';
+        var dt = when ? new Date(when) : null;
+        tr.appendChild(cell(dt && isFinite(dt.getTime()) ? dt.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) : (when ? String(when) : '—')));
+        tr.appendChild(cell(String(f.game || f.matchup || ((f.away || '') + (f.away && f.home ? ' @ ' : '') + (f.home || '')) || '—')));
+        tr.appendChild(cell(String(f.pick || f.team || '—')));
+        var prob = isNum(f.model_prob) ? f.model_prob : (isNum(f.probability) ? f.probability : null);
+        tr.appendChild(cell(prob === null ? '—' : fmtPct(prob > 1 ? prob / 100 : prob, 1)));
+        var price = isNum(f.price) ? f.price : null;
+        tr.appendChild(cell(price === null ? '—' : (price < 1 ? Math.round(price * 100) + '¢' : fmtMoney(price)), 'hide-m'));
+        tr.appendChild(cell(String(f.status || 'OPEN').toUpperCase()));
+        ob.appendChild(tr);
+      });
+    }
+  }
+
+  function load() {
+    laneFetch(CFB_LANE_URL)
       .then(function (d) { lastGood = d; render(d); })
       .catch(function () { if (lastGood) render(lastGood); });
   }
@@ -3800,6 +4280,241 @@ body { background-color: #000000; }
           a.pre === b.pre && a.suf === b.suf) tick(el, a, b);
     }).observe(el, { characterData: true, childList: true, subtree: true });
   });
+})();
+</script>
+
+<style>
+/* ===== OVERVIEW (appended) =====
+   The council-total row under PAPER REVENUE BY LANE — same hand as the
+   rest of the board: a hard rule above it, bold mono, no new colors. */
+table.bd tr.ov-total td {
+  border-top: 2px solid var(--text);
+  border-bottom: none;
+  font-weight: 800;
+  padding-top: 10px;
+}
+</style>
+
+<script>
+// ===== OVERVIEW — COUNCIL TOTAL (appended) =====
+// One row per paper account, every figure read from that account's own
+// lane file through the same laneFetch resolver as every other tab —
+// kalshi_lane.json (PLUGG), hummingbot_lane.json, fomo_lane.json (COBRA's
+// three separate shadow accounts), weather_lane.json (WHIPLASH).
+// The council total is a display sum of the accounts that report a
+// balance; the accounts never share cash and each lane's gate is still
+// judged alone. Honest states stay honest: Hummingbot's P&L is pending
+// its history export (never a $0.00 stand-in) and WHIPLASH has no wallet
+// until its exam posts — both show their state and stay out of the sum.
+(function () {
+  function $(id) { return document.getElementById(id); }
+  function isNum(n) { return typeof n === 'number' && isFinite(n); }
+  function fmtMoney(n) {
+    return (n < 0 ? '-$' : '$') + Math.abs(n).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  }
+  function fmtSigned(n) { return (n > 0 ? '+' : '') + fmtMoney(n); }
+  function fmtInt(n) { return Math.round(n).toLocaleString('en-US'); }
+  function fmtTime(iso) {
+    var d = new Date(iso);
+    if (isNaN(d.getTime())) return '';
+    return d.toLocaleString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' });
+  }
+  function setStatus(el, mode, text) {
+    if (!el) return;
+    el.innerHTML = '';
+    var dot = document.createElement('span');
+    dot.className = 'dot ' + mode;
+    el.appendChild(dot);
+    el.appendChild(document.createTextNode(text));
+  }
+  function cell(text, cls) {
+    var td = document.createElement('td');
+    if (cls) td.className = cls;
+    td.textContent = text;
+    return td;
+  }
+  function nameCell(label, sub) {
+    var td = document.createElement('td');
+    var b = document.createElement('b');
+    b.textContent = label;
+    td.appendChild(b);
+    if (sub) {
+      var s = document.createElement('span');
+      s.className = 'mid';
+      s.style.cssText = 'display:block; font-size:10px; color:var(--faint); letter-spacing:0.06em; margin-top:2px;';
+      s.textContent = sub;
+      td.appendChild(s);
+    }
+    return td;
+  }
+  function netCell(net) {
+    if (net === null) return cell('—', 'num-dim');
+    return cell(fmtSigned(net), net > 0 ? 'num-green' : (net < 0 ? 'num-red' : 'num-dim'));
+  }
+  // One account row. bal === null means the account reports no balance:
+  // it renders its state and contributes nothing to the totals.
+  function accountRow(label, sub, status, bal, won, lost, net, record) {
+    var tr = document.createElement('tr');
+    tr.appendChild(nameCell(label, sub));
+    tr.appendChild(cell(status));
+    tr.appendChild(cell(bal === null ? '—' : fmtMoney(bal), bal === null ? 'num-dim' : ''));
+    var wTd = cell(won === null ? '—' : fmtMoney(won), won === null ? 'num-dim hide-m' : 'num-green hide-m');
+    var lTd = cell(lost === null ? '—' : fmtMoney(lost), lost === null ? 'num-dim hide-m' : 'num-red hide-m');
+    tr.appendChild(wTd);
+    tr.appendChild(lTd);
+    var nTd = netCell(net);
+    tr.appendChild(nTd);
+    tr.appendChild(cell(record || '—', 'hide-m'));
+    return tr;
+  }
+
+  var state = { k: null, h: null, f: null, w: null };
+
+  function render() {
+    var body = $('ov-body');
+    if (!body) return;
+    body.innerHTML = '';
+    var totalBal = 0, totalNet = 0, counted = 0, freshest = 0;
+
+    function noteTime(d) {
+      if (d && d.updated_at) {
+        var t = Date.parse(d.updated_at);
+        if (isFinite(t) && t > freshest) freshest = t;
+      }
+    }
+
+    // ---- PLUGG — Kalshi wallet ----
+    var k = state.k;
+    if (k && k.wallet && isNum(k.wallet.balance)) {
+      var kw = k.wallet;
+      var kStart = isNum(kw.start) ? kw.start : 50;
+      var kNet = kw.balance - kStart;
+      body.appendChild(accountRow('PLUGG', 'KALSHI · NBA FORECASTS', 'LEDGER ACTIVE',
+        kw.balance, isNum(kw.total_won) ? kw.total_won : null, isNum(kw.total_lost) ? kw.total_lost : null,
+        kNet, (isNum(k.won) && isNum(k.lost)) ? (fmtInt(k.won) + ' W – ' + fmtInt(k.lost) + ' L · ' + fmtInt(isNum(k.scored) ? k.scored : (kw.settled_count || 0)) + ' SCORED') : '—'));
+      totalBal += kw.balance; totalNet += kNet; counted++;
+    } else {
+      body.appendChild(accountRow('PLUGG', 'KALSHI · NBA FORECASTS', 'AWAITING LANE SYNC', null, null, null, null, '—'));
+    }
+    noteTime(k);
+
+    // ---- HUMMINGBOT — P&L only from its history export ----
+    var h = state.h;
+    if (h) {
+      var hStatus = h.station === 'online' ? 'STATION ONLINE' : String(h.station || 'NO LIVE DATA').replace(/_/g, ' ').toUpperCase();
+      var hNet = isNum(h.net_pnl_usdt) ? h.net_pnl_usdt : null;
+      var hTr = document.createElement('tr');
+      hTr.appendChild(nameCell('HUMMINGBOT', 'CRYPTO · ETH-USDT PAPER'));
+      hTr.appendChild(cell(hStatus));
+      hTr.appendChild(cell('—', 'num-dim'));
+      hTr.appendChild(cell(isNum(h.won_usdt) && hNet !== null ? fmtMoney(h.won_usdt) : '—', 'num-dim hide-m'));
+      hTr.appendChild(cell(isNum(h.lost_usdt) && hNet !== null ? fmtMoney(h.lost_usdt) : '—', 'num-dim hide-m'));
+      hTr.appendChild(hNet !== null ? netCell(hNet) : cell('PENDING HISTORY EXPORT', 'num-dim'));
+      hTr.appendChild(cell((isNum(h.trades) ? fmtInt(h.trades) + ' TRADES' : '—') + (isNum(h.volume_usdt) ? ' · VOL ' + fmtMoney(h.volume_usdt) : ''), 'hide-m'));
+      body.appendChild(hTr);
+      if (hNet !== null) totalNet += hNet; // a real posted P&L joins the net total; it holds no wallet balance
+    } else {
+      body.appendChild(accountRow('HUMMINGBOT', 'CRYPTO · ETH-USDT PAPER', 'AWAITING FIRST SYNC', null, null, null, null, '—'));
+    }
+    noteTime(h);
+
+    // ---- COBRA — three separate shadow accounts, one row each ----
+    var f = state.f;
+    function cobraRow(label, sub, t, statusFallback) {
+      if (t && typeof t === 'object' && isNum(t.balance_usdt)) {
+        var start = isNum(t.start_balance_usdt) ? t.start_balance_usdt : 250;
+        var net = t.balance_usdt - start;
+        var rec = (isNum(t.won) && isNum(t.lost))
+          ? (fmtInt(t.won) + ' W – ' + fmtInt(t.lost) + ' L · ' + fmtInt(isNum(t.closed_trades) ? t.closed_trades : 0) + ' CLOSED')
+          : '—';
+        body.appendChild(accountRow(label, sub, statusFallback,
+          t.balance_usdt, isNum(t.total_won_usdt) ? t.total_won_usdt : null,
+          isNum(t.total_lost_usdt) ? t.total_lost_usdt : null, net, rec));
+        totalBal += t.balance_usdt; totalNet += net; counted++;
+      } else {
+        body.appendChild(accountRow(label, sub, 'NO DATA YET', null, null, null, null, '—'));
+      }
+    }
+    if (f) {
+      var fStatus = String(f.station || '').replace(/_/g, ' ').toUpperCase() || '—';
+      cobraRow('COBRA — COPY TRACK', 'FOMO LEADERS · SHADOW-COPY', f, fStatus);
+      var lt = f.launch_track || {};
+      cobraRow('COBRA — LAUNCH TRACK', 'PUMP.FUN LAUNCHES · SHADOW', lt, String(lt.station || '').replace(/_/g, ' ').toUpperCase() || '—');
+      var gt = f.graduated_track || {};
+      cobraRow('COBRA — GRADUATED TRACK', 'POST-GRADUATION MOMENTUM · SHADOW', gt, String(gt.station || '').replace(/_/g, ' ').toUpperCase() || '—');
+    } else {
+      body.appendChild(accountRow('COBRA — COPY TRACK', 'FOMO LEADERS · SHADOW-COPY', 'AWAITING LANE SYNC', null, null, null, null, '—'));
+      body.appendChild(accountRow('COBRA — LAUNCH TRACK', 'PUMP.FUN LAUNCHES · SHADOW', 'AWAITING LANE SYNC', null, null, null, null, '—'));
+      body.appendChild(accountRow('COBRA — GRADUATED TRACK', 'POST-GRADUATION MOMENTUM · SHADOW', 'AWAITING LANE SYNC', null, null, null, null, '—'));
+    }
+    noteTime(f);
+
+    // ---- WHIPLASH — no wallet until the exam posts ----
+    var w = state.w;
+    if (w && w.wallet && isNum(w.wallet.balance)) {
+      var ww = w.wallet;
+      var wStart = isNum(ww.start) ? ww.start : 0;
+      body.appendChild(accountRow('WHIPLASH', 'WEATHER MODEL · KALSHI HIGH TEMP', 'LANE LIVE',
+        ww.balance, isNum(ww.total_won) ? ww.total_won : null, isNum(ww.total_lost) ? ww.total_lost : null,
+        ww.balance - wStart, (isNum(w.won) && isNum(w.lost)) ? (fmtInt(w.won) + ' W – ' + fmtInt(w.lost) + ' L') : '—'));
+      totalBal += ww.balance; totalNet += ww.balance - wStart; counted++;
+    } else {
+      var wStatus = w ? (String(w.exam_status || w.station || 'exam_in_progress').replace(/_/g, ' ').toUpperCase()) : 'AWAITING LANE SYNC';
+      body.appendChild(accountRow('WHIPLASH', 'WEATHER MODEL · KALSHI HIGH TEMP',
+        wStatus === 'IN PROGRESS' ? 'EXAM IN PROGRESS' : wStatus, null, null, null, null, 'NO PAPER RECORD YET'));
+    }
+    noteTime(w);
+
+    // ---- Council total row ----
+    if (counted > 0) {
+      var tr = document.createElement('tr');
+      tr.className = 'ov-total';
+      tr.appendChild(nameCell('COUNCIL TOTAL', counted + (counted === 1 ? ' ACCOUNT' : ' ACCOUNTS') + ' REPORTING A BALANCE'));
+      tr.appendChild(cell('PAPER ONLY'));
+      tr.appendChild(cell(fmtMoney(totalBal), totalNet > 0 ? 'num-green' : (totalNet < 0 ? 'num-red' : '')));
+      tr.appendChild(cell('', 'hide-m'));
+      tr.appendChild(cell('', 'hide-m'));
+      tr.appendChild(netCell(totalNet));
+      tr.appendChild(cell('', 'hide-m'));
+      body.appendChild(tr);
+
+      var balEl = $('ov-total-balance');
+      balEl.className = 'm-big ' + (totalNet > 0 ? 'green' : (totalNet < 0 ? 'red' : ''));
+      balEl.textContent = fmtMoney(totalBal);
+      $('ov-total-usd').innerHTML = '';
+      var b1 = document.createElement('b');
+      b1.textContent = 'ACROSS ' + counted + (counted === 1 ? ' ACCOUNT' : ' ACCOUNTS');
+      $('ov-total-usd').appendChild(document.createTextNode('TOTAL PAPER BALANCE — '));
+      $('ov-total-usd').appendChild(b1);
+      var netEl = $('ov-total-net');
+      netEl.className = 'm-big ' + (totalNet > 0 ? 'green' : (totalNet < 0 ? 'red' : 'dim'));
+      netEl.textContent = fmtSigned(totalNet);
+      $('ov-net-usd').innerHTML = '';
+      var b2 = document.createElement('b');
+      b2.textContent = totalNet > 0 ? 'THE COUNCIL IS UP ON PAPER' : (totalNet < 0 ? 'THE COUNCIL IS DOWN ON PAPER' : 'DEAD FLAT — NO ACCOUNT HAS MOVED');
+      $('ov-net-usd').appendChild(document.createTextNode('NET PAPER PROFIT — '));
+      $('ov-net-usd').appendChild(b2);
+    }
+
+    setStatus($('ov-status'), counted > 0 ? 'on' : 'off',
+      counted > 0 ? ('LANES SYNCED' + (freshest ? ' · ' + fmtTime(new Date(freshest).toISOString()).toUpperCase() : '')) : 'AWAITING LANE SYNC');
+  }
+
+  function pull(name, key) {
+    if (typeof window.laneFetch !== 'function') return;
+    window.laneFetch(name)
+      .then(function (d) { if (d && typeof d === 'object') { state[key] = d; render(); } })
+      .catch(function () {});
+  }
+  function load() {
+    pull('kalshi_lane.json', 'k');
+    pull('hummingbot_lane.json', 'h');
+    pull('fomo_lane.json', 'f');
+    pull('weather_lane.json', 'w');
+  }
+  render();
+  load();
+  setInterval(load, 60000);
 })();
 </script>
 </body>
