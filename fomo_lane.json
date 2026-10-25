@@ -1,7 +1,7 @@
 {
  "lane": "fomo_shadow_copy",
  "paper_only": true,
- "updated_at": "2026-10-24T16:18:50+00:00",
+ "updated_at": "2026-10-25T00:18:25+00:00",
  "station": "awaiting_watchlist",
  "note": "Watchlist is empty \u2014 waiting on Will's ~5 leader wallet addresses.",
  "leaders_followed": 0,
@@ -144,10 +144,10 @@
    }
   },
   "screening": {
-   "candidates_active": 7,
-   "screened_total": 525,
+   "candidates_active": 6,
+   "screened_total": 590,
    "passed_total": 2,
-   "failed_total": 523
+   "failed_total": 588
   },
   "passed": {
    "trades": 2,
@@ -156,10 +156,10 @@
    "net_usdt": 8.0191
   },
   "failed_ghost": {
-   "trades": 221,
-   "won": 16,
-   "lost": 205,
-   "net_usdt": -2119.446,
+   "trades": 339,
+   "won": 19,
+   "lost": 320,
+   "net_usdt": -2608.1528,
    "note": "Ghost P&L = what entering the launches the backing screen REJECTED would have made, same friction + exit rules, no shadow cash."
   },
   "screen_config": {
@@ -182,10 +182,10 @@
    }
   },
   "feed": {
-   "last_poll_at": "2026-10-24T16:14:50+00:00",
+   "last_poll_at": "2026-10-25T00:14:09+00:00",
    "last_error": null,
-   "coins_seen_total": 10743,
-   "activations_total": 532
+   "coins_seen_total": 12008,
+   "activations_total": 596
   }
  },
  "combined": {
@@ -202,7 +202,7 @@
   "lane": "cobra_graduated_momentum",
   "track": "graduated",
   "paper_only": true,
-  "updated_at": "2026-10-24T16:20:36+00:00",
+  "updated_at": "2026-10-25T00:20:34+00:00",
   "station": "screening",
   "note": "Graduated momentum track \u2014 separate $250 shadow account, $25 stakes. Watches pump.fun coins AFTER graduation (bonding curve complete, trading on a DEX) and shadow-enters only confirmed continuation: above the ~$69K graduation mark, +20% over the graduation price across at least two polls, buyers still coming in, creator not dumping. Screen failures are ghost-tracked so the screen itself is graded. Graduation time/price are stated proxies (first-observed-complete; $69K curve-complete mark) \u2014 see SPEC_GRADUATED.md.",
   "start_balance_usdt": 250.0,
@@ -246,9 +246,9 @@
   },
   "screening": {
    "candidates_active": 8,
-   "screened_total": 164,
+   "screened_total": 192,
    "passed_total": 0,
-   "failed_total": 164
+   "failed_total": 192
   },
   "passed": {
    "trades": 0,
@@ -257,10 +257,10 @@
    "net_usdt": 0
   },
   "failed_ghost": {
-   "trades": 47,
-   "won": 5,
-   "lost": 42,
-   "net_usdt": -741.9371,
+   "trades": 89,
+   "won": 16,
+   "lost": 73,
+   "net_usdt": -1052.4245,
    "note": "Ghost P&L = what entering the graduated coins the continuation screen REJECTED would have made, same friction + exit rules, no shadow cash."
   },
   "screen_config": {
@@ -286,10 +286,10 @@
    }
   },
   "feed": {
-   "last_poll_at": "2026-10-24T16:18:51+00:00",
+   "last_poll_at": "2026-10-25T00:18:26+00:00",
    "last_error": null,
-   "coins_seen_total": 172,
-   "activations_total": 172
+   "coins_seen_total": 200,
+   "activations_total": 200
   }
  }
 }
