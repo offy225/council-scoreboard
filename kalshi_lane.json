@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-10-25T03:57:35Z",
-  "scored": 47,
-  "won": 34,
+  "updated_at": "2026-10-25T04:42:33Z",
+  "scored": 48,
+  "won": 35,
   "lost": 13,
-  "win_rate": 0.723404255319149,
-  "brier": 0.2136,
-  "log_loss": 0.613,
+  "win_rate": 0.7291666666666666,
+  "brier": 0.2128,
+  "log_loss": 0.6115,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 19,
-      "won": 15,
+      "scored": 20,
+      "won": 16,
       "lost": 4,
-      "win_rate": 0.7894736842105263,
-      "brier": 0.1966
+      "win_rate": 0.8,
+      "brier": 0.1955
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -550,19 +550,20 @@
       "result": "WON",
       "price": 0.815,
       "price_source": "reference"
-    }
-  ],
-  "open_bets": [
+    },
     {
+      "date": "2026-10-24",
       "game": "GS at PHX",
+      "model": "NBA v3.2 + PLATT",
       "pick": "PHX",
       "prob": 0.5835,
-      "stake": 50.0,
-      "status": "OPEN",
+      "final": "PHX 131 \u00b7 GS 122",
+      "result": "WON",
       "price": 0.765,
       "price_source": "reference"
     }
   ],
+  "open_bets": [],
   "settled_bets": [
     {
       "date": "2026-10-16",
@@ -1080,14 +1081,25 @@
       "price": 0.815,
       "price_source": "reference",
       "profit": 11.35
+    },
+    {
+      "date": "2026-10-24",
+      "game": "GS at PHX",
+      "pick": "PHX",
+      "prob": 0.5835,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.765,
+      "price_source": "reference",
+      "profit": 15.36
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 767.44,
-    "total_won": 1367.44,
+    "balance": 782.8,
+    "total_won": 1382.8,
     "total_lost": 650.0,
-    "settled_count": 47,
-    "ref_priced_count": 47
+    "settled_count": 48,
+    "ref_priced_count": 48
   }
 }
