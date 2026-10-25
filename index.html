@@ -541,6 +541,99 @@
       @media (prefers-reduced-motion: reduce) {
         .sound-toggle:active { transform: none; }
       }
+
+      /* ---------- morning pilot checklist ---------- */
+      .pilot-panel { border-color: var(--gold); }
+      .pilot-panel .panel-h { border-bottom-color: var(--gold); color: var(--gold); }
+      .pilot-panel .panel-h > span:first-child::before { background: var(--gold); }
+      .pilot-item {
+        position: relative; width: 100%; display: grid;
+        grid-template-columns: 22px 30px 1fr auto auto; gap: 12px; align-items: center;
+        background: var(--panel-2); border: none; border-bottom: 1px solid var(--line-soft);
+        color: var(--text); font-family: var(--mono); text-align: left;
+        padding: 13px 12px; cursor: pointer; overflow: hidden;
+        transition: background-color 0.18s ease, opacity 0.25s ease;
+      }
+      .pilot-item:last-child { border-bottom: none; }
+      .pilot-item:hover { background: #161616; }
+      .pilot-item:active { transform: translateY(1px); }
+      .pilot-box {
+        width: 18px; height: 18px; border: 2px solid var(--dim); position: relative; flex: 0 0 auto;
+      }
+      .pilot-box::after {
+        content: ""; position: absolute; inset: 2px; background: var(--green);
+        transform: scale(0); transition: transform 0.22s ease 0.1s;
+      }
+      .pilot-item.placed .pilot-box { border-color: var(--green); }
+      .pilot-item.placed .pilot-box::after { transform: scale(1); }
+      .pilot-rank { color: var(--faint); font-weight: 800; font-size: 13px; }
+      .pilot-main { min-width: 0; }
+      .pilot-pick { display: block; font-size: 14px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      .pilot-pick b { color: var(--green); }
+      .pilot-meta { display: block; font-size: 10px; letter-spacing: 0.12em; color: var(--faint); margin-top: 3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      .pilot-conf { font-family: var(--pix); font-size: 13px; color: var(--green); white-space: nowrap; }
+      .pilot-state {
+        font-family: var(--pix); font-size: 8px; letter-spacing: 0.03em; line-height: 1.9;
+        color: var(--faint); border: 2px solid var(--line); padding: 4px 8px; white-space: nowrap;
+      }
+      .pilot-state.live { color: #000; background: var(--green); border-color: var(--green); }
+      .pilot-state.live .dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: #000; margin-right: 6px; vertical-align: 1px; animation: pulse 1.4s ease-in-out infinite; }
+      .pilot-item.placed .pilot-state { color: var(--green); border-color: var(--green); }
+      .pilot-item.placed .pilot-state.live { color: #000; }
+      /* the slash — a green cut sweeps across the row when a pick is placed */
+      .pilot-slash {
+        position: absolute; left: -4%; top: 50%; width: 108%; height: 3px;
+        background: var(--green); box-shadow: 0 0 10px rgba(0, 221, 148, 0.65);
+        transform: rotate(-3.5deg) scaleX(0); transform-origin: left center;
+        transition: transform 0.38s cubic-bezier(0.22, 0.8, 0.3, 1);
+        pointer-events: none;
+      }
+      .pilot-item.placed .pilot-slash { transform: rotate(-3.5deg) scaleX(1); }
+      .pilot-item.placed .pilot-pick, .pilot-item.placed .pilot-meta { opacity: 0.5; }
+      .pilot-item.placed .pilot-pick { text-decoration: line-through; text-decoration-color: rgba(0, 221, 148, 0.7); text-decoration-thickness: 2px; }
+      .pilot-item.noanim .pilot-slash, .pilot-item.noanim .pilot-box::after { transition: none !important; }
+      .pilot-empty { padding: 14px 12px; color: var(--faint); font-size: 12px; letter-spacing: 0.08em; line-height: 1.7; }
+      .pilot-empty b { color: var(--dim); }
+      .pilot-await {
+        margin: 12px; border: 1px dashed #4a3d14; background: #0d0d0d; padding: 16px 12px; text-align: center;
+        color: var(--faint); letter-spacing: 0.12em; font-size: 12px; font-weight: 700; line-height: 1.8;
+      }
+      .pilot-await b { color: var(--gold); display: block; font-size: 13px; letter-spacing: 0.16em; margin-bottom: 4px; }
+      .pilot-await span { font-weight: 400; letter-spacing: 0.04em; text-transform: none; }
+      @media (max-width: 560px) {
+        .pilot-item { grid-template-columns: 22px 1fr auto; gap: 10px; }
+        .pilot-rank { display: none; }
+        .pilot-state { grid-column: 2 / -1; justify-self: start; }
+        .pilot-conf { font-size: 11px; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .pilot-slash, .pilot-box::after, .pilot-item { transition: none; }
+        .pilot-item:active { transform: none; }
+        .pilot-state.live .dot { animation: none; }
+      }
+
+      /* ---------- daily picks — the full slate ---------- */
+      .daily-item {
+        display: grid; grid-template-columns: 30px 1fr auto auto auto; gap: 12px; align-items: center;
+        padding: 11px 12px; border-bottom: 1px solid var(--line-soft); font-size: 13px;
+        transition: background-color 0.18s ease;
+      }
+      .daily-item:last-child { border-bottom: none; }
+      .daily-item:hover { background: var(--panel-2); }
+      .daily-stake { font-weight: 800; white-space: nowrap; }
+      .daily-putin {
+        font-family: var(--pix); font-size: 8px; letter-spacing: 0.03em; line-height: 1.9;
+        color: var(--gold); border: 2px solid var(--gold); padding: 4px 8px; white-space: nowrap;
+      }
+      .daily-putin.off { color: var(--faint); border-color: var(--line); }
+      @media (max-width: 560px) {
+        .daily-item { grid-template-columns: 1fr auto auto; gap: 10px; }
+        .daily-item .pilot-rank { display: none; }
+        .daily-putin { grid-column: 1 / -1; justify-self: start; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .daily-item { transition: none; }
+      }
     </style>
   </head>
   <body>
@@ -598,6 +691,28 @@
           <div class="m-sub" id="hb-sub">The paper bot is installed and running on the Mac. When the publisher pushes its first sync, this readout fills with the bot's own record — it never borrows the council's numbers.</div>
         </section>
       </div>
+
+      <!-- ======= MORNING PILOT CHECKLIST — PLUGG ======= -->
+      <section class="panel pilot-panel" style="margin-top:12px;" aria-label="Morning pilot checklist — PLUGG">
+        <div class="panel-h"><span>MORNING PILOT CHECKLIST</span><span class="right" id="pilot-count">TOP 3 · MOST CONFIDENT FIRST</span></div>
+        <div id="pilot-list">
+          <p class="pilot-empty" style="margin:0;">AWAITING LANE SYNC — TODAY'S TOP PICKS POST HERE FROM THE LIVE LANE'S OPEN FORECASTS.</p>
+        </div>
+        <div class="panel-b" style="padding-top:10px;">
+          <p class="xlate-note" style="margin:0;">PLUGG's most confident open forecasts, straight from the live lane — these are the ones to place. Place each on Kalshi yourself, then tap it here to slash it off; while its game is running it rides in a LIVE state. Checks are session marks only — the paper ledger on the PLUGG PROFIT tab stays the permanent record, right alongside.</p>
+        </div>
+      </section>
+
+      <!-- ======= DAILY PICKS — EVERY OPEN PAPER BET ======= -->
+      <section class="panel" style="margin-top:12px;" aria-label="Daily picks — every PLUGG paper bet">
+        <div class="panel-h"><span>DAILY PICKS — EVERY GAME</span><span class="right" id="daily-count">EVERY OPEN PAPER BET · $50 STAKE EACH</span></div>
+        <div id="daily-list">
+          <p class="pilot-empty" style="margin:0;">AWAITING LANE SYNC — EVERY GAME PLUGG PAPER-BETS POSTS HERE FROM THE LIVE LANE.</p>
+        </div>
+        <div class="panel-b" style="padding-top:10px;">
+          <p class="xlate-note" style="margin:0;">The full slate — every game PLUGG has a paper bet on right now, not just the top 3 — each at the flat $50 paper stake, most confident first. Rows tagged <b style="color:var(--gold)">PUT IN · $5</b> are tomorrow's real-money scale: the top 4 by confidence at $5 each. The rest ride paper only. Send each pick plus the live Kalshi price before placing; if the price ran from the stamp, skip it.</p>
+        </div>
+      </section>
 
       <!-- ======= LANE 1 : PLUGG — KALSHI ======= -->
       <div class="lane-head masthead">
@@ -1394,6 +1509,20 @@
             <div class="stat off cd-stat"><div class="k">TOTAL PAPER WON</div><div class="v green" id="cd-t-won">—</div><div class="n">PROSPECTIVE SETTLEMENTS ONLY</div></div>
             <div class="stat off cd-stat"><div class="k">TOTAL PAPER LOST</div><div class="v red" id="cd-t-lost">—</div><div class="n">PROSPECTIVE SETTLEMENTS ONLY</div></div>
             <div class="stat off cd-stat"><div class="k">WALLET START</div><div class="v" id="cd-t-start">—</div><div class="n">FROM THE LANE FILE</div></div>
+          </div>
+        </section>
+
+        <!-- ======= MORNING PILOT CHECKLIST — CADDY ======= -->
+        <section class="panel pilot-panel" style="margin-top:12px;" aria-label="Morning pilot checklist — CADDY">
+          <div class="panel-h"><span>MORNING PILOT CHECKLIST</span><span class="right" id="cd-pilot-count">AWAITING GRADUATION</span></div>
+          <div id="cd-pilot-list">
+            <div class="pilot-await">
+              <b>AWAITING GRADUATION — NO LIVE PICKS</b>
+              <span>CADDY has not passed his exam, so there is nothing to place and this checklist stays empty — no invented picks, ever. When a re-exam beats the market and the prospective lane turns on, his top 3 most confident picks post here in this same shape: most confident first, tap to slash off once placed, LIVE while the game runs.</span>
+            </div>
+          </div>
+          <div class="panel-b" style="padding-top:10px;">
+            <p class="xlate-note" style="margin:0;">Same checklist as PLUGG's, same rules — it fills only from cfb_lane.json open forecasts, and only after graduation. Until then the honest empty state is the whole panel: the exam record below is what he has to beat.</p>
           </div>
         </section>
 
@@ -2408,6 +2537,11 @@
             });
           }
         }
+
+        // Morning pilot checklist — the live lane's open forecasts, top 3 by confidence
+        if (window.renderPilotChecklist) window.renderPilotChecklist(n.openBets);
+        // Daily picks — the full slate: every open paper bet, $50 stake each
+        if (window.renderDailyPicks) window.renderDailyPicks(n.openBets);
 
         // Ticker — rebuilt whole from the same normalized read (plus the
         // Hummingbot lane's headline figures), then doubled for the loop.
@@ -3784,6 +3918,10 @@ table.bd tbody tr, table.tape tbody tr, .feed li, .hit { cursor: pointer; }
         ob.appendChild(tr);
       });
     }
+
+    // Morning pilot checklist — same shape as PLUGG's; stays in the
+    // awaiting-graduation state until the lane turns on with real picks.
+    if (window.renderCaddyChecklist) window.renderCaddyChecklist(open, started);
   }
 
   function load() {
@@ -4515,6 +4653,267 @@ table.bd tr.ov-total td {
   render();
   load();
   setInterval(load, 60000);
+})();
+</script>
+
+<script>
+// ===== MORNING PILOT CHECKLISTS — PLUGG + CADDY (appended) =====
+// One shape on both pages: the lane's open forecasts, most confident
+// first, top 3. Tap a pick once it's placed on Kalshi and a slash cuts
+// across the row; while its game is running the row rides in a LIVE
+// state read from the lane file's own status. Check marks are session
+// marks held in memory only — the paper ledgers on each page stay the
+// permanent record. CADDY's list renders picks only when cfb_lane.json
+// actually carries open forecasts on a started lane; until graduation
+// it shows the awaiting state and never invents a pick.
+(function () {
+  'use strict';
+  var MONTHS = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+  var placed = {}; // lane|date|game|pick -> true, this session only
+
+  function $(id) { return document.getElementById(id); }
+  function isNum(n) { return typeof n === 'number' && isFinite(n); }
+  function esc(s) {
+    return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+  function pctFrac(n) { if (!isNum(n)) return null; return n > 1.5 ? n / 100 : n; }
+  function fmtDate(iso) {
+    if (!iso) return '—';
+    var s = String(iso);
+    var m = s.match(/^(\d{4})-(\d{2})-(\d{2})/);
+    if (m) return MONTHS[parseInt(m[2], 10) - 1] + ' ' + parseInt(m[3], 10);
+    var d = new Date(s);
+    if (isNaN(d.getTime())) return s.toUpperCase();
+    return MONTHS[d.getMonth()] + ' ' + d.getDate();
+  }
+  function modelLabel(raw) {
+    var s = String(raw || '');
+    if (/v3|platt/i.test(s)) return 'PLUGG';
+    if (/v2|elo/i.test(s)) return 'NBA v2 ELO';
+    return s || '—';
+  }
+  function isLive(status) { return /LIVE|IN.?PROGRESS|STARTED/i.test(String(status || '')); }
+  function keyOf(lane, b) { return lane + '|' + (b.date || '') + '|' + b.game + '|' + b.pick; }
+
+  function stateHtml(b, isPlaced) {
+    if (isLive(b.status)) {
+      return '<span class="dot" aria-hidden="true"></span>' + (isPlaced ? 'PLACED · LIVE' : 'LIVE');
+    }
+    return isPlaced ? 'PLACED' : 'TO PLACE';
+  }
+
+  function buildItem(lane, b, rank) {
+    var key = keyOf(lane, b);
+    var isPlaced = !!placed[key];
+    var live = isLive(b.status);
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'pilot-item noanim' + (isPlaced ? ' placed' : '');
+    btn.setAttribute('aria-pressed', isPlaced ? 'true' : 'false');
+    btn.setAttribute('data-key', key);
+    var meta = [fmtDate(b.date)];
+    if (b.modelLabel) meta.push(b.modelLabel);
+    meta.push(b.price !== null && b.price !== undefined ? ('PRICE ' + b.priceText) : 'NO PRICE STAMPED');
+    if (isNum(b.stake)) meta.push('$' + Math.round(b.stake) + ' PAPER STAKE');
+    btn.innerHTML =
+      '<span class="pilot-box" aria-hidden="true"></span>' +
+      '<span class="pilot-rank">#' + rank + '</span>' +
+      '<span class="pilot-main"><span class="pilot-pick"><b>' + esc(b.pick || '—') + '</b> · ' + esc(b.game) + '</span>' +
+      '<span class="pilot-meta">' + esc(meta.join(' · ')) + '</span></span>' +
+      '<span class="pilot-conf">' + (b.prob !== null ? (Math.round(b.prob * 1000) / 10) + '%' : '—') + '</span>' +
+      '<span class="pilot-state' + (live ? ' live' : '') + '">' + stateHtml(b, isPlaced) + '</span>' +
+      '<span class="pilot-slash" aria-hidden="true"></span>';
+    return btn;
+  }
+
+  function finishBuild(list) {
+    // Placed rows rebuilt by a lane refresh show their slash already cut —
+    // the sweep animation is only for the tap itself.
+    var items = list.querySelectorAll('.pilot-item.noanim');
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
+        for (var i = 0; i < items.length; i++) items[i].classList.remove('noanim');
+      });
+    });
+  }
+
+  function updateCount(countEl, bets, lane, emptyText) {
+    if (!countEl) return;
+    if (!bets.length) { countEl.textContent = emptyText; return; }
+    var n = 0;
+    bets.forEach(function (b) { if (placed[keyOf(lane, b)]) n++; });
+    countEl.textContent = (n === bets.length ? 'ALL PLACED · ' : '') + n + ' / ' + bets.length + ' PLACED · TOP ' + bets.length + ' BY CONFIDENCE';
+  }
+
+  function sortTop(bets) {
+    return bets.slice().sort(function (a, b) {
+      var pa = a.prob === null ? -1 : a.prob, pb = b.prob === null ? -1 : b.prob;
+      if (pb !== pa) return pb - pa;
+      return String(a.date || '').localeCompare(String(b.date || ''));
+    }).slice(0, 3);
+  }
+
+  // ---- PLUGG — fed the normalized open bets by the lane's own renderer ----
+  window.renderPilotChecklist = function (openBets) {
+    var list = $('pilot-list');
+    if (!list) return;
+    var bets = sortTop((openBets || []).map(function (b) {
+      return {
+        date: b.date || '', game: String(b.game || '—'), pick: String(b.pick || ''),
+        prob: (b.prob === null || b.prob === undefined) ? null : b.prob,
+        price: (b.price === null || b.price === undefined) ? null : b.price,
+        priceText: (b.price === null || b.price === undefined) ? '' : Number(b.price).toFixed(2),
+        stake: isNum(b.stake) ? b.stake : null,
+        modelLabel: modelLabel(b.model), status: b.status || 'OPEN'
+      };
+    }));
+    list.innerHTML = '';
+    if (!bets.length) {
+      list.innerHTML = '<p class="pilot-empty" style="margin:0;"><b>NO OPEN FORECASTS IN THE LIVE LANE RIGHT NOW.</b> THE CHECKLIST FILLS WITH THE TOP 3 THE MOMENT PLUGG LOCKS HIS NEXT PICKS.</p>';
+    } else {
+      bets.forEach(function (b, i) { list.appendChild(buildItem('k', b, i + 1)); });
+      finishBuild(list);
+    }
+    updateCount($('pilot-count'), bets, 'k', 'NO OPEN PICKS · TOP 3 BY CONFIDENCE');
+    list._bets = bets; list._lane = 'k';
+  };
+
+  // ---- DAILY PICKS — every open paper bet, full slate, most confident first ----
+  // Same feed as the checklist, no top-3 cut: each row shows the pick, the
+  // game, PLUGG's honest %, the stamped price, and the flat $50 paper stake.
+  // The top 4 by confidence carry the PUT IN · $5 tag — tomorrow's real-money
+  // scale at $5 a game; the rest ride paper only. Read-only: the checklist
+  // above is the tap-to-place surface.
+  window.renderDailyPicks = function (openBets) {
+    var list = $('daily-list');
+    if (!list) return;
+    var bets = (openBets || []).map(function (b) {
+      var price = (b.price === null || b.price === undefined) ? null : b.price;
+      var stake = isNum(b.stake) ? b.stake : 50;
+      var payout = isNum(b.payout) ? b.payout
+        : (price !== null && price > 0 && price < 1 ? stake / price : null);
+      return {
+        date: b.date || '', game: String(b.game || '—'), pick: String(b.pick || ''),
+        prob: (b.prob === null || b.prob === undefined) ? null : b.prob,
+        price: price, stake: stake, payout: payout,
+        modelLabel: modelLabel(b.model), status: b.status || 'OPEN'
+      };
+    }).sort(function (a, b) {
+      var pa = a.prob === null ? -1 : a.prob, pb = b.prob === null ? -1 : b.prob;
+      if (pb !== pa) return pb - pa;
+      return String(a.date || '').localeCompare(String(b.date || ''));
+    });
+    list.innerHTML = '';
+    if (!bets.length) {
+      list.innerHTML = '<p class="pilot-empty" style="margin:0;"><b>NO OPEN PAPER BETS RIGHT NOW.</b> THE FULL SLATE POSTS HERE THE MOMENT PLUGG LOCKS HIS NEXT PICKS.</p>';
+    } else {
+      bets.forEach(function (b, i) {
+        var row = document.createElement('div');
+        row.className = 'daily-item';
+        var meta = [fmtDate(b.date)];
+        if (b.modelLabel) meta.push(b.modelLabel);
+        meta.push(b.price !== null ? ('PRICE ' + Number(b.price).toFixed(2)) : 'NO PRICE STAMPED');
+        if (b.payout !== null) meta.push('PAYS $' + b.payout.toFixed(2));
+        if (isLive(b.status)) meta.push('LIVE NOW');
+        row.innerHTML =
+          '<span class="pilot-rank">#' + (i + 1) + '</span>' +
+          '<span class="pilot-main"><span class="pilot-pick"><b>' + esc(b.pick || '—') + '</b> · ' + esc(b.game) + '</span>' +
+          '<span class="pilot-meta">' + esc(meta.join(' · ')) + '</span></span>' +
+          '<span class="pilot-conf">' + (b.prob !== null ? (Math.round(b.prob * 1000) / 10) + '%' : '—') + '</span>' +
+          '<span class="daily-stake">$' + Math.round(b.stake) + '</span>' +
+          (i < 4
+            ? '<span class="daily-putin">PUT IN · $5</span>'
+            : '<span class="daily-putin off">PAPER ONLY</span>');
+        list.appendChild(row);
+      });
+    }
+    var count = $('daily-count');
+    if (count) count.textContent = bets.length
+      ? bets.length + (bets.length === 1 ? ' GAME' : ' GAMES') + ' · $50 PAPER EACH · TOP ' + Math.min(4, bets.length) + ' GO IN AT $5'
+      : 'EVERY OPEN PAPER BET · $50 STAKE EACH';
+  };
+
+  // ---- CADDY — raw cfb_lane.json forecasts; empty until graduation ----
+  var CD_AWAIT_HTML =
+    '<div class="pilot-await">' +
+    '<b>AWAITING GRADUATION — NO LIVE PICKS</b>' +
+    '<span>CADDY has not passed his exam, so there is nothing to place and this checklist stays empty — no invented picks, ever. When a re-exam beats the market and the prospective lane turns on, his top 3 most confident picks post here in this same shape: most confident first, tap to slash off once placed, LIVE while the game runs.</span>' +
+    '</div>';
+  window.renderCaddyChecklist = function (open, started) {
+    var list = $('cd-pilot-list');
+    if (!list) return;
+    var raw = (started && Array.isArray(open)) ? open : [];
+    var bets = sortTop(raw.map(function (f) {
+      var when = f.date || f.game_date || f.kickoff || '';
+      var prob = pctFrac(isNum(f.model_prob) ? f.model_prob : (isNum(f.probability) ? f.probability : (isNum(f.prob) ? f.prob : null)));
+      var price = isNum(f.price) ? f.price : null;
+      return {
+        date: when,
+        game: String(f.game || f.matchup || ((f.away || '') + (f.away && f.home ? ' @ ' : '') + (f.home || '')) || '—'),
+        pick: String(f.pick || f.team || '—'),
+        prob: prob, price: price,
+        priceText: price === null ? '' : (price < 1 ? Math.round(price * 100) + '¢' : '$' + price.toFixed(2)),
+        stake: isNum(f.stake) ? f.stake : null,
+        modelLabel: '', status: String(f.status || 'OPEN').toUpperCase()
+      };
+    }));
+    list.innerHTML = '';
+    if (!bets.length) {
+      list.innerHTML = CD_AWAIT_HTML;
+    } else {
+      bets.forEach(function (b, i) { list.appendChild(buildItem('cd', b, i + 1)); });
+      finishBuild(list);
+    }
+    updateCount($('cd-pilot-count'), bets, 'cd', 'AWAITING GRADUATION');
+    list._bets = bets; list._lane = 'cd';
+  };
+
+  // ---- tap to check off: slash sweeps, tap again to undo ----
+  function onTap(e) {
+    var btn = e.target && e.target.closest ? e.target.closest('.pilot-item') : null;
+    if (!btn) return;
+    var list = btn.parentNode;
+    var key = btn.getAttribute('data-key');
+    placed[key] = !placed[key];
+    var isPlaced = !!placed[key];
+    btn.classList.toggle('placed', isPlaced);
+    btn.setAttribute('aria-pressed', isPlaced ? 'true' : 'false');
+    var bets = (list && list._bets) || [];
+    var bet = null;
+    bets.forEach(function (b) { if (keyOf(list._lane, b) === key) bet = b; });
+    var st = btn.querySelector('.pilot-state');
+    if (st && bet) st.innerHTML = stateHtml(bet, isPlaced);
+    if (list) updateCount(list.id === 'pilot-list' ? $('pilot-count') : $('cd-pilot-count'), bets, list._lane, list.id === 'pilot-list' ? 'NO OPEN PICKS · TOP 3 BY CONFIDENCE' : 'AWAITING GRADUATION');
+  }
+  var pl = $('pilot-list'); if (pl) pl.addEventListener('click', onTap);
+  var cl = $('cd-pilot-list'); if (cl) cl.addEventListener('click', onTap);
+
+  // ---- first sync: the lane renderers re-feed both lists on every
+  // refresh after this; this pull just fills them on first paint ----
+  if (typeof window.laneFetch === 'function') {
+    window.laneFetch('kalshi_lane.json').then(function (d) {
+      var open = Array.isArray(d.open_bets) ? d.open_bets : [];
+      var mapped = open.map(function (b) {
+        return {
+          date: b.game_date || b.date || '', game: String(b.game || '—'),
+          pick: String(b.pick != null ? b.pick : (b.pick_team != null ? b.pick_team : '')),
+          prob: pctFrac(isNum(b.prob) ? b.prob : (isNum(b.pick_prob) ? b.pick_prob : null)),
+          price: isNum(b.price) ? b.price : null,
+          stake: isNum(b.stake) ? b.stake : 50,
+          model: String(b.model || b.model_key || ''), status: String(b.status || 'OPEN').toUpperCase()
+        };
+      });
+      window.renderPilotChecklist(mapped);
+      window.renderDailyPicks(mapped);
+    }).catch(function () {});
+    window.laneFetch('cfb_lane.json').then(function (d) {
+      var pr = (d.prospective && typeof d.prospective === 'object') ? d.prospective : {};
+      var open = Array.isArray(d.open_forecasts) ? d.open_forecasts : [];
+      var statusText = d.status ? String(d.status) : '';
+      var started = (isNum(pr.scored) && pr.scored > 0) || open.length > 0 || !/NOT STARTED/i.test(statusText);
+      window.renderCaddyChecklist(open, started);
+    }).catch(function () {});
+  }
 })();
 </script>
 </body>
