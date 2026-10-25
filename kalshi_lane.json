@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-10-25T00:42:54Z",
-  "scored": 41,
-  "won": 29,
+  "updated_at": "2026-10-25T02:48:53Z",
+  "scored": 45,
+  "won": 33,
   "lost": 12,
-  "win_rate": 0.7073170731707317,
-  "brier": 0.2261,
-  "log_loss": 0.6401,
+  "win_rate": 0.7333333333333333,
+  "brier": 0.2161,
+  "log_loss": 0.6183,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 13,
-      "won": 10,
+      "scored": 17,
+      "won": 14,
       "lost": 3,
-      "win_rate": 0.7692307692307693,
-      "brier": 0.2282
+      "win_rate": 0.8235294117647058,
+      "brier": 0.2012
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -484,45 +484,53 @@
       "result": "WON",
       "price": 0.425,
       "price_source": "reference"
-    }
-  ],
-  "open_bets": [
+    },
     {
+      "date": "2026-10-24",
       "game": "BKN at CLE",
+      "model": "NBA v3.2 + PLATT",
       "pick": "CLE",
       "prob": 0.8558,
-      "stake": 50.0,
-      "status": "OPEN",
+      "final": "CLE 125 \u00b7 BKN 121",
+      "result": "WON",
       "price": 0.815,
       "price_source": "reference"
     },
     {
+      "date": "2026-10-24",
       "game": "MIL at PHI",
+      "model": "NBA v3.2 + PLATT",
       "pick": "PHI",
       "prob": 0.7032,
-      "stake": 50.0,
-      "status": "OPEN",
+      "final": "PHI 127 \u00b7 MIL 116",
+      "result": "WON",
       "price": 0.845,
       "price_source": "reference"
     },
     {
+      "date": "2026-10-24",
       "game": "WSH at CHI",
+      "model": "NBA v3.2 + PLATT",
       "pick": "WSH",
       "prob": 0.6146,
-      "stake": 50.0,
-      "status": "OPEN",
+      "final": "CHI 120 \u00b7 WSH 124",
+      "result": "WON",
       "price": 0.485,
       "price_source": "reference"
     },
     {
+      "date": "2026-10-24",
       "game": "SA at DAL",
+      "model": "NBA v3.2 + PLATT",
       "pick": "SA",
       "prob": 0.5575,
-      "stake": 50.0,
-      "status": "OPEN",
+      "final": "DAL 106 \u00b7 SA 122",
+      "result": "WON",
       "price": 0.835,
       "price_source": "reference"
-    },
+    }
+  ],
+  "open_bets": [
     {
       "game": "HOU at ATL",
       "pick": "ATL",
@@ -1002,14 +1010,58 @@
       "price": 0.425,
       "price_source": "reference",
       "profit": 67.65
+    },
+    {
+      "date": "2026-10-24",
+      "game": "BKN at CLE",
+      "pick": "CLE",
+      "prob": 0.8558,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.815,
+      "price_source": "reference",
+      "profit": 11.35
+    },
+    {
+      "date": "2026-10-24",
+      "game": "MIL at PHI",
+      "pick": "PHI",
+      "prob": 0.7032,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.845,
+      "price_source": "reference",
+      "profit": 9.17
+    },
+    {
+      "date": "2026-10-24",
+      "game": "WSH at CHI",
+      "pick": "WSH",
+      "prob": 0.6146,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.485,
+      "price_source": "reference",
+      "profit": 53.09
+    },
+    {
+      "date": "2026-10-24",
+      "game": "SA at DAL",
+      "pick": "SA",
+      "prob": 0.5575,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.835,
+      "price_source": "reference",
+      "profit": 9.88
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 722.6,
-    "total_won": 1272.6,
+    "balance": 806.09,
+    "total_won": 1356.09,
     "total_lost": 600.0,
-    "settled_count": 41,
-    "ref_priced_count": 41
+    "settled_count": 45,
+    "ref_priced_count": 45
   }
 }
