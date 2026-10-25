@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-25T04:42:33Z",
+  "updated_at": "2026-10-25T15:12:32Z",
   "scored": 48,
   "won": 35,
   "lost": 13,
@@ -563,7 +563,71 @@
       "price_source": "reference"
     }
   ],
-  "open_bets": [],
+  "open_bets": [
+    {
+      "game": "LAL at UTAH",
+      "pick": "LAL",
+      "prob": 0.5316,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.685,
+      "price_source": "reference"
+    },
+    {
+      "game": "IND at BKN",
+      "pick": "IND",
+      "prob": 0.6341,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.715,
+      "price_source": "reference"
+    },
+    {
+      "game": "ORL at NY",
+      "pick": "NY",
+      "prob": 0.5088,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.715,
+      "price_source": "reference"
+    },
+    {
+      "game": "TOR at MIN",
+      "pick": "MIN",
+      "prob": 0.5897,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.505,
+      "price_source": "reference"
+    },
+    {
+      "game": "LAC at OKC",
+      "pick": "OKC",
+      "prob": 0.7779,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.905,
+      "price_source": "reference"
+    },
+    {
+      "game": "DET at PHI",
+      "pick": "DET",
+      "prob": 0.6576,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.495,
+      "price_source": "reference"
+    },
+    {
+      "game": "MEM at SAC",
+      "pick": "MEM",
+      "prob": 0.5341,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.605,
+      "price_source": "reference"
+    }
+  ],
   "settled_bets": [
     {
       "date": "2026-10-16",
