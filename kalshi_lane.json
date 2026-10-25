@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-10-24T14:42:39Z",
-  "scored": 40,
-  "won": 28,
+  "updated_at": "2026-10-25T00:42:54Z",
+  "scored": 41,
+  "won": 29,
   "lost": 12,
-  "win_rate": 0.7,
-  "brier": 0.226,
-  "log_loss": 0.6397,
+  "win_rate": 0.7073170731707317,
+  "brier": 0.2261,
+  "log_loss": 0.6401,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 12,
-      "won": 9,
+      "scored": 13,
+      "won": 10,
       "lost": 3,
-      "win_rate": 0.75,
-      "brier": 0.2279
+      "win_rate": 0.7692307692307693,
+      "brier": 0.2282
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -473,18 +473,20 @@
       "result": "WON",
       "price": 0.785,
       "price_source": "reference"
+    },
+    {
+      "date": "2026-10-24",
+      "game": "MIA at CHA",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "CHA",
+      "prob": 0.5192,
+      "final": "CHA 115 \u00b7 MIA 110",
+      "result": "WON",
+      "price": 0.425,
+      "price_source": "reference"
     }
   ],
   "open_bets": [
-    {
-      "game": "MIA at CHA",
-      "pick": "CHA",
-      "prob": 0.5192,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.425,
-      "price_source": "reference"
-    },
     {
       "game": "BKN at CLE",
       "pick": "CLE",
@@ -989,14 +991,25 @@
       "price": 0.785,
       "price_source": "reference",
       "profit": 13.69
+    },
+    {
+      "date": "2026-10-24",
+      "game": "MIA at CHA",
+      "pick": "CHA",
+      "prob": 0.5192,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.425,
+      "price_source": "reference",
+      "profit": 67.65
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 654.95,
-    "total_won": 1204.95,
+    "balance": 722.6,
+    "total_won": 1272.6,
     "total_lost": 600.0,
-    "settled_count": 40,
-    "ref_priced_count": 40
+    "settled_count": 41,
+    "ref_priced_count": 41
   }
 }
