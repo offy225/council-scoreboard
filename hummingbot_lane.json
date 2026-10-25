@@ -1,14 +1,14 @@
 {
-  "updated_at": "2026-10-23T23:45:58Z",
+  "updated_at": "2026-10-25T03:45:37Z",
   "station": "online",
-  "trades": 10,
-  "buys": 5,
-  "sells": 5,
-  "volume_usdt": 238.89603,
-  "fees_usdt": 0.238891,
+  "trades": 18,
+  "buys": 9,
+  "sells": 9,
+  "volume_usdt": 425.07034,
+  "fees_usdt": 0.42506,
   "net_pnl_usdt": null,
   "pnl_note": "Net PnL is not derivable from the trades DB alone: Hummingbot computes PnL from portfolio values (current vs hold) in `hbot history`, not from fills. Use the CSV fallback with an explicit PnL column, or wire a balance snapshot, before showing a PnL number.",
-  "last_trade_at": "2026-10-23T22:58:39Z",
+  "last_trade_at": "2026-10-24T23:13:00Z",
   "source": "sqlite:/Users/willscott/hummingbot/data/conf_pure_mm_1.ymlstart.sqlite",
   "bot_alive": true,
   "status_note": null,
@@ -102,11 +102,83 @@
       "amount": 0.01,
       "fee_usdt": 0.02366,
       "pnl_usdt": 0.047755
+    },
+    {
+      "time": "2026-10-24T13:54:22Z",
+      "side": "buy",
+      "pair": "ETH-USDT",
+      "price": 2362.676,
+      "amount": 0.01,
+      "fee_usdt": 0.023626,
+      "pnl_usdt": null
+    },
+    {
+      "time": "2026-10-24T14:48:22Z",
+      "side": "buy",
+      "pair": "ETH-USDT",
+      "price": 2335.268,
+      "amount": 0.01,
+      "fee_usdt": 0.023352,
+      "pnl_usdt": null
+    },
+    {
+      "time": "2026-10-24T15:20:16Z",
+      "side": "sell",
+      "pair": "ETH-USDT",
+      "price": 2294.999,
+      "amount": 0.01,
+      "fee_usdt": 0.022949,
+      "pnl_usdt": -0.723345
+    },
+    {
+      "time": "2026-10-24T16:02:31Z",
+      "side": "buy",
+      "pair": "ETH-USDT",
+      "price": 2298.359,
+      "amount": 0.01,
+      "fee_usdt": 0.022983,
+      "pnl_usdt": null
+    },
+    {
+      "time": "2026-10-24T16:50:14Z",
+      "side": "sell",
+      "pair": "ETH-USDT",
+      "price": 2305.18,
+      "amount": 0.01,
+      "fee_usdt": 0.023051,
+      "pnl_usdt": -0.347283
+    },
+    {
+      "time": "2026-10-24T18:25:41Z",
+      "side": "sell",
+      "pair": "ETH-USDT",
+      "price": 2332.241,
+      "amount": 0.01,
+      "fee_usdt": 0.023322,
+      "pnl_usdt": 0.292515
+    },
+    {
+      "time": "2026-10-24T20:34:37Z",
+      "side": "buy",
+      "pair": "ETH-USDT",
+      "price": 2337.591,
+      "amount": 0.01,
+      "fee_usdt": 0.023375,
+      "pnl_usdt": null
+    },
+    {
+      "time": "2026-10-24T23:13:00Z",
+      "side": "sell",
+      "pair": "ETH-USDT",
+      "price": 2351.117,
+      "amount": 0.01,
+      "fee_usdt": 0.023511,
+      "pnl_usdt": 0.088374
     }
   ],
-  "won_usdt": 0.625909,
-  "lost_usdt": 0.10411,
-  "round_trips": 5,
-  "mark_price": 2381.445,
-  "mark_at": "2026-10-23T23:45:25Z"
+  "won_usdt": 1.006798,
+  "lost_usdt": 1.174738,
+  "round_trips": 9,
+  "mark_price": 2363.245,
+  "mark_at": "2026-10-25T03:44:17Z"
 }
