@@ -1,7 +1,7 @@
 {
  "lane": "fomo_shadow_copy",
  "paper_only": true,
- "updated_at": "2026-10-25T03:28:14+00:00",
+ "updated_at": "2026-10-25T03:48:20+00:00",
  "station": "awaiting_watchlist",
  "note": "Watchlist is empty \u2014 waiting on Will's ~5 leader wallet addresses.",
  "leaders_followed": 0,
@@ -144,10 +144,10 @@
    }
   },
   "screening": {
-   "candidates_active": 8,
-   "screened_total": 630,
+   "candidates_active": 7,
+   "screened_total": 635,
    "passed_total": 2,
-   "failed_total": 628
+   "failed_total": 633
   },
   "passed": {
    "trades": 2,
@@ -156,10 +156,10 @@
    "net_usdt": 8.0191
   },
   "failed_ghost": {
-   "trades": 388,
+   "trades": 394,
    "won": 19,
-   "lost": 369,
-   "net_usdt": -2818.5994,
+   "lost": 375,
+   "net_usdt": -2841.7875,
    "note": "Ghost P&L = what entering the launches the backing screen REJECTED would have made, same friction + exit rules, no shadow cash."
   },
   "screen_config": {
@@ -182,10 +182,10 @@
    }
   },
   "feed": {
-   "last_poll_at": "2026-10-25T03:24:35+00:00",
+   "last_poll_at": "2026-10-25T03:44:20+00:00",
    "last_error": null,
-   "coins_seen_total": 12745,
-   "activations_total": 638
+   "coins_seen_total": 12832,
+   "activations_total": 642
   }
  },
  "combined": {
@@ -202,7 +202,7 @@
   "lane": "cobra_graduated_momentum",
   "track": "graduated",
   "paper_only": true,
-  "updated_at": "2026-10-25T03:29:29+00:00",
+  "updated_at": "2026-10-25T03:50:27+00:00",
   "station": "screening",
   "note": "Graduated momentum track \u2014 separate $250 shadow account, $25 stakes. Watches pump.fun coins AFTER graduation (bonding curve complete, trading on a DEX) and shadow-enters only confirmed continuation: above the ~$69K graduation mark, +20% over the graduation price across at least two polls, buyers still coming in, creator not dumping. Screen failures are ghost-tracked so the screen itself is graded. Graduation time/price are stated proxies (first-observed-complete; $69K curve-complete mark) \u2014 see SPEC_GRADUATED.md.",
   "start_balance_usdt": 250.0,
@@ -245,7 +245,7 @@
    }
   },
   "screening": {
-   "candidates_active": 4,
+   "candidates_active": 8,
    "screened_total": 212,
    "passed_total": 0,
    "failed_total": 212
@@ -286,10 +286,10 @@
    }
   },
   "feed": {
-   "last_poll_at": "2026-10-25T03:28:17+00:00",
+   "last_poll_at": "2026-10-25T03:48:22+00:00",
    "last_error": null,
-   "coins_seen_total": 216,
-   "activations_total": 216
+   "coins_seen_total": 220,
+   "activations_total": 220
   }
  }
 }
