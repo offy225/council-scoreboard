@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-10-26T00:42:35Z",
-  "scored": 50,
-  "won": 37,
+  "updated_at": "2026-10-26T01:27:37Z",
+  "scored": 51,
+  "won": 38,
   "lost": 13,
-  "win_rate": 0.74,
-  "brier": 0.2113,
-  "log_loss": 0.6088,
+  "win_rate": 0.7450980392156863,
+  "brier": 0.2081,
+  "log_loss": 0.6018,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 22,
-      "won": 18,
+      "scored": 23,
+      "won": 19,
       "lost": 4,
-      "win_rate": 0.8181818181818182,
-      "brier": 0.1938
+      "win_rate": 0.8260869565217391,
+      "brier": 0.1875
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -583,6 +583,17 @@
       "result": "WON",
       "price": 0.715,
       "price_source": "reference"
+    },
+    {
+      "date": "2026-10-25",
+      "game": "LAC at OKC",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "OKC",
+      "prob": 0.7779,
+      "final": "OKC 108 \u00b7 LAC 101",
+      "result": "WON",
+      "price": 0.905,
+      "price_source": "reference"
     }
   ],
   "open_bets": [
@@ -602,15 +613,6 @@
       "stake": 50.0,
       "status": "OPEN",
       "price": 0.505,
-      "price_source": "reference"
-    },
-    {
-      "game": "LAC at OKC",
-      "pick": "OKC",
-      "prob": 0.7779,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.905,
       "price_source": "reference"
     },
     {
@@ -1182,14 +1184,25 @@
       "price": 0.715,
       "price_source": "reference",
       "profit": 19.93
+    },
+    {
+      "date": "2026-10-25",
+      "game": "LAC at OKC",
+      "pick": "OKC",
+      "prob": 0.7779,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.905,
+      "price_source": "reference",
+      "profit": 5.25
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 825.72,
-    "total_won": 1425.72,
+    "balance": 830.97,
+    "total_won": 1430.97,
     "total_lost": 650.0,
-    "settled_count": 50,
-    "ref_priced_count": 50
+    "settled_count": 51,
+    "ref_priced_count": 51
   }
 }
