@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-26T03:57:35Z",
+  "updated_at": "2026-10-26T14:42:37Z",
   "scored": 55,
   "won": 41,
   "lost": 14,
@@ -640,7 +640,89 @@
       "price_source": "reference"
     }
   ],
-  "open_bets": [],
+  "open_bets": [
+    {
+      "game": "WSH at CHA",
+      "pick": "CHA",
+      "prob": 0.6464,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.555,
+      "price_source": "reference"
+    },
+    {
+      "game": "MIN at CLE",
+      "pick": "CLE",
+      "prob": 0.5463,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.625,
+      "price_source": "reference"
+    },
+    {
+      "game": "CHI at BOS",
+      "pick": "BOS",
+      "prob": 0.8223,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.865,
+      "price_source": "reference"
+    },
+    {
+      "game": "DAL at MIA",
+      "pick": "MIA",
+      "prob": 0.692,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.745,
+      "price_source": "reference"
+    },
+    {
+      "game": "IND at MIL",
+      "pick": "MIL",
+      "prob": 0.5287,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.385,
+      "price_source": "reference"
+    },
+    {
+      "game": "PHX at OKC",
+      "pick": "OKC",
+      "prob": 0.8177,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.785,
+      "price_source": "reference"
+    },
+    {
+      "game": "ATL at HOU",
+      "pick": "HOU",
+      "prob": 0.6373,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.665,
+      "price_source": "reference"
+    },
+    {
+      "game": "MEM at UTAH",
+      "pick": "UTAH",
+      "prob": 0.697,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.495,
+      "price_source": "reference"
+    },
+    {
+      "game": "GS at DEN",
+      "pick": "DEN",
+      "prob": 0.7494,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.715,
+      "price_source": "reference"
+    }
+  ],
   "settled_bets": [
     {
       "date": "2026-10-16",
