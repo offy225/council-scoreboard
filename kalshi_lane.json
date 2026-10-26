@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-10-26T00:27:57Z",
-  "scored": 49,
-  "won": 36,
+  "updated_at": "2026-10-26T00:42:35Z",
+  "scored": 50,
+  "won": 37,
   "lost": 13,
-  "win_rate": 0.7346938775510204,
-  "brier": 0.2129,
-  "log_loss": 0.6119,
+  "win_rate": 0.74,
+  "brier": 0.2113,
+  "log_loss": 0.6088,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 21,
-      "won": 17,
+      "scored": 22,
+      "won": 18,
       "lost": 4,
-      "win_rate": 0.8095238095238095,
-      "brier": 0.1966
+      "win_rate": 0.8181818181818182,
+      "brier": 0.1938
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -572,18 +572,20 @@
       "result": "WON",
       "price": 0.685,
       "price_source": "reference"
+    },
+    {
+      "date": "2026-10-25",
+      "game": "IND at BKN",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "IND",
+      "prob": 0.6341,
+      "final": "BKN 109 \u00b7 IND 136",
+      "result": "WON",
+      "price": 0.715,
+      "price_source": "reference"
     }
   ],
   "open_bets": [
-    {
-      "game": "IND at BKN",
-      "pick": "IND",
-      "prob": 0.6341,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.715,
-      "price_source": "reference"
-    },
     {
       "game": "ORL at NY",
       "pick": "NY",
@@ -1169,14 +1171,25 @@
       "price": 0.685,
       "price_source": "reference",
       "profit": 22.99
+    },
+    {
+      "date": "2026-10-25",
+      "game": "IND at BKN",
+      "pick": "IND",
+      "prob": 0.6341,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.715,
+      "price_source": "reference",
+      "profit": 19.93
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 805.79,
-    "total_won": 1405.79,
+    "balance": 825.72,
+    "total_won": 1425.72,
     "total_lost": 650.0,
-    "settled_count": 49,
-    "ref_priced_count": 49
+    "settled_count": 50,
+    "ref_priced_count": 50
   }
 }
