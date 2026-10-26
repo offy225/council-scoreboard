@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-10-26T02:12:58Z",
-  "scored": 54,
-  "won": 40,
+  "updated_at": "2026-10-26T03:42:47Z",
+  "scored": 55,
+  "won": 41,
   "lost": 14,
-  "win_rate": 0.7407407407407407,
-  "brier": 0.2067,
-  "log_loss": 0.599,
+  "win_rate": 0.7454545454545455,
+  "brier": 0.2069,
+  "log_loss": 0.5996,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 26,
-      "won": 21,
+      "scored": 27,
+      "won": 22,
       "lost": 5,
-      "win_rate": 0.8076923076923077,
-      "brier": 0.1868
+      "win_rate": 0.8148148148148148,
+      "brier": 0.1879
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -627,19 +627,20 @@
       "result": "WON",
       "price": 0.495,
       "price_source": "reference"
-    }
-  ],
-  "open_bets": [
+    },
     {
+      "date": "2026-10-25",
       "game": "MEM at SAC",
+      "model": "NBA v3.2 + PLATT",
       "pick": "MEM",
       "prob": 0.5341,
-      "stake": 50.0,
-      "status": "OPEN",
+      "final": "SAC 112 \u00b7 MEM 123",
+      "result": "WON",
       "price": 0.605,
       "price_source": "reference"
     }
   ],
+  "open_bets": [],
   "settled_bets": [
     {
       "date": "2026-10-16",
@@ -1234,14 +1235,25 @@
       "price": 0.495,
       "price_source": "reference",
       "profit": 51.01
+    },
+    {
+      "date": "2026-10-25",
+      "game": "MEM at SAC",
+      "pick": "MEM",
+      "prob": 0.5341,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.605,
+      "price_source": "reference",
+      "profit": 32.64
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 880.99,
-    "total_won": 1530.99,
+    "balance": 913.64,
+    "total_won": 1563.64,
     "total_lost": 700.0,
-    "settled_count": 54,
-    "ref_priced_count": 54
+    "settled_count": 55,
+    "ref_priced_count": 55
   }
 }
