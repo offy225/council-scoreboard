@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-10-26T01:27:37Z",
-  "scored": 51,
-  "won": 38,
-  "lost": 13,
-  "win_rate": 0.7450980392156863,
-  "brier": 0.2081,
-  "log_loss": 0.6018,
+  "updated_at": "2026-10-26T01:42:35Z",
+  "scored": 53,
+  "won": 39,
+  "lost": 14,
+  "win_rate": 0.7358490566037735,
+  "brier": 0.2083,
+  "log_loss": 0.6024,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 23,
-      "won": 19,
-      "lost": 4,
-      "win_rate": 0.8260869565217391,
-      "brier": 0.1875
+      "scored": 25,
+      "won": 20,
+      "lost": 5,
+      "win_rate": 0.8,
+      "brier": 0.1896
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -586,6 +586,28 @@
     },
     {
       "date": "2026-10-25",
+      "game": "ORL at NY",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "NY",
+      "prob": 0.5088,
+      "final": "NY 102 \u00b7 ORL 111",
+      "result": "LOST",
+      "price": 0.715,
+      "price_source": "reference"
+    },
+    {
+      "date": "2026-10-25",
+      "game": "TOR at MIN",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "MIN",
+      "prob": 0.5897,
+      "final": "MIN 117 \u00b7 TOR 94",
+      "result": "WON",
+      "price": 0.505,
+      "price_source": "reference"
+    },
+    {
+      "date": "2026-10-25",
       "game": "LAC at OKC",
       "model": "NBA v3.2 + PLATT",
       "pick": "OKC",
@@ -597,24 +619,6 @@
     }
   ],
   "open_bets": [
-    {
-      "game": "ORL at NY",
-      "pick": "NY",
-      "prob": 0.5088,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.715,
-      "price_source": "reference"
-    },
-    {
-      "game": "TOR at MIN",
-      "pick": "MIN",
-      "prob": 0.5897,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.505,
-      "price_source": "reference"
-    },
     {
       "game": "DET at PHI",
       "pick": "DET",
@@ -1187,6 +1191,28 @@
     },
     {
       "date": "2026-10-25",
+      "game": "ORL at NY",
+      "pick": "NY",
+      "prob": 0.5088,
+      "stake": 50.0,
+      "result": "LOST",
+      "price": 0.715,
+      "price_source": "reference",
+      "profit": -50.0
+    },
+    {
+      "date": "2026-10-25",
+      "game": "TOR at MIN",
+      "pick": "MIN",
+      "prob": 0.5897,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.505,
+      "price_source": "reference",
+      "profit": 49.01
+    },
+    {
+      "date": "2026-10-25",
       "game": "LAC at OKC",
       "pick": "OKC",
       "prob": 0.7779,
@@ -1199,10 +1225,10 @@
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 830.97,
-    "total_won": 1430.97,
-    "total_lost": 650.0,
-    "settled_count": 51,
-    "ref_priced_count": 51
+    "balance": 829.98,
+    "total_won": 1479.98,
+    "total_lost": 700.0,
+    "settled_count": 53,
+    "ref_priced_count": 53
   }
 }
