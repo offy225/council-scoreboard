@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-10-26T01:42:35Z",
-  "scored": 53,
-  "won": 39,
+  "updated_at": "2026-10-26T02:12:58Z",
+  "scored": 54,
+  "won": 40,
   "lost": 14,
-  "win_rate": 0.7358490566037735,
-  "brier": 0.2083,
-  "log_loss": 0.6024,
+  "win_rate": 0.7407407407407407,
+  "brier": 0.2067,
+  "log_loss": 0.599,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 25,
-      "won": 20,
+      "scored": 26,
+      "won": 21,
       "lost": 5,
-      "win_rate": 0.8,
-      "brier": 0.1896
+      "win_rate": 0.8076923076923077,
+      "brier": 0.1868
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -616,18 +616,20 @@
       "result": "WON",
       "price": 0.905,
       "price_source": "reference"
+    },
+    {
+      "date": "2026-10-25",
+      "game": "DET at PHI",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "DET",
+      "prob": 0.6576,
+      "final": "PHI 93 \u00b7 DET 106",
+      "result": "WON",
+      "price": 0.495,
+      "price_source": "reference"
     }
   ],
   "open_bets": [
-    {
-      "game": "DET at PHI",
-      "pick": "DET",
-      "prob": 0.6576,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.495,
-      "price_source": "reference"
-    },
     {
       "game": "MEM at SAC",
       "pick": "MEM",
@@ -1221,14 +1223,25 @@
       "price": 0.905,
       "price_source": "reference",
       "profit": 5.25
+    },
+    {
+      "date": "2026-10-25",
+      "game": "DET at PHI",
+      "pick": "DET",
+      "prob": 0.6576,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.495,
+      "price_source": "reference",
+      "profit": 51.01
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 829.98,
-    "total_won": 1479.98,
+    "balance": 880.99,
+    "total_won": 1530.99,
     "total_lost": 700.0,
-    "settled_count": 53,
-    "ref_priced_count": 53
+    "settled_count": 54,
+    "ref_priced_count": 54
   }
 }
