@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-10-25T15:12:32Z",
-  "scored": 48,
-  "won": 35,
+  "updated_at": "2026-10-26T00:01:03Z",
+  "scored": 49,
+  "won": 36,
   "lost": 13,
-  "win_rate": 0.7291666666666666,
-  "brier": 0.2128,
-  "log_loss": 0.6115,
+  "win_rate": 0.7346938775510204,
+  "brier": 0.2129,
+  "log_loss": 0.6119,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 20,
-      "won": 16,
+      "scored": 21,
+      "won": 17,
       "lost": 4,
-      "win_rate": 0.8,
-      "brier": 0.1955
+      "win_rate": 0.8095238095238095,
+      "brier": 0.1966
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -561,18 +561,20 @@
       "result": "WON",
       "price": 0.765,
       "price_source": "reference"
+    },
+    {
+      "date": "2026-10-25",
+      "game": "LAL at UTAH",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "LAL",
+      "prob": 0.5316,
+      "final": "UTAH 123 \u00b7 LAL 132",
+      "result": "WON",
+      "price": 0.685,
+      "price_source": "reference"
     }
   ],
   "open_bets": [
-    {
-      "game": "LAL at UTAH",
-      "pick": "LAL",
-      "prob": 0.5316,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.685,
-      "price_source": "reference"
-    },
     {
       "game": "IND at BKN",
       "pick": "IND",
@@ -1156,14 +1158,25 @@
       "price": 0.765,
       "price_source": "reference",
       "profit": 15.36
+    },
+    {
+      "date": "2026-10-25",
+      "game": "LAL at UTAH",
+      "pick": "LAL",
+      "prob": 0.5316,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.685,
+      "price_source": "reference",
+      "profit": 22.99
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 782.8,
-    "total_won": 1382.8,
+    "balance": 805.79,
+    "total_won": 1405.79,
     "total_lost": 650.0,
-    "settled_count": 48,
-    "ref_priced_count": 48
+    "settled_count": 49,
+    "ref_priced_count": 49
   }
 }
