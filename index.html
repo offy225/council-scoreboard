@@ -5653,21 +5653,73 @@ table.bd tr.ov-total td {
   var lastCamT = 0;
   function w2s(wx, wy) { return [wx * transform.k + transform.x, wy * transform.k + transform.y]; }
   function s2w(sx, sy) { return [(sx - transform.x) / transform.k, (sy - transform.y) / transform.k]; }
-  /* ---------- organic drift — the breathing layer. Every node gets a
-     slow, tiny, never-repeating sway: two incommensurate sine waves
-     per axis, a few world units over 15–40 second periods, phased per
-     node. It is applied to the RENDERED position only (npos), so the
-     simulation keeps the structure and the field simply breathes on
-     top of it — alive like the reference vault, calm, not busy.
+  /* ---------- organic drift — the breathing layer, plus the living
+     current that runs through it. Two motions, both applied to the
+     RENDERED position only (npos), so the simulation keeps the
+     structure and the field simply lives on top of it:
+     1) the breath — every node gets a slow, tiny, never-repeating
+        sway: two incommensurate sine waves per axis, a few world
+        units over 15–40 second periods, phased per node.
+     2) the current — a slow wave that TRAVELS through the field, so
+        the displacement depends on where a node sits, not on the
+        node itself: neighbours lean together, whole galaxies sway
+        as one body, and a ripple visibly sweeps the cosmos the way
+        a school of fish ripples as a single mass. Two crossing
+        travelling waves (periods ~21s and ~39s, wavelengths a few
+        hundred world units) plus a slow spiral swell around the
+        core, all summed — incommensurate, so the pattern never
+        quite repeats. Amplitudes stay in the low teens of world
+        units: unmistakably alive, never enough to tear the layout.
+     The drift is a FAR-VIEW effect, like the eel school: from
+     the fit view the field reads as one flowing mass, but ALL of
+     it — breath and current alike — is scaled by the camera zoom
+     (flowScale): full strength at fit zoom and below, then a
+     smooth falloff as the camera closes in, steeper than 1/k, so
+     a node's wander measured in SCREEN pixels actually shrinks
+     the deeper you go. Up close the motion is a faint tremor and
+     every individual node and file dot sits essentially where the
+     layout put it — distinct, sharp, readable and tappable, never
+     melted into its neighbours or smeared by the flow.
      Purely decorative: it carries no data and is labelled as drift. */
   var DZERO = [0, 0];
+  /* how strong the drift runs at the current zoom: 1 at k <= 1.1
+     (fit view and wider — the whole field in frame), then a power
+     falloff — ~0.63 at k=1.6, ~0.34 at the k=2.6 selection
+     fly-to, ~0.17 deep in at k=4.5, floored at 0.12 so a whisper
+     of life remains — so closing in trades the mass-flow for
+     individual stillness, exactly like the reference video */
+  function flowScale() {
+    var k = transform.k || 1;
+    if (k <= 1.1) return 1;
+    return Math.max(0.12, Math.pow(1.1 / k, 1.25));
+  }
   function driftOf(n, now) {
     if (RM) return DZERO;
     var p = n.phase;
-    return [
-      Math.sin(now * 0.00016 + p) * 3.1 + Math.sin(now * 0.000041 + p * 1.7) * 2.3,
-      Math.cos(now * 0.00013 + p * 1.31) * 3.0 + Math.sin(now * 0.000052 + p * 0.6) * 2.2
-    ];
+    var dx = Math.sin(now * 0.00016 + p) * 3.1 + Math.sin(now * 0.000041 + p * 1.7) * 2.3;
+    var dy = Math.cos(now * 0.00013 + p * 1.31) * 3.0 + Math.sin(now * 0.000052 + p * 0.6) * 2.2;
+    // the current — spatial phase from the node's anchor, so the
+    // whole field shares one moving body of water
+    var ax = n.ax, ay = n.ay;
+    // wave one: travels diagonally down-field, nodes undulate
+    // across its path like a ribbon in a slow river
+    var w1 = Math.sin(ax * 0.0085 + ay * 0.005 - now * 0.00030);
+    dx += w1 * -3.6; dy += w1 * 6.0;
+    // wave two: slower, crossing the first at another angle, so the
+    // swell never settles into a single mechanical rhythm
+    var w2 = Math.sin(ay * 0.0038 - ax * 0.0058 + now * 0.00016);
+    dx += w2 * -3.0; dy += w2 * -4.6;
+    // the spiral swell: a ripple that circles the core, strongest
+    // mid-field, so the galaxies slowly wheel around the centre
+    var rr = Math.sqrt(ax * ax + ay * ay);
+    if (rr > 1) {
+      var w3 = Math.sin(rr * 0.0075 - now * 0.00021) * 4.5;
+      dx += (-ay / rr) * w3; dy += (ax / rr) * w3;
+    }
+    // one zoom gate over the whole drift (see flowScale above):
+    // the mass flows from far away; up close each node holds still
+    var fs = flowScale();
+    return [dx * fs, dy * fs];
   }
   function npos(n, now) { var d = driftOf(n, now); return [n.x + d[0], n.y + d[1]]; }
   function fitScale() { return Math.max(0.3, Math.min(W / 1180, H / 980, 1.05)); }
@@ -6100,10 +6152,18 @@ table.bd tr.ov-total td {
       ctx.drawImage(GLOW_SOFT[NEB[ni][2]], np[0] - nR, np[1] - nR, nR * 2, nR * 2);
       ctx.globalAlpha = 1;
     }
-    // background star dust — decorative depth, not data
+    // background star dust — decorative depth, not data. It rides
+    // its own far-slower current, so even the depth behind the
+    // graph is flowing water, never a frozen backdrop
     for (var i = 0; i < stars.length; i++) {
       var st = stars[i];
-      var sp = w2s(st.x, st.y);
+      var sx2 = st.x, sy2 = st.y;
+      if (!RM) {
+        var sph = st.x * 0.0016 + st.y * 0.0010 - now * 0.00005 + st.p;
+        var sfs = flowScale();
+        sx2 += Math.sin(sph) * 14 * sfs; sy2 += Math.cos(sph * 0.9) * 11 * sfs;
+      }
+      var sp = w2s(sx2, sy2);
       if (sp[0] < -10 || sp[0] > W + 10 || sp[1] < -10 || sp[1] > H + 10) continue;
       var tw = RM ? 0.4 : 0.3 + 0.18 * (0.5 + 0.5 * Math.sin(now * 0.0006 + st.p));
       var ss2 = Math.max(st.r * transform.k, 0.8) * 1.7;
@@ -6149,6 +6209,10 @@ table.bd tr.ov-total td {
       var adx = pb[0] - pa[0], ady = pb[1] - pa[1];
       var aL = Math.sqrt(adx * adx + ady * ady) || 1;
       var bow = (e.file ? 0.07 : 0.13) * (0.6 + 0.4 * Math.sin(i * 12.9898)) * (i % 2 ? 1 : -1);
+      // the same travelling wave that moves the nodes bends the
+      // filaments too — the web ripples as one body instead of the
+      // stars swimming inside a rigid net
+      if (!RM) bow += 0.04 * flowScale() * Math.sin((ea2[0] + eb2[0]) * 0.00425 + (ea2[1] + eb2[1]) * 0.0025 - now * 0.00030);
       var cpx = (pa[0] + pb[0]) / 2 - ady / aL * aL * bow;
       var cpy = (pa[1] + pb[1]) / 2 + adx / aL * aL * bow;
       var wobE = ((e.a.wob || 0) + (e.b.wob || 0)) * 0.5;
@@ -6187,6 +6251,7 @@ table.bd tr.ov-total td {
       var pdx = ppb[0] - ppa[0], pdy = ppb[1] - ppa[1];
       var pL = Math.sqrt(pdx * pdx + pdy * pdy) || 1;
       var pbow = 0.13 * (0.6 + 0.4 * Math.sin(pu.ei * 12.9898)) * (pu.ei % 2 ? 1 : -1);
+      if (!RM) pbow += 0.04 * flowScale() * Math.sin((pua[0] + pub[0]) * 0.00425 + (pua[1] + pub[1]) * 0.0025 - now * 0.00030);
       var pcx = (ppa[0] + ppb[0]) / 2 - pdy * pbow, pcy = (ppa[1] + ppb[1]) / 2 + pdx * pbow;
       var pt = pu.t, pmt = 1 - pt;
       var qx = pmt * pmt * ppa[0] + 2 * pmt * pt * pcx + pt * pt * ppb[0];
