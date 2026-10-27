@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-27T05:29:38Z",
+  "updated_at": "2026-10-27T06:57:25Z",
   "scored": 64,
   "won": 47,
   "lost": 17,
@@ -739,7 +739,44 @@
       "price_source": "reference"
     }
   ],
-  "open_bets": [],
+  "open_bets": [
+    {
+      "game": "BKN at BOS",
+      "pick": "BOS",
+      "prob": 0.9058,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.845,
+      "price_source": "reference"
+    },
+    {
+      "game": "DET at NY",
+      "pick": "DET",
+      "prob": 0.642,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.395,
+      "price_source": "reference"
+    },
+    {
+      "game": "SAC at SA",
+      "pick": "SA",
+      "prob": 0.7075,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.925,
+      "price_source": "reference"
+    },
+    {
+      "game": "POR at LAL",
+      "pick": "LAL",
+      "prob": 0.6346,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.575,
+      "price_source": "reference"
+    }
+  ],
   "settled_bets": [
     {
       "date": "2026-10-16",
