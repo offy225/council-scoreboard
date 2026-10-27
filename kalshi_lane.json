@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-10-27T02:12:34Z",
-  "scored": 59,
-  "won": 44,
+  "updated_at": "2026-10-27T03:00:11Z",
+  "scored": 62,
+  "won": 47,
   "lost": 15,
-  "win_rate": 0.7457627118644068,
-  "brier": 0.2071,
-  "log_loss": 0.5998,
+  "win_rate": 0.7580645161290323,
+  "brier": 0.2033,
+  "log_loss": 0.5916,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 31,
-      "won": 25,
+      "scored": 34,
+      "won": 28,
       "lost": 6,
-      "win_rate": 0.8064516129032258,
-      "brier": 0.1908
+      "win_rate": 0.8235294117647058,
+      "brier": 0.1853
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -682,36 +682,42 @@
       "result": "LOST",
       "price": 0.745,
       "price_source": "reference"
-    }
-  ],
-  "open_bets": [
+    },
     {
+      "date": "2026-10-26",
       "game": "IND at MIL",
+      "model": "NBA v3.2 + PLATT",
       "pick": "MIL",
       "prob": 0.5287,
-      "stake": 50.0,
-      "status": "OPEN",
+      "final": "MIL 110 \u00b7 IND 102",
+      "result": "WON",
       "price": 0.385,
       "price_source": "reference"
     },
     {
+      "date": "2026-10-26",
       "game": "PHX at OKC",
+      "model": "NBA v3.2 + PLATT",
       "pick": "OKC",
       "prob": 0.8177,
-      "stake": 50.0,
-      "status": "OPEN",
+      "final": "OKC 125 \u00b7 PHX 114",
+      "result": "WON",
       "price": 0.785,
       "price_source": "reference"
     },
     {
+      "date": "2026-10-26",
       "game": "ATL at HOU",
+      "model": "NBA v3.2 + PLATT",
       "pick": "HOU",
       "prob": 0.6373,
-      "stake": 50.0,
-      "status": "OPEN",
+      "final": "HOU 120 \u00b7 ATL 110",
+      "result": "WON",
       "price": 0.665,
       "price_source": "reference"
-    },
+    }
+  ],
+  "open_bets": [
     {
       "game": "MEM at UTAH",
       "pick": "UTAH",
@@ -1380,14 +1386,47 @@
       "price": 0.745,
       "price_source": "reference",
       "profit": -50.0
+    },
+    {
+      "date": "2026-10-26",
+      "game": "IND at MIL",
+      "pick": "MIL",
+      "prob": 0.5287,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.385,
+      "price_source": "reference",
+      "profit": 79.87
+    },
+    {
+      "date": "2026-10-26",
+      "game": "PHX at OKC",
+      "pick": "OKC",
+      "prob": 0.8177,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.785,
+      "price_source": "reference",
+      "profit": 13.69
+    },
+    {
+      "date": "2026-10-26",
+      "game": "ATL at HOU",
+      "pick": "HOU",
+      "prob": 0.6373,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.665,
+      "price_source": "reference",
+      "profit": 25.19
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 941.53,
-    "total_won": 1641.53,
+    "balance": 1060.28,
+    "total_won": 1760.28,
     "total_lost": 750.0,
-    "settled_count": 59,
-    "ref_priced_count": 59
+    "settled_count": 62,
+    "ref_priced_count": 62
   }
 }
