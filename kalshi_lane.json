@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-10-26T14:42:37Z",
-  "scored": 55,
-  "won": 41,
+  "updated_at": "2026-10-27T01:28:49Z",
+  "scored": 56,
+  "won": 42,
   "lost": 14,
-  "win_rate": 0.7454545454545455,
-  "brier": 0.2069,
-  "log_loss": 0.5996,
+  "win_rate": 0.75,
+  "brier": 0.2054,
+  "log_loss": 0.5966,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 27,
-      "won": 22,
+      "scored": 28,
+      "won": 23,
       "lost": 5,
-      "win_rate": 0.8148148148148148,
-      "brier": 0.1879
+      "win_rate": 0.8214285714285714,
+      "brier": 0.1857
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -638,18 +638,20 @@
       "result": "WON",
       "price": 0.605,
       "price_source": "reference"
+    },
+    {
+      "date": "2026-10-26",
+      "game": "WSH at CHA",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "CHA",
+      "prob": 0.6464,
+      "final": "CHA 110 \u00b7 WSH 103",
+      "result": "WON",
+      "price": 0.555,
+      "price_source": "reference"
     }
   ],
   "open_bets": [
-    {
-      "game": "WSH at CHA",
-      "pick": "CHA",
-      "prob": 0.6464,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.555,
-      "price_source": "reference"
-    },
     {
       "game": "MIN at CLE",
       "pick": "CLE",
@@ -1328,14 +1330,25 @@
       "price": 0.605,
       "price_source": "reference",
       "profit": 32.64
+    },
+    {
+      "date": "2026-10-26",
+      "game": "WSH at CHA",
+      "pick": "CHA",
+      "prob": 0.6464,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.555,
+      "price_source": "reference",
+      "profit": 40.09
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 913.64,
-    "total_won": 1563.64,
+    "balance": 953.73,
+    "total_won": 1603.73,
     "total_lost": 700.0,
-    "settled_count": 55,
-    "ref_priced_count": 55
+    "settled_count": 56,
+    "ref_priced_count": 56
   }
 }
