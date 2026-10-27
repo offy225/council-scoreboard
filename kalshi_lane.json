@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-10-27T04:00:55Z",
-  "scored": 63,
+  "updated_at": "2026-10-27T05:18:46Z",
+  "scored": 64,
   "won": 47,
-  "lost": 16,
-  "win_rate": 0.746031746031746,
-  "brier": 0.2078,
-  "log_loss": 0.6012,
+  "lost": 17,
+  "win_rate": 0.734375,
+  "brier": 0.2133,
+  "log_loss": 0.6134,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 35,
+      "scored": 36,
       "won": 28,
-      "lost": 7,
-      "win_rate": 0.8,
-      "brier": 0.1939
+      "lost": 8,
+      "win_rate": 0.7777777777777778,
+      "brier": 0.2041
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -726,19 +726,20 @@
       "result": "LOST",
       "price": 0.495,
       "price_source": "reference"
-    }
-  ],
-  "open_bets": [
+    },
     {
+      "date": "2026-10-26",
       "game": "GS at DEN",
+      "model": "NBA v3.2 + PLATT",
       "pick": "DEN",
       "prob": 0.7494,
-      "stake": 50.0,
-      "status": "OPEN",
+      "final": "DEN 114 \u00b7 GS 134",
+      "result": "LOST",
       "price": 0.715,
       "price_source": "reference"
     }
   ],
+  "open_bets": [],
   "settled_bets": [
     {
       "date": "2026-10-16",
@@ -1432,14 +1433,25 @@
       "price": 0.495,
       "price_source": "reference",
       "profit": -50.0
+    },
+    {
+      "date": "2026-10-26",
+      "game": "GS at DEN",
+      "pick": "DEN",
+      "prob": 0.7494,
+      "stake": 50.0,
+      "result": "LOST",
+      "price": 0.715,
+      "price_source": "reference",
+      "profit": -50.0
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 1010.28,
+    "balance": 960.28,
     "total_won": 1760.28,
-    "total_lost": 800.0,
-    "settled_count": 63,
-    "ref_priced_count": 63
+    "total_lost": 850.0,
+    "settled_count": 64,
+    "ref_priced_count": 64
   }
 }
