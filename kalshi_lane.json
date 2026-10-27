@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-10-27T03:00:11Z",
-  "scored": 62,
+  "updated_at": "2026-10-27T04:00:55Z",
+  "scored": 63,
   "won": 47,
-  "lost": 15,
-  "win_rate": 0.7580645161290323,
-  "brier": 0.2033,
-  "log_loss": 0.5916,
+  "lost": 16,
+  "win_rate": 0.746031746031746,
+  "brier": 0.2078,
+  "log_loss": 0.6012,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 34,
+      "scored": 35,
       "won": 28,
-      "lost": 6,
-      "win_rate": 0.8235294117647058,
-      "brier": 0.1853
+      "lost": 7,
+      "win_rate": 0.8,
+      "brier": 0.1939
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -715,18 +715,20 @@
       "result": "WON",
       "price": 0.665,
       "price_source": "reference"
+    },
+    {
+      "date": "2026-10-26",
+      "game": "MEM at UTAH",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "UTAH",
+      "prob": 0.697,
+      "final": "UTAH 105 \u00b7 MEM 110",
+      "result": "LOST",
+      "price": 0.495,
+      "price_source": "reference"
     }
   ],
   "open_bets": [
-    {
-      "game": "MEM at UTAH",
-      "pick": "UTAH",
-      "prob": 0.697,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.495,
-      "price_source": "reference"
-    },
     {
       "game": "GS at DEN",
       "pick": "DEN",
@@ -1419,14 +1421,25 @@
       "price": 0.665,
       "price_source": "reference",
       "profit": 25.19
+    },
+    {
+      "date": "2026-10-26",
+      "game": "MEM at UTAH",
+      "pick": "UTAH",
+      "prob": 0.697,
+      "stake": 50.0,
+      "result": "LOST",
+      "price": 0.495,
+      "price_source": "reference",
+      "profit": -50.0
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 1060.28,
+    "balance": 1010.28,
     "total_won": 1760.28,
-    "total_lost": 750.0,
-    "settled_count": 62,
-    "ref_priced_count": 62
+    "total_lost": 800.0,
+    "settled_count": 63,
+    "ref_priced_count": 63
   }
 }
