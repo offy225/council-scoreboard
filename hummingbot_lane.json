@@ -1,14 +1,14 @@
 {
-  "updated_at": "2026-10-26T15:45:27Z",
+  "updated_at": "2026-10-26T23:45:57Z",
   "station": "online",
-  "trades": 28,
+  "trades": 29,
   "buys": 13,
-  "sells": 15,
-  "volume_usdt": 658.1081,
-  "fees_usdt": 0.658093,
-  "net_pnl_usdt": -0.597432,
+  "sells": 16,
+  "volume_usdt": 681.29661,
+  "fees_usdt": 0.681281,
+  "net_pnl_usdt": -0.343172,
   "pnl_note": "Net = realized (won - lost across closed round trips) + unrealized (open inventory vs mark), from the sync's own fill figures. Paper only.",
-  "last_trade_at": "2026-10-26T15:21:05Z",
+  "last_trade_at": "2026-10-26T23:21:25Z",
   "source": "sqlite:/Users/willscott/hummingbot/data/conf_pure_mm_1.ymlstart.sqlite",
   "bot_alive": true,
   "status_note": null,
@@ -264,15 +264,24 @@
       "amount": 0.01,
       "fee_usdt": 0.023436,
       "pnl_usdt": null
+    },
+    {
+      "time": "2026-10-26T23:21:25Z",
+      "side": "sell",
+      "pair": "ETH-USDT",
+      "price": 2318.851,
+      "amount": 0.01,
+      "fee_usdt": 0.023188,
+      "pnl_usdt": null
     }
   ],
   "won_usdt": 1.124144,
   "lost_usdt": 1.467786,
   "round_trips": 13,
   "open_inventory": {
-    "ETH-USDT": -0.02
+    "ETH-USDT": -0.03
   },
-  "mark_price": 2339.775,
-  "mark_at": "2026-10-26T15:44:28Z",
-  "unrealized_usdt": -0.25379
+  "mark_price": 2324.325,
+  "mark_at": "2026-10-26T23:45:19Z",
+  "unrealized_usdt": 0.00047
 }
