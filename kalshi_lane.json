@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-10-27T01:43:18Z",
-  "scored": 56,
-  "won": 42,
-  "lost": 14,
-  "win_rate": 0.75,
-  "brier": 0.2054,
-  "log_loss": 0.5966,
+  "updated_at": "2026-10-27T02:12:34Z",
+  "scored": 59,
+  "won": 44,
+  "lost": 15,
+  "win_rate": 0.7457627118644068,
+  "brier": 0.2071,
+  "log_loss": 0.5998,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 28,
-      "won": 23,
-      "lost": 5,
-      "win_rate": 0.8214285714285714,
-      "brier": 0.1857
+      "scored": 31,
+      "won": 25,
+      "lost": 6,
+      "win_rate": 0.8064516129032258,
+      "brier": 0.1908
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -649,36 +649,42 @@
       "result": "WON",
       "price": 0.555,
       "price_source": "reference"
-    }
-  ],
-  "open_bets": [
+    },
     {
+      "date": "2026-10-26",
       "game": "MIN at CLE",
+      "model": "NBA v3.2 + PLATT",
       "pick": "CLE",
       "prob": 0.5463,
-      "stake": 50.0,
-      "status": "OPEN",
+      "final": "CLE 127 \u00b7 MIN 125",
+      "result": "WON",
       "price": 0.625,
       "price_source": "reference"
     },
     {
+      "date": "2026-10-26",
       "game": "CHI at BOS",
+      "model": "NBA v3.2 + PLATT",
       "pick": "BOS",
       "prob": 0.8223,
-      "stake": 50.0,
-      "status": "OPEN",
+      "final": "BOS 134 \u00b7 CHI 99",
+      "result": "WON",
       "price": 0.865,
       "price_source": "reference"
     },
     {
+      "date": "2026-10-26",
       "game": "DAL at MIA",
+      "model": "NBA v3.2 + PLATT",
       "pick": "MIA",
       "prob": 0.692,
-      "stake": 50.0,
-      "status": "OPEN",
+      "final": "MIA 109 \u00b7 DAL 113",
+      "result": "LOST",
       "price": 0.745,
       "price_source": "reference"
-    },
+    }
+  ],
+  "open_bets": [
     {
       "game": "IND at MIL",
       "pick": "MIL",
@@ -1341,14 +1347,47 @@
       "price": 0.555,
       "price_source": "reference",
       "profit": 40.09
+    },
+    {
+      "date": "2026-10-26",
+      "game": "MIN at CLE",
+      "pick": "CLE",
+      "prob": 0.5463,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.625,
+      "price_source": "reference",
+      "profit": 30.0
+    },
+    {
+      "date": "2026-10-26",
+      "game": "CHI at BOS",
+      "pick": "BOS",
+      "prob": 0.8223,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.865,
+      "price_source": "reference",
+      "profit": 7.8
+    },
+    {
+      "date": "2026-10-26",
+      "game": "DAL at MIA",
+      "pick": "MIA",
+      "prob": 0.692,
+      "stake": 50.0,
+      "result": "LOST",
+      "price": 0.745,
+      "price_source": "reference",
+      "profit": -50.0
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 953.73,
-    "total_won": 1603.73,
-    "total_lost": 700.0,
-    "settled_count": 56,
-    "ref_priced_count": 56
+    "balance": 941.53,
+    "total_won": 1641.53,
+    "total_lost": 750.0,
+    "settled_count": 59,
+    "ref_priced_count": 59
   }
 }
