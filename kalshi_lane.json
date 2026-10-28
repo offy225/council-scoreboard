@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-10-28T03:04:10Z",
-  "scored": 67,
+  "updated_at": "2026-10-28T08:52:39Z",
+  "scored": 68,
   "won": 49,
-  "lost": 18,
-  "win_rate": 0.7313432835820896,
-  "brier": 0.2113,
-  "log_loss": 0.6079,
+  "lost": 19,
+  "win_rate": 0.7205882352941176,
+  "brier": 0.2141,
+  "log_loss": 0.6138,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 39,
+      "scored": 40,
       "won": 30,
-      "lost": 9,
-      "win_rate": 0.7692307692307693,
-      "brier": 0.2014
+      "lost": 10,
+      "win_rate": 0.75,
+      "brier": 0.2065
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -770,18 +770,20 @@
       "result": "WON",
       "price": 0.925,
       "price_source": "reference"
+    },
+    {
+      "date": "2026-10-27",
+      "game": "POR at LAL",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "LAL",
+      "prob": 0.6346,
+      "final": "LAL 129 \u00b7 POR 136",
+      "result": "LOST",
+      "price": 0.575,
+      "price_source": "reference"
     }
   ],
   "open_bets": [
-    {
-      "game": "POR at LAL",
-      "pick": "LAL",
-      "prob": 0.6346,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.575,
-      "price_source": "reference"
-    },
     {
       "game": "MIA at ATL",
       "pick": "ATL",
@@ -1628,14 +1630,25 @@
       "price": 0.925,
       "price_source": "reference",
       "profit": 4.05
+    },
+    {
+      "date": "2026-10-27",
+      "game": "POR at LAL",
+      "pick": "LAL",
+      "prob": 0.6346,
+      "stake": 50.0,
+      "result": "LOST",
+      "price": 0.575,
+      "price_source": "reference",
+      "profit": -50.0
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 923.51,
+    "balance": 873.51,
     "total_won": 1773.51,
-    "total_lost": 900.0,
-    "settled_count": 67,
-    "ref_priced_count": 67
+    "total_lost": 950.0,
+    "settled_count": 68,
+    "ref_priced_count": 68
   }
 }
