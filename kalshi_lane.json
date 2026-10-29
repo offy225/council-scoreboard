@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-10-29T04:35:50Z",
-  "scored": 79,
+  "updated_at": "2026-10-29T05:12:38Z",
+  "scored": 80,
   "won": 56,
-  "lost": 23,
-  "win_rate": 0.7088607594936709,
-  "brier": 0.2191,
-  "log_loss": 0.6264,
+  "lost": 24,
+  "win_rate": 0.7,
+  "brier": 0.2206,
+  "log_loss": 0.6295,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 51,
+      "scored": 52,
       "won": 37,
-      "lost": 14,
-      "win_rate": 0.7254901960784313,
-      "brier": 0.2158
+      "lost": 15,
+      "win_rate": 0.7115384615384616,
+      "brier": 0.2181
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -902,18 +902,20 @@
       "result": "LOST",
       "price": 0.67,
       "price_source": "reference"
+    },
+    {
+      "date": "2026-10-28",
+      "game": "LAL at LAC",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "LAC",
+      "prob": 0.5827,
+      "final": "LAC 87 \u00b7 LAL 103",
+      "result": "LOST",
+      "price": 0.36,
+      "price_source": "reference"
     }
   ],
   "open_bets": [
-    {
-      "game": "LAL at LAC",
-      "pick": "LAC",
-      "prob": 0.5827,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.36,
-      "price_source": "reference"
-    },
     {
       "game": "CLE at ATL",
       "pick": "CLE",
@@ -1811,14 +1813,25 @@
       "price": 0.67,
       "price_source": "reference",
       "profit": -50.0
+    },
+    {
+      "date": "2026-10-28",
+      "game": "LAL at LAC",
+      "pick": "LAC",
+      "prob": 0.5827,
+      "stake": 50.0,
+      "result": "LOST",
+      "price": 0.36,
+      "price_source": "reference",
+      "profit": -50.0
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 836.49,
+    "balance": 786.49,
     "total_won": 1936.49,
-    "total_lost": 1150.0,
-    "settled_count": 79,
-    "ref_priced_count": 79
+    "total_lost": 1200.0,
+    "settled_count": 80,
+    "ref_priced_count": 80
   }
 }
