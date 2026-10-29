@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-10-29T01:57:47Z",
-  "scored": 72,
-  "won": 52,
-  "lost": 20,
-  "win_rate": 0.7222222222222222,
-  "brier": 0.2116,
-  "log_loss": 0.6087,
+  "updated_at": "2026-10-29T04:35:50Z",
+  "scored": 79,
+  "won": 56,
+  "lost": 23,
+  "win_rate": 0.7088607594936709,
+  "brier": 0.2191,
+  "log_loss": 0.6264,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 44,
-      "won": 33,
-      "lost": 11,
-      "win_rate": 0.75,
-      "brier": 0.203
+      "scored": 51,
+      "won": 37,
+      "lost": 14,
+      "win_rate": 0.7254901960784313,
+      "brier": 0.2158
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -825,72 +825,86 @@
       "result": "WON",
       "price": 0.605,
       "price_source": "reference"
-    }
-  ],
-  "open_bets": [
+    },
     {
+      "date": "2026-10-28",
       "game": "ORL at TOR",
+      "model": "NBA v3.2 + PLATT",
       "pick": "TOR",
       "prob": 0.5888,
-      "stake": 50.0,
-      "status": "OPEN",
+      "final": "TOR 129 \u00b7 ORL 99",
+      "result": "WON",
       "price": 0.64,
       "price_source": "reference"
     },
     {
+      "date": "2026-10-28",
       "game": "NY at CHI",
+      "model": "NBA v3.2 + PLATT",
       "pick": "NY",
       "prob": 0.5978,
-      "stake": 50.0,
-      "status": "OPEN",
+      "final": "CHI 127 \u00b7 NY 133",
+      "result": "WON",
       "price": 0.695,
       "price_source": "reference"
     },
     {
+      "date": "2026-10-28",
       "game": "HOU at MIL",
+      "model": "NBA v3.2 + PLATT",
       "pick": "HOU",
       "prob": 0.7209,
-      "stake": 50.0,
-      "status": "OPEN",
+      "final": "MIL 100 \u00b7 HOU 132",
+      "result": "WON",
       "price": 0.745,
       "price_source": "reference"
     },
     {
+      "date": "2026-10-28",
       "game": "GS at MIN",
+      "model": "NBA v3.2 + PLATT",
       "pick": "MIN",
       "prob": 0.7112,
-      "stake": 50.0,
-      "status": "OPEN",
+      "final": "MIN 114 \u00b7 GS 119",
+      "result": "LOST",
       "price": 0.59,
       "price_source": "reference"
     },
     {
+      "date": "2026-10-28",
       "game": "DEN at NO",
+      "model": "NBA v3.2 + PLATT",
       "pick": "DEN",
       "prob": 0.581,
-      "stake": 50.0,
-      "status": "OPEN",
+      "final": "NO 91 \u00b7 DEN 104",
+      "result": "WON",
       "price": 0.645,
       "price_source": "reference"
     },
     {
+      "date": "2026-10-28",
       "game": "SA at UTAH",
+      "model": "NBA v3.2 + PLATT",
       "pick": "UTAH",
       "prob": 0.5733,
-      "stake": 50.0,
-      "status": "OPEN",
+      "final": "UTAH 111 \u00b7 SA 117",
+      "result": "LOST",
       "price": 0.17,
       "price_source": "reference"
     },
     {
+      "date": "2026-10-28",
       "game": "OKC at DAL",
+      "model": "NBA v3.2 + PLATT",
       "pick": "OKC",
       "prob": 0.809,
-      "stake": 50.0,
-      "status": "OPEN",
+      "final": "DAL 120 \u00b7 OKC 96",
+      "result": "LOST",
       "price": 0.67,
       "price_source": "reference"
-    },
+    }
+  ],
+  "open_bets": [
     {
       "game": "LAL at LAC",
       "pick": "LAC",
@@ -898,6 +912,33 @@
       "stake": 50.0,
       "status": "OPEN",
       "price": 0.36,
+      "price_source": "reference"
+    },
+    {
+      "game": "CLE at ATL",
+      "pick": "CLE",
+      "prob": 0.5035,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.485,
+      "price_source": "reference"
+    },
+    {
+      "game": "SAC at NO",
+      "pick": "NO",
+      "prob": 0.7116,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.64,
+      "price_source": "reference"
+    },
+    {
+      "game": "MEM at POR",
+      "pick": "POR",
+      "prob": 0.7255,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.725,
       "price_source": "reference"
     }
   ],
@@ -1693,14 +1734,91 @@
       "price": 0.605,
       "price_source": "reference",
       "profit": 32.64
+    },
+    {
+      "date": "2026-10-28",
+      "game": "ORL at TOR",
+      "pick": "TOR",
+      "prob": 0.5888,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.64,
+      "price_source": "reference",
+      "profit": 28.12
+    },
+    {
+      "date": "2026-10-28",
+      "game": "NY at CHI",
+      "pick": "NY",
+      "prob": 0.5978,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.695,
+      "price_source": "reference",
+      "profit": 21.94
+    },
+    {
+      "date": "2026-10-28",
+      "game": "HOU at MIL",
+      "pick": "HOU",
+      "prob": 0.7209,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.745,
+      "price_source": "reference",
+      "profit": 17.11
+    },
+    {
+      "date": "2026-10-28",
+      "game": "GS at MIN",
+      "pick": "MIN",
+      "prob": 0.7112,
+      "stake": 50.0,
+      "result": "LOST",
+      "price": 0.59,
+      "price_source": "reference",
+      "profit": -50.0
+    },
+    {
+      "date": "2026-10-28",
+      "game": "DEN at NO",
+      "pick": "DEN",
+      "prob": 0.581,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.645,
+      "price_source": "reference",
+      "profit": 27.52
+    },
+    {
+      "date": "2026-10-28",
+      "game": "SA at UTAH",
+      "pick": "UTAH",
+      "prob": 0.5733,
+      "stake": 50.0,
+      "result": "LOST",
+      "price": 0.17,
+      "price_source": "reference",
+      "profit": -50.0
+    },
+    {
+      "date": "2026-10-28",
+      "game": "OKC at DAL",
+      "pick": "OKC",
+      "prob": 0.809,
+      "stake": 50.0,
+      "result": "LOST",
+      "price": 0.67,
+      "price_source": "reference",
+      "profit": -50.0
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 891.79,
-    "total_won": 1841.79,
-    "total_lost": 1000.0,
-    "settled_count": 72,
-    "ref_priced_count": 72
+    "balance": 836.49,
+    "total_won": 1936.49,
+    "total_lost": 1150.0,
+    "settled_count": 79,
+    "ref_priced_count": 79
   }
 }
