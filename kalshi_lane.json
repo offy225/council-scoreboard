@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-10-28T17:57:42Z",
-  "scored": 68,
-  "won": 49,
-  "lost": 19,
-  "win_rate": 0.7205882352941176,
-  "brier": 0.2141,
-  "log_loss": 0.6138,
+  "updated_at": "2026-10-29T01:46:24Z",
+  "scored": 71,
+  "won": 51,
+  "lost": 20,
+  "win_rate": 0.7183098591549296,
+  "brier": 0.2117,
+  "log_loss": 0.6087,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 40,
-      "won": 30,
-      "lost": 10,
-      "win_rate": 0.75,
-      "brier": 0.2065
+      "scored": 43,
+      "won": 32,
+      "lost": 11,
+      "win_rate": 0.7441860465116279,
+      "brier": 0.2029
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -781,36 +781,42 @@
       "result": "LOST",
       "price": 0.575,
       "price_source": "reference"
-    }
-  ],
-  "open_bets": [
+    },
     {
+      "date": "2026-10-28",
       "game": "MIA at ATL",
+      "model": "NBA v3.2 + PLATT",
       "pick": "ATL",
       "prob": 0.5223,
-      "stake": 50.0,
-      "status": "OPEN",
+      "final": "ATL 117 \u00b7 MIA 129",
+      "result": "LOST",
       "price": 0.575,
       "price_source": "reference"
     },
     {
+      "date": "2026-10-28",
       "game": "WSH at CLE",
+      "model": "NBA v3.2 + PLATT",
       "pick": "CLE",
       "prob": 0.6861,
-      "stake": 50.0,
-      "status": "OPEN",
+      "final": "CLE 121 \u00b7 WSH 111",
+      "result": "WON",
       "price": 0.785,
       "price_source": "reference"
     },
     {
+      "date": "2026-10-28",
       "game": "CHA at DET",
+      "model": "NBA v3.2 + PLATT",
       "pick": "DET",
       "prob": 0.6911,
-      "stake": 50.0,
-      "status": "OPEN",
+      "final": "DET 97 \u00b7 CHA 89",
+      "result": "WON",
       "price": 0.695,
       "price_source": "reference"
-    },
+    }
+  ],
+  "open_bets": [
     {
       "game": "PHI at IND",
       "pick": "PHI",
@@ -1641,14 +1647,47 @@
       "price": 0.575,
       "price_source": "reference",
       "profit": -50.0
+    },
+    {
+      "date": "2026-10-28",
+      "game": "MIA at ATL",
+      "pick": "ATL",
+      "prob": 0.5223,
+      "stake": 50.0,
+      "result": "LOST",
+      "price": 0.575,
+      "price_source": "reference",
+      "profit": -50.0
+    },
+    {
+      "date": "2026-10-28",
+      "game": "WSH at CLE",
+      "pick": "CLE",
+      "prob": 0.6861,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.785,
+      "price_source": "reference",
+      "profit": 13.69
+    },
+    {
+      "date": "2026-10-28",
+      "game": "CHA at DET",
+      "pick": "DET",
+      "prob": 0.6911,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.695,
+      "price_source": "reference",
+      "profit": 21.94
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 873.51,
-    "total_won": 1773.51,
-    "total_lost": 950.0,
-    "settled_count": 68,
-    "ref_priced_count": 68
+    "balance": 859.14,
+    "total_won": 1809.14,
+    "total_lost": 1000.0,
+    "settled_count": 71,
+    "ref_priced_count": 71
   }
 }
