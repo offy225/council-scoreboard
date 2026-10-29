@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-10-29T01:46:24Z",
-  "scored": 71,
-  "won": 51,
+  "updated_at": "2026-10-29T01:57:47Z",
+  "scored": 72,
+  "won": 52,
   "lost": 20,
-  "win_rate": 0.7183098591549296,
-  "brier": 0.2117,
+  "win_rate": 0.7222222222222222,
+  "brier": 0.2116,
   "log_loss": 0.6087,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 43,
-      "won": 32,
+      "scored": 44,
+      "won": 33,
       "lost": 11,
-      "win_rate": 0.7441860465116279,
-      "brier": 0.2029
+      "win_rate": 0.75,
+      "brier": 0.203
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -814,18 +814,20 @@
       "result": "WON",
       "price": 0.695,
       "price_source": "reference"
+    },
+    {
+      "date": "2026-10-28",
+      "game": "PHI at IND",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "PHI",
+      "prob": 0.547,
+      "final": "IND 109 \u00b7 PHI 114",
+      "result": "WON",
+      "price": 0.605,
+      "price_source": "reference"
     }
   ],
   "open_bets": [
-    {
-      "game": "PHI at IND",
-      "pick": "PHI",
-      "prob": 0.547,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.605,
-      "price_source": "reference"
-    },
     {
       "game": "ORL at TOR",
       "pick": "TOR",
@@ -1680,14 +1682,25 @@
       "price": 0.695,
       "price_source": "reference",
       "profit": 21.94
+    },
+    {
+      "date": "2026-10-28",
+      "game": "PHI at IND",
+      "pick": "PHI",
+      "prob": 0.547,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.605,
+      "price_source": "reference",
+      "profit": 32.64
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 859.14,
-    "total_won": 1809.14,
+    "balance": 891.79,
+    "total_won": 1841.79,
     "total_lost": 1000.0,
-    "settled_count": 71,
-    "ref_priced_count": 71
+    "settled_count": 72,
+    "ref_priced_count": 72
   }
 }
