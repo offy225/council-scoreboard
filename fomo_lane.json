@@ -1,7 +1,7 @@
 {
  "lane": "fomo_shadow_copy",
  "paper_only": true,
- "updated_at": "2026-10-30T12:59:34+00:00",
+ "updated_at": "2026-10-30T13:14:36+00:00",
  "station": "awaiting_watchlist",
  "note": "Watchlist is empty \u2014 waiting on Will's ~5 leader wallet addresses.",
  "leaders_followed": 0,
@@ -191,9 +191,9 @@
    }
   },
   "feed": {
-   "last_poll_at": "2026-10-30T12:59:34+00:00",
+   "last_poll_at": "2026-10-30T13:14:35+00:00",
    "last_error": null,
-   "coins_seen_total": 44098,
+   "coins_seen_total": 44173,
    "activations_total": 1473
   }
  },
@@ -211,7 +211,7 @@
   "lane": "cobra_graduated_momentum",
   "track": "graduated",
   "paper_only": true,
-  "updated_at": "2026-10-30T13:00:43+00:00",
+  "updated_at": "2026-10-30T13:16:36+00:00",
   "station": "screening",
   "note": "Graduated momentum track \u2014 separate $250 shadow account, $25 stakes. Watches pump.fun coins AFTER graduation (bonding curve complete, trading on a DEX) and shadow-enters only confirmed continuation: above the ~$69K graduation mark, +20% over the graduation price across at least two polls, buyers still coming in, creator not dumping. Screen failures are ghost-tracked so the screen itself is graded. Graduation time/price are stated proxies (first-observed-complete; $69K curve-complete mark) \u2014 see SPEC_GRADUATED.md.",
   "start_balance_usdt": 250.0,
@@ -254,7 +254,7 @@
    }
   },
   "screening": {
-   "candidates_active": 4,
+   "candidates_active": 8,
    "screened_total": 955,
    "passed_total": 0,
    "failed_total": 955
@@ -266,10 +266,10 @@
    "net_usdt": 0
   },
   "failed_ghost": {
-   "trades": 828,
-   "won": 154,
-   "lost": 674,
-   "net_usdt": 5201.6137,
+   "trades": 837,
+   "won": 155,
+   "lost": 682,
+   "net_usdt": 5034.2816,
    "note": "Ghost P&L = what entering the graduated coins the continuation screen REJECTED would have made, same friction + exit rules, no shadow cash."
   },
   "screen_config": {
@@ -295,10 +295,10 @@
    }
   },
   "feed": {
-   "last_poll_at": "2026-10-30T12:59:35+00:00",
+   "last_poll_at": "2026-10-30T13:14:39+00:00",
    "last_error": null,
-   "coins_seen_total": 959,
-   "activations_total": 959
+   "coins_seen_total": 963,
+   "activations_total": 963
   }
  }
 }
