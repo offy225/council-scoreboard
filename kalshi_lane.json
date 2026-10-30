@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-10-29T12:37:33Z",
-  "scored": 80,
-  "won": 56,
+  "updated_at": "2026-10-30T02:28:17Z",
+  "scored": 81,
+  "won": 57,
   "lost": 24,
-  "win_rate": 0.7,
-  "brier": 0.2206,
-  "log_loss": 0.6295,
+  "win_rate": 0.7037037037037037,
+  "brier": 0.2189,
+  "log_loss": 0.6259,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 52,
-      "won": 37,
+      "scored": 53,
+      "won": 38,
       "lost": 15,
-      "win_rate": 0.7115384615384616,
-      "brier": 0.2181
+      "win_rate": 0.7169811320754716,
+      "brier": 0.2156
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -913,6 +913,17 @@
       "result": "LOST",
       "price": 0.36,
       "price_source": "reference"
+    },
+    {
+      "date": "2026-10-29",
+      "game": "SAC at NO",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "NO",
+      "prob": 0.7116,
+      "final": "NO 132 \u00b7 SAC 120",
+      "result": "WON",
+      "price": 0.64,
+      "price_source": "reference"
     }
   ],
   "open_bets": [
@@ -923,15 +934,6 @@
       "stake": 50.0,
       "status": "OPEN",
       "price": 0.485,
-      "price_source": "reference"
-    },
-    {
-      "game": "SAC at NO",
-      "pick": "NO",
-      "prob": 0.7116,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.64,
       "price_source": "reference"
     },
     {
@@ -1824,14 +1826,25 @@
       "price": 0.36,
       "price_source": "reference",
       "profit": -50.0
+    },
+    {
+      "date": "2026-10-29",
+      "game": "SAC at NO",
+      "pick": "NO",
+      "prob": 0.7116,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.64,
+      "price_source": "reference",
+      "profit": 28.12
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 786.49,
-    "total_won": 1936.49,
+    "balance": 814.61,
+    "total_won": 1964.61,
     "total_lost": 1200.0,
-    "settled_count": 80,
-    "ref_priced_count": 80
+    "settled_count": 81,
+    "ref_priced_count": 81
   }
 }
