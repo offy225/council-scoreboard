@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-30T02:43:02Z",
+  "updated_at": "2026-10-30T02:59:21Z",
   "scored": 82,
   "won": 57,
   "lost": 25,
@@ -945,6 +945,96 @@
       "stake": 50.0,
       "status": "OPEN",
       "price": 0.725,
+      "price_source": "reference"
+    },
+    {
+      "game": "CHA at WSH",
+      "pick": "CHA",
+      "prob": 0.5057,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.475,
+      "price_source": "reference"
+    },
+    {
+      "game": "CHI at BOS",
+      "pick": "BOS",
+      "prob": 0.8296,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.865,
+      "price_source": "reference"
+    },
+    {
+      "game": "DET at BKN",
+      "pick": "DET",
+      "prob": 0.8608,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.725,
+      "price_source": "reference"
+    },
+    {
+      "game": "NY at PHI",
+      "pick": "PHI",
+      "prob": 0.553,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.465,
+      "price_source": "reference"
+    },
+    {
+      "game": "ORL at TOR",
+      "pick": "TOR",
+      "prob": 0.6179,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.655,
+      "price_source": "reference"
+    },
+    {
+      "game": "IND at MIA",
+      "pick": "MIA",
+      "prob": 0.7247,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.715,
+      "price_source": "reference"
+    },
+    {
+      "game": "HOU at DAL",
+      "pick": "HOU",
+      "prob": 0.6805,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.655,
+      "price_source": "reference"
+    },
+    {
+      "game": "LAC at MIN",
+      "pick": "MIN",
+      "prob": 0.5789,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.715,
+      "price_source": "reference"
+    },
+    {
+      "game": "LAL at GS",
+      "pick": "LAL",
+      "prob": 0.5318,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.555,
+      "price_source": "reference"
+    },
+    {
+      "game": "DEN at PHX",
+      "pick": "DEN",
+      "prob": 0.5603,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.615,
       "price_source": "reference"
     }
   ],
