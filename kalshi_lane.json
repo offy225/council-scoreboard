@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-10-30T02:59:21Z",
-  "scored": 82,
+  "updated_at": "2026-10-30T04:28:01Z",
+  "scored": 83,
   "won": 57,
-  "lost": 25,
-  "win_rate": 0.6951219512195121,
-  "brier": 0.2193,
-  "log_loss": 0.6269,
+  "lost": 26,
+  "win_rate": 0.6867469879518072,
+  "brier": 0.223,
+  "log_loss": 0.6349,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 54,
+      "scored": 55,
       "won": 38,
-      "lost": 16,
-      "win_rate": 0.7037037037037037,
-      "brier": 0.2163
+      "lost": 17,
+      "win_rate": 0.6909090909090909,
+      "brier": 0.2219
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -935,18 +935,20 @@
       "result": "WON",
       "price": 0.64,
       "price_source": "reference"
+    },
+    {
+      "date": "2026-10-29",
+      "game": "MEM at POR",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "POR",
+      "prob": 0.7255,
+      "final": "POR 103 \u00b7 MEM 124",
+      "result": "LOST",
+      "price": 0.725,
+      "price_source": "reference"
     }
   ],
   "open_bets": [
-    {
-      "game": "MEM at POR",
-      "pick": "POR",
-      "prob": 0.7255,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.725,
-      "price_source": "reference"
-    },
     {
       "game": "CHA at WSH",
       "pick": "CHA",
@@ -1940,14 +1942,25 @@
       "price": 0.64,
       "price_source": "reference",
       "profit": 28.12
+    },
+    {
+      "date": "2026-10-29",
+      "game": "MEM at POR",
+      "pick": "POR",
+      "prob": 0.7255,
+      "stake": 50.0,
+      "result": "LOST",
+      "price": 0.725,
+      "price_source": "reference",
+      "profit": -50.0
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 764.61,
+    "balance": 714.61,
     "total_won": 1964.61,
-    "total_lost": 1250.0,
-    "settled_count": 82,
-    "ref_priced_count": 82
+    "total_lost": 1300.0,
+    "settled_count": 83,
+    "ref_priced_count": 83
   }
 }
