@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-10-31T03:00:03Z",
-  "scored": 91,
-  "won": 62,
+  "updated_at": "2026-10-31T04:42:48Z",
+  "scored": 92,
+  "won": 63,
   "lost": 29,
-  "win_rate": 0.6813186813186813,
-  "brier": 0.221,
-  "log_loss": 0.6297,
+  "win_rate": 0.6847826086956522,
+  "brier": 0.2207,
+  "log_loss": 0.6291,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 63,
-      "won": 43,
+      "scored": 64,
+      "won": 44,
       "lost": 20,
-      "win_rate": 0.6825396825396826,
-      "brier": 0.2192
+      "win_rate": 0.6875,
+      "brier": 0.2188
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -1034,6 +1034,17 @@
       "result": "WON",
       "price": 0.715,
       "price_source": "reference"
+    },
+    {
+      "date": "2026-10-30",
+      "game": "DEN at PHX",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "DEN",
+      "prob": 0.5603,
+      "final": "PHX 120 \u00b7 DEN 127",
+      "result": "WON",
+      "price": 0.615,
+      "price_source": "reference"
     }
   ],
   "open_bets": [
@@ -1044,15 +1055,6 @@
       "stake": 50.0,
       "status": "OPEN",
       "price": 0.555,
-      "price_source": "reference"
-    },
-    {
-      "game": "DEN at PHX",
-      "pick": "DEN",
-      "prob": 0.5603,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.615,
       "price_source": "reference"
     },
     {
@@ -2120,14 +2122,25 @@
       "price": 0.715,
       "price_source": "reference",
       "profit": 19.93
+    },
+    {
+      "date": "2026-10-30",
+      "game": "DEN at PHX",
+      "pick": "DEN",
+      "prob": 0.5603,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.615,
+      "price_source": "reference",
+      "profit": 31.3
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 688.77,
-    "total_won": 2088.77,
+    "balance": 720.07,
+    "total_won": 2120.07,
     "total_lost": 1450.0,
-    "settled_count": 91,
-    "ref_priced_count": 91
+    "settled_count": 92,
+    "ref_priced_count": 92
   }
 }
