@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-10-31T02:28:09Z",
-  "scored": 89,
-  "won": 61,
+  "updated_at": "2026-10-31T02:43:15Z",
+  "scored": 90,
+  "won": 62,
   "lost": 28,
-  "win_rate": 0.6853932584269663,
-  "brier": 0.2199,
-  "log_loss": 0.6274,
+  "win_rate": 0.6888888888888889,
+  "brier": 0.2183,
+  "log_loss": 0.624,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 61,
-      "won": 42,
+      "scored": 62,
+      "won": 43,
       "lost": 19,
-      "win_rate": 0.6885245901639344,
-      "brier": 0.2175
+      "win_rate": 0.6935483870967742,
+      "brier": 0.2152
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -1004,6 +1004,17 @@
     },
     {
       "date": "2026-10-30",
+      "game": "IND at MIA",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "MIA",
+      "prob": 0.7247,
+      "final": "MIA 145 \u00b7 IND 125",
+      "result": "WON",
+      "price": 0.715,
+      "price_source": "reference"
+    },
+    {
+      "date": "2026-10-30",
       "game": "LAC at MIN",
       "model": "NBA v3.2 + PLATT",
       "pick": "MIN",
@@ -1015,15 +1026,6 @@
     }
   ],
   "open_bets": [
-    {
-      "game": "IND at MIA",
-      "pick": "MIA",
-      "prob": 0.7247,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.715,
-      "price_source": "reference"
-    },
     {
       "game": "HOU at DAL",
       "pick": "HOU",
@@ -2023,6 +2025,17 @@
     },
     {
       "date": "2026-10-30",
+      "game": "IND at MIA",
+      "pick": "MIA",
+      "prob": 0.7247,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.715,
+      "price_source": "reference",
+      "profit": 19.93
+    },
+    {
+      "date": "2026-10-30",
       "game": "LAC at MIN",
       "pick": "MIN",
       "prob": 0.5789,
@@ -2035,10 +2048,10 @@
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 718.84,
-    "total_won": 2068.84,
+    "balance": 738.77,
+    "total_won": 2088.77,
     "total_lost": 1400.0,
-    "settled_count": 89,
-    "ref_priced_count": 89
+    "settled_count": 90,
+    "ref_priced_count": 90
   }
 }
