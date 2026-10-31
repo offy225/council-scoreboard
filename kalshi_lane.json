@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-31T02:57:46Z",
+  "updated_at": "2026-10-31T03:00:03Z",
   "scored": 91,
   "won": 62,
   "lost": 29,
@@ -1053,6 +1053,69 @@
       "stake": 50.0,
       "status": "OPEN",
       "price": 0.615,
+      "price_source": "reference"
+    },
+    {
+      "game": "POR at UTAH",
+      "pick": "UTAH",
+      "prob": 0.5166,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.325,
+      "price_source": "reference"
+    },
+    {
+      "game": "PHI at CHA",
+      "pick": "CHA",
+      "prob": 0.6108,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.485,
+      "price_source": "reference"
+    },
+    {
+      "game": "ATL at NO",
+      "pick": "ATL",
+      "prob": 0.5054,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.595,
+      "price_source": "reference"
+    },
+    {
+      "game": "SAC at MEM",
+      "pick": "MEM",
+      "prob": 0.5946,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.795,
+      "price_source": "reference"
+    },
+    {
+      "game": "CLE at MIL",
+      "pick": "CLE",
+      "prob": 0.7221,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.745,
+      "price_source": "reference"
+    },
+    {
+      "game": "MIN at SA",
+      "pick": "MIN",
+      "prob": 0.5998,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.185,
+      "price_source": "reference"
+    },
+    {
+      "game": "OKC at HOU",
+      "pick": "OKC",
+      "prob": 0.5811,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.345,
       "price_source": "reference"
     }
   ],
