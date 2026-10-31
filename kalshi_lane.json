@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-10-31T12:37:17Z",
-  "scored": 93,
+  "updated_at": "2026-10-31T21:43:13Z",
+  "scored": 94,
   "won": 63,
-  "lost": 30,
-  "win_rate": 0.6774193548387096,
-  "brier": 0.2214,
-  "log_loss": 0.6305,
+  "lost": 31,
+  "win_rate": 0.6702127659574468,
+  "brier": 0.2219,
+  "log_loss": 0.6315,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 65,
+      "scored": 66,
       "won": 44,
-      "lost": 21,
-      "win_rate": 0.676923076923077,
-      "brier": 0.2198
+      "lost": 22,
+      "win_rate": 0.6666666666666666,
+      "brier": 0.2205
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -1056,18 +1056,20 @@
       "result": "WON",
       "price": 0.615,
       "price_source": "reference"
+    },
+    {
+      "date": "2026-10-31",
+      "game": "POR at UTAH",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "UTAH",
+      "prob": 0.5166,
+      "final": "UTAH 90 \u00b7 POR 112",
+      "result": "LOST",
+      "price": 0.325,
+      "price_source": "reference"
     }
   ],
   "open_bets": [
-    {
-      "game": "POR at UTAH",
-      "pick": "UTAH",
-      "prob": 0.5166,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.325,
-      "price_source": "reference"
-    },
     {
       "game": "PHI at CHA",
       "pick": "CHA",
@@ -2146,14 +2148,25 @@
       "price": 0.615,
       "price_source": "reference",
       "profit": 31.3
+    },
+    {
+      "date": "2026-10-31",
+      "game": "POR at UTAH",
+      "pick": "UTAH",
+      "prob": 0.5166,
+      "stake": 50.0,
+      "result": "LOST",
+      "price": 0.325,
+      "price_source": "reference",
+      "profit": -50.0
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 670.07,
+    "balance": 620.07,
     "total_won": 2120.07,
-    "total_lost": 1500.0,
-    "settled_count": 93,
-    "ref_priced_count": 93
+    "total_lost": 1550.0,
+    "settled_count": 94,
+    "ref_priced_count": 94
   }
 }
