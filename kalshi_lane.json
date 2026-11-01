@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-01T00:57:49Z",
-  "scored": 95,
+  "updated_at": "2026-11-01T01:42:51Z",
+  "scored": 96,
   "won": 63,
-  "lost": 32,
-  "win_rate": 0.6631578947368421,
-  "brier": 0.2234,
-  "log_loss": 0.6348,
+  "lost": 33,
+  "win_rate": 0.65625,
+  "brier": 0.2238,
+  "log_loss": 0.6355,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 67,
+      "scored": 68,
       "won": 44,
-      "lost": 23,
-      "win_rate": 0.6567164179104478,
-      "brier": 0.2228
+      "lost": 24,
+      "win_rate": 0.6470588235294118,
+      "brier": 0.2232
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -1078,18 +1078,20 @@
       "result": "LOST",
       "price": 0.485,
       "price_source": "reference"
+    },
+    {
+      "date": "2026-10-31",
+      "game": "ATL at NO",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "ATL",
+      "prob": 0.5054,
+      "final": "NO 121 \u00b7 ATL 99",
+      "result": "LOST",
+      "price": 0.595,
+      "price_source": "reference"
     }
   ],
   "open_bets": [
-    {
-      "game": "ATL at NO",
-      "pick": "ATL",
-      "prob": 0.5054,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.595,
-      "price_source": "reference"
-    },
     {
       "game": "SAC at MEM",
       "pick": "MEM",
@@ -2172,14 +2174,25 @@
       "price": 0.485,
       "price_source": "reference",
       "profit": -50.0
+    },
+    {
+      "date": "2026-10-31",
+      "game": "ATL at NO",
+      "pick": "ATL",
+      "prob": 0.5054,
+      "stake": 50.0,
+      "result": "LOST",
+      "price": 0.595,
+      "price_source": "reference",
+      "profit": -50.0
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 570.07,
+    "balance": 520.07,
     "total_won": 2120.07,
-    "total_lost": 1600.0,
-    "settled_count": 95,
-    "ref_priced_count": 95
+    "total_lost": 1650.0,
+    "settled_count": 96,
+    "ref_priced_count": 96
   }
 }
