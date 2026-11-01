@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-01T01:42:51Z",
-  "scored": 96,
-  "won": 63,
+  "updated_at": "2026-11-01T02:28:07Z",
+  "scored": 97,
+  "won": 64,
   "lost": 33,
-  "win_rate": 0.65625,
-  "brier": 0.2238,
-  "log_loss": 0.6355,
+  "win_rate": 0.6597938144329897,
+  "brier": 0.2223,
+  "log_loss": 0.6324,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 68,
-      "won": 44,
+      "scored": 69,
+      "won": 45,
       "lost": 24,
-      "win_rate": 0.6470588235294118,
-      "brier": 0.2232
+      "win_rate": 0.6521739130434783,
+      "brier": 0.2211
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -1089,6 +1089,17 @@
       "result": "LOST",
       "price": 0.595,
       "price_source": "reference"
+    },
+    {
+      "date": "2026-10-31",
+      "game": "CLE at MIL",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "CLE",
+      "prob": 0.7221,
+      "final": "MIL 111 \u00b7 CLE 136",
+      "result": "WON",
+      "price": 0.745,
+      "price_source": "reference"
     }
   ],
   "open_bets": [
@@ -1099,15 +1110,6 @@
       "stake": 50.0,
       "status": "OPEN",
       "price": 0.795,
-      "price_source": "reference"
-    },
-    {
-      "game": "CLE at MIL",
-      "pick": "CLE",
-      "prob": 0.7221,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.745,
       "price_source": "reference"
     },
     {
@@ -2185,14 +2187,25 @@
       "price": 0.595,
       "price_source": "reference",
       "profit": -50.0
+    },
+    {
+      "date": "2026-10-31",
+      "game": "CLE at MIL",
+      "pick": "CLE",
+      "prob": 0.7221,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.745,
+      "price_source": "reference",
+      "profit": 17.11
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 520.07,
-    "total_won": 2120.07,
+    "balance": 537.19,
+    "total_won": 2137.19,
     "total_lost": 1650.0,
-    "settled_count": 96,
-    "ref_priced_count": 96
+    "settled_count": 97,
+    "ref_priced_count": 97
   }
 }
