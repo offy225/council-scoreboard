@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-01T02:43:00Z",
-  "scored": 99,
+  "updated_at": "2026-11-01T03:01:57Z",
+  "scored": 100,
   "won": 65,
-  "lost": 34,
-  "win_rate": 0.6565656565656566,
-  "brier": 0.2231,
-  "log_loss": 0.6341,
+  "lost": 35,
+  "win_rate": 0.65,
+  "brier": 0.2242,
+  "log_loss": 0.6364,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 71,
+      "scored": 72,
       "won": 46,
-      "lost": 25,
-      "win_rate": 0.647887323943662,
-      "brier": 0.2223
+      "lost": 26,
+      "win_rate": 0.6388888888888888,
+      "brier": 0.2239
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -1122,16 +1122,54 @@
       "result": "LOST",
       "price": 0.185,
       "price_source": "reference"
+    },
+    {
+      "date": "2026-10-31",
+      "game": "OKC at HOU",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "OKC",
+      "prob": 0.5811,
+      "final": "HOU 119 \u00b7 OKC 98",
+      "result": "LOST",
+      "price": 0.345,
+      "price_source": "reference"
     }
   ],
   "open_bets": [
     {
-      "game": "OKC at HOU",
-      "pick": "OKC",
-      "prob": 0.5811,
+      "game": "BOS at ORL",
+      "pick": "BOS",
+      "prob": 0.6379,
       "stake": 50.0,
       "status": "OPEN",
-      "price": 0.345,
+      "price": 0.705,
+      "price_source": "reference"
+    },
+    {
+      "game": "BKN at IND",
+      "pick": "IND",
+      "prob": 0.6825,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.615,
+      "price_source": "reference"
+    },
+    {
+      "game": "LAC at GS",
+      "pick": "LAC",
+      "prob": 0.55,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.37,
+      "price_source": "reference"
+    },
+    {
+      "game": "TOR at LAL",
+      "pick": "LAL",
+      "prob": 0.5525,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.635,
       "price_source": "reference"
     }
   ],
@@ -2224,14 +2262,25 @@
       "price": 0.185,
       "price_source": "reference",
       "profit": -50.0
+    },
+    {
+      "date": "2026-10-31",
+      "game": "OKC at HOU",
+      "pick": "OKC",
+      "prob": 0.5811,
+      "stake": 50.0,
+      "result": "LOST",
+      "price": 0.345,
+      "price_source": "reference",
+      "profit": -50.0
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 500.08,
+    "balance": 450.08,
     "total_won": 2150.08,
-    "total_lost": 1700.0,
-    "settled_count": 99,
-    "ref_priced_count": 99
+    "total_lost": 1750.0,
+    "settled_count": 100,
+    "ref_priced_count": 100
   }
 }
