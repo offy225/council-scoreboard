@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-01T02:28:07Z",
-  "scored": 97,
-  "won": 64,
-  "lost": 33,
-  "win_rate": 0.6597938144329897,
-  "brier": 0.2223,
-  "log_loss": 0.6324,
+  "updated_at": "2026-11-01T02:43:00Z",
+  "scored": 99,
+  "won": 65,
+  "lost": 34,
+  "win_rate": 0.6565656565656566,
+  "brier": 0.2231,
+  "log_loss": 0.6341,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 69,
-      "won": 45,
-      "lost": 24,
-      "win_rate": 0.6521739130434783,
-      "brier": 0.2211
+      "scored": 71,
+      "won": 46,
+      "lost": 25,
+      "win_rate": 0.647887323943662,
+      "brier": 0.2223
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -1092,6 +1092,17 @@
     },
     {
       "date": "2026-10-31",
+      "game": "SAC at MEM",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "MEM",
+      "prob": 0.5946,
+      "final": "MEM 136 \u00b7 SAC 105",
+      "result": "WON",
+      "price": 0.795,
+      "price_source": "reference"
+    },
+    {
+      "date": "2026-10-31",
       "game": "CLE at MIL",
       "model": "NBA v3.2 + PLATT",
       "pick": "CLE",
@@ -1100,27 +1111,20 @@
       "result": "WON",
       "price": 0.745,
       "price_source": "reference"
+    },
+    {
+      "date": "2026-10-31",
+      "game": "MIN at SA",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "MIN",
+      "prob": 0.5998,
+      "final": "SA 121 \u00b7 MIN 111",
+      "result": "LOST",
+      "price": 0.185,
+      "price_source": "reference"
     }
   ],
   "open_bets": [
-    {
-      "game": "SAC at MEM",
-      "pick": "MEM",
-      "prob": 0.5946,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.795,
-      "price_source": "reference"
-    },
-    {
-      "game": "MIN at SA",
-      "pick": "MIN",
-      "prob": 0.5998,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.185,
-      "price_source": "reference"
-    },
     {
       "game": "OKC at HOU",
       "pick": "OKC",
@@ -2190,6 +2194,17 @@
     },
     {
       "date": "2026-10-31",
+      "game": "SAC at MEM",
+      "pick": "MEM",
+      "prob": 0.5946,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.795,
+      "price_source": "reference",
+      "profit": 12.89
+    },
+    {
+      "date": "2026-10-31",
       "game": "CLE at MIL",
       "pick": "CLE",
       "prob": 0.7221,
@@ -2198,14 +2213,25 @@
       "price": 0.745,
       "price_source": "reference",
       "profit": 17.11
+    },
+    {
+      "date": "2026-10-31",
+      "game": "MIN at SA",
+      "pick": "MIN",
+      "prob": 0.5998,
+      "stake": 50.0,
+      "result": "LOST",
+      "price": 0.185,
+      "price_source": "reference",
+      "profit": -50.0
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 537.19,
-    "total_won": 2137.19,
-    "total_lost": 1650.0,
-    "settled_count": 97,
-    "ref_priced_count": 97
+    "balance": 500.08,
+    "total_won": 2150.08,
+    "total_lost": 1700.0,
+    "settled_count": 99,
+    "ref_priced_count": 99
   }
 }
