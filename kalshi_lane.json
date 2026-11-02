@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-01T23:27:48Z",
-  "scored": 101,
+  "updated_at": "2026-11-02T00:58:52Z",
+  "scored": 102,
   "won": 66,
-  "lost": 35,
-  "win_rate": 0.6534653465346535,
-  "brier": 0.2233,
-  "log_loss": 0.6346,
+  "lost": 36,
+  "win_rate": 0.6470588235294118,
+  "brier": 0.2257,
+  "log_loss": 0.6396,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 73,
+      "scored": 74,
       "won": 47,
-      "lost": 26,
-      "win_rate": 0.6438356164383562,
-      "brier": 0.2226
+      "lost": 27,
+      "win_rate": 0.6351351351351351,
+      "brier": 0.2259
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -1144,18 +1144,20 @@
       "result": "WON",
       "price": 0.705,
       "price_source": "reference"
+    },
+    {
+      "date": "2026-11-01",
+      "game": "BKN at IND",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "IND",
+      "prob": 0.6825,
+      "final": "IND 90 \u00b7 BKN 98",
+      "result": "LOST",
+      "price": 0.615,
+      "price_source": "reference"
     }
   ],
   "open_bets": [
-    {
-      "game": "BKN at IND",
-      "pick": "IND",
-      "prob": 0.6825,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.615,
-      "price_source": "reference"
-    },
     {
       "game": "LAC at GS",
       "pick": "LAC",
@@ -2286,14 +2288,25 @@
       "price": 0.705,
       "price_source": "reference",
       "profit": 20.92
+    },
+    {
+      "date": "2026-11-01",
+      "game": "BKN at IND",
+      "pick": "IND",
+      "prob": 0.6825,
+      "stake": 50.0,
+      "result": "LOST",
+      "price": 0.615,
+      "price_source": "reference",
+      "profit": -50.0
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 471.0,
+    "balance": 421.0,
     "total_won": 2171.0,
-    "total_lost": 1750.0,
-    "settled_count": 101,
-    "ref_priced_count": 101
+    "total_lost": 1800.0,
+    "settled_count": 102,
+    "ref_priced_count": 102
   }
 }
