@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-02T03:58:45Z",
-  "scored": 103,
-  "won": 66,
+  "updated_at": "2026-11-02T04:43:23Z",
+  "scored": 104,
+  "won": 67,
   "lost": 37,
-  "win_rate": 0.6407766990291263,
-  "brier": 0.2264,
-  "log_loss": 0.6412,
+  "win_rate": 0.6442307692307693,
+  "brier": 0.2262,
+  "log_loss": 0.6407,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 75,
-      "won": 47,
+      "scored": 76,
+      "won": 48,
       "lost": 28,
-      "win_rate": 0.6266666666666667,
-      "brier": 0.2269
+      "win_rate": 0.631578947368421,
+      "brier": 0.2266
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -1166,18 +1166,20 @@
       "result": "LOST",
       "price": 0.37,
       "price_source": "reference"
+    },
+    {
+      "date": "2026-11-01",
+      "game": "TOR at LAL",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "LAL",
+      "prob": 0.5525,
+      "final": "LAL 131 \u00b7 TOR 125",
+      "result": "WON",
+      "price": 0.635,
+      "price_source": "reference"
     }
   ],
   "open_bets": [
-    {
-      "game": "TOR at LAL",
-      "pick": "LAL",
-      "prob": 0.5525,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.635,
-      "price_source": "reference"
-    },
     {
       "game": "OKC at CLE",
       "pick": "OKC",
@@ -2447,14 +2449,25 @@
       "price": 0.37,
       "price_source": "reference",
       "profit": -50.0
+    },
+    {
+      "date": "2026-11-01",
+      "game": "TOR at LAL",
+      "pick": "LAL",
+      "prob": 0.5525,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.635,
+      "price_source": "reference",
+      "profit": 28.74
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 371.0,
-    "total_won": 2171.0,
+    "balance": 399.74,
+    "total_won": 2199.74,
     "total_lost": 1850.0,
-    "settled_count": 103,
-    "ref_priced_count": 103
+    "settled_count": 104,
+    "ref_priced_count": 104
   }
 }
