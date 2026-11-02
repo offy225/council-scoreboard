@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-02T01:28:07Z",
-  "scored": 102,
+  "updated_at": "2026-11-02T03:58:45Z",
+  "scored": 103,
   "won": 66,
-  "lost": 36,
-  "win_rate": 0.6470588235294118,
-  "brier": 0.2257,
-  "log_loss": 0.6396,
+  "lost": 37,
+  "win_rate": 0.6407766990291263,
+  "brier": 0.2264,
+  "log_loss": 0.6412,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 74,
+      "scored": 75,
       "won": 47,
-      "lost": 27,
-      "win_rate": 0.6351351351351351,
-      "brier": 0.2259
+      "lost": 28,
+      "win_rate": 0.6266666666666667,
+      "brier": 0.2269
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -1155,18 +1155,20 @@
       "result": "LOST",
       "price": 0.615,
       "price_source": "reference"
+    },
+    {
+      "date": "2026-11-01",
+      "game": "LAC at GS",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "LAC",
+      "prob": 0.55,
+      "final": "GS 124 \u00b7 LAC 112",
+      "result": "LOST",
+      "price": 0.37,
+      "price_source": "reference"
     }
   ],
   "open_bets": [
-    {
-      "game": "LAC at GS",
-      "pick": "LAC",
-      "prob": 0.55,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.37,
-      "price_source": "reference"
-    },
     {
       "game": "TOR at LAL",
       "pick": "LAL",
@@ -1174,6 +1176,141 @@
       "stake": 50.0,
       "status": "OPEN",
       "price": 0.635,
+      "price_source": "reference"
+    },
+    {
+      "game": "OKC at CLE",
+      "pick": "OKC",
+      "prob": 0.6151,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.385,
+      "price_source": "reference"
+    },
+    {
+      "game": "DET at CHA",
+      "pick": "DET",
+      "prob": 0.5953,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.625,
+      "price_source": "reference"
+    },
+    {
+      "game": "ATL at IND",
+      "pick": "ATL",
+      "prob": 0.591,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.635,
+      "price_source": "reference"
+    },
+    {
+      "game": "BKN at NY",
+      "pick": "NY",
+      "prob": 0.7674,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.885,
+      "price_source": "reference"
+    },
+    {
+      "game": "WSH at ORL",
+      "pick": "ORL",
+      "prob": 0.6177,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.575,
+      "price_source": "reference"
+    },
+    {
+      "game": "CHI at PHI",
+      "pick": "PHI",
+      "prob": 0.6369,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.835,
+      "price_source": "reference"
+    },
+    {
+      "game": "SAC at DAL",
+      "pick": "DAL",
+      "prob": 0.6436,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.785,
+      "price_source": "reference"
+    },
+    {
+      "game": "NO at MEM",
+      "pick": "NO",
+      "prob": 0.5228,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.335,
+      "price_source": "reference"
+    },
+    {
+      "game": "MIL at MIN",
+      "pick": "MIN",
+      "prob": 0.8228,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.785,
+      "price_source": "reference"
+    },
+    {
+      "game": "BOS at HOU",
+      "pick": "BOS",
+      "prob": 0.5074,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.365,
+      "price_source": "reference"
+    },
+    {
+      "game": "UTAH at SA",
+      "pick": "SA",
+      "prob": 0.5733,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.905,
+      "price_source": "reference"
+    },
+    {
+      "game": "POR at DEN",
+      "pick": "DEN",
+      "prob": 0.6994,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.595,
+      "price_source": "reference"
+    },
+    {
+      "game": "PHX at GS",
+      "pick": "GS",
+      "prob": 0.5311,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.625,
+      "price_source": "reference"
+    },
+    {
+      "game": "TOR at LAC",
+      "pick": "LAC",
+      "prob": 0.5626,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.365,
+      "price_source": "reference"
+    },
+    {
+      "game": "MIA at LAL",
+      "pick": "LAL",
+      "prob": 0.5352,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.49,
       "price_source": "reference"
     }
   ],
@@ -2299,14 +2436,25 @@
       "price": 0.615,
       "price_source": "reference",
       "profit": -50.0
+    },
+    {
+      "date": "2026-11-01",
+      "game": "LAC at GS",
+      "pick": "LAC",
+      "prob": 0.55,
+      "stake": 50.0,
+      "result": "LOST",
+      "price": 0.37,
+      "price_source": "reference",
+      "profit": -50.0
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 421.0,
+    "balance": 371.0,
     "total_won": 2171.0,
-    "total_lost": 1800.0,
-    "settled_count": 102,
-    "ref_priced_count": 102
+    "total_lost": 1850.0,
+    "settled_count": 103,
+    "ref_priced_count": 103
   }
 }
