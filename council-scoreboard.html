@@ -5764,6 +5764,14 @@ table.bd tr.ov-total td {
     if (k <= 1.1) return 1;
     return Math.max(0.12, Math.pow(1.1 / k, 1.25));
   }
+  /* heartbeat — one shared swell for the whole field, time-only so
+     every galaxy moves in unison, like eels in a school: a slow
+     ~4.2s beat that lifts the eel-flow drift, then lets it settle. */
+  function beatOf(now) {
+    if (RM) return 0;
+    var bt = (now % 4200) / 4200;
+    return bt < 0.30 ? Math.sin(bt / 0.30 * Math.PI) * 0.28 : 0;
+  }
   function driftOf(n, now) {
     if (RM) return DZERO;
     var p = n.phase;
@@ -5789,7 +5797,9 @@ table.bd tr.ov-total td {
     }
     // one zoom gate over the whole drift (see flowScale above):
     // the mass flows from far away; up close each node holds still
-    var fs = flowScale();
+    // heartbeat: the same swell for every node, so the field breathes
+    // as one body instead of each star pulsing on its own phase
+    var fs = flowScale() * (1 + beatOf(now));
     return [dx * fs, dy * fs];
   }
   function npos(n, now) { var d = driftOf(n, now); return [n.x + d[0], n.y + d[1]]; }
@@ -6169,7 +6179,7 @@ table.bd tr.ov-total td {
   // the colour is the section's marker, the cloud carries no data.
   var NEB = [
     ['council', 360, '#8b7cf6'], ['plugg', 320, '#00dd94'], ['cobra', 320, '#ff6a3d'],
-    ['whiplash', 320, '#6ec1e8'], ['hummingbot', 320, '#8b5cf6'], ['caddy', 320, '#d4af37'],
+    ['whiplash', 320, '#6ec1e8'], ['hummingbot', 320, '#8b5cf6'], ['caddy', 320, '#d4af37'], ['bankz', 320, '#00e5ff'],
     ['ledger', 165, '#5468c4'], ['archive', 165, '#5468c4'], ['openbb', 165, '#7a5fd0']
   ];
   /* glow sprites — every soft light in the field (nebula clouds,
@@ -6248,7 +6258,7 @@ table.bd tr.ov-total td {
     // the hub itself sits comfortably on screen, so a name can
     // never render oversized or clip at an edge.
     ctx.textAlign = 'center';
-    ['plugg', 'cobra', 'whiplash', 'hummingbot', 'caddy'].forEach(function (g) {
+    ['plugg', 'cobra', 'whiplash', 'hummingbot', 'caddy', 'bankz'].forEach(function (g) {
       var hub = byId[g]; if (!hub) return;
       if (transform.k < 0.26 || transform.k > 2.4) return;
       var hd = npos(hub, now);
@@ -6553,6 +6563,27 @@ table.bd tr.ov-total td {
         if (steps === 3) simAcc = 0;
       }
     }
+    // no-D3 fallback — drag and slingshot without the simulation:
+    // if D3 failed to load, the simulation block above never runs,
+    // so a dragged node would sit still and a flung node would never
+    // fly, while tap/drift/pulses still looked alive. This block
+    // restores both, with the same spring constants as the sim path.
+    if (!simulation) {
+      if (gNode && gNode.fx != null) { gNode.x = gNode.fx; gNode.y = gNode.fy; }
+      if (fling) {
+        var fsteps = Math.max(1, Math.min(3, Math.round(dt)));
+        for (var fsi = 0; fsi < fsteps; fsi++) {
+          var ffn = fling.n;
+          fling.vx += (fling.hx - ffn.x) * 0.02; fling.vy += (fling.hy - ffn.y) * 0.02;
+          fling.vx *= 0.94; fling.vy *= 0.94;
+          ffn.x += fling.vx; ffn.y += fling.vy;
+          ffn.wob = Math.max(ffn.wob || 0, Math.min(1, Math.hypot(fling.vx, fling.vy) * 0.05));
+        }
+        if (Math.hypot(fling.hx - fling.n.x, fling.hy - fling.n.y) < 1 && Math.hypot(fling.vx, fling.vy) < 0.8) {
+          fling.n.fx = null; fling.n.fy = null; fling = null;
+        }
+      }
+    }
     // brain-current spawner — a fresh pulse every ~280ms on a live
     // wire, favouring the selected node's own wiring; capped, so the
     // current reads as signal, never as noise
@@ -6628,6 +6659,7 @@ table.bd tr.ov-total td {
   }
   canvas.addEventListener('pointerdown', function (e) {
     if (e.button && e.button !== 0) return;
+    if (detailOpen) setDetailOpen(false);
     fadeHint();
     camAnim = null; camVel.on = false;
     var p = evPos(e);
@@ -6699,6 +6731,10 @@ table.bd tr.ov-total td {
       var w2 = s2w(p[0], p[1]);
       gNode.fx = w2[0] + grabOff[0];
       gNode.fy = w2[1] + grabOff[1];
+      // drag is visible even if the D3 simulation never ticks
+      // (CDN blocked / D3 absent): the node itself follows the finger,
+      // and the simulation, when present, pins it to the same spot
+      gNode.x = gNode.fx; gNode.y = gNode.fy;
       dragSamples.push({ t: performance.now(), x: gNode.fx, y: gNode.fy });
       if (dragSamples.length > 14) dragSamples.shift();
     } else if (gMode === 'pan') {
