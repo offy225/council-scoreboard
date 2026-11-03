@@ -6044,15 +6044,56 @@ table.bd tr.ov-total td {
       return [A[0] + (B[0] - A[0]) * fr, A[1] + (B[1] - A[1]) * fr];
     }
     if (shape === 'BRAIN') {
-      // two lobes: even index -> left lobe, odd -> right lobe. Outline
-      // is wavy (gyri bumps); every 5th dot sits at 0.55 radius, an
-      // inner gyri curve, so the brain reads as mass, not just outline.
-      var side = (sIdx % 2 === 0) ? -1 : 1;
-      var lobeIdx = Math.floor(sIdx / 2), lobeTotal = Math.ceil(sTotal / 2);
-      var ang = (lobeIdx / lobeTotal) * Math.PI * 2;
-      var wave = 1 + 0.16 * Math.sin(ang * 5 + (side > 0 ? 1 : 0));
-      var fac = (sIdx % 5 === 0) ? 0.55 : 1;
-      return [side * 155 + Math.cos(ang) * 210 * wave * fac, Math.sin(ang) * 175 * wave * fac];
+      // HUMAN BRAIN, top view, front up (-y), back down (+y). NOT two
+      // smooth ellipses (the old shape — that was the oval/tube
+      // problem): this is one brain silhouette, split by a fissure,
+      // with wavy gyri folds inside each hemisphere and a stem below.
+      // Dots are allocated by index fraction, so every dot has a
+      // brain job: 0-42% outline, 42-55% fissure + stem, 55-100% gyri.
+      var fB = sIdx / sTotal;
+      if (fB < 0.42) {
+        // OUTLINE: one closed brain silhouette. Front (top) is wide
+        // and rounded, back (bottom) is narrower, bottom is flattened,
+        // with a small notch at front centre and back centre where
+        // the fissure meets the edge. A gyri ripple keeps the edge
+        // from reading as a smooth oval.
+        var tB = fB / 0.42, phi = tB * Math.PI * 2;
+        var backB = (1 - Math.cos(phi)) / 2; // 0 front, 1 back
+        var rxB = 315 - 55 * backB, ryB = 305;
+        var ripB = 1 + 0.03 * Math.sin(phi * 9) + 0.02 * Math.sin(phi * 17 + 1.3);
+        var bx = Math.sin(phi) * rxB * ripB, by = -Math.cos(phi) * ryB * ripB;
+        if (by > 235) by = 235 + (by - 235) * 0.35; // flat-ish bottom
+        if (Math.abs(bx) < 30 && by < -280) by += 12 * (1 - Math.abs(bx) / 30); // front fissure notch
+        if (Math.abs(bx) < 40 && by > 200) by -= 18 * (1 - Math.abs(bx) / 40); // back fissure notch
+        return [bx, by];
+      }
+      if (fB < 0.55) {
+        // CENTRAL LONGITUDINAL FISSURE + BRAIN STEM: two lines at
+        // x = -17 / +17, leaving a real gap at x = 0 between the
+        // hemispheres, then a short central stalk below the bottom.
+        var fStart = Math.floor(0.42 * sTotal), fEnd = Math.floor(0.55 * sTotal);
+        var fi = sIdx - fStart, fiCount = Math.max(1, fEnd - fStart);
+        var stemAt = Math.floor(fiCount * 0.8);
+        if (fi >= stemAt) {
+          var si = fi - stemAt;
+          return [(si % 3 - 1) * 9 + 4 * Math.sin(si * 1.2), 285 + si * 12];
+        }
+        var fy = -270 + (fi / Math.max(1, stemAt)) * 540;
+        return [(fi % 2 === 0 ? -17 : 17) + 3 * Math.sin(fy * 0.04), fy];
+      }
+      // GYRI / SULCI FOLDS: wavy front-to-back lines inside each
+      // hemisphere, never crossing the fissure (min |x| ~39).
+      // 9 dots per line, lines alternate left/right, lanes run
+      // 55, 93, 131, 169, 207, 245 out from the fissure, tapering
+      // narrower toward the back, with a sine wiggle per line.
+      var gStart = Math.floor(0.55 * sTotal), gi = sIdx - gStart;
+      var line = Math.floor(gi / 9), posG = (gi % 9) / 8;
+      var sideG = (line % 2 === 0) ? -1 : 1, lane = Math.floor(line / 2);
+      var gy = -235 + posG * 470;
+      var scaleG = 1 - 0.16 * Math.max(0, gy / 235);
+      var gx = sideG * (55 + lane * 38) * scaleG + sideG * 16 * Math.sin(gy * 0.045 + line * 0.9);
+      if (gy > 230) gy = 230 + (gy - 230) * 0.35;
+      return [gx, gy];
     }
     if (shape === 'TRIANGLE') {
       var V = [[-380, 260], [380, 260], [0, -360]];
