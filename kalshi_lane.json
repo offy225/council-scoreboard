@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-03T03:42:55Z",
+  "updated_at": "2026-11-03T03:57:40Z",
   "scored": 113,
   "won": 74,
   "lost": 39,
@@ -1332,6 +1332,104 @@
       "status": "OPEN",
       "price": 0.49,
       "price_source": "reference"
+    },
+    {
+      "game": "PHI at DET",
+      "pick": "DET",
+      "prob": 0.7265,
+      "stake": 50.0,
+      "status": "OPEN"
+    },
+    {
+      "game": "ATL at WSH",
+      "pick": "WSH",
+      "prob": 0.5091,
+      "stake": 50.0,
+      "status": "OPEN"
+    },
+    {
+      "game": "MIL at BOS",
+      "pick": "BOS",
+      "prob": 0.8677,
+      "stake": 50.0,
+      "status": "OPEN"
+    },
+    {
+      "game": "CHA at BKN",
+      "pick": "CHA",
+      "prob": 0.7545,
+      "stake": 50.0,
+      "status": "OPEN"
+    },
+    {
+      "game": "CHI at NY",
+      "pick": "NY",
+      "prob": 0.6487,
+      "stake": 50.0,
+      "status": "OPEN"
+    },
+    {
+      "game": "IND at MEM",
+      "pick": "MEM",
+      "prob": 0.5796,
+      "stake": 50.0,
+      "status": "OPEN"
+    },
+    {
+      "game": "UTAH at NO",
+      "pick": "NO",
+      "prob": 0.5733,
+      "stake": 50.0,
+      "status": "OPEN"
+    },
+    {
+      "game": "CLE at OKC",
+      "pick": "OKC",
+      "prob": 0.7547,
+      "stake": 50.0,
+      "status": "OPEN"
+    },
+    {
+      "game": "MIN at HOU",
+      "pick": "HOU",
+      "prob": 0.5675,
+      "stake": 50.0,
+      "status": "OPEN"
+    },
+    {
+      "game": "TOR at DEN",
+      "pick": "DEN",
+      "prob": 0.6345,
+      "stake": 50.0,
+      "status": "OPEN"
+    },
+    {
+      "game": "POR at PHX",
+      "pick": "PHX",
+      "prob": 0.5462,
+      "stake": 50.0,
+      "status": "OPEN"
+    },
+    {
+      "game": "DAL at SA",
+      "pick": "SA",
+      "prob": 0.6122,
+      "stake": 50.0,
+      "status": "OPEN"
+    },
+    {
+      "game": "LAL at SAC",
+      "pick": "LAL",
+      "prob": 0.7399,
+      "stake": 50.0,
+      "status": "OPEN"
+    },
+    {
+      "game": "MIA at LAC",
+      "pick": "LAC",
+      "prob": 0.5453,
+      "stake": 50.0,
+      "status": "OPEN"
     }
   ],
   "settled_bets": [
