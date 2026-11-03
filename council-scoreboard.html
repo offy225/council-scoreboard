@@ -6002,6 +6002,71 @@ table.bd tr.ov-total td {
     if (shape === 'GALAXY') { var r = 30 + partIdx * 7; return [Math.cos(a) * r, Math.sin(a) * r * 0.85]; }
     return [Math.cos(a) * 48, Math.sin(a) * 48];
   }
+  /* MORPH FIX v2 (Nov 3) — label changed but positions did not.
+     Root cause: the v1 morph only set x/y during a 2s animation and
+     left nodes unpinned afterwards. D3 link (distance 64, strength
+     0.3), charge (-32) and centre forces then pulled every node
+     back to the old force-equilibrium blob, and the shape geometry
+     itself was hub-only (10 hubs) with parts/files clustered around
+     hubs — so even during the animation the silhouette never read
+     as a cube, brain, etc. Fix: (1) EVERY dot gets a point ON the
+     shape geometry itself, by global index, council stays at centre;
+     (2) after the eel animation the shape is PINNED (x/y AND fx/fy
+     re-asserted every frame, except a dragged/flung node) so the
+     sim can never pull it back apart; (3) STAR clears all pins and
+     restores the original anchors/sim. Tap-zoom is untouched — it
+     centres on npos(), which still works with pinned nodes. */
+  var morphHold = null; // {id:[x,y]} for the current non-STAR shape, or null
+  function morphShapePoint(shape, sIdx, sTotal) {
+    // sIdx: index among non-council nodes, 0..sTotal-1. Returns a point
+    // ON the shape, not near a hub — so the whole field IS the shape.
+    var t, seg, fr, A, B, i;
+    if (shape === 'STAR') {
+      // 5-point star outline: 10 vertices, outer 430 / inner 175
+      var verts = [];
+      for (i = 0; i < 5; i++) {
+        var ao = (-90 + i * 72) * Math.PI / 180, ai = (-90 + 36 + i * 72) * Math.PI / 180;
+        verts.push([Math.cos(ao) * 430, Math.sin(ao) * 430]);
+        verts.push([Math.cos(ai) * 175, Math.sin(ai) * 175]);
+      }
+      t = (sIdx / sTotal) * 10; seg = Math.floor(t) % 10; fr = t - Math.floor(t);
+      A = verts[seg]; B = verts[(seg + 1) % 10];
+      return [A[0] + (B[0] - A[0]) * fr, A[1] + (B[1] - A[1]) * fr];
+    }
+    if (shape === 'CUBE') {
+      // isometric cube wireframe: front square, back square, 4 connectors
+      var F = [[-190, -190], [190, -190], [190, 190], [-190, 190]];
+      var K = [[-70, -310], [310, -310], [310, 70], [-70, 70]];
+      var edges = [];
+      for (i = 0; i < 4; i++) { edges.push([F[i], F[(i + 1) % 4]]); edges.push([K[i], K[(i + 1) % 4]]); edges.push([F[i], K[i]]); }
+      t = (sIdx / sTotal) * 12; seg = Math.floor(t) % 12; fr = t - Math.floor(t);
+      A = edges[seg][0]; B = edges[seg][1];
+      return [A[0] + (B[0] - A[0]) * fr, A[1] + (B[1] - A[1]) * fr];
+    }
+    if (shape === 'BRAIN') {
+      // two lobes: even index -> left lobe, odd -> right lobe. Outline
+      // is wavy (gyri bumps); every 5th dot sits at 0.55 radius, an
+      // inner gyri curve, so the brain reads as mass, not just outline.
+      var side = (sIdx % 2 === 0) ? -1 : 1;
+      var lobeIdx = Math.floor(sIdx / 2), lobeTotal = Math.ceil(sTotal / 2);
+      var ang = (lobeIdx / lobeTotal) * Math.PI * 2;
+      var wave = 1 + 0.16 * Math.sin(ang * 5 + (side > 0 ? 1 : 0));
+      var fac = (sIdx % 5 === 0) ? 0.55 : 1;
+      return [side * 155 + Math.cos(ang) * 210 * wave * fac, Math.sin(ang) * 175 * wave * fac];
+    }
+    if (shape === 'TRIANGLE') {
+      var V = [[-380, 260], [380, 260], [0, -360]];
+      t = (sIdx / sTotal) * 3; seg = Math.floor(t) % 3; fr = t - Math.floor(t);
+      A = V[seg]; B = V[(seg + 1) % 3];
+      return [A[0] + (B[0] - A[0]) * fr, A[1] + (B[1] - A[1]) * fr];
+    }
+    if (shape === 'GALAXY') {
+      var arm = sIdx % 3, rr = 60 + Math.sqrt(sIdx / sTotal) * 370;
+      var ang2 = arm * (Math.PI * 2 / 3) + rr * 0.012;
+      return [Math.cos(ang2) * rr, Math.sin(ang2) * rr * 0.82];
+    }
+    return [0, 0];
+  }
   function morphTargetsFor(shape) {
     // snapshot originals for EVERY dot, first time only
     nodes.forEach(function (n) { if (n.ox === undefined) { n.ox = n.ax; n.oy = n.ay; } });
@@ -6010,34 +6075,11 @@ table.bd tr.ov-total td {
       nodes.forEach(function (n) { to[n.id] = [n.ox, n.oy]; });
       return to;
     }
-    // hubs first: core + system + bots (10 nodes), in DEFS order
-    var hubs = nodes.filter(function (n) { return !n.file && n.kind !== 'part'; });
-    hubs.forEach(function (n, i) { to[n.id] = morphTarget(shape, i, hubs.length, n); });
-    // parts: shape-specific ring around their hub's NEW position
-    var partCountByGroup = {};
-    nodes.forEach(function (n) { if (!n.file && n.kind === 'part') partCountByGroup[n.group] = (partCountByGroup[n.group] || 0) + 1; });
-    var partSeen = {};
+    var sTotal = 0, sIdx = 0;
+    nodes.forEach(function (n) { if (n.id !== 'council') sTotal++; });
     nodes.forEach(function (n) {
-      if (n.file || n.kind !== 'part') return;
-      var hub = byId[n.group], hubT = hub ? to[hub.id] : null;
-      if (!hubT) { to[n.id] = [n.ox, n.oy]; return; }
-      var idx = partSeen[n.group] || 0; partSeen[n.group] = idx + 1;
-      var ring = morphRing(shape, idx, partCountByGroup[n.group] || 1);
-      to[n.id] = [hubT[0] + ring[0], hubT[1] + ring[1]];
-    });
-    // files: follow their anchor's NEW position, offset transformed by shape
-    nodes.forEach(function (n) {
-      if (!n.file) return;
-      var anchor = byId[n.anchorId], anchorT = anchor ? to[anchor.id] : null;
-      if (!anchorT) { to[n.id] = [n.ox, n.oy]; return; }
-      var anchorOrig = anchor.ox !== undefined ? [anchor.ox, anchor.oy] : [anchor.ax, anchor.ay];
-      var dx = n.ox - anchorOrig[0], dy = n.oy - anchorOrig[1];
-      var sc = 1, rx = dx, ry = dy;
-      if (shape === 'CUBE') { sc = 0.80; rx = dx * sc; ry = dy * sc; }
-      else if (shape === 'BRAIN') { sc = 0.75; rx = dx * sc + (anchorT[0] < 0 ? -12 : 12); ry = dy * sc; }
-      else if (shape === 'TRIANGLE') { rx = dx * 0.85; ry = dy * 0.68; }
-      else if (shape === 'GALAXY') { var dist = Math.hypot(dx, dy) || 1, ang = dist * 0.002, c = Math.cos(ang), s = Math.sin(ang); rx = (dx * c - dy * s) * 0.90; ry = (dx * s + dy * c) * 0.90; }
-      to[n.id] = [anchorT[0] + rx, anchorT[1] + ry];
+      if (n.id === 'council') { to[n.id] = [0, 0]; return; }
+      to[n.id] = morphShapePoint(shape, sIdx, sTotal); sIdx++;
     });
     return to;
   }
@@ -6057,6 +6099,13 @@ table.bd tr.ov-total td {
       if (n.fx == null) { /* dragged nodes keep their pin; loop skips them */ }
     });
     morphAnim = { t0: now, dur: 2000, from: from, to: to, delay: delay };
+    // HOLD: do NOT pin during the animation (D3 would snap nodes to
+    // the final target on the next tick and kill the eel travel).
+    // Pinning starts only when applyMorph finishes, via morphHold.
+    morphHold = (shape === 'STAR') ? null : to;
+    if (shape === 'STAR') {
+      nodes.forEach(function (n) { if (n !== gNode) { n.fx = null; n.fy = null; } });
+    }
     // lock the new shape in the sim: anchors pull hard to the morph
     // target, clusters pull to each node's OWN anchor (not the hub),
     // so the sim stops tearing the shape back into clusters.
@@ -6070,6 +6119,22 @@ table.bd tr.ov-total td {
     }
     simHotUntil = now + 3200;
     morphLastInteract = now;
+  }
+  function holdMorph() {
+    // After the animation, re-assert the shape every frame. Without
+    // this, D3 link/charge/centre forces drag nodes back to the old
+    // blob within seconds — the exact "label changed, shape didn't"
+    // failure. Dragged/flung nodes are exempt until released.
+    // NEVER during the animation itself — that would snap dots to
+    // the final target and kill the eel travel.
+    if (!morphHold || morphAnim) return;
+    nodes.forEach(function (n) {
+      if (n === gNode) return;
+      if (typeof fling !== 'undefined' && fling && fling.n === n) return;
+      var tg = morphHold[n.id];
+      if (!tg) return;
+      n.x = tg[0]; n.y = tg[1]; n.vx = 0; n.vy = 0; n.fx = tg[0]; n.fy = tg[1];
+    });
   }
   function applyMorph(now) {
     if (!morphAnim) return;
@@ -6092,7 +6157,7 @@ table.bd tr.ov-total td {
       n.vx = 0; n.vy = 0;
     });
     if (done && elapsed > morphAnim.dur + 450) {
-      nodes.forEach(function (n) { var tg = morphAnim.to[n.id]; if (tg && n !== gNode) { n.x = tg[0]; n.y = tg[1]; n.vx = 0; n.vy = 0; } });
+      nodes.forEach(function (n) { var tg = morphAnim.to[n.id]; if (tg && n !== gNode) { n.x = tg[0]; n.y = tg[1]; n.vx = 0; n.vy = 0; if (morphHold) { n.fx = tg[0]; n.fy = tg[1]; } else { n.fx = null; n.fy = null; } } });
       morphAnim = null;
     }
   }
@@ -6706,7 +6771,7 @@ table.bd tr.ov-total td {
       // screen — hubs and systems keep a visible minimum size instead;
       // on top of that a ±4.5% radius breath on a ~14s cycle (rendered
       // only, same decorative drift family as the positional sway)
-      var brk = RM ? 1 : 1 + 0.045 * Math.sin(now * 0.00045 + n.phase * 2.1);
+      var brk = RM ? 1 : 1 + 0.045 * Math.sin(now * 0.00045 + n.phase * 2.1) + ((morphShape !== 'STAR') ? 0.12 * beatOf(now) : 0); // morph shapes pulsate in unison with the heartbeat
       var sr = Math.max(rr2 * brk * transform.k, n.kind === 'core' ? 4.2 : n.kind === 'bot' ? 3.6 : 2.5) * (1 + pBoost * 0.18);
       var ncol = COLORS[n.group] || '#f2f2f2';
       // ambient halo — the star's own colour pooled around it, swelling
@@ -6856,8 +6921,12 @@ table.bd tr.ov-total td {
     }
     // brain-current spawner — a fresh pulse every ~280ms on a live
     // wire, favouring the selected node's own wiring; capped, so the
-    // current reads as signal, never as noise
-    if (!RM && now - lastPulse > 280 && pulses.length < 14) {
+    // current reads as signal, never as noise. In BRAIN shape the
+    // brain is electric: pulses every ~120ms, up to 28, 1.6x speed,
+    // so you can actually see the signals travelling.
+    var pulseGap = (morphShape === 'BRAIN') ? 120 : 280;
+    var pulseCap = (morphShape === 'BRAIN') ? 28 : 14;
+    if (!RM && now - lastPulse > pulseGap && pulses.length < pulseCap) {
       lastPulse = now;
       var cand = [];
       for (var ci2 = 0; ci2 < edges.length; ci2++) if (!edges[ci2].file) cand.push(ci2);
@@ -6869,7 +6938,7 @@ table.bd tr.ov-total td {
           if (mine.length) pickE = mine[(Math.random() * mine.length) | 0];
         }
         if (pickE < 0) pickE = cand[(Math.random() * cand.length) | 0];
-        pulses.push({ e: edges[pickE], ei: pickE, t: 0, sp: 0.010 + Math.random() * 0.008, ph: Math.random() * 6.28 });
+        pulses.push({ e: edges[pickE], ei: pickE, t: 0, sp: (0.010 + Math.random() * 0.008) * (morphShape === 'BRAIN' ? 1.6 : 1), ph: Math.random() * 6.28 });
       }
     }
     for (var pi2 = pulses.length - 1; pi2 >= 0; pi2--) {
@@ -6898,6 +6967,7 @@ table.bd tr.ov-total td {
     }
     for (var fi = 0; fi < nodes.length; fi++) if (nodes[fi].flash > 0) nodes[fi].flash = Math.max(0, nodes[fi].flash - 0.012 * dt);
     applyMorph(now); // MORPH FIX: whole-field eel wave, after sim tick
+    holdMorph(); // MORPH FIX v2: pin the shape, or the sim pulls it back
     sanitizeNodes();
     easeCamera(now);
     draw(now);
