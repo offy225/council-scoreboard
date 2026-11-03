@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-03T05:42:50Z",
-  "scored": 117,
-  "won": 76,
+  "updated_at": "2026-11-03T05:57:46Z",
+  "scored": 118,
+  "won": 77,
   "lost": 41,
-  "win_rate": 0.6495726495726496,
+  "win_rate": 0.652542372881356,
   "brier": 0.2255,
-  "log_loss": 0.6394,
+  "log_loss": 0.6393,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 89,
-      "won": 57,
+      "scored": 90,
+      "won": 58,
       "lost": 32,
-      "win_rate": 0.6404494382022472,
-      "brier": 0.2257
+      "win_rate": 0.6444444444444445,
+      "brier": 0.2256
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -1312,6 +1312,17 @@
     },
     {
       "date": "2026-11-02",
+      "game": "PHX at GS",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "GS",
+      "prob": 0.5311,
+      "final": "GS 116 \u00b7 PHX 113",
+      "result": "WON",
+      "price": 0.625,
+      "price_source": "reference"
+    },
+    {
+      "date": "2026-11-02",
       "game": "MIA at LAL",
       "model": "NBA v3.2 + PLATT",
       "pick": "LAL",
@@ -1323,15 +1334,6 @@
     }
   ],
   "open_bets": [
-    {
-      "game": "PHX at GS",
-      "pick": "GS",
-      "prob": 0.5311,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.625,
-      "price_source": "reference"
-    },
     {
       "game": "TOR at LAC",
       "pick": "LAC",
@@ -2719,6 +2721,17 @@
     },
     {
       "date": "2026-11-02",
+      "game": "PHX at GS",
+      "pick": "GS",
+      "prob": 0.5311,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.625,
+      "price_source": "reference",
+      "profit": 30.0
+    },
+    {
+      "date": "2026-11-02",
       "game": "MIA at LAL",
       "pick": "LAL",
       "prob": 0.5352,
@@ -2731,10 +2744,10 @@
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 524.97,
-    "total_won": 2524.97,
+    "balance": 554.97,
+    "total_won": 2554.97,
     "total_lost": 2050.0,
-    "settled_count": 117,
-    "ref_priced_count": 117
+    "settled_count": 118,
+    "ref_priced_count": 118
   }
 }
