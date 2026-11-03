@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-03T04:13:04Z",
-  "scored": 115,
+  "updated_at": "2026-11-03T04:42:38Z",
+  "scored": 116,
   "won": 75,
-  "lost": 40,
-  "win_rate": 0.6521739130434783,
-  "brier": 0.2233,
-  "log_loss": 0.6346,
+  "lost": 41,
+  "win_rate": 0.646551724137931,
+  "brier": 0.2256,
+  "log_loss": 0.6395,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 87,
+      "scored": 88,
       "won": 56,
-      "lost": 31,
-      "win_rate": 0.6436781609195402,
-      "brier": 0.2227
+      "lost": 32,
+      "win_rate": 0.6363636363636364,
+      "brier": 0.2258
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -1298,18 +1298,20 @@
       "result": "WON",
       "price": 0.905,
       "price_source": "reference"
+    },
+    {
+      "date": "2026-11-02",
+      "game": "POR at DEN",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "DEN",
+      "prob": 0.6994,
+      "final": "DEN 110 \u00b7 POR 118",
+      "result": "LOST",
+      "price": 0.595,
+      "price_source": "reference"
     }
   ],
   "open_bets": [
-    {
-      "game": "POR at DEN",
-      "pick": "DEN",
-      "prob": 0.6994,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.595,
-      "price_source": "reference"
-    },
     {
       "game": "PHX at GS",
       "pick": "GS",
@@ -2701,14 +2703,25 @@
       "price": 0.905,
       "price_source": "reference",
       "profit": 5.25
+    },
+    {
+      "date": "2026-11-02",
+      "game": "POR at DEN",
+      "pick": "DEN",
+      "prob": 0.6994,
+      "stake": 50.0,
+      "result": "LOST",
+      "price": 0.595,
+      "price_source": "reference",
+      "profit": -50.0
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 522.93,
+    "balance": 472.93,
     "total_won": 2472.93,
-    "total_lost": 2000.0,
-    "settled_count": 115,
-    "ref_priced_count": 115
+    "total_lost": 2050.0,
+    "settled_count": 116,
+    "ref_priced_count": 116
   }
 }
