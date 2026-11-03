@@ -199,9 +199,13 @@
     "banner": "PAPER MONEY ONLY - $225 PAPER STAKE OPEN, $0.00 REALIZED, BACKTEST WINNERS $514.85 ON $25 / $102.97 ON $5 ARE BACKTEST ONLY, NOT LIVE PROFIT"
   },
   "system_name": "BANKZ",
-  "display_name": "BANKZ",
+  "display_name": "\ud83d\udcb5 BANKZ",
   "colour": "#00DD94",
   "colour_alt": "#00e5ff",
-  "theme": "green / bank",
-  "lane_file": "bankz_lane.json"
+  "theme": "money green / bank",
+  "lane_file": "bankz_lane.json",
+  "symbol": "\ud83d\udcb5",
+  "symbol_cash": "\ud83d\udcb5",
+  "tagline": "Money off memes \ud83d\ude02",
+  "header": "Money off memes \ud83d\ude02"
 }
