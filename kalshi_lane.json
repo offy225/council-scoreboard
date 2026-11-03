@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-03T04:42:38Z",
-  "scored": 116,
-  "won": 75,
+  "updated_at": "2026-11-03T05:42:50Z",
+  "scored": 117,
+  "won": 76,
   "lost": 41,
-  "win_rate": 0.646551724137931,
-  "brier": 0.2256,
-  "log_loss": 0.6395,
+  "win_rate": 0.6495726495726496,
+  "brier": 0.2255,
+  "log_loss": 0.6394,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 88,
-      "won": 56,
+      "scored": 89,
+      "won": 57,
       "lost": 32,
-      "win_rate": 0.6363636363636364,
-      "brier": 0.2258
+      "win_rate": 0.6404494382022472,
+      "brier": 0.2257
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -1309,6 +1309,17 @@
       "result": "LOST",
       "price": 0.595,
       "price_source": "reference"
+    },
+    {
+      "date": "2026-11-02",
+      "game": "MIA at LAL",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "LAL",
+      "prob": 0.5352,
+      "final": "LAL 138 \u00b7 MIA 117",
+      "result": "WON",
+      "price": 0.49,
+      "price_source": "reference"
     }
   ],
   "open_bets": [
@@ -1328,15 +1339,6 @@
       "stake": 50.0,
       "status": "OPEN",
       "price": 0.365,
-      "price_source": "reference"
-    },
-    {
-      "game": "MIA at LAL",
-      "pick": "LAL",
-      "prob": 0.5352,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.49,
       "price_source": "reference"
     },
     {
@@ -2714,14 +2716,25 @@
       "price": 0.595,
       "price_source": "reference",
       "profit": -50.0
+    },
+    {
+      "date": "2026-11-02",
+      "game": "MIA at LAL",
+      "pick": "LAL",
+      "prob": 0.5352,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.49,
+      "price_source": "reference",
+      "profit": 52.04
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 472.93,
-    "total_won": 2472.93,
+    "balance": 524.97,
+    "total_won": 2524.97,
     "total_lost": 2050.0,
-    "settled_count": 116,
-    "ref_priced_count": 116
+    "settled_count": 117,
+    "ref_priced_count": 117
   }
 }
