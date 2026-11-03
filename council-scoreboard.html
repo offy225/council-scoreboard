@@ -6050,79 +6050,111 @@ table.bd tr.ov-total td {
       return [A[0] + (B[0] - A[0]) * fr, A[1] + (B[1] - A[1]) * fr];
     }
     if (shape === 'BRAIN') {
-      // HUMAN BRAIN, 3D MODEL — like the cube, not a flat top view.
-      // Two offset brain layers, like the cube's front/back squares:
-      // FRONT layer (full size, bright) at (0,0), BACK layer (0.82x,
-      // dimmer, offset +110,-120 like the cube) behind it, plus
-      // CONNECTOR dots running between corresponding front/back
-      // points, so the brain reads as a solid 3D object, not a flat
-      // oval. Depth is returned as a 3rd element [x, y, depth]:
-      // 0 = front, 1 = back, 0.5 = connector. morphTargetsFor
-      // stores it as n.morphDepth, and draw() scales/dims by it.
-      // Silhouette, per layer: wide rounded frontal lobe (top, -y),
-      // narrower flattened occipital back (+y), central longitudinal
-      // fissure gap at x=0, wavy gyri folds inside each hemisphere,
-      // short stem below the flattened bottom (front layer only).
-      function brainSil(phi, sc, ox, oy) {
-        var backB = (1 - Math.cos(phi)) / 2;
-        var rxB = (315 - 55 * backB) * sc, ryB = 305 * sc;
-        var ripB = 1 + 0.03 * Math.sin(phi * 9) + 0.02 * Math.sin(phi * 17 + 1.3);
-        var bx = ox + Math.sin(phi) * rxB * ripB, by = oy - Math.cos(phi) * ryB * ripB;
-        var flatY = oy + 235 * sc;
-        if (by > flatY) by = flatY + (by - flatY) * 0.35;
-        if (Math.abs(bx - ox) < 30 * sc && by < oy - 280 * sc) by += 12 * sc * (1 - Math.abs(bx - ox) / (30 * sc));
-        if (Math.abs(bx - ox) < 40 * sc && by > oy + 200 * sc) by -= 18 * sc * (1 - Math.abs(bx - ox) / (40 * sc));
-        return [bx, by];
+      // ATLAS BRAIN, 3D MODEL — Julich-Brain / Big Brain style, side
+      // profile (3/4 view), NOT a flat top-view oval and NOT two
+      // ellipses. A rounded cerebrum filled with contiguous coloured
+      // parcels (one colour per gyrus region, like an atlas map),
+      // a grey folded cerebellum lump at the back-bottom, and a
+      // pale stem descending below it. Depth like the cube: a FRONT
+      // layer (full size, bright) and a BACK layer (0.82x, dimmer,
+      // offset +110,-120) joined by CONNECTOR dots, so it reads as
+      // a solid 3D object. Returns [x, y, depth, parcelColour]:
+      // depth 0 = front, 1 = back, 0.5 = connector. morphTargetsFor
+      // stores depth as n.morphDepth and colour as n.morphColor,
+      // and draw() uses n.morphColor ONLY in BRAIN shape (STAR and
+      // every other shape clear it, so their colours are untouched).
+      // Parcel colour is a function of POSITION, not of index, so
+      // neighbouring dots always share a region colour — parcels
+      // are contiguous blocks, never random confetti.
+      var PARCELS = ['#4ade80', '#2dd4bf', '#a3e635', '#fb923c', '#f472b6', '#60a5fa', '#a78bfa', '#38bdf8', '#facc15', '#8b5cf6', '#9ca3af', '#e7e5e4'];
+      function brainHash(a, b) { var v = Math.sin(a * 127.1 + b * 311.7) * 43758.5453; return v - Math.floor(v); }
+      function brainCerebrum(x, y) {
+        // side-profile cerebrum: ellipse centred (0,-30), rx 330,
+        // ry 210, bottom flattened at y=150, frontal pole (left)
+        // slightly fuller than the occipital back (right).
+        var ex = x / 330, ey = (y + 30) / 210;
+        if (ex * ex + ey * ey > 1) return false;
+        if (y > 150) return false;
+        return true;
       }
-      function brainGyri(gIdx, sc, ox, oy) {
-        var line = Math.floor(gIdx / 9), posG = (gIdx % 9) / 8;
-        var sideG = (line % 2 === 0) ? -1 : 1, lane = Math.floor(line / 2);
-        var gy = oy + (-235 + posG * 470) * sc;
-        var scaleG = 1 - 0.16 * Math.max(0, (gy - oy) / (235 * sc));
-        var gx = ox + sideG * (55 + lane * 38) * scaleG * sc + sideG * 16 * sc * Math.sin((gy - oy) * 0.045 + line * 0.9);
-        if (gy > oy + 230 * sc) gy = oy + 230 * sc + (gy - oy - 230 * sc) * 0.35;
-        return [gx, gy];
+      function brainFissure(x, y) {
+        // Sylvian fissure: horizontal gap y~60, x -80..230.
+        // Central sulcus: diagonal gap from (-20,-210) to (50,70).
+        if (y > 45 && y < 75 && x > -80 && x < 230) return true;
+        var t = (y + 210) / 280; if (t >= 0 && t <= 1) { var sx = -20 + t * 70; if (Math.abs(x - sx) < 12) return true; }
+        return false;
+      }
+      function brainParcel(x, y) {
+        // cerebellum / stem override first (contiguous lumps)
+        var cex = (x - 215) / 105, cey = (y - 195) / 65;
+        if (cex * cex + cey * cey <= 1) return '#9ca3af';
+        if (y > 230 && x > 55 && x < 145) return '#e7e5e4';
+        // deep insula patch, centred (30,20), radius ~62
+        var ix = x - 30, iy = y - 20; if (ix * ix + iy * iy < 62 * 62) return '#8b5cf6';
+        // atlas zones: x-bands (frontal -> central -> parietal ->
+        // occipital) crossed with y-bands, wavy boundaries so
+        // parcels read as gyri, not rectangles.
+        var wob = 18 * Math.sin(y * 0.02 + x * 0.01);
+        if (x + wob < -110) return (y < 0) ? '#4ade80' : '#2dd4bf';
+        if (x + wob < 20) { if (y < -40) return '#a3e635'; if (y < 70) return '#fb923c'; return '#f472b6'; }
+        if (x + wob < 170) { if (y < -40) return '#60a5fa'; if (y < 70) return '#a78bfa'; return '#f472b6'; }
+        return (y < -20) ? '#38bdf8' : '#facc15';
+      }
+      function brainOutline(phi) {
+        var ex = Math.sin(phi) * 330, ey = -30 - Math.cos(phi) * 210;
+        // frontal pole fuller: push left side out a touch
+        if (ex < 0) ex *= 1.04;
+        if (ey > 150) ey = 150 + (ey - 150) * 0.35;
+        return [ex, ey];
+      }
+      function brainInterior(seed) {
+        for (var k = 0; k < 24; k++) {
+          var ux = brainHash(seed, k), uy = brainHash(k, seed);
+          var ix2 = -320 + ux * 640, iy2 = -240 + uy * 390;
+          if (!brainCerebrum(ix2, iy2)) continue;
+          if (brainFissure(ix2, iy2)) continue;
+          return [ix2, iy2];
+        }
+        return [brainHash(seed, 99) * 200 - 100, -60];
+      }
+      function brainCerebellum(seed) {
+        for (var k = 0; k < 12; k++) {
+          var ux = brainHash(seed + 500, k), uy = brainHash(k, seed + 500);
+          var cx = 215 + (ux - 0.5) * 210, cy = 195 + (uy - 0.5) * 130;
+          var cex = (cx - 215) / 105, cey = (cy - 195) / 65;
+          if (cex * cex + cey * cey <= 1) return [cx, cy];
+        }
+        return [215, 195];
       }
       var fB = sIdx / sTotal;
-      if (fB < 0.30) {
-        var pt = brainSil((fB / 0.30) * Math.PI * 2, 1, 0, 0);
-        return [pt[0], pt[1], 0];
+      if (fB < 0.16) {
+        var op = brainOutline((fB / 0.16) * Math.PI * 2);
+        return [op[0], op[1], 0, brainParcel(op[0], op[1])];
       }
-      if (fB < 0.50) {
-        var pt2 = brainSil(((fB - 0.30) / 0.20) * Math.PI * 2, 0.82, 110, -120);
-        return [pt2[0], pt2[1], 1];
+      if (fB < 0.60) {
+        var ip = brainInterior(sIdx);
+        return [ip[0], ip[1], 0, brainParcel(ip[0], ip[1])];
       }
-      if (fB < 0.58) {
-        var fStart = Math.floor(0.50 * sTotal), fEnd = Math.floor(0.58 * sTotal);
-        var fi = sIdx - fStart, fiCount = Math.max(1, fEnd - fStart);
-        var stemAt = Math.floor(fiCount * 0.8);
-        if (fi >= stemAt) {
-          var si = fi - stemAt;
-          return [(si % 3 - 1) * 9 + 4 * Math.sin(si * 1.2), 285 + si * 12, 0];
-        }
-        var fy = -270 + (fi / Math.max(1, stemAt)) * 540;
-        return [(fi % 2 === 0 ? -17 : 17) + 3 * Math.sin(fy * 0.04), fy, 0];
+      if (fB < 0.78) {
+        var ip2 = brainInterior(sIdx);
+        return [ip2[0] * 0.82 + 110, (ip2[1] + 30) * 0.82 - 30 - 120, 1, brainParcel(ip2[0], ip2[1])];
       }
-      if (fB < 0.64) {
-        var bStart = Math.floor(0.58 * sTotal), bEnd = Math.floor(0.64 * sTotal);
-        var bi = sIdx - bStart, biCount = Math.max(1, bEnd - bStart);
-        var by2 = -120 + (-270 + (bi / Math.max(1, biCount)) * 540) * 0.82;
-        return [110 + (bi % 2 === 0 ? -17 : 17) * 0.82 + 3 * Math.sin(by2 * 0.04), by2, 1];
+      if (fB < 0.86) {
+        var op2 = brainOutline(((fB - 0.78) / 0.08) * Math.PI * 2);
+        return [op2[0] * 0.82 + 110, (op2[1] + 30) * 0.82 - 30 - 120, 1, brainParcel(op2[0], op2[1])];
       }
-      if (fB < 0.82) {
-        var gStart = Math.floor(0.64 * sTotal), gi = sIdx - gStart;
-        var gp = brainGyri(gi, 1, 0, 0);
-        return [gp[0], gp[1], 0];
+      if (fB < 0.93) {
+        var cp = brainCerebellum(sIdx);
+        return [cp[0], cp[1], 0, '#9ca3af'];
       }
-      if (fB < 0.94) {
-        var g2Start = Math.floor(0.82 * sTotal), gi2 = sIdx - g2Start;
-        var gp2 = brainGyri(gi2, 0.82, 110, -120);
-        return [gp2[0], gp2[1], 1];
+      if (fB < 0.97) {
+        var si2 = sIdx - Math.floor(0.93 * sTotal), sc2 = Math.max(1, Math.floor(0.97 * sTotal) - Math.floor(0.93 * sTotal));
+        var sy = 235 + (si2 / sc2) * 105;
+        return [100 + 18 * Math.sin(sy * 0.05) + (si2 % 3 - 1) * 8, sy, 0, '#e7e5e4'];
       }
-      var cStart = Math.floor(0.94 * sTotal), ci = sIdx - cStart, cCount = Math.max(1, sTotal - cStart);
-      var cPhi = (ci / cCount) * Math.PI * 2, ct = (ci % 5) / 4;
-      var fp = brainSil(cPhi, 1, 0, 0), bp3 = brainSil(cPhi, 0.82, 110, -120);
-      return [fp[0] + (bp3[0] - fp[0]) * ct, fp[1] + (bp3[1] - fp[1]) * ct, 0.5];
+      var cPhi = ((sIdx - Math.floor(0.97 * sTotal)) / Math.max(1, sTotal - Math.floor(0.97 * sTotal))) * Math.PI * 2, ct2 = (sIdx % 5) / 4;
+      var fp = brainOutline(cPhi), bp3 = [fp[0] * 0.82 + 110, (fp[1] + 30) * 0.82 - 30 - 120];
+      return [fp[0] + (bp3[0] - fp[0]) * ct2, fp[1] + (bp3[1] - fp[1]) * ct2, 0.5, brainParcel(fp[0], fp[1])];
     }
     if (shape === 'TRIANGLE') {
       var V = [[-380, 260], [380, 260], [0, -360]];
@@ -6142,15 +6174,16 @@ table.bd tr.ov-total td {
     nodes.forEach(function (n) { if (n.ox === undefined) { n.ox = n.ax; n.oy = n.ay; } });
     var to = {};
     if (shape === 'STAR') {
-      nodes.forEach(function (n) { to[n.id] = [n.ox, n.oy]; });
+      nodes.forEach(function (n) { to[n.id] = [n.ox, n.oy]; n.morphDepth = null; n.morphColor = null; });
       return to;
     }
     var sTotal = 0, sIdx = 0;
     nodes.forEach(function (n) { if (n.id !== 'council') sTotal++; });
     nodes.forEach(function (n) {
-      if (n.id === 'council') { to[n.id] = [0, 0]; n.morphDepth = null; return; }
+      if (n.id === 'council') { to[n.id] = [0, 0]; n.morphDepth = null; n.morphColor = null; return; }
       to[n.id] = morphShapePoint(shape, sIdx, sTotal); sIdx++;
       n.morphDepth = (to[n.id].length > 2) ? to[n.id][2] : null;
+      n.morphColor = (to[n.id].length > 3) ? to[n.id][3] : null;
     });
     return to;
   }
@@ -6581,6 +6614,8 @@ table.bd tr.ov-total td {
   });
   GLOW_SOFT['#a855f7'] = makeGlow([[0, 'rgba(216,180,254,1)'], [0.4, 'rgba(168,85,247,0.55)'], [1, 'rgba(168,85,247,0)']]);
   GLOW_LIN['#a855f7'] = makeGlow([[0, 'rgba(168,85,247,1)'], [1, 'rgba(168,85,247,0)']]);
+  // ATLAS BRAIN parcel glows (BRAIN shape only): halos match the parcel colour, not purple.
+  ['#4ade80','#2dd4bf','#a3e635','#fb923c','#f472b6','#60a5fa','#a78bfa','#38bdf8','#facc15','#8b5cf6','#9ca3af','#e7e5e4'].forEach(function (pc) { if (!GLOW_LIN[pc]) GLOW_LIN[pc] = makeGlow([[0, hexA(pc, 1)], [1, hexA(pc, 0)]]); });
 
   function draw(now) {
     ctx.clearRect(0, 0, W, H);
@@ -6816,7 +6851,7 @@ table.bd tr.ov-total td {
         // the field — density is their whole job; only a group
         // filter fades them right down
         var fa = !inFilter(n) ? 0.14 : ((selected || selectedEdge) && !isFocus(n) ? 0.52 : 0.88);
-        ctx.fillStyle = hexA(COLORS[n.group] || '#b4b4be', fa * 0.9); ctx.fill();
+        ctx.fillStyle = hexA((morphShape === 'BRAIN' && n.morphColor) ? n.morphColor : (COLORS[n.group] || '#b4b4be'), fa * 0.9); ctx.fill();
         if (isSel) {
           ctx.beginPath(); ctx.arc(fpos[0], fpos[1], fsr + 5 * transform.k + 2, 0, 6.2832);
           ctx.strokeStyle = 'rgba(192,132,252,0.85)'; ctx.lineWidth = 1.1; ctx.stroke();
@@ -6846,14 +6881,14 @@ table.bd tr.ov-total td {
       var brk = RM ? 1 : 1 + 0.045 * Math.sin(now * 0.00045 + n.phase * 2.1) + ((morphShape !== 'STAR') ? 0.12 * beatOf(now) : 0); // morph shapes pulsate in unison with the heartbeat
       var sr = Math.max(rr2 * brk * transform.k, n.kind === 'core' ? 4.2 : n.kind === 'bot' ? 3.6 : 2.5) * (1 + pBoost * 0.18);
       if (morphShape === 'BRAIN' && typeof n.morphDepth === 'number') { sr *= (n.morphDepth >= 1 ? 0.75 : n.morphDepth >= 0.5 ? 0.9 : 1.15); }
-      var ncol = COLORS[n.group] || '#f2f2f2';
+      var ncol = (morphShape === 'BRAIN' && n.morphColor) ? n.morphColor : (COLORS[n.group] || '#f2f2f2');
       // ambient halo — the star's own colour pooled around it, swelling
       // on the same slow breath as its radius
       var haloR = sr * (isSel ? 4.6 : 3.4);
       var haloA = (n.kind === 'part' ? 0.10 : 0.16) * a * (RM ? 1 : 0.85 + 0.15 * Math.sin(now * 0.00045 + n.phase * 2.1)) * (1 + pBoost * 0.9);
       if (morphShape === 'BRAIN' && typeof n.morphDepth === 'number') { haloA *= (n.morphDepth >= 1 ? 0.55 : n.morphDepth >= 0.5 ? 0.75 : 1); }
       ctx.globalAlpha = haloA;
-      ctx.drawImage(GLOW_LIN[ncol], pos[0] - haloR, pos[1] - haloR, haloR * 2, haloR * 2);
+      ctx.drawImage(GLOW_LIN[ncol] || GLOW_LIN['#a855f7'], pos[0] - haloR, pos[1] - haloR, haloR * 2, haloR * 2);
       ctx.globalAlpha = 1;
       if (isSel) {
         var pr = sr * 3.4;
