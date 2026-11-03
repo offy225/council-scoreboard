@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-02T13:37:24Z",
-  "scored": 104,
-  "won": 67,
+  "updated_at": "2026-11-03T02:42:41Z",
+  "scored": 105,
+  "won": 68,
   "lost": 37,
-  "win_rate": 0.6442307692307693,
-  "brier": 0.2262,
-  "log_loss": 0.6407,
+  "win_rate": 0.6476190476190476,
+  "brier": 0.2254,
+  "log_loss": 0.6392,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 76,
-      "won": 48,
+      "scored": 77,
+      "won": 49,
       "lost": 28,
-      "win_rate": 0.631578947368421,
-      "brier": 0.2266
+      "win_rate": 0.6363636363636364,
+      "brier": 0.2255
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -1177,18 +1177,20 @@
       "result": "WON",
       "price": 0.635,
       "price_source": "reference"
+    },
+    {
+      "date": "2026-11-02",
+      "game": "OKC at CLE",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "OKC",
+      "prob": 0.6151,
+      "final": "CLE 112 \u00b7 OKC 117",
+      "result": "WON",
+      "price": 0.385,
+      "price_source": "reference"
     }
   ],
   "open_bets": [
-    {
-      "game": "OKC at CLE",
-      "pick": "OKC",
-      "prob": 0.6151,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.385,
-      "price_source": "reference"
-    },
     {
       "game": "DET at CHA",
       "pick": "DET",
@@ -2460,14 +2462,25 @@
       "price": 0.635,
       "price_source": "reference",
       "profit": 28.74
+    },
+    {
+      "date": "2026-11-02",
+      "game": "OKC at CLE",
+      "pick": "OKC",
+      "prob": 0.6151,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.385,
+      "price_source": "reference",
+      "profit": 79.87
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 399.74,
-    "total_won": 2199.74,
+    "balance": 479.61,
+    "total_won": 2279.61,
     "total_lost": 1850.0,
-    "settled_count": 104,
-    "ref_priced_count": 104
+    "settled_count": 105,
+    "ref_priced_count": 105
   }
 }
