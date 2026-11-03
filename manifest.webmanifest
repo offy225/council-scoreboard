@@ -1,0 +1,22 @@
+{
+  "name": "Council Scoreboard",
+  "short_name": "Council",
+  "description": "The Council mind map and lanes \u2014 BANKZ money printer app icon.",
+  "start_url": "council-scoreboard.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "icons/bankz-printer-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/bankz-printer-180.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
