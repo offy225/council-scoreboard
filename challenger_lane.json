@@ -1,0 +1,129 @@
+{
+  "track": "challenger_v1",
+  "lane": "CHALLENGER",
+  "forward_only": true,
+  "backfilled": false,
+  "paper_only": true,
+  "live": false,
+  "updated_at": "2026-11-03T06:46:57.340607Z",
+  "source_ledger": "challenger_track_ledger.jsonl",
+  "source_ledger_lines": 112,
+  "decisions": {
+    "pass": 9,
+    "reject": 41,
+    "defer": 62,
+    "total": 112
+  },
+  "forward_grade": {
+    "round_trips": 0,
+    "round_trips_needed": 50,
+    "round_trip_pnl_usdt": 0.0,
+    "paper_pnl_usdt": 0.0,
+    "verdict": "NOT ENOUGH EVIDENCE - 0 OF 50 ROUND TRIPS"
+  },
+  "paper_positions_open": 9,
+  "paper_reporting_stake_usdt": 25,
+  "paper_positions_note": "Paper positions only, $25 reporting stake each. NOT live trades, NOT real money, NOT profit.",
+  "holder": {
+    "source": "rpc",
+    "provider": "Helius (custom.helius, connected)",
+    "helius_connected": true,
+    "helius_wired_run": {
+      "candidates_found": 50,
+      "evaluated": 48,
+      "passed": 9,
+      "rejected": 39,
+      "deferred": 0,
+      "holder_source_rpc": "48/48"
+    },
+    "ledger_holder_sources": {
+      "rpc": 48,
+      "none": 64
+    }
+  },
+  "passes": [
+    {
+      "mint": "GApeRAhPngRdv5JRDWGrRrbz5ZeLeevN9NCfRht9pump",
+      "holder_source": "rpc",
+      "buyer_count": null,
+      "price_points": 2,
+      "reasons": []
+    },
+    {
+      "mint": "Mjd5MSNqhHmigzcASyaafMosCMVZWpwmZdbesQFpump",
+      "holder_source": "rpc",
+      "buyer_count": null,
+      "price_points": 2,
+      "reasons": []
+    },
+    {
+      "mint": "pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn",
+      "holder_source": "rpc",
+      "buyer_count": null,
+      "price_points": 6,
+      "reasons": []
+    },
+    {
+      "mint": "DBPTU2oKLDHXQjAEJ3rZi8bUGmt2uxUbipgg6xmXoMqr",
+      "holder_source": "rpc",
+      "buyer_count": null,
+      "price_points": 6,
+      "reasons": []
+    },
+    {
+      "mint": "8YbjB38by48i9bLEJjnGNqjF19PszHawPixmrtBZYVkQ",
+      "holder_source": "rpc",
+      "buyer_count": null,
+      "price_points": 6,
+      "reasons": []
+    },
+    {
+      "mint": "Gka1TQEevBbVw4W9K15ER96ZzKByMTb6TBMQzWFEpump",
+      "holder_source": "rpc",
+      "buyer_count": null,
+      "price_points": 6,
+      "reasons": []
+    },
+    {
+      "mint": "D2496au7NBgTdd6AHA7kTEMgBc3K7BE9dGoqkkjKpump",
+      "holder_source": "rpc",
+      "buyer_count": null,
+      "price_points": 6,
+      "reasons": []
+    },
+    {
+      "mint": "3jAHcV6ZwmA3pnrR9MrWwNSbN5gDiM7rSM1RJradQ8xK",
+      "holder_source": "rpc",
+      "buyer_count": null,
+      "price_points": 4,
+      "reasons": []
+    },
+    {
+      "mint": "J1pZjNKh4BnbXBsroE4acJv3TYzCGxTn46VrZii6orEZ",
+      "holder_source": "rpc",
+      "buyer_count": null,
+      "price_points": 2,
+      "reasons": []
+    }
+  ],
+  "banner": "PAPER ONLY - NOT LIVE - NO PROFIT YET",
+  "caveats": [
+    "0 round trips closed, $0.00 forward P&L. A pass is a paper judgement, not a win.",
+    "All 9 passes have buyer_count null (buyers: None) - wallet-diversity was not tested on them; they passed on concentration + buy/sell + chart fields available.",
+    "Price series are thin: 2-6 price points per pass.",
+    "Top-10 share of exactly 1.00 on 38 rejected candidates is under investigation - most likely the pump.fun bonding-curve account dominating largest-accounts, not proof all 38 are rugs.",
+    "62 defers are transient_holder_check_429_retry from before Helius wiring; the Helius-wired run had 0 defers.",
+    "Creator share is unknown unless a creator address is supplied per mint; concentration alone does not prove a coin is safe.",
+    "No profit-target, lifestyle, or bank claim is proven by this tab. The 50-round-trip forward grade decides live discussion."
+  ],
+  "reject_summary": {
+    "top10_concentration_1.00": 37,
+    "creator_share_0.79": 1,
+    "buyers_not_growing": 1,
+    "creator_and_top10": 1,
+    "top10_concentration_0.99": 1
+  },
+  "defer_summary": {
+    "transient_holder_check_429_retry": 62
+  }
+}
