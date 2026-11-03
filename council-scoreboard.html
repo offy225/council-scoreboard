@@ -5936,7 +5936,7 @@ table.bd tr.ov-total td {
   var pointerW = null, pointerLastMove = 0; // pointer-reactivity: base world pos + last move time
   var ripples = []; // interaction ripples: {x,y,t0} base world coords, fade over ~900ms
   var morphShape = 'STAR';
-  var morphShapes = ['STAR', 'CUBE', 'BRAIN', 'TRIANGLE', 'GALAXY'];
+  var morphShapes = ['STAR', 'CUBE', 'NEBULA', 'TRIANGLE', 'GALAXY'];
   var morphLastInteract = 0;
   var morphBtn = null;
   function morphTarget(shape, idx, total, node) {
@@ -5951,11 +5951,11 @@ table.bd tr.ov-total td {
       if (seg === 0) { x = -S + frac * 2 * S; y = -S; } else if (seg === 1) { x = S; y = -S + frac * 2 * S; } else if (seg === 2) { x = S - frac * 2 * S; y = S; } else { x = -S; y = S - frac * 2 * S; }
       return [ox + x, oy + y];
     }
-    if (shape === 'BRAIN') {
-      var side = (idx % 2 === 0) ? -1 : 1;
-      var a = f * Math.PI * 2 + (side > 0 ? 0.3 : -0.3);
-      var r = 0.35 + 0.65 * Math.abs(Math.sin(idx * 2.399));
-      return [side * (40 + Math.cos(a) * 300 * r), Math.sin(a) * 210 * r + Math.sin(idx * 1.7) * 18];
+    if (shape === 'NEBULA') {
+      // Milky Way band: a tilted diagonal band, not a tight spiral.
+      var bx = -480 + f * 960;
+      var by = -0.38 * bx + Math.sin(idx * 1.31) * 90 + (Math.sin(idx * 2.7) * 60);
+      return [bx, by];
     }
     if (shape === 'TRIANGLE') {
       var v = [[-380, 260], [380, 260], [0, -360]];
@@ -5998,7 +5998,7 @@ table.bd tr.ov-total td {
       if (seg === 0) { x = -S + fr * 2 * S; y = -S; } else if (seg === 1) { x = S; y = -S + fr * 2 * S; } else if (seg === 2) { x = S - fr * 2 * S; y = S; } else { x = -S; y = S - fr * 2 * S; }
       return [x, y];
     }
-    if (shape === 'BRAIN') return [Math.cos(a) * 56, Math.sin(a) * 38];
+    if (shape === 'NEBULA') return [Math.cos(a) * (40 + partIdx * 3), Math.sin(a) * (26 + partIdx * 2) - 0.38 * Math.cos(a) * 40];
     if (shape === 'TRIANGLE') {
       var v = [[-52, 36], [52, 36], [0, -48]], pt = (partIdx / Math.max(1, groupCount)) * 3, sg = Math.floor(pt), f2 = pt - sg;
       if (sg >= 3) { sg = 2; f2 = 1; }
@@ -6049,112 +6049,40 @@ table.bd tr.ov-total td {
       A = edges[seg][0]; B = edges[seg][1];
       return [A[0] + (B[0] - A[0]) * fr, A[1] + (B[1] - A[1]) * fr];
     }
-    if (shape === 'BRAIN') {
-      // ATLAS BRAIN, 3D MODEL — Julich-Brain / Big Brain style, side
-      // profile (3/4 view), NOT a flat top-view oval and NOT two
-      // ellipses. A rounded cerebrum filled with contiguous coloured
-      // parcels (one colour per gyrus region, like an atlas map),
-      // a grey folded cerebellum lump at the back-bottom, and a
-      // pale stem descending below it. Depth like the cube: a FRONT
-      // layer (full size, bright) and a BACK layer (0.82x, dimmer,
-      // offset +110,-120) joined by CONNECTOR dots, so it reads as
-      // a solid 3D object. Returns [x, y, depth, parcelColour]:
-      // depth 0 = front, 1 = back, 0.5 = connector. morphTargetsFor
-      // stores depth as n.morphDepth and colour as n.morphColor,
-      // and draw() uses n.morphColor ONLY in BRAIN shape (STAR and
-      // every other shape clear it, so their colours are untouched).
-      // Parcel colour is a function of POSITION, not of index, so
-      // neighbouring dots always share a region colour — parcels
-      // are contiguous blocks, never random confetti.
-      var PARCELS = ['#4ade80', '#2dd4bf', '#a3e635', '#fb923c', '#f472b6', '#60a5fa', '#a78bfa', '#38bdf8', '#facc15', '#8b5cf6', '#9ca3af', '#e7e5e4'];
-      function brainHash(a, b) { var v = Math.sin(a * 127.1 + b * 311.7) * 43758.5453; return v - Math.floor(v); }
-      function brainCerebrum(x, y) {
-        // side-profile cerebrum: ellipse centred (0,-30), rx 330,
-        // ry 210, bottom flattened at y=150, frontal pole (left)
-        // slightly fuller than the occipital back (right).
-        var ex = x / 330, ey = (y + 30) / 210;
-        if (ex * ex + ey * ey > 1) return false;
-        if (y > 150) return false;
-        return true;
+    if (shape === 'NEBULA') {
+      // NEBULA / MILKY WAY — replaces the old shape (removed Nov 3, 2026, Will's
+      // order: brain shape is gone, every other shape stays).
+      // Distinct from GALAXY (tight 3-arm spiral): this is a tilted
+      // Milky Way band with a dense bright core and a diffuse
+      // coloured nebula halo around it. Returns [x, y, 0, colour]
+      // so draw() tints dots by nebula zone, like the old parcel
+      // colouring, but for a nebula, not a brain.
+      function nebHash(a, b) { var v = Math.sin(a * 127.1 + b * 311.7) * 43758.5453; return v - Math.floor(v); }
+      var PAL = ['#a855f7', '#ec4899', '#38bdf8', '#f472b6', '#818cf8', '#2dd4bf', '#facc15', '#fb923c'];
+      var fN = sIdx / sTotal;
+      var hx = nebHash(sIdx, 7), hy = nebHash(13, sIdx);
+      var rx, ry, col;
+      if (fN < 0.20) {
+        // dense bright core: ellipse, rotated -22 degrees
+        var ca = Math.cos(-0.38), sa = Math.sin(-0.38);
+        var ex = (hx - 0.5) * 260, ey = (hy - 0.5) * 130;
+        rx = ex * ca - ey * sa; ry = ex * sa + ey * ca;
+        col = '#facc15';
+      } else if (fN < 0.75) {
+        // Milky Way band: diagonal, -480..480, thickness ~180
+        var t = (fN - 0.20) / 0.55;
+        rx = -480 + t * 960;
+        var thick = (hy - 0.5) * 180 * (0.6 + 0.4 * Math.sin(t * 9));
+        ry = -0.38 * rx + thick;
+        col = PAL[Math.floor(hx * PAL.length) % PAL.length];
+      } else {
+        // diffuse halo: large ellipse + wispy spiral wisps
+        var ang = hx * Math.PI * 2, rad = 200 + hy * 320;
+        rx = Math.cos(ang) * rad; ry = Math.sin(ang) * rad * 0.72;
+        rx += Math.sin(ang * 3 + hy * 6) * 40;
+        col = PAL[Math.floor(hy * PAL.length) % PAL.length];
       }
-      function brainFissure(x, y) {
-        // Sylvian fissure: horizontal gap y~60, x -80..230.
-        // Central sulcus: diagonal gap from (-20,-210) to (50,70).
-        if (y > 45 && y < 75 && x > -80 && x < 230) return true;
-        var t = (y + 210) / 280; if (t >= 0 && t <= 1) { var sx = -20 + t * 70; if (Math.abs(x - sx) < 12) return true; }
-        return false;
-      }
-      function brainParcel(x, y) {
-        // cerebellum / stem override first (contiguous lumps)
-        var cex = (x - 215) / 105, cey = (y - 195) / 65;
-        if (cex * cex + cey * cey <= 1) return '#9ca3af';
-        if (y > 230 && x > 55 && x < 145) return '#e7e5e4';
-        // deep insula patch, centred (30,20), radius ~62
-        var ix = x - 30, iy = y - 20; if (ix * ix + iy * iy < 62 * 62) return '#8b5cf6';
-        // atlas zones: x-bands (frontal -> central -> parietal ->
-        // occipital) crossed with y-bands, wavy boundaries so
-        // parcels read as gyri, not rectangles.
-        var wob = 18 * Math.sin(y * 0.02 + x * 0.01);
-        if (x + wob < -110) return (y < 0) ? '#4ade80' : '#2dd4bf';
-        if (x + wob < 20) { if (y < -40) return '#a3e635'; if (y < 70) return '#fb923c'; return '#f472b6'; }
-        if (x + wob < 170) { if (y < -40) return '#60a5fa'; if (y < 70) return '#a78bfa'; return '#f472b6'; }
-        return (y < -20) ? '#38bdf8' : '#facc15';
-      }
-      function brainOutline(phi) {
-        var ex = Math.sin(phi) * 330, ey = -30 - Math.cos(phi) * 210;
-        // frontal pole fuller: push left side out a touch
-        if (ex < 0) ex *= 1.04;
-        if (ey > 150) ey = 150 + (ey - 150) * 0.35;
-        return [ex, ey];
-      }
-      function brainInterior(seed) {
-        for (var k = 0; k < 24; k++) {
-          var ux = brainHash(seed, k), uy = brainHash(k, seed);
-          var ix2 = -320 + ux * 640, iy2 = -240 + uy * 390;
-          if (!brainCerebrum(ix2, iy2)) continue;
-          if (brainFissure(ix2, iy2)) continue;
-          return [ix2, iy2];
-        }
-        return [brainHash(seed, 99) * 200 - 100, -60];
-      }
-      function brainCerebellum(seed) {
-        for (var k = 0; k < 12; k++) {
-          var ux = brainHash(seed + 500, k), uy = brainHash(k, seed + 500);
-          var cx = 215 + (ux - 0.5) * 210, cy = 195 + (uy - 0.5) * 130;
-          var cex = (cx - 215) / 105, cey = (cy - 195) / 65;
-          if (cex * cex + cey * cey <= 1) return [cx, cy];
-        }
-        return [215, 195];
-      }
-      var fB = sIdx / sTotal;
-      if (fB < 0.16) {
-        var op = brainOutline((fB / 0.16) * Math.PI * 2);
-        return [op[0], op[1], 0, brainParcel(op[0], op[1])];
-      }
-      if (fB < 0.60) {
-        var ip = brainInterior(sIdx);
-        return [ip[0], ip[1], 0, brainParcel(ip[0], ip[1])];
-      }
-      if (fB < 0.78) {
-        var ip2 = brainInterior(sIdx);
-        return [ip2[0] * 0.82 + 110, (ip2[1] + 30) * 0.82 - 30 - 120, 1, brainParcel(ip2[0], ip2[1])];
-      }
-      if (fB < 0.86) {
-        var op2 = brainOutline(((fB - 0.78) / 0.08) * Math.PI * 2);
-        return [op2[0] * 0.82 + 110, (op2[1] + 30) * 0.82 - 30 - 120, 1, brainParcel(op2[0], op2[1])];
-      }
-      if (fB < 0.93) {
-        var cp = brainCerebellum(sIdx);
-        return [cp[0], cp[1], 0, '#9ca3af'];
-      }
-      if (fB < 0.97) {
-        var si2 = sIdx - Math.floor(0.93 * sTotal), sc2 = Math.max(1, Math.floor(0.97 * sTotal) - Math.floor(0.93 * sTotal));
-        var sy = 235 + (si2 / sc2) * 105;
-        return [100 + 18 * Math.sin(sy * 0.05) + (si2 % 3 - 1) * 8, sy, 0, '#e7e5e4'];
-      }
-      var cPhi = ((sIdx - Math.floor(0.97 * sTotal)) / Math.max(1, sTotal - Math.floor(0.97 * sTotal))) * Math.PI * 2, ct2 = (sIdx % 5) / 4;
-      var fp = brainOutline(cPhi), bp3 = [fp[0] * 0.82 + 110, (fp[1] + 30) * 0.82 - 30 - 120];
-      return [fp[0] + (bp3[0] - fp[0]) * ct2, fp[1] + (bp3[1] - fp[1]) * ct2, 0.5, brainParcel(fp[0], fp[1])];
+      return [rx, ry, 0, col];
     }
     if (shape === 'TRIANGLE') {
       var V = [[-380, 260], [380, 260], [0, -360]];
@@ -6614,7 +6542,7 @@ table.bd tr.ov-total td {
   });
   GLOW_SOFT['#a855f7'] = makeGlow([[0, 'rgba(216,180,254,1)'], [0.4, 'rgba(168,85,247,0.55)'], [1, 'rgba(168,85,247,0)']]);
   GLOW_LIN['#a855f7'] = makeGlow([[0, 'rgba(168,85,247,1)'], [1, 'rgba(168,85,247,0)']]);
-  // ATLAS BRAIN parcel glows (BRAIN shape only): halos match the parcel colour, not purple.
+  // NEBULA palette glows (NEBULA shape only): halos match the nebula zone colour, not purple.
   ['#4ade80','#2dd4bf','#a3e635','#fb923c','#f472b6','#60a5fa','#a78bfa','#38bdf8','#facc15','#8b5cf6','#9ca3af','#e7e5e4'].forEach(function (pc) { if (!GLOW_LIN[pc]) GLOW_LIN[pc] = makeGlow([[0, hexA(pc, 1)], [1, hexA(pc, 0)]]); });
 
   function draw(now) {
@@ -6631,7 +6559,6 @@ table.bd tr.ov-total td {
     // so the field feels like it is breathing rather than blinking
     for (var ni = 0; ni < NEB.length; ni++) {
       var nn = byId[NEB[ni][0]]; if (!nn) continue;
-      if (morphShape === 'BRAIN') continue; // solid brain: no soft glows washing out parcels
       if (!inFilter(nn)) continue;
       var ndp = npos(nn, now);
       var np = w2s(ndp[0], ndp[1]);
@@ -6671,7 +6598,6 @@ table.bd tr.ov-total td {
     // never render oversized or clip at an edge.
     ctx.textAlign = 'center';
     ['plugg', 'cobra', 'whiplash', 'hummingbot', 'caddy', 'bankz'].forEach(function (g) {
-      if (morphShape === 'BRAIN') return; // solid brain: no section labels over the scan
       var hub = byId[g]; if (!hub) return;
       if (transform.k < 0.26 || transform.k > 2.4) return;
       var hd = npos(hub, now);
@@ -6683,99 +6609,9 @@ table.bd tr.ov-total td {
       ctx.fillStyle = hexA(COLORS[g], wa);
       ctx.fillText(hub.label, hp[0], hp[1] - 24);
     });
-    // SOLID BRAIN SCAN — BRAIN shape only, drawn INSTEAD of the dot
-    // field, not on top of a dot cloud. Will: "actual brain scan type
-    // shit instead of just labels and dots in this oval shape."
-    // Why the old version read as a blob: 225 sparse dots + their
-    // halos + ~200 curved arcs + purple hot arcs radiating from
-    // THE COUNCIL (selected by default) + hub labels all crossed the
-    // parcels, so no solid silhouette ever formed. This block draws
-    // a filled atlas brain in world coords (same transform/rotation
-    // as the morph field), then the arcs loop and the node loop below
-    // are both skipped in BRAIN mode, so nothing can cross it again.
-    // Pulses are kept: they are dots travelling on the brain surface,
-    // not lines. STAR restores everything (morphShape !== 'BRAIN').
-    if (morphShape === 'BRAIN') {
-      ctx.save();
-      ctx.translate(transform.x, transform.y);
-      ctx.scale(transform.k, transform.k);
-      ctx.rotate(spinAngle);
-      // back-layer shadow, like the cube's back square: a darker,
-      // offset echo so the front brain reads as 3D, not flat.
-      ctx.save();
-      ctx.translate(110, -120); ctx.scale(0.82, 0.82); ctx.translate(0, 30); ctx.scale(1, 1);
-      ctx.beginPath();
-      for (var bphi = 0; bphi <= Math.PI * 2 + 0.01; bphi += Math.PI / 72) {
-        var bex = Math.sin(bphi) * 330, bey = -30 - Math.cos(bphi) * 210;
-        if (bex < 0) bex *= 1.04; if (bey > 150) bey = 150 + (bey - 150) * 0.35;
-        if (bphi === 0) ctx.moveTo(bex, bey); else ctx.lineTo(bex, bey);
-      }
-      ctx.closePath(); ctx.fillStyle = 'rgba(10,12,20,0.92)'; ctx.fill();
-      ctx.restore();
-      // cerebrum silhouette path, reused for clip + outline
-      function brainSil() {
-        ctx.beginPath();
-        for (var phi = 0; phi <= Math.PI * 2 + 0.01; phi += Math.PI / 72) {
-          var ex = Math.sin(phi) * 330, ey = -30 - Math.cos(phi) * 210;
-          if (ex < 0) ex *= 1.04; if (ey > 150) ey = 150 + (ey - 150) * 0.35;
-          if (phi === 0) ctx.moveTo(ex, ey); else ctx.lineTo(ex, ey);
-        }
-        ctx.closePath();
-      }
-      brainSil(); ctx.save(); ctx.clip();
-      // filled parcel bands (atlas zones, frontal left -> occipital right)
-      var bands = [
-        [-330, -240, -110, 0, '#4ade80'], [-330, 0, -110, 150, '#2dd4bf'],
-        [-110, -240, 20, -40, '#a3e635'], [-110, -40, 20, 70, '#fb923c'], [-110, 70, 20, 150, '#f472b6'],
-        [20, -240, 170, -40, '#60a5fa'], [20, -40, 170, 70, '#a78bfa'], [20, 70, 170, 150, '#f472b6'],
-        [170, -240, 330, -20, '#38bdf8'], [170, -20, 330, 150, '#facc15']
-      ];
-      for (var bi = 0; bi < bands.length; bi++) {
-        ctx.fillStyle = bands[bi][4];
-        ctx.fillRect(bands[bi][0], bands[bi][1], bands[bi][2] - bands[bi][0], bands[bi][3] - bands[bi][1]);
-      }
-      // deep insula patch
-      ctx.beginPath(); ctx.arc(30, 20, 62, 0, 6.2832); ctx.fillStyle = '#8b5cf6'; ctx.fill();
-      // gyri folds: wavy dark texture lines inside the cerebrum
-      ctx.strokeStyle = 'rgba(0,0,0,0.30)'; ctx.lineWidth = 6; ctx.lineCap = 'round';
-      var gy = [-180, -120, -60, 0, 60, 110];
-      for (var gi = 0; gi < gy.length; gi++) {
-        ctx.beginPath();
-        for (var gx = -320; gx <= 320; gx += 20) {
-          var gyy = gy[gi] + 16 * Math.sin(gx * 0.02 + gy[gi] * 0.03);
-          if (gx === -320) ctx.moveTo(gx, gyy); else ctx.lineTo(gx, gyy);
-        }
-        ctx.stroke();
-      }
-      // fissures as REAL blank dark gaps, not missing dots lines cross over
-      ctx.strokeStyle = 'rgba(5,5,10,0.92)'; ctx.lineCap = 'round';
-      ctx.lineWidth = 16; ctx.beginPath(); ctx.moveTo(-80, 60); ctx.quadraticCurveTo(70, 52, 230, 60); ctx.stroke();
-      ctx.lineWidth = 13; ctx.beginPath(); ctx.moveTo(-20, -210); ctx.lineTo(50, 70); ctx.stroke();
-      ctx.restore();
-      // cerebrum outline, crisp so it reads at normal zoom
-      brainSil(); ctx.strokeStyle = 'rgba(255,255,255,0.35)'; ctx.lineWidth = 3; ctx.stroke();
-      // cerebellum: clearly SEPARATE grey lump at back-bottom, with a
-      // dark gap line along its top edge so it never blends into the blob
-      ctx.beginPath(); ctx.ellipse(215, 195, 105, 65, 0, 0, 6.2832); ctx.fillStyle = '#9ca3af'; ctx.fill();
-      ctx.save(); ctx.beginPath(); ctx.ellipse(215, 195, 105, 65, 0, 0, 6.2832); ctx.clip();
-      ctx.strokeStyle = 'rgba(0,0,0,0.35)'; ctx.lineWidth = 5;
-      var cy2 = [155, 180, 205, 230];
-      for (var ci = 0; ci < cy2.length; ci++) {
-        ctx.beginPath();
-        for (var cx2 = 110; cx2 <= 320; cx2 += 20) {
-          var cyy = cy2[ci] + 10 * Math.sin(cx2 * 0.05 + ci);
-          if (cx2 === 110) ctx.moveTo(cx2, cyy); else ctx.lineTo(cx2, cyy);
-        }
-        ctx.stroke();
-      }
-      ctx.restore();
-      ctx.beginPath(); ctx.ellipse(215, 195, 105, 65, 0, Math.PI * 1.05, Math.PI * 1.95); ctx.strokeStyle = 'rgba(5,5,10,0.9)'; ctx.lineWidth = 8; ctx.stroke();
-      ctx.beginPath(); ctx.ellipse(215, 195, 105, 65, 0, 0, 6.2832); ctx.strokeStyle = 'rgba(255,255,255,0.25)'; ctx.lineWidth = 2; ctx.stroke();
-      // pale stem below the cerebellum
-      ctx.beginPath(); ctx.moveTo(88, 235); ctx.lineTo(128, 235); ctx.lineTo(122, 350); ctx.quadraticCurveTo(108, 362, 94, 350); ctx.closePath();
-      ctx.fillStyle = '#e7e5e4'; ctx.fill(); ctx.strokeStyle = 'rgba(255,255,255,0.25)'; ctx.lineWidth = 2; ctx.stroke();
-      ctx.restore();
-    }
+    // NEBULA shape: no solid scan overlay. The normal dot field IS
+    // the nebula (Milky Way band + core + halo), so arcs, labels,
+    // glows and dots all stay visible, exactly like STAR/CUBE/etc.
     // arcs — every connection is a gentle curve, never a straight
     // wire: the control point bows off the midpoint along the
     // perpendicular, the bow alternating side and depth per arc so
@@ -6784,7 +6620,6 @@ table.bd tr.ov-total td {
     // wiring lights purple and flows toward the selection.
     for (i = 0; i < edges.length; i++) {
       var e = edges[i];
-      if (morphShape === 'BRAIN') continue; // solid brain: no arcs / council spokes crossing the scan
       var ea2 = npos(e.a, now), eb2 = npos(e.b, now);
       var pa = w2s(ea2[0], ea2[1]), pb = w2s(eb2[0], eb2[1]);
       if (e.file && !filesOn) continue;
@@ -6857,7 +6692,6 @@ table.bd tr.ov-total td {
     // the purple burst — rays radiating from the clicked node
     for (i = 0; i < bursts.length; i++) {
       var bu = bursts[i];
-      if (morphShape === 'BRAIN') continue; // solid brain: no purple burst rays over the scan
       var bd = npos(bu.n, now);
       var bp = w2s(bd[0], bd[1]);
       var R = (bu.big ? 240 : 165) * bu.t;
@@ -6913,7 +6747,6 @@ table.bd tr.ov-total td {
     // only slightly with connection count
     for (i = 0; i < nodes.length; i++) {
       var n = nodes[i];
-      if (morphShape === 'BRAIN') continue; // solid brain: dots/labels hidden, the filled scan IS the shape; STAR restores them
       var nd = npos(n, now);
       var pos = w2s(nd[0], nd[1]);
       if (pos[0] < -60 || pos[0] > W + 60 || pos[1] < -60 || pos[1] > H + 60) continue;
@@ -6937,7 +6770,7 @@ table.bd tr.ov-total td {
         // as a dense field on a phone, growing gently with zoom and
         // capped so the files never rival the system dots
         var fsr = Math.min(3.6, Math.max(n.r * transform.k * (RM ? 1 : 1 + 0.05 * Math.sin(now * 0.0004 + n.phase * 1.7)), 2.1));
-        if (morphShape === 'BRAIN' && typeof n.morphDepth === 'number') { fsr *= (n.morphDepth >= 1 ? 0.75 : n.morphDepth >= 0.5 ? 0.9 : 1.15); }
+        if (morphShape === 'NEBULA' && typeof n.morphDepth === 'number') { fsr *= (n.morphDepth >= 1 ? 0.75 : n.morphDepth >= 0.5 ? 0.9 : 1.15); }
         if (isSel) {
           var fpr = fsr * 3.6;
           ctx.globalAlpha = 0.5 * a / 0.85;
@@ -6949,7 +6782,7 @@ table.bd tr.ov-total td {
         // the field — density is their whole job; only a group
         // filter fades them right down
         var fa = !inFilter(n) ? 0.14 : ((selected || selectedEdge) && !isFocus(n) ? 0.52 : 0.88);
-        ctx.fillStyle = hexA((morphShape === 'BRAIN' && n.morphColor) ? n.morphColor : (COLORS[n.group] || '#b4b4be'), fa * 0.9); ctx.fill();
+        ctx.fillStyle = hexA((morphShape === 'NEBULA' && n.morphColor) ? n.morphColor : (COLORS[n.group] || '#b4b4be'), fa * 0.9); ctx.fill();
         if (isSel) {
           ctx.beginPath(); ctx.arc(fpos[0], fpos[1], fsr + 5 * transform.k + 2, 0, 6.2832);
           ctx.strokeStyle = 'rgba(192,132,252,0.85)'; ctx.lineWidth = 1.1; ctx.stroke();
@@ -6978,13 +6811,13 @@ table.bd tr.ov-total td {
       // only, same decorative drift family as the positional sway)
       var brk = RM ? 1 : 1 + 0.045 * Math.sin(now * 0.00045 + n.phase * 2.1) + ((morphShape !== 'STAR') ? 0.12 * beatOf(now) : 0); // morph shapes pulsate in unison with the heartbeat
       var sr = Math.max(rr2 * brk * transform.k, n.kind === 'core' ? 4.2 : n.kind === 'bot' ? 3.6 : 2.5) * (1 + pBoost * 0.18);
-      if (morphShape === 'BRAIN' && typeof n.morphDepth === 'number') { sr *= (n.morphDepth >= 1 ? 0.75 : n.morphDepth >= 0.5 ? 0.9 : 1.15); }
-      var ncol = (morphShape === 'BRAIN' && n.morphColor) ? n.morphColor : (COLORS[n.group] || '#f2f2f2');
+      if (morphShape === 'NEBULA' && typeof n.morphDepth === 'number') { sr *= (n.morphDepth >= 1 ? 0.75 : n.morphDepth >= 0.5 ? 0.9 : 1.15); }
+      var ncol = (morphShape === 'NEBULA' && n.morphColor) ? n.morphColor : (COLORS[n.group] || '#f2f2f2');
       // ambient halo — the star's own colour pooled around it, swelling
       // on the same slow breath as its radius
       var haloR = sr * (isSel ? 4.6 : 3.4);
       var haloA = (n.kind === 'part' ? 0.10 : 0.16) * a * (RM ? 1 : 0.85 + 0.15 * Math.sin(now * 0.00045 + n.phase * 2.1)) * (1 + pBoost * 0.9);
-      if (morphShape === 'BRAIN' && typeof n.morphDepth === 'number') { haloA *= (n.morphDepth >= 1 ? 0.55 : n.morphDepth >= 0.5 ? 0.75 : 1); }
+      if (morphShape === 'NEBULA' && typeof n.morphDepth === 'number') { haloA *= (n.morphDepth >= 1 ? 0.55 : n.morphDepth >= 0.5 ? 0.75 : 1); }
       ctx.globalAlpha = haloA;
       ctx.drawImage(GLOW_LIN[ncol] || GLOW_LIN['#a855f7'], pos[0] - haloR, pos[1] - haloR, haloR * 2, haloR * 2);
       ctx.globalAlpha = 1;
@@ -7126,13 +6959,11 @@ table.bd tr.ov-total td {
         }
       }
     }
-    // brain-current spawner — a fresh pulse every ~280ms on a live
-    // wire, favouring the selected node's own wiring; capped, so the
-    // current reads as signal, never as noise. In BRAIN shape the
-    // brain is electric: pulses every ~120ms, up to 28, 1.6x speed,
-    // so you can actually see the signals travelling.
-    var pulseGap = (morphShape === 'BRAIN') ? 120 : 280;
-    var pulseCap = (morphShape === 'BRAIN') ? 28 : 14;
+    // current spawner — a fresh pulse every ~280ms on a live wire,
+    // favouring the selected node's own wiring; capped, so the
+    // current reads as signal, never as noise.
+    var pulseGap = 280;
+    var pulseCap = 14;
     if (!RM && now - lastPulse > pulseGap && pulses.length < pulseCap) {
       lastPulse = now;
       var cand = [];
@@ -7145,7 +6976,7 @@ table.bd tr.ov-total td {
           if (mine.length) pickE = mine[(Math.random() * mine.length) | 0];
         }
         if (pickE < 0) pickE = cand[(Math.random() * cand.length) | 0];
-        pulses.push({ e: edges[pickE], ei: pickE, t: 0, sp: (0.010 + Math.random() * 0.008) * (morphShape === 'BRAIN' ? 1.6 : 1), ph: Math.random() * 6.28 });
+        pulses.push({ e: edges[pickE], ei: pickE, t: 0, sp: (0.010 + Math.random() * 0.008) * 1, ph: Math.random() * 6.28 });
       }
     }
     for (var pi2 = pulses.length - 1; pi2 >= 0; pi2--) {
