@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-03T02:42:41Z",
-  "scored": 105,
+  "updated_at": "2026-11-03T02:57:41Z",
+  "scored": 106,
   "won": 68,
-  "lost": 37,
-  "win_rate": 0.6476190476190476,
-  "brier": 0.2254,
-  "log_loss": 0.6392,
+  "lost": 38,
+  "win_rate": 0.6415094339622641,
+  "brier": 0.2269,
+  "log_loss": 0.6423,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 77,
+      "scored": 78,
       "won": 49,
-      "lost": 28,
-      "win_rate": 0.6363636363636364,
-      "brier": 0.2255
+      "lost": 29,
+      "win_rate": 0.6282051282051282,
+      "brier": 0.2275
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -1188,6 +1188,17 @@
       "result": "WON",
       "price": 0.385,
       "price_source": "reference"
+    },
+    {
+      "date": "2026-11-02",
+      "game": "WSH at ORL",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "ORL",
+      "prob": 0.6177,
+      "final": "ORL 94 \u00b7 WSH 103",
+      "result": "LOST",
+      "price": 0.575,
+      "price_source": "reference"
     }
   ],
   "open_bets": [
@@ -1216,15 +1227,6 @@
       "stake": 50.0,
       "status": "OPEN",
       "price": 0.885,
-      "price_source": "reference"
-    },
-    {
-      "game": "WSH at ORL",
-      "pick": "ORL",
-      "prob": 0.6177,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.575,
       "price_source": "reference"
     },
     {
@@ -2473,14 +2475,25 @@
       "price": 0.385,
       "price_source": "reference",
       "profit": 79.87
+    },
+    {
+      "date": "2026-11-02",
+      "game": "WSH at ORL",
+      "pick": "ORL",
+      "prob": 0.6177,
+      "stake": 50.0,
+      "result": "LOST",
+      "price": 0.575,
+      "price_source": "reference",
+      "profit": -50.0
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 479.61,
+    "balance": 429.61,
     "total_won": 2279.61,
-    "total_lost": 1850.0,
-    "settled_count": 105,
-    "ref_priced_count": 105
+    "total_lost": 1900.0,
+    "settled_count": 106,
+    "ref_priced_count": 106
   }
 }
