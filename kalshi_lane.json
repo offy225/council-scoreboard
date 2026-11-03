@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-03T03:27:34Z",
-  "scored": 111,
-  "won": 73,
-  "lost": 38,
-  "win_rate": 0.6576576576576577,
-  "brier": 0.2216,
-  "log_loss": 0.631,
+  "updated_at": "2026-11-03T03:42:55Z",
+  "scored": 113,
+  "won": 74,
+  "lost": 39,
+  "win_rate": 0.6548672566371682,
+  "brier": 0.2234,
+  "log_loss": 0.6347,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 83,
-      "won": 54,
-      "lost": 29,
-      "win_rate": 0.6506024096385542,
-      "brier": 0.2204
+      "scored": 85,
+      "won": 55,
+      "lost": 30,
+      "win_rate": 0.6470588235294118,
+      "brier": 0.2228
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -1246,6 +1246,28 @@
     },
     {
       "date": "2026-11-02",
+      "game": "SAC at DAL",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "DAL",
+      "prob": 0.6436,
+      "final": "DAL 100 \u00b7 SAC 115",
+      "result": "LOST",
+      "price": 0.785,
+      "price_source": "reference"
+    },
+    {
+      "date": "2026-11-02",
+      "game": "NO at MEM",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "NO",
+      "prob": 0.5228,
+      "final": "MEM 134 \u00b7 NO 135",
+      "result": "WON",
+      "price": 0.335,
+      "price_source": "reference"
+    },
+    {
+      "date": "2026-11-02",
       "game": "MIL at MIN",
       "model": "NBA v3.2 + PLATT",
       "pick": "MIN",
@@ -1257,24 +1279,6 @@
     }
   ],
   "open_bets": [
-    {
-      "game": "SAC at DAL",
-      "pick": "DAL",
-      "prob": 0.6436,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.785,
-      "price_source": "reference"
-    },
-    {
-      "game": "NO at MEM",
-      "pick": "NO",
-      "prob": 0.5228,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.335,
-      "price_source": "reference"
-    },
     {
       "game": "BOS at HOU",
       "pick": "BOS",
@@ -2543,6 +2547,28 @@
     },
     {
       "date": "2026-11-02",
+      "game": "SAC at DAL",
+      "pick": "DAL",
+      "prob": 0.6436,
+      "stake": 50.0,
+      "result": "LOST",
+      "price": 0.785,
+      "price_source": "reference",
+      "profit": -50.0
+    },
+    {
+      "date": "2026-11-02",
+      "game": "NO at MEM",
+      "pick": "NO",
+      "prob": 0.5228,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.335,
+      "price_source": "reference",
+      "profit": 99.25
+    },
+    {
+      "date": "2026-11-02",
       "game": "MIL at MIN",
       "pick": "MIN",
       "prob": 0.8228,
@@ -2555,10 +2581,10 @@
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 518.42,
-    "total_won": 2368.42,
-    "total_lost": 1900.0,
-    "settled_count": 111,
-    "ref_priced_count": 111
+    "balance": 567.68,
+    "total_won": 2467.68,
+    "total_lost": 1950.0,
+    "settled_count": 113,
+    "ref_priced_count": 113
   }
 }
