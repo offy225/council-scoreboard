@@ -2131,6 +2131,7 @@
                 <button type="button" class="nx-tool" id="nx-zoom-in" aria-label="Zoom in">+</button>
                 <button type="button" class="nx-tool" id="nx-zoom-out" aria-label="Zoom out">−</button>
                 <button type="button" class="nx-tool wide" id="nx-reset">RESET</button>
+                <button type="button" class="nx-tool wide" id="nx-morph" aria-label="Morph shape">MORPH: STAR</button>
                 <button type="button" class="nx-tool wide" id="nx-fire" style="color:#c9a7ff; border-color:rgba(168,85,247,0.45);">FIRE PULSE</button>
               </div>
               <div class="nx-hint" id="nx-hint"><b>DRAG</b> TO DRIFT · <b>SCROLL</b> TO ZOOM · <b>CLICK A STAR</b> AND ITS FILE EXPANDS</div>
@@ -5780,7 +5781,7 @@ table.bd tr.ov-total td {
   function beatOf(now) {
     if (RM) return 0;
     var bt = (now % 4200) / 4200;
-    return bt < 0.30 ? Math.sin(bt / 0.30 * Math.PI) * 0.28 : 0;
+    return bt < 0.30 ? Math.sin(bt / 0.30 * Math.PI) * 0.55 : 0;
   }
   function driftOf(n, now) {
     if (RM) return DZERO;
@@ -5812,7 +5813,31 @@ table.bd tr.ov-total td {
     var fs = flowScale() * (1 + beatOf(now));
     return [dx * fs, dy * fs];
   }
-  function npos(n, now) { var d = driftOf(n, now); return [n.x + d[0], n.y + d[1]]; }
+  /* OOMPH + MORPH + SPIN + WATCH — render-only life, no data, no rules.
+     spinAngle advances in the loop only when not dragging/pinching, so
+     rotation pauses on drag and resumes after. Pointer lean/brighten
+     and ripples are subtle and fade, never jittery. */
+  function rotPt(wx, wy) { var c = Math.cos(spinAngle), s = Math.sin(spinAngle); return [wx * c - wy * s, wx * s + wy * c]; }
+  function invRot(wx, wy) { var c = Math.cos(spinAngle), s = Math.sin(spinAngle); return [wx * c + wy * s, -wx * s + wy * c]; }
+  function npos(n, now) {
+    var d = driftOf(n, now);
+    var x = n.x + d[0], y = n.y + d[1];
+    if (pointerW && !RM) {
+      var pdx = pointerW[0] - x, pdy = pointerW[1] - y;
+      var pdist = Math.hypot(pdx, pdy) || 1;
+      var page = now - pointerLastMove;
+      var pfresh = page < 4000 ? 1 : Math.max(0, 1 - (page - 4000) / 4000);
+      if (pdist < 240 && pfresh > 0) { var lean = 8 * (1 - pdist / 240) * pfresh; x += pdx / pdist * lean; y += pdy / pdist * lean; }
+    }
+    if (!RM && now - pointerLastMove > 8000 && !gNode) {
+      var la = now * 0.00024;
+      var lx = Math.cos(la) * 180, ly = Math.sin(la * 0.83) * 140;
+      var qdx = lx - x, qdy = ly - y, qd = Math.hypot(qdx, qdy) || 1;
+      if (qd < 300) { x += qdx / qd * 3 * (1 - qd / 300); y += qdy / qd * 3 * (1 - qd / 300); }
+    }
+    var rp = rotPt(x, y);
+    return rp;
+  }
   function fitScale() { return Math.max(0.3, Math.min(W / 1180, H / 980, 1.05)); }
   function fitT() {
     var minX = 1e9, maxX = -1e9, minY = 1e9, maxY = -1e9, i, n;
@@ -5879,6 +5904,78 @@ table.bd tr.ov-total td {
 
   var selected = byId.council, selectedEdge = null, hovered = null, filter = 'all', signals = 0;
   var bursts = []; // the purple selection burst — radiates on click only
+  var dragTrail = []; // world-space sparkle trail while dragging / slingshotting
+  var tapZoomTimer = null, tapZoomPrev = null; // tap-zoom return flight
+  var spinAngle = 0; // slow continuous rotation, radians, advanced only when not dragging
+  var pointerW = null, pointerLastMove = 0; // pointer-reactivity: base world pos + last move time
+  var ripples = []; // interaction ripples: {x,y,t0} base world coords, fade over ~900ms
+  var morphShape = 'STAR';
+  var morphShapes = ['STAR', 'CUBE', 'BRAIN', 'TRIANGLE', 'GALAXY'];
+  var morphLastInteract = 0;
+  var morphBtn = null;
+  function morphTarget(shape, idx, total, node) {
+    if (node.id === 'council') return [0, 0];
+    var f = total > 1 ? idx / (total - 1) : 0;
+    if (shape === 'STAR') return [node.ox, node.oy];
+    if (shape === 'CUBE') {
+      var half = Math.ceil(total / 2), isBack = idx >= half;
+      var tt = isBack ? (idx - half) / Math.max(1, total - half) : idx / Math.max(1, half);
+      var S = 320, ox = isBack ? 70 : -70, oy = isBack ? 70 : -70;
+      var per = tt * 4, seg = Math.floor(per), frac = per - seg, x, y;
+      if (seg === 0) { x = -S + frac * 2 * S; y = -S; } else if (seg === 1) { x = S; y = -S + frac * 2 * S; } else if (seg === 2) { x = S - frac * 2 * S; y = S; } else { x = -S; y = S - frac * 2 * S; }
+      return [ox + x, oy + y];
+    }
+    if (shape === 'BRAIN') {
+      var side = (idx % 2 === 0) ? -1 : 1;
+      var a = f * Math.PI * 2 + (side > 0 ? 0.3 : -0.3);
+      var r = 0.35 + 0.65 * Math.abs(Math.sin(idx * 2.399));
+      return [side * (40 + Math.cos(a) * 300 * r), Math.sin(a) * 210 * r + Math.sin(idx * 1.7) * 18];
+    }
+    if (shape === 'TRIANGLE') {
+      var v = [[-380, 260], [380, 260], [0, -360]];
+      if (f < 0.6) {
+        var pt = f / 0.6 * 3, sg = Math.floor(pt), fr = pt - sg;
+        if (sg >= 3) sg = 2, fr = 1;
+        var a2 = v[sg], b2 = v[(sg + 1) % 3];
+        return [a2[0] + (b2[0] - a2[0]) * fr, a2[1] + (b2[1] - a2[1]) * fr];
+      }
+      var inner = (f - 0.6) / 0.4, ang = inner * Math.PI * 2;
+      return [Math.cos(ang) * 170 * (0.4 + 0.6 * inner), Math.sin(ang) * 150 * (0.4 + 0.6 * inner) - 20];
+    }
+    if (shape === 'GALAXY') {
+      var arm = idx % 3, rr = 60 + Math.sqrt(f) * 380;
+      var ang2 = arm * (Math.PI * 2 / 3) + rr * 0.012;
+      return [Math.cos(ang2) * rr, Math.sin(ang2) * rr * 0.82];
+    }
+    return [node.ox, node.oy];
+  }
+  function cycleMorph(manual) {
+    var nextIdx = (morphShapes.indexOf(morphShape) + 1) % morphShapes.length;
+    morphShape = morphShapes[nextIdx];
+    if (morphBtn) morphBtn.textContent = 'MORPH: ' + morphShape;
+    nodes.forEach(function (n) { if (n.ox === undefined) { n.ox = n.ax; n.oy = n.ay; } });
+    var sysNodes = nodes.filter(function (n) { return !n.file; });
+    var targets = {};
+    sysNodes.forEach(function (n, i) { targets[n.id] = morphTarget(morphShape, i, sysNodes.length, n); });
+    sysNodes.forEach(function (n) {
+      var tgt = targets[n.id];
+      var hub = byId[n.group];
+      if (n.kind === 'part' && hub && hub !== n && targets[hub.id]) {
+        tgt = [targets[hub.id][0] + (n.ox - hub.ox) * 0.9, targets[hub.id][1] + (n.oy - hub.oy) * 0.9];
+      }
+      n.ax = tgt[0]; n.ay = tgt[1];
+    });
+    if (simulation) { simulation.alpha(Math.max(simulation.alpha(), 0.35)); simulation.alphaTarget(0.02); }
+    simHotUntil = performance.now() + 2400;
+    morphLastInteract = performance.now();
+  }
+  function resetMorph() {
+    morphShape = 'STAR';
+    if (morphBtn) morphBtn.textContent = 'MORPH: STAR';
+    nodes.forEach(function (n) { if (!n.file && n.ox !== undefined) { n.ax = n.ox; n.ay = n.oy; } });
+    if (simulation) { simulation.alpha(Math.max(simulation.alpha(), 0.3)); simulation.alphaTarget(0.02); }
+    simHotUntil = performance.now() + 2000;
+  }
   var pulses = []; // brain-current pulses travelling the arcs
   var lastPulse = 0;
   var simHotUntil = 0; // physics stays awake this long after a fling
@@ -6001,7 +6098,7 @@ table.bd tr.ov-total td {
   }
   function selectNode(n, center, open) {
     selected = n; selectedEdge = null;
-    if (center && n) setTransform(centerT(n.x, n.y, Math.max(transform.k, 2.6)), RM ? 0 : 750);
+    if (center && n) { var rp2 = npos(n, performance.now()); setTransform(centerT(rp2[0], rp2[1], Math.max(transform.k, 2.6)), RM ? 0 : 750); }
     if (open) setDetailOpen(true);
     renderDetail();
   }
@@ -6237,8 +6334,10 @@ table.bd tr.ov-total td {
       var np = w2s(ndp[0], ndp[1]);
       var nR = NEB[ni][1] * transform.k + 90;
       if (np[0] < -nR || np[0] > W + nR || np[1] < -nR || np[1] > H + nR) continue;
-      var pulse = RM ? 0 : 0.018 * Math.sin(now * 0.00021 + nn.phase * 1.9);
-      var na = Math.max(0.02, 0.062 + pulse);
+      var isBankzNeb = NEB[ni][0] === 'bankz';
+      var pulse = RM ? 0 : (isBankzNeb ? 0.05 : 0.018) * Math.sin(now * 0.00021 + nn.phase * 1.9);
+      var na = Math.max(0.02, (isBankzNeb ? 0.11 : 0.062) + pulse + (isBankzNeb && !RM ? beatOf(now) * 0.05 : 0));
+      if (isBankzNeb) nR = nR * 1.18;
       ctx.globalAlpha = na;
       ctx.drawImage(GLOW_SOFT[NEB[ni][2]], np[0] - nR, np[1] - nR, nR * 2, nR * 2);
       ctx.globalAlpha = 1;
@@ -6392,6 +6491,25 @@ table.bd tr.ov-total td {
       ctx.drawImage(GLOW_SOFT['#a855f7'], fp[0] - fr * 3.2, fp[1] - fr * 3.2, fr * 6.4, fr * 6.4);
       ctx.globalAlpha = 1;
     }
+    // drag trail + interaction ripples — rendered only, never data
+    for (var tri = 0; tri < dragTrail.length; tri++) {
+      var tr = dragTrail[tri];
+      var tage = now - tr.t;
+      if (tage > 700) continue;
+      var tp = rotPt(tr.x, tr.y), sp = w2s(tp[0], tp[1]);
+      var talpha = (1 - tage / 700) * 0.85;
+      ctx.beginPath(); ctx.arc(sp[0], sp[1], Math.max(1, 3.5 * (1 - tage / 700) + 1), 0, 6.2832);
+      ctx.fillStyle = hexA(tr.col || '#00DD94', talpha); ctx.fill();
+    }
+    for (var rii = 0; rii < ripples.length; rii++) {
+      var rip = ripples[rii];
+      var rage = now - rip.t0;
+      if (rage > 900) continue;
+      var rpt = rotPt(rip.x, rip.y), rsp = w2s(rpt[0], rpt[1]);
+      var rr = (rage / 900) * 120 * transform.k;
+      ctx.beginPath(); ctx.arc(rsp[0], rsp[1], Math.max(rr, 0.5), 0, 6.2832);
+      ctx.strokeStyle = 'rgba(0,221,148,' + (0.45 * (1 - rage / 900)) + ')'; ctx.lineWidth = 1.2; ctx.stroke();
+    }
     // nodes — glowing stars in their section's colour; size varies
     // only slightly with connection count
     for (i = 0; i < nodes.length; i++) {
@@ -6400,6 +6518,13 @@ table.bd tr.ov-total td {
       var pos = w2s(nd[0], nd[1]);
       if (pos[0] < -60 || pos[0] > W + 60 || pos[1] < -60 || pos[1] > H + 60) continue;
       var a = nodeAlpha(n);
+      var pBoost = 0;
+      if (pointerW && !RM && !n.file) {
+        var prp = rotPt(pointerW[0], pointerW[1]);
+        var pdx2 = nd[0] - prp[0], pdy2 = nd[1] - prp[1], pd2 = Math.hypot(pdx2, pdy2);
+        var pAge = now - pointerLastMove;
+        if (pd2 < 200 && pAge < 6000) pBoost = (1 - pd2 / 200) * (pAge < 4000 ? 1 : Math.max(0, 1 - (pAge - 4000) / 2000));
+      }
       var isSel = n === selected || (selectedEdge && (n === selectedEdge.a || n === selectedEdge.b));
       var isHov = n === hovered;
       if (n.file) {
@@ -6451,12 +6576,12 @@ table.bd tr.ov-total td {
       // on top of that a ±4.5% radius breath on a ~14s cycle (rendered
       // only, same decorative drift family as the positional sway)
       var brk = RM ? 1 : 1 + 0.045 * Math.sin(now * 0.00045 + n.phase * 2.1);
-      var sr = Math.max(rr2 * brk * transform.k, n.kind === 'core' ? 4.2 : n.kind === 'bot' ? 3.6 : 2.5);
+      var sr = Math.max(rr2 * brk * transform.k, n.kind === 'core' ? 4.2 : n.kind === 'bot' ? 3.6 : 2.5) * (1 + pBoost * 0.18);
       var ncol = COLORS[n.group] || '#f2f2f2';
       // ambient halo — the star's own colour pooled around it, swelling
       // on the same slow breath as its radius
       var haloR = sr * (isSel ? 4.6 : 3.4);
-      var haloA = (n.kind === 'part' ? 0.10 : 0.16) * a * (RM ? 1 : 0.85 + 0.15 * Math.sin(now * 0.00045 + n.phase * 2.1));
+      var haloA = (n.kind === 'part' ? 0.10 : 0.16) * a * (RM ? 1 : 0.85 + 0.15 * Math.sin(now * 0.00045 + n.phase * 2.1)) * (1 + pBoost * 0.9);
       ctx.globalAlpha = haloA;
       ctx.drawImage(GLOW_LIN[ncol], pos[0] - haloR, pos[1] - haloR, haloR * 2, haloR * 2);
       ctx.globalAlpha = 1;
@@ -6516,6 +6641,10 @@ table.bd tr.ov-total td {
     if (stage.clientWidth && (Math.abs(stage.clientWidth - W) > 2 || Math.abs(stage.clientHeight - H) > 2)) { resize(); refreshCamLimits(); }
     var rawDt = lastT ? Math.min(now - lastT, 100) : 16.7;
     var dt = Math.min(rawDt / 16.7, 3) || 1; lastT = now;
+    if (!RM && !gNode && gMode !== 'node' && gMode !== 'pinch' && !tapZoomTimer) { spinAngle += (rawDt / 1000) * (Math.PI * 2 / 240); }
+    for (var ti2 = dragTrail.length - 1; ti2 >= 0; ti2--) if (now - dragTrail[ti2].t > 700) dragTrail.splice(ti2, 1);
+    for (var ri3 = ripples.length - 1; ri3 >= 0; ri3--) if (now - ripples[ri3].t0 > 900) ripples.splice(ri3, 1);
+    if (!RM && morphBtn && !gNode && gMode !== 'node' && gMode !== 'pinch' && !tapZoomTimer && morphLastInteract && now - morphLastInteract > 60000) { cycleMorph(false); }
     // adaptive resolution — if frames run long on a weak GPU the
     // backing store steps down (2 -> 1.5 -> 1) until the field is
     // fluid again; the CSS size never changes, only the pixel cost.
@@ -6672,7 +6801,10 @@ table.bd tr.ov-total td {
     if (detailOpen) setDetailOpen(false);
     fadeHint();
     camAnim = null; camVel.on = false;
+    if (tapZoomTimer) { clearTimeout(tapZoomTimer); tapZoomTimer = null; tapZoomPrev = null; }
+    morphLastInteract = performance.now();
     var p = evPos(e);
+    (function () { var sw0 = s2w(p[0], p[1]); var bw0 = invRot(sw0[0], sw0[1]); ripples.push({ x: bw0[0], y: bw0[1], t0: performance.now() }); if (ripples.length > 6) ripples.shift(); })();
     try { canvas.setPointerCapture(e.pointerId); } catch (err) {}
     if (ptrCount() === 1) {
       // second finger lands: whatever the first was doing becomes a pinch
@@ -6694,7 +6826,8 @@ table.bd tr.ov-total td {
       grabHome = { x: hit.x, y: hit.y };
       if (fling && fling.n === hit) { hit.fx = hit.x; hit.fy = hit.y; fling = null; }
       var sw = s2w(p[0], p[1]);
-      grabOff = [hit.x - sw[0], hit.y - sw[1]];
+      var swB = invRot(sw[0], sw[1]);
+      grabOff = [hit.x - swB[0], hit.y - swB[1]];
       if (simulation) {
         simulation.alphaTarget(0.10);
         simulation.alpha(Math.max(simulation.alpha(), 0.05));
@@ -6707,6 +6840,7 @@ table.bd tr.ov-total td {
   });
   canvas.addEventListener('pointermove', function (e) {
     var p = evPos(e);
+    (function () { var swP = s2w(p[0], p[1]); pointerW = invRot(swP[0], swP[1]); pointerLastMove = performance.now(); })();
     if (!ptrs[e.pointerId]) {
       if (e.pointerType === 'mouse' && !e.buttons) {
         hovered = pick(p[0], p[1]);
@@ -6739,13 +6873,16 @@ table.bd tr.ov-total td {
     }
     if (gMode === 'node' && gNode) {
       var w2 = s2w(p[0], p[1]);
-      gNode.fx = w2[0] + grabOff[0];
-      gNode.fy = w2[1] + grabOff[1];
+      var w2B = invRot(w2[0], w2[1]);
+      gNode.fx = w2B[0] + grabOff[0];
+      gNode.fy = w2B[1] + grabOff[1];
       // drag is visible even if the D3 simulation never ticks
       // (CDN blocked / D3 absent): the node itself follows the finger,
       // and the simulation, when present, pins it to the same spot
       gNode.x = gNode.fx; gNode.y = gNode.fy;
       dragSamples.push({ t: performance.now(), x: gNode.fx, y: gNode.fy });
+      dragTrail.push({ x: gNode.fx, y: gNode.fy, t: performance.now(), col: COLORS[gNode.group] || '#00DD94' });
+      if (dragTrail.length > 28) dragTrail.shift();
       if (dragSamples.length > 14) dragSamples.shift();
     } else if (gMode === 'pan') {
       camTarget.x += dx; camTarget.y += dy;
@@ -6770,7 +6907,13 @@ table.bd tr.ov-total td {
     if (wasMode === 'node' && gNode) {
       var n = gNode;
       cancelNodeDrag();
-      if (!cancelled && dragMoved < 6) { selectNode(n, false, true); burstFrom(n, false); fadeHint(); }
+      if (!cancelled && dragMoved < 6) {
+        tapZoomPrev = { k: transform.k, x: transform.x, y: transform.y };
+        selectNode(n, true, true); burstFrom(n, false); fadeHint();
+        if (tapZoomTimer) clearTimeout(tapZoomTimer);
+        tapZoomTimer = setTimeout(function () { tapZoomTimer = null; if (tapZoomPrev) setTransform(tapZoomPrev, RM ? 0 : 900); tapZoomPrev = null; }, 1800);
+        morphLastInteract = performance.now();
+      }
       else if (!cancelled) {
         // SLINGSHOT — the release keeps the hand's velocity, boosted:
         // the node is flung past where the finger let go, the anchor
@@ -6868,7 +7011,11 @@ table.bd tr.ov-total td {
     for (var i = 0; i < chips.length; i++) chips[i].classList.toggle('active', chips[i].getAttribute('data-nx-filter') === 'all');
     selectNode(byId.council, false); setDetailOpen(false);
     setTransform(fitT(), RM ? 0 : 800);
+    resetMorph();
   });
+  morphBtn = document.getElementById('nx-morph');
+  if (morphBtn) morphBtn.addEventListener('click', function () { cycleMorph(true); });
+  morphLastInteract = performance.now(); // idle clock starts at load, so auto-morph can fire after 60s of just watching
   document.getElementById('nx-fire').addEventListener('click', function () {
     burstFrom(byId.council, true);
     setTimeout(function () { burstFrom(selected || byId.council, true); }, 260);
