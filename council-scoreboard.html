@@ -6631,6 +6631,7 @@ table.bd tr.ov-total td {
     // so the field feels like it is breathing rather than blinking
     for (var ni = 0; ni < NEB.length; ni++) {
       var nn = byId[NEB[ni][0]]; if (!nn) continue;
+      if (morphShape === 'BRAIN') continue; // solid brain: no soft glows washing out parcels
       if (!inFilter(nn)) continue;
       var ndp = npos(nn, now);
       var np = w2s(ndp[0], ndp[1]);
@@ -6670,6 +6671,7 @@ table.bd tr.ov-total td {
     // never render oversized or clip at an edge.
     ctx.textAlign = 'center';
     ['plugg', 'cobra', 'whiplash', 'hummingbot', 'caddy', 'bankz'].forEach(function (g) {
+      if (morphShape === 'BRAIN') return; // solid brain: no section labels over the scan
       var hub = byId[g]; if (!hub) return;
       if (transform.k < 0.26 || transform.k > 2.4) return;
       var hd = npos(hub, now);
@@ -6681,6 +6683,99 @@ table.bd tr.ov-total td {
       ctx.fillStyle = hexA(COLORS[g], wa);
       ctx.fillText(hub.label, hp[0], hp[1] - 24);
     });
+    // SOLID BRAIN SCAN — BRAIN shape only, drawn INSTEAD of the dot
+    // field, not on top of a dot cloud. Will: "actual brain scan type
+    // shit instead of just labels and dots in this oval shape."
+    // Why the old version read as a blob: 225 sparse dots + their
+    // halos + ~200 curved arcs + purple hot arcs radiating from
+    // THE COUNCIL (selected by default) + hub labels all crossed the
+    // parcels, so no solid silhouette ever formed. This block draws
+    // a filled atlas brain in world coords (same transform/rotation
+    // as the morph field), then the arcs loop and the node loop below
+    // are both skipped in BRAIN mode, so nothing can cross it again.
+    // Pulses are kept: they are dots travelling on the brain surface,
+    // not lines. STAR restores everything (morphShape !== 'BRAIN').
+    if (morphShape === 'BRAIN') {
+      ctx.save();
+      ctx.translate(transform.x, transform.y);
+      ctx.scale(transform.k, transform.k);
+      ctx.rotate(spinAngle);
+      // back-layer shadow, like the cube's back square: a darker,
+      // offset echo so the front brain reads as 3D, not flat.
+      ctx.save();
+      ctx.translate(110, -120); ctx.scale(0.82, 0.82); ctx.translate(0, 30); ctx.scale(1, 1);
+      ctx.beginPath();
+      for (var bphi = 0; bphi <= Math.PI * 2 + 0.01; bphi += Math.PI / 72) {
+        var bex = Math.sin(bphi) * 330, bey = -30 - Math.cos(bphi) * 210;
+        if (bex < 0) bex *= 1.04; if (bey > 150) bey = 150 + (bey - 150) * 0.35;
+        if (bphi === 0) ctx.moveTo(bex, bey); else ctx.lineTo(bex, bey);
+      }
+      ctx.closePath(); ctx.fillStyle = 'rgba(10,12,20,0.92)'; ctx.fill();
+      ctx.restore();
+      // cerebrum silhouette path, reused for clip + outline
+      function brainSil() {
+        ctx.beginPath();
+        for (var phi = 0; phi <= Math.PI * 2 + 0.01; phi += Math.PI / 72) {
+          var ex = Math.sin(phi) * 330, ey = -30 - Math.cos(phi) * 210;
+          if (ex < 0) ex *= 1.04; if (ey > 150) ey = 150 + (ey - 150) * 0.35;
+          if (phi === 0) ctx.moveTo(ex, ey); else ctx.lineTo(ex, ey);
+        }
+        ctx.closePath();
+      }
+      brainSil(); ctx.save(); ctx.clip();
+      // filled parcel bands (atlas zones, frontal left -> occipital right)
+      var bands = [
+        [-330, -240, -110, 0, '#4ade80'], [-330, 0, -110, 150, '#2dd4bf'],
+        [-110, -240, 20, -40, '#a3e635'], [-110, -40, 20, 70, '#fb923c'], [-110, 70, 20, 150, '#f472b6'],
+        [20, -240, 170, -40, '#60a5fa'], [20, -40, 170, 70, '#a78bfa'], [20, 70, 170, 150, '#f472b6'],
+        [170, -240, 330, -20, '#38bdf8'], [170, -20, 330, 150, '#facc15']
+      ];
+      for (var bi = 0; bi < bands.length; bi++) {
+        ctx.fillStyle = bands[bi][4];
+        ctx.fillRect(bands[bi][0], bands[bi][1], bands[bi][2] - bands[bi][0], bands[bi][3] - bands[bi][1]);
+      }
+      // deep insula patch
+      ctx.beginPath(); ctx.arc(30, 20, 62, 0, 6.2832); ctx.fillStyle = '#8b5cf6'; ctx.fill();
+      // gyri folds: wavy dark texture lines inside the cerebrum
+      ctx.strokeStyle = 'rgba(0,0,0,0.30)'; ctx.lineWidth = 6; ctx.lineCap = 'round';
+      var gy = [-180, -120, -60, 0, 60, 110];
+      for (var gi = 0; gi < gy.length; gi++) {
+        ctx.beginPath();
+        for (var gx = -320; gx <= 320; gx += 20) {
+          var gyy = gy[gi] + 16 * Math.sin(gx * 0.02 + gy[gi] * 0.03);
+          if (gx === -320) ctx.moveTo(gx, gyy); else ctx.lineTo(gx, gyy);
+        }
+        ctx.stroke();
+      }
+      // fissures as REAL blank dark gaps, not missing dots lines cross over
+      ctx.strokeStyle = 'rgba(5,5,10,0.92)'; ctx.lineCap = 'round';
+      ctx.lineWidth = 16; ctx.beginPath(); ctx.moveTo(-80, 60); ctx.quadraticCurveTo(70, 52, 230, 60); ctx.stroke();
+      ctx.lineWidth = 13; ctx.beginPath(); ctx.moveTo(-20, -210); ctx.lineTo(50, 70); ctx.stroke();
+      ctx.restore();
+      // cerebrum outline, crisp so it reads at normal zoom
+      brainSil(); ctx.strokeStyle = 'rgba(255,255,255,0.35)'; ctx.lineWidth = 3; ctx.stroke();
+      // cerebellum: clearly SEPARATE grey lump at back-bottom, with a
+      // dark gap line along its top edge so it never blends into the blob
+      ctx.beginPath(); ctx.ellipse(215, 195, 105, 65, 0, 0, 6.2832); ctx.fillStyle = '#9ca3af'; ctx.fill();
+      ctx.save(); ctx.beginPath(); ctx.ellipse(215, 195, 105, 65, 0, 0, 6.2832); ctx.clip();
+      ctx.strokeStyle = 'rgba(0,0,0,0.35)'; ctx.lineWidth = 5;
+      var cy2 = [155, 180, 205, 230];
+      for (var ci = 0; ci < cy2.length; ci++) {
+        ctx.beginPath();
+        for (var cx2 = 110; cx2 <= 320; cx2 += 20) {
+          var cyy = cy2[ci] + 10 * Math.sin(cx2 * 0.05 + ci);
+          if (cx2 === 110) ctx.moveTo(cx2, cyy); else ctx.lineTo(cx2, cyy);
+        }
+        ctx.stroke();
+      }
+      ctx.restore();
+      ctx.beginPath(); ctx.ellipse(215, 195, 105, 65, 0, Math.PI * 1.05, Math.PI * 1.95); ctx.strokeStyle = 'rgba(5,5,10,0.9)'; ctx.lineWidth = 8; ctx.stroke();
+      ctx.beginPath(); ctx.ellipse(215, 195, 105, 65, 0, 0, 6.2832); ctx.strokeStyle = 'rgba(255,255,255,0.25)'; ctx.lineWidth = 2; ctx.stroke();
+      // pale stem below the cerebellum
+      ctx.beginPath(); ctx.moveTo(88, 235); ctx.lineTo(128, 235); ctx.lineTo(122, 350); ctx.quadraticCurveTo(108, 362, 94, 350); ctx.closePath();
+      ctx.fillStyle = '#e7e5e4'; ctx.fill(); ctx.strokeStyle = 'rgba(255,255,255,0.25)'; ctx.lineWidth = 2; ctx.stroke();
+      ctx.restore();
+    }
     // arcs — every connection is a gentle curve, never a straight
     // wire: the control point bows off the midpoint along the
     // perpendicular, the bow alternating side and depth per arc so
@@ -6689,6 +6784,7 @@ table.bd tr.ov-total td {
     // wiring lights purple and flows toward the selection.
     for (i = 0; i < edges.length; i++) {
       var e = edges[i];
+      if (morphShape === 'BRAIN') continue; // solid brain: no arcs / council spokes crossing the scan
       var ea2 = npos(e.a, now), eb2 = npos(e.b, now);
       var pa = w2s(ea2[0], ea2[1]), pb = w2s(eb2[0], eb2[1]);
       if (e.file && !filesOn) continue;
@@ -6761,6 +6857,7 @@ table.bd tr.ov-total td {
     // the purple burst — rays radiating from the clicked node
     for (i = 0; i < bursts.length; i++) {
       var bu = bursts[i];
+      if (morphShape === 'BRAIN') continue; // solid brain: no purple burst rays over the scan
       var bd = npos(bu.n, now);
       var bp = w2s(bd[0], bd[1]);
       var R = (bu.big ? 240 : 165) * bu.t;
@@ -6816,6 +6913,7 @@ table.bd tr.ov-total td {
     // only slightly with connection count
     for (i = 0; i < nodes.length; i++) {
       var n = nodes[i];
+      if (morphShape === 'BRAIN') continue; // solid brain: dots/labels hidden, the filled scan IS the shape; STAR restores them
       var nd = npos(n, now);
       var pos = w2s(nd[0], nd[1]);
       if (pos[0] < -60 || pos[0] > W + 60 || pos[1] < -60 || pos[1] > H + 60) continue;
