@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-03T02:57:41Z",
-  "scored": 106,
-  "won": 68,
+  "updated_at": "2026-11-03T03:12:58Z",
+  "scored": 110,
+  "won": 72,
   "lost": 38,
-  "win_rate": 0.6415094339622641,
-  "brier": 0.2269,
-  "log_loss": 0.6423,
+  "win_rate": 0.6545454545454545,
+  "brier": 0.2233,
+  "log_loss": 0.6349,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 78,
-      "won": 49,
+      "scored": 82,
+      "won": 53,
       "lost": 29,
-      "win_rate": 0.6282051282051282,
-      "brier": 0.2275
+      "win_rate": 0.6463414634146342,
+      "brier": 0.2227
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -1191,6 +1191,39 @@
     },
     {
       "date": "2026-11-02",
+      "game": "DET at CHA",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "DET",
+      "prob": 0.5953,
+      "final": "CHA 91 \u00b7 DET 124",
+      "result": "WON",
+      "price": 0.625,
+      "price_source": "reference"
+    },
+    {
+      "date": "2026-11-02",
+      "game": "ATL at IND",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "ATL",
+      "prob": 0.591,
+      "final": "IND 104 \u00b7 ATL 108",
+      "result": "WON",
+      "price": 0.635,
+      "price_source": "reference"
+    },
+    {
+      "date": "2026-11-02",
+      "game": "BKN at NY",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "NY",
+      "prob": 0.7674,
+      "final": "NY 103 \u00b7 BKN 90",
+      "result": "WON",
+      "price": 0.885,
+      "price_source": "reference"
+    },
+    {
+      "date": "2026-11-02",
       "game": "WSH at ORL",
       "model": "NBA v3.2 + PLATT",
       "pick": "ORL",
@@ -1199,45 +1232,20 @@
       "result": "LOST",
       "price": 0.575,
       "price_source": "reference"
+    },
+    {
+      "date": "2026-11-02",
+      "game": "CHI at PHI",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "PHI",
+      "prob": 0.6369,
+      "final": "PHI 126 \u00b7 CHI 107",
+      "result": "WON",
+      "price": 0.835,
+      "price_source": "reference"
     }
   ],
   "open_bets": [
-    {
-      "game": "DET at CHA",
-      "pick": "DET",
-      "prob": 0.5953,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.625,
-      "price_source": "reference"
-    },
-    {
-      "game": "ATL at IND",
-      "pick": "ATL",
-      "prob": 0.591,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.635,
-      "price_source": "reference"
-    },
-    {
-      "game": "BKN at NY",
-      "pick": "NY",
-      "prob": 0.7674,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.885,
-      "price_source": "reference"
-    },
-    {
-      "game": "CHI at PHI",
-      "pick": "PHI",
-      "prob": 0.6369,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.835,
-      "price_source": "reference"
-    },
     {
       "game": "SAC at DAL",
       "pick": "DAL",
@@ -2478,6 +2486,39 @@
     },
     {
       "date": "2026-11-02",
+      "game": "DET at CHA",
+      "pick": "DET",
+      "prob": 0.5953,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.625,
+      "price_source": "reference",
+      "profit": 30.0
+    },
+    {
+      "date": "2026-11-02",
+      "game": "ATL at IND",
+      "pick": "ATL",
+      "prob": 0.591,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.635,
+      "price_source": "reference",
+      "profit": 28.74
+    },
+    {
+      "date": "2026-11-02",
+      "game": "BKN at NY",
+      "pick": "NY",
+      "prob": 0.7674,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.885,
+      "price_source": "reference",
+      "profit": 6.5
+    },
+    {
+      "date": "2026-11-02",
       "game": "WSH at ORL",
       "pick": "ORL",
       "prob": 0.6177,
@@ -2486,14 +2527,25 @@
       "price": 0.575,
       "price_source": "reference",
       "profit": -50.0
+    },
+    {
+      "date": "2026-11-02",
+      "game": "CHI at PHI",
+      "pick": "PHI",
+      "prob": 0.6369,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.835,
+      "price_source": "reference",
+      "profit": 9.88
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 429.61,
-    "total_won": 2279.61,
+    "balance": 504.73,
+    "total_won": 2354.73,
     "total_lost": 1900.0,
-    "settled_count": 106,
-    "ref_priced_count": 106
+    "settled_count": 110,
+    "ref_priced_count": 110
   }
 }
