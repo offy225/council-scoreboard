@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-05T04:57:31Z",
-  "scored": 130,
-  "won": 82,
+  "updated_at": "2026-11-05T05:42:50Z",
+  "scored": 132,
+  "won": 84,
   "lost": 48,
-  "win_rate": 0.6307692307692307,
-  "brier": 0.2289,
-  "log_loss": 0.6465,
+  "win_rate": 0.6363636363636364,
+  "brier": 0.227,
+  "log_loss": 0.6427,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 102,
-      "won": 63,
+      "scored": 104,
+      "won": 65,
       "lost": 39,
-      "win_rate": 0.6176470588235294,
-      "brier": 0.2299
+      "win_rate": 0.625,
+      "brier": 0.2276
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -1452,23 +1452,29 @@
       "final": "PHX 119 \u00b7 POR 132",
       "result": "LOST",
       "margin_state": "NO PRICE FOUND"
+    },
+    {
+      "date": "2026-11-04",
+      "game": "DAL at SA",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "SA",
+      "prob": 0.6122,
+      "final": "SA 112 \u00b7 DAL 111",
+      "result": "WON",
+      "margin_state": "NO PRICE FOUND"
+    },
+    {
+      "date": "2026-11-04",
+      "game": "LAL at SAC",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "LAL",
+      "prob": 0.7399,
+      "final": "SAC 103 \u00b7 LAL 116",
+      "result": "WON",
+      "margin_state": "NO PRICE FOUND"
     }
   ],
   "open_bets": [
-    {
-      "game": "DAL at SA",
-      "pick": "SA",
-      "prob": 0.6122,
-      "stake": 50.0,
-      "status": "OPEN"
-    },
-    {
-      "game": "LAL at SAC",
-      "pick": "LAL",
-      "prob": 0.7399,
-      "stake": 50.0,
-      "status": "OPEN"
-    },
     {
       "game": "MIA at LAC",
       "pick": "LAC",
@@ -2892,6 +2898,22 @@
       "prob": 0.5462,
       "stake": 50.0,
       "result": "LOST"
+    },
+    {
+      "date": "2026-11-04",
+      "game": "DAL at SA",
+      "pick": "SA",
+      "prob": 0.6122,
+      "stake": 50.0,
+      "result": "WON"
+    },
+    {
+      "date": "2026-11-04",
+      "game": "LAL at SAC",
+      "pick": "LAL",
+      "prob": 0.7399,
+      "stake": 50.0,
+      "result": "WON"
     }
   ],
   "wallet": {
