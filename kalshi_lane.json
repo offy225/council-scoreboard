@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-05T03:56:26Z",
-  "scored": 126,
-  "won": 80,
-  "lost": 46,
-  "win_rate": 0.6349206349206349,
-  "brier": 0.2287,
-  "log_loss": 0.6461,
+  "updated_at": "2026-11-05T04:12:35Z",
+  "scored": 128,
+  "won": 81,
+  "lost": 47,
+  "win_rate": 0.6328125,
+  "brier": 0.2291,
+  "log_loss": 0.6469,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 98,
-      "won": 61,
-      "lost": 37,
-      "win_rate": 0.6224489795918368,
-      "brier": 0.2297
+      "scored": 100,
+      "won": 62,
+      "lost": 38,
+      "win_rate": 0.62,
+      "brier": 0.2302
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -1405,6 +1405,16 @@
     },
     {
       "date": "2026-11-04",
+      "game": "UTAH at NO",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "NO",
+      "prob": 0.5733,
+      "final": "NO 120 \u00b7 UTAH 113",
+      "result": "WON",
+      "margin_state": "NO PRICE FOUND"
+    },
+    {
+      "date": "2026-11-04",
       "game": "CLE at OKC",
       "model": "NBA v3.2 + PLATT",
       "pick": "OKC",
@@ -1412,23 +1422,19 @@
       "final": "OKC 124 \u00b7 CLE 116",
       "result": "WON",
       "margin_state": "NO PRICE FOUND"
+    },
+    {
+      "date": "2026-11-04",
+      "game": "MIN at HOU",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "HOU",
+      "prob": 0.5675,
+      "final": "HOU 107 \u00b7 MIN 117",
+      "result": "LOST",
+      "margin_state": "NO PRICE FOUND"
     }
   ],
   "open_bets": [
-    {
-      "game": "UTAH at NO",
-      "pick": "NO",
-      "prob": 0.5733,
-      "stake": 50.0,
-      "status": "OPEN"
-    },
-    {
-      "game": "MIN at HOU",
-      "pick": "HOU",
-      "prob": 0.5675,
-      "stake": 50.0,
-      "status": "OPEN"
-    },
     {
       "game": "TOR at DEN",
       "pick": "DEN",
@@ -2843,11 +2849,27 @@
     },
     {
       "date": "2026-11-04",
+      "game": "UTAH at NO",
+      "pick": "NO",
+      "prob": 0.5733,
+      "stake": 50.0,
+      "result": "WON"
+    },
+    {
+      "date": "2026-11-04",
       "game": "CLE at OKC",
       "pick": "OKC",
       "prob": 0.7547,
       "stake": 50.0,
       "result": "WON"
+    },
+    {
+      "date": "2026-11-04",
+      "game": "MIN at HOU",
+      "pick": "HOU",
+      "prob": 0.5675,
+      "stake": 50.0,
+      "result": "LOST"
     }
   ],
   "wallet": {
