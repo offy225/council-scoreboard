@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-05T04:12:35Z",
-  "scored": 128,
-  "won": 81,
+  "updated_at": "2026-11-05T04:42:28Z",
+  "scored": 129,
+  "won": 82,
   "lost": 47,
-  "win_rate": 0.6328125,
-  "brier": 0.2291,
-  "log_loss": 0.6469,
+  "win_rate": 0.6356589147286822,
+  "brier": 0.2283,
+  "log_loss": 0.6454,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 100,
-      "won": 62,
+      "scored": 101,
+      "won": 63,
       "lost": 38,
-      "win_rate": 0.62,
-      "brier": 0.2302
+      "win_rate": 0.6237623762376238,
+      "brier": 0.2292
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -1432,16 +1432,19 @@
       "final": "HOU 107 \u00b7 MIN 117",
       "result": "LOST",
       "margin_state": "NO PRICE FOUND"
+    },
+    {
+      "date": "2026-11-04",
+      "game": "TOR at DEN",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "DEN",
+      "prob": 0.6345,
+      "final": "DEN 128 \u00b7 TOR 109",
+      "result": "WON",
+      "margin_state": "NO PRICE FOUND"
     }
   ],
   "open_bets": [
-    {
-      "game": "TOR at DEN",
-      "pick": "DEN",
-      "prob": 0.6345,
-      "stake": 50.0,
-      "status": "OPEN"
-    },
     {
       "game": "POR at PHX",
       "pick": "PHX",
@@ -2870,6 +2873,14 @@
       "prob": 0.5675,
       "stake": 50.0,
       "result": "LOST"
+    },
+    {
+      "date": "2026-11-04",
+      "game": "TOR at DEN",
+      "pick": "DEN",
+      "prob": 0.6345,
+      "stake": 50.0,
+      "result": "WON"
     }
   ],
   "wallet": {
