@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-05T02:27:37Z",
-  "scored": 120,
-  "won": 77,
+  "updated_at": "2026-11-05T02:57:35Z",
+  "scored": 121,
+  "won": 78,
   "lost": 43,
-  "win_rate": 0.6416666666666667,
-  "brier": 0.2265,
-  "log_loss": 0.6415,
+  "win_rate": 0.6446280991735537,
+  "brier": 0.2248,
+  "log_loss": 0.6374,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 92,
-      "won": 58,
+      "scored": 93,
+      "won": 59,
       "lost": 34,
-      "win_rate": 0.6304347826086957,
-      "brier": 0.2269
+      "win_rate": 0.6344086021505376,
+      "brier": 0.2247
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -1352,6 +1352,16 @@
       "final": "WSH 105 \u00b7 ATL 120",
       "result": "LOST",
       "margin_state": "NO PRICE FOUND"
+    },
+    {
+      "date": "2026-11-04",
+      "game": "MIL at BOS",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "BOS",
+      "prob": 0.8677,
+      "final": "BOS 109 \u00b7 MIL 102",
+      "result": "WON",
+      "margin_state": "NO PRICE FOUND"
     }
   ],
   "open_bets": [
@@ -1359,13 +1369,6 @@
       "game": "PHI at DET",
       "pick": "DET",
       "prob": 0.7265,
-      "stake": 50.0,
-      "status": "OPEN"
-    },
-    {
-      "game": "MIL at BOS",
-      "pick": "BOS",
-      "prob": 0.8677,
       "stake": 50.0,
       "status": "OPEN"
     },
@@ -2764,6 +2767,14 @@
       "prob": 0.5091,
       "stake": 50.0,
       "result": "LOST"
+    },
+    {
+      "date": "2026-11-04",
+      "game": "MIL at BOS",
+      "pick": "BOS",
+      "prob": 0.8677,
+      "stake": 50.0,
+      "result": "WON"
     }
   ],
   "wallet": {
