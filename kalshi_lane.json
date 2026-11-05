@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-05T03:27:34Z",
-  "scored": 125,
-  "won": 79,
+  "updated_at": "2026-11-05T03:42:39Z",
+  "scored": 126,
+  "won": 80,
   "lost": 46,
-  "win_rate": 0.632,
-  "brier": 0.23,
-  "log_loss": 0.649,
+  "win_rate": 0.6349206349206349,
+  "brier": 0.2287,
+  "log_loss": 0.6461,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 97,
-      "won": 60,
+      "scored": 98,
+      "won": 61,
       "lost": 37,
-      "win_rate": 0.6185567010309279,
-      "brier": 0.2315
+      "win_rate": 0.6224489795918368,
+      "brier": 0.2297
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -1402,6 +1402,16 @@
       "final": "MEM 103 \u00b7 IND 107",
       "result": "LOST",
       "margin_state": "NO PRICE FOUND"
+    },
+    {
+      "date": "2026-11-04",
+      "game": "CLE at OKC",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "OKC",
+      "prob": 0.7547,
+      "final": "OKC 124 \u00b7 CLE 116",
+      "result": "WON",
+      "margin_state": "NO PRICE FOUND"
     }
   ],
   "open_bets": [
@@ -1409,13 +1419,6 @@
       "game": "UTAH at NO",
       "pick": "NO",
       "prob": 0.5733,
-      "stake": 50.0,
-      "status": "OPEN"
-    },
-    {
-      "game": "CLE at OKC",
-      "pick": "OKC",
-      "prob": 0.7547,
       "stake": 50.0,
       "status": "OPEN"
     },
@@ -2819,6 +2822,14 @@
       "prob": 0.5796,
       "stake": 50.0,
       "result": "LOST"
+    },
+    {
+      "date": "2026-11-04",
+      "game": "CLE at OKC",
+      "pick": "OKC",
+      "prob": 0.7547,
+      "stake": 50.0,
+      "result": "WON"
     }
   ],
   "wallet": {
