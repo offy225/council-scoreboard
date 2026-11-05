@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-05T02:57:35Z",
-  "scored": 121,
-  "won": 78,
-  "lost": 43,
-  "win_rate": 0.6446280991735537,
-  "brier": 0.2248,
-  "log_loss": 0.6374,
+  "updated_at": "2026-11-05T03:12:41Z",
+  "scored": 123,
+  "won": 79,
+  "lost": 44,
+  "win_rate": 0.6422764227642277,
+  "brier": 0.2264,
+  "log_loss": 0.6411,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 93,
-      "won": 59,
-      "lost": 34,
-      "win_rate": 0.6344086021505376,
-      "brier": 0.2247
+      "scored": 95,
+      "won": 60,
+      "lost": 35,
+      "win_rate": 0.631578947368421,
+      "brier": 0.2268
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -1345,6 +1345,16 @@
     },
     {
       "date": "2026-11-04",
+      "game": "PHI at DET",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "DET",
+      "prob": 0.7265,
+      "final": "DET 106 \u00b7 PHI 112",
+      "result": "LOST",
+      "margin_state": "NO PRICE FOUND"
+    },
+    {
+      "date": "2026-11-04",
       "game": "ATL at WSH",
       "model": "NBA v3.2 + PLATT",
       "pick": "WSH",
@@ -1362,27 +1372,23 @@
       "final": "BOS 109 \u00b7 MIL 102",
       "result": "WON",
       "margin_state": "NO PRICE FOUND"
+    },
+    {
+      "date": "2026-11-04",
+      "game": "CHI at NY",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "NY",
+      "prob": 0.6487,
+      "final": "NY 135 \u00b7 CHI 105",
+      "result": "WON",
+      "margin_state": "NO PRICE FOUND"
     }
   ],
   "open_bets": [
     {
-      "game": "PHI at DET",
-      "pick": "DET",
-      "prob": 0.7265,
-      "stake": 50.0,
-      "status": "OPEN"
-    },
-    {
       "game": "CHA at BKN",
       "pick": "CHA",
       "prob": 0.7545,
-      "stake": 50.0,
-      "status": "OPEN"
-    },
-    {
-      "game": "CHI at NY",
-      "pick": "NY",
-      "prob": 0.6487,
       "stake": 50.0,
       "status": "OPEN"
     },
@@ -2762,6 +2768,14 @@
     },
     {
       "date": "2026-11-04",
+      "game": "PHI at DET",
+      "pick": "DET",
+      "prob": 0.7265,
+      "stake": 50.0,
+      "result": "LOST"
+    },
+    {
+      "date": "2026-11-04",
       "game": "ATL at WSH",
       "pick": "WSH",
       "prob": 0.5091,
@@ -2773,6 +2787,14 @@
       "game": "MIL at BOS",
       "pick": "BOS",
       "prob": 0.8677,
+      "stake": 50.0,
+      "result": "WON"
+    },
+    {
+      "date": "2026-11-04",
+      "game": "CHI at NY",
+      "pick": "NY",
+      "prob": 0.6487,
       "stake": 50.0,
       "result": "WON"
     }
