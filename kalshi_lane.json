@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-04T13:38:58Z",
-  "scored": 119,
+  "updated_at": "2026-11-05T02:27:37Z",
+  "scored": 120,
   "won": 77,
-  "lost": 42,
-  "win_rate": 0.6470588235294118,
-  "brier": 0.2262,
-  "log_loss": 0.6409,
+  "lost": 43,
+  "win_rate": 0.6416666666666667,
+  "brier": 0.2265,
+  "log_loss": 0.6415,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 91,
+      "scored": 92,
       "won": 58,
-      "lost": 33,
-      "win_rate": 0.6373626373626373,
-      "brier": 0.2266
+      "lost": 34,
+      "win_rate": 0.6304347826086957,
+      "brier": 0.2269
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -1342,6 +1342,16 @@
       "result": "WON",
       "price": 0.49,
       "price_source": "reference"
+    },
+    {
+      "date": "2026-11-04",
+      "game": "ATL at WSH",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "WSH",
+      "prob": 0.5091,
+      "final": "WSH 105 \u00b7 ATL 120",
+      "result": "LOST",
+      "margin_state": "NO PRICE FOUND"
     }
   ],
   "open_bets": [
@@ -1349,13 +1359,6 @@
       "game": "PHI at DET",
       "pick": "DET",
       "prob": 0.7265,
-      "stake": 50.0,
-      "status": "OPEN"
-    },
-    {
-      "game": "ATL at WSH",
-      "pick": "WSH",
-      "prob": 0.5091,
       "stake": 50.0,
       "status": "OPEN"
     },
@@ -2753,6 +2756,14 @@
       "price": 0.49,
       "price_source": "reference",
       "profit": 52.04
+    },
+    {
+      "date": "2026-11-04",
+      "game": "ATL at WSH",
+      "pick": "WSH",
+      "prob": 0.5091,
+      "stake": 50.0,
+      "result": "LOST"
     }
   ],
   "wallet": {
