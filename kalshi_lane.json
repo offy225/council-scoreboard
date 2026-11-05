@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-05T05:42:50Z",
-  "scored": 132,
+  "updated_at": "2026-11-05T06:27:35Z",
+  "scored": 133,
   "won": 84,
-  "lost": 48,
-  "win_rate": 0.6363636363636364,
-  "brier": 0.227,
-  "log_loss": 0.6427,
+  "lost": 49,
+  "win_rate": 0.631578947368421,
+  "brier": 0.2276,
+  "log_loss": 0.6438,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 104,
+      "scored": 105,
       "won": 65,
-      "lost": 39,
-      "win_rate": 0.625,
-      "brier": 0.2276
+      "lost": 40,
+      "win_rate": 0.6190476190476191,
+      "brier": 0.2282
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -1472,16 +1472,19 @@
       "final": "SAC 103 \u00b7 LAL 116",
       "result": "WON",
       "margin_state": "NO PRICE FOUND"
+    },
+    {
+      "date": "2026-11-04",
+      "game": "MIA at LAC",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "LAC",
+      "prob": 0.5453,
+      "final": "LAC 116 \u00b7 MIA 117",
+      "result": "LOST",
+      "margin_state": "NO PRICE FOUND"
     }
   ],
   "open_bets": [
-    {
-      "game": "MIA at LAC",
-      "pick": "LAC",
-      "prob": 0.5453,
-      "stake": 50.0,
-      "status": "OPEN"
-    },
     {
       "game": "ORL at PHX",
       "pick": "PHX",
@@ -2914,6 +2917,14 @@
       "prob": 0.7399,
       "stake": 50.0,
       "result": "WON"
+    },
+    {
+      "date": "2026-11-04",
+      "game": "MIA at LAC",
+      "pick": "LAC",
+      "prob": 0.5453,
+      "stake": 50.0,
+      "result": "LOST"
     }
   ],
   "wallet": {
