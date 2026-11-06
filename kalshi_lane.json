@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-05T13:37:25Z",
+  "updated_at": "2026-11-06T04:00:14Z",
   "scored": 133,
   "won": 84,
   "lost": 49,
@@ -1501,6 +1501,83 @@
       "stake": 50.0,
       "status": "OPEN",
       "price": 0.345,
+      "price_source": "reference"
+    },
+    {
+      "game": "WSH at ATL",
+      "pick": "ATL",
+      "prob": 0.6165,
+      "stake": 50.0,
+      "status": "OPEN"
+    },
+    {
+      "game": "BOS at CHA",
+      "pick": "BOS",
+      "prob": 0.6577,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.735,
+      "price_source": "reference"
+    },
+    {
+      "game": "PHI at CLE",
+      "pick": "CLE",
+      "prob": 0.6476,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.435,
+      "price_source": "reference"
+    },
+    {
+      "game": "UTAH at DAL",
+      "pick": "UTAH",
+      "prob": 0.5255,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.285,
+      "price_source": "reference"
+    },
+    {
+      "game": "OKC at MEM",
+      "pick": "OKC",
+      "prob": 0.8048,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.61,
+      "price_source": "reference"
+    },
+    {
+      "game": "TOR at MIL",
+      "pick": "TOR",
+      "prob": 0.71,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.705,
+      "price_source": "reference"
+    },
+    {
+      "game": "MIN at NO",
+      "pick": "MIN",
+      "prob": 0.6145,
+      "stake": 50.0,
+      "status": "OPEN"
+    },
+    {
+      "game": "POR at LAL",
+      "pick": "LAL",
+      "prob": 0.6192,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.585,
+      "price_source": "reference"
+    },
+    {
+      "game": "SA at SAC",
+      "pick": "SA",
+      "prob": 0.6535,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.895,
       "price_source": "reference"
     }
   ],
