@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-07T02:28:01Z",
-  "scored": 137,
-  "won": 87,
-  "lost": 50,
-  "win_rate": 0.635036496350365,
-  "brier": 0.2266,
-  "log_loss": 0.6419,
+  "updated_at": "2026-11-07T03:28:06Z",
+  "scored": 139,
+  "won": 88,
+  "lost": 51,
+  "win_rate": 0.6330935251798561,
+  "brier": 0.2262,
+  "log_loss": 0.6412,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 109,
-      "won": 68,
-      "lost": 41,
-      "win_rate": 0.6238532110091743,
-      "brier": 0.227
+      "scored": 111,
+      "won": 69,
+      "lost": 42,
+      "win_rate": 0.6216216216216216,
+      "brier": 0.2265
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -1526,27 +1526,31 @@
       "result": "WON",
       "price": 0.735,
       "price_source": "reference"
-    }
-  ],
-  "open_bets": [
+    },
     {
+      "date": "2026-11-06",
       "game": "PHI at CLE",
+      "model": "NBA v3.2 + PLATT",
       "pick": "CLE",
       "prob": 0.6476,
-      "stake": 50.0,
-      "status": "OPEN",
+      "final": "CLE 119 \u00b7 PHI 95",
+      "result": "WON",
       "price": 0.435,
       "price_source": "reference"
     },
     {
+      "date": "2026-11-06",
       "game": "UTAH at DAL",
+      "model": "NBA v3.2 + PLATT",
       "pick": "UTAH",
       "prob": 0.5255,
-      "stake": 50.0,
-      "status": "OPEN",
+      "final": "DAL 112 \u00b7 UTAH 100",
+      "result": "LOST",
       "price": 0.285,
       "price_source": "reference"
-    },
+    }
+  ],
+  "open_bets": [
     {
       "game": "OKC at MEM",
       "pick": "OKC",
@@ -3058,14 +3062,36 @@
       "price": 0.735,
       "price_source": "reference",
       "profit": 18.03
+    },
+    {
+      "date": "2026-11-06",
+      "game": "PHI at CLE",
+      "pick": "CLE",
+      "prob": 0.6476,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.435,
+      "price_source": "reference",
+      "profit": 64.94
+    },
+    {
+      "date": "2026-11-06",
+      "game": "UTAH at DAL",
+      "pick": "UTAH",
+      "prob": 0.5255,
+      "stake": 50.0,
+      "result": "LOST",
+      "price": 0.285,
+      "price_source": "reference",
+      "profit": -50.0
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 539.15,
-    "total_won": 2639.15,
-    "total_lost": 2150.0,
-    "settled_count": 123,
-    "ref_priced_count": 123
+    "balance": 554.1,
+    "total_won": 2704.1,
+    "total_lost": 2200.0,
+    "settled_count": 125,
+    "ref_priced_count": 125
   }
 }
