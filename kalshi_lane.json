@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-07T04:01:56Z",
-  "scored": 142,
-  "won": 91,
+  "updated_at": "2026-11-07T05:57:52Z",
+  "scored": 143,
+  "won": 92,
   "lost": 51,
-  "win_rate": 0.6408450704225352,
-  "brier": 0.2234,
-  "log_loss": 0.635,
+  "win_rate": 0.6433566433566433,
+  "brier": 0.2226,
+  "log_loss": 0.6335,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 114,
-      "won": 72,
+      "scored": 115,
+      "won": 73,
       "lost": 42,
-      "win_rate": 0.631578947368421,
-      "brier": 0.2229
+      "win_rate": 0.6347826086956522,
+      "brier": 0.222
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -1581,6 +1581,17 @@
       "result": "WON",
       "price": 0.62,
       "price_source": "reference"
+    },
+    {
+      "date": "2026-11-06",
+      "game": "SA at SAC",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "SA",
+      "prob": 0.6535,
+      "final": "SAC 109 \u00b7 SA 124",
+      "result": "WON",
+      "price": 0.895,
+      "price_source": "reference"
     }
   ],
   "open_bets": [
@@ -1591,15 +1602,6 @@
       "stake": 50.0,
       "status": "OPEN",
       "price": 0.585,
-      "price_source": "reference"
-    },
-    {
-      "game": "SA at SAC",
-      "pick": "SA",
-      "prob": 0.6535,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.895,
       "price_source": "reference"
     },
     {
@@ -3186,14 +3188,25 @@
       "price": 0.62,
       "price_source": "reference",
       "profit": 30.65
+    },
+    {
+      "date": "2026-11-06",
+      "game": "SA at SAC",
+      "pick": "SA",
+      "prob": 0.6535,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.895,
+      "price_source": "reference",
+      "profit": 5.87
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 637.63,
-    "total_won": 2787.63,
+    "balance": 643.5,
+    "total_won": 2793.5,
     "total_lost": 2200.0,
-    "settled_count": 128,
-    "ref_priced_count": 128
+    "settled_count": 129,
+    "ref_priced_count": 129
   }
 }
