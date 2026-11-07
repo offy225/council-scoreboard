@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-07T03:58:06Z",
+  "updated_at": "2026-11-07T04:01:56Z",
   "scored": 142,
   "won": 91,
   "lost": 51,
@@ -1600,6 +1600,69 @@
       "stake": 50.0,
       "status": "OPEN",
       "price": 0.895,
+      "price_source": "reference"
+    },
+    {
+      "game": "DEN at IND",
+      "pick": "DEN",
+      "prob": 0.6926,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.705,
+      "price_source": "reference"
+    },
+    {
+      "game": "BKN at ATL",
+      "pick": "ATL",
+      "prob": 0.7898,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.7,
+      "price_source": "reference"
+    },
+    {
+      "game": "NY at CLE",
+      "pick": "CLE",
+      "prob": 0.6909,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.375,
+      "price_source": "reference"
+    },
+    {
+      "game": "WSH at OKC",
+      "pick": "OKC",
+      "prob": 0.8578,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.815,
+      "price_source": "reference"
+    },
+    {
+      "game": "ORL at GS",
+      "pick": "GS",
+      "prob": 0.5234,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.685,
+      "price_source": "reference"
+    },
+    {
+      "game": "HOU at PHX",
+      "pick": "HOU",
+      "prob": 0.5836,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.715,
+      "price_source": "reference"
+    },
+    {
+      "game": "SA at POR",
+      "pick": "POR",
+      "prob": 0.6411,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.375,
       "price_source": "reference"
     }
   ],
