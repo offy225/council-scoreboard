@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-07T03:43:03Z",
-  "scored": 141,
-  "won": 90,
+  "updated_at": "2026-11-07T03:58:06Z",
+  "scored": 142,
+  "won": 91,
   "lost": 51,
-  "win_rate": 0.6382978723404256,
-  "brier": 0.2239,
-  "log_loss": 0.636,
+  "win_rate": 0.6408450704225352,
+  "brier": 0.2234,
+  "log_loss": 0.635,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 113,
-      "won": 71,
+      "scored": 114,
+      "won": 72,
       "lost": 42,
-      "win_rate": 0.6283185840707964,
-      "brier": 0.2236
+      "win_rate": 0.631578947368421,
+      "brier": 0.2229
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -1570,18 +1570,20 @@
       "result": "WON",
       "price": 0.705,
       "price_source": "reference"
+    },
+    {
+      "date": "2026-11-06",
+      "game": "MIN at NO",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "MIN",
+      "prob": 0.6145,
+      "final": "NO 109 \u00b7 MIN 115",
+      "result": "WON",
+      "price": 0.62,
+      "price_source": "reference"
     }
   ],
   "open_bets": [
-    {
-      "game": "MIN at NO",
-      "pick": "MIN",
-      "prob": 0.6145,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.62,
-      "price_source": "reference"
-    },
     {
       "game": "POR at LAL",
       "pick": "LAL",
@@ -3110,14 +3112,25 @@
       "price": 0.705,
       "price_source": "reference",
       "profit": 20.92
+    },
+    {
+      "date": "2026-11-06",
+      "game": "MIN at NO",
+      "pick": "MIN",
+      "prob": 0.6145,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.62,
+      "price_source": "reference",
+      "profit": 30.65
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 606.99,
-    "total_won": 2756.99,
+    "balance": 637.63,
+    "total_won": 2787.63,
     "total_lost": 2200.0,
-    "settled_count": 127,
-    "ref_priced_count": 127
+    "settled_count": 128,
+    "ref_priced_count": 128
   }
 }
