@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-07T05:57:52Z",
-  "scored": 143,
-  "won": 92,
+  "updated_at": "2026-11-07T06:13:15Z",
+  "scored": 144,
+  "won": 93,
   "lost": 51,
-  "win_rate": 0.6433566433566433,
-  "brier": 0.2226,
-  "log_loss": 0.6335,
+  "win_rate": 0.6458333333333334,
+  "brier": 0.2221,
+  "log_loss": 0.6324,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 115,
-      "won": 73,
+      "scored": 116,
+      "won": 74,
       "lost": 42,
-      "win_rate": 0.6347826086956522,
-      "brier": 0.222
+      "win_rate": 0.6379310344827587,
+      "brier": 0.2214
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -1584,6 +1584,17 @@
     },
     {
       "date": "2026-11-06",
+      "game": "POR at LAL",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "LAL",
+      "prob": 0.6192,
+      "final": "LAL 124 \u00b7 POR 118",
+      "result": "WON",
+      "price": 0.585,
+      "price_source": "reference"
+    },
+    {
+      "date": "2026-11-06",
       "game": "SA at SAC",
       "model": "NBA v3.2 + PLATT",
       "pick": "SA",
@@ -1595,15 +1606,6 @@
     }
   ],
   "open_bets": [
-    {
-      "game": "POR at LAL",
-      "pick": "LAL",
-      "prob": 0.6192,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.585,
-      "price_source": "reference"
-    },
     {
       "game": "DEN at IND",
       "pick": "DEN",
@@ -3191,6 +3193,17 @@
     },
     {
       "date": "2026-11-06",
+      "game": "POR at LAL",
+      "pick": "LAL",
+      "prob": 0.6192,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.585,
+      "price_source": "reference",
+      "profit": 35.47
+    },
+    {
+      "date": "2026-11-06",
       "game": "SA at SAC",
       "pick": "SA",
       "prob": 0.6535,
@@ -3203,10 +3216,10 @@
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 643.5,
-    "total_won": 2793.5,
+    "balance": 678.97,
+    "total_won": 2828.97,
     "total_lost": 2200.0,
-    "settled_count": 129,
-    "ref_priced_count": 129
+    "settled_count": 130,
+    "ref_priced_count": 130
   }
 }
