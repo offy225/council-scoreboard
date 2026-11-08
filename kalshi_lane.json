@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-08T00:43:18Z",
-  "scored": 145,
-  "won": 94,
-  "lost": 51,
-  "win_rate": 0.6482758620689655,
-  "brier": 0.2212,
-  "log_loss": 0.6306,
+  "updated_at": "2026-11-08T03:27:52Z",
+  "scored": 148,
+  "won": 96,
+  "lost": 52,
+  "win_rate": 0.6486486486486487,
+  "brier": 0.2204,
+  "log_loss": 0.6284,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 117,
-      "won": 75,
-      "lost": 42,
-      "win_rate": 0.6410256410256411,
-      "brier": 0.2203
+      "scored": 120,
+      "won": 77,
+      "lost": 43,
+      "win_rate": 0.6416666666666667,
+      "brier": 0.2193
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -1614,36 +1614,42 @@
       "result": "WON",
       "price": 0.705,
       "price_source": "reference"
-    }
-  ],
-  "open_bets": [
+    },
     {
+      "date": "2026-11-07",
       "game": "BKN at ATL",
+      "model": "NBA v3.2 + PLATT",
       "pick": "ATL",
       "prob": 0.7898,
-      "stake": 50.0,
-      "status": "OPEN",
+      "final": "ATL 124 \u00b7 BKN 121",
+      "result": "WON",
       "price": 0.7,
       "price_source": "reference"
     },
     {
+      "date": "2026-11-07",
       "game": "NY at CLE",
+      "model": "NBA v3.2 + PLATT",
       "pick": "CLE",
       "prob": 0.6909,
-      "stake": 50.0,
-      "status": "OPEN",
+      "final": "CLE 97 \u00b7 NY 109",
+      "result": "LOST",
       "price": 0.375,
       "price_source": "reference"
     },
     {
+      "date": "2026-11-07",
       "game": "WSH at OKC",
+      "model": "NBA v3.2 + PLATT",
       "pick": "OKC",
       "prob": 0.8578,
-      "stake": 50.0,
-      "status": "OPEN",
+      "final": "OKC 114 \u00b7 WSH 75",
+      "result": "WON",
       "price": 0.815,
       "price_source": "reference"
-    },
+    }
+  ],
+  "open_bets": [
     {
       "game": "ORL at GS",
       "pick": "GS",
@@ -3225,14 +3231,47 @@
       "price": 0.705,
       "price_source": "reference",
       "profit": 20.92
+    },
+    {
+      "date": "2026-11-07",
+      "game": "BKN at ATL",
+      "pick": "ATL",
+      "prob": 0.7898,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.7,
+      "price_source": "reference",
+      "profit": 21.43
+    },
+    {
+      "date": "2026-11-07",
+      "game": "NY at CLE",
+      "pick": "CLE",
+      "prob": 0.6909,
+      "stake": 50.0,
+      "result": "LOST",
+      "price": 0.375,
+      "price_source": "reference",
+      "profit": -50.0
+    },
+    {
+      "date": "2026-11-07",
+      "game": "WSH at OKC",
+      "pick": "OKC",
+      "prob": 0.8578,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.815,
+      "price_source": "reference",
+      "profit": 11.35
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 699.89,
-    "total_won": 2849.89,
-    "total_lost": 2200.0,
-    "settled_count": 131,
-    "ref_priced_count": 131
+    "balance": 682.67,
+    "total_won": 2882.67,
+    "total_lost": 2250.0,
+    "settled_count": 134,
+    "ref_priced_count": 134
   }
 }
