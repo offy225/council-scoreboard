@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-07T13:37:57Z",
-  "scored": 144,
-  "won": 93,
+  "updated_at": "2026-11-08T00:43:18Z",
+  "scored": 145,
+  "won": 94,
   "lost": 51,
-  "win_rate": 0.6458333333333334,
-  "brier": 0.2221,
-  "log_loss": 0.6324,
+  "win_rate": 0.6482758620689655,
+  "brier": 0.2212,
+  "log_loss": 0.6306,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 116,
-      "won": 74,
+      "scored": 117,
+      "won": 75,
       "lost": 42,
-      "win_rate": 0.6379310344827587,
-      "brier": 0.2214
+      "win_rate": 0.6410256410256411,
+      "brier": 0.2203
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -1603,18 +1603,20 @@
       "result": "WON",
       "price": 0.895,
       "price_source": "reference"
+    },
+    {
+      "date": "2026-11-07",
+      "game": "DEN at IND",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "DEN",
+      "prob": 0.6926,
+      "final": "IND 102 \u00b7 DEN 114",
+      "result": "WON",
+      "price": 0.705,
+      "price_source": "reference"
     }
   ],
   "open_bets": [
-    {
-      "game": "DEN at IND",
-      "pick": "DEN",
-      "prob": 0.6926,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.705,
-      "price_source": "reference"
-    },
     {
       "game": "BKN at ATL",
       "pick": "ATL",
@@ -3212,14 +3214,25 @@
       "price": 0.895,
       "price_source": "reference",
       "profit": 5.87
+    },
+    {
+      "date": "2026-11-07",
+      "game": "DEN at IND",
+      "pick": "DEN",
+      "prob": 0.6926,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.705,
+      "price_source": "reference",
+      "profit": 20.92
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 678.97,
-    "total_won": 2828.97,
+    "balance": 699.89,
+    "total_won": 2849.89,
     "total_lost": 2200.0,
-    "settled_count": 130,
-    "ref_priced_count": 130
+    "settled_count": 131,
+    "ref_priced_count": 131
   }
 }
