@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-08T05:12:49Z",
-  "scored": 150,
+  "updated_at": "2026-11-08T05:43:05Z",
+  "scored": 151,
   "won": 97,
-  "lost": 53,
-  "win_rate": 0.6466666666666666,
-  "brier": 0.2212,
-  "log_loss": 0.6302,
+  "lost": 54,
+  "win_rate": 0.6423841059602649,
+  "brier": 0.2225,
+  "log_loss": 0.6328,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 122,
+      "scored": 123,
       "won": 78,
-      "lost": 44,
-      "win_rate": 0.639344262295082,
-      "brier": 0.2204
+      "lost": 45,
+      "win_rate": 0.6341463414634146,
+      "brier": 0.2219
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -1669,18 +1669,20 @@
       "result": "LOST",
       "price": 0.715,
       "price_source": "reference"
+    },
+    {
+      "date": "2026-11-07",
+      "game": "SA at POR",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "POR",
+      "prob": 0.6411,
+      "final": "POR 103 \u00b7 SA 125",
+      "result": "LOST",
+      "price": 0.375,
+      "price_source": "reference"
     }
   ],
   "open_bets": [
-    {
-      "game": "SA at POR",
-      "pick": "POR",
-      "prob": 0.6411,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.375,
-      "price_source": "reference"
-    },
     {
       "game": "PHI at CHI",
       "pick": "PHI",
@@ -3353,14 +3355,25 @@
       "price": 0.715,
       "price_source": "reference",
       "profit": -50.0
+    },
+    {
+      "date": "2026-11-07",
+      "game": "SA at POR",
+      "pick": "POR",
+      "prob": 0.6411,
+      "stake": 50.0,
+      "result": "LOST",
+      "price": 0.375,
+      "price_source": "reference",
+      "profit": -50.0
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 655.66,
+    "balance": 605.66,
     "total_won": 2905.66,
-    "total_lost": 2300.0,
-    "settled_count": 136,
-    "ref_priced_count": 136
+    "total_lost": 2350.0,
+    "settled_count": 137,
+    "ref_priced_count": 137
   }
 }
