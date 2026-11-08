@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-08T03:27:52Z",
+  "updated_at": "2026-11-08T03:58:11Z",
   "scored": 148,
   "won": 96,
   "lost": 52,
@@ -1675,6 +1675,69 @@
       "stake": 50.0,
       "status": "OPEN",
       "price": 0.375,
+      "price_source": "reference"
+    },
+    {
+      "game": "PHI at CHI",
+      "pick": "PHI",
+      "prob": 0.639,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.765,
+      "price_source": "reference"
+    },
+    {
+      "game": "LAL at DET",
+      "pick": "DET",
+      "prob": 0.6657,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.615,
+      "price_source": "reference"
+    },
+    {
+      "game": "UTAH at MIN",
+      "pick": "MIN",
+      "prob": 0.72,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.835,
+      "price_source": "reference"
+    },
+    {
+      "game": "BKN at DAL",
+      "pick": "DAL",
+      "prob": 0.6707,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.755,
+      "price_source": "reference"
+    },
+    {
+      "game": "BOS at MIL",
+      "pick": "BOS",
+      "prob": 0.8241,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.855,
+      "price_source": "reference"
+    },
+    {
+      "game": "NO at LAC",
+      "pick": "LAC",
+      "prob": 0.6689,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.485,
+      "price_source": "reference"
+    },
+    {
+      "game": "MIA at SAC",
+      "pick": "MIA",
+      "prob": 0.7536,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.76,
       "price_source": "reference"
     }
   ],
