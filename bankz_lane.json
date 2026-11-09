@@ -1,211 +1,391 @@
 {
-  "track": "bankz_v1",
+  "track": "bankz_greenzone_batch10",
   "lane": "BANKZ",
-  "forward_only": true,
-  "backfilled": false,
   "paper_only": true,
   "live": false,
-  "updated_at": "2026-11-03T06:46:57.340607Z",
-  "source_ledger": "challenger_track_ledger.jsonl",
-  "source_ledger_lines": 112,
-  "decisions": {
-    "pass": 9,
-    "reject": 41,
-    "defer": 62,
-    "total": 112
-  },
-  "forward_grade": {
-    "round_trips": 0,
-    "round_trips_needed": 50,
-    "round_trip_pnl_usdt": 0.0,
-    "paper_pnl_usdt": 0.0,
-    "verdict": "NOT ENOUGH EVIDENCE - 0 OF 50 ROUND TRIPS"
-  },
-  "paper_positions_open": 9,
-  "paper_reporting_stake_usdt": 25,
-  "paper_positions_note": "Paper positions only, $25 reporting stake each. NOT live trades, NOT real money, NOT profit.",
-  "holder": {
-    "source": "rpc",
-    "provider": "Helius (custom.helius, connected)",
-    "helius_connected": true,
-    "helius_wired_run": {
-      "candidates_found": 50,
-      "evaluated": 48,
-      "passed": 9,
-      "rejected": 39,
-      "deferred": 0,
-      "holder_source_rpc": "48/48"
-    },
-    "ledger_holder_sources": {
-      "rpc": 48,
-      "none": 64
-    }
-  },
-  "passes": [
-    {
-      "mint": "GApeRAhPngRdv5JRDWGrRrbz5ZeLeevN9NCfRht9pump",
-      "holder_source": "rpc",
-      "buyer_count": null,
-      "price_points": 2,
-      "reasons": []
-    },
-    {
-      "mint": "Mjd5MSNqhHmigzcASyaafMosCMVZWpwmZdbesQFpump",
-      "holder_source": "rpc",
-      "buyer_count": null,
-      "price_points": 2,
-      "reasons": []
-    },
-    {
-      "mint": "pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn",
-      "holder_source": "rpc",
-      "buyer_count": null,
-      "price_points": 6,
-      "reasons": []
-    },
-    {
-      "mint": "DBPTU2oKLDHXQjAEJ3rZi8bUGmt2uxUbipgg6xmXoMqr",
-      "holder_source": "rpc",
-      "buyer_count": null,
-      "price_points": 6,
-      "reasons": []
-    },
-    {
-      "mint": "8YbjB38by48i9bLEJjnGNqjF19PszHawPixmrtBZYVkQ",
-      "holder_source": "rpc",
-      "buyer_count": null,
-      "price_points": 6,
-      "reasons": []
-    },
-    {
-      "mint": "Gka1TQEevBbVw4W9K15ER96ZzKByMTb6TBMQzWFEpump",
-      "holder_source": "rpc",
-      "buyer_count": null,
-      "price_points": 6,
-      "reasons": []
-    },
-    {
-      "mint": "D2496au7NBgTdd6AHA7kTEMgBc3K7BE9dGoqkkjKpump",
-      "holder_source": "rpc",
-      "buyer_count": null,
-      "price_points": 6,
-      "reasons": []
-    },
-    {
-      "mint": "3jAHcV6ZwmA3pnrR9MrWwNSbN5gDiM7rSM1RJradQ8xK",
-      "holder_source": "rpc",
-      "buyer_count": null,
-      "price_points": 4,
-      "reasons": []
-    },
-    {
-      "mint": "J1pZjNKh4BnbXBsroE4acJv3TYzCGxTn46VrZii6orEZ",
-      "holder_source": "rpc",
-      "buyer_count": null,
-      "price_points": 2,
-      "reasons": []
-    }
-  ],
-  "banner": "PAPER ONLY - NOT LIVE - NO PROFIT YET - $225 PAPER STAKE OPEN, $0.00 REALIZED",
-  "caveats": [
-    "0 round trips closed, $0.00 forward P&L. A pass is a paper judgement, not a win.",
-    "All 9 passes have buyer_count null (buyers: None) - wallet-diversity was not tested on them; they passed on concentration + buy/sell + chart fields available.",
-    "Price series are thin: 2-6 price points per pass.",
-    "Top-10 share of exactly 1.00 on 38 rejected candidates is under investigation - most likely the pump.fun bonding-curve account dominating largest-accounts, not proof all 38 are rugs.",
-    "62 defers are transient_holder_check_429_retry from before Helius wiring; the Helius-wired run had 0 defers.",
-    "Creator share is unknown unless a creator address is supplied per mint; concentration alone does not prove a coin is safe.",
-    "No profit-target, lifestyle, or bank claim is proven by this tab. The 50-round-trip forward grade decides live discussion."
-  ],
-  "reject_summary": {
-    "top10_concentration_1.00": 37,
-    "creator_share_0.79": 1,
-    "buyers_not_growing": 1,
-    "creator_and_top10": 1,
-    "top10_concentration_0.99": 1
-  },
-  "defer_summary": {
-    "transient_holder_check_429_retry": 62
-  },
-  "money": {
-    "label": "MONEY - PAPER ONLY, NOT LIVE PROFIT",
-    "paper_positions_open": 9,
-    "paper_reporting_stake_usdt": 25,
-    "paper_stake_open_usdt": 225,
-    "paper_stake_open_note": "9 paper positions open x $25 reporting stake each = $225 paper stake open. Paper only, not real money, not live trades.",
-    "forward_realized_pnl_usdt": 0.0,
-    "forward_round_trips": 0,
-    "forward_round_trips_needed": 50,
-    "forward_note": "Realized forward P&L is $0.00 because 0 round trips have closed. A pass is a paper judgement, not a win.",
-    "backtest_only": {
-      "label": "BACKTEST ONLY - HOLD-TO-TODAY, NOT LIVE PROFIT, NOT A TRADING P&L",
-      "passes_tested": 681,
-      "stake_per_pass_usdt": 25,
-      "total_stake_usdt": 17025,
-      "winners": 43,
-      "winners_total_usdt": 514.85,
-      "losses": 633,
-      "losses_total_usdt": -14257.32,
-      "net_hold_to_today_usdt": -13742.47,
-      "at_5_usdt_live_size": {
-        "total_stake_usdt": 3405,
-        "winners_total_usdt": 102.97,
-        "net_hold_to_today_usdt": -2748.49
-      },
-      "runners_100pct_plus": 5,
-      "runners_total_usdt_25": 323.49,
-      "runners_total_usdt_5": 64.7,
-      "runners": [
-        {
-          "symbol": "ANTS",
-          "return_pct": 386.3,
-          "pnl25_usdt": 96.57,
-          "pnl5_usdt": 19.31
-        },
-        {
-          "symbol": "UDTF",
-          "return_pct": 325.7,
-          "pnl25_usdt": 81.42,
-          "pnl5_usdt": 16.28
-        },
-        {
-          "symbol": "UODF",
-          "return_pct": 305.0,
-          "pnl25_usdt": 76.25,
-          "pnl5_usdt": 15.25
-        },
-        {
-          "symbol": "USWR",
-          "return_pct": 146.8,
-          "pnl25_usdt": 36.7,
-          "pnl5_usdt": 7.34
-        },
-        {
-          "symbol": "XTX",
-          "return_pct": 130.2,
-          "pnl25_usdt": 32.55,
-          "pnl5_usdt": 6.51
-        }
-      ],
-      "note": "Hold-to-today understates peak profit: a coin that pumped then crashed counts as a loss here even if house exits (sell half at +25%, trail) would have banked part of the pump. Peak prices were not available for all 681 passes, so these are floor figures from current prices, not peak figures, and not live profit."
-    },
-    "live_hot_wallet": {
-      "label": "LIVE HOT WALLET - FUNDED, NOT TRADED YET",
-      "total_usdt": 15,
-      "per_trade_usdt": 5,
-      "max_open": 3,
-      "status": "NOT TRADED YET - watched $5 test must pass first. This is real wallet funding, separate from paper above, and is NOT profit.",
-      "note": "Do not blend live wallet funding with paper stake open. Paper $225 is reporting stake only; live $15 is the funded hot wallet awaiting its watched test."
-    },
-    "banner": "PAPER MONEY ONLY - $225 PAPER STAKE OPEN, $0.00 REALIZED, BACKTEST WINNERS $514.85 ON $25 / $102.97 ON $5 ARE BACKTEST ONLY, NOT LIVE PROFIT"
-  },
+  "updated_at": "2026-11-09T05:35:19Z",
+  "batch": 10,
   "system_name": "BANKZ",
-  "display_name": "\ud83d\udcb5 BANKZ",
+  "display_name": "💵 BANKZ",
   "colour": "#00DD94",
   "colour_alt": "#00e5ff",
   "theme": "money green / bank",
   "lane_file": "bankz_lane.json",
-  "symbol": "\ud83d\udcb5",
-  "symbol_cash": "\ud83d\udcb5",
-  "tagline": "Money off memes \ud83d\ude02",
-  "header": "Money off memes \ud83d\ude02"
+  "symbol": "💵",
+  "symbol_cash": "💵",
+  "tagline": "Money off memes 😂",
+  "header": "Money off memes 😂",
+  "exam": {
+    "closes_needed": 15,
+    "stalls_max": 3,
+    "net_ex_top_gt": 0,
+    "median_gt": 0,
+    "profit_factor_gt": 1.3,
+    "stake_usdt": 15.0,
+    "bankroll_start_usdt": 75.0,
+    "rules": "2x arm (peak >= 2x first-seen), dip 0.78-0.88x peak within 300s, 15s trough check, TP1 +15% sell half, 25% trail, -30% stop, 90s post-TP1 stall timer."
+  },
+  "lanes": {
+    "lane1": {
+      "name": "Lane 1 — fresh launches",
+      "band": "$60K+, no ceiling",
+      "bankroll_start": 75.0,
+      "bankroll": 68.65,
+      "closes": 2,
+      "closes_needed": 15,
+      "wins": 1,
+      "losses": 1,
+      "stalls": 1,
+      "net_pnl": -6.3481,
+      "total_won_usd": 1.5736,
+      "total_lost_usd": 7.9217,
+      "open_count": 0,
+      "open": [],
+      "recent_trades": [
+        {
+          "symbol": "MOOHAN",
+          "mint": "e9YfLKXrAUswEFgrgCjxjVF3yHU6Vcu4QJBE6k648WT",
+          "entry_iso": "2026-11-09T05:16:03+00:00",
+          "exit_iso": "2026-11-09T05:16:11+00:00",
+          "entry_mc_usd": 96652.83597098787,
+          "peak_mc_usd": 96652.83597098787,
+          "peak_multiple": 1.0,
+          "tp1_hit": false,
+          "stall": true,
+          "exit_reason": "hard_stop_-30pct",
+          "net_pnl_usd": -7.9217,
+          "paper_bankroll_after_usd": 68.65
+        },
+        {
+          "symbol": "GPU",
+          "mint": "EFYdWBh6hQJLduR4QYnLNKLMq93PLqjjU5WwhNPgpump",
+          "entry_iso": "2026-11-09T03:55:50+00:00",
+          "exit_iso": "2026-11-09T04:01:03+00:00",
+          "entry_mc_usd": 99543.0,
+          "peak_mc_usd": 127786.0,
+          "peak_multiple": 1.2837,
+          "tp1_hit": true,
+          "stall": false,
+          "exit_reason": "stall_timer_post_tp1",
+          "net_pnl_usd": 1.5736,
+          "paper_bankroll_after_usd": 76.57
+        }
+      ]
+    },
+    "lane2": {
+      "name": "Lane 2 — trending",
+      "band": "$150K+, no ceiling",
+      "bankroll_start": 75.0,
+      "bankroll": 75.0,
+      "closes": 0,
+      "closes_needed": 15,
+      "wins": 0,
+      "losses": 0,
+      "stalls": 0,
+      "net_pnl": 0.0,
+      "total_won_usd": 0.0,
+      "total_lost_usd": 0.0,
+      "open_count": 0,
+      "open": [],
+      "recent_trades": []
+    }
+  },
+  "totals": {
+    "bankroll": 143.65,
+    "bankroll_start": 150.0,
+    "closes": 2,
+    "wins": 1,
+    "losses": 1,
+    "stalls": 1,
+    "net_pnl": -6.3481,
+    "total_won_usd": 1.5736,
+    "total_lost_usd": 7.9217,
+    "open_count": 0
+  },
+  "live_loop": {
+    "label": "LIVE LOOP — BANKZ live service (bankz.service)",
+    "cash_remaining_usdt": 15.0,
+    "total_made_usdt": 0.0,
+    "total_lost_usdt": 0.0,
+    "net_pnl_usdt": 0.0,
+    "open_trades": [],
+    "closed_trades": [],
+    "note": "Live loop has placed 0 trades ever. Live is separate from paper; paper is the exam."
+  },
+  "real_wallet": {
+    "label": "PANEL 2 — REAL WALLET — Real money — $15 only.",
+    "total_usdt": 15,
+    "per_trade_usdt": 5,
+    "max_open": 3,
+    "status": "NOT TRADED YET — first watched trade has not happened yet",
+    "rules_plain": "Put $5 in, sell half when it is up 15%, let the rest ride and follow it down 25% from its highest point, stop out if it drops 25%, and stop starting new trades for the day if we are down $5 total that day.",
+    "cash_remaining_usdt": 15.0,
+    "total_made_usdt": 0.0,
+    "total_lost_usdt": 0.0,
+    "net_pnl_usdt": 0.0,
+    "open_trades": [],
+    "closed_trades": []
+  },
+  "banner": "PAPER ONLY — BATCH 10 GREEN-ZONE EXAM — L1 2/15 closes, net $-6.35 · L2 0/15 · bankroll $143.65 · live 0 trades",
+  "archive_v1": {
+    "track": "bankz_v1",
+    "lane": "BANKZ",
+    "forward_only": true,
+    "backfilled": false,
+    "paper_only": true,
+    "live": false,
+    "updated_at": "2026-11-03T06:46:57.340607Z",
+    "source_ledger": "challenger_track_ledger.jsonl",
+    "source_ledger_lines": 112,
+    "decisions": {
+      "pass": 9,
+      "reject": 41,
+      "defer": 62,
+      "total": 112
+    },
+    "forward_grade": {
+      "round_trips": 0,
+      "round_trips_needed": 50,
+      "round_trip_pnl_usdt": 0.0,
+      "paper_pnl_usdt": 0.0,
+      "verdict": "NOT ENOUGH EVIDENCE - 0 OF 50 ROUND TRIPS"
+    },
+    "paper_positions_open": 9,
+    "paper_reporting_stake_usdt": 25,
+    "paper_positions_note": "Paper positions only, $25 reporting stake each. NOT live trades, NOT real money, NOT profit.",
+    "holder": {
+      "source": "rpc",
+      "provider": "Helius (custom.helius, connected)",
+      "helius_connected": true,
+      "helius_wired_run": {
+        "candidates_found": 50,
+        "evaluated": 48,
+        "passed": 9,
+        "rejected": 39,
+        "deferred": 0,
+        "holder_source_rpc": "48/48"
+      },
+      "ledger_holder_sources": {
+        "rpc": 48,
+        "none": 64
+      }
+    },
+    "passes": [
+      {
+        "mint": "GApeRAhPngRdv5JRDWGrRrbz5ZeLeevN9NCfRht9pump",
+        "holder_source": "rpc",
+        "buyer_count": null,
+        "price_points": 2,
+        "reasons": []
+      },
+      {
+        "mint": "Mjd5MSNqhHmigzcASyaafMosCMVZWpwmZdbesQFpump",
+        "holder_source": "rpc",
+        "buyer_count": null,
+        "price_points": 2,
+        "reasons": []
+      },
+      {
+        "mint": "pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn",
+        "holder_source": "rpc",
+        "buyer_count": null,
+        "price_points": 6,
+        "reasons": []
+      },
+      {
+        "mint": "DBPTU2oKLDHXQjAEJ3rZi8bUGmt2uxUbipgg6xmXoMqr",
+        "holder_source": "rpc",
+        "buyer_count": null,
+        "price_points": 6,
+        "reasons": []
+      },
+      {
+        "mint": "8YbjB38by48i9bLEJjnGNqjF19PszHawPixmrtBZYVkQ",
+        "holder_source": "rpc",
+        "buyer_count": null,
+        "price_points": 6,
+        "reasons": []
+      },
+      {
+        "mint": "Gka1TQEevBbVw4W9K15ER96ZzKByMTb6TBMQzWFEpump",
+        "holder_source": "rpc",
+        "buyer_count": null,
+        "price_points": 6,
+        "reasons": []
+      },
+      {
+        "mint": "D2496au7NBgTdd6AHA7kTEMgBc3K7BE9dGoqkkjKpump",
+        "holder_source": "rpc",
+        "buyer_count": null,
+        "price_points": 6,
+        "reasons": []
+      },
+      {
+        "mint": "3jAHcV6ZwmA3pnrR9MrWwNSbN5gDiM7rSM1RJradQ8xK",
+        "holder_source": "rpc",
+        "buyer_count": null,
+        "price_points": 4,
+        "reasons": []
+      },
+      {
+        "mint": "J1pZjNKh4BnbXBsroE4acJv3TYzCGxTn46VrZii6orEZ",
+        "holder_source": "rpc",
+        "buyer_count": null,
+        "price_points": 2,
+        "reasons": []
+      }
+    ],
+    "banner": "PAPER ONLY - NOT LIVE - NO PROFIT YET - $225 PAPER STAKE OPEN, $0.00 REALIZED",
+    "caveats": [
+      "0 round trips closed, $0.00 forward P&L. A pass is a paper judgement, not a win.",
+      "All 9 passes have buyer_count null (buyers: None) - wallet-diversity was not tested on them; they passed on concentration + buy/sell + chart fields available.",
+      "Price series are thin: 2-6 price points per pass.",
+      "Top-10 share of exactly 1.00 on 38 rejected candidates is under investigation - most likely the pump.fun bonding-curve account dominating largest-accounts, not proof all 38 are rugs.",
+      "62 defers are transient_holder_check_429_retry from before Helius wiring; the Helius-wired run had 0 defers.",
+      "Creator share is unknown unless a creator address is supplied per mint; concentration alone does not prove a coin is safe.",
+      "No profit-target, lifestyle, or bank claim is proven by this tab. The 50-round-trip forward grade decides live discussion."
+    ],
+    "reject_summary": {
+      "top10_concentration_1.00": 37,
+      "creator_share_0.79": 1,
+      "buyers_not_growing": 1,
+      "creator_and_top10": 1,
+      "top10_concentration_0.99": 1
+    },
+    "defer_summary": {
+      "transient_holder_check_429_retry": 62
+    },
+    "money": {
+      "label": "MONEY - PAPER ONLY, NOT LIVE PROFIT",
+      "paper_positions_open": 9,
+      "paper_reporting_stake_usdt": 25,
+      "paper_stake_open_usdt": 225,
+      "paper_stake_open_note": "9 paper positions open x $25 reporting stake each = $225 paper stake open. Paper only, not real money, not live trades.",
+      "forward_realized_pnl_usdt": 0.0,
+      "forward_round_trips": 0,
+      "forward_round_trips_needed": 50,
+      "forward_note": "Realized forward P&L is $0.00 because 0 round trips have closed. A pass is a paper judgement, not a win.",
+      "backtest_only": {
+        "label": "BACKTEST ONLY - HOLD-TO-TODAY, NOT LIVE PROFIT, NOT A TRADING P&L",
+        "passes_tested": 681,
+        "stake_per_pass_usdt": 25,
+        "total_stake_usdt": 17025,
+        "winners": 43,
+        "winners_total_usdt": 514.85,
+        "losses": 633,
+        "losses_total_usdt": -14257.32,
+        "net_hold_to_today_usdt": -13742.47,
+        "at_5_usdt_live_size": {
+          "total_stake_usdt": 3405,
+          "winners_total_usdt": 102.97,
+          "net_hold_to_today_usdt": -2748.49
+        },
+        "runners_100pct_plus": 5,
+        "runners_total_usdt_25": 323.49,
+        "runners_total_usdt_5": 64.7,
+        "runners": [
+          {
+            "symbol": "ANTS",
+            "return_pct": 386.3,
+            "pnl25_usdt": 96.57,
+            "pnl5_usdt": 19.31
+          },
+          {
+            "symbol": "UDTF",
+            "return_pct": 325.7,
+            "pnl25_usdt": 81.42,
+            "pnl5_usdt": 16.28
+          },
+          {
+            "symbol": "UODF",
+            "return_pct": 305.0,
+            "pnl25_usdt": 76.25,
+            "pnl5_usdt": 15.25
+          },
+          {
+            "symbol": "USWR",
+            "return_pct": 146.8,
+            "pnl25_usdt": 36.7,
+            "pnl5_usdt": 7.34
+          },
+          {
+            "symbol": "XTX",
+            "return_pct": 130.2,
+            "pnl25_usdt": 32.55,
+            "pnl5_usdt": 6.51
+          }
+        ],
+        "note": "Hold-to-today understates peak profit: a coin that pumped then crashed counts as a loss here even if house exits (sell half at +25%, trail) would have banked part of the pump. Peak prices were not available for all 681 passes, so these are floor figures from current prices, not peak figures, and not live profit."
+      },
+      "live_hot_wallet": {
+        "label": "LIVE HOT WALLET - FUNDED, NOT TRADED YET",
+        "total_usdt": 15,
+        "per_trade_usdt": 5,
+        "max_open": 3,
+        "status": "NOT TRADED YET - watched $5 test must pass first. This is real wallet funding, separate from paper above, and is NOT profit.",
+        "note": "Do not blend live wallet funding with paper stake open. Paper $225 is reporting stake only; live $15 is the funded hot wallet awaiting its watched test."
+      },
+      "banner": "PAPER MONEY ONLY - $225 PAPER STAKE OPEN, $0.00 REALIZED, BACKTEST WINNERS $514.85 ON $25 / $102.97 ON $5 ARE BACKTEST ONLY, NOT LIVE PROFIT",
+      "paper_wallet": {
+        "label": "PANEL 1 — PAPER WALLET — Practice — no real money here.",
+        "stake_open_usdt": 225,
+        "positions_open": 9,
+        "stake_per_position_usdt": 25,
+        "realized_pnl_usdt": 0.0,
+        "forward_round_trips": 0,
+        "forward_round_trips_needed": 50,
+        "verdict": "NOT ENOUGH EVIDENCE"
+      },
+      "real_wallet": {
+        "label": "PANEL 2 — REAL WALLET — Real money — $15 only.",
+        "total_usdt": 15,
+        "per_trade_usdt": 5,
+        "max_open": 3,
+        "status": "NOT TRADED YET — first watched trade has not happened yet",
+        "rules_plain": "Put $5 in, sell half when it is up 25%, let the rest ride and follow it down 25% from its highest point, stop out if it drops 25%, and stop starting new trades for the day if we are down $5 total that day.",
+        "cash_remaining_usdt": 15.0,
+        "total_made_usdt": 0.0,
+        "total_lost_usdt": 0.0,
+        "net_pnl_usdt": 0.0,
+        "open_trades": [],
+        "closed_trades": []
+      },
+      "plain_language_backtest": "We tested 681 old coins. If you put $25 in EACH one, that is $17,025 total put in. 43 of them went up — those winners made $514.85 total. The other 638 went down or rugged — those lost $14,257.32 total. $514.85 winners minus $14,257.32 losers = -$13,742.47 net. So if you held ALL of them to today, you would be down big, because most were losers and the winners did not cover them. This backtest held to today with NO exits applied — a coin that pumped then crashed counts as a loss here, even though sell-half / trail exits would have banked some of it. So this is a test of the filter, not real profit, and not a prediction. Why we do not just trade all passes: most passes are losers, so we need the buyer gate (at least 12 real buyers), the Helius holder check, and exits, and we only trade $5 at a time."
+    },
+    "system_name": "BANKZ",
+    "display_name": "💵 BANKZ",
+    "colour": "#00DD94",
+    "colour_alt": "#00e5ff",
+    "theme": "money green / bank",
+    "lane_file": "bankz_lane.json",
+    "symbol": "💵",
+    "symbol_cash": "💵",
+    "tagline": "Money off memes 😂",
+    "header": "Money off memes 😂",
+    "paper_wallet": {
+      "label": "PANEL 1 — PAPER WALLET — Practice — no real money here.",
+      "stake_open_usdt": 225,
+      "positions_open": 9,
+      "stake_per_position_usdt": 25,
+      "realized_pnl_usdt": 0.0,
+      "forward_round_trips": 0,
+      "forward_round_trips_needed": 50,
+      "verdict": "NOT ENOUGH EVIDENCE"
+    },
+    "real_wallet": {
+      "label": "PANEL 2 — REAL WALLET — Real money — $15 only.",
+      "total_usdt": 15,
+      "per_trade_usdt": 5,
+      "max_open": 3,
+      "status": "NOT TRADED YET — first watched trade has not happened yet",
+      "rules_plain": "Put $5 in, sell half when it is up 25%, let the rest ride and follow it down 25% from its highest point, stop out if it drops 25%, and stop starting new trades for the day if we are down $5 total that day.",
+      "cash_remaining_usdt": 15.0,
+      "total_made_usdt": 0.0,
+      "total_lost_usdt": 0.0,
+      "net_pnl_usdt": 0.0,
+      "open_trades": [],
+      "closed_trades": []
+    },
+    "plain_language_backtest": "We tested 681 old coins. If you put $25 in EACH one, that is $17,025 total put in. 43 of them went up — those winners made $514.85 total. The other 638 went down or rugged — those lost $14,257.32 total. $514.85 winners minus $14,257.32 losers = -$13,742.47 net. So if you held ALL of them to today, you would be down big, because most were losers and the winners did not cover them. This backtest held to today with NO exits applied — a coin that pumped then crashed counts as a loss here, even though sell-half / trail exits would have banked some of it. So this is a test of the filter, not real profit, and not a prediction. Why we do not just trade all passes: most passes are losers, so we need the buyer gate (at least 12 real buyers), the Helius holder check, and exits, and we only trade $5 at a time."
+  }
 }
