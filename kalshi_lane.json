@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-09T03:13:00Z",
-  "scored": 155,
-  "won": 100,
+  "updated_at": "2026-11-09T03:27:59Z",
+  "scored": 156,
+  "won": 101,
   "lost": 55,
-  "win_rate": 0.6451612903225806,
-  "brier": 0.2217,
-  "log_loss": 0.6311,
+  "win_rate": 0.6474358974358975,
+  "brier": 0.2204,
+  "log_loss": 0.6283,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 127,
-      "won": 81,
+      "scored": 128,
+      "won": 82,
       "lost": 46,
-      "win_rate": 0.6377952755905512,
-      "brier": 0.2209
+      "win_rate": 0.640625,
+      "brier": 0.2194
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -1724,18 +1724,20 @@
       "result": "WON",
       "price": 0.755,
       "price_source": "reference"
+    },
+    {
+      "date": "2026-11-08",
+      "game": "BOS at MIL",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "BOS",
+      "prob": 0.8241,
+      "final": "MIL 97 \u00b7 BOS 117",
+      "result": "WON",
+      "price": 0.855,
+      "price_source": "reference"
     }
   ],
   "open_bets": [
-    {
-      "game": "BOS at MIL",
-      "pick": "BOS",
-      "prob": 0.8241,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.855,
-      "price_source": "reference"
-    },
     {
       "game": "NO at LAC",
       "pick": "LAC",
@@ -3418,14 +3420,25 @@
       "price": 0.755,
       "price_source": "reference",
       "profit": 16.23
+    },
+    {
+      "date": "2026-11-08",
+      "game": "BOS at MIL",
+      "pick": "BOS",
+      "prob": 0.8241,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.855,
+      "price_source": "reference",
+      "profit": 8.48
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 597.12,
-    "total_won": 2947.12,
+    "balance": 605.6,
+    "total_won": 2955.6,
     "total_lost": 2400.0,
-    "settled_count": 141,
-    "ref_priced_count": 141
+    "settled_count": 142,
+    "ref_priced_count": 142
   }
 }
