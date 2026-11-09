@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-09T03:27:59Z",
+  "updated_at": "2026-11-09T04:01:20Z",
   "scored": 156,
   "won": 101,
   "lost": 55,
@@ -1754,6 +1754,78 @@
       "stake": 50.0,
       "status": "OPEN",
       "price": 0.76,
+      "price_source": "reference"
+    },
+    {
+      "game": "LAL at ATL",
+      "pick": "ATL",
+      "prob": 0.5067,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.375,
+      "price_source": "reference"
+    },
+    {
+      "game": "CLE at CHA",
+      "pick": "CLE",
+      "prob": 0.5872,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.745,
+      "price_source": "reference"
+    },
+    {
+      "game": "WSH at DET",
+      "pick": "DET",
+      "prob": 0.7583,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.805,
+      "price_source": "reference"
+    },
+    {
+      "game": "MEM at TOR",
+      "pick": "TOR",
+      "prob": 0.7462,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.575,
+      "price_source": "reference"
+    },
+    {
+      "game": "IND at DAL",
+      "pick": "DAL",
+      "prob": 0.5842,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.595,
+      "price_source": "reference"
+    },
+    {
+      "game": "DEN at HOU",
+      "pick": "HOU",
+      "prob": 0.5937,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.755,
+      "price_source": "reference"
+    },
+    {
+      "game": "SA at PHX",
+      "pick": "PHX",
+      "prob": 0.5928,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.235,
+      "price_source": "reference"
+    },
+    {
+      "game": "NO at GS",
+      "pick": "GS",
+      "prob": 0.5733,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.795,
       "price_source": "reference"
     }
   ],
