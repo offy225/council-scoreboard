@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-09T01:43:40Z",
-  "scored": 153,
-  "won": 98,
+  "updated_at": "2026-11-09T02:42:56Z",
+  "scored": 154,
+  "won": 99,
   "lost": 55,
-  "win_rate": 0.6405228758169934,
-  "brier": 0.2233,
-  "log_loss": 0.6346,
+  "win_rate": 0.6428571428571429,
+  "brier": 0.2224,
+  "log_loss": 0.6326,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 125,
-      "won": 79,
+      "scored": 126,
+      "won": 80,
       "lost": 46,
-      "win_rate": 0.632,
-      "brier": 0.2229
+      "win_rate": 0.6349206349206349,
+      "brier": 0.2218
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -1702,18 +1702,20 @@
       "result": "LOST",
       "price": 0.615,
       "price_source": "reference"
+    },
+    {
+      "date": "2026-11-08",
+      "game": "UTAH at MIN",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "MIN",
+      "prob": 0.72,
+      "final": "MIN 115 \u00b7 UTAH 100",
+      "result": "WON",
+      "price": 0.835,
+      "price_source": "reference"
     }
   ],
   "open_bets": [
-    {
-      "game": "UTAH at MIN",
-      "pick": "MIN",
-      "prob": 0.72,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.835,
-      "price_source": "reference"
-    },
     {
       "game": "BKN at DAL",
       "pick": "DAL",
@@ -3392,14 +3394,25 @@
       "price": 0.615,
       "price_source": "reference",
       "profit": -50.0
+    },
+    {
+      "date": "2026-11-08",
+      "game": "UTAH at MIN",
+      "pick": "MIN",
+      "prob": 0.72,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.835,
+      "price_source": "reference",
+      "profit": 9.88
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 571.02,
-    "total_won": 2921.02,
+    "balance": 580.9,
+    "total_won": 2930.9,
     "total_lost": 2400.0,
-    "settled_count": 139,
-    "ref_priced_count": 139
+    "settled_count": 140,
+    "ref_priced_count": 140
   }
 }
