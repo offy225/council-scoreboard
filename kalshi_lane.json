@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-09T02:42:56Z",
-  "scored": 154,
-  "won": 99,
+  "updated_at": "2026-11-09T03:13:00Z",
+  "scored": 155,
+  "won": 100,
   "lost": 55,
-  "win_rate": 0.6428571428571429,
-  "brier": 0.2224,
-  "log_loss": 0.6326,
+  "win_rate": 0.6451612903225806,
+  "brier": 0.2217,
+  "log_loss": 0.6311,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 126,
-      "won": 80,
+      "scored": 127,
+      "won": 81,
       "lost": 46,
-      "win_rate": 0.6349206349206349,
-      "brier": 0.2218
+      "win_rate": 0.6377952755905512,
+      "brier": 0.2209
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -1713,18 +1713,20 @@
       "result": "WON",
       "price": 0.835,
       "price_source": "reference"
+    },
+    {
+      "date": "2026-11-08",
+      "game": "BKN at DAL",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "DAL",
+      "prob": 0.6707,
+      "final": "DAL 130 \u00b7 BKN 93",
+      "result": "WON",
+      "price": 0.755,
+      "price_source": "reference"
     }
   ],
   "open_bets": [
-    {
-      "game": "BKN at DAL",
-      "pick": "DAL",
-      "prob": 0.6707,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.755,
-      "price_source": "reference"
-    },
     {
       "game": "BOS at MIL",
       "pick": "BOS",
@@ -3405,14 +3407,25 @@
       "price": 0.835,
       "price_source": "reference",
       "profit": 9.88
+    },
+    {
+      "date": "2026-11-08",
+      "game": "BKN at DAL",
+      "pick": "DAL",
+      "prob": 0.6707,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.755,
+      "price_source": "reference",
+      "profit": 16.23
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 580.9,
-    "total_won": 2930.9,
+    "balance": 597.12,
+    "total_won": 2947.12,
     "total_lost": 2400.0,
-    "settled_count": 140,
-    "ref_priced_count": 140
+    "settled_count": 141,
+    "ref_priced_count": 141
   }
 }
