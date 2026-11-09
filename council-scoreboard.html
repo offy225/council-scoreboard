@@ -2066,15 +2066,28 @@
         <div class="bankz-hero" style="text-align:center;margin:12px 0 4px;"><span class="bankz-printer bankz-printer-big" role="img" aria-label="money printer printing money"><span class="bp-machine">🖨️</span><span class="bp-bills"><i class="bp-bill"></i><i class="bp-bill"></i><i class="bp-bill"></i></span></span><div class="bankz-hero-text">Money off memes 😂</div><div class="bankz-active">BANKZ ACTIVE / MAIN</div></div>
           <section class="money" aria-label="PANEL 1 — PAPER WALLET — practice money, not real" style="border:2px solid #00DD94;">
           <div class="m-label"><span>PANEL 1 — PAPER WALLET — PRACTICE MONEY, NOT REAL</span></div>
-          <div class="m-big green">$225 <span class="m-unit">PAPER STAKE OPEN</span></div>
-          <div class="m-usd">9 PAPER POSITIONS OPEN × $25 EACH · <b>$0.00 REALIZED</b> · FORWARD GRADE 0 / 50 ROUND TRIPS · VERDICT: NOT ENOUGH EVIDENCE</div>
-          <div class="m-sub">Practice — no real money here. This is pretend money we use to test BANKZ. A pass is a paper judgement, not a win. None of this $225 is real, and none of it is profit.</div>
+          <div class="m-big green" id="bz-paper-big">$143.65 <span class="m-unit">PAPER BANKROLL · BATCH 10</span></div>
+          <div class="m-usd" id="bz-paper-sub">LANE 1 2/15 CLOSES · LANE 2 0/15 CLOSES · <b>NET -$6.35</b> · 0 OPEN</div>
+          <div class="m-sub">Practice — no real money here. This is pretend money we use to test BANKZ. Batch 10 green-zone exam: $15/trade, $75/lane. A close is a finished paper trade, not a win until the exam verdict. None of this bankroll is real, and none of it is profit. <span id="bz-updated">UPDATED —</span></div>
         </section>
         <section class="money" aria-label="PANEL 2 — REAL WALLET — Will's real 15 dollars" style="border:2px solid #FFD700;margin-top:12px;">
           <div class="m-label"><span>PANEL 2 — REAL WALLET — REAL MONEY — $15 ONLY</span></div>
           <div class="m-big" style="color:#FFD700;">$15 <span class="m-unit">REAL WALLET</span></div>
-          <div class="m-usd">$5 PER TRADE · MAX 3 TRADES OPEN AT ONCE · <b>NOT TRADED YET</b> — FIRST WATCHED TRADE HAS NOT HAPPENED YET</div>
+          <div class="m-usd" id="bz-live-sub">$5 PER TRADE · MAX 3 TRADES OPEN AT ONCE · <b id="bz-live-status">NOT TRADED YET</b> — FIRST WATCHED TRADE HAS NOT HAPPENED YET</div>
           <div class="m-sub">Real money — $15 only. This is Will's real wallet, kept completely separate from the paper wallet above. Never blended. Plain rules, in plain words: put $5 in, sell half when it is up 25%, let the rest ride and follow it down 25% from its highest point, stop out if it drops 25%, and stop starting new trades for the day if we are down $5 total that day.</div>
+        </section>
+        <section class="panel" style="margin-top:12px;" aria-label="BATCH 10 — GREEN-ZONE PAPER EXAM — live">
+          <div class="panel-h"><span>BATCH 10 — GREEN-ZONE PAPER EXAM · LIVE</span><span class="right" id="bz-exam-right">FROM bankz_lane.json</span></div>
+          <p style="margin:12px 0 0;font-size:15px;line-height:1.7;color:#f2f2f2;" id="bz-lane1">LANE 1 — FRESH LAUNCHES ($60K+, NO CEILING): <b>2/15 CLOSES</b> · 1 WIN · NET <b>-$6.35</b> · BANKROLL <b>$68.65</b> · 0 OPEN</p>
+          <p style="margin:8px 0 0;font-size:15px;line-height:1.7;color:#f2f2f2;" id="bz-lane2">LANE 2 — TRENDING ($150K+, NO CEILING): <b>0/15 CLOSES</b> · NET <b>$0.00</b> · BANKROLL <b>$75.00</b> · 0 OPEN</p>
+          <table class="bd" aria-label="BANKZ recent paper trades" style="margin-top:12px;">
+            <tr><th>COIN</th><th>ENTRY MC</th><th>PEAK</th><th>EXIT</th><th>NET</th></tr>
+            <tbody id="bz-trades-body">
+              <tr><td>MOOHAN</td><td>$96,653</td><td>1.0000x</td><td>hard_stop_-30pct</td><td>-$7.92</td></tr>
+              <tr><td>GPU</td><td>$99,543</td><td>1.2837x</td><td>stall_timer_post_tp1</td><td>+$1.57</td></tr>
+            </tbody>
+          </table>
+          <p class="m-sub" style="margin-top:12px;">Exam: 15 closes per lane. Bars: stalls ≤ 3, net ex-top &gt; $0, median &gt; $0, profit factor &gt; 1.3. The 9 passes + backtest below are the v1 archive — the old challenger track, kept for the record. The live system is this Batch 10 exam. Live loop: 0 trades ever.</p>
         </section>
         <section class="panel" style="margin-top:12px;" aria-label="BANKZ backtest explained in plain words">
           <div class="panel-h"><span>THE BACKTEST NUMBERS, IN PLAIN WORDS</span><span class="right">NO JARGON — JUST WHAT HAPPENED</span></div>
@@ -2607,7 +2620,7 @@
       // sync, the AWAITING LANE SYNC placeholders baked into the markup.
       (function () {
         var STALE_MS = 26 * 60 * 60 * 1000;
-        var lastNorm = null, lastHB = null;
+        var lastNorm = null, lastHB = null, lastBZ = null;
         var MONTHS = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
         var TEAM_NAMES = {
           ATL: 'ATLANTA HAWKS', BOS: 'BOSTON CELTICS', BKN: 'BROOKLYN NETS', CHA: 'CHARLOTTE HORNETS',
@@ -3155,6 +3168,13 @@
             t.push('<span class="tick-item">HUMMINGBOT <b>' + lastHB.trades + (lastHB.trades === 1 ? ' TRADE' : ' TRADES') + '</b> · VOL <b>' + money(lastHB.volume_usdt || 0) + '</b></span>');
             t.push('<span class="tick-item">HUMMINGBOT PAPER $ ' + (hbNet === null ? '<b>—</b>' : '<span class="' + (hbNet >= 0 ? 'g' : 'r') + '"><b>' + smoney(hbNet) + ' NET</b></span>') + '</span>');
           }
+          if (lastBZ && lastBZ.totals) {
+            var bzT = lastBZ.totals;
+            var bzNet = (typeof bzT.net_pnl === 'number') ? bzT.net_pnl : null;
+            var bzL1 = (lastBZ.lanes && lastBZ.lanes.lane1) ? lastBZ.lanes.lane1.closes : 0;
+            var bzL2 = (lastBZ.lanes && lastBZ.lanes.lane2) ? lastBZ.lanes.lane2.closes : 0;
+            t.push('<span class="tick-item">BANKZ PAPER $ ' + (bzNet === null ? '<b>—</b>' : '<span class="' + (bzNet >= 0 ? 'g' : 'r') + '"><b>' + smoney(bzNet) + ' NET</b></span>') + ' · BATCH 10 · L1 <b>' + bzL1 + '/15</b> · L2 <b>' + bzL2 + '/15</b></span>');
+          }
           t.push('<span class="tick-item">ENGINE <b>🏀 PLUGG</b></span>');
           t.push('<span class="tick-item">REAL BETS <span class="gold"><b>$22.21 IN</b></span> · <b>5 OPEN</b> · <span class="g"><b>+$3.91</b></span></span>');
           t.push('<span class="tick-item"><span class="p"><b>TWO BOOKS · NEVER BLENDED</b></span></span>');
@@ -3168,6 +3188,9 @@
             .catch(function () {});
           laneFetch('hummingbot_lane.json')
             .then(function (d) { lastHB = d; buildTicker(); })
+            .catch(function () {});
+          laneFetch('bankz_lane.json')
+            .then(function (d) { lastBZ = d; buildTicker(); })
             .catch(function () {});
         }
         load();
@@ -5093,7 +5116,7 @@ table.bd tr.ov-total td {
     return tr;
   }
 
-  var state = { k: null, h: null, f: null, w: null };
+  var state = { k: null, h: null, f: null, w: null, bz: null };
 
   function render() {
     var body = $('ov-body');
@@ -5172,12 +5195,27 @@ table.bd tr.ov-total td {
       body.appendChild(accountRow('COBRA — LEGACY · LAUNCH TRACK', 'PUMP.FUN LAUNCHES · SHADOW', 'AWAITING LANE SYNC', null, null, null, null, '—'));
       body.appendChild(accountRow('COBRA — LEGACY · GRADUATED TRACK', 'POST-GRADUATION MOMENTUM · SHADOW', 'AWAITING LANE SYNC', null, null, null, null, '—'));
     }
-    // ---- BANKZ - paper only, own 50-round-trip grade, never blended ----
-    body.appendChild(accountRow('🖨️ BANKZ', 'WALLET-STRUCTURE · HELIUS-WIRED · PAPER', 'HELIUS-WIRED · PAPER ONLY',
-      225, null, null, 0, '9 PASS / 41 REJECT / 62 DEFER · 0/50 ROUND TRIPS'));
-    // NOTE: the $225 above is paper stake open (9 x $25 reporting stake), not a wallet balance and not live money.
-    // It is shown in its row only and is deliberately NOT added to totalBal/totalNet, which stay $0.00 realized for BANKZ.
-    // Backtest winners $514.85 on $25 / $102.97 on $5 are backtest only, not live profit. Live $15 wallet ($5/trade, max 3) is funded, not traded yet.
+    // ---- BANKZ - paper only, own 15-close exam per lane, never blended ----
+    // Live: reads bankz_lane.json (Batch 10 green-zone exam). Falls back to the
+    // v1 archive row when the lane file has not synced yet. BANKZ stays out of
+    // totalBal/totalNet on purpose — paper-only, own gate — its row shows its
+    // own numbers only. Backtest winners $514.85 on $25 are backtest only.
+    var bz = state.bz;
+    if (bz && bz.totals) {
+      var bt = bz.totals;
+      var bRec = (isNum(bt.wins) && isNum(bt.losses))
+        ? (fmtInt(bt.wins) + ' W – ' + fmtInt(bt.losses) + ' L · ' + fmtInt(bt.closes) + ' CLOSED')
+        : '—';
+      body.appendChild(accountRow('🖨️ BANKZ', 'GREEN-ZONE PAPER · BATCH 10', 'PAPER ONLY · EXAM ' + (bz.batch || ''),
+        isNum(bt.bankroll) ? bt.bankroll : null,
+        isNum(bt.total_won_usd) ? bt.total_won_usd : null,
+        isNum(bt.total_lost_usd) ? bt.total_lost_usd : null,
+        isNum(bt.net_pnl) ? bt.net_pnl : null, bRec));
+    } else {
+      body.appendChild(accountRow('🖨️ BANKZ', 'WALLET-STRUCTURE · HELIUS-WIRED · PAPER', 'HELIUS-WIRED · PAPER ONLY',
+        225, null, null, 0, '9 PASS / 41 REJECT / 62 DEFER · 0/50 ROUND TRIPS'));
+    }
+    noteTime(bz);
     noteTime(f);
 
     // ---- WHIPLASH — no wallet until the exam posts ----
@@ -5242,8 +5280,97 @@ table.bd tr.ov-total td {
     pull('hummingbot_lane.json', 'h');
     pull('fomo_lane.json', 'f');
     pull('weather_lane.json', 'w');
+    pull('bankz_lane.json', 'bz');
   }
   render();
+  load();
+  setInterval(load, 60000);
+})();
+</script>
+
+<script>
+// ===== BANKZ LANE — GREEN-ZONE PAPER EXAM (Batch 10) =====
+// Reads bankz_lane.json (published next to this page by the BANKZ publisher)
+// and re-renders the BANKZ tab's live figures on load and every 60s.
+// Mirrors the Hummingbot/Kalshi lane pattern: a failed fetch is "no data
+// yet", never an error screen — the tab keeps its hardcoded fallback (the
+// values stamped at publish time) and keeps the last good data on screen.
+(function () {
+  'use strict';
+  if (typeof window.laneFetch !== 'function') return;
+  function $(id) { return document.getElementById(id); }
+  function isNum(n) { return typeof n === 'number' && isFinite(n); }
+  function fmtMoney(n) {
+    return (n < 0 ? '-$' : '$') + Math.abs(n).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  }
+  function fmtSigned(n) {
+    var a = Math.abs(n || 0).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    return ((n || 0) < 0 ? '-' : '+') + '$' + a;
+  }
+  function fmtMc(n) { return isNum(n) ? ('$' + Math.round(n).toLocaleString('en-US')) : '—'; }
+  function fmtTime(iso) {
+    var d = new Date(iso);
+    if (isNaN(d.getTime())) return '—';
+    return d.toLocaleString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' });
+  }
+  function render(d) {
+    if (!d || typeof d !== 'object') return;
+    window.lastBZ = d;
+    var t = d.totals || {};
+    var l1 = (d.lanes && d.lanes.lane1) || {};
+    var l2 = (d.lanes && d.lanes.lane2) || {};
+    var live = d.live_loop || {};
+    var big = $('bz-paper-big');
+    if (big && isNum(t.bankroll)) big.innerHTML = fmtMoney(t.bankroll) + ' <span class="m-unit">PAPER BANKROLL · BATCH ' + (d.batch || 10) + '</span>';
+    var sub = $('bz-paper-sub');
+    if (sub) sub.innerHTML = 'LANE 1 ' + (l1.closes || 0) + '/15 CLOSES · LANE 2 ' + (l2.closes || 0) + '/15 CLOSES · <b>NET ' + fmtSigned(t.net_pnl || 0) + '</b> · ' + (t.open_count || 0) + ' OPEN';
+    var upd = $('bz-updated');
+    if (upd && d.updated_at) upd.textContent = 'UPDATED ' + fmtTime(d.updated_at).toUpperCase();
+    var ls = $('bz-live-status');
+    if (ls) {
+      var closed = (live.closed_trades || []).length;
+      ls.textContent = closed > 0 ? (closed + ' CLOSED') : 'NOT TRADED YET';
+    }
+    var er = $('bz-exam-right');
+    if (er) er.textContent = 'FROM bankz_lane.json · UPDATED ' + (d.updated_at ? fmtTime(d.updated_at).toUpperCase() : '—');
+    var l1el = $('bz-lane1');
+    if (l1el) l1el.innerHTML = 'LANE 1 — FRESH LAUNCHES ($60K+, NO CEILING): <b>' + (l1.closes || 0) + '/15 CLOSES</b> · ' + (l1.wins || 0) + ' WIN · NET <b>' + fmtSigned(l1.net_pnl || 0) + '</b> · BANKROLL <b>' + fmtMoney(l1.bankroll || 0) + '</b> · ' + (l1.open_count || 0) + ' OPEN';
+    var l2el = $('bz-lane2');
+    if (l2el) l2el.innerHTML = 'LANE 2 — TRENDING ($150K+, NO CEILING): <b>' + (l2.closes || 0) + '/15 CLOSES</b> · NET <b>' + fmtSigned(l2.net_pnl || 0) + '</b> · BANKROLL <b>' + fmtMoney(l2.bankroll || 0) + '</b> · ' + (l2.open_count || 0) + ' OPEN';
+    var body = $('bz-trades-body');
+    if (body) {
+      var trades = [];
+      [l1, l2].forEach(function (ln) { (ln.recent_trades || []).forEach(function (tr) { trades.push(tr); }); });
+      trades.sort(function (a, b) { return String(b.exit_iso || '').localeCompare(String(a.exit_iso || '')); });
+      trades = trades.slice(0, 10);
+      body.innerHTML = '';
+      if (!trades.length) {
+        var tr0 = document.createElement('tr');
+        var td0 = document.createElement('td');
+        td0.colSpan = 5;
+        td0.style.cssText = 'text-align:left; color:var(--faint); letter-spacing:0.08em;';
+        td0.textContent = 'NO PAPER CLOSES YET — FINISHED TRADES POST HERE FROM bankz_lane.json';
+        tr0.appendChild(td0);
+        body.appendChild(tr0);
+      } else {
+        trades.forEach(function (tr) {
+          var row = document.createElement('tr');
+          function c(txt, cls) { var td = document.createElement('td'); if (cls) td.className = cls; td.textContent = txt; return td; }
+          row.appendChild(c(tr.symbol || '—'));
+          row.appendChild(c(fmtMc(tr.entry_mc_usd)));
+          row.appendChild(c(isNum(tr.peak_multiple) ? (tr.peak_multiple.toFixed(4) + 'x') : '—'));
+          row.appendChild(c(tr.exit_reason || '—'));
+          row.appendChild(c(fmtSigned(tr.net_pnl_usd || 0), (tr.net_pnl_usd || 0) >= 0 ? 'num-green' : 'num-red'));
+          body.appendChild(row);
+        });
+      }
+    }
+  }
+  function load() {
+    window.laneFetch('bankz_lane.json')
+      .then(function (d) { render(d); })
+      .catch(function () {});
+  }
   load();
   setInterval(load, 60000);
 })();
