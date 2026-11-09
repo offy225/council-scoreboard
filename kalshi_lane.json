@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-08T22:58:23Z",
-  "scored": 152,
+  "updated_at": "2026-11-09T01:43:40Z",
+  "scored": 153,
   "won": 98,
-  "lost": 54,
-  "win_rate": 0.6447368421052632,
-  "brier": 0.2219,
-  "log_loss": 0.6316,
+  "lost": 55,
+  "win_rate": 0.6405228758169934,
+  "brier": 0.2233,
+  "log_loss": 0.6346,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 124,
+      "scored": 125,
       "won": 79,
-      "lost": 45,
-      "win_rate": 0.6370967741935484,
-      "brier": 0.2212
+      "lost": 46,
+      "win_rate": 0.632,
+      "brier": 0.2229
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -1691,18 +1691,20 @@
       "result": "WON",
       "price": 0.765,
       "price_source": "reference"
+    },
+    {
+      "date": "2026-11-08",
+      "game": "LAL at DET",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "DET",
+      "prob": 0.6657,
+      "final": "DET 116 \u00b7 LAL 121",
+      "result": "LOST",
+      "price": 0.615,
+      "price_source": "reference"
     }
   ],
   "open_bets": [
-    {
-      "game": "LAL at DET",
-      "pick": "DET",
-      "prob": 0.6657,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.615,
-      "price_source": "reference"
-    },
     {
       "game": "UTAH at MIN",
       "pick": "MIN",
@@ -3379,14 +3381,25 @@
       "price": 0.765,
       "price_source": "reference",
       "profit": 15.36
+    },
+    {
+      "date": "2026-11-08",
+      "game": "LAL at DET",
+      "pick": "DET",
+      "prob": 0.6657,
+      "stake": 50.0,
+      "result": "LOST",
+      "price": 0.615,
+      "price_source": "reference",
+      "profit": -50.0
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 621.02,
+    "balance": 571.02,
     "total_won": 2921.02,
-    "total_lost": 2350.0,
-    "settled_count": 138,
-    "ref_priced_count": 138
+    "total_lost": 2400.0,
+    "settled_count": 139,
+    "ref_priced_count": 139
   }
 }
