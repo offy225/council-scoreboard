@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-10T03:57:56Z",
+  "updated_at": "2026-11-10T04:01:11Z",
   "scored": 164,
   "won": 106,
   "lost": 58,
@@ -1842,6 +1842,60 @@
       "stake": 50.0,
       "status": "OPEN",
       "price": 0.795,
+      "price_source": "reference"
+    },
+    {
+      "game": "MIL at NY",
+      "pick": "NY",
+      "prob": 0.7082,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.905,
+      "price_source": "reference"
+    },
+    {
+      "game": "BOS at PHI",
+      "pick": "BOS",
+      "prob": 0.6911,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.515,
+      "price_source": "reference"
+    },
+    {
+      "game": "LAC at PHX",
+      "pick": "LAC",
+      "prob": 0.5245,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.4,
+      "price_source": "reference"
+    },
+    {
+      "game": "MIA at UTAH",
+      "pick": "MIA",
+      "prob": 0.5424,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.8,
+      "price_source": "reference"
+    },
+    {
+      "game": "ORL at SAC",
+      "pick": "ORL",
+      "prob": 0.694,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.675,
+      "price_source": "reference"
+    },
+    {
+      "game": "OKC at POR",
+      "pick": "OKC",
+      "prob": 0.6871,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.535,
       "price_source": "reference"
     }
   ],
