@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-10T02:42:43Z",
-  "scored": 160,
-  "won": 103,
-  "lost": 57,
-  "win_rate": 0.64375,
-  "brier": 0.2198,
-  "log_loss": 0.6268,
+  "updated_at": "2026-11-10T02:58:23Z",
+  "scored": 162,
+  "won": 104,
+  "lost": 58,
+  "win_rate": 0.6419753086419753,
+  "brier": 0.2208,
+  "log_loss": 0.6293,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 132,
-      "won": 84,
-      "lost": 48,
-      "win_rate": 0.6363636363636364,
-      "brier": 0.2186
+      "scored": 134,
+      "won": 85,
+      "lost": 49,
+      "win_rate": 0.6343283582089553,
+      "brier": 0.2199
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -1779,27 +1779,31 @@
       "result": "LOST",
       "price": 0.745,
       "price_source": "reference"
-    }
-  ],
-  "open_bets": [
+    },
     {
+      "date": "2026-11-09",
       "game": "WSH at DET",
+      "model": "NBA v3.2 + PLATT",
       "pick": "DET",
       "prob": 0.7583,
-      "stake": 50.0,
-      "status": "OPEN",
+      "final": "DET 122 \u00b7 WSH 111",
+      "result": "WON",
       "price": 0.805,
       "price_source": "reference"
     },
     {
+      "date": "2026-11-09",
       "game": "MEM at TOR",
+      "model": "NBA v3.2 + PLATT",
       "pick": "TOR",
       "prob": 0.7462,
-      "stake": 50.0,
-      "status": "OPEN",
+      "final": "TOR 102 \u00b7 MEM 118",
+      "result": "LOST",
       "price": 0.575,
       "price_source": "reference"
-    },
+    }
+  ],
+  "open_bets": [
     {
       "game": "IND at DAL",
       "pick": "DAL",
@@ -3555,14 +3559,36 @@
       "price": 0.745,
       "price_source": "reference",
       "profit": -50.0
+    },
+    {
+      "date": "2026-11-09",
+      "game": "WSH at DET",
+      "pick": "DET",
+      "prob": 0.7583,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.805,
+      "price_source": "reference",
+      "profit": 12.11
+    },
+    {
+      "date": "2026-11-09",
+      "game": "MEM at TOR",
+      "pick": "TOR",
+      "prob": 0.7462,
+      "stake": 50.0,
+      "result": "LOST",
+      "price": 0.575,
+      "price_source": "reference",
+      "profit": -50.0
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 574.49,
-    "total_won": 3024.49,
-    "total_lost": 2500.0,
-    "settled_count": 146,
-    "ref_priced_count": 146
+    "balance": 536.6,
+    "total_won": 3036.6,
+    "total_lost": 2550.0,
+    "settled_count": 148,
+    "ref_priced_count": 148
   }
 }
