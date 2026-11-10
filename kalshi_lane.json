@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-10T03:42:57Z",
-  "scored": 163,
-  "won": 105,
+  "updated_at": "2026-11-10T03:57:56Z",
+  "scored": 164,
+  "won": 106,
   "lost": 58,
-  "win_rate": 0.6441717791411042,
-  "brier": 0.2205,
-  "log_loss": 0.6287,
+  "win_rate": 0.6463414634146342,
+  "brier": 0.2202,
+  "log_loss": 0.628,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 135,
-      "won": 86,
+      "scored": 136,
+      "won": 87,
       "lost": 49,
-      "win_rate": 0.6370370370370371,
-      "brier": 0.2196
+      "win_rate": 0.6397058823529411,
+      "brier": 0.2192
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -1812,18 +1812,20 @@
       "result": "WON",
       "price": 0.595,
       "price_source": "reference"
+    },
+    {
+      "date": "2026-11-09",
+      "game": "DEN at HOU",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "HOU",
+      "prob": 0.5937,
+      "final": "HOU 110 \u00b7 DEN 100",
+      "result": "WON",
+      "price": 0.755,
+      "price_source": "reference"
     }
   ],
   "open_bets": [
-    {
-      "game": "DEN at HOU",
-      "pick": "HOU",
-      "prob": 0.5937,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.755,
-      "price_source": "reference"
-    },
     {
       "game": "SA at PHX",
       "pick": "PHX",
@@ -3594,14 +3596,25 @@
       "price": 0.595,
       "price_source": "reference",
       "profit": 34.03
+    },
+    {
+      "date": "2026-11-09",
+      "game": "DEN at HOU",
+      "pick": "HOU",
+      "prob": 0.5937,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.755,
+      "price_source": "reference",
+      "profit": 16.23
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 570.63,
-    "total_won": 3070.63,
+    "balance": 586.86,
+    "total_won": 3086.86,
     "total_lost": 2550.0,
-    "settled_count": 149,
-    "ref_priced_count": 149
+    "settled_count": 150,
+    "ref_priced_count": 150
   }
 }
