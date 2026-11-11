@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-11T05:13:17Z",
-  "scored": 170,
-  "won": 110,
+  "updated_at": "2026-11-11T05:27:56Z",
+  "scored": 171,
+  "won": 111,
   "lost": 60,
-  "win_rate": 0.6470588235294118,
-  "brier": 0.2195,
-  "log_loss": 0.6266,
+  "win_rate": 0.6491228070175439,
+  "brier": 0.2188,
+  "log_loss": 0.6251,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 142,
-      "won": 91,
+      "scored": 143,
+      "won": 92,
       "lost": 51,
-      "win_rate": 0.6408450704225352,
-      "brier": 0.2184
+      "win_rate": 0.6433566433566433,
+      "brier": 0.2175
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -1889,18 +1889,20 @@
       "result": "WON",
       "price": 0.8,
       "price_source": "reference"
+    },
+    {
+      "date": "2026-11-10",
+      "game": "ORL at SAC",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "ORL",
+      "prob": 0.694,
+      "final": "SAC 100 \u00b7 ORL 107",
+      "result": "WON",
+      "price": 0.675,
+      "price_source": "reference"
     }
   ],
   "open_bets": [
-    {
-      "game": "ORL at SAC",
-      "pick": "ORL",
-      "prob": 0.694,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.675,
-      "price_source": "reference"
-    },
     {
       "game": "OKC at POR",
       "pick": "OKC",
@@ -3829,14 +3831,25 @@
       "price": 0.8,
       "price_source": "reference",
       "profit": 12.5
+    },
+    {
+      "date": "2026-11-10",
+      "game": "ORL at SAC",
+      "pick": "ORL",
+      "prob": 0.694,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.675,
+      "price_source": "reference",
+      "profit": 24.07
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 564.59,
-    "total_won": 3164.59,
+    "balance": 588.66,
+    "total_won": 3188.66,
     "total_lost": 2650.0,
-    "settled_count": 156,
-    "ref_priced_count": 156
+    "settled_count": 157,
+    "ref_priced_count": 157
   }
 }
