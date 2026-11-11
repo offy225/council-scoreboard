@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-11T05:27:56Z",
-  "scored": 171,
+  "updated_at": "2026-11-11T06:57:55Z",
+  "scored": 172,
   "won": 111,
-  "lost": 60,
-  "win_rate": 0.6491228070175439,
-  "brier": 0.2188,
-  "log_loss": 0.6251,
+  "lost": 61,
+  "win_rate": 0.6453488372093024,
+  "brier": 0.2202,
+  "log_loss": 0.6282,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 143,
+      "scored": 144,
       "won": 92,
-      "lost": 51,
-      "win_rate": 0.6433566433566433,
-      "brier": 0.2175
+      "lost": 52,
+      "win_rate": 0.6388888888888888,
+      "brier": 0.2193
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -1900,18 +1900,20 @@
       "result": "WON",
       "price": 0.675,
       "price_source": "reference"
+    },
+    {
+      "date": "2026-11-10",
+      "game": "OKC at POR",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "OKC",
+      "prob": 0.6871,
+      "final": "POR 123 \u00b7 OKC 103",
+      "result": "LOST",
+      "price": 0.535,
+      "price_source": "reference"
     }
   ],
   "open_bets": [
-    {
-      "game": "OKC at POR",
-      "pick": "OKC",
-      "prob": 0.6871,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.535,
-      "price_source": "reference"
-    },
     {
       "game": "WSH at IND",
       "pick": "WSH",
@@ -3842,14 +3844,25 @@
       "price": 0.675,
       "price_source": "reference",
       "profit": 24.07
+    },
+    {
+      "date": "2026-11-10",
+      "game": "OKC at POR",
+      "pick": "OKC",
+      "prob": 0.6871,
+      "stake": 50.0,
+      "result": "LOST",
+      "price": 0.535,
+      "price_source": "reference",
+      "profit": -50.0
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 588.66,
+    "balance": 538.66,
     "total_won": 3188.66,
-    "total_lost": 2650.0,
-    "settled_count": 157,
-    "ref_priced_count": 157
+    "total_lost": 2700.0,
+    "settled_count": 158,
+    "ref_priced_count": 158
   }
 }
