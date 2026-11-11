@@ -1,0 +1,84 @@
+{
+  "track": "futurez_eval_select50k",
+  "lane": "FUTUREZ",
+  "paper_only": false,
+  "live": true,
+  "updated_at": "2026-11-11T23:52:20Z",
+  "system_name": "FUTUREZ",
+  "display_name": "FUTUREZ",
+  "colour": "#7C5CFF",
+  "colour_alt": "#00e5ff",
+  "theme": "futures / rent lane",
+  "lane_file": "futurez_lane.json",
+  "symbol": "📈",
+  "tagline": "The rent lane — NQ futures on a Tradeify eval",
+  "account": {
+    "plan": "Tradeify Select 50K Daily",
+    "connection": "Tradovate",
+    "balance_usd": 50000.0,
+    "balance_label": "EVAL BALANCE — NOT WITHDRAWABLE CASH. Payouts only become real cash after passing the eval and funding.",
+    "current_balance_usd": 50000.0,
+    "profit_target_usd": 3000.0,
+    "drawdown_usd": 2000.0,
+    "drawdown_floor_usd": 48000.0,
+    "consistency_pct": 40,
+    "min_trading_days": 3,
+    "max_size": "4 minis / 40 micros"
+  },
+  "system": {
+    "version": "v34",
+    "size_contracts": 17,
+    "day_stop_usd": 1078,
+    "max_daily_losses": 2,
+    "flat_time_et": "16:45",
+    "legs": [
+      {
+        "leg": "IFVG",
+        "window_et": "09:30-11:30"
+      },
+      {
+        "leg": "FailedAuction",
+        "window_et": "09:30-11:30"
+      },
+      {
+        "leg": "EuroSweepLong",
+        "window_et": "03:00-08:00"
+      },
+      {
+        "leg": "Breakout",
+        "window_et": "23:00-03:00"
+      },
+      {
+        "leg": "PreSweepLong",
+        "window_et": "08:00-09:15"
+      }
+    ]
+  },
+  "record": {
+    "trades": 0,
+    "wins": 0,
+    "losses": 0,
+    "win_rate": null,
+    "net_pnl_usd": 0,
+    "total_won_usd": 0,
+    "total_lost_usd": 0,
+    "best_day_usd": 0.0,
+    "best_day_date": null,
+    "consistency_pct_of_total": null,
+    "days_traded": 0
+  },
+  "today": {
+    "date": "2026-11-11",
+    "entries": 0,
+    "losses": 0,
+    "net_pnl_usd": 0.0,
+    "flats": 1
+  },
+  "status": "LIVE — AWAITING FIRST TRADE",
+  "open_position": false,
+  "open_trades": [],
+  "recent_trades": [],
+  "banner": "EVAL LIVE — v34 · 17 contracts · 0 trades (0W–0L) · net $+0.00 · eval balance $50,000.00 · target $3,000 · floor $48,000",
+  "eval_note": "The $50,000 is the Tradeify eval account balance, not cash in hand. It is real money on the board only as the eval balance: the account must pass ($3,000 profit, never below the $48,000 floor) before any payout becomes real cash. Day-stop $1,078 (2 losses) protects the eval.",
+  "demo_note": "Before this eval, the same bot ran one live demo trade on DEMO9887510: Breakout long, +$43.30 (Nov 10-11 overnight). That demo trade is NOT counted in the eval record above — the eval starts at 0 trades."
+}
