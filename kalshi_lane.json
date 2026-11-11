@@ -1,19 +1,19 @@
 {
-  "updated_at": "2026-11-11T04:43:26Z",
-  "scored": 169,
-  "won": 109,
+  "updated_at": "2026-11-11T05:13:17Z",
+  "scored": 170,
+  "won": 110,
   "lost": 60,
-  "win_rate": 0.6449704142011834,
+  "win_rate": 0.6470588235294118,
   "brier": 0.2195,
-  "log_loss": 0.6267,
+  "log_loss": 0.6266,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 141,
-      "won": 90,
+      "scored": 142,
+      "won": 91,
       "lost": 51,
-      "win_rate": 0.6382978723404256,
+      "win_rate": 0.6408450704225352,
       "brier": 0.2184
     },
     {
@@ -1878,18 +1878,20 @@
       "result": "LOST",
       "price": 0.4,
       "price_source": "reference"
+    },
+    {
+      "date": "2026-11-10",
+      "game": "MIA at UTAH",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "MIA",
+      "prob": 0.5424,
+      "final": "UTAH 109 \u00b7 MIA 115",
+      "result": "WON",
+      "price": 0.8,
+      "price_source": "reference"
     }
   ],
   "open_bets": [
-    {
-      "game": "MIA at UTAH",
-      "pick": "MIA",
-      "prob": 0.5424,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.8,
-      "price_source": "reference"
-    },
     {
       "game": "ORL at SAC",
       "pick": "ORL",
@@ -3816,14 +3818,25 @@
       "price": 0.4,
       "price_source": "reference",
       "profit": -50.0
+    },
+    {
+      "date": "2026-11-10",
+      "game": "MIA at UTAH",
+      "pick": "MIA",
+      "prob": 0.5424,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.8,
+      "price_source": "reference",
+      "profit": 12.5
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 552.09,
-    "total_won": 3152.09,
+    "balance": 564.59,
+    "total_won": 3164.59,
     "total_lost": 2650.0,
-    "settled_count": 155,
-    "ref_priced_count": 155
+    "settled_count": 156,
+    "ref_priced_count": 156
   }
 }
