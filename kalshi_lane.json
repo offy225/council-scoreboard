@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-11T02:58:12Z",
-  "scored": 167,
-  "won": 108,
+  "updated_at": "2026-11-11T03:28:13Z",
+  "scored": 168,
+  "won": 109,
   "lost": 59,
-  "win_rate": 0.6467065868263473,
-  "brier": 0.22,
-  "log_loss": 0.6275,
+  "win_rate": 0.6488095238095238,
+  "brier": 0.2192,
+  "log_loss": 0.626,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 139,
-      "won": 89,
+      "scored": 140,
+      "won": 90,
       "lost": 50,
-      "win_rate": 0.6402877697841727,
-      "brier": 0.2189
+      "win_rate": 0.6428571428571429,
+      "brier": 0.218
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -1856,18 +1856,20 @@
       "result": "WON",
       "price": 0.905,
       "price_source": "reference"
+    },
+    {
+      "date": "2026-11-10",
+      "game": "BOS at PHI",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "BOS",
+      "prob": 0.6911,
+      "final": "PHI 101 \u00b7 BOS 123",
+      "result": "WON",
+      "price": 0.515,
+      "price_source": "reference"
     }
   ],
   "open_bets": [
-    {
-      "game": "BOS at PHI",
-      "pick": "BOS",
-      "prob": 0.6911,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.515,
-      "price_source": "reference"
-    },
     {
       "game": "LAC at PHX",
       "pick": "LAC",
@@ -3700,14 +3702,25 @@
       "price": 0.905,
       "price_source": "reference",
       "profit": 5.25
+    },
+    {
+      "date": "2026-11-10",
+      "game": "BOS at PHI",
+      "pick": "BOS",
+      "prob": 0.6911,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.515,
+      "price_source": "reference",
+      "profit": 47.09
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 555.0,
-    "total_won": 3105.0,
+    "balance": 602.09,
+    "total_won": 3152.09,
     "total_lost": 2600.0,
-    "settled_count": 153,
-    "ref_priced_count": 153
+    "settled_count": 154,
+    "ref_priced_count": 154
   }
 }
