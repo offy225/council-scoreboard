@@ -3,7 +3,7 @@
   "lane": "FUTUREZ",
   "paper_only": false,
   "live": true,
-  "updated_at": "2026-11-12T16:35:46Z",
+  "updated_at": "2026-11-12T16:57:59Z",
   "system_name": "FUTUREZ",
   "display_name": "FUTUREZ",
   "colour": "#7C5CFF",
@@ -26,7 +26,7 @@
     "max_size": "4 minis / 40 micros"
   },
   "system": {
-    "version": "v42",
+    "version": "v43",
     "size_contracts": 21,
     "day_stop_usd": 1331,
     "max_daily_losses": 2,
@@ -82,7 +82,7 @@
     }
   ],
   "recent_trades": [],
-  "banner": "EVAL LIVE — v42 · 21 contracts · 0 trades (0W–0L) · net $+0.00 · eval balance $50,000.00 · target $3,000 · floor $48,000",
+  "banner": "EVAL LIVE — v43 · 21 contracts · 0 trades (0W–0L) · net $+0.00 · eval balance $50,000.00 · target $3,000 · floor $48,000",
   "eval_note": "The $50,000 is the Tradeify eval account balance, not cash in hand. It is real money on the board only as the eval balance: the account must pass ($3,000 profit, never below the $48,000 floor) before any payout becomes real cash. Day-stop $1,078 (2 losses) protects the eval.",
   "demo_note": "Before this eval, the same bot ran one live demo trade on DEMO9887510: Breakout long, +$43.30 (Nov 10-11 overnight). That demo trade is NOT counted in the eval record above — the eval starts at 0 trades."
 }
