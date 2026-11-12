@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-12T03:57:50Z",
-  "scored": 179,
+  "updated_at": "2026-11-12T04:43:01Z",
+  "scored": 180,
   "won": 116,
-  "lost": 63,
-  "win_rate": 0.6480446927374302,
-  "brier": 0.2203,
-  "log_loss": 0.6289,
+  "lost": 64,
+  "win_rate": 0.6444444444444445,
+  "brier": 0.2207,
+  "log_loss": 0.6296,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 151,
+      "scored": 152,
       "won": 97,
-      "lost": 54,
-      "win_rate": 0.6423841059602649,
-      "brier": 0.2195
+      "lost": 55,
+      "win_rate": 0.6381578947368421,
+      "brier": 0.2198
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -1988,18 +1988,20 @@
       "result": "LOST",
       "price": 0.625,
       "price_source": "reference"
+    },
+    {
+      "date": "2026-11-11",
+      "game": "ORL at UTAH",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "UTAH",
+      "prob": 0.5287,
+      "final": "UTAH 108 \u00b7 ORL 123",
+      "result": "LOST",
+      "price": 0.39,
+      "price_source": "reference"
     }
   ],
   "open_bets": [
-    {
-      "game": "ORL at UTAH",
-      "pick": "UTAH",
-      "prob": 0.5287,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.39,
-      "price_source": "reference"
-    },
     {
       "game": "GS at HOU",
       "pick": "HOU",
@@ -3982,14 +3984,25 @@
       "price": 0.625,
       "price_source": "reference",
       "profit": -50.0
+    },
+    {
+      "date": "2026-11-11",
+      "game": "ORL at UTAH",
+      "pick": "UTAH",
+      "prob": 0.5287,
+      "stake": 50.0,
+      "result": "LOST",
+      "price": 0.39,
+      "price_source": "reference",
+      "profit": -50.0
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 586.03,
+    "balance": 536.03,
     "total_won": 3336.03,
-    "total_lost": 2800.0,
-    "settled_count": 165,
-    "ref_priced_count": 165
+    "total_lost": 2850.0,
+    "settled_count": 166,
+    "ref_priced_count": 166
   }
 }
