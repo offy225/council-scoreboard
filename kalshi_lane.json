@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-12T03:43:03Z",
+  "updated_at": "2026-11-12T03:57:50Z",
   "scored": 179,
   "won": 116,
   "lost": 63,
@@ -2016,6 +2016,42 @@
       "stake": 50.0,
       "status": "OPEN",
       "price": 0.555,
+      "price_source": "reference"
+    },
+    {
+      "game": "TOR at PHI",
+      "pick": "TOR",
+      "prob": 0.548,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.255,
+      "price_source": "reference"
+    },
+    {
+      "game": "DET at WSH",
+      "pick": "DET",
+      "prob": 0.633,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.79,
+      "price_source": "reference"
+    },
+    {
+      "game": "DAL at MIN",
+      "pick": "MIN",
+      "prob": 0.7434,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.655,
+      "price_source": "reference"
+    },
+    {
+      "game": "CHA at PHX",
+      "pick": "PHX",
+      "prob": 0.5741,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.685,
       "price_source": "reference"
     }
   ],
