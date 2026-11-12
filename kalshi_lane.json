@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-12T02:42:59Z",
-  "scored": 175,
-  "won": 113,
+  "updated_at": "2026-11-12T03:27:55Z",
+  "scored": 176,
+  "won": 114,
   "lost": 62,
-  "win_rate": 0.6457142857142857,
-  "brier": 0.2201,
-  "log_loss": 0.628,
+  "win_rate": 0.6477272727272727,
+  "brier": 0.2197,
+  "log_loss": 0.6273,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 147,
-      "won": 94,
+      "scored": 148,
+      "won": 95,
       "lost": 53,
-      "win_rate": 0.6394557823129252,
-      "brier": 0.2192
+      "win_rate": 0.6418918918918919,
+      "brier": 0.2187
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -1944,18 +1944,20 @@
       "result": "WON",
       "price": 0.645,
       "price_source": "reference"
+    },
+    {
+      "date": "2026-11-11",
+      "game": "SA at CHI",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "SA",
+      "prob": 0.6042,
+      "final": "CHI 119 \u00b7 SA 124",
+      "result": "WON",
+      "price": 0.895,
+      "price_source": "reference"
     }
   ],
   "open_bets": [
-    {
-      "game": "SA at CHI",
-      "pick": "SA",
-      "prob": 0.6042,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.895,
-      "price_source": "reference"
-    },
     {
       "game": "DEN at MEM",
       "pick": "DEN",
@@ -3894,14 +3896,25 @@
       "price": 0.645,
       "price_source": "reference",
       "profit": 27.52
+    },
+    {
+      "date": "2026-11-11",
+      "game": "SA at CHI",
+      "pick": "SA",
+      "prob": 0.6042,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.895,
+      "price_source": "reference",
+      "profit": 5.87
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 589.64,
-    "total_won": 3289.64,
+    "balance": 595.5,
+    "total_won": 3295.5,
     "total_lost": 2750.0,
-    "settled_count": 161,
-    "ref_priced_count": 161
+    "settled_count": 162,
+    "ref_priced_count": 162
   }
 }
