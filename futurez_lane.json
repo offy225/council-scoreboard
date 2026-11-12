@@ -3,7 +3,7 @@
   "lane": "FUTUREZ",
   "paper_only": false,
   "live": true,
-  "updated_at": "2026-11-11T23:52:20Z",
+  "updated_at": "2026-11-12T00:17:54Z",
   "system_name": "FUTUREZ",
   "display_name": "FUTUREZ",
   "colour": "#7C5CFF",
@@ -11,7 +11,7 @@
   "theme": "futures / rent lane",
   "lane_file": "futurez_lane.json",
   "symbol": "📈",
-  "tagline": "The rent lane — NQ futures on a Tradeify eval",
+  "tagline": "The rent lane — NQ futures on a Tradeify eval (SYNC TEST — ignore)",
   "account": {
     "plan": "Tradeify Select 50K Daily",
     "connection": "Tradovate",
