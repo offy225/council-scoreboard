@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-12T04:43:01Z",
-  "scored": 180,
-  "won": 116,
+  "updated_at": "2026-11-12T05:28:04Z",
+  "scored": 181,
+  "won": 117,
   "lost": 64,
-  "win_rate": 0.6444444444444445,
-  "brier": 0.2207,
-  "log_loss": 0.6296,
+  "win_rate": 0.6464088397790055,
+  "brier": 0.2198,
+  "log_loss": 0.6278,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 152,
-      "won": 97,
+      "scored": 153,
+      "won": 98,
       "lost": 55,
-      "win_rate": 0.6381578947368421,
-      "brier": 0.2198
+      "win_rate": 0.6405228758169934,
+      "brier": 0.2189
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -1999,18 +1999,20 @@
       "result": "LOST",
       "price": 0.39,
       "price_source": "reference"
+    },
+    {
+      "date": "2026-11-11",
+      "game": "GS at HOU",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "HOU",
+      "prob": 0.7363,
+      "final": "HOU 115 \u00b7 GS 108",
+      "result": "WON",
+      "price": 0.655,
+      "price_source": "reference"
     }
   ],
   "open_bets": [
-    {
-      "game": "GS at HOU",
-      "pick": "HOU",
-      "prob": 0.7363,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.655,
-      "price_source": "reference"
-    },
     {
       "game": "OKC at POR",
       "pick": "OKC",
@@ -3995,14 +3997,25 @@
       "price": 0.39,
       "price_source": "reference",
       "profit": -50.0
+    },
+    {
+      "date": "2026-11-11",
+      "game": "GS at HOU",
+      "pick": "HOU",
+      "prob": 0.7363,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.655,
+      "price_source": "reference",
+      "profit": 26.34
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 536.03,
-    "total_won": 3336.03,
+    "balance": 562.37,
+    "total_won": 3362.37,
     "total_lost": 2850.0,
-    "settled_count": 166,
-    "ref_priced_count": 166
+    "settled_count": 167,
+    "ref_priced_count": 167
   }
 }
