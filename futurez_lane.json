@@ -3,7 +3,7 @@
   "lane": "FUTUREZ",
   "paper_only": false,
   "live": true,
-  "updated_at": "2026-11-13T16:19:53Z",
+  "updated_at": "2026-11-13T16:31:53Z",
   "system_name": "FUTUREZ",
   "display_name": "FUTUREZ",
   "colour": "#7C5CFF",
@@ -97,7 +97,7 @@
     "entries": 5,
     "losses": 2,
     "net_pnl_usd": 306.26,
-    "flats": 3
+    "flats": 4
   },
   "status": "LIVE — TRADING",
   "open_position": false,
