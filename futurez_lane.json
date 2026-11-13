@@ -3,7 +3,7 @@
   "lane": "FUTUREZ",
   "paper_only": false,
   "live": true,
-  "updated_at": "2026-11-12T18:47:53Z",
+  "updated_at": "2026-11-13T07:27:53Z",
   "system_name": "FUTUREZ",
   "display_name": "FUTUREZ",
   "colour": "#7C5CFF",
@@ -80,11 +80,11 @@
     "days_traded": 0
   },
   "today": {
-    "date": "2026-11-12",
+    "date": "2026-11-13",
     "entries": 1,
     "losses": 0,
     "net_pnl_usd": 0.0,
-    "flats": 2
+    "flats": 0
   },
   "status": "LIVE — IN A TRADE",
   "open_position": true,
@@ -94,6 +94,13 @@
       "leg": "FailedAuctionLong",
       "side": "buy",
       "qty": 21,
+      "order": "{'order_id': 'crosstrade-webhook', 'mode': 'crosstrade-bracket', 'raw': '{\"success\": true}'}"
+    },
+    {
+      "entry_iso": "2026-11-13 02:27:06",
+      "leg": "ReclaimLong",
+      "side": "buy",
+      "qty": 10,
       "order": "{'order_id': 'crosstrade-webhook', 'mode': 'crosstrade-bracket', 'raw': '{\"success\": true}'}"
     }
   ],
