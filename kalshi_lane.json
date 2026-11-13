@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-12T13:38:08Z",
-  "scored": 182,
+  "updated_at": "2026-11-13T02:30:28Z",
+  "scored": 183,
   "won": 117,
-  "lost": 65,
-  "win_rate": 0.6428571428571429,
-  "brier": 0.2212,
-  "log_loss": 0.6307,
+  "lost": 66,
+  "win_rate": 0.639344262295082,
+  "brier": 0.2217,
+  "log_loss": 0.6316,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 154,
+      "scored": 155,
       "won": 98,
-      "lost": 56,
-      "win_rate": 0.6363636363636364,
-      "brier": 0.2205
+      "lost": 57,
+      "win_rate": 0.632258064516129,
+      "brier": 0.221
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -2021,18 +2021,20 @@
       "result": "LOST",
       "price": 0.555,
       "price_source": "reference"
+    },
+    {
+      "date": "2026-11-12",
+      "game": "TOR at PHI",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "TOR",
+      "prob": 0.548,
+      "final": "PHI 123 \u00b7 TOR 112",
+      "result": "LOST",
+      "price": 0.255,
+      "price_source": "reference"
     }
   ],
   "open_bets": [
-    {
-      "game": "TOR at PHI",
-      "pick": "TOR",
-      "prob": 0.548,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.255,
-      "price_source": "reference"
-    },
     {
       "game": "DET at WSH",
       "pick": "DET",
@@ -4021,14 +4023,25 @@
       "price": 0.555,
       "price_source": "reference",
       "profit": -50.0
+    },
+    {
+      "date": "2026-11-12",
+      "game": "TOR at PHI",
+      "pick": "TOR",
+      "prob": 0.548,
+      "stake": 50.0,
+      "result": "LOST",
+      "price": 0.255,
+      "price_source": "reference",
+      "profit": -50.0
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 512.37,
+    "balance": 462.37,
     "total_won": 3362.37,
-    "total_lost": 2900.0,
-    "settled_count": 168,
-    "ref_priced_count": 168
+    "total_lost": 2950.0,
+    "settled_count": 169,
+    "ref_priced_count": 169
   }
 }
