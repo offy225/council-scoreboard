@@ -3,7 +3,7 @@
   "lane": "FUTUREZ",
   "paper_only": false,
   "live": true,
-  "updated_at": "2026-11-13T15:07:54Z",
+  "updated_at": "2026-11-13T15:26:03Z",
   "system_name": "FUTUREZ",
   "display_name": "FUTUREZ",
   "colour": "#7C5CFF",
@@ -17,7 +17,8 @@
     "connection": "Tradovate",
     "balance_usd": 50000.0,
     "balance_label": "EVAL BALANCE — NOT WITHDRAWABLE CASH. Payouts only become real cash after passing the eval and funding.",
-    "current_balance_usd": 50000.0,
+    "current_balance_usd": 49962.38,
+    "manual_pnl_usd": -20.0,
     "profit_target_usd": 3000.0,
     "drawdown_usd": 2000.0,
     "drawdown_floor_usd": 48000.0,
@@ -26,39 +27,51 @@
     "max_size": "4 minis / 40 micros"
   },
   "system": {
-    "version": "v47",
+    "version": "v48",
     "size_contracts": 10,
     "day_stop_usd": 634,
     "max_daily_losses": 2,
     "flat_time_et": "16:45",
     "legs": [
       {
-        "leg": "IFVG",
-        "window_et": "09:30-11:30"
-      },
-      {
-        "leg": "FailedAuction",
-        "window_et": "11:00-11:30"
-      },
-      {
         "leg": "ReclaimLong",
         "window_et": "23:00-03:00"
-      },
-      {
-        "leg": "LondonPmShort",
-        "window_et": "08:00-09:15"
-      },
-      {
-        "leg": "RthVwapLong",
-        "window_et": "10:00-11:00"
       },
       {
         "leg": "LondonSweepLong",
         "window_et": "03:00-07:45"
       },
       {
+        "leg": "LondonPmShort",
+        "window_et": "08:00-09:15"
+      },
+      {
+        "leg": "IfvgShort",
+        "window_et": "09:30-11:00"
+      },
+      {
+        "leg": "RthVwapLong",
+        "window_et": "10:00-11:00"
+      },
+      {
+        "leg": "FailedAuctionLong",
+        "window_et": "11:00-11:30"
+      },
+      {
         "leg": "Gap2VwapRej",
         "window_et": "11:30-15:00"
+      },
+      {
+        "leg": "Pwr1500_L",
+        "window_et": "15:00-15:45"
+      },
+      {
+        "leg": "Trap1530_S",
+        "window_et": "15:30-15:58"
+      },
+      {
+        "leg": "FloorFlip_S",
+        "window_et": "15:00-16:55 / 18:05-23:00"
       },
       {
         "leg": "MocLong",
@@ -67,59 +80,75 @@
     ]
   },
   "record": {
-    "trades": 0,
-    "wins": 0,
-    "losses": 0,
-    "win_rate": null,
-    "net_pnl_usd": 0,
-    "total_won_usd": 0,
-    "total_lost_usd": 0,
-    "best_day_usd": 0.0,
-    "best_day_date": null,
+    "trades": 4,
+    "wins": 2,
+    "losses": 2,
+    "win_rate": 0.5,
+    "net_pnl_usd": -17.62,
+    "total_won_usd": 546.66,
+    "total_lost_usd": 564.28,
+    "best_day_usd": 527.86,
+    "best_day_date": "2026-11-13",
     "consistency_pct_of_total": null,
-    "days_traded": 0
+    "days_traded": 2
   },
   "today": {
     "date": "2026-11-13",
     "entries": 3,
-    "losses": 0,
-    "net_pnl_usd": 0.0,
+    "losses": 1,
+    "net_pnl_usd": 527.86,
     "flats": 2
   },
-  "status": "LIVE — IN A TRADE",
-  "open_position": true,
-  "open_trades": [
+  "status": "LIVE — TRADING",
+  "open_position": false,
+  "open_trades": [],
+  "recent_trades": [
     {
-      "entry_iso": "2026-11-12 11:02:27",
-      "leg": "FailedAuctionLong",
-      "side": "buy",
-      "qty": 21,
-      "order": "{'order_id': 'crosstrade-webhook', 'mode': 'crosstrade-bracket', 'raw': '{\"success\": true}'}"
-    },
-    {
-      "entry_iso": "2026-11-13 02:27:06",
-      "leg": "ReclaimLong",
-      "side": "buy",
-      "qty": 10,
-      "order": "{'order_id': 'crosstrade-webhook', 'mode': 'crosstrade-bracket', 'raw': '{\"success\": true}'}"
-    },
-    {
-      "entry_iso": "2026-11-13 09:47:09",
-      "leg": "IfvgShort",
-      "side": "sell",
-      "qty": 10,
-      "order": "{'order_id': 'crosstrade-webhook', 'mode': 'crosstrade-bracket', 'raw': '{\"success\": true}'}"
-    },
-    {
+      "close_iso": "2026-11-13 09:48:39",
       "entry_iso": "2026-11-13 09:48:36",
       "leg": "IfvgShort",
       "side": "sell",
       "qty": 10,
-      "order": "{'order_id': 'crosstrade-webhook', 'mode': 'crosstrade-bracket', 'raw': '{\"success\": true}'}"
+      "net_pnl_usd": -18.8,
+      "close_raw": "Scratch on price (entry filled at the TP); -$18.80 after fees.",
+      "source": "CrossTrade Recent Orders: entry fill 28252.75 = TP 28252.75, gross $0.00, minus $18.80 fees",
+      "verified": true
+    },
+    {
+      "close_iso": "2026-11-13 09:47:38",
+      "entry_iso": "2026-11-13 09:47:09",
+      "leg": "IfvgShort",
+      "side": "sell",
+      "qty": 10,
+      "net_pnl_usd": 381.2,
+      "close_raw": "TP filled. Stop was REJECTED (invalid price — entry filled 16pts worse than signal).",
+      "source": "CrossTrade Recent Orders: TP 28254.00 filled 09:47:38, entry fill 28274.00, gross +$400.00, minus $18.80 fees",
+      "verified": true
+    },
+    {
+      "close_iso": "2026-11-13 03:00:00",
+      "entry_iso": "2026-11-13 02:27:06",
+      "leg": "ReclaimLong",
+      "side": "buy",
+      "qty": 10,
+      "net_pnl_usd": 165.46,
+      "close_raw": "Closed ~03:00 (flat). Win exceeds the +5pt TP (~$100) — exact exit price unverified.",
+      "source": "Tradeify balance, Nov 13 09:13",
+      "verified": true
+    },
+    {
+      "close_iso": "2026-11-12 11:02:27",
+      "entry_iso": "2026-11-12 11:02:27",
+      "leg": "FailedAuctionLong",
+      "side": "buy",
+      "qty": 21,
+      "net_pnl_usd": -545.48,
+      "close_raw": "Stop-out. Close time approximate (entry time used).",
+      "source": "Tradeify balance, Nov 12 (full 13-pt stop at size 21)",
+      "verified": true
     }
   ],
-  "recent_trades": [],
-  "banner": "EVAL LIVE — v47 · 10 contracts · 0 trades (0W–0L) · net $+0.00 · eval balance $50,000.00 · target $3,000 · floor $48,000",
+  "banner": "EVAL LIVE — v48 · 10 contracts · 4 trades (2W–2L) · net $-17.62 · eval balance $49,962.38 · target $3,000 · floor $48,000",
   "eval_note": "The $50,000 is the Tradeify eval account balance, not cash in hand. It is real money on the board only as the eval balance: the account must pass ($3,000 profit, never below the $48,000 floor) before any payout becomes real cash. Day-stop $634 (2 losses) protects the eval.",
   "demo_note": "Before this eval, the same bot ran one live demo trade on DEMO9887510: Breakout long, +$43.30 (Nov 10-11 overnight). That demo trade is NOT counted in the eval record above — the eval starts at 0 trades."
 }
