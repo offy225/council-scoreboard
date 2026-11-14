@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-14T02:43:07Z",
-  "scored": 187,
+  "updated_at": "2026-11-14T02:58:10Z",
+  "scored": 188,
   "won": 121,
-  "lost": 66,
-  "win_rate": 0.6470588235294118,
-  "brier": 0.2193,
-  "log_loss": 0.6268,
+  "lost": 67,
+  "win_rate": 0.6436170212765957,
+  "brier": 0.2197,
+  "log_loss": 0.6276,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 159,
+      "scored": 160,
       "won": 102,
-      "lost": 57,
-      "win_rate": 0.6415094339622641,
-      "brier": 0.2183
+      "lost": 58,
+      "win_rate": 0.6375,
+      "brier": 0.2188
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -2068,6 +2068,17 @@
     },
     {
       "date": "2026-11-13",
+      "game": "NY at IND",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "NY",
+      "prob": 0.5451,
+      "final": "IND 106 \u00b7 NY 104",
+      "result": "LOST",
+      "price": 0.715,
+      "price_source": "reference"
+    },
+    {
+      "date": "2026-11-13",
       "game": "MIL at ORL",
       "model": "NBA v3.2 + PLATT",
       "pick": "ORL",
@@ -2079,15 +2090,6 @@
     }
   ],
   "open_bets": [
-    {
-      "game": "NY at IND",
-      "pick": "NY",
-      "prob": 0.5451,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.715,
-      "price_source": "reference"
-    },
     {
       "game": "CLE at MIA",
       "pick": "CLE",
@@ -4159,6 +4161,17 @@
     },
     {
       "date": "2026-11-13",
+      "game": "NY at IND",
+      "pick": "NY",
+      "prob": 0.5451,
+      "stake": 50.0,
+      "result": "LOST",
+      "price": 0.715,
+      "price_source": "reference",
+      "profit": -50.0
+    },
+    {
+      "date": "2026-11-13",
       "game": "MIL at ORL",
       "pick": "ORL",
       "prob": 0.7322,
@@ -4171,10 +4184,10 @@
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 540.35,
+    "balance": 490.35,
     "total_won": 3440.35,
-    "total_lost": 2950.0,
-    "settled_count": 173,
-    "ref_priced_count": 173
+    "total_lost": 3000.0,
+    "settled_count": 174,
+    "ref_priced_count": 174
   }
 }
