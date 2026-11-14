@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-14T03:57:52Z",
-  "scored": 191,
-  "won": 121,
-  "lost": 70,
-  "win_rate": 0.6335078534031413,
-  "brier": 0.2221,
-  "log_loss": 0.6325,
+  "updated_at": "2026-11-14T06:22:48Z",
+  "scored": 195,
+  "won": 124,
+  "lost": 71,
+  "win_rate": 0.6358974358974359,
+  "brier": 0.2214,
+  "log_loss": 0.631,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 163,
-      "won": 102,
-      "lost": 61,
-      "win_rate": 0.6257668711656442,
-      "brier": 0.2216
+      "scored": 167,
+      "won": 105,
+      "lost": 62,
+      "win_rate": 0.6287425149700598,
+      "brier": 0.2208
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -2120,45 +2120,53 @@
       "result": "LOST",
       "price": 0.405,
       "price_source": "reference"
-    }
-  ],
-  "open_bets": [
+    },
     {
+      "date": "2026-11-13",
       "game": "UTAH at HOU",
+      "model": "NBA v3.2 + PLATT",
       "pick": "HOU",
       "prob": 0.7363,
-      "stake": 50.0,
-      "status": "OPEN",
+      "final": "HOU 125 \u00b7 UTAH 118",
+      "result": "WON",
       "price": 0.915,
       "price_source": "reference"
     },
     {
+      "date": "2026-11-13",
       "game": "GS at SA",
+      "model": "NBA v3.2 + PLATT",
       "pick": "SA",
       "prob": 0.5733,
-      "stake": 50.0,
-      "status": "OPEN",
+      "final": "SA 123 \u00b7 GS 85",
+      "result": "WON",
       "price": 0.865,
       "price_source": "reference"
     },
     {
+      "date": "2026-11-13",
       "game": "POR at SAC",
+      "model": "NBA v3.2 + PLATT",
       "pick": "POR",
       "prob": 0.7026,
-      "stake": 50.0,
-      "status": "OPEN",
+      "final": "SAC 107 \u00b7 POR 120",
+      "result": "WON",
       "price": 0.815,
       "price_source": "reference"
     },
     {
+      "date": "2026-11-13",
       "game": "OKC at LAC",
+      "model": "NBA v3.2 + PLATT",
       "pick": "OKC",
       "prob": 0.642,
-      "stake": 50.0,
-      "status": "OPEN",
+      "final": "LAC 113 \u00b7 OKC 112",
+      "result": "LOST",
       "price": 0.725,
       "price_source": "reference"
-    },
+    }
+  ],
+  "open_bets": [
     {
       "game": "DEN at NO",
       "pick": "DEN",
@@ -4264,14 +4272,58 @@
       "price": 0.405,
       "price_source": "reference",
       "profit": -50.0
+    },
+    {
+      "date": "2026-11-13",
+      "game": "UTAH at HOU",
+      "pick": "HOU",
+      "prob": 0.7363,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.915,
+      "price_source": "reference",
+      "profit": 4.64
+    },
+    {
+      "date": "2026-11-13",
+      "game": "GS at SA",
+      "pick": "SA",
+      "prob": 0.5733,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.865,
+      "price_source": "reference",
+      "profit": 7.8
+    },
+    {
+      "date": "2026-11-13",
+      "game": "POR at SAC",
+      "pick": "POR",
+      "prob": 0.7026,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.815,
+      "price_source": "reference",
+      "profit": 11.35
+    },
+    {
+      "date": "2026-11-13",
+      "game": "OKC at LAC",
+      "pick": "OKC",
+      "prob": 0.642,
+      "stake": 50.0,
+      "result": "LOST",
+      "price": 0.725,
+      "price_source": "reference",
+      "profit": -50.0
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 340.35,
-    "total_won": 3440.35,
-    "total_lost": 3150.0,
-    "settled_count": 177,
-    "ref_priced_count": 177
+    "balance": 314.15,
+    "total_won": 3464.15,
+    "total_lost": 3200.0,
+    "settled_count": 181,
+    "ref_priced_count": 181
   }
 }
