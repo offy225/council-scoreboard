@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-13T13:38:26Z",
-  "scored": 186,
-  "won": 120,
+  "updated_at": "2026-11-14T02:43:07Z",
+  "scored": 187,
+  "won": 121,
   "lost": 66,
-  "win_rate": 0.6451612903225806,
-  "brier": 0.2201,
-  "log_loss": 0.6285,
+  "win_rate": 0.6470588235294118,
+  "brier": 0.2193,
+  "log_loss": 0.6268,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 158,
-      "won": 101,
+      "scored": 159,
+      "won": 102,
       "lost": 57,
-      "win_rate": 0.6392405063291139,
-      "brier": 0.2192
+      "win_rate": 0.6415094339622641,
+      "brier": 0.2183
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -2065,6 +2065,17 @@
       "result": "WON",
       "price": 0.685,
       "price_source": "reference"
+    },
+    {
+      "date": "2026-11-13",
+      "game": "MIL at ORL",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "ORL",
+      "prob": 0.7322,
+      "final": "ORL 107 \u00b7 MIL 99",
+      "result": "WON",
+      "price": 0.765,
+      "price_source": "reference"
     }
   ],
   "open_bets": [
@@ -2075,15 +2086,6 @@
       "stake": 50.0,
       "status": "OPEN",
       "price": 0.715,
-      "price_source": "reference"
-    },
-    {
-      "game": "MIL at ORL",
-      "pick": "ORL",
-      "prob": 0.7322,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.765,
       "price_source": "reference"
     },
     {
@@ -4154,14 +4156,25 @@
       "price": 0.685,
       "price_source": "reference",
       "profit": 22.99
+    },
+    {
+      "date": "2026-11-13",
+      "game": "MIL at ORL",
+      "pick": "ORL",
+      "prob": 0.7322,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.765,
+      "price_source": "reference",
+      "profit": 15.36
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 524.99,
-    "total_won": 3424.99,
+    "balance": 540.35,
+    "total_won": 3440.35,
     "total_lost": 2950.0,
-    "settled_count": 172,
-    "ref_priced_count": 172
+    "settled_count": 173,
+    "ref_priced_count": 173
   }
 }
