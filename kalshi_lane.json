@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-14T03:43:01Z",
-  "scored": 189,
+  "updated_at": "2026-11-14T03:57:52Z",
+  "scored": 191,
   "won": 121,
-  "lost": 68,
-  "win_rate": 0.6402116402116402,
-  "brier": 0.2208,
-  "log_loss": 0.6297,
+  "lost": 70,
+  "win_rate": 0.6335078534031413,
+  "brier": 0.2221,
+  "log_loss": 0.6325,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 161,
+      "scored": 163,
       "won": 102,
-      "lost": 59,
-      "win_rate": 0.6335403726708074,
-      "brier": 0.22
+      "lost": 61,
+      "win_rate": 0.6257668711656442,
+      "brier": 0.2216
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -2090,6 +2090,28 @@
     },
     {
       "date": "2026-11-13",
+      "game": "CLE at MIA",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "CLE",
+      "prob": 0.5156,
+      "final": "MIA 133 \u00b7 CLE 121",
+      "result": "LOST",
+      "price": 0.445,
+      "price_source": "reference"
+    },
+    {
+      "date": "2026-11-13",
+      "game": "ATL at CHI",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "ATL",
+      "prob": 0.6525,
+      "final": "CHI 125 \u00b7 ATL 117",
+      "result": "LOST",
+      "price": 0.7,
+      "price_source": "reference"
+    },
+    {
+      "date": "2026-11-13",
       "game": "MEM at NO",
       "model": "NBA v3.2 + PLATT",
       "pick": "NO",
@@ -2101,24 +2123,6 @@
     }
   ],
   "open_bets": [
-    {
-      "game": "CLE at MIA",
-      "pick": "CLE",
-      "prob": 0.5156,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.445,
-      "price_source": "reference"
-    },
-    {
-      "game": "ATL at CHI",
-      "pick": "ATL",
-      "prob": 0.6525,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.7,
-      "price_source": "reference"
-    },
     {
       "game": "UTAH at HOU",
       "pick": "HOU",
@@ -2153,6 +2157,51 @@
       "stake": 50.0,
       "status": "OPEN",
       "price": 0.725,
+      "price_source": "reference"
+    },
+    {
+      "game": "DEN at NO",
+      "pick": "DEN",
+      "prob": 0.5792,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.855,
+      "price_source": "reference"
+    },
+    {
+      "game": "DAL at CLE",
+      "pick": "CLE",
+      "prob": 0.7208,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.575,
+      "price_source": "reference"
+    },
+    {
+      "game": "DET at MIA",
+      "pick": "DET",
+      "prob": 0.5719,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.635,
+      "price_source": "reference"
+    },
+    {
+      "game": "BKN at MEM",
+      "pick": "MEM",
+      "prob": 0.6541,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.63,
+      "price_source": "reference"
+    },
+    {
+      "game": "CHI at MIN",
+      "pick": "MIN",
+      "prob": 0.7874,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.9,
       "price_source": "reference"
     }
   ],
@@ -4185,6 +4234,28 @@
     },
     {
       "date": "2026-11-13",
+      "game": "CLE at MIA",
+      "pick": "CLE",
+      "prob": 0.5156,
+      "stake": 50.0,
+      "result": "LOST",
+      "price": 0.445,
+      "price_source": "reference",
+      "profit": -50.0
+    },
+    {
+      "date": "2026-11-13",
+      "game": "ATL at CHI",
+      "pick": "ATL",
+      "prob": 0.6525,
+      "stake": 50.0,
+      "result": "LOST",
+      "price": 0.7,
+      "price_source": "reference",
+      "profit": -50.0
+    },
+    {
+      "date": "2026-11-13",
       "game": "MEM at NO",
       "pick": "NO",
       "prob": 0.6422,
@@ -4197,10 +4268,10 @@
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 440.35,
+    "balance": 340.35,
     "total_won": 3440.35,
-    "total_lost": 3050.0,
-    "settled_count": 175,
-    "ref_priced_count": 175
+    "total_lost": 3150.0,
+    "settled_count": 177,
+    "ref_priced_count": 177
   }
 }
