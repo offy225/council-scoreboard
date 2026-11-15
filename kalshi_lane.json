@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-15T03:43:18Z",
-  "scored": 199,
+  "updated_at": "2026-11-15T03:57:38Z",
+  "scored": 200,
   "won": 127,
-  "lost": 72,
-  "win_rate": 0.6381909547738693,
-  "brier": 0.2219,
-  "log_loss": 0.6326,
+  "lost": 73,
+  "win_rate": 0.635,
+  "brier": 0.2225,
+  "log_loss": 0.6337,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 171,
+      "scored": 172,
       "won": 108,
-      "lost": 63,
-      "win_rate": 0.631578947368421,
-      "brier": 0.2214
+      "lost": 64,
+      "win_rate": 0.627906976744186,
+      "brier": 0.222
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -2189,6 +2189,17 @@
     },
     {
       "date": "2026-11-14",
+      "game": "DET at MIA",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "DET",
+      "prob": 0.5719,
+      "final": "MIA 137 \u00b7 DET 117",
+      "result": "LOST",
+      "price": 0.635,
+      "price_source": "reference"
+    },
+    {
+      "date": "2026-11-14",
       "game": "BKN at MEM",
       "model": "NBA v3.2 + PLATT",
       "pick": "MEM",
@@ -2212,12 +2223,84 @@
   ],
   "open_bets": [
     {
-      "game": "DET at MIA",
-      "pick": "DET",
-      "prob": 0.5719,
+      "game": "IND at PHI",
+      "pick": "PHI",
+      "prob": 0.6651,
       "stake": 50.0,
       "status": "OPEN",
-      "price": 0.635,
+      "price": 0.725,
+      "price_source": "reference"
+    },
+    {
+      "game": "LAL at PHX",
+      "pick": "LAL",
+      "prob": 0.5292,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.625,
+      "price_source": "reference"
+    },
+    {
+      "game": "CHA at LAC",
+      "pick": "LAC",
+      "prob": 0.6611,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.535,
+      "price_source": "reference"
+    },
+    {
+      "game": "SA at UTAH",
+      "pick": "UTAH",
+      "prob": 0.5733,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.085,
+      "price_source": "reference"
+    },
+    {
+      "game": "DAL at BOS",
+      "pick": "BOS",
+      "prob": 0.817,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.825,
+      "price_source": "reference"
+    },
+    {
+      "game": "NY at TOR",
+      "pick": "TOR",
+      "prob": 0.65,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.375,
+      "price_source": "reference"
+    },
+    {
+      "game": "HOU at WSH",
+      "pick": "HOU",
+      "prob": 0.5928,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.795,
+      "price_source": "reference"
+    },
+    {
+      "game": "ATL at MIL",
+      "pick": "ATL",
+      "prob": 0.6689,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.745,
+      "price_source": "reference"
+    },
+    {
+      "game": "OKC at SAC",
+      "pick": "OKC",
+      "prob": 0.8845,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.795,
       "price_source": "reference"
     }
   ],
@@ -4349,6 +4432,17 @@
     },
     {
       "date": "2026-11-14",
+      "game": "DET at MIA",
+      "pick": "DET",
+      "prob": 0.5719,
+      "stake": 50.0,
+      "result": "LOST",
+      "price": 0.635,
+      "price_source": "reference",
+      "profit": -50.0
+    },
+    {
+      "date": "2026-11-14",
       "game": "BKN at MEM",
       "pick": "MEM",
       "prob": 0.6541,
@@ -4372,10 +4466,10 @@
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 338.95,
+    "balance": 288.95,
     "total_won": 3538.95,
-    "total_lost": 3250.0,
-    "settled_count": 185,
-    "ref_priced_count": 185
+    "total_lost": 3300.0,
+    "settled_count": 186,
+    "ref_priced_count": 186
   }
 }
