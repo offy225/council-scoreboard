@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-15T02:43:09Z",
-  "scored": 196,
-  "won": 125,
+  "updated_at": "2026-11-15T03:13:24Z",
+  "scored": 197,
+  "won": 126,
   "lost": 71,
-  "win_rate": 0.6377551020408163,
-  "brier": 0.2212,
-  "log_loss": 0.6306,
+  "win_rate": 0.6395939086294417,
+  "brier": 0.2204,
+  "log_loss": 0.629,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 168,
-      "won": 106,
+      "scored": 169,
+      "won": 107,
       "lost": 62,
-      "win_rate": 0.6309523809523809,
-      "brier": 0.2205
+      "win_rate": 0.6331360946745562,
+      "brier": 0.2197
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -2175,18 +2175,20 @@
       "result": "WON",
       "price": 0.855,
       "price_source": "reference"
+    },
+    {
+      "date": "2026-11-14",
+      "game": "DAL at CLE",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "CLE",
+      "prob": 0.7208,
+      "final": "CLE 127 \u00b7 DAL 117",
+      "result": "WON",
+      "price": 0.575,
+      "price_source": "reference"
     }
   ],
   "open_bets": [
-    {
-      "game": "DAL at CLE",
-      "pick": "CLE",
-      "prob": 0.7208,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.575,
-      "price_source": "reference"
-    },
     {
       "game": "DET at MIA",
       "pick": "DET",
@@ -4329,14 +4331,25 @@
       "price": 0.855,
       "price_source": "reference",
       "profit": 8.48
+    },
+    {
+      "date": "2026-11-14",
+      "game": "DAL at CLE",
+      "pick": "CLE",
+      "prob": 0.7208,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.575,
+      "price_source": "reference",
+      "profit": 36.96
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 322.63,
-    "total_won": 3472.63,
+    "balance": 359.58,
+    "total_won": 3509.58,
     "total_lost": 3200.0,
-    "settled_count": 182,
-    "ref_priced_count": 182
+    "settled_count": 183,
+    "ref_priced_count": 183
   }
 }
