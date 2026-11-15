@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-15T13:38:02Z",
-  "scored": 200,
-  "won": 127,
+  "updated_at": "2026-11-15T20:43:04Z",
+  "scored": 201,
+  "won": 128,
   "lost": 73,
-  "win_rate": 0.635,
-  "brier": 0.2225,
-  "log_loss": 0.6337,
+  "win_rate": 0.6368159203980099,
+  "brier": 0.2219,
+  "log_loss": 0.6326,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 172,
-      "won": 108,
+      "scored": 173,
+      "won": 109,
       "lost": 64,
-      "win_rate": 0.627906976744186,
-      "brier": 0.222
+      "win_rate": 0.630057803468208,
+      "brier": 0.2214
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -2219,18 +2219,20 @@
       "result": "LOST",
       "price": 0.9,
       "price_source": "reference"
+    },
+    {
+      "date": "2026-11-15",
+      "game": "IND at PHI",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "PHI",
+      "prob": 0.6651,
+      "final": "PHI 131 \u00b7 IND 124",
+      "result": "WON",
+      "price": 0.725,
+      "price_source": "reference"
     }
   ],
   "open_bets": [
-    {
-      "game": "IND at PHI",
-      "pick": "PHI",
-      "prob": 0.6651,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.725,
-      "price_source": "reference"
-    },
     {
       "game": "LAL at PHX",
       "pick": "LAL",
@@ -4462,14 +4464,25 @@
       "price": 0.9,
       "price_source": "reference",
       "profit": -50.0
+    },
+    {
+      "date": "2026-11-15",
+      "game": "IND at PHI",
+      "pick": "PHI",
+      "prob": 0.6651,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.725,
+      "price_source": "reference",
+      "profit": 18.97
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 288.95,
-    "total_won": 3538.95,
+    "balance": 307.91,
+    "total_won": 3557.91,
     "total_lost": 3300.0,
-    "settled_count": 186,
-    "ref_priced_count": 186
+    "settled_count": 187,
+    "ref_priced_count": 187
   }
 }
