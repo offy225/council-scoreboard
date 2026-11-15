@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-15T20:43:04Z",
-  "scored": 201,
-  "won": 128,
+  "updated_at": "2026-11-15T23:58:12Z",
+  "scored": 203,
+  "won": 130,
   "lost": 73,
-  "win_rate": 0.6368159203980099,
-  "brier": 0.2219,
-  "log_loss": 0.6326,
+  "win_rate": 0.6403940886699507,
+  "brier": 0.2214,
+  "log_loss": 0.6315,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 173,
-      "won": 109,
+      "scored": 175,
+      "won": 111,
       "lost": 64,
-      "win_rate": 0.630057803468208,
-      "brier": 0.2214
+      "win_rate": 0.6342857142857142,
+      "brier": 0.2208
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -2230,27 +2230,31 @@
       "result": "WON",
       "price": 0.725,
       "price_source": "reference"
-    }
-  ],
-  "open_bets": [
+    },
     {
+      "date": "2026-11-15",
       "game": "LAL at PHX",
+      "model": "NBA v3.2 + PLATT",
       "pick": "LAL",
       "prob": 0.5292,
-      "stake": 50.0,
-      "status": "OPEN",
+      "final": "PHX 123 \u00b7 LAL 131",
+      "result": "WON",
       "price": 0.625,
       "price_source": "reference"
     },
     {
+      "date": "2026-11-15",
       "game": "CHA at LAC",
+      "model": "NBA v3.2 + PLATT",
       "pick": "LAC",
       "prob": 0.6611,
-      "stake": 50.0,
-      "status": "OPEN",
+      "final": "LAC 113 \u00b7 CHA 105",
+      "result": "WON",
       "price": 0.535,
       "price_source": "reference"
-    },
+    }
+  ],
+  "open_bets": [
     {
       "game": "SA at UTAH",
       "pick": "UTAH",
@@ -4475,14 +4479,36 @@
       "price": 0.725,
       "price_source": "reference",
       "profit": 18.97
+    },
+    {
+      "date": "2026-11-15",
+      "game": "LAL at PHX",
+      "pick": "LAL",
+      "prob": 0.5292,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.625,
+      "price_source": "reference",
+      "profit": 30.0
+    },
+    {
+      "date": "2026-11-15",
+      "game": "CHA at LAC",
+      "pick": "LAC",
+      "prob": 0.6611,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.535,
+      "price_source": "reference",
+      "profit": 43.46
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 307.91,
-    "total_won": 3557.91,
+    "balance": 381.37,
+    "total_won": 3631.37,
     "total_lost": 3300.0,
-    "settled_count": 187,
-    "ref_priced_count": 187
+    "settled_count": 189,
+    "ref_priced_count": 189
   }
 }
