@@ -5599,6 +5599,10 @@ table.bd tr.ov-total td {
     };
     nodes.push(fn); byId[fn.id] = fn; adj[fn.id] = [];
   });
+  /* morph index — every node (system nodes + file dots) gets its
+     position in the array, so the MORPH can spread the whole map
+     evenly along a shape's wireframe. */
+  nodes.forEach(function (nn, idx) { nn.mi = idx; });
   var FILE_PAIRS = [];
   FILE_DEFS.forEach(function (fd) { FILE_PAIRS.push([fd.anchor, fd.id]); });
   FILE_REFS.forEach(function (r) { FILE_PAIRS.push([r[0], r[1]]); });
@@ -5724,7 +5728,126 @@ table.bd tr.ov-total td {
     var fs = flowScale();
     return [dx * fs, dy * fs];
   }
-  function npos(n, now) { var d = driftOf(n, now); return [n.x + d[0], n.y + d[1]]; }
+  function npos(n, now) {
+    var d = driftOf(n, now);
+    var px = n.x + d[0], py = n.y + d[1];
+    if (morphA !== 0 || morphB !== 0) {
+      var u = (n.mi + 0.5) / nodes.length;
+      if (morphA === morphB) {
+        if (morphA !== 0) { var pt = morphShapePoint(morphA, u, now); px = pt[0]; py = pt[1]; }
+      } else {
+        var b = morphBlendAt(now);
+        var pa = morphA === 0 ? [px, py] : morphShapePoint(morphA, u, now);
+        var pb = morphB === 0 ? [px, py] : morphShapePoint(morphB, u, now);
+        px = pa[0] + (pb[0] - pa[0]) * b;
+        py = pa[1] + (pb[1] - pa[1]) * b;
+      }
+    }
+    return [px, py];
+  }
+  /* ---------- MORPH — the whole mind map reshapes into the selected
+     geometry. The MORPH button cycles NEBULA → CUBE → PRISM → PYRAMID →
+     SPHERE → TORUS (same order as the hologram preview at the top).
+     NEBULA is the normal galaxy layout. For any other shape, every
+     node (system nodes AND file dots) gets a target point on that
+     shape's wireframe, spread evenly along its edges, and the RENDERED
+     position (npos) lerps from the galaxy layout to the shape. The
+     shape slowly rotates in 3D, so the map is a living hologram.
+     A shape-to-shape change blends directly from the old shape's
+     points to the new shape's points — no snap. The simulation
+     underneath is untouched; this is a rendered overlay only, so
+     un-morphing returns every node to its live galaxy spot. ---------- */
+  var MORPH_GEO = (function () {
+    function cube() {
+      var v = [];
+      [-1, 1].forEach(function (x) { [-1, 1].forEach(function (y) { [-1, 1].forEach(function (z) { v.push([x, y, z]); }); }); });
+      return { verts: v, edges: [[0,2],[2,6],[6,4],[4,0],[1,3],[3,7],[7,5],[5,1],[0,1],[2,3],[4,5],[6,7]] };
+    }
+    function prism() {
+      var v = [[0,1,0.7],[-0.87,-0.5,0.7],[0.87,-0.5,0.7],[0,1,-0.7],[-0.87,-0.5,-0.7],[0.87,-0.5,-0.7]];
+      return { verts: v, edges: [[0,1],[1,2],[2,0],[3,4],[4,5],[5,3],[0,3],[1,4],[2,5]] };
+    }
+    function pyramid() {
+      var v = [[-1,-1,-0.6],[1,-1,-0.6],[1,1,-0.6],[-1,1,-0.6],[0,0,1.3]];
+      return { verts: v, edges: [[0,1],[1,2],[2,3],[3,0],[0,4],[1,4],[2,4],[3,4]] };
+    }
+    function sphere() {
+      var p = 1.6180339887, n = Math.sqrt(1 + p * p), v = [];
+      [[0,1,p],[0,1,-p],[0,-1,p],[0,-1,-p],[1,p,0],[1,-p,0],[-1,p,0],[-1,-p,0],[p,0,1],[p,0,-1],[-p,0,1],[-p,0,-1]].forEach(function (q) { v.push([q[0]/n*1.15, q[1]/n*1.15, q[2]/n*1.15]); });
+      var e = [];
+      for (var i = 0; i < v.length; i++) for (var j = i + 1; j < v.length; j++) {
+        var dd = Math.hypot(v[i][0]-v[j][0], v[i][1]-v[j][1], v[i][2]-v[j][2]);
+        if (Math.abs(dd - 2/n*1.15) < 0.02) e.push([i, j]);
+      }
+      return { verts: v, edges: e };
+    }
+    function torus() {
+      var NU = 12, NV = 6, Rr = 0.78, rr = 0.34, v = [], e = [];
+      for (var u = 0; u < NU; u++) for (var w = 0; w < NV; w++) {
+        var a = u/NU*Math.PI*2, b = w/NV*Math.PI*2;
+        v.push([(Rr+rr*Math.cos(b))*Math.cos(a), (Rr+rr*Math.cos(b))*Math.sin(a), rr*Math.sin(b)]);
+      }
+      for (var u2 = 0; u2 < NU; u2++) for (var w2 = 0; w2 < NV; w2++) {
+        e.push([u2*NV+w2, ((u2+1)%NU)*NV+w2]);
+        e.push([u2*NV+w2, u2*NV+((w2+1)%NV)]);
+      }
+      return { verts: v, edges: e };
+    }
+    return [null, cube(), prism(), pyramid(), sphere(), torus()];
+  })();
+  /* centre + scale of the morphed shape, from the node anchors'
+     bounding box, so the shape fits the field the galaxy occupies. */
+  var morphC = (function () {
+    var minX = 1e9, maxX = -1e9, minY = 1e9, maxY = -1e9;
+    for (var i = 0; i < nodes.length; i++) {
+      var a = nodes[i];
+      if (a.ax < minX) minX = a.ax; if (a.ax > maxX) maxX = a.ax;
+      if (a.ay < minY) minY = a.ay; if (a.ay > maxY) maxY = a.ay;
+    }
+    var bw = Math.max(maxX - minX, 50), bh = Math.max(maxY - minY, 50);
+    return { x: (minX + maxX) / 2, y: (minY + maxY) / 2, s: 0.24 * Math.min(bw, bh) };
+  })();
+  /* a point on shape si's wireframe at parameter u in [0,1), walked
+     evenly along its edges, rotated slowly in 3D (same rate as the
+     hologram preview) and projected to world coords. */
+  function morphShapePoint(si, u, now) {
+    var g = MORPH_GEO[si];
+    if (!g || !g.edges.length) return [morphC.x, morphC.y];
+    var ne = g.edges.length;
+    var x = u * ne;
+    var ei = Math.floor(x) % ne;
+    var f = x - Math.floor(x);
+    var e = g.edges[ei];
+    var a = g.verts[e[0]], b = g.verts[e[1]];
+    var px = a[0] + (b[0] - a[0]) * f;
+    var py = a[1] + (b[1] - a[1]) * f;
+    var pz = a[2] + (b[2] - a[2]) * f;
+    var t = now / 1000 * 0.55;
+    var cy = Math.cos(t), sy = Math.sin(t), cx = Math.cos(t * 0.6), sx = Math.sin(t * 0.6);
+    var x1 = px * cy + pz * sy, z1 = -px * sy + pz * cy;
+    var y1 = py * cx - z1 * sx, z2 = py * sx + z1 * cx;
+    var s = 8.0 / (8.0 + z2);
+    return [morphC.x + x1 * s * morphC.s, morphC.y + y1 * s * morphC.s];
+  }
+  /* morph state: 0 = galaxy/nebula, 1..5 = cube..torus. morphA is the
+     shape we blend FROM, morphB the shape we blend TO; the blend
+     eases 0→1 over MORPH_DUR ms, then settles (morphA = morphB). */
+  var morphA = 0, morphB = 0, morphAnimStart = 0, MORPH_DUR = 900;
+  function morphBlendAt(now) {
+    if (morphA === morphB) return 1;
+    var p = (now - morphAnimStart) / MORPH_DUR;
+    if (p >= 1) { morphA = morphB; return 1; }
+    if (p <= 0) return 0;
+    return p < 0.5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2;
+  }
+  function setMorph(idx, now) {
+    var t = now || performance.now();
+    morphBlendAt(t);
+    morphA = morphB;
+    morphB = idx;
+    morphAnimStart = t;
+  }
+  window.__setMorph = setMorph;
   function fitScale() { return Math.max(0.3, Math.min(W / 1180, H / 980, 1.05)); }
   function fitT() {
     var minX = 1e9, maxX = -1e9, minY = 1e9, maxY = -1e9, i, n;
@@ -7156,6 +7279,9 @@ table.bd tr.ov-total td {
     shape = build(idx);
     popT = 0; popStart = performance.now();
     btn.textContent = '◈ MORPH · ' + names[idx];
+    /* morph the WHOLE mind map into this shape, in sync with the
+       hologram preview — the map's nodes reshape onto the geometry. */
+    if (window.__setMorph) window.__setMorph(idx);
   });
   shape = build(0);
   requestAnimationFrame(draw);
