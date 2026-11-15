@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-15T03:28:26Z",
-  "scored": 198,
-  "won": 126,
+  "updated_at": "2026-11-15T03:43:18Z",
+  "scored": 199,
+  "won": 127,
   "lost": 72,
-  "win_rate": 0.6363636363636364,
-  "brier": 0.2224,
-  "log_loss": 0.6337,
+  "win_rate": 0.6381909547738693,
+  "brier": 0.2219,
+  "log_loss": 0.6326,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 170,
-      "won": 107,
+      "scored": 171,
+      "won": 108,
       "lost": 63,
-      "win_rate": 0.6294117647058823,
-      "brier": 0.222
+      "win_rate": 0.631578947368421,
+      "brier": 0.2214
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -2189,6 +2189,17 @@
     },
     {
       "date": "2026-11-14",
+      "game": "BKN at MEM",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "MEM",
+      "prob": 0.6541,
+      "final": "MEM 129 \u00b7 BKN 110",
+      "result": "WON",
+      "price": 0.63,
+      "price_source": "reference"
+    },
+    {
+      "date": "2026-11-14",
       "game": "CHI at MIN",
       "model": "NBA v3.2 + PLATT",
       "pick": "MIN",
@@ -2207,15 +2218,6 @@
       "stake": 50.0,
       "status": "OPEN",
       "price": 0.635,
-      "price_source": "reference"
-    },
-    {
-      "game": "BKN at MEM",
-      "pick": "MEM",
-      "prob": 0.6541,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.63,
       "price_source": "reference"
     }
   ],
@@ -4347,6 +4349,17 @@
     },
     {
       "date": "2026-11-14",
+      "game": "BKN at MEM",
+      "pick": "MEM",
+      "prob": 0.6541,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.63,
+      "price_source": "reference",
+      "profit": 29.37
+    },
+    {
+      "date": "2026-11-14",
       "game": "CHI at MIN",
       "pick": "MIN",
       "prob": 0.7874,
@@ -4359,10 +4372,10 @@
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 309.58,
-    "total_won": 3509.58,
+    "balance": 338.95,
+    "total_won": 3538.95,
     "total_lost": 3250.0,
-    "settled_count": 184,
-    "ref_priced_count": 184
+    "settled_count": 185,
+    "ref_priced_count": 185
   }
 }
