@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-15T23:58:12Z",
-  "scored": 203,
+  "updated_at": "2026-11-16T00:28:18Z",
+  "scored": 204,
   "won": 130,
-  "lost": 73,
-  "win_rate": 0.6403940886699507,
-  "brier": 0.2214,
-  "log_loss": 0.6315,
+  "lost": 74,
+  "win_rate": 0.6372549019607843,
+  "brier": 0.2219,
+  "log_loss": 0.6326,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 175,
+      "scored": 176,
       "won": 111,
-      "lost": 64,
-      "win_rate": 0.6342857142857142,
-      "brier": 0.2208
+      "lost": 65,
+      "win_rate": 0.6306818181818182,
+      "brier": 0.2214
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -2252,18 +2252,20 @@
       "result": "WON",
       "price": 0.535,
       "price_source": "reference"
+    },
+    {
+      "date": "2026-11-15",
+      "game": "SA at UTAH",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "UTAH",
+      "prob": 0.5733,
+      "final": "UTAH 102 \u00b7 SA 110",
+      "result": "LOST",
+      "price": 0.085,
+      "price_source": "reference"
     }
   ],
   "open_bets": [
-    {
-      "game": "SA at UTAH",
-      "pick": "UTAH",
-      "prob": 0.5733,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.085,
-      "price_source": "reference"
-    },
     {
       "game": "DAL at BOS",
       "pick": "BOS",
@@ -4501,14 +4503,25 @@
       "price": 0.535,
       "price_source": "reference",
       "profit": 43.46
+    },
+    {
+      "date": "2026-11-15",
+      "game": "SA at UTAH",
+      "pick": "UTAH",
+      "prob": 0.5733,
+      "stake": 50.0,
+      "result": "LOST",
+      "price": 0.085,
+      "price_source": "reference",
+      "profit": -50.0
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 381.37,
+    "balance": 331.37,
     "total_won": 3631.37,
-    "total_lost": 3300.0,
-    "settled_count": 189,
-    "ref_priced_count": 189
+    "total_lost": 3350.0,
+    "settled_count": 190,
+    "ref_priced_count": 190
   }
 }
