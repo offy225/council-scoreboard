@@ -3,7 +3,7 @@
   "lane": "FUTUREZ",
   "paper_only": false,
   "live": true,
-  "updated_at": "2026-11-16T16:05:54Z",
+  "updated_at": "2026-11-16T16:12:52Z",
   "system_name": "FUTUREZ",
   "display_name": "FUTUREZ",
   "colour": "#7C5CFF",
@@ -17,7 +17,7 @@
     "connection": "Tradovate",
     "balance_usd": 50000.0,
     "balance_label": "EVAL BALANCE — NOT WITHDRAWABLE CASH. Payouts only become real cash after passing the eval and funding.",
-    "current_balance_usd": 49821.98,
+    "current_balance_usd": 49884.98,
     "manual_pnl_usd": -20.0,
     "profit_target_usd": 3000.0,
     "drawdown_usd": 2000.0,
@@ -80,12 +80,12 @@
     ]
   },
   "record": {
-    "trades": 7,
-    "wins": 4,
+    "trades": 8,
+    "wins": 5,
     "losses": 3,
-    "win_rate": 0.5714,
-    "net_pnl_usd": -158.02,
-    "total_won_usd": 689.06,
+    "win_rate": 0.625,
+    "net_pnl_usd": -95.02,
+    "total_won_usd": 752.06,
     "total_lost_usd": 847.08,
     "best_day_usd": 306.26,
     "best_day_date": "2026-11-13",
@@ -94,16 +94,16 @@
   },
   "today": {
     "date": "2026-11-16",
-    "entries": 2,
+    "entries": 3,
     "losses": 0,
-    "net_pnl_usd": 81.2,
+    "net_pnl_usd": 144.2,
     "flats": 0
   },
   "status": "LIVE — IN A TRADE",
   "open_position": true,
   "open_trades": [
     {
-      "entry_iso": "2026-11-16 11:05:30",
+      "entry_iso": "2026-11-16 11:11:25",
       "leg": "FailedAuctionLong",
       "side": "buy",
       "qty": 10,
@@ -111,6 +111,15 @@
     }
   ],
   "recent_trades": [
+    {
+      "close_iso": "2026-11-16 11:06:04",
+      "entry_iso": "2026-11-16 11:05:30",
+      "leg": "FailedAuctionLong",
+      "side": "buy",
+      "qty": 10,
+      "net_pnl_usd": 63.0,
+      "close_raw": "'V20 CLOSED - last trade $63'"
+    },
     {
       "close_iso": "2026-11-16 02:14:15",
       "entry_iso": "2026-11-16 02:14:11",
@@ -189,7 +198,7 @@
       "verified": true
     }
   ],
-  "banner": "EVAL LIVE — v48 · 10 contracts · 7 trades (4W–3L) · net $-158.02 · eval balance $49,821.98 · target $3,000 · floor $48,000",
+  "banner": "EVAL LIVE — v48 · 10 contracts · 8 trades (5W–3L) · net $-95.02 · eval balance $49,884.98 · target $3,000 · floor $48,000",
   "eval_note": "The $50,000 is the Tradeify eval account balance, not cash in hand. It is real money on the board only as the eval balance: the account must pass ($3,000 profit, never below the $48,000 floor) before any payout becomes real cash. Day-stop $634 (2 losses) protects the eval.",
   "demo_note": "Before this eval, the same bot ran one live demo trade on DEMO9887510: Breakout long, +$43.30 (Nov 10-11 overnight). That demo trade is NOT counted in the eval record above — the eval starts at 0 trades."
 }
