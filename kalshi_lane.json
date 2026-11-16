@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-16T02:43:00Z",
-  "scored": 207,
-  "won": 132,
+  "updated_at": "2026-11-16T03:28:14Z",
+  "scored": 208,
+  "won": 133,
   "lost": 75,
-  "win_rate": 0.6376811594202898,
-  "brier": 0.2217,
-  "log_loss": 0.632,
+  "win_rate": 0.6394230769230769,
+  "brier": 0.2212,
+  "log_loss": 0.6309,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 179,
-      "won": 113,
+      "scored": 180,
+      "won": 114,
       "lost": 66,
-      "win_rate": 0.6312849162011173,
-      "brier": 0.2212
+      "win_rate": 0.6333333333333333,
+      "brier": 0.2205
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -2296,18 +2296,20 @@
       "result": "WON",
       "price": 0.795,
       "price_source": "reference"
+    },
+    {
+      "date": "2026-11-15",
+      "game": "ATL at MIL",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "ATL",
+      "prob": 0.6689,
+      "final": "MIL 106 \u00b7 ATL 113",
+      "result": "WON",
+      "price": 0.745,
+      "price_source": "reference"
     }
   ],
   "open_bets": [
-    {
-      "game": "ATL at MIL",
-      "pick": "ATL",
-      "prob": 0.6689,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.745,
-      "price_source": "reference"
-    },
     {
       "game": "OKC at SAC",
       "pick": "OKC",
@@ -4553,14 +4555,25 @@
       "price": 0.795,
       "price_source": "reference",
       "profit": 12.89
+    },
+    {
+      "date": "2026-11-15",
+      "game": "ATL at MIL",
+      "pick": "ATL",
+      "prob": 0.6689,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.745,
+      "price_source": "reference",
+      "profit": 17.11
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 304.87,
-    "total_won": 3654.87,
+    "balance": 321.98,
+    "total_won": 3671.98,
     "total_lost": 3400.0,
-    "settled_count": 193,
-    "ref_priced_count": 193
+    "settled_count": 194,
+    "ref_priced_count": 194
   }
 }
