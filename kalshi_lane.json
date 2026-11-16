@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-16T01:42:55Z",
-  "scored": 205,
+  "updated_at": "2026-11-16T02:13:02Z",
+  "scored": 206,
   "won": 131,
-  "lost": 74,
-  "win_rate": 0.6390243902439025,
-  "brier": 0.221,
-  "log_loss": 0.6305,
+  "lost": 75,
+  "win_rate": 0.6359223300970874,
+  "brier": 0.222,
+  "log_loss": 0.6325,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 177,
+      "scored": 178,
       "won": 112,
-      "lost": 65,
-      "win_rate": 0.632768361581921,
-      "brier": 0.2203
+      "lost": 66,
+      "win_rate": 0.6292134831460674,
+      "brier": 0.2215
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -2274,18 +2274,20 @@
       "result": "WON",
       "price": 0.825,
       "price_source": "reference"
+    },
+    {
+      "date": "2026-11-15",
+      "game": "NY at TOR",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "TOR",
+      "prob": 0.65,
+      "final": "TOR 108 \u00b7 NY 112",
+      "result": "LOST",
+      "price": 0.375,
+      "price_source": "reference"
     }
   ],
   "open_bets": [
-    {
-      "game": "NY at TOR",
-      "pick": "TOR",
-      "prob": 0.65,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.375,
-      "price_source": "reference"
-    },
     {
       "game": "HOU at WSH",
       "pick": "HOU",
@@ -4527,14 +4529,25 @@
       "price": 0.825,
       "price_source": "reference",
       "profit": 10.61
+    },
+    {
+      "date": "2026-11-15",
+      "game": "NY at TOR",
+      "pick": "TOR",
+      "prob": 0.65,
+      "stake": 50.0,
+      "result": "LOST",
+      "price": 0.375,
+      "price_source": "reference",
+      "profit": -50.0
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 341.98,
+    "balance": 291.98,
     "total_won": 3641.98,
-    "total_lost": 3350.0,
-    "settled_count": 191,
-    "ref_priced_count": 191
+    "total_lost": 3400.0,
+    "settled_count": 192,
+    "ref_priced_count": 192
   }
 }
