@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-16T03:28:14Z",
+  "updated_at": "2026-11-16T03:56:59Z",
   "scored": 208,
   "won": 133,
   "lost": 75,
@@ -2317,6 +2317,78 @@
       "stake": 50.0,
       "status": "OPEN",
       "price": 0.795,
+      "price_source": "reference"
+    },
+    {
+      "game": "ORL at BOS",
+      "pick": "BOS",
+      "prob": 0.7476,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.775,
+      "price_source": "reference"
+    },
+    {
+      "game": "CHI at CLE",
+      "pick": "CLE",
+      "prob": 0.7517,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.785,
+      "price_source": "reference"
+    },
+    {
+      "game": "MEM at WSH",
+      "pick": "WSH",
+      "prob": 0.6175,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.33,
+      "price_source": "reference"
+    },
+    {
+      "game": "PHI at BKN",
+      "pick": "PHI",
+      "prob": 0.7222,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.68,
+      "price_source": "reference"
+    },
+    {
+      "game": "HOU at MIA",
+      "pick": "HOU",
+      "prob": 0.5052,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.555,
+      "price_source": "reference"
+    },
+    {
+      "game": "POR at MIN",
+      "pick": "MIN",
+      "prob": 0.6632,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.56,
+      "price_source": "reference"
+    },
+    {
+      "game": "GS at NO",
+      "pick": "NO",
+      "prob": 0.5733,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.41,
+      "price_source": "reference"
+    },
+    {
+      "game": "PHX at DEN",
+      "pick": "DEN",
+      "prob": 0.6962,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.81,
       "price_source": "reference"
     }
   ],
