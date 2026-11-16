@@ -3,7 +3,7 @@
   "lane": "FUTUREZ",
   "paper_only": false,
   "live": true,
-  "updated_at": "2026-11-16T21:53:04Z",
+  "updated_at": "2026-11-16T23:41:55Z",
   "system_name": "FUTUREZ",
   "display_name": "FUTUREZ",
   "colour": "#7C5CFF",
@@ -94,7 +94,7 @@
   },
   "today": {
     "date": "2026-11-16",
-    "entries": 6,
+    "entries": 7,
     "losses": 1,
     "net_pnl_usd": 122.2,
     "flats": 1
@@ -106,6 +106,13 @@
       "entry_iso": "2026-11-16 16:41:02",
       "leg": "LateOU",
       "side": "buy",
+      "qty": 16,
+      "order": "{'order_id': 'crosstrade-webhook', 'mode': 'crosstrade-bracket', 'raw': '{\"success\": true}'}"
+    },
+    {
+      "entry_iso": "2026-11-16 18:40:14",
+      "leg": "FloorFlip_S",
+      "side": "sell",
       "qty": 16,
       "order": "{'order_id': 'crosstrade-webhook', 'mode': 'crosstrade-bracket', 'raw': '{\"success\": true}'}"
     }
