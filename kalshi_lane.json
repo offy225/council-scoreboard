@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-16T02:13:02Z",
-  "scored": 206,
-  "won": 131,
+  "updated_at": "2026-11-16T02:43:00Z",
+  "scored": 207,
+  "won": 132,
   "lost": 75,
-  "win_rate": 0.6359223300970874,
-  "brier": 0.222,
-  "log_loss": 0.6325,
+  "win_rate": 0.6376811594202898,
+  "brier": 0.2217,
+  "log_loss": 0.632,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 178,
-      "won": 112,
+      "scored": 179,
+      "won": 113,
       "lost": 66,
-      "win_rate": 0.6292134831460674,
-      "brier": 0.2215
+      "win_rate": 0.6312849162011173,
+      "brier": 0.2212
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -2285,18 +2285,20 @@
       "result": "LOST",
       "price": 0.375,
       "price_source": "reference"
+    },
+    {
+      "date": "2026-11-15",
+      "game": "HOU at WSH",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "HOU",
+      "prob": 0.5928,
+      "final": "WSH 119 \u00b7 HOU 147",
+      "result": "WON",
+      "price": 0.795,
+      "price_source": "reference"
     }
   ],
   "open_bets": [
-    {
-      "game": "HOU at WSH",
-      "pick": "HOU",
-      "prob": 0.5928,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.795,
-      "price_source": "reference"
-    },
     {
       "game": "ATL at MIL",
       "pick": "ATL",
@@ -4540,14 +4542,25 @@
       "price": 0.375,
       "price_source": "reference",
       "profit": -50.0
+    },
+    {
+      "date": "2026-11-15",
+      "game": "HOU at WSH",
+      "pick": "HOU",
+      "prob": 0.5928,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.795,
+      "price_source": "reference",
+      "profit": 12.89
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 291.98,
-    "total_won": 3641.98,
+    "balance": 304.87,
+    "total_won": 3654.87,
     "total_lost": 3400.0,
-    "settled_count": 192,
-    "ref_priced_count": 192
+    "settled_count": 193,
+    "ref_priced_count": 193
   }
 }
