@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-17T02:43:02Z",
-  "scored": 212,
-  "won": 135,
-  "lost": 77,
-  "win_rate": 0.6367924528301887,
-  "brier": 0.2218,
-  "log_loss": 0.6319,
+  "updated_at": "2026-11-17T03:28:17Z",
+  "scored": 214,
+  "won": 136,
+  "lost": 78,
+  "win_rate": 0.6355140186915887,
+  "brier": 0.2212,
+  "log_loss": 0.6308,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 184,
-      "won": 116,
-      "lost": 68,
-      "win_rate": 0.6304347826086957,
-      "brier": 0.2213
+      "scored": 186,
+      "won": 117,
+      "lost": 69,
+      "win_rate": 0.6290322580645161,
+      "brier": 0.2207
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -2351,27 +2351,31 @@
       "result": "LOST",
       "price": 0.33,
       "price_source": "reference"
-    }
-  ],
-  "open_bets": [
+    },
     {
+      "date": "2026-11-16",
       "game": "PHI at BKN",
+      "model": "NBA v3.2 + PLATT",
       "pick": "PHI",
       "prob": 0.7222,
-      "stake": 50.0,
-      "status": "OPEN",
+      "final": "BKN 123 \u00b7 PHI 135",
+      "result": "WON",
       "price": 0.68,
       "price_source": "reference"
     },
     {
+      "date": "2026-11-16",
       "game": "HOU at MIA",
+      "model": "NBA v3.2 + PLATT",
       "pick": "HOU",
       "prob": 0.5052,
-      "stake": 50.0,
-      "status": "OPEN",
+      "final": "MIA 128 \u00b7 HOU 110",
+      "result": "LOST",
       "price": 0.555,
       "price_source": "reference"
-    },
+    }
+  ],
+  "open_bets": [
     {
       "game": "POR at MIN",
       "pick": "MIN",
@@ -4690,14 +4694,36 @@
       "price": 0.33,
       "price_source": "reference",
       "profit": -50.0
+    },
+    {
+      "date": "2026-11-16",
+      "game": "PHI at BKN",
+      "pick": "PHI",
+      "prob": 0.7222,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.68,
+      "price_source": "reference",
+      "profit": 23.53
+    },
+    {
+      "date": "2026-11-16",
+      "game": "HOU at MIA",
+      "pick": "HOU",
+      "prob": 0.5052,
+      "stake": 50.0,
+      "result": "LOST",
+      "price": 0.555,
+      "price_source": "reference",
+      "profit": -50.0
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 248.57,
-    "total_won": 3698.57,
-    "total_lost": 3500.0,
-    "settled_count": 198,
-    "ref_priced_count": 198
+    "balance": 222.1,
+    "total_won": 3722.1,
+    "total_lost": 3550.0,
+    "settled_count": 200,
+    "ref_priced_count": 200
   }
 }
