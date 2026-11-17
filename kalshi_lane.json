@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-17T03:43:03Z",
+  "updated_at": "2026-11-17T03:58:00Z",
   "scored": 216,
   "won": 138,
   "lost": 78,
@@ -2405,6 +2405,51 @@
       "stake": 50.0,
       "status": "OPEN",
       "price": 0.81,
+      "price_source": "reference"
+    },
+    {
+      "game": "NY at TOR",
+      "pick": "TOR",
+      "prob": 0.6499,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.415,
+      "price_source": "reference"
+    },
+    {
+      "game": "POR at MIN",
+      "pick": "MIN",
+      "prob": 0.6632,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.57,
+      "price_source": "reference"
+    },
+    {
+      "game": "DET at SA",
+      "pick": "DET",
+      "prob": 0.6249,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.245,
+      "price_source": "reference"
+    },
+    {
+      "game": "UTAH at LAC",
+      "pick": "LAC",
+      "prob": 0.6776,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.67,
+      "price_source": "reference"
+    },
+    {
+      "game": "CHA at LAL",
+      "pick": "LAL",
+      "prob": 0.6843,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.755,
       "price_source": "reference"
     }
   ],
