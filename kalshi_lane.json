@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-16T13:38:33Z",
-  "scored": 209,
-  "won": 134,
-  "lost": 75,
-  "win_rate": 0.6411483253588517,
-  "brier": 0.2202,
-  "log_loss": 0.6285,
+  "updated_at": "2026-11-17T02:43:02Z",
+  "scored": 212,
+  "won": 135,
+  "lost": 77,
+  "win_rate": 0.6367924528301887,
+  "brier": 0.2218,
+  "log_loss": 0.6319,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 181,
-      "won": 115,
-      "lost": 66,
-      "win_rate": 0.6353591160220995,
-      "brier": 0.2194
+      "scored": 184,
+      "won": 116,
+      "lost": 68,
+      "win_rate": 0.6304347826086957,
+      "brier": 0.2213
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -2318,36 +2318,42 @@
       "result": "WON",
       "price": 0.795,
       "price_source": "reference"
-    }
-  ],
-  "open_bets": [
+    },
     {
+      "date": "2026-11-16",
       "game": "ORL at BOS",
+      "model": "NBA v3.2 + PLATT",
       "pick": "BOS",
       "prob": 0.7476,
-      "stake": 50.0,
-      "status": "OPEN",
+      "final": "BOS 105 \u00b7 ORL 115",
+      "result": "LOST",
       "price": 0.775,
       "price_source": "reference"
     },
     {
+      "date": "2026-11-16",
       "game": "CHI at CLE",
+      "model": "NBA v3.2 + PLATT",
       "pick": "CLE",
       "prob": 0.7517,
-      "stake": 50.0,
-      "status": "OPEN",
+      "final": "CLE 126 \u00b7 CHI 115",
+      "result": "WON",
       "price": 0.785,
       "price_source": "reference"
     },
     {
+      "date": "2026-11-16",
       "game": "MEM at WSH",
+      "model": "NBA v3.2 + PLATT",
       "pick": "WSH",
       "prob": 0.6175,
-      "stake": 50.0,
-      "status": "OPEN",
+      "final": "WSH 120 \u00b7 MEM 136",
+      "result": "LOST",
       "price": 0.33,
       "price_source": "reference"
-    },
+    }
+  ],
+  "open_bets": [
     {
       "game": "PHI at BKN",
       "pick": "PHI",
@@ -4651,14 +4657,47 @@
       "price": 0.795,
       "price_source": "reference",
       "profit": 12.89
+    },
+    {
+      "date": "2026-11-16",
+      "game": "ORL at BOS",
+      "pick": "BOS",
+      "prob": 0.7476,
+      "stake": 50.0,
+      "result": "LOST",
+      "price": 0.775,
+      "price_source": "reference",
+      "profit": -50.0
+    },
+    {
+      "date": "2026-11-16",
+      "game": "CHI at CLE",
+      "pick": "CLE",
+      "prob": 0.7517,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.785,
+      "price_source": "reference",
+      "profit": 13.69
+    },
+    {
+      "date": "2026-11-16",
+      "game": "MEM at WSH",
+      "pick": "WSH",
+      "prob": 0.6175,
+      "stake": 50.0,
+      "result": "LOST",
+      "price": 0.33,
+      "price_source": "reference",
+      "profit": -50.0
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 334.88,
-    "total_won": 3684.88,
-    "total_lost": 3400.0,
-    "settled_count": 195,
-    "ref_priced_count": 195
+    "balance": 248.57,
+    "total_won": 3698.57,
+    "total_lost": 3500.0,
+    "settled_count": 198,
+    "ref_priced_count": 198
   }
 }
