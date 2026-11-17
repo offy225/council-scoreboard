@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-17T03:28:17Z",
-  "scored": 214,
-  "won": 136,
+  "updated_at": "2026-11-17T03:43:03Z",
+  "scored": 216,
+  "won": 138,
   "lost": 78,
-  "win_rate": 0.6355140186915887,
-  "brier": 0.2212,
-  "log_loss": 0.6308,
+  "win_rate": 0.6388888888888888,
+  "brier": 0.2206,
+  "log_loss": 0.6295,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 186,
-      "won": 117,
+      "scored": 188,
+      "won": 119,
       "lost": 69,
-      "win_rate": 0.6290322580645161,
-      "brier": 0.2207
+      "win_rate": 0.6329787234042553,
+      "brier": 0.2199
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -2373,27 +2373,31 @@
       "result": "LOST",
       "price": 0.555,
       "price_source": "reference"
-    }
-  ],
-  "open_bets": [
+    },
     {
+      "date": "2026-11-16",
       "game": "POR at MIN",
+      "model": "NBA v3.2 + PLATT",
       "pick": "MIN",
       "prob": 0.6632,
-      "stake": 50.0,
-      "status": "OPEN",
+      "final": "MIN 106 \u00b7 POR 98",
+      "result": "WON",
       "price": 0.56,
       "price_source": "reference"
     },
     {
+      "date": "2026-11-16",
       "game": "GS at NO",
+      "model": "NBA v3.2 + PLATT",
       "pick": "NO",
       "prob": 0.5733,
-      "stake": 50.0,
-      "status": "OPEN",
+      "final": "NO 115 \u00b7 GS 94",
+      "result": "WON",
       "price": 0.41,
       "price_source": "reference"
-    },
+    }
+  ],
+  "open_bets": [
     {
       "game": "PHX at DEN",
       "pick": "DEN",
@@ -4716,14 +4720,36 @@
       "price": 0.555,
       "price_source": "reference",
       "profit": -50.0
+    },
+    {
+      "date": "2026-11-16",
+      "game": "POR at MIN",
+      "pick": "MIN",
+      "prob": 0.6632,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.56,
+      "price_source": "reference",
+      "profit": 39.29
+    },
+    {
+      "date": "2026-11-16",
+      "game": "GS at NO",
+      "pick": "NO",
+      "prob": 0.5733,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.41,
+      "price_source": "reference",
+      "profit": 71.95
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 222.1,
-    "total_won": 3722.1,
+    "balance": 333.34,
+    "total_won": 3833.34,
     "total_lost": 3550.0,
-    "settled_count": 200,
-    "ref_priced_count": 200
+    "settled_count": 202,
+    "ref_priced_count": 202
   }
 }
