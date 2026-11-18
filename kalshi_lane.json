@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-18T03:43:14Z",
+  "updated_at": "2026-11-18T04:12:02Z",
   "scored": 220,
   "won": 140,
   "lost": 80,
@@ -2458,6 +2458,114 @@
       "stake": 50.0,
       "status": "OPEN",
       "price": 0.755,
+      "price_source": "reference"
+    },
+    {
+      "game": "MEM at CLE",
+      "pick": "CLE",
+      "prob": 0.7258,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.645,
+      "price_source": "reference"
+    },
+    {
+      "game": "HOU at IND",
+      "pick": "HOU",
+      "prob": 0.6979,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.705,
+      "price_source": "reference"
+    },
+    {
+      "game": "MIL at MIA",
+      "pick": "MIA",
+      "prob": 0.7986,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.865,
+      "price_source": "reference"
+    },
+    {
+      "game": "PHI at ORL",
+      "pick": "ORL",
+      "prob": 0.5572,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.465,
+      "price_source": "reference"
+    },
+    {
+      "game": "CHI at BKN",
+      "pick": "CHI",
+      "prob": 0.6226,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.435,
+      "price_source": "reference"
+    },
+    {
+      "game": "WSH at TOR",
+      "pick": "TOR",
+      "prob": 0.6499,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.675,
+      "price_source": "reference"
+    },
+    {
+      "game": "DET at NO",
+      "pick": "DET",
+      "prob": 0.6249,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.695,
+      "price_source": "reference"
+    },
+    {
+      "game": "ATL at OKC",
+      "pick": "OKC",
+      "prob": 0.8321,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.715,
+      "price_source": "reference"
+    },
+    {
+      "game": "GS at DAL",
+      "pick": "GS",
+      "prob": 0.5329,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.335,
+      "price_source": "reference"
+    },
+    {
+      "game": "BOS at DEN",
+      "pick": "BOS",
+      "prob": 0.5288,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.56,
+      "price_source": "reference"
+    },
+    {
+      "game": "UTAH at LAL",
+      "pick": "LAL",
+      "prob": 0.6985,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.845,
+      "price_source": "reference"
+    },
+    {
+      "game": "PHX at SAC",
+      "pick": "PHX",
+      "prob": 0.6916,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.705,
       "price_source": "reference"
     }
   ],
