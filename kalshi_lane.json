@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-18T05:58:05Z",
-  "scored": 221,
-  "won": 140,
+  "updated_at": "2026-11-18T07:12:48Z",
+  "scored": 222,
+  "won": 141,
   "lost": 81,
-  "win_rate": 0.6334841628959276,
-  "brier": 0.2229,
-  "log_loss": 0.6345,
+  "win_rate": 0.6351351351351351,
+  "brier": 0.2224,
+  "log_loss": 0.6333,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 193,
-      "won": 121,
+      "scored": 194,
+      "won": 122,
       "lost": 72,
-      "win_rate": 0.6269430051813472,
-      "brier": 0.2226
+      "win_rate": 0.6288659793814433,
+      "brier": 0.222
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -2450,18 +2450,20 @@
       "result": "LOST",
       "price": 0.67,
       "price_source": "reference"
+    },
+    {
+      "date": "2026-11-17",
+      "game": "CHA at LAL",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "LAL",
+      "prob": 0.6843,
+      "final": "LAL 118 \u00b7 CHA 114",
+      "result": "WON",
+      "price": 0.755,
+      "price_source": "reference"
     }
   ],
   "open_bets": [
-    {
-      "game": "CHA at LAL",
-      "pick": "LAL",
-      "prob": 0.6843,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.755,
-      "price_source": "reference"
-    },
     {
       "game": "MEM at CLE",
       "pick": "CLE",
@@ -4960,14 +4962,25 @@
       "price": 0.67,
       "price_source": "reference",
       "profit": -50.0
+    },
+    {
+      "date": "2026-11-17",
+      "game": "CHA at LAL",
+      "pick": "LAL",
+      "prob": 0.6843,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.755,
+      "price_source": "reference",
+      "profit": 16.23
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 375.14,
-    "total_won": 4025.14,
+    "balance": 391.36,
+    "total_won": 4041.36,
     "total_lost": 3700.0,
-    "settled_count": 207,
-    "ref_priced_count": 207
+    "settled_count": 208,
+    "ref_priced_count": 208
   }
 }
