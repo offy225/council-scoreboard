@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-18T04:12:55Z",
-  "scored": 220,
+  "updated_at": "2026-11-18T05:58:05Z",
+  "scored": 221,
   "won": 140,
-  "lost": 80,
-  "win_rate": 0.6363636363636364,
-  "brier": 0.2218,
-  "log_loss": 0.6322,
+  "lost": 81,
+  "win_rate": 0.6334841628959276,
+  "brier": 0.2229,
+  "log_loss": 0.6345,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 192,
+      "scored": 193,
       "won": 121,
-      "lost": 71,
-      "win_rate": 0.6302083333333334,
-      "brier": 0.2214
+      "lost": 72,
+      "win_rate": 0.6269430051813472,
+      "brier": 0.2226
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -2439,18 +2439,20 @@
       "result": "WON",
       "price": 0.245,
       "price_source": "reference"
+    },
+    {
+      "date": "2026-11-17",
+      "game": "UTAH at LAC",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "LAC",
+      "prob": 0.6776,
+      "final": "LAC 107 \u00b7 UTAH 132",
+      "result": "LOST",
+      "price": 0.67,
+      "price_source": "reference"
     }
   ],
   "open_bets": [
-    {
-      "game": "UTAH at LAC",
-      "pick": "LAC",
-      "prob": 0.6776,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.67,
-      "price_source": "reference"
-    },
     {
       "game": "CHA at LAL",
       "pick": "LAL",
@@ -4947,14 +4949,25 @@
       "price": 0.245,
       "price_source": "reference",
       "profit": 154.08
+    },
+    {
+      "date": "2026-11-17",
+      "game": "UTAH at LAC",
+      "pick": "LAC",
+      "prob": 0.6776,
+      "stake": 50.0,
+      "result": "LOST",
+      "price": 0.67,
+      "price_source": "reference",
+      "profit": -50.0
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 425.14,
+    "balance": 375.14,
     "total_won": 4025.14,
-    "total_lost": 3650.0,
-    "settled_count": 206,
-    "ref_priced_count": 206
+    "total_lost": 3700.0,
+    "settled_count": 207,
+    "ref_priced_count": 207
   }
 }
