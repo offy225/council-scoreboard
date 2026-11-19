@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-19T03:42:54Z",
+  "updated_at": "2026-11-19T03:57:44Z",
   "scored": 231,
   "won": 145,
   "lost": 86,
@@ -2588,6 +2588,42 @@
       "stake": 50.0,
       "status": "OPEN",
       "price": 0.705,
+      "price_source": "reference"
+    },
+    {
+      "game": "GS at MEM",
+      "pick": "MEM",
+      "prob": 0.5058,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.64,
+      "price_source": "reference"
+    },
+    {
+      "game": "POR at MIL",
+      "pick": "POR",
+      "prob": 0.6817,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.815,
+      "price_source": "reference"
+    },
+    {
+      "game": "NY at MIN",
+      "pick": "MIN",
+      "prob": 0.7148,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.5,
+      "price_source": "reference"
+    },
+    {
+      "game": "LAC at SA",
+      "pick": "LAC",
+      "prob": 0.5538,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.095,
       "price_source": "reference"
     }
   ],
