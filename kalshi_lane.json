@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-19T03:57:44Z",
-  "scored": 231,
-  "won": 145,
-  "lost": 86,
-  "win_rate": 0.6277056277056277,
-  "brier": 0.2252,
-  "log_loss": 0.64,
+  "updated_at": "2026-11-19T05:28:19Z",
+  "scored": 233,
+  "won": 146,
+  "lost": 87,
+  "win_rate": 0.6266094420600858,
+  "brier": 0.2248,
+  "log_loss": 0.6393,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 203,
-      "won": 126,
-      "lost": 77,
-      "win_rate": 0.6206896551724138,
-      "brier": 0.2252
+      "scored": 205,
+      "won": 127,
+      "lost": 78,
+      "win_rate": 0.6195121951219512,
+      "brier": 0.2248
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -2560,18 +2560,31 @@
       "result": "LOST",
       "price": 0.335,
       "price_source": "reference"
-    }
-  ],
-  "open_bets": [
+    },
     {
+      "date": "2026-11-18",
       "game": "BOS at DEN",
+      "model": "NBA v3.2 + PLATT",
       "pick": "BOS",
       "prob": 0.5288,
-      "stake": 50.0,
-      "status": "OPEN",
+      "final": "DEN 105 \u00b7 BOS 101",
+      "result": "LOST",
       "price": 0.56,
       "price_source": "reference"
     },
+    {
+      "date": "2026-11-18",
+      "game": "PHX at SAC",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "PHX",
+      "prob": 0.6916,
+      "final": "SAC 107 \u00b7 PHX 128",
+      "result": "WON",
+      "price": 0.705,
+      "price_source": "reference"
+    }
+  ],
+  "open_bets": [
     {
       "game": "UTAH at LAL",
       "pick": "LAL",
@@ -2579,15 +2592,6 @@
       "stake": 50.0,
       "status": "OPEN",
       "price": 0.845,
-      "price_source": "reference"
-    },
-    {
-      "game": "PHX at SAC",
-      "pick": "PHX",
-      "prob": 0.6916,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.705,
       "price_source": "reference"
     },
     {
@@ -5126,14 +5130,36 @@
       "price": 0.335,
       "price_source": "reference",
       "profit": -50.0
+    },
+    {
+      "date": "2026-11-18",
+      "game": "BOS at DEN",
+      "pick": "BOS",
+      "prob": 0.5288,
+      "stake": 50.0,
+      "result": "LOST",
+      "price": 0.56,
+      "price_source": "reference",
+      "profit": -50.0
+    },
+    {
+      "date": "2026-11-18",
+      "game": "PHX at SAC",
+      "pick": "PHX",
+      "prob": 0.6916,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.705,
+      "price_source": "reference",
+      "profit": 20.92
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 256.97,
-    "total_won": 4156.97,
-    "total_lost": 3950.0,
-    "settled_count": 217,
-    "ref_priced_count": 217
+    "balance": 227.9,
+    "total_won": 4177.9,
+    "total_lost": 4000.0,
+    "settled_count": 219,
+    "ref_priced_count": 219
   }
 }
