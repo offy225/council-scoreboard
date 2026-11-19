@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-19T02:42:59Z",
-  "scored": 225,
-  "won": 142,
+  "updated_at": "2026-11-19T02:57:42Z",
+  "scored": 227,
+  "won": 144,
   "lost": 83,
-  "win_rate": 0.6311111111111111,
-  "brier": 0.2235,
-  "log_loss": 0.6359,
+  "win_rate": 0.6343612334801763,
+  "brier": 0.2224,
+  "log_loss": 0.6333,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 197,
-      "won": 123,
+      "scored": 199,
+      "won": 125,
       "lost": 74,
-      "win_rate": 0.6243654822335025,
-      "brier": 0.2233
+      "win_rate": 0.628140703517588,
+      "brier": 0.222
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -2486,6 +2486,17 @@
     },
     {
       "date": "2026-11-18",
+      "game": "MIL at MIA",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "MIA",
+      "prob": 0.7986,
+      "final": "MIA 137 \u00b7 MIL 130",
+      "result": "WON",
+      "price": 0.865,
+      "price_source": "reference"
+    },
+    {
+      "date": "2026-11-18",
       "game": "PHI at ORL",
       "model": "NBA v3.2 + PLATT",
       "pick": "ORL",
@@ -2494,27 +2505,20 @@
       "result": "LOST",
       "price": 0.465,
       "price_source": "reference"
+    },
+    {
+      "date": "2026-11-18",
+      "game": "CHI at BKN",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "CHI",
+      "prob": 0.6226,
+      "final": "BKN 107 \u00b7 CHI 137",
+      "result": "WON",
+      "price": 0.435,
+      "price_source": "reference"
     }
   ],
   "open_bets": [
-    {
-      "game": "MIL at MIA",
-      "pick": "MIA",
-      "prob": 0.7986,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.865,
-      "price_source": "reference"
-    },
-    {
-      "game": "CHI at BKN",
-      "pick": "CHI",
-      "prob": 0.6226,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.435,
-      "price_source": "reference"
-    },
     {
       "game": "WSH at TOR",
       "pick": "TOR",
@@ -5004,6 +5008,17 @@
     },
     {
       "date": "2026-11-18",
+      "game": "MIL at MIA",
+      "pick": "MIA",
+      "prob": 0.7986,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.865,
+      "price_source": "reference",
+      "profit": 7.8
+    },
+    {
+      "date": "2026-11-18",
       "game": "PHI at ORL",
       "pick": "ORL",
       "prob": 0.5572,
@@ -5012,14 +5027,25 @@
       "price": 0.465,
       "price_source": "reference",
       "profit": -50.0
+    },
+    {
+      "date": "2026-11-18",
+      "game": "CHI at BKN",
+      "pick": "CHI",
+      "prob": 0.6226,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.435,
+      "price_source": "reference",
+      "profit": 64.94
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 312.29,
-    "total_won": 4062.29,
+    "balance": 385.03,
+    "total_won": 4135.03,
     "total_lost": 3800.0,
-    "settled_count": 211,
-    "ref_priced_count": 211
+    "settled_count": 213,
+    "ref_priced_count": 213
   }
 }
