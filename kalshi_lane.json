@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-19T03:28:03Z",
-  "scored": 230,
-  "won": 144,
+  "updated_at": "2026-11-19T03:42:54Z",
+  "scored": 231,
+  "won": 145,
   "lost": 86,
-  "win_rate": 0.6260869565217392,
-  "brier": 0.2255,
-  "log_loss": 0.6407,
+  "win_rate": 0.6277056277056277,
+  "brier": 0.2252,
+  "log_loss": 0.64,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 202,
-      "won": 125,
+      "scored": 203,
+      "won": 126,
       "lost": 77,
-      "win_rate": 0.6188118811881188,
-      "brier": 0.2256
+      "win_rate": 0.6206896551724138,
+      "brier": 0.2252
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -2530,6 +2530,17 @@
     },
     {
       "date": "2026-11-18",
+      "game": "DET at NO",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "DET",
+      "prob": 0.6249,
+      "final": "NO 109 \u00b7 DET 122",
+      "result": "WON",
+      "price": 0.695,
+      "price_source": "reference"
+    },
+    {
+      "date": "2026-11-18",
       "game": "ATL at OKC",
       "model": "NBA v3.2 + PLATT",
       "pick": "OKC",
@@ -2552,15 +2563,6 @@
     }
   ],
   "open_bets": [
-    {
-      "game": "DET at NO",
-      "pick": "DET",
-      "prob": 0.6249,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.695,
-      "price_source": "reference"
-    },
     {
       "game": "BOS at DEN",
       "pick": "BOS",
@@ -5058,6 +5060,17 @@
     },
     {
       "date": "2026-11-18",
+      "game": "DET at NO",
+      "pick": "DET",
+      "prob": 0.6249,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.695,
+      "price_source": "reference",
+      "profit": 21.94
+    },
+    {
+      "date": "2026-11-18",
       "game": "ATL at OKC",
       "pick": "OKC",
       "prob": 0.8321,
@@ -5081,10 +5094,10 @@
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 235.03,
-    "total_won": 4135.03,
+    "balance": 256.97,
+    "total_won": 4156.97,
     "total_lost": 3950.0,
-    "settled_count": 216,
-    "ref_priced_count": 216
+    "settled_count": 217,
+    "ref_priced_count": 217
   }
 }
