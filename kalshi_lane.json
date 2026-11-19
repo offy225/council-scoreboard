@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-19T05:28:19Z",
-  "scored": 233,
+  "updated_at": "2026-11-19T06:01:27Z",
+  "scored": 234,
   "won": 146,
-  "lost": 87,
-  "win_rate": 0.6266094420600858,
-  "brier": 0.2248,
-  "log_loss": 0.6393,
+  "lost": 88,
+  "win_rate": 0.6239316239316239,
+  "brier": 0.226,
+  "log_loss": 0.6417,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 205,
+      "scored": 206,
       "won": 127,
-      "lost": 78,
-      "win_rate": 0.6195121951219512,
-      "brier": 0.2248
+      "lost": 79,
+      "win_rate": 0.616504854368932,
+      "brier": 0.2261
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -2574,6 +2574,17 @@
     },
     {
       "date": "2026-11-18",
+      "game": "UTAH at LAL",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "LAL",
+      "prob": 0.6985,
+      "final": "LAL 97 \u00b7 UTAH 109",
+      "result": "LOST",
+      "price": 0.845,
+      "price_source": "reference"
+    },
+    {
+      "date": "2026-11-18",
       "game": "PHX at SAC",
       "model": "NBA v3.2 + PLATT",
       "pick": "PHX",
@@ -2585,15 +2596,6 @@
     }
   ],
   "open_bets": [
-    {
-      "game": "UTAH at LAL",
-      "pick": "LAL",
-      "prob": 0.6985,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.845,
-      "price_source": "reference"
-    },
     {
       "game": "GS at MEM",
       "pick": "MEM",
@@ -5144,6 +5146,17 @@
     },
     {
       "date": "2026-11-18",
+      "game": "UTAH at LAL",
+      "pick": "LAL",
+      "prob": 0.6985,
+      "stake": 50.0,
+      "result": "LOST",
+      "price": 0.845,
+      "price_source": "reference",
+      "profit": -50.0
+    },
+    {
+      "date": "2026-11-18",
       "game": "PHX at SAC",
       "pick": "PHX",
       "prob": 0.6916,
@@ -5156,10 +5169,10 @@
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 227.9,
+    "balance": 177.9,
     "total_won": 4177.9,
-    "total_lost": 4000.0,
-    "settled_count": 219,
-    "ref_priced_count": 219
+    "total_lost": 4050.0,
+    "settled_count": 220,
+    "ref_priced_count": 220
   }
 }
