@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-20T03:43:03Z",
+  "updated_at": "2026-11-20T03:57:32Z",
   "scored": 238,
   "won": 148,
   "lost": 90,
@@ -2639,7 +2639,89 @@
       "price_source": "reference"
     }
   ],
-  "open_bets": [],
+  "open_bets": [
+    {
+      "game": "CHA at ATL",
+      "pick": "ATL",
+      "prob": 0.5932,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.655,
+      "price_source": "reference"
+    },
+    {
+      "game": "ORL at BKN",
+      "pick": "ORL",
+      "prob": 0.7477,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.65,
+      "price_source": "reference"
+    },
+    {
+      "game": "IND at CLE",
+      "pick": "CLE",
+      "prob": 0.7741,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.69,
+      "price_source": "reference"
+    },
+    {
+      "game": "TOR at DET",
+      "pick": "DET",
+      "prob": 0.6804,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.72,
+      "price_source": "reference"
+    },
+    {
+      "game": "WSH at CHI",
+      "pick": "WSH",
+      "prob": 0.5675,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.435,
+      "price_source": "reference"
+    },
+    {
+      "game": "NO at OKC",
+      "pick": "OKC",
+      "prob": 0.8551,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.81,
+      "price_source": "reference"
+    },
+    {
+      "game": "PHX at UTAH",
+      "pick": "UTAH",
+      "prob": 0.5312,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.375,
+      "price_source": "reference"
+    },
+    {
+      "game": "HOU at DEN",
+      "pick": "DEN",
+      "prob": 0.5726,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.545,
+      "price_source": "reference"
+    },
+    {
+      "game": "SAC at LAL",
+      "pick": "LAL",
+      "prob": 0.8218,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.865,
+      "price_source": "reference"
+    }
+  ],
   "settled_bets": [
     {
       "date": "2026-10-16",
