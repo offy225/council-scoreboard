@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-21T05:28:06Z",
-  "scored": 246,
-  "won": 154,
+  "updated_at": "2026-11-21T05:42:41Z",
+  "scored": 247,
+  "won": 155,
   "lost": 92,
-  "win_rate": 0.6260162601626016,
-  "brier": 0.2248,
-  "log_loss": 0.6389,
+  "win_rate": 0.6275303643724697,
+  "brier": 0.2246,
+  "log_loss": 0.6386,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 218,
-      "won": 135,
+      "scored": 219,
+      "won": 136,
       "lost": 83,
-      "win_rate": 0.6192660550458715,
-      "brier": 0.2248
+      "win_rate": 0.6210045662100456,
+      "brier": 0.2246
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -2717,6 +2717,17 @@
     },
     {
       "date": "2026-11-20",
+      "game": "HOU at DEN",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "DEN",
+      "prob": 0.5726,
+      "final": "DEN 133 \u00b7 HOU 124",
+      "result": "WON",
+      "price": 0.545,
+      "price_source": "reference"
+    },
+    {
+      "date": "2026-11-20",
       "game": "SAC at LAL",
       "model": "NBA v3.2 + PLATT",
       "pick": "LAL",
@@ -2728,15 +2739,6 @@
     }
   ],
   "open_bets": [
-    {
-      "game": "HOU at DEN",
-      "pick": "DEN",
-      "prob": 0.5726,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.545,
-      "price_source": "reference"
-    },
     {
       "game": "MIL at PHI",
       "pick": "PHI",
@@ -5448,6 +5450,17 @@
     },
     {
       "date": "2026-11-20",
+      "game": "HOU at DEN",
+      "pick": "DEN",
+      "prob": 0.5726,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.545,
+      "price_source": "reference",
+      "profit": 41.74
+    },
+    {
+      "date": "2026-11-20",
       "game": "SAC at LAL",
       "pick": "LAL",
       "prob": 0.8218,
@@ -5460,10 +5473,10 @@
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 177.57,
-    "total_won": 4377.57,
+    "balance": 219.31,
+    "total_won": 4419.31,
     "total_lost": 4250.0,
-    "settled_count": 232,
-    "ref_priced_count": 232
+    "settled_count": 233,
+    "ref_priced_count": 233
   }
 }
