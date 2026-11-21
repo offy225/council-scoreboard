@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-21T02:28:02Z",
-  "scored": 239,
-  "won": 149,
-  "lost": 90,
-  "win_rate": 0.6234309623430963,
-  "brier": 0.2268,
-  "log_loss": 0.6435,
+  "updated_at": "2026-11-21T03:13:17Z",
+  "scored": 242,
+  "won": 151,
+  "lost": 91,
+  "win_rate": 0.6239669421487604,
+  "brier": 0.2264,
+  "log_loss": 0.6425,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 211,
-      "won": 130,
-      "lost": 81,
-      "win_rate": 0.6161137440758294,
-      "brier": 0.227
+      "scored": 214,
+      "won": 132,
+      "lost": 82,
+      "win_rate": 0.616822429906542,
+      "brier": 0.2265
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -2648,36 +2648,42 @@
       "result": "WON",
       "price": 0.655,
       "price_source": "reference"
-    }
-  ],
-  "open_bets": [
+    },
     {
+      "date": "2026-11-20",
       "game": "ORL at BKN",
+      "model": "NBA v3.2 + PLATT",
       "pick": "ORL",
       "prob": 0.7477,
-      "stake": 50.0,
-      "status": "OPEN",
+      "final": "BKN 111 \u00b7 ORL 113",
+      "result": "WON",
       "price": 0.65,
       "price_source": "reference"
     },
     {
+      "date": "2026-11-20",
       "game": "IND at CLE",
+      "model": "NBA v3.2 + PLATT",
       "pick": "CLE",
       "prob": 0.7741,
-      "stake": 50.0,
-      "status": "OPEN",
+      "final": "CLE 128 \u00b7 IND 119",
+      "result": "WON",
       "price": 0.69,
       "price_source": "reference"
     },
     {
+      "date": "2026-11-20",
       "game": "TOR at DET",
+      "model": "NBA v3.2 + PLATT",
       "pick": "DET",
       "prob": 0.6804,
-      "stake": 50.0,
-      "status": "OPEN",
+      "final": "DET 102 \u00b7 TOR 105",
+      "result": "LOST",
       "price": 0.72,
       "price_source": "reference"
-    },
+    }
+  ],
+  "open_bets": [
     {
       "game": "WSH at CHI",
       "pick": "WSH",
@@ -5311,14 +5317,47 @@
       "price": 0.655,
       "price_source": "reference",
       "profit": 26.34
+    },
+    {
+      "date": "2026-11-20",
+      "game": "ORL at BKN",
+      "pick": "ORL",
+      "prob": 0.7477,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.65,
+      "price_source": "reference",
+      "profit": 26.92
+    },
+    {
+      "date": "2026-11-20",
+      "game": "IND at CLE",
+      "pick": "CLE",
+      "prob": 0.7741,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.69,
+      "price_source": "reference",
+      "profit": 22.46
+    },
+    {
+      "date": "2026-11-20",
+      "game": "TOR at DET",
+      "pick": "DET",
+      "prob": 0.6804,
+      "stake": 50.0,
+      "result": "LOST",
+      "price": 0.72,
+      "price_source": "reference",
+      "profit": -50.0
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 143.71,
-    "total_won": 4243.71,
-    "total_lost": 4150.0,
-    "settled_count": 225,
-    "ref_priced_count": 225
+    "balance": 143.09,
+    "total_won": 4293.09,
+    "total_lost": 4200.0,
+    "settled_count": 228,
+    "ref_priced_count": 228
   }
 }
