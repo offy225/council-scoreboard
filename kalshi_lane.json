@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-21T03:13:17Z",
-  "scored": 242,
-  "won": 151,
+  "updated_at": "2026-11-21T03:28:05Z",
+  "scored": 244,
+  "won": 153,
   "lost": 91,
-  "win_rate": 0.6239669421487604,
-  "brier": 0.2264,
-  "log_loss": 0.6425,
+  "win_rate": 0.6270491803278688,
+  "brier": 0.2254,
+  "log_loss": 0.6402,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 214,
-      "won": 132,
+      "scored": 216,
+      "won": 134,
       "lost": 82,
-      "win_rate": 0.616822429906542,
-      "brier": 0.2265
+      "win_rate": 0.6203703703703703,
+      "brier": 0.2254
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -2681,27 +2681,31 @@
       "result": "LOST",
       "price": 0.72,
       "price_source": "reference"
-    }
-  ],
-  "open_bets": [
+    },
     {
+      "date": "2026-11-20",
       "game": "WSH at CHI",
+      "model": "NBA v3.2 + PLATT",
       "pick": "WSH",
       "prob": 0.5675,
-      "stake": 50.0,
-      "status": "OPEN",
+      "final": "CHI 94 \u00b7 WSH 98",
+      "result": "WON",
       "price": 0.435,
       "price_source": "reference"
     },
     {
+      "date": "2026-11-20",
       "game": "NO at OKC",
+      "model": "NBA v3.2 + PLATT",
       "pick": "OKC",
       "prob": 0.8551,
-      "stake": 50.0,
-      "status": "OPEN",
+      "final": "OKC 126 \u00b7 NO 120",
+      "result": "WON",
       "price": 0.81,
       "price_source": "reference"
-    },
+    }
+  ],
+  "open_bets": [
     {
       "game": "PHX at UTAH",
       "pick": "UTAH",
@@ -5350,14 +5354,36 @@
       "price": 0.72,
       "price_source": "reference",
       "profit": -50.0
+    },
+    {
+      "date": "2026-11-20",
+      "game": "WSH at CHI",
+      "pick": "WSH",
+      "prob": 0.5675,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.435,
+      "price_source": "reference",
+      "profit": 64.94
+    },
+    {
+      "date": "2026-11-20",
+      "game": "NO at OKC",
+      "pick": "OKC",
+      "prob": 0.8551,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.81,
+      "price_source": "reference",
+      "profit": 11.73
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 143.09,
-    "total_won": 4293.09,
+    "balance": 219.76,
+    "total_won": 4369.76,
     "total_lost": 4200.0,
-    "settled_count": 228,
-    "ref_priced_count": 228
+    "settled_count": 230,
+    "ref_priced_count": 230
   }
 }
