@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-21T03:57:49Z",
-  "scored": 244,
+  "updated_at": "2026-11-21T05:12:56Z",
+  "scored": 245,
   "won": 153,
-  "lost": 91,
-  "win_rate": 0.6270491803278688,
-  "brier": 0.2254,
-  "log_loss": 0.6402,
+  "lost": 92,
+  "win_rate": 0.6244897959183674,
+  "brier": 0.2256,
+  "log_loss": 0.6407,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 216,
+      "scored": 217,
       "won": 134,
-      "lost": 82,
-      "win_rate": 0.6203703703703703,
-      "brier": 0.2254
+      "lost": 83,
+      "win_rate": 0.6175115207373272,
+      "brier": 0.2257
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -2703,18 +2703,20 @@
       "result": "WON",
       "price": 0.81,
       "price_source": "reference"
+    },
+    {
+      "date": "2026-11-20",
+      "game": "PHX at UTAH",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "UTAH",
+      "prob": 0.5312,
+      "final": "UTAH 101 \u00b7 PHX 111",
+      "result": "LOST",
+      "price": 0.375,
+      "price_source": "reference"
     }
   ],
   "open_bets": [
-    {
-      "game": "PHX at UTAH",
-      "pick": "UTAH",
-      "prob": 0.5312,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.375,
-      "price_source": "reference"
-    },
     {
       "game": "HOU at DEN",
       "pick": "DEN",
@@ -5430,14 +5432,25 @@
       "price": 0.81,
       "price_source": "reference",
       "profit": 11.73
+    },
+    {
+      "date": "2026-11-20",
+      "game": "PHX at UTAH",
+      "pick": "UTAH",
+      "prob": 0.5312,
+      "stake": 50.0,
+      "result": "LOST",
+      "price": 0.375,
+      "price_source": "reference",
+      "profit": -50.0
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 219.76,
+    "balance": 169.76,
     "total_won": 4369.76,
-    "total_lost": 4200.0,
-    "settled_count": 230,
-    "ref_priced_count": 230
+    "total_lost": 4250.0,
+    "settled_count": 231,
+    "ref_priced_count": 231
   }
 }
