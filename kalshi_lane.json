@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-21T05:12:56Z",
-  "scored": 245,
-  "won": 153,
+  "updated_at": "2026-11-21T05:28:06Z",
+  "scored": 246,
+  "won": 154,
   "lost": 92,
-  "win_rate": 0.6244897959183674,
-  "brier": 0.2256,
-  "log_loss": 0.6407,
+  "win_rate": 0.6260162601626016,
+  "brier": 0.2248,
+  "log_loss": 0.6389,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 217,
-      "won": 134,
+      "scored": 218,
+      "won": 135,
       "lost": 83,
-      "win_rate": 0.6175115207373272,
-      "brier": 0.2257
+      "win_rate": 0.6192660550458715,
+      "brier": 0.2248
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -2714,6 +2714,17 @@
       "result": "LOST",
       "price": 0.375,
       "price_source": "reference"
+    },
+    {
+      "date": "2026-11-20",
+      "game": "SAC at LAL",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "LAL",
+      "prob": 0.8218,
+      "final": "LAL 106 \u00b7 SAC 104",
+      "result": "WON",
+      "price": 0.865,
+      "price_source": "reference"
     }
   ],
   "open_bets": [
@@ -2724,15 +2735,6 @@
       "stake": 50.0,
       "status": "OPEN",
       "price": 0.545,
-      "price_source": "reference"
-    },
-    {
-      "game": "SAC at LAL",
-      "pick": "LAL",
-      "prob": 0.8218,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.865,
       "price_source": "reference"
     },
     {
@@ -5443,14 +5445,25 @@
       "price": 0.375,
       "price_source": "reference",
       "profit": -50.0
+    },
+    {
+      "date": "2026-11-20",
+      "game": "SAC at LAL",
+      "pick": "LAL",
+      "prob": 0.8218,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.865,
+      "price_source": "reference",
+      "profit": 7.8
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 169.76,
-    "total_won": 4369.76,
+    "balance": 177.57,
+    "total_won": 4377.57,
     "total_lost": 4250.0,
-    "settled_count": 231,
-    "ref_priced_count": 231
+    "settled_count": 232,
+    "ref_priced_count": 232
   }
 }
