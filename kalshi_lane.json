@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-21T20:43:05Z",
-  "scored": 248,
-  "won": 156,
+  "updated_at": "2026-11-22T02:58:17Z",
+  "scored": 249,
+  "won": 157,
   "lost": 92,
-  "win_rate": 0.6290322580645161,
+  "win_rate": 0.6305220883534136,
   "brier": 0.2241,
-  "log_loss": 0.6373,
+  "log_loss": 0.6375,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 220,
-      "won": 137,
+      "scored": 221,
+      "won": 138,
       "lost": 83,
-      "win_rate": 0.6227272727272727,
-      "brier": 0.2239
+      "win_rate": 0.6244343891402715,
+      "brier": 0.224
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -2747,18 +2747,20 @@
       "result": "WON",
       "price": 0.855,
       "price_source": "reference"
+    },
+    {
+      "date": "2026-11-21",
+      "game": "POR at NY",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "NY",
+      "prob": 0.5084,
+      "final": "NY 97 \u00b7 POR 96",
+      "result": "WON",
+      "price": 0.665,
+      "price_source": "reference"
     }
   ],
   "open_bets": [
-    {
-      "game": "POR at NY",
-      "pick": "NY",
-      "prob": 0.5084,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.665,
-      "price_source": "reference"
-    },
     {
       "game": "LAC at DAL",
       "pick": "LAC",
@@ -5482,14 +5484,25 @@
       "price": 0.855,
       "price_source": "reference",
       "profit": 8.48
+    },
+    {
+      "date": "2026-11-21",
+      "game": "POR at NY",
+      "pick": "NY",
+      "prob": 0.5084,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.665,
+      "price_source": "reference",
+      "profit": 25.19
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 227.79,
-    "total_won": 4427.79,
+    "balance": 252.98,
+    "total_won": 4452.98,
     "total_lost": 4250.0,
-    "settled_count": 234,
-    "ref_priced_count": 234
+    "settled_count": 235,
+    "ref_priced_count": 235
   }
 }
