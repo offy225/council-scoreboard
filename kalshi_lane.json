@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-22T02:58:17Z",
-  "scored": 249,
-  "won": 157,
+  "updated_at": "2026-11-22T03:28:04Z",
+  "scored": 251,
+  "won": 159,
   "lost": 92,
-  "win_rate": 0.6305220883534136,
-  "brier": 0.2241,
-  "log_loss": 0.6375,
+  "win_rate": 0.6334661354581673,
+  "brier": 0.2234,
+  "log_loss": 0.6359,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 221,
-      "won": 138,
+      "scored": 223,
+      "won": 140,
       "lost": 83,
-      "win_rate": 0.6244343891402715,
-      "brier": 0.224
+      "win_rate": 0.6278026905829597,
+      "brier": 0.2231
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -2758,6 +2758,28 @@
       "result": "WON",
       "price": 0.665,
       "price_source": "reference"
+    },
+    {
+      "date": "2026-11-21",
+      "game": "MEM at MIN",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "MIN",
+      "prob": 0.7281,
+      "final": "MIN 104 \u00b7 MEM 95",
+      "result": "WON",
+      "price": 0.665,
+      "price_source": "reference"
+    },
+    {
+      "date": "2026-11-21",
+      "game": "NO at SA",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "SA",
+      "prob": 0.5733,
+      "final": "SA 114 \u00b7 NO 91",
+      "result": "WON",
+      "price": 0.905,
+      "price_source": "reference"
     }
   ],
   "open_bets": [
@@ -2768,24 +2790,6 @@
       "stake": 50.0,
       "status": "OPEN",
       "price": 0.345,
-      "price_source": "reference"
-    },
-    {
-      "game": "MEM at MIN",
-      "pick": "MIN",
-      "prob": 0.7281,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.665,
-      "price_source": "reference"
-    },
-    {
-      "game": "NO at SA",
-      "pick": "SA",
-      "prob": 0.5733,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.905,
       "price_source": "reference"
     },
     {
@@ -5495,14 +5499,36 @@
       "price": 0.665,
       "price_source": "reference",
       "profit": 25.19
+    },
+    {
+      "date": "2026-11-21",
+      "game": "MEM at MIN",
+      "pick": "MIN",
+      "prob": 0.7281,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.665,
+      "price_source": "reference",
+      "profit": 25.19
+    },
+    {
+      "date": "2026-11-21",
+      "game": "NO at SA",
+      "pick": "SA",
+      "prob": 0.5733,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.905,
+      "price_source": "reference",
+      "profit": 5.25
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 252.98,
-    "total_won": 4452.98,
+    "balance": 283.41,
+    "total_won": 4483.41,
     "total_lost": 4250.0,
-    "settled_count": 235,
-    "ref_priced_count": 235
+    "settled_count": 237,
+    "ref_priced_count": 237
   }
 }
