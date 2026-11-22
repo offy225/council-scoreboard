@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-22T03:28:04Z",
-  "scored": 251,
+  "updated_at": "2026-11-22T03:42:46Z",
+  "scored": 252,
   "won": 159,
-  "lost": 92,
-  "win_rate": 0.6334661354581673,
-  "brier": 0.2234,
-  "log_loss": 0.6359,
+  "lost": 93,
+  "win_rate": 0.6309523809523809,
+  "brier": 0.2241,
+  "log_loss": 0.6374,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 223,
+      "scored": 224,
       "won": 140,
-      "lost": 83,
-      "win_rate": 0.6278026905829597,
-      "brier": 0.2231
+      "lost": 84,
+      "win_rate": 0.625,
+      "brier": 0.224
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -2761,6 +2761,17 @@
     },
     {
       "date": "2026-11-21",
+      "game": "LAC at DAL",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "LAC",
+      "prob": 0.6431,
+      "final": "DAL 110 \u00b7 LAC 100",
+      "result": "LOST",
+      "price": 0.345,
+      "price_source": "reference"
+    },
+    {
+      "date": "2026-11-21",
       "game": "MEM at MIN",
       "model": "NBA v3.2 + PLATT",
       "pick": "MIN",
@@ -2783,15 +2794,6 @@
     }
   ],
   "open_bets": [
-    {
-      "game": "LAC at DAL",
-      "pick": "LAC",
-      "prob": 0.6431,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.345,
-      "price_source": "reference"
-    },
     {
       "game": "BOS at SAC",
       "pick": "BOS",
@@ -5502,6 +5504,17 @@
     },
     {
       "date": "2026-11-21",
+      "game": "LAC at DAL",
+      "pick": "LAC",
+      "prob": 0.6431,
+      "stake": 50.0,
+      "result": "LOST",
+      "price": 0.345,
+      "price_source": "reference",
+      "profit": -50.0
+    },
+    {
+      "date": "2026-11-21",
       "game": "MEM at MIN",
       "pick": "MIN",
       "prob": 0.7281,
@@ -5525,10 +5538,10 @@
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 283.41,
+    "balance": 233.41,
     "total_won": 4483.41,
-    "total_lost": 4250.0,
-    "settled_count": 237,
-    "ref_priced_count": 237
+    "total_lost": 4300.0,
+    "settled_count": 238,
+    "ref_priced_count": 238
   }
 }
