@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-22T13:37:54Z",
-  "scored": 253,
+  "updated_at": "2026-11-22T22:58:29Z",
+  "scored": 254,
   "won": 159,
-  "lost": 94,
-  "win_rate": 0.6284584980237155,
-  "brier": 0.2262,
-  "log_loss": 0.6428,
+  "lost": 95,
+  "win_rate": 0.6259842519685039,
+  "brier": 0.2266,
+  "log_loss": 0.6438,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 225,
+      "scored": 226,
       "won": 140,
-      "lost": 85,
-      "win_rate": 0.6222222222222222,
-      "brier": 0.2263
+      "lost": 86,
+      "win_rate": 0.6194690265486725,
+      "brier": 0.2268
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -2802,18 +2802,20 @@
       "result": "LOST",
       "price": 0.845,
       "price_source": "reference"
+    },
+    {
+      "date": "2026-11-22",
+      "game": "DET at ATL",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "DET",
+      "prob": 0.5884,
+      "final": "ATL 107 \u00b7 DET 97",
+      "result": "LOST",
+      "price": 0.555,
+      "price_source": "reference"
     }
   ],
   "open_bets": [
-    {
-      "game": "DET at ATL",
-      "pick": "DET",
-      "prob": 0.5884,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.555,
-      "price_source": "reference"
-    },
     {
       "game": "OKC at MIA",
       "pick": "OKC",
@@ -5610,14 +5612,25 @@
       "price": 0.845,
       "price_source": "reference",
       "profit": -50.0
+    },
+    {
+      "date": "2026-11-22",
+      "game": "DET at ATL",
+      "pick": "DET",
+      "prob": 0.5884,
+      "stake": 50.0,
+      "result": "LOST",
+      "price": 0.555,
+      "price_source": "reference",
+      "profit": -50.0
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 183.41,
+    "balance": 133.41,
     "total_won": 4483.41,
-    "total_lost": 4350.0,
-    "settled_count": 239,
-    "ref_priced_count": 239
+    "total_lost": 4400.0,
+    "settled_count": 240,
+    "ref_priced_count": 240
   }
 }
