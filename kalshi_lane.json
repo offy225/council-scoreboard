@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-22T03:57:57Z",
+  "updated_at": "2026-11-22T04:42:59Z",
   "scored": 252,
   "won": 159,
   "lost": 93,
@@ -2862,7 +2862,9 @@
       "pick": "BOS",
       "prob": 0.6903,
       "stake": 50.0,
-      "status": "OPEN"
+      "status": "OPEN",
+      "price": 0.765,
+      "price_source": "reference"
     }
   ],
   "settled_bets": [
