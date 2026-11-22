@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-22T03:42:46Z",
+  "updated_at": "2026-11-22T03:57:57Z",
   "scored": 252,
   "won": 159,
   "lost": 93,
@@ -2802,6 +2802,67 @@
       "status": "OPEN",
       "price": 0.845,
       "price_source": "reference"
+    },
+    {
+      "game": "DET at ATL",
+      "pick": "DET",
+      "prob": 0.5884,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.555,
+      "price_source": "reference"
+    },
+    {
+      "game": "OKC at MIA",
+      "pick": "OKC",
+      "prob": 0.6295,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.445,
+      "price_source": "reference"
+    },
+    {
+      "game": "ORL at WSH",
+      "pick": "WSH",
+      "prob": 0.5209,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.33,
+      "price_source": "reference"
+    },
+    {
+      "game": "DEN at CHI",
+      "pick": "DEN",
+      "prob": 0.72,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.77,
+      "price_source": "reference"
+    },
+    {
+      "game": "DAL at UTAH",
+      "pick": "UTAH",
+      "prob": 0.6199,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.46,
+      "price_source": "reference"
+    },
+    {
+      "game": "IND at NY",
+      "pick": "NY",
+      "prob": 0.6714,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.75,
+      "price_source": "reference"
+    },
+    {
+      "game": "BOS at GS",
+      "pick": "BOS",
+      "prob": 0.6903,
+      "stake": 50.0,
+      "status": "OPEN"
     }
   ],
   "settled_bets": [
