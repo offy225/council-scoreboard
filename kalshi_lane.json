@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-22T04:42:59Z",
-  "scored": 252,
+  "updated_at": "2026-11-22T05:42:50Z",
+  "scored": 253,
   "won": 159,
-  "lost": 93,
-  "win_rate": 0.6309523809523809,
-  "brier": 0.2241,
-  "log_loss": 0.6374,
+  "lost": 94,
+  "win_rate": 0.6284584980237155,
+  "brier": 0.2262,
+  "log_loss": 0.6428,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 224,
+      "scored": 225,
       "won": 140,
-      "lost": 84,
-      "win_rate": 0.625,
-      "brier": 0.224
+      "lost": 85,
+      "win_rate": 0.6222222222222222,
+      "brier": 0.2263
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -2791,18 +2791,20 @@
       "result": "WON",
       "price": 0.905,
       "price_source": "reference"
+    },
+    {
+      "date": "2026-11-21",
+      "game": "BOS at SAC",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "BOS",
+      "prob": 0.864,
+      "final": "SAC 97 \u00b7 BOS 96",
+      "result": "LOST",
+      "price": 0.845,
+      "price_source": "reference"
     }
   ],
   "open_bets": [
-    {
-      "game": "BOS at SAC",
-      "pick": "BOS",
-      "prob": 0.864,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.845,
-      "price_source": "reference"
-    },
     {
       "game": "DET at ATL",
       "pick": "DET",
@@ -5597,14 +5599,25 @@
       "price": 0.905,
       "price_source": "reference",
       "profit": 5.25
+    },
+    {
+      "date": "2026-11-21",
+      "game": "BOS at SAC",
+      "pick": "BOS",
+      "prob": 0.864,
+      "stake": 50.0,
+      "result": "LOST",
+      "price": 0.845,
+      "price_source": "reference",
+      "profit": -50.0
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 233.41,
+    "balance": 183.41,
     "total_won": 4483.41,
-    "total_lost": 4300.0,
-    "settled_count": 238,
-    "ref_priced_count": 238
+    "total_lost": 4350.0,
+    "settled_count": 239,
+    "ref_priced_count": 239
   }
 }
