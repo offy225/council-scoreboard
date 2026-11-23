@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-23T02:59:10Z",
-  "scored": 258,
-  "won": 161,
+  "updated_at": "2026-11-23T03:42:39Z",
+  "scored": 259,
+  "won": 162,
   "lost": 97,
-  "win_rate": 0.624031007751938,
-  "brier": 0.2274,
-  "log_loss": 0.6452,
+  "win_rate": 0.6254826254826255,
+  "brier": 0.2269,
+  "log_loss": 0.6442,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 230,
-      "won": 142,
+      "scored": 231,
+      "won": 143,
       "lost": 88,
-      "win_rate": 0.6173913043478261,
-      "brier": 0.2276
+      "win_rate": 0.6190476190476191,
+      "brier": 0.2271
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -2857,18 +2857,20 @@
       "result": "LOST",
       "price": 0.46,
       "price_source": "reference"
+    },
+    {
+      "date": "2026-11-22",
+      "game": "IND at NY",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "NY",
+      "prob": 0.6714,
+      "final": "NY 113 \u00b7 IND 106",
+      "result": "WON",
+      "price": 0.75,
+      "price_source": "reference"
     }
   ],
   "open_bets": [
-    {
-      "game": "IND at NY",
-      "pick": "NY",
-      "prob": 0.6714,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.75,
-      "price_source": "reference"
-    },
     {
       "game": "BOS at GS",
       "pick": "BOS",
@@ -5675,14 +5677,25 @@
       "price": 0.46,
       "price_source": "reference",
       "profit": -50.0
+    },
+    {
+      "date": "2026-11-22",
+      "game": "IND at NY",
+      "pick": "NY",
+      "prob": 0.6714,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.75,
+      "price_source": "reference",
+      "profit": 16.67
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 149.86,
-    "total_won": 4599.86,
+    "balance": 166.53,
+    "total_won": 4616.53,
     "total_lost": 4500.0,
-    "settled_count": 244,
-    "ref_priced_count": 244
+    "settled_count": 245,
+    "ref_priced_count": 245
   }
 }
