@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-23T01:43:22Z",
-  "scored": 255,
-  "won": 159,
-  "lost": 96,
-  "win_rate": 0.6235294117647059,
-  "brier": 0.2273,
-  "log_loss": 0.6451,
+  "updated_at": "2026-11-23T02:28:20Z",
+  "scored": 257,
+  "won": 160,
+  "lost": 97,
+  "win_rate": 0.622568093385214,
+  "brier": 0.2279,
+  "log_loss": 0.6464,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 227,
-      "won": 140,
-      "lost": 87,
-      "win_rate": 0.6167400881057269,
-      "brier": 0.2276
+      "scored": 229,
+      "won": 141,
+      "lost": 88,
+      "win_rate": 0.6157205240174672,
+      "brier": 0.2283
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -2824,18 +2824,31 @@
       "result": "LOST",
       "price": 0.445,
       "price_source": "reference"
-    }
-  ],
-  "open_bets": [
+    },
     {
+      "date": "2026-11-22",
       "game": "ORL at WSH",
+      "model": "NBA v3.2 + PLATT",
       "pick": "WSH",
       "prob": 0.5209,
-      "stake": 50.0,
-      "status": "OPEN",
+      "final": "WSH 116 \u00b7 ORL 96",
+      "result": "WON",
       "price": 0.33,
       "price_source": "reference"
     },
+    {
+      "date": "2026-11-22",
+      "game": "DAL at UTAH",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "UTAH",
+      "prob": 0.6199,
+      "final": "UTAH 114 \u00b7 DAL 116",
+      "result": "LOST",
+      "price": 0.46,
+      "price_source": "reference"
+    }
+  ],
+  "open_bets": [
     {
       "game": "DEN at CHI",
       "pick": "DEN",
@@ -2843,15 +2856,6 @@
       "stake": 50.0,
       "status": "OPEN",
       "price": 0.77,
-      "price_source": "reference"
-    },
-    {
-      "game": "DAL at UTAH",
-      "pick": "UTAH",
-      "prob": 0.6199,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.46,
       "price_source": "reference"
     },
     {
@@ -5636,14 +5640,36 @@
       "price": 0.445,
       "price_source": "reference",
       "profit": -50.0
+    },
+    {
+      "date": "2026-11-22",
+      "game": "ORL at WSH",
+      "pick": "WSH",
+      "prob": 0.5209,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.33,
+      "price_source": "reference",
+      "profit": 101.52
+    },
+    {
+      "date": "2026-11-22",
+      "game": "DAL at UTAH",
+      "pick": "UTAH",
+      "prob": 0.6199,
+      "stake": 50.0,
+      "result": "LOST",
+      "price": 0.46,
+      "price_source": "reference",
+      "profit": -50.0
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 83.41,
-    "total_won": 4483.41,
-    "total_lost": 4450.0,
-    "settled_count": 241,
-    "ref_priced_count": 241
+    "balance": 134.93,
+    "total_won": 4584.93,
+    "total_lost": 4500.0,
+    "settled_count": 243,
+    "ref_priced_count": 243
   }
 }
