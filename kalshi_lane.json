@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-22T22:58:29Z",
-  "scored": 254,
+  "updated_at": "2026-11-23T01:43:22Z",
+  "scored": 255,
   "won": 159,
-  "lost": 95,
-  "win_rate": 0.6259842519685039,
-  "brier": 0.2266,
-  "log_loss": 0.6438,
+  "lost": 96,
+  "win_rate": 0.6235294117647059,
+  "brier": 0.2273,
+  "log_loss": 0.6451,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 226,
+      "scored": 227,
       "won": 140,
-      "lost": 86,
-      "win_rate": 0.6194690265486725,
-      "brier": 0.2268
+      "lost": 87,
+      "win_rate": 0.6167400881057269,
+      "brier": 0.2276
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -2813,18 +2813,20 @@
       "result": "LOST",
       "price": 0.555,
       "price_source": "reference"
+    },
+    {
+      "date": "2026-11-22",
+      "game": "OKC at MIA",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "OKC",
+      "prob": 0.6295,
+      "final": "MIA 123 \u00b7 OKC 113",
+      "result": "LOST",
+      "price": 0.445,
+      "price_source": "reference"
     }
   ],
   "open_bets": [
-    {
-      "game": "OKC at MIA",
-      "pick": "OKC",
-      "prob": 0.6295,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.445,
-      "price_source": "reference"
-    },
     {
       "game": "ORL at WSH",
       "pick": "WSH",
@@ -5623,14 +5625,25 @@
       "price": 0.555,
       "price_source": "reference",
       "profit": -50.0
+    },
+    {
+      "date": "2026-11-22",
+      "game": "OKC at MIA",
+      "pick": "OKC",
+      "prob": 0.6295,
+      "stake": 50.0,
+      "result": "LOST",
+      "price": 0.445,
+      "price_source": "reference",
+      "profit": -50.0
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 133.41,
+    "balance": 83.41,
     "total_won": 4483.41,
-    "total_lost": 4400.0,
-    "settled_count": 240,
-    "ref_priced_count": 240
+    "total_lost": 4450.0,
+    "settled_count": 241,
+    "ref_priced_count": 241
   }
 }
