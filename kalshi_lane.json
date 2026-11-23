@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-23T03:42:39Z",
+  "updated_at": "2026-11-23T03:58:44Z",
   "scored": 259,
   "won": 162,
   "lost": 97,
@@ -2878,6 +2878,96 @@
       "stake": 50.0,
       "status": "OPEN",
       "price": 0.765,
+      "price_source": "reference"
+    },
+    {
+      "game": "MEM at CHA",
+      "pick": "CHA",
+      "prob": 0.5832,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.405,
+      "price_source": "reference"
+    },
+    {
+      "game": "POR at PHI",
+      "pick": "PHI",
+      "prob": 0.5139,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.585,
+      "price_source": "reference"
+    },
+    {
+      "game": "OKC at IND",
+      "pick": "OKC",
+      "prob": 0.8071,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.645,
+      "price_source": "reference"
+    },
+    {
+      "game": "MIL at TOR",
+      "pick": "TOR",
+      "prob": 0.7637,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.815,
+      "price_source": "reference"
+    },
+    {
+      "game": "BKN at MIN",
+      "pick": "MIN",
+      "prob": 0.8542,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.835,
+      "price_source": "reference"
+    },
+    {
+      "game": "CLE at CHI",
+      "pick": "CLE",
+      "prob": 0.7137,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.755,
+      "price_source": "reference"
+    },
+    {
+      "game": "PHX at NO",
+      "pick": "NO",
+      "prob": 0.5231,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.41,
+      "price_source": "reference"
+    },
+    {
+      "game": "LAC at HOU",
+      "pick": "HOU",
+      "prob": 0.6385,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.845,
+      "price_source": "reference"
+    },
+    {
+      "game": "UTAH at LAL",
+      "pick": "LAL",
+      "prob": 0.6804,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.855,
+      "price_source": "reference"
+    },
+    {
+      "game": "SA at SAC",
+      "pick": "SA",
+      "prob": 0.661,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.81,
       "price_source": "reference"
     }
   ],
