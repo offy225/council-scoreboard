@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-23T02:28:20Z",
-  "scored": 257,
-  "won": 160,
+  "updated_at": "2026-11-23T02:59:10Z",
+  "scored": 258,
+  "won": 161,
   "lost": 97,
-  "win_rate": 0.622568093385214,
-  "brier": 0.2279,
-  "log_loss": 0.6464,
+  "win_rate": 0.624031007751938,
+  "brier": 0.2274,
+  "log_loss": 0.6452,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 229,
-      "won": 141,
+      "scored": 230,
+      "won": 142,
       "lost": 88,
-      "win_rate": 0.6157205240174672,
-      "brier": 0.2283
+      "win_rate": 0.6173913043478261,
+      "brier": 0.2276
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -2838,6 +2838,17 @@
     },
     {
       "date": "2026-11-22",
+      "game": "DEN at CHI",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "DEN",
+      "prob": 0.72,
+      "final": "CHI 145 \u00b7 DEN 151",
+      "result": "WON",
+      "price": 0.77,
+      "price_source": "reference"
+    },
+    {
+      "date": "2026-11-22",
       "game": "DAL at UTAH",
       "model": "NBA v3.2 + PLATT",
       "pick": "UTAH",
@@ -2849,15 +2860,6 @@
     }
   ],
   "open_bets": [
-    {
-      "game": "DEN at CHI",
-      "pick": "DEN",
-      "prob": 0.72,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.77,
-      "price_source": "reference"
-    },
     {
       "game": "IND at NY",
       "pick": "NY",
@@ -5654,6 +5656,17 @@
     },
     {
       "date": "2026-11-22",
+      "game": "DEN at CHI",
+      "pick": "DEN",
+      "prob": 0.72,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.77,
+      "price_source": "reference",
+      "profit": 14.94
+    },
+    {
+      "date": "2026-11-22",
       "game": "DAL at UTAH",
       "pick": "UTAH",
       "prob": 0.6199,
@@ -5666,10 +5679,10 @@
   ],
   "wallet": {
     "start": 50.0,
-    "balance": 134.93,
-    "total_won": 4584.93,
+    "balance": 149.86,
+    "total_won": 4599.86,
     "total_lost": 4500.0,
-    "settled_count": 243,
-    "ref_priced_count": 243
+    "settled_count": 244,
+    "ref_priced_count": 244
   }
 }
