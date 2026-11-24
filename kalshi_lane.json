@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-24T03:13:01Z",
-  "scored": 265,
+  "updated_at": "2026-11-24T03:28:07Z",
+  "scored": 266,
   "won": 163,
-  "lost": 102,
-  "win_rate": 0.6150943396226415,
-  "brier": 0.2306,
-  "log_loss": 0.6523,
+  "lost": 103,
+  "win_rate": 0.6127819548872181,
+  "brier": 0.2316,
+  "log_loss": 0.6546,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 237,
+      "scored": 238,
       "won": 144,
-      "lost": 93,
-      "win_rate": 0.6075949367088608,
-      "brier": 0.2312
+      "lost": 94,
+      "win_rate": 0.6050420168067226,
+      "brier": 0.2324
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -2934,18 +2934,20 @@
       "result": "WON",
       "price": 0.835,
       "price_source": "reference"
+    },
+    {
+      "date": "2026-11-23",
+      "game": "CLE at CHI",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "CLE",
+      "prob": 0.7137,
+      "final": "CHI 122 \u00b7 CLE 108",
+      "result": "LOST",
+      "price": 0.755,
+      "price_source": "reference"
     }
   ],
   "open_bets": [
-    {
-      "game": "CLE at CHI",
-      "pick": "CLE",
-      "prob": 0.7137,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.755,
-      "price_source": "reference"
-    },
     {
       "game": "PHX at NO",
       "pick": "NO",
@@ -5856,14 +5858,25 @@
       "price": 0.835,
       "price_source": "reference",
       "profit": 9.88
+    },
+    {
+      "date": "2026-11-23",
+      "game": "CLE at CHI",
+      "pick": "CLE",
+      "prob": 0.7137,
+      "stake": 50.0,
+      "result": "LOST",
+      "price": 0.755,
+      "price_source": "reference",
+      "profit": -50.0
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": -73.59,
+    "balance": -123.59,
     "total_won": 4626.41,
-    "total_lost": 4750.0,
-    "settled_count": 251,
-    "ref_priced_count": 251
+    "total_lost": 4800.0,
+    "settled_count": 252,
+    "ref_priced_count": 252
   }
 }
