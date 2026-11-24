@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-24T03:28:07Z",
-  "scored": 266,
-  "won": 163,
-  "lost": 103,
-  "win_rate": 0.6127819548872181,
-  "brier": 0.2316,
-  "log_loss": 0.6546,
+  "updated_at": "2026-11-24T03:57:53Z",
+  "scored": 268,
+  "won": 164,
+  "lost": 104,
+  "win_rate": 0.6119402985074627,
+  "brier": 0.2314,
+  "log_loss": 0.6541,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 238,
-      "won": 144,
-      "lost": 94,
-      "win_rate": 0.6050420168067226,
-      "brier": 0.2324
+      "scored": 240,
+      "won": 145,
+      "lost": 95,
+      "win_rate": 0.6041666666666666,
+      "brier": 0.2321
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -2945,27 +2945,31 @@
       "result": "LOST",
       "price": 0.755,
       "price_source": "reference"
-    }
-  ],
-  "open_bets": [
+    },
     {
+      "date": "2026-11-23",
       "game": "PHX at NO",
+      "model": "NBA v3.2 + PLATT",
       "pick": "NO",
       "prob": 0.5231,
-      "stake": 50.0,
-      "status": "OPEN",
+      "final": "NO 119 \u00b7 PHX 123",
+      "result": "LOST",
       "price": 0.41,
       "price_source": "reference"
     },
     {
+      "date": "2026-11-23",
       "game": "LAC at HOU",
+      "model": "NBA v3.2 + PLATT",
       "pick": "HOU",
       "prob": 0.6385,
-      "stake": 50.0,
-      "status": "OPEN",
+      "final": "HOU 116 \u00b7 LAC 104",
+      "result": "WON",
       "price": 0.845,
       "price_source": "reference"
-    },
+    }
+  ],
+  "open_bets": [
     {
       "game": "UTAH at LAL",
       "pick": "LAL",
@@ -2982,6 +2986,33 @@
       "stake": 50.0,
       "status": "OPEN",
       "price": 0.81,
+      "price_source": "reference"
+    },
+    {
+      "game": "DET at ORL",
+      "pick": "DET",
+      "prob": 0.6106,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.545,
+      "price_source": "reference"
+    },
+    {
+      "game": "BOS at WSH",
+      "pick": "BOS",
+      "prob": 0.6806,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.795,
+      "price_source": "reference"
+    },
+    {
+      "game": "DAL at DEN",
+      "pick": "DEN",
+      "prob": 0.7731,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.745,
       "price_source": "reference"
     }
   ],
@@ -5869,14 +5900,36 @@
       "price": 0.755,
       "price_source": "reference",
       "profit": -50.0
+    },
+    {
+      "date": "2026-11-23",
+      "game": "PHX at NO",
+      "pick": "NO",
+      "prob": 0.5231,
+      "stake": 50.0,
+      "result": "LOST",
+      "price": 0.41,
+      "price_source": "reference",
+      "profit": -50.0
+    },
+    {
+      "date": "2026-11-23",
+      "game": "LAC at HOU",
+      "pick": "HOU",
+      "prob": 0.6385,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.845,
+      "price_source": "reference",
+      "profit": 9.17
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": -123.59,
-    "total_won": 4626.41,
-    "total_lost": 4800.0,
-    "settled_count": 252,
-    "ref_priced_count": 252
+    "balance": -164.42,
+    "total_won": 4635.58,
+    "total_lost": 4850.0,
+    "settled_count": 254,
+    "ref_priced_count": 254
   }
 }
