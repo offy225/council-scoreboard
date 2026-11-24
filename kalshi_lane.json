@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-24T05:28:06Z",
-  "scored": 269,
-  "won": 165,
+  "updated_at": "2026-11-24T05:43:06Z",
+  "scored": 270,
+  "won": 166,
   "lost": 104,
-  "win_rate": 0.6133828996282528,
-  "brier": 0.231,
-  "log_loss": 0.6532,
+  "win_rate": 0.6148148148148148,
+  "brier": 0.2305,
+  "log_loss": 0.6522,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 241,
-      "won": 146,
+      "scored": 242,
+      "won": 147,
       "lost": 95,
-      "win_rate": 0.6058091286307054,
-      "brier": 0.2316
+      "win_rate": 0.6074380165289256,
+      "brier": 0.2311
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -2970,6 +2970,17 @@
     },
     {
       "date": "2026-11-23",
+      "game": "UTAH at LAL",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "LAL",
+      "prob": 0.6804,
+      "final": "LAL 109 \u00b7 UTAH 94",
+      "result": "WON",
+      "price": 0.855,
+      "price_source": "reference"
+    },
+    {
+      "date": "2026-11-23",
       "game": "SA at SAC",
       "model": "NBA v3.2 + PLATT",
       "pick": "SA",
@@ -2981,15 +2992,6 @@
     }
   ],
   "open_bets": [
-    {
-      "game": "UTAH at LAL",
-      "pick": "LAL",
-      "prob": 0.6804,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.855,
-      "price_source": "reference"
-    },
     {
       "game": "DET at ORL",
       "pick": "DET",
@@ -5927,6 +5929,17 @@
     },
     {
       "date": "2026-11-23",
+      "game": "UTAH at LAL",
+      "pick": "LAL",
+      "prob": 0.6804,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.855,
+      "price_source": "reference",
+      "profit": 8.48
+    },
+    {
+      "date": "2026-11-23",
       "game": "SA at SAC",
       "pick": "SA",
       "prob": 0.661,
@@ -5939,10 +5952,10 @@
   ],
   "wallet": {
     "start": 50.0,
-    "balance": -152.69,
-    "total_won": 4647.31,
+    "balance": -144.21,
+    "total_won": 4655.79,
     "total_lost": 4850.0,
-    "settled_count": 255,
-    "ref_priced_count": 255
+    "settled_count": 256,
+    "ref_priced_count": 256
   }
 }
