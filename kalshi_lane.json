@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-25T03:42:48Z",
-  "scored": 272,
+  "updated_at": "2026-11-25T05:57:57Z",
+  "scored": 273,
   "won": 168,
-  "lost": 104,
-  "win_rate": 0.6176470588235294,
-  "brier": 0.2297,
-  "log_loss": 0.6507,
+  "lost": 105,
+  "win_rate": 0.6153846153846154,
+  "brier": 0.2311,
+  "log_loss": 0.6537,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 244,
+      "scored": 245,
       "won": 149,
-      "lost": 95,
-      "win_rate": 0.610655737704918,
-      "brier": 0.2303
+      "lost": 96,
+      "win_rate": 0.6081632653061224,
+      "brier": 0.2318
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -3011,19 +3011,20 @@
       "result": "WON",
       "price": 0.795,
       "price_source": "reference"
-    }
-  ],
-  "open_bets": [
+    },
     {
+      "date": "2026-11-24",
       "game": "DAL at DEN",
+      "model": "NBA v3.2 + PLATT",
       "pick": "DEN",
       "prob": 0.7731,
-      "stake": 50.0,
-      "status": "OPEN",
+      "final": "DEN 101 \u00b7 DAL 120",
+      "result": "LOST",
       "price": 0.745,
       "price_source": "reference"
     }
   ],
+  "open_bets": [],
   "settled_bets": [
     {
       "date": "2026-10-16",
@@ -5974,14 +5975,25 @@
       "price": 0.795,
       "price_source": "reference",
       "profit": 12.89
+    },
+    {
+      "date": "2026-11-24",
+      "game": "DAL at DEN",
+      "pick": "DEN",
+      "prob": 0.7731,
+      "stake": 50.0,
+      "result": "LOST",
+      "price": 0.745,
+      "price_source": "reference",
+      "profit": -50.0
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": -89.57,
+    "balance": -139.57,
     "total_won": 4710.43,
-    "total_lost": 4850.0,
-    "settled_count": 258,
-    "ref_priced_count": 258
+    "total_lost": 4900.0,
+    "settled_count": 259,
+    "ref_priced_count": 259
   }
 }
