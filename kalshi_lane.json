@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-25T13:38:25Z",
+  "updated_at": "2026-11-25T14:13:06Z",
   "scored": 273,
   "won": 168,
   "lost": 105,
@@ -5995,5 +5995,23 @@
     "total_lost": 4900.0,
     "settled_count": 259,
     "ref_priced_count": 259
+  },
+  "challenger_edge10": {
+    "exam": "plugg-challenger-edge10-20261125",
+    "rule": "v3.2 pick only when edge < 0.10 (edge = pick_prob - pick_price)",
+    "status": "collecting",
+    "progress": "0/50",
+    "scored": 0,
+    "won": 0,
+    "lost": 0,
+    "win_rate": null,
+    "net": 0.0,
+    "per_bet": null,
+    "net_ex_top": 0.0,
+    "control_per_bet": null,
+    "first_half_net": null,
+    "last_half_net": null,
+    "open_eligible": 0,
+    "updated_at": "2026-11-25T14:13:06.720282+00:00"
   }
 }
