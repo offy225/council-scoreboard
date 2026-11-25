@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-25T02:28:11Z",
-  "scored": 271,
-  "won": 167,
+  "updated_at": "2026-11-25T03:42:48Z",
+  "scored": 272,
+  "won": 168,
   "lost": 104,
-  "win_rate": 0.6162361623616236,
-  "brier": 0.2302,
-  "log_loss": 0.6517,
+  "win_rate": 0.6176470588235294,
+  "brier": 0.2297,
+  "log_loss": 0.6507,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 243,
-      "won": 148,
+      "scored": 244,
+      "won": 149,
       "lost": 95,
-      "win_rate": 0.6090534979423868,
-      "brier": 0.2308
+      "win_rate": 0.610655737704918,
+      "brier": 0.2303
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -3000,18 +3000,20 @@
       "result": "WON",
       "price": 0.545,
       "price_source": "reference"
+    },
+    {
+      "date": "2026-11-24",
+      "game": "BOS at WSH",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "BOS",
+      "prob": 0.6806,
+      "final": "WSH 116 \u00b7 BOS 131",
+      "result": "WON",
+      "price": 0.795,
+      "price_source": "reference"
     }
   ],
   "open_bets": [
-    {
-      "game": "BOS at WSH",
-      "pick": "BOS",
-      "prob": 0.6806,
-      "stake": 50.0,
-      "status": "OPEN",
-      "price": 0.795,
-      "price_source": "reference"
-    },
     {
       "game": "DAL at DEN",
       "pick": "DEN",
@@ -5961,14 +5963,25 @@
       "price": 0.545,
       "price_source": "reference",
       "profit": 41.74
+    },
+    {
+      "date": "2026-11-24",
+      "game": "BOS at WSH",
+      "pick": "BOS",
+      "prob": 0.6806,
+      "stake": 50.0,
+      "result": "WON",
+      "price": 0.795,
+      "price_source": "reference",
+      "profit": 12.89
     }
   ],
   "wallet": {
     "start": 50.0,
-    "balance": -102.47,
-    "total_won": 4697.53,
+    "balance": -89.57,
+    "total_won": 4710.43,
     "total_lost": 4850.0,
-    "settled_count": 257,
-    "ref_priced_count": 257
+    "settled_count": 258,
+    "ref_priced_count": 258
   }
 }
