@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-25T14:13:06Z",
+  "updated_at": "2026-11-26T04:00:10Z",
   "scored": 273,
   "won": 168,
   "lost": 105,
@@ -3024,7 +3024,85 @@
       "price_source": "reference"
     }
   ],
-  "open_bets": [],
+  "open_bets": [
+    {
+      "game": "MIA at NY",
+      "pick": "MIA",
+      "prob": 0.578,
+      "stake": 50.0,
+      "status": "OPEN"
+    },
+    {
+      "game": "MIL at DET",
+      "pick": "DET",
+      "prob": 0.8383,
+      "stake": 50.0,
+      "status": "OPEN"
+    },
+    {
+      "game": "PHI at IND",
+      "pick": "PHI",
+      "prob": 0.5687,
+      "stake": 50.0,
+      "status": "OPEN"
+    },
+    {
+      "game": "BKN at TOR",
+      "pick": "TOR",
+      "prob": 0.7966,
+      "stake": 50.0,
+      "status": "OPEN"
+    },
+    {
+      "game": "ATL at BOS",
+      "pick": "BOS",
+      "prob": 0.7223,
+      "stake": 50.0,
+      "status": "OPEN"
+    },
+    {
+      "game": "MEM at MIN",
+      "pick": "MIN",
+      "prob": 0.7335,
+      "stake": 50.0,
+      "status": "OPEN"
+    },
+    {
+      "game": "DAL at PHX",
+      "pick": "PHX",
+      "prob": 0.6434,
+      "stake": 50.0,
+      "status": "OPEN"
+    },
+    {
+      "game": "LAL at SA",
+      "pick": "LAL",
+      "prob": 0.5389,
+      "stake": 50.0,
+      "status": "OPEN"
+    },
+    {
+      "game": "DEN at UTAH",
+      "pick": "DEN",
+      "prob": 0.5834,
+      "stake": 50.0,
+      "status": "OPEN"
+    },
+    {
+      "game": "NO at LAC",
+      "pick": "LAC",
+      "prob": 0.6647,
+      "stake": 50.0,
+      "status": "OPEN"
+    },
+    {
+      "game": "GS at POR",
+      "pick": "POR",
+      "prob": 0.6537,
+      "stake": 50.0,
+      "status": "OPEN"
+    }
+  ],
   "settled_bets": [
     {
       "date": "2026-10-16",
@@ -6012,6 +6090,6 @@
     "first_half_net": null,
     "last_half_net": null,
     "open_eligible": 0,
-    "updated_at": "2026-11-25T14:13:06.720282+00:00"
+    "updated_at": "2026-11-26T04:00:10.841776+00:00"
   }
 }
