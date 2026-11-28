@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-28T04:57:58Z",
-  "scored": 281,
-  "won": 173,
-  "lost": 108,
-  "win_rate": 0.6156583629893239,
-  "brier": 0.2319,
-  "log_loss": 0.6554,
+  "updated_at": "2026-11-28T05:28:06Z",
+  "scored": 284,
+  "won": 174,
+  "lost": 110,
+  "win_rate": 0.6126760563380281,
+  "brier": 0.2324,
+  "log_loss": 0.6565,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 253,
-      "won": 154,
-      "lost": 99,
-      "win_rate": 0.6086956521739131,
-      "brier": 0.2326
+      "scored": 256,
+      "won": 155,
+      "lost": 101,
+      "win_rate": 0.60546875,
+      "brier": 0.2332
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -3095,6 +3095,16 @@
     },
     {
       "date": "2026-11-27",
+      "game": "LAL at SA",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "LAL",
+      "prob": 0.5389,
+      "final": "SA 99 \u00b7 LAL 96",
+      "result": "LOST",
+      "margin_state": "NO PRICE FOUND"
+    },
+    {
+      "date": "2026-11-27",
       "game": "DEN at UTAH",
       "model": "NBA v3.2 + PLATT",
       "pick": "DEN",
@@ -3102,30 +3112,29 @@
       "final": "UTAH 107 \u00b7 DEN 120",
       "result": "WON",
       "margin_state": "NO PRICE FOUND"
+    },
+    {
+      "date": "2026-11-27",
+      "game": "NO at LAC",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "LAC",
+      "prob": 0.6647,
+      "final": "LAC 104 \u00b7 NO 105",
+      "result": "LOST",
+      "margin_state": "NO PRICE FOUND"
+    },
+    {
+      "date": "2026-11-27",
+      "game": "GS at POR",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "POR",
+      "prob": 0.6537,
+      "final": "POR 116 \u00b7 GS 94",
+      "result": "WON",
+      "margin_state": "NO PRICE FOUND"
     }
   ],
   "open_bets": [
-    {
-      "game": "LAL at SA",
-      "pick": "LAL",
-      "prob": 0.5389,
-      "stake": 50.0,
-      "status": "OPEN"
-    },
-    {
-      "game": "NO at LAC",
-      "pick": "LAC",
-      "prob": 0.6647,
-      "stake": 50.0,
-      "status": "OPEN"
-    },
-    {
-      "game": "GS at POR",
-      "pick": "POR",
-      "prob": 0.6537,
-      "stake": 50.0,
-      "status": "OPEN"
-    },
     {
       "game": "ORL at WSH",
       "pick": "WSH",
@@ -6192,9 +6201,33 @@
     },
     {
       "date": "2026-11-27",
+      "game": "LAL at SA",
+      "pick": "LAL",
+      "prob": 0.5389,
+      "stake": 50.0,
+      "result": "LOST"
+    },
+    {
+      "date": "2026-11-27",
       "game": "DEN at UTAH",
       "pick": "DEN",
       "prob": 0.5834,
+      "stake": 50.0,
+      "result": "WON"
+    },
+    {
+      "date": "2026-11-27",
+      "game": "NO at LAC",
+      "pick": "LAC",
+      "prob": 0.6647,
+      "stake": 50.0,
+      "result": "LOST"
+    },
+    {
+      "date": "2026-11-27",
+      "game": "GS at POR",
+      "pick": "POR",
+      "prob": 0.6537,
       "stake": 50.0,
       "result": "WON"
     }
@@ -6223,6 +6256,6 @@
     "first_half_net": null,
     "last_half_net": null,
     "open_eligible": 4,
-    "updated_at": "2026-11-28T04:57:58.631027+00:00"
+    "updated_at": "2026-11-28T05:28:06.652962+00:00"
   }
 }
