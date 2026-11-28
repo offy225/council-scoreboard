@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-28T04:42:50Z",
-  "scored": 280,
-  "won": 172,
+  "updated_at": "2026-11-28T04:57:58Z",
+  "scored": 281,
+  "won": 173,
   "lost": 108,
-  "win_rate": 0.6142857142857143,
-  "brier": 0.2321,
-  "log_loss": 0.6558,
+  "win_rate": 0.6156583629893239,
+  "brier": 0.2319,
+  "log_loss": 0.6554,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 252,
-      "won": 153,
+      "scored": 253,
+      "won": 154,
       "lost": 99,
-      "win_rate": 0.6071428571428571,
-      "brier": 0.2329
+      "win_rate": 0.6086956521739131,
+      "brier": 0.2326
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -3092,6 +3092,16 @@
       "final": "PHX 109 \u00b7 DAL 113",
       "result": "LOST",
       "margin_state": "NO PRICE FOUND"
+    },
+    {
+      "date": "2026-11-27",
+      "game": "DEN at UTAH",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "DEN",
+      "prob": 0.5834,
+      "final": "UTAH 107 \u00b7 DEN 120",
+      "result": "WON",
+      "margin_state": "NO PRICE FOUND"
     }
   ],
   "open_bets": [
@@ -3099,13 +3109,6 @@
       "game": "LAL at SA",
       "pick": "LAL",
       "prob": 0.5389,
-      "stake": 50.0,
-      "status": "OPEN"
-    },
-    {
-      "game": "DEN at UTAH",
-      "pick": "DEN",
-      "prob": 0.5834,
       "stake": 50.0,
       "status": "OPEN"
     },
@@ -6186,6 +6189,14 @@
       "prob": 0.6434,
       "stake": 50.0,
       "result": "LOST"
+    },
+    {
+      "date": "2026-11-27",
+      "game": "DEN at UTAH",
+      "pick": "DEN",
+      "prob": 0.5834,
+      "stake": 50.0,
+      "result": "WON"
     }
   ],
   "wallet": {
@@ -6212,6 +6223,6 @@
     "first_half_net": null,
     "last_half_net": null,
     "open_eligible": 4,
-    "updated_at": "2026-11-28T04:42:50.484930+00:00"
+    "updated_at": "2026-11-28T04:57:58.631027+00:00"
   }
 }
