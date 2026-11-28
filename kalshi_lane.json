@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-28T02:58:10Z",
-  "scored": 274,
-  "won": 169,
+  "updated_at": "2026-11-28T03:13:20Z",
+  "scored": 277,
+  "won": 172,
   "lost": 105,
-  "win_rate": 0.6167883211678832,
-  "brier": 0.2309,
-  "log_loss": 0.6533,
+  "win_rate": 0.6209386281588448,
+  "brier": 0.2293,
+  "log_loss": 0.6498,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 246,
-      "won": 150,
+      "scored": 249,
+      "won": 153,
       "lost": 96,
-      "win_rate": 0.6097560975609756,
-      "brier": 0.2315
+      "win_rate": 0.6144578313253012,
+      "brier": 0.2298
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -3032,30 +3032,39 @@
       "final": "NY 105 \u00b7 MIA 108",
       "result": "WON",
       "margin_state": "NO PRICE FOUND"
+    },
+    {
+      "date": "2026-11-27",
+      "game": "MIL at DET",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "DET",
+      "prob": 0.8383,
+      "final": "DET 113 \u00b7 MIL 98",
+      "result": "WON",
+      "margin_state": "NO PRICE FOUND"
+    },
+    {
+      "date": "2026-11-27",
+      "game": "PHI at IND",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "PHI",
+      "prob": 0.5687,
+      "final": "IND 87 \u00b7 PHI 111",
+      "result": "WON",
+      "margin_state": "NO PRICE FOUND"
+    },
+    {
+      "date": "2026-11-27",
+      "game": "BKN at TOR",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "TOR",
+      "prob": 0.7966,
+      "final": "TOR 124 \u00b7 BKN 100",
+      "result": "WON",
+      "margin_state": "NO PRICE FOUND"
     }
   ],
   "open_bets": [
-    {
-      "game": "MIL at DET",
-      "pick": "DET",
-      "prob": 0.8383,
-      "stake": 50.0,
-      "status": "OPEN"
-    },
-    {
-      "game": "PHI at IND",
-      "pick": "PHI",
-      "prob": 0.5687,
-      "stake": 50.0,
-      "status": "OPEN"
-    },
-    {
-      "game": "BKN at TOR",
-      "pick": "TOR",
-      "prob": 0.7966,
-      "stake": 50.0,
-      "status": "OPEN"
-    },
     {
       "game": "ATL at BOS",
       "pick": "BOS",
@@ -6075,6 +6084,30 @@
       "prob": 0.578,
       "stake": 50.0,
       "result": "WON"
+    },
+    {
+      "date": "2026-11-27",
+      "game": "MIL at DET",
+      "pick": "DET",
+      "prob": 0.8383,
+      "stake": 50.0,
+      "result": "WON"
+    },
+    {
+      "date": "2026-11-27",
+      "game": "PHI at IND",
+      "pick": "PHI",
+      "prob": 0.5687,
+      "stake": 50.0,
+      "result": "WON"
+    },
+    {
+      "date": "2026-11-27",
+      "game": "BKN at TOR",
+      "pick": "TOR",
+      "prob": 0.7966,
+      "stake": 50.0,
+      "result": "WON"
     }
   ],
   "wallet": {
@@ -6101,6 +6134,6 @@
     "first_half_net": null,
     "last_half_net": null,
     "open_eligible": 0,
-    "updated_at": "2026-11-28T02:58:10.293478+00:00"
+    "updated_at": "2026-11-28T03:13:20.974921+00:00"
   }
 }
