@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-28T03:27:55Z",
-  "scored": 278,
+  "updated_at": "2026-11-28T03:58:28Z",
+  "scored": 279,
   "won": 172,
-  "lost": 106,
-  "win_rate": 0.6187050359712231,
-  "brier": 0.2303,
-  "log_loss": 0.652,
+  "lost": 107,
+  "win_rate": 0.6164874551971327,
+  "brier": 0.2315,
+  "log_loss": 0.6544,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 250,
+      "scored": 251,
       "won": 153,
-      "lost": 97,
-      "win_rate": 0.612,
-      "brier": 0.2309
+      "lost": 98,
+      "win_rate": 0.6095617529880478,
+      "brier": 0.2322
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -3072,16 +3072,19 @@
       "final": "BOS 86 \u00b7 ATL 87",
       "result": "LOST",
       "margin_state": "NO PRICE FOUND"
+    },
+    {
+      "date": "2026-11-27",
+      "game": "MEM at MIN",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "MIN",
+      "prob": 0.7335,
+      "final": "MIN 109 \u00b7 MEM 114",
+      "result": "LOST",
+      "margin_state": "NO PRICE FOUND"
     }
   ],
   "open_bets": [
-    {
-      "game": "MEM at MIN",
-      "pick": "MIN",
-      "prob": 0.7335,
-      "stake": 50.0,
-      "status": "OPEN"
-    },
     {
       "game": "DAL at PHX",
       "pick": "PHX",
@@ -3116,6 +3119,51 @@
       "prob": 0.6537,
       "stake": 50.0,
       "status": "OPEN"
+    },
+    {
+      "game": "ORL at WSH",
+      "pick": "WSH",
+      "prob": 0.5475,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.395,
+      "price_source": "reference"
+    },
+    {
+      "game": "BKN at CHA",
+      "pick": "CHA",
+      "prob": 0.7323,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.68,
+      "price_source": "reference"
+    },
+    {
+      "game": "IND at CHI",
+      "pick": "CHI",
+      "prob": 0.5291,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.57,
+      "price_source": "reference"
+    },
+    {
+      "game": "OKC at MIL",
+      "pick": "OKC",
+      "prob": 0.8433,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.815,
+      "price_source": "reference"
+    },
+    {
+      "game": "PHI at HOU",
+      "pick": "HOU",
+      "prob": 0.7079,
+      "stake": 50.0,
+      "status": "OPEN",
+      "price": 0.78,
+      "price_source": "reference"
     }
   ],
   "settled_bets": [
@@ -6119,6 +6167,14 @@
       "prob": 0.7223,
       "stake": 50.0,
       "result": "LOST"
+    },
+    {
+      "date": "2026-11-27",
+      "game": "MEM at MIN",
+      "pick": "MIN",
+      "prob": 0.7335,
+      "stake": 50.0,
+      "result": "LOST"
     }
   ],
   "wallet": {
@@ -6144,7 +6200,7 @@
     "control_per_bet": null,
     "first_half_net": null,
     "last_half_net": null,
-    "open_eligible": 0,
-    "updated_at": "2026-11-28T03:27:55.758672+00:00"
+    "open_eligible": 4,
+    "updated_at": "2026-11-28T03:58:28.726213+00:00"
   }
 }
