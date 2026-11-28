@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-28T03:13:20Z",
-  "scored": 277,
+  "updated_at": "2026-11-28T03:27:55Z",
+  "scored": 278,
   "won": 172,
-  "lost": 105,
-  "win_rate": 0.6209386281588448,
-  "brier": 0.2293,
-  "log_loss": 0.6498,
+  "lost": 106,
+  "win_rate": 0.6187050359712231,
+  "brier": 0.2303,
+  "log_loss": 0.652,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 249,
+      "scored": 250,
       "won": 153,
-      "lost": 96,
-      "win_rate": 0.6144578313253012,
-      "brier": 0.2298
+      "lost": 97,
+      "win_rate": 0.612,
+      "brier": 0.2309
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -3062,16 +3062,19 @@
       "final": "TOR 124 \u00b7 BKN 100",
       "result": "WON",
       "margin_state": "NO PRICE FOUND"
+    },
+    {
+      "date": "2026-11-27",
+      "game": "ATL at BOS",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "BOS",
+      "prob": 0.7223,
+      "final": "BOS 86 \u00b7 ATL 87",
+      "result": "LOST",
+      "margin_state": "NO PRICE FOUND"
     }
   ],
   "open_bets": [
-    {
-      "game": "ATL at BOS",
-      "pick": "BOS",
-      "prob": 0.7223,
-      "stake": 50.0,
-      "status": "OPEN"
-    },
     {
       "game": "MEM at MIN",
       "pick": "MIN",
@@ -6108,6 +6111,14 @@
       "prob": 0.7966,
       "stake": 50.0,
       "result": "WON"
+    },
+    {
+      "date": "2026-11-27",
+      "game": "ATL at BOS",
+      "pick": "BOS",
+      "prob": 0.7223,
+      "stake": 50.0,
+      "result": "LOST"
     }
   ],
   "wallet": {
@@ -6134,6 +6145,6 @@
     "first_half_net": null,
     "last_half_net": null,
     "open_eligible": 0,
-    "updated_at": "2026-11-28T03:13:20.974921+00:00"
+    "updated_at": "2026-11-28T03:27:55.758672+00:00"
   }
 }
