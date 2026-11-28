@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-27T13:37:51Z",
-  "scored": 273,
-  "won": 168,
+  "updated_at": "2026-11-28T02:58:10Z",
+  "scored": 274,
+  "won": 169,
   "lost": 105,
-  "win_rate": 0.6153846153846154,
-  "brier": 0.2311,
-  "log_loss": 0.6537,
+  "win_rate": 0.6167883211678832,
+  "brier": 0.2309,
+  "log_loss": 0.6533,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 245,
-      "won": 149,
+      "scored": 246,
+      "won": 150,
       "lost": 96,
-      "win_rate": 0.6081632653061224,
-      "brier": 0.2318
+      "win_rate": 0.6097560975609756,
+      "brier": 0.2315
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -3022,16 +3022,19 @@
       "result": "LOST",
       "price": 0.745,
       "price_source": "reference"
+    },
+    {
+      "date": "2026-11-27",
+      "game": "MIA at NY",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "MIA",
+      "prob": 0.578,
+      "final": "NY 105 \u00b7 MIA 108",
+      "result": "WON",
+      "margin_state": "NO PRICE FOUND"
     }
   ],
   "open_bets": [
-    {
-      "game": "MIA at NY",
-      "pick": "MIA",
-      "prob": 0.578,
-      "stake": 50.0,
-      "status": "OPEN"
-    },
     {
       "game": "MIL at DET",
       "pick": "DET",
@@ -6064,6 +6067,14 @@
       "price": 0.745,
       "price_source": "reference",
       "profit": -50.0
+    },
+    {
+      "date": "2026-11-27",
+      "game": "MIA at NY",
+      "pick": "MIA",
+      "prob": 0.578,
+      "stake": 50.0,
+      "result": "WON"
     }
   ],
   "wallet": {
@@ -6090,6 +6101,6 @@
     "first_half_net": null,
     "last_half_net": null,
     "open_eligible": 0,
-    "updated_at": "2026-11-27T13:37:51.192285+00:00"
+    "updated_at": "2026-11-28T02:58:10.293478+00:00"
   }
 }
