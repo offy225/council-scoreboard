@@ -1,20 +1,20 @@
 {
-  "updated_at": "2026-11-28T03:58:28Z",
-  "scored": 279,
+  "updated_at": "2026-11-28T04:42:50Z",
+  "scored": 280,
   "won": 172,
-  "lost": 107,
-  "win_rate": 0.6164874551971327,
-  "brier": 0.2315,
-  "log_loss": 0.6544,
+  "lost": 108,
+  "win_rate": 0.6142857142857143,
+  "brier": 0.2321,
+  "log_loss": 0.6558,
   "gate_target": 200,
   "models": [
     {
       "name": "NBA v3.2 + PLATT",
-      "scored": 251,
+      "scored": 252,
       "won": 153,
-      "lost": 98,
-      "win_rate": 0.6095617529880478,
-      "brier": 0.2322
+      "lost": 99,
+      "win_rate": 0.6071428571428571,
+      "brier": 0.2329
     },
     {
       "name": "NBA v3.1 + PLATT",
@@ -3082,16 +3082,19 @@
       "final": "MIN 109 \u00b7 MEM 114",
       "result": "LOST",
       "margin_state": "NO PRICE FOUND"
+    },
+    {
+      "date": "2026-11-27",
+      "game": "DAL at PHX",
+      "model": "NBA v3.2 + PLATT",
+      "pick": "PHX",
+      "prob": 0.6434,
+      "final": "PHX 109 \u00b7 DAL 113",
+      "result": "LOST",
+      "margin_state": "NO PRICE FOUND"
     }
   ],
   "open_bets": [
-    {
-      "game": "DAL at PHX",
-      "pick": "PHX",
-      "prob": 0.6434,
-      "stake": 50.0,
-      "status": "OPEN"
-    },
     {
       "game": "LAL at SA",
       "pick": "LAL",
@@ -6175,6 +6178,14 @@
       "prob": 0.7335,
       "stake": 50.0,
       "result": "LOST"
+    },
+    {
+      "date": "2026-11-27",
+      "game": "DAL at PHX",
+      "pick": "PHX",
+      "prob": 0.6434,
+      "stake": 50.0,
+      "result": "LOST"
     }
   ],
   "wallet": {
@@ -6201,6 +6212,6 @@
     "first_half_net": null,
     "last_half_net": null,
     "open_eligible": 4,
-    "updated_at": "2026-11-28T03:58:28.726213+00:00"
+    "updated_at": "2026-11-28T04:42:50.484930+00:00"
   }
 }
